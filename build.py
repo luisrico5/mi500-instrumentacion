@@ -20,6 +20,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 BANK_DIR = os.path.join(ROOT, "bank")
 TEMPLATE = os.path.join(ROOT, "template.html")
 OUTPUT = os.path.join(ROOT, "MI-500-instrumentacion.html")
+INDEX = os.path.join(ROOT, "index.html")  # copia para GitHub Pages (sirve la raiz del repo)
 
 def main():
     modules = []
@@ -43,6 +44,10 @@ def main():
     with open(OUTPUT, "w", encoding="utf-8") as f:
         f.write(out)
     print(f"Generado: {OUTPUT}")
+
+    with open(INDEX, "w", encoding="utf-8") as f:
+        f.write(out)
+    print(f"Generado: {INDEX} (copia para GitHub Pages)")
 
 if __name__ == "__main__":
     main()
