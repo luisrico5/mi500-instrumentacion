@@ -11,9 +11,10 @@
         "Error de histéresis"
       ],
       "correct": 0,
-      "explanation": "El error de cero se define técnicamente como un desplazamiento constante de todas las lecturas de salida con relación a la recta ideal, lo que cambia el punto de base sin alterar la inclinación o la ganancia de la respuesta. Es un error común confundirlo con el error de multiplicación (opción B), el cual implica que las lecturas aumentan o disminuyen progresivamente respecto a la recta ideal, representando físicamente un cambio en la pendiente del instrumento. Este desajuste se corrige típicamente mediante un tornillo de cero que modifica la posición final del índice o de la señal de salida para que coincida con el valor mínimo del campo de medida [5, 6].",
+      "explanation": "El error de cero se define técnicamente como un desplazamiento constante de todas las lecturas de salida con relación a la recta ideal, lo que cambia el punto de base sin alterar la inclinación o la ganancia de la respuesta. Es un error común confundirlo con el error de multiplicación (opción B), el cual implica que las lecturas aumentan o disminuyen progresivamente respecto a la recta ideal, representando físicamente un cambio en la pendiente del instrumento. Este desajuste se corrige típicamente mediante un tornillo de cero que modifica la posición final del índice o de la señal de salida para que coincida con el valor mínimo del campo de medida.",
       "difficulty": 1,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "¿Cómo se define la 'trazabilidad' de una medición según los estándares metrológicos descritos?",
@@ -24,9 +25,10 @@
         "El registro gráfico de los valores históricos de calibración de un transmisor inteligente."
       ],
       "correct": 2,
-      "explanation": "La trazabilidad es la propiedad metrológica que permite vincular un resultado de medición con patrones de referencia nacionales o internacionales mediante una cadena ininterrumpida y documentada de comparaciones con incertidumbres determinadas [7, 8]. Existe una confusión habitual con la exactitud (opción B), la cual se refiere únicamente al grado de aproximación de una lectura al valor verdadero sin implicar la jerarquía metrológica necesaria para garantizar la validez universal de la medida [9, 10]. Según las fuentes, cada eslabón de esta cadena debe estar debidamente registrado en informes de calibración para cumplir con las normas de calidad industrial.",
+      "explanation": "La trazabilidad es la propiedad metrológica que permite vincular un resultado de medición con patrones de referencia nacionales o internacionales mediante una cadena ininterrumpida y documentada de comparaciones con incertidumbres determinadas. Existe una confusión habitual con la exactitud (opción B), la cual se refiere únicamente al grado de aproximación de una lectura al valor verdadero sin implicar la jerarquía metrológica necesaria para garantizar la validez universal de la medida. Según las fuentes, cada eslabón de esta cadena debe estar debidamente registrado en informes de calibración para cumplir con las normas de calidad industrial.",
       "difficulty": 1,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "¿Cuál es el principio de funcionamiento de un comprobador de manómetros de peso muerto (dead weight tester)?",
@@ -37,9 +39,10 @@
         "La comparación visual entre un manómetro de proceso y un manómetro patrón digital."
       ],
       "correct": 1,
-      "explanation": "El comprobador de manómetros de peso muerto actúa como un patrón primario que genera presión mediante el equilibrio de fuerzas hidrostáticas sobre un pistón de sección transversal conocida que soporta pesas calibradas [11, 12]. Una confusión técnica típica es considerarlo un método de comparación visual (opción D), ignorando que su precisión no depende de otro manómetro, sino de la flotación libre del conjunto pistón-pesas que garantiza una presión exacta basada en principios físicos fundamentales. Este dispositivo es esencial en los talleres de instrumentación para obtener incertidumbres muy bajas en la calibración de instrumentos de presión tipo Bourdon [11, 13].",
+      "explanation": "El comprobador de manómetros de peso muerto actúa como un patrón primario que genera presión mediante el equilibrio de fuerzas hidrostáticas sobre un pistón de sección transversal conocida que soporta pesas calibradas. Una confusión técnica típica es considerarlo un método de comparación visual (opción D), ignorando que su precisión no depende de otro manómetro, sino de la flotación libre del conjunto pistón-pesas que garantiza una presión exacta basada en principios físicos fundamentales. Este dispositivo es esencial en los talleres de instrumentación para obtener incertidumbres muy bajas en la calibración de instrumentos de presión tipo Bourdon.",
       "difficulty": 1,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "Para corregir un error de multiplicación (span) en un instrumento mecánico, ¿qué ajuste debe realizar el técnico?",
@@ -50,9 +53,10 @@
         "Actuar sobre el tornillo de multiplicación que modifica la relación de amplitud de los movimientos de salida."
       ],
       "correct": 3,
-      "explanation": "Para corregir el error de multiplicación, el técnico debe actuar sobre el tornillo de 'span', el cual modifica directamente la relación de amplitud de los movimientos de salida para que el índice señale correctamente el valor máximo de la escala [14, 15]. Es un error conceptual común intentar solucionarlo mediante el ajuste de cero (opción C), ya que esto desplazaría toda la escala de forma constante sin corregir la desviación progresiva que caracteriza a la ganancia incorrecta [3, 6]. El procedimiento estándar exige iterar el ajuste de cero en el punto mínimo y el de multiplicación en el punto máximo hasta que ambos valores cumplan con la exactitud requerida [16, 17].",
+      "explanation": "Para corregir el error de multiplicación, el técnico debe actuar sobre el tornillo de 'span', el cual modifica directamente la relación de amplitud de los movimientos de salida para que el índice señale correctamente el valor máximo de la escala. Es un error conceptual común intentar solucionarlo mediante el ajuste de cero (opción C), ya que esto desplazaría toda la escala de forma constante sin corregir la desviación progresiva que caracteriza a la ganancia incorrecta. El procedimiento estándar exige iterar el ajuste de cero en el punto mínimo y el de multiplicación en el punto máximo hasta que ambos valores cumplan con la exactitud requerida.",
       "difficulty": 2,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "En la calibración de sondas de temperatura, ¿cuál es la ventaja técnica de los baños de líquido agitados frente a los calibradores de bloque metálico?",
@@ -63,9 +67,10 @@
         "Utilizan sales sólidas que no necesitan ser sustituidas durante la vida útil del equipo."
       ],
       "correct": 0,
-      "explanation": "La ventaja técnica de los baños de líquido agitados es su capacidad para eliminar la formación de gradientes de temperatura y puntos fríos o calientes, logrando estabilidades térmicas de hasta 0,001 ºC [18, 19]. Una confusión frecuente es atribuirles mayor velocidad o rango térmico (opción B), cuando en realidad son los bloques metálicos secos los que permiten alcanzar temperaturas extremas más rápidamente, a costa de una mayor incertidumbre por la falta de homogeneidad en el bloque. La agitación constante asegura que tanto la sonda patrón como el sensor en prueba estén sometidos a un medio térmicamente uniforme, garantizando la fiabilidad de la calibración.",
+      "explanation": "La ventaja técnica de los baños de líquido agitados es su capacidad para eliminar la formación de gradientes de temperatura y puntos fríos o calientes, logrando estabilidades térmicas de hasta 0,001 ºC. Una confusión frecuente es atribuirles mayor velocidad o rango térmico (opción B), cuando en realidad son los bloques metálicos secos los que permiten alcanzar temperaturas extremas más rápidamente, a costa de una mayor incertidumbre por la falta de homogeneidad en el bloque. La agitación constante asegura que tanto la sonda patrón como el sensor en prueba estén sometidos a un medio térmicamente uniforme, garantizando la fiabilidad de la calibración.",
       "difficulty": 2,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "Al realizar la calibración de un transmisor inteligente mediante protocolo HART, ¿qué procedimiento diferencia el ajuste del sensor del ajuste de salida?",
@@ -78,7 +83,8 @@
       "correct": 1,
       "explanation": "El ajuste digital del sensor consiste en aplicar una variable de entrada física real para que el microprocesador la iguale al valor de la variable de proceso (PV) detectada, asegurando la fidelidad de la etapa de captación. Por otro lado, el ajuste de salida se encarga de que la generación electrónica de la corriente de 4 y 20 mA sea exacta al medirse con un miliamperímetro patrón externo de alta precisión. Una confusión habitual es la opción A, suponiendo que estos ajustes son mecánicos, cuando en realidad se realizan digitalmente mediante comunicadores HART para eliminar la necesidad de puentes o tornillos físicos.",
       "difficulty": 2,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "Según la regla técnica de calibración, si se desea calibrar un manómetro de proceso que tiene una exactitud de ±1%, ¿cuál debe ser la exactitud mínima del manómetro patrón para garantizar un ensayo fiable?",
@@ -89,9 +95,10 @@
         "±0,01%"
       ],
       "correct": 2,
-      "explanation": "Según las fuentes técnicas, se debe cumplir con la regla metrológica de relación 4:1, donde el aparato patrón debe ser al menos cuatro veces más exacto que el instrumento bajo prueba para garantizar un ensayo fiable [3, 4]. El desarrollo numérico es el siguiente: 1% de exactitud del manómetro de proceso dividido por 4 resulta en ±0,25% de exactitud requerida para el patrón para cumplir con la jerarquía de calibración. Es común el error conceptual de seleccionar la opción B (±0,50%), lo cual representaría una relación de solo 2:1, insuficiente para discriminar correctamente los errores del instrumento de proceso según los estándares industriales descritos.",
+      "explanation": "Según las fuentes técnicas, se debe cumplir con la regla metrológica de relación 4:1, donde el aparato patrón debe ser al menos cuatro veces más exacto que el instrumento bajo prueba para garantizar un ensayo fiable. El desarrollo numérico es el siguiente: 1% de exactitud del manómetro de proceso dividido por 4 resulta en ±0,25% de exactitud requerida para el patrón para cumplir con la jerarquía de calibración. Es común el error conceptual de seleccionar la opción B (±0,50%), lo cual representaría una relación de solo 2:1, insuficiente para discriminar correctamente los errores del instrumento de proceso según los estándares industriales descritos.",
       "difficulty": 3,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "Un instrumento mecánico de transmisión por palancas presenta lecturas correctas al 0% y al 100% del rango, pero muestra un error máximo al 50%. ¿Cómo debe proceder el instrumentista para eliminar este error de angularidad?",
@@ -102,9 +109,10 @@
         "Debe ajustar el tornillo de angularidad moviendo el índice en la dirección del error unas cinco veces para aplanar la curva."
       ],
       "correct": 3,
-      "explanation": "El error de angularidad se identifica cuando el instrumento es exacto en los extremos (0% y 100%) pero presenta su desviación máxima en el punto medio del alcance, afectando a la linealidad de la transmisión por palancas [5, 6]. El procedimiento técnico exacto para corregirlo consiste en actuar sobre el tornillo de angularidad, moviendo intencionadamente el índice en la dirección del error unas cinco veces para lograr 'aplanar' la curva de respuesta hasta que sea lineal [6, 7]. Una confusión típica es la opción A, pretendiendo corregirlo únicamente con el tornillo de cero, lo cual desplazaría toda la escala de forma constante pero mantendría el error de forma en la zona central [8, 9].",
+      "explanation": "El error de angularidad se identifica cuando el instrumento es exacto en los extremos (0% y 100%) pero presenta su desviación máxima en el punto medio del alcance, afectando a la linealidad de la transmisión por palancas. El procedimiento técnico exacto para corregirlo consiste en actuar sobre el tornillo de angularidad, moviendo intencionadamente el índice en la dirección del error unas cinco veces para lograr 'aplanar' la curva de respuesta hasta que sea lineal. Una confusión típica es la opción A, pretendiendo corregirlo únicamente con el tornillo de cero, lo cual desplazaría toda la escala de forma constante pero mantendría el error de forma en la zona central.",
       "difficulty": 3,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "Bajo la normativa ISO 9001, ¿qué requisito específico debe cumplir el suministrador respecto a la 'confirmación metrológica' de sus equipos de medida?",
@@ -115,9 +123,10 @@
         "Asegurar que el error de cero de todos los instrumentos sea exactamente nulo en condiciones ambiente."
       ],
       "correct": 1,
-      "explanation": "De acuerdo con la normativa ISO 9001, la confirmación metrológica se define formalmente como el conjunto de operaciones necesarias para garantizar que un equipo de medición cumple con los requisitos específicos exigidos para su uso previsto en el proceso. Este criterio técnico obliga al suministrador a documentar manuales, procedimientos y estados de conformidad para todas las variables críticas que afecten la calidad del producto final [10, 11]. Un error conceptual frecuente es la opción C, asumiendo que la norma exige obligatoriamente subcontratar laboratorios externos, cuando la confirmación metrológica es una responsabilidad de gestión interna para validar la idoneidad de los activos de medida propios.",
+      "explanation": "De acuerdo con la normativa ISO 9001, la confirmación metrológica se define formalmente como el conjunto de operaciones necesarias para garantizar que un equipo de medición cumple con los requisitos específicos exigidos para su uso previsto en el proceso. Este criterio técnico obliga al suministrador a documentar manuales, procedimientos y estados de conformidad para todas las variables críticas que afecten la calidad del producto final. Un error conceptual frecuente es la opción C, asumiendo que la norma exige obligatoriamente subcontratar laboratorios externos, cuando la confirmación metrológica es una responsabilidad de gestión interna para validar la idoneidad de los activos de medida propios.",
       "difficulty": 3,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "¿Cuál es la distinción técnica fundamental entre la 'exactitud' y la 'tolerancia' en el contexto de la calibración industrial?",
@@ -128,9 +137,10 @@
         "La exactitud mide la deriva térmica y la tolerancia mide el error de repetibilidad"
       ],
       "correct": 1,
-      "explanation": "Técnicamente, la exactitud es una cualidad intrínseca del instrumento proporcionada por el fabricante que define los límites de error típicos, mientras que la tolerancia es la desviación máxima permitida por los requisitos específicos del proceso o la capacidad del banco de calibración [12, 13]. Las fuentes señalan que la tolerancia suele ser un valor mayor que la exactitud para compensar diferencias de apreciación humana, envejecimiento o efectos ambientales adversos [14, 15]. Una confusión común representada en la opción A es pensar que estos términos se distinguen meramente por ser errores absolutos o relativos, cuando en realidad ambos pueden expresarse indistintamente en unidades de medida o en porcentaje del alcance.",
+      "explanation": "Técnicamente, la exactitud es una cualidad intrínseca del instrumento proporcionada por el fabricante que define los límites de error típicos, mientras que la tolerancia es la desviación máxima permitida por los requisitos específicos del proceso o la capacidad del banco de calibración. Las fuentes señalan que la tolerancia suele ser un valor mayor que la exactitud para compensar diferencias de apreciación humana, envejecimiento o efectos ambientales adversos. Una confusión común representada en la opción A es pensar que estos términos se distinguen meramente por ser errores absolutos o relativos, cuando en realidad ambos pueden expresarse indistintamente en unidades de medida o en porcentaje del alcance.",
       "difficulty": 1,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "Según la terminología metrológica de las fuentes, ¿qué nombre recibe la magnitud particular que es objeto de una medición?",
@@ -141,9 +151,10 @@
         "Valor absoluto convencional"
       ],
       "correct": 2,
-      "explanation": "La opción C es correcta porque las fuentes definen técnicamente al mensurando como la magnitud particular sujeta a medición, cuya especificación completa requiere indicar variables influyentes como presión o temperatura para no alterar su valor real [1, 2]. Una confusión común es la opción A, el patrón de referencia, el cual representa la medida materializada de una magnitud para comparar y calibrar otros equipos, pero no es la variable que se desea cuantificar en el proceso. Esta distinción es fundamental en metrología para identificar correctamente la variable física captada por el sensor frente a la referencia ideal utilizada en el banco de pruebas.",
+      "explanation": "La opción C es correcta porque las fuentes definen técnicamente al mensurando como la magnitud particular sujeta a medición, cuya especificación completa requiere indicar variables influyentes como presión o temperatura para no alterar su valor real. Una confusión común es la opción A, el patrón de referencia, el cual representa la medida materializada de una magnitud para comparar y calibrar otros equipos, pero no es la variable que se desea cuantificar en el proceso. Esta distinción es fundamental en metrología para identificar correctamente la variable física captada por el sensor frente a la referencia ideal utilizada en el banco de pruebas.",
       "difficulty": 1,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "¿Qué ventaja técnica ofrece el hecho de que los transmisores inteligentes modernos almacenen los datos de caracterización directamente en el sensor primario?",
@@ -154,9 +165,10 @@
         "Posibilita la medición de caudales sin necesidad de compensación por presión"
       ],
       "correct": 1,
-      "explanation": "La respuesta correcta es la B, ya que los transmisores inteligentes almacenan digitalmente en su memoria interna (EPROM/EEPROM) los datos de caracterización de fábrica, permitiendo que el módulo electrónico sea intercambiable en campo sin perder la precisión original del sensor. Una confusión frecuente es la opción A, pues aunque estos equipos reducen drásticamente la necesidad de recalibración periódica en taller, todavía permiten y requieren ajustes de configuración y mantenimiento del cero/alcance mediante comunicadores de campo [7, 8]. Esta arquitectura de diseño facilita el mantenimiento correctivo al evitar el desmontaje completo del instrumento ante fallos en la etapa de procesamiento de señal o comunicaciones [9, 10].",
+      "explanation": "La respuesta correcta es la B, ya que los transmisores inteligentes almacenan digitalmente en su memoria interna (EPROM/EEPROM) los datos de caracterización de fábrica, permitiendo que el módulo electrónico sea intercambiable en campo sin perder la precisión original del sensor. Una confusión frecuente es la opción A, pues aunque estos equipos reducen drásticamente la necesidad de recalibración periódica en taller, todavía permiten y requieren ajustes de configuración y mantenimiento del cero/alcance mediante comunicadores de campo. Esta arquitectura de diseño facilita el mantenimiento correctivo al evitar el desmontaje completo del instrumento ante fallos en la etapa de procesamiento de señal o comunicaciones.",
       "difficulty": 2,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "En la calibración de instrumentos analógicos, ¿en qué situación específica se produce el denominado 'error de interpolación'?",
@@ -167,9 +179,10 @@
         "Cuando el mecanismo de transmisión por palancas no está perfectamente a escuadra"
       ],
       "correct": 1,
-      "explanation": "El error de interpolación se define técnicamente como la desviación que ocurre cuando el índice del instrumento no coincide exactamente con una marca de la escala y el observador debe estimar la fracción de la división, redondeando por exceso o defecto [11, 12]. Se suele confundir con la opción A, el error de paralaje, pero este último se debe exclusivamente a una posición incorrecta del observador que impide una visión perpendicular entre el índice y la escala. Es una nota de estudio clave que ambos errores son fallos humanos propios de la lectura de instrumentos analógicos y desaparecen por completo en los equipos con visualización digital [12, 13].",
+      "explanation": "El error de interpolación se define técnicamente como la desviación que ocurre cuando el índice del instrumento no coincide exactamente con una marca de la escala y el observador debe estimar la fracción de la división, redondeando por exceso o defecto. Se suele confundir con la opción A, el error de paralaje, pero este último se debe exclusivamente a una posición incorrecta del observador que impide una visión perpendicular entre el índice y la escala. Es una nota de estudio clave que ambos errores son fallos humanos propios de la lectura de instrumentos analógicos y desaparecen por completo en los equipos con visualización digital.",
       "difficulty": 2,
-      "module": 8
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
     },
     {
       "q": "Un transmisor electrónico de presión tiene un campo de medida de 0 a 100 bar y una señal de salida de 4 a 20 mA c.c. Si el técnico de proceso establece una tolerancia de calibración de ±0,5 bar para cumplir con la norma ISO 9000, ¿cuál es el valor de la tolerancia de salida correspondiente en miliamperios?",
@@ -182,6 +195,427 @@
       "correct": 1,
       "explanation": "Para determinar la tolerancia de salida en miliamperios, se utiliza el criterio de proporcionalidad entre la desviación permitida en unidades físicas y el alcance eléctrico (span) de la señal. El desarrollo numérico consiste en dividir la tolerancia entre el alcance del sensor (0,5 bar / 100 bar = 0,005) y multiplicar el resultado por el span de la señal de salida (0,005 * 16 mA), lo que arroja exactamente ±0,08 mA. Una confusión común es utilizar el valor máximo de la escala de salida (20 mA) en lugar del span real de 16 mA, lo que llevaría a un error de cálculo en la correspondencia lineal exigida por las normas de calidad ISO 9000.",
       "difficulty": 3,
+      "module": 8,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3-5 (Calibración)"
+    },
+    {
+      "q": "Según la clasificación de los sistemas de control industrial, ¿en qué consiste el modo de control 'flotante'?",
+      "options": [
+        "La válvula permanece inmóvil dentro de una zona muerta y se mueve en la dirección adecuada solo cuando la variable sale de esa zona",
+        "La válvula adopta únicamente las posiciones abierta y cerrada",
+        "Existe una relación lineal continua entre la variable controlada y la posición de la válvula",
+        "La relación entre los tiempos de conexión y desconexión del movimiento de la válvula es proporcional al valor de la variable"
+      ],
+      "correct": 0,
+      "explanation": "El control flotante se define como aquel en que la válvula permanece inmóvil dentro de una zona muerta y solo se mueve en la dirección adecuada cuando la variable sale de dicha zona, a diferencia del control de dos posiciones (opción B), donde la válvula únicamente adopta los estados abierto o cerrado sin zona intermedia. La opción C corresponde al control proporcional, que presenta una relación lineal continua entre variable y posición de la válvula, con el inconveniente del offset o desviación estable. La opción D describe el control proporcional de tiempo variable, un mecanismo distinto de la zona muerta característica del control flotante.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 155",
+      "module": 8
+    },
+    {
+      "q": "¿Qué acción de control adicional a la proporcional tiene como función principal eliminar el offset o desviación estable entre el punto de consigna y la variable?",
+      "options": [
+        "La acción derivada",
+        "La acción integral",
+        "El control de dos posiciones",
+        "El control flotante"
+      ],
+      "correct": 1,
+      "explanation": "La acción integral actúa cuando existe una desviación entre la variable y el punto de consigna, integrando dicha desviación en el tiempo y sumándola a la acción proporcional, lo que elimina el offset característico del control proporcional puro. La acción derivada (opción A) responde a la velocidad de cambio de la variable, anticipando la corrección, pero no está diseñada para anular el error estacionario. El control de dos posiciones y el flotante son estrategias de zona muerta o todo-nada que no incorporan integración temporal del error.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 156",
+      "module": 8
+    },
+    {
+      "q": "En el método de tanteo (lazo cerrado) para ajustar un controlador proporcional, ¿cuál es el procedimiento correcto?",
+      "options": [
+        "Se empieza con una ganancia grande y se ensancha gradualmente hasta lograr oscilación sostenida",
+        "Se empieza con una ganancia pequeña y se va estrechando (aumentando) gradualmente observando el comportamiento del sistema hasta obtener la estabilidad deseada",
+        "Se calcula directamente la ganancia a partir del período de oscilación sostenida Pu",
+        "Se abre el lazo de control y se aplica un cambio en escalón con el controlador en manual"
+      ],
+      "correct": 1,
+      "explanation": "El método de tanteo en lazo cerrado indica que se debe empezar con una ganancia pequeña y estrecharla (aumentarla) gradualmente, observando el comportamiento del sistema hasta lograr la estabilidad deseada, procediendo por prueba y error con el proceso realmente en marcha. La opción C confunde este método con el de ganancia límite de Ziegler-Nichols, que calcula la ganancia a partir del período de oscilación sostenida Pu y la ganancia límite Kc. La opción D corresponde al método de curva de reacción en lazo abierto, un procedimiento distinto.",
+      "difficulty": 2,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 159",
+      "module": 8
+    },
+    {
+      "q": "En el método de ganancia límite de Ziegler y Nichols (lazo cerrado), ¿qué representan los parámetros Kc y Pu obtenidos del ensayo?",
+      "options": [
+        "Kc es la constante de tiempo del proceso y Pu es el retardo del proceso",
+        "Kc es la ganancia proporcional límite que provoca oscilación continua del proceso y Pu es el período del ciclo de esas oscilaciones",
+        "Kc es la pendiente de la tangente en el punto de inflexión y Pu es el tiempo de retardo hasta el cruce con el valor inicial",
+        "Kc es la banda proporcional final ajustada y Pu es el tiempo de acción derivada en minutos de anticipo"
+      ],
+      "correct": 1,
+      "explanation": "El método desarrollado por Ziegler y Nichols en 1941 consiste en aumentar gradualmente la ganancia hasta que el proceso empieza a oscilar de modo continuo; esa ganancia se denomina ganancia proporcional límite (Kc) y se anota el período del ciclo de las oscilaciones (Pu) en minutos. La opción A corresponde a τ (constante de tiempo) y θ (retardo), parámetros del método de Cohen-Coon, un procedimiento distinto de lazo abierto. La opción C describe R y L, propios del método de curva de reacción.",
+      "difficulty": 2,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 161",
+      "module": 8
+    },
+    {
+      "q": "En un ensayo de ganancia límite (Ziegler-Nichols, lazo cerrado) se obtuvo una ganancia límite Kc = 8 y un período de oscilación Pu = 4 minutos. Aplicando las fórmulas para un controlador P+I+D, ¿cuál es el valor de la banda derivada (minutos de anticipo)?",
+      "options": [
+        "0,5 minutos",
+        "2 minutos",
+        "3,33 minutos",
+        "8 minutos"
+      ],
+      "correct": 0,
+      "explanation": "Para un controlador P+I+D ajustado por el método de ganancia límite, la banda derivada se calcula como Pu/8, de modo que 4 minutos / 8 = 0,5 minutos. La opción B (2 minutos) corresponde en cambio a la banda integral, calculada como Pu/2 = 4/2 = 2 minutos, un error común por confundir las dos fórmulas. La ganancia del controlador, no solicitada aquí, se obtendría como 0,59*Kc = 0,59*8 = 4,72, mostrando que cada parámetro PID usa un divisor o factor distinto.",
+      "difficulty": 3,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 161",
+      "module": 8
+    },
+    {
+      "q": "Según la clasificación de tipos de mantenimiento de instrumentos, ¿en qué consiste el mantenimiento 'predictivo'?",
+      "options": [
+        "Los instrumentos se reparan únicamente cuando fallan por completo",
+        "Los instrumentos se revisan a intervalos regulares fijados de antemano según el historial de averías y las recomendaciones del fabricante",
+        "Los instrumentos se revisan de acuerdo con el dictamen de aparatos que avisan de un posible fallo en un tiempo determinado, sin esperar a una fecha fija",
+        "Los instrumentos se sustituyen automáticamente al cumplir un año de servicio, independientemente de su estado"
+      ],
+      "correct": 2,
+      "explanation": "El mantenimiento predictivo se caracteriza porque los instrumentos se revisan según el dictamen de aparatos que avisan del posible fallo en un tiempo determinado, en lugar de seguir una fecha fija, aunque las fuentes señalan que todavía no está tan desarrollado en instrumentos como en máquinas rotativas. La opción A describe el mantenimiento correctivo, que repara los instrumentos solo cuando fallan por completo, lo que puede causar paros de planta. La opción B corresponde al mantenimiento preventivo, planificado con antelación, que tiene la desventaja de revisar instrumentos sin necesidad real y provocar fallos prematuros.",
+      "difficulty": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 10, pág. 662",
+      "module": 8
+    },
+    {
+      "q": "En un ensayo de curva de reacción (Ziegler-Nichols, lazo abierto) se midió una pendiente R = 0,5 %/min en el punto de inflexión, un retardo L = 2 minutos, y el escalón aplicado a la válvula fue ΔP = 10%. Para un controlador proporcional puro, ¿cuál es la ganancia (g) resultante según la fórmula g = ΔP/(R·L)?",
+      "options": [
+        "5",
+        "10",
+        "20",
+        "100"
+      ],
+      "correct": 1,
+      "explanation": "La fórmula del método de curva de reacción para un controlador proporcional es g = ΔP/(R·L); sustituyendo los valores, g = 10 / (0,5 × 2) = 10 / 1 = 10. Un error común es calcular incorrectamente el producto R×L o invertir el cociente, obteniendo resultados como 5 o 20. Este método de lazo abierto requiere operar la válvula directamente con el controlador en manual y provocar un pequeño cambio en escalón, midiendo R y L sobre la tangente trazada en el punto de inflexión de la curva de reacción.",
+      "difficulty": 3,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 163",
+      "module": 8
+    },
+    {
+      "q": "¿Qué dos parámetros del proceso deben identificarse previamente para aplicar el método de ajuste de controladores de Cohen-Coon?",
+      "options": [
+        "La ganancia límite Kc y el período de oscilación Pu",
+        "La constante de tiempo τ y el retardo del proceso θ",
+        "La banda proporcional final y el tiempo de acción derivada",
+        "El valor máximo y mínimo del campo de medida del transmisor"
+      ],
+      "correct": 1,
+      "explanation": "El método de Cohen-Coon requiere la identificación previa del proceso, o al menos valores aproximados de la constante de tiempo τ y del retardo del proceso θ, obtenidos trabajando en lazo abierto con el controlador en manual. La opción A corresponde a los parámetros del método de ganancia límite de Ziegler-Nichols en lazo cerrado, un procedimiento distinto. Su objetivo es lograr una relación de amortiguamiento de 0,25 con un rebasamiento mínimo del punto de consigna y un área mínima de recuperación.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 164",
+      "module": 8
+    },
+    {
+      "q": "¿En qué tipo de procesos el método de ajuste de Cohen-Coon NO resulta adecuado?",
+      "options": [
+        "En procesos con una relación de amortiguamiento distinta de 0,25",
+        "En los procesos que no tienen retardo (θ)",
+        "En los procesos con control proporcional puro",
+        "En los procesos con una constante de tiempo τ muy elevada"
+      ],
+      "correct": 1,
+      "explanation": "El texto señala expresamente que el método de Cohen-Coon no es adecuado en los procesos que no tienen retardo, ya que sus fórmulas de ganancia y banda integral dependen del cociente θ/τ, que pierde sentido práctico si θ tiende a cero. Una confusión frecuente es pensar que la limitación depende del tipo de acción de control (opción C), cuando el método puede aplicarse tanto a controladores proporcionales como P+I o P+I+D, siempre que exista un retardo identificable. Lograr una relación de amortiguamiento de 0,25 es, en cambio, la meta de diseño del método, no una limitación (opción A).",
+      "difficulty": 2,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 165",
+      "module": 8
+    },
+    {
+      "q": "¿Cómo se define el criterio de ajuste de controladores conocido como 'razón de amortiguamiento 1/4'?",
+      "options": [
+        "La variable se estabiliza cuando la relación entre las amplitudes de las crestas de recuperación sucesivas es de 4 a 1",
+        "La variable debe alcanzar su punto de consigna en exactamente cuatro minutos",
+        "El controlador debe ajustarse con una ganancia cuatro veces mayor que la del proceso",
+        "El error entre la variable y el punto de consigna nunca debe superar el 25% del alcance"
+      ],
+      "correct": 0,
+      "explanation": "El criterio de razón de amortiguamiento 1/4 establece que, tras una perturbación, la variable se estabiliza cuando la relación entre las amplitudes de las crestas de recuperación sucesivas es de 4 a 1, siendo un compromiso entre estabilidad y rapidez del retorno a un valor estable. Es un error común interpretar el '1/4' como una relación de tiempo o de ganancia (opciones B y C), cuando en realidad se refiere a la proporción geométrica entre picos consecutivos de la respuesta oscilatoria del lazo. Una relación mayor que 1/4 da mayor estabilidad pero prolonga el tiempo de normalización, y una relación menor la acelera a costa de la estabilidad.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 158",
+      "module": 8
+    },
+    {
+      "q": "Si al ajustar un controlador se elige una relación de amortiguamiento MAYOR que 1/4 (por ejemplo, 8 a 1), ¿qué consecuencia técnica se produce en la respuesta del lazo?",
+      "options": [
+        "Se obtiene mayor estabilidad, pero se prolonga el tiempo de normalización de la variable",
+        "La variable retorna más rápidamente al valor estable, pero se compromete la estabilidad del sistema",
+        "El offset del control proporcional desaparece automáticamente",
+        "El período de oscilación sostenida Pu se reduce a la mitad"
+      ],
+      "correct": 0,
+      "explanation": "Una relación de amortiguamiento mayor que 1/4 proporciona mayor estabilidad, pero como contrapartida prolonga el tiempo de normalización de la variable, facilitando la aparición anticipada de nuevas perturbaciones antes de que el proceso se asiente. La opción B describe, en cambio, el efecto de elegir una relación menor que 1/4, que devuelve la variable más rápido al punto de consigna pero perjudica la estabilidad. El offset (opción C) es un fenómeno propio del control proporcional puro relacionado con la ausencia de acción integral, no con la razón de amortiguamiento elegida.",
+      "difficulty": 2,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 158",
+      "module": 8
+    },
+    {
+      "q": "En procesos altamente no lineales, como el control de pH, ¿qué técnica de ajuste permite que la ganancia del controlador se adapte según el punto de operación?",
+      "options": [
+        "El control planificado (gain scheduling), que adapta los parámetros del controlador en función del punto de operación",
+        "El método de Cohen-Coon aplicado exclusivamente en lazo cerrado",
+        "La reducción permanente de la banda proporcional a cero",
+        "La eliminación total de la acción integral del controlador"
+      ],
+      "correct": 0,
+      "explanation": "En los procesos altamente no lineales, como el de pH, se utiliza el control planificado, que adapta los parámetros del controlador en función del punto de operación, por ejemplo mediante un modelo de ganancia inversa con características opuestas a las del proceso. El método de Cohen-Coon (opción B) es una técnica de sintonización de lazo abierto para procesos lineales con retardo, no un mecanismo de adaptación continua de parámetros. Eliminar la banda proporcional o la acción integral (opciones C y D) no resuelve la no linealidad, sino que altera drásticamente el comportamiento del lazo.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 165",
+      "module": 8
+    },
+    {
+      "q": "En el ejemplo de un lazo de control de pH con punto de consigna 7 y tiempo de residencia de 20 minutos, sin control planificado el controlador PI solo podía ajustarse con una ganancia de 0,16. Al aplicar un caracterizador del proceso, ¿a qué valor pudo aumentarse la ganancia del controlador?",
+      "options": [
+        "0,5",
+        "1,6",
+        "7",
+        "20"
+      ],
+      "correct": 2,
+      "explanation": "Sin control planificado, la ganancia del controlador PI se limitaba a 0,16 porque un valor mayor volvería inestable el proceso no lineal de pH; al aplicar un caracterizador del proceso (inverso de la variación del pH), el control planificado permitió aumentar la ganancia a un valor de 7, mejorando la rapidez y uniformidad de la recuperación ante disminuciones de carga de ácido. Confundir este valor con el tiempo de residencia de 20 minutos (opción D) es un error típico, ya que ambos números aparecen en el mismo ejemplo pero representan magnitudes distintas.",
+      "difficulty": 2,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 5, pág. 166",
+      "module": 8
+    },
+    {
+      "q": "¿Qué característica constructiva de los comprobadores de manómetros de peso muerto permite alcanzar un intervalo de calibración de hasta 5 años?",
+      "options": [
+        "El uso de pistones y cilindros de carburo de tungsteno",
+        "La incorporación de un microprocesador con autodiagnóstico",
+        "El empleo de aceite de silicona como fluido hidráulico",
+        "La certificación anual obligatoria por un laboratorio NIST"
+      ],
+      "correct": 0,
+      "explanation": "Las características principales de estos calibradores de peso muerto incluyen pistones y cilindros de carburo de tungsteno, material de alta dureza y estabilidad dimensional que permite un intervalo de calibración de hasta 5 años. La opción B describe una característica de los transmisores inteligentes, no del principio mecánico de flotación pistón-pesas del comprobador de peso muerto. El aceite de silicona (opción C) se emplea en los baños de temperatura para calibración térmica, no en los comprobadores de presión de peso muerto.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 90",
+      "module": 8
+    },
+    {
+      "q": "Un patrón de presión de gas genera 1.000 kPa, valor comprendido en el intervalo de 350 kPa a 1.750 kPa cuya incertidumbre expandida especificada es de ±2,6×10⁻⁵ de la lectura (k=2). ¿Cuál es la incertidumbre absoluta aproximada, en kPa, de esa presión generada?",
+      "options": [
+        "±0,0026 kPa",
+        "±0,026 kPa",
+        "±0,26 kPa",
+        "±2,6 kPa"
+      ],
+      "correct": 1,
+      "explanation": "La incertidumbre absoluta se calcula multiplicando el valor de la lectura por el coeficiente relativo especificado para ese intervalo: 1.000 kPa × 2,6×10⁻⁵ = 0,026 kPa. Un error común es desplazar la coma decimal y obtener resultados un orden de magnitud mayor o menor (opciones A o C). Esta incertidumbre extremadamente baja, con factor de cobertura k=2 (nivel de confianza del 95%), es propia de los patrones primarios de presión de gas usados como referencia metrológica.",
+      "difficulty": 3,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 91",
+      "module": 8
+    },
+    {
+      "q": "¿Qué rango aproximado de vacío y presión puede generar un calibrador de presión portátil mediante bomba manual, sustituto habitual del banco de pruebas de instrumentos?",
+      "options": [
+        "Vacíos de hasta -800 mbar y presiones de hasta 20 bar",
+        "Vacíos de hasta -50 mbar y presiones de hasta 2 bar",
+        "Únicamente presiones positivas de hasta 700 bar",
+        "Vacíos absolutos de 0 bar y presiones de hasta 1.000 bar"
+      ],
+      "correct": 0,
+      "explanation": "Los calibradores de presión portátiles constituyen un buen sustituto del banco de pruebas de instrumentos para presiones hasta 20 bar, y mediante una bomba manual pueden generar vacíos de hasta -800 mbar y presiones de hasta 20 bar, alcanzando una exactitud del ±0,05% de la lectura. La opción C es incorrecta porque estos calibradores portátiles cubren vacío y presión positiva moderada, distinto de las bombas manuales de hasta 700 bar para agua o aceite hidráulico, que son un equipo diferente. Los resultados pueden almacenarse y transferirse a un ordenador vía RS232, cumpliendo la norma ISO 9000.",
+      "difficulty": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 10, pág. 649",
+      "module": 8
+    },
+    {
+      "q": "¿Por qué los rotámetros, a diferencia de otros medidores de caudal, 'no pueden calibrarse' según la terminología técnica empleada en las fuentes?",
+      "options": [
+        "Porque son instrumentos obsoletos que ya no se fabrican industrialmente",
+        "Porque solo pueden comprobarse (verificarse su indicación), exceptuando la parte transmisora cuando la llevan incorporada",
+        "Porque su exactitud es siempre del 100% de fábrica y nunca presentan desviaciones",
+        "Porque requieren obligatoriamente un patrón NIST de caudal de gas para cualquier ajuste"
+      ],
+      "correct": 1,
+      "explanation": "Las fuentes son explícitas al señalar que los rotámetros no pueden calibrarse, sino que solamente pueden comprobarse, exceptuando la parte transmisora electrónica cuando el rotámetro la lleva incorporada, la cual sí admite ajuste de cero y span. Esta distinción entre 'calibrar' (ajustar) y 'comprobar' (verificar sin ajustar) es clave, ya que el elemento primario mecánico (tubo cónico y flotador) no dispone de tornillos de ajuste. La comprobación se realiza mediante métodos volumétrico, gravimétrico o de comparación con un rotámetro patrón, no mediante un patrón NIST de gas.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 95",
+      "module": 8
+    },
+    {
+      "q": "La fórmula de comprobación de rotámetros por el método volumétrico incluye un factor que relaciona la densidad del flotador de acero inoxidable (8,0) con la densidad relativa del líquido de proceso. ¿Cuál es el propósito técnico de este factor de corrección?",
+      "options": [
+        "Convertir el caudal medido en agua al caudal equivalente que tendría el mismo flotador con el líquido real de proceso, dado que el empuje varía con la densidad del fluido",
+        "Corregir únicamente el efecto de la temperatura ambiente sobre la escala graduada del rotámetro",
+        "Determinar el tiempo de llenado exacto de la bureta de precisión sin necesidad de cronómetro",
+        "Eliminar el error de paralaje al leer la posición del flotador en la escala"
+      ],
+      "correct": 0,
+      "explanation": "El factor que combina la densidad del líquido con la densidad del flotador convierte el caudal de agua medido en la prueba volumétrica (Qagua) al caudal equivalente que circularía con el líquido real de proceso, porque la posición de equilibrio del flotador depende del empuje hidrostático, que a su vez depende de la densidad relativa del fluido frente al flotador de acero inoxidable 316 (densidad 8,0). Este factor no corrige temperatura ambiente ni paralaje (opciones B y D), que son fuentes de error distintas. El valor obtenido debe coincidir con la posición que el flotador adoptó realmente durante el ensayo con agua.",
+      "difficulty": 2,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 95",
+      "module": 8
+    },
+    {
+      "q": "¿Qué característica particular presenta la calibración del medidor de caudal Coriolis según las fuentes técnicas?",
+      "options": [
+        "No tiene cálculos estándar de referencia y el estudio de su incertidumbre es puramente subjetivo",
+        "Requiere obligatoriamente un banco NIST de caudal de gas para su verificación",
+        "Se calibra exclusivamente comparándolo con un rotámetro patrón de la misma marca",
+        "Su exactitud depende únicamente del ajuste manual del tornillo de span"
+      ],
+      "correct": 0,
+      "explanation": "El medidor de Coriolis no tiene cálculos estándar de referencia y el estudio de su incertidumbre es puramente subjetivo, aunque es simple de operar y de bajo mantenimiento, con una exactitud del orden de ±0,2%. Esta particularidad lo distingue de medidores como el magnético, cuya exactitud sí se documenta mediante incertidumbres combinadas de linealidad, histéresis y repetibilidad claramente cuantificadas. No requiere un banco NIST de gas (opción B), sistema patrón usado para calibrar tubos Venturi, medidores de desplazamiento positivo, térmicos de caudal masa y de turbina, no medidores Coriolis.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 101",
+      "module": 8
+    },
+    {
+      "q": "La exactitud de ±0,5% especificada para un medidor magnético de caudal, ¿qué efectos combinados incluye según las fuentes técnicas?",
+      "options": [
+        "Únicamente el efecto de la temperatura del proceso",
+        "Los efectos combinados de linealidad, histéresis, repetibilidad e incertidumbre de la calibración",
+        "Solo la incertidumbre del patrón NIST empleado en fábrica",
+        "Exclusivamente el desgaste del electrodo interno del medidor"
+      ],
+      "correct": 1,
+      "explanation": "La exactitud de ±0,5% del medidor magnético de caudal incluye los efectos combinados de linealidad, histéresis, repetibilidad e incertidumbre de la calibración, es decir, es una cifra global que engloba varias fuentes de error simultáneamente. Confundir esta cifra con un único efecto, como la temperatura o el desgaste del electrodo (opciones A y D), ignora que la especificación de exactitud resume estadísticamente múltiples componentes normalmente evaluados por separado. La histéresis, en particular, representa la diferencia de lectura según el sentido ascendente o descendente de la variable medida.",
+      "difficulty": 2,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 101",
+      "module": 8
+    },
+    {
+      "q": "Según la norma NIST para la calibración óptima de medidores de caudal de líquidos en la industria petroquímica, ¿qué fluido de calibración se emplea?",
+      "options": [
+        "Agua destilada a temperatura ambiente",
+        "Un disolvente tipo MIL-C-7024C, llamado también disolvente Stoddard",
+        "Aceite de silicona certificado por AENOR",
+        "Nitrógeno líquido a -196 °C"
+      ],
+      "correct": 1,
+      "explanation": "La calibración óptima de medidores de caudal de líquidos en la industria petroquímica mediante la norma NIST se realiza con un fluido MIL-C-7024C, llamado también disolvente Stoddard (solvente tipo 2), utilizado en combustibles jet JP-4 y JP-5, en un margen de caudal de 0,19 a 5,7 l/min y temperatura controlada de 22,2 ± 0,5 °C. El agua destilada (opción A) se emplea en el sistema NIST específico para calibrar medidores de caudal de agua, un patrón distinto con su propio rango e incertidumbre. Los puntos de calibración con disolvente Stoddard son 10%, 20%, 35%, 50%, 75% y 100% de la escala, con incertidumbre de 0,01% al 95% de confianza.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 102",
+      "module": 8
+    },
+    {
+      "q": "Un lazo de control está constituido por un transmisor de presión (tiempo medio entre fallos de 250 días), un presostato de alarma (250 días), una válvula de solenoide (4.000 días) y una válvula todo-nada (2.500 días). Aplicando la regla del tiempo medio entre fallos del lazo como inversa de la suma de inversas de cada instrumento, ¿cuál es, aproximadamente, el tiempo medio entre fallos del lazo completo?",
+      "options": [
+        "58 días",
+        "116 días",
+        "250 días",
+        "2.500 días"
+      ],
+      "correct": 1,
+      "explanation": "El tiempo medio entre fallos del lazo se calcula como la inversa de la suma de las inversas de los tiempos medios de cada instrumento: 1 / [(1/250) + (1/250) + (1/4000) + (1/2500)] ≈ 116 días. Un error común es promediar directamente los cuatro valores o tomar el menor de ellos (250 días, opción C), lo que ignora que el fallo de cualquier elemento detiene el conjunto, por lo que el tiempo medio combinado siempre es menor que el del elemento individual menos fiable. Este cálculo, tomado directamente de la fuente, muestra por qué el transmisor y el presostato dominan la fiabilidad global del lazo.",
+      "difficulty": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 10, pág. 662",
+      "module": 8
+    },
+    {
+      "q": "¿Qué valores de resistencia caracterizan a la sonda de resistencia de platino Pt100, la más común en la industria?",
+      "options": [
+        "100 ohm a 0 °C y 138,4 ohm a 100 °C",
+        "25 ohm a 0 °C y 100 ohm a 100 °C",
+        "1.000 ohm a 0 °C y 1.384 ohm a 100 °C",
+        "0 ohm a 0 °C y 100 ohm a 100 °C"
+      ],
+      "correct": 0,
+      "explanation": "La sonda de resistencia de platino Pt100 se denomina así porque tiene una resistencia de 100 ohm a 0 °C, alcanzando 138,4 ohm a 100 °C según las tablas de resistencia estándar. Existen otras variantes con distinta resistencia nominal, como la Pt25 (25 ohm a 0 °C) o la Pt1000 (1.000 ohm a 0 °C), pero ninguna corresponde a los valores exactos de la Pt100 solicitados. Estos valores permiten construir las tablas de conversión usadas en los comprobadores de puente de Wheatstone y en los calibradores digitales de temperatura.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 114",
+      "module": 8
+    },
+    {
+      "q": "¿En qué rango de temperatura la deriva anual de una sonda Pt100 es especialmente pequeña, del orden de ±0,005 °C/año, frente al valor general de ±0,05 °C/año?",
+      "options": [
+        "Entre -200 °C y -100 °C",
+        "Entre 25 °C y 150 °C",
+        "Entre 500 °C y 850 °C",
+        "Entre 700 °C y 1.000 °C"
+      ],
+      "correct": 1,
+      "explanation": "Las sondas de resistencia Pt100 son muy estables gracias al proceso de fabricación que homogeneiza la estructura de cristal del hilo; la deriva general es de ±0,05 °C/año, pero dentro del margen de 25 a 150 °C esta deriva es tan pequeña como ±0,005 °C/año, un orden de magnitud menor. Las opciones con rangos por encima de 500 °C (C y D) exceden el margen típico descrito en la fuente para este valor mínimo de deriva. Es raro que las sondas presenten derivas fuera de estos márgenes; las averías más probables suelen ser cortocircuitos o interrupciones del circuito por vibraciones.",
+      "difficulty": 2,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 118",
+      "module": 8
+    },
+    {
+      "q": "Comparando las clases de exactitud normalizadas para sondas de resistencia (BS1904 y DIN), ¿cuál de las siguientes clases ofrece la MAYOR exactitud a 0 °C?",
+      "options": [
+        "Clase B de BS1904 (DIN 43760), ±0,3 °C a 0 °C",
+        "Clase A de BS1904, ±0,15 °C a 0 °C",
+        "Clase 1/10 DIN, ±0,03 °C a 0 °C",
+        "Todas las clases ofrecen exactamente la misma exactitud a 0 °C"
+      ],
+      "correct": 2,
+      "explanation": "De las clases citadas, la clase 1/10 DIN es la más exacta a 0 °C, con un error de solo ±0,03 °C (hasta ±0,12 °C a 100 °C), superando ampliamente a la clase A de BS1904 (±0,15 °C a 0 °C) y a la clase B (±0,3 °C a 0 °C, y ±0,8 °C a 100 °C), que es la más común y menos exigente. La opción D es incorrecta porque estas clases fueron definidas precisamente para diferenciar niveles de exactitud según la aplicación y el coste del sensor. Esta jerarquía es relevante al seleccionar una sonda patrón para calibración.",
+      "difficulty": 2,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 115",
+      "module": 8
+    },
+    {
+      "q": "La ecuación linealizada de una sonda de resistencia es Rt = R0(1 + αt), donde α = 0,003850 Ω·Ω⁻¹·°C⁻¹ y R0 = 100 Ω (Pt100). ¿Cuál es, aproximadamente, la variación de resistencia (ΔR) por cada grado Celsius de incremento de temperatura?",
+      "options": [
+        "0,00385 Ω/°C",
+        "0,385 Ω/°C",
+        "3,85 Ω/°C",
+        "38,5 Ω/°C"
+      ],
+      "correct": 1,
+      "explanation": "Derivando la ecuación linealizada Rt = R0(1 + αt) respecto a la temperatura, la variación de resistencia por grado es ΔR/Δt = R0 × α = 100 Ω × 0,003850 = 0,385 Ω/°C. Un error común es olvidar multiplicar por R0 y responder directamente el valor de α (0,00385, opción A). Este resultado es consistente con los datos tabulados de la Pt100, que pasa de 100 Ω a 0 °C a 138,4 Ω a 100 °C, es decir, un incremento de 38,4 Ω en 100 grados, equivalente a 0,384 Ω/°C, muy próximo al valor calculado con el coeficiente α.",
+      "difficulty": 3,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 119",
+      "module": 8
+    },
+    {
+      "q": "¿Cuál es la profundidad mínima de inserción recomendada de la vaina de una sonda de resistencia en el proceso para evitar una indicación errónea de temperatura?",
+      "options": [
+        "5 mm",
+        "25 mm",
+        "100 mm",
+        "250 mm"
+      ],
+      "correct": 1,
+      "explanation": "Se requiere un mínimo de 25 mm de exposición de la vaina en el proceso; si no se cumple, es probable que la sonda indique una temperatura errónea al verse afectada por el ambiente exterior que rodea la vaina, en lugar de reflejar fielmente la temperatura del fluido de proceso. Este es un motivo típico de mala indicación de temperatura, distinto de una avería del sensor como un cortocircuito o una interrupción del circuito. Cumplir esta profundidad mínima es una comprobación sencilla previa a sospechar de un fallo electrónico o de calibración del transmisor.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 118",
+      "module": 8
+    },
+    {
+      "q": "En el comprobador de puente de Wheatstone utilizado para calibrar sondas de resistencia, la resistencia R1 se hace variar en múltiplos de 10 (9x1, 9x10, 9x100, 9x1000). ¿Qué función cumple esta disposición en décadas dentro de la fórmula X = R1 · (R2/R3)?",
+      "options": [
+        "Permite ajustar la resistencia patrón R1 en pasos decimales amplios mientras la relación R2/R3 ajusta el múltiplo o submúltiplo fino de la medida, cubriendo un rango extenso de resistencias desconocidas",
+        "Sirve únicamente para compensar la temperatura ambiente del laboratorio de calibración",
+        "Elimina por completo la necesidad de conocer la tensión de excitación del puente Vex",
+        "Convierte automáticamente la lectura de resistencia en una señal de 4-20 mA"
+      ],
+      "correct": 0,
+      "explanation": "La disposición de R1 en décadas permite cubrir un amplio rango de valores de resistencia mediante pasos gruesos, mientras que la relación R2/R3, que varía típicamente entre 0,001 y 1000, ajusta el múltiplo o submúltiplo necesario para obtener la resistencia desconocida X = R1 × (R2/R3) con precisión. Esta combinación no está relacionada con la compensación de temperatura ambiente (opción B), que se gestiona por otros medios en los circuitos de medida. El puente de Wheatstone tampoco elimina la necesidad de conocer Vex cuando se calcula la tensión medida mediante la fórmula específica del circuito completo.",
+      "difficulty": 2,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 118",
+      "module": 8
+    },
+    {
+      "q": "¿En qué año y por quién fue descubierto el efecto físico en que se basa el funcionamiento de los termopares?",
+      "options": [
+        "Por Seebeck, en 1821",
+        "Por Wheatstone, en 1843",
+        "Por Ziegler y Nichols, en 1941",
+        "Por Van Dussen, en 1968"
+      ],
+      "correct": 0,
+      "explanation": "El termopar se basa en el efecto descubierto por Seebeck en 1821, consistente en la circulación de una corriente en un circuito cerrado formado por dos metales diferentes cuyas uniones (de medida y de referencia) se mantienen a distinta temperatura, generando una pequeña tensión continua proporcional a la diferencia de temperaturas. Wheatstone (opción B) es conocido por el puente de resistencias que lleva su nombre, empleado para calibrar sondas de resistencia, no termopares. Ziegler y Nichols (opción C) desarrollaron en 1941 los métodos de sintonización de controladores PID, un tema distinto del efecto termoeléctrico.",
+      "difficulty": 1,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 121",
+      "module": 8
+    },
+    {
+      "q": "Se verifica un termopar tipo J conectándolo a un potenciómetro de comprobación, que indica una f.e.m. de 38,113 mV. Un termómetro de vidrio situado en la caja del potenciómetro marca una temperatura ambiente (unión fría) de 20 °C, a la que corresponde, según la tabla del termopar tipo J, una f.e.m. de 1,019 mV. Sumando ambos valores y consultando la tabla de conversión, ¿qué temperatura debería indicar el termopar patrón si el termopar bajo prueba está en buen estado?",
+      "options": [
+        "20 °C",
+        "38,113 °C",
+        "39,132 °C",
+        "700 °C"
+      ],
+      "correct": 3,
+      "explanation": "El procedimiento exige sumar algebraicamente la f.e.m. leída en el potenciómetro (38,113 mV) con la f.e.m. correspondiente a la temperatura de la unión fría (1,019 mV a 20 °C), ya que la f.e.m. leída es menor en ese valor respecto a la que se obtendría si la unión fría estuviera a 0 °C: 38,113 + 1,019 = 39,132 mV. Consultando la tabla de conversión del termopar tipo J, este valor de f.e.m. corresponde a 700 °C, temperatura que debería marcar el termopar patrón de referencia si el termopar bajo prueba no está descalibrado. Confundir el resultado con la suma en milivoltios (39,132, opción C) en lugar de convertirla a temperatura mediante la tabla es el error típico en este procedimiento.",
+      "difficulty": 3,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 124",
       "module": 8
     }
   ]

@@ -11,9 +11,10 @@
         "Ley de Charles"
       ],
       "correct": 1,
-      "explanation": "La ley de inducción electromagnética de Faraday establece que la tensión inducida en un conductor que se mueve perpendicularmente a través de un campo magnético es proporcional a su velocidad [1, 2]. En el caso industrial, el fluido conductor actúa como el conductor móvil y los electrodos captan esta señal proporcional al caudal. Es un error conceptual común confundirla con la Ley de Ohm (Opción A), que rige la relación estática entre corriente y resistencia, pero no explica la generación de potencial por movimiento en un campo magnético.",
+      "explanation": "La ley de inducción electromagnética de Faraday establece que la tensión inducida en un conductor que se mueve perpendicularmente a través de un campo magnético es proporcional a su velocidad. En el caso industrial, el fluido conductor actúa como el conductor móvil y los electrodos captan esta señal proporcional al caudal. Es un error conceptual común confundirla con la Ley de Ohm (Opción A), que rige la relación estática entre corriente y resistencia, pero no explica la generación de potencial por movimiento en un campo magnético.",
       "difficulty": 1,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "En los medidores de caudal por presión diferencial, ¿cuál es la relación matemática fundamental entre el caudal (Q) y la presión diferencial (h)?",
@@ -24,9 +25,10 @@
         "No existe una relación matemática directa sin compensación de temperatura."
       ],
       "correct": 2,
-      "explanation": "En los elementos deprimógenos, la relación fundamental derivada del teorema de Bernoulli establece que el caudal volumétrico es proporcional a la raíz cuadrada de la presión diferencial generada (Q = K * √h). Una confusión típica es la opción A, ya que físicamente es la presión diferencial la que aumenta con el cuadrado del caudal, pero el instrumento receptor debe extraer la raíz para linealizar la medida [6, 7]. Por ello, los transmisores inteligentes suelen incorporar algoritmos de extracción de raíz cuadrada para entregar una señal lineal al sistema de control.",
+      "explanation": "En los elementos deprimógenos, la relación fundamental derivada del teorema de Bernoulli establece que el caudal volumétrico es proporcional a la raíz cuadrada de la presión diferencial generada (Q = K * √h). Una confusión típica es la opción A, ya que físicamente es la presión diferencial la que aumenta con el cuadrado del caudal, pero el instrumento receptor debe extraer la raíz para linealizar la medida. Por ello, los transmisores inteligentes suelen incorporar algoritmos de extracción de raíz cuadrada para entregar una señal lineal al sistema de control.",
       "difficulty": 1,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "¿Cuál es el principio de funcionamiento de un caudalímetro de vórtex?",
@@ -37,9 +39,10 @@
         "El desplazamiento de un pistón oscilante dentro de una cámara cilíndrica."
       ],
       "correct": 1,
-      "explanation": "El medidor de vórtex se basa en el efecto Von Karman, donde un cuerpo no aerodinámico interpuesto en la tubería genera torbellinos cuya frecuencia de desprendimiento es directamente proporcional a la velocidad del fluido [9, 10]. Según la expresión del número de Strouhal, esta frecuencia es constante para un amplio rango de números de Reynolds, permitiendo medir el caudal volumétrico con alta precisión [11, 12]. Se suele confundir con el medidor de placa de impacto (Opción A), el cual mide realmente la fuerza dinámica o energía cinética contra un disco y no la frecuencia de oscilaciones del fluido [13, 14].",
+      "explanation": "El medidor de vórtex se basa en el efecto Von Karman, donde un cuerpo no aerodinámico interpuesto en la tubería genera torbellinos cuya frecuencia de desprendimiento es directamente proporcional a la velocidad del fluido. Según la expresión del número de Strouhal, esta frecuencia es constante para un amplio rango de números de Reynolds, permitiendo medir el caudal volumétrico con alta precisión. Se suele confundir con el medidor de placa de impacto (Opción A), el cual mide realmente la fuerza dinámica o energía cinética contra un disco y no la frecuencia de oscilaciones del fluido.",
       "difficulty": 1,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "Al comparar elementos primarios de presión diferencial, ¿cuál es el orden correcto de pérdida de carga permanente, de mayor a menor pérdida?",
@@ -50,9 +53,10 @@
         "Tobera > Placa orificio > Tubo Venturi"
       ],
       "correct": 2,
-      "explanation": "El orden de pérdida de carga permanente, de mayor a menor, es placa orificio, tobera y tubo Venturi, debido al grado de recuperación de presión que permite el perfil geométrico de cada elemento [7, 15]. Mientras que el orificio provoca una contracción brusca con pérdidas de hasta el 85%, el tubo Venturi está diseñado con conos de entrada y salida suaves que minimizan la turbulencia, reduciendo la pérdida al 10-20% de la presión diferencial [7, 16]. Un error frecuente es pensar que el Venturi pierde más presión por ser un equipo de mayor tamaño (Opción A), ignorando que su diseño aerodinámico es el que optimiza la eficiencia energética.",
+      "explanation": "El orden de pérdida de carga permanente, de mayor a menor, es placa orificio, tobera y tubo Venturi, debido al grado de recuperación de presión que permite el perfil geométrico de cada elemento. Mientras que el orificio provoca una contracción brusca con pérdidas de hasta el 85%, el tubo Venturi está diseñado con conos de entrada y salida suaves que minimizan la turbulencia, reduciendo la pérdida al 10-20% de la presión diferencial. Un error frecuente es pensar que el Venturi pierde más presión por ser un equipo de mayor tamaño (Opción A), ignorando que su diseño aerodinámico es el que optimiza la eficiencia energética.",
       "difficulty": 2,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "¿Qué característica diferencia principalmente al caudalímetro ultrasónico Doppler del de tiempo de tránsito?",
@@ -63,9 +67,10 @@
         "El Doppler no requiere contacto con el fluido, mientras que el de tiempo de tránsito sí."
       ],
       "correct": 1,
-      "explanation": "La principal diferencia técnica es que el caudalímetro Doppler requiere obligatoriamente que el fluido contenga partículas en suspensión o burbujas de gas para reflejar las ondas ultrasónicas y medir el corrimiento de frecuencia [17, 18]. Por el contrario, el medidor de tiempo de tránsito se utiliza preferentemente en fluidos limpios, midiendo la diferencia de tiempo entre pulsos que viajan a favor y en contra de la corriente [19, 20]. Es un error común la opción D, ya que ambos sistemas pueden diseñarse para montaje exterior mediante abrazaderas (clamp-on), por lo que el método de contacto no es el factor que los distingue físicamente [20, 21].",
+      "explanation": "La principal diferencia técnica es que el caudalímetro Doppler requiere obligatoriamente que el fluido contenga partículas en suspensión o burbujas de gas para reflejar las ondas ultrasónicas y medir el corrimiento de frecuencia. Por el contrario, el medidor de tiempo de tránsito se utiliza preferentemente en fluidos limpios, midiendo la diferencia de tiempo entre pulsos que viajan a favor y en contra de la corriente. Es un error común la opción D, ya que ambos sistemas pueden diseñarse para montaje exterior mediante abrazaderas (clamp-on), por lo que el método de contacto no es el factor que los distingue físicamente.",
       "difficulty": 2,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "¿Cuál es la principal ventaja de un medidor de Coriolis frente a un sistema de medición volumétrica compensado?",
@@ -76,9 +81,10 @@
         "Permite medir caudales de gases a velocidades mucho mayores que el sonido."
       ],
       "correct": 1,
-      "explanation": "El medidor de Coriolis se basa en el teorema homónimo para determinar el caudal masa de forma directa mediante la fuerza de inercia generada en un tubo en vibración, lo que lo hace intrínsecamente independiente de las variaciones en la densidad, presión y viscosidad del fluido [1, 2]. Esta es su principal ventaja técnica frente a los sistemas volumétricos compensados que dependen de sensores externos para inferir la masa a través de cálculos secundarios. Una confusión frecuente es considerarlo una opción económica de instalar (Opción A), cuando en realidad las fuentes lo sitúan como un instrumento de coste elevado debido a su complejidad y requisitos de diseño [4, 5].",
+      "explanation": "El medidor de Coriolis se basa en el teorema homónimo para determinar el caudal masa de forma directa mediante la fuerza de inercia generada en un tubo en vibración, lo que lo hace intrínsecamente independiente de las variaciones en la densidad, presión y viscosidad del fluido. Esta es su principal ventaja técnica frente a los sistemas volumétricos compensados que dependen de sensores externos para inferir la masa a través de cálculos secundarios. Una confusión frecuente es considerarlo una opción económica de instalar (Opción A), cuando en realidad las fuentes lo sitúan como un instrumento de coste elevado debido a su complejidad y requisitos de diseño.",
       "difficulty": 2,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "Un transmisor inteligente de presión diferencial mejora la rangeabilidad de una placa orificio típica. Según los textos técnicos, ¿cuál es el incremento estándar conseguido?",
@@ -89,9 +95,10 @@
         "La rangeabilidad no cambia, solo mejora la exactitud del ±2% al ±0.1%."
       ],
       "correct": 1,
-      "explanation": "De acuerdo con los textos técnicos, el uso de transmisores inteligentes aplicados a elementos deprimógenos permite mejorar la rangeabilidad o dinámica de medida desde una relación clásica de 3:1 en placas de orificio convencionales hasta una relación de 10:1 manteniendo la exactitud del ±1% [6, 7]. Esta mejora es posible gracias a la capacidad de procesamiento digital y compensación de no linealidades que aporta el microprocesador del instrumento. Es común confundir este incremento estándar con el de una placa de orificio variable, la cual puede alcanzar una gama de 50:1 (Opción A) mediante un sistema servomotor que posiciona mecánicamente la placa.",
+      "explanation": "De acuerdo con los textos técnicos, el uso de transmisores inteligentes aplicados a elementos deprimógenos permite mejorar la rangeabilidad o dinámica de medida desde una relación clásica de 3:1 en placas de orificio convencionales hasta una relación de 10:1 manteniendo la exactitud del ±1%. Esta mejora es posible gracias a la capacidad de procesamiento digital y compensación de no linealidades que aporta el microprocesador del instrumento. Es común confundir este incremento estándar con el de una placa de orificio variable, la cual puede alcanzar una gama de 50:1 (Opción A) mediante un sistema servomotor que posiciona mecánicamente la placa.",
       "difficulty": 3,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "Si un lazo de control de caudal con placa orificio está operando al 100% de su capacidad con una presión diferencial de 100 pulgadas de agua, ¿cuál será la presión diferencial detectada si el caudal real cae al 50%?",
@@ -102,9 +109,10 @@
         "10 pulgadas de agua"
       ],
       "correct": 2,
-      "explanation": "El funcionamiento de una placa orificio se rige por la relación matemática Q = K √(h), donde el caudal es proporcional a la raíz cuadrada de la presión diferencial [10, 11]. Para el desarrollo numérico: si el caudal original Q_1 es 1 y la presión h_1 es 100, al caer el caudal al 50% (Q_2 = 0,5), la nueva presión h_2 se despeja como (Q_2 / Q_1)^2 \times h_1, resultando en (0,5)^2 \times 100 = 0,25 \times 100 = 25 pulgadas de agua. Un error conceptual típico es elegir la opción A (50), asumiendo una relación lineal inexistente, la cual solo se presenta en la señal de salida si el instrumento receptor incorpora un extractor de raíz cuadrada [11, 12].",
+      "explanation": "El funcionamiento de una placa orificio se rige por la relación matemática Q = K √(h), donde el caudal es proporcional a la raíz cuadrada de la presión diferencial. Para el desarrollo numérico: si el caudal original Q_1 es 1 y la presión h_1 es 100, al caer el caudal al 50% (Q_2 = 0,5), la nueva presión h_2 se despeja como (Q_2 / Q_1)^2 \times h_1, resultando en (0,5)^2 \times 100 = 0,25 \times 100 = 25 pulgadas de agua. Un error conceptual típico es elegir la opción A (50), asumiendo una relación lineal inexistente, la cual solo se presenta en la señal de salida si el instrumento receptor incorpora un extractor de raíz cuadrada.",
       "difficulty": 3,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "En el contexto de un medidor térmico Thomas para gases, ¿cuál es la relación que permite determinar el caudal masa (m)?",
@@ -115,9 +123,10 @@
         "Depende exclusivamente de la viscosidad cinemática y el número de Reynolds."
       ],
       "correct": 1,
-      "explanation": "El medidor térmico Thomas fundamenta su medida en la elevación de temperatura del fluido, donde el caudal masa (m) se determina mediante la ecuación Q = m · c_e · (t_2 - t_1), lo que despejado resulta en m = Q / [c_e · (t_2 - t_1)]. Por tanto, la masa es proporcional al calor transferido dividido por el producto del calor específico y la diferencia de temperaturas detectada por las sondas de resistencia. Una confusión usual es asociar esta medida con la frecuencia de remolinos (Opción A), principio físico que corresponde exclusivamente a los medidores de tipo vórtex basados en el efecto Von Karman [15, 16].",
+      "explanation": "El medidor térmico Thomas fundamenta su medida en la elevación de temperatura del fluido, donde el caudal masa (m) se determina mediante la ecuación Q = m · c_e · (t_2 - t_1), lo que despejado resulta en m = Q / [c_e · (t_2 - t_1)]. Por tanto, la masa es proporcional al calor transferido dividido por el producto del calor específico y la diferencia de temperaturas detectada por las sondas de resistencia. Una confusión usual es asociar esta medida con la frecuencia de remolinos (Opción A), principio físico que corresponde exclusivamente a los medidores de tipo vórtex basados en el efecto Von Karman.",
       "difficulty": 3,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "En los medidores de caudal de desplazamiento positivo, ¿de qué factor depende principalmente la exactitud de la medición según los textos técnicos?",
@@ -128,9 +137,10 @@
         "De la frecuencia de los vórtices generados por el cuerpo de impacto"
       ],
       "correct": 1,
-      "explanation": "En los medidores de desplazamiento positivo, la exactitud depende críticamente de los huelgos o espacios libres entre las piezas móviles y fijas, los cuales se reducen mediante una alta calidad de mecanización y aumentando el tamaño del instrumento para minimizar las fugas internas. Al contar o integrar volúmenes separados de líquido en cámaras estancas, cualquier imperfección mecánica permite el paso de fluido no contabilizado, afectando la fidelidad de la totalización. Es un error común confundir este principio mecánico con el de los medidores de vórtex (Opción D), que dependen de la frecuencia de torbellinos generados por un cuerpo de impacto y no de la precisión del sellado volumétrico [15, 16].",
+      "explanation": "En los medidores de desplazamiento positivo, la exactitud depende críticamente de los huelgos o espacios libres entre las piezas móviles y fijas, los cuales se reducen mediante una alta calidad de mecanización y aumentando el tamaño del instrumento para minimizar las fugas internas. Al contar o integrar volúmenes separados de líquido en cámaras estancas, cualquier imperfección mecánica permite el paso de fluido no contabilizado, afectando la fidelidad de la totalización. Es un error común confundir este principio mecánico con el de los medidores de vórtex (Opción D), que dependen de la frecuencia de torbellinos generados por un cuerpo de impacto y no de la precisión del sellado volumétrico.",
       "difficulty": 1,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "¿Cuál es el requisito mínimo de conductividad eléctrica que debe poseer un fluido para que un medidor magnético de caudal industrial pueda realizar una lectura válida?",
@@ -143,7 +153,8 @@
       "correct": 2,
       "explanation": "El requisito de conductividad eléctrica para medidores magnéticos industriales se fundamenta en la ley de inducción de Faraday, la cual exige que el fluido actúe como un conductor móvil. Según las fuentes de Creus, se establece un mínimo técnico de 3,0 μS/cm para que el instrumento capte una señal de tensión fiable y estable. Es un error conceptual común confundir este valor con los 0,3 μS/cm mencionados en aplicaciones especiales, ya que estos últimos requieren obligatoriamente de preamplificadores o acondicionadores de señal adicionales para discriminar el ruido eléctrico.",
       "difficulty": 1,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "De acuerdo con las normas de instalación para medidores de vórtex, ¿qué longitud mínima de tramo recto se recomienda aguas arriba para asegurar la formación correcta de los perfiles de velocidad?",
@@ -156,7 +167,8 @@
       "correct": 2,
       "explanation": "Para asegurar una medición precisa basada en el efecto Von Karman, los medidores de vórtex requieren un perfil de velocidades del flujo totalmente desarrollado y libre de turbulencias. Los textos técnicos prescriben específicamente una longitud mínima de 15 diámetros de tubería recta aguas arriba y 5 diámetros aguas abajo para garantizar la formación estable de los torbellinos. Una confusión habitual es aplicar la norma de 10 diámetros (opción B), que es válida para enderezadores de venas o algunas configuraciones de placas de orificio, pero insuficiente para la sensibilidad dinámica de un sensor de vórtex.",
       "difficulty": 2,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "En la medición de caudal con placa de orificio, ¿qué configuración de tomas de presión sitúa la toma anterior y posterior a 2 ½ Ø y 8 Ø de la tubería, respectivamente, para aumentar el intervalo de medida?",
@@ -169,7 +181,8 @@
       "correct": 3,
       "explanation": "La configuración de tomas en la tubería (pipe taps) se caracteriza por ubicar la toma anterior a 2 ½ diámetros y la posterior a 8 diámetros de la tubería respecto al elemento deprimógeno. De acuerdo con la fuente, este montaje se utiliza específicamente cuando se desea aumentar el intervalo de medida (rangeabilidad) al situar las tomas en puntos de recuperación de presión menos sensibles. Es frecuente confundirlas con las tomas en la brida (flange taps), las cuales se instalan a una pulgada de distancia de la placa por comodidad mecánica, pero no ofrecen el mismo efecto en la amplitud del campo de medida.",
       "difficulty": 2,
-      "module": 3
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
     },
     {
       "q": "Un medidor de placa de orificio fue calculado para una densidad de diseño (ρc) de 1000 kg/m³. Si durante la operación real el fluido presenta una densidad (ρr) de 810 kg/m³, ¿cuál es el factor de corrección numérico aproximado que debe aplicarse al caudal leído (Qc) para obtener el caudal real (Qr)?",
@@ -181,6 +194,427 @@
       ],
       "correct": 2,
       "explanation": "La corrección del caudal en una placa de orificio debido a variaciones de densidad se rige por la fórmula Qr = Qc * √(ρc / ρr), derivada de la relación de raíz cuadrada entre la presión diferencial y el caudal. El desarrollo numérico consiste en dividir la densidad de diseño entre la real (1000 / 810 = 1,2345) y extraer la raíz cuadrada de dicho cociente (√1,2345 ≈ 1,111). Un error típico es aplicar un factor lineal de 0,900 (opción B) al omitir la raíz cuadrada, ignorando que físicamente la presión diferencial generada por la placa es proporcional al cuadrado de la velocidad del fluido.",
+      "difficulty": 3,
+      "module": 3,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4 (Medidas de caudal)"
+    },
+    {
+      "q": "En las mismas condiciones de servicio, ¿qué ventaja ofrece la tobera frente a la placa-orificio?",
+      "options": [
+        "Permite caudales del 60% superiores a los de la placa-orificio",
+        "Tiene un coste de instalación menor que el de la placa-orificio",
+        "Elimina la necesidad de tomas de presión aguas arriba y aguas abajo",
+        "Su exactitud es siempre inferior a la de la placa-orificio"
+      ],
+      "correct": 0,
+      "explanation": "Según Creus, en las mismas condiciones de servicio la tobera permite caudales del 60% superiores a los de la placa-orificio, con una pérdida de carga del 30% al 80% de la presión diferencial y una exactitud del ±0,95% al ±1,5%. Es un error común pensar que la tobera es más económica (opción B): el texto indica justamente lo contrario, ya que su coste es de 8 a 16 veces el de un diafragma debido a su fabricación más compleja. Ambos elementos requieren tomas de presión diferencial para funcionar, y su exactitud es en realidad mejor que la de la placa (±1% a ±2%), no peor.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 117",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "¿Qué relación geométrica caracteriza la restricción en V del medidor de caudal de cuña (wedge)?",
+      "options": [
+        "La relación H/D, siendo H la altura de la abertura en la restricción y D el diámetro de la tubería",
+        "La relación entre el área del cono y el área de la tubería",
+        "El ángulo de inclinación del cono respecto al eje de la tubería",
+        "La relación entre el diámetro del orificio de purga y el diámetro de la tubería"
+      ],
+      "correct": 0,
+      "explanation": "El medidor de cuña tiene una restricción en V caracterizada por la relación H/D (H = altura de la abertura en la restricción, D = diámetro de la tubería), de forma semejante a la relación beta = d/D de la placa-orificio. Con esta relación se alcanza una exactitud de hasta ±0,5%, y hasta ±3% a ±5% cuando la densidad del fluido (lodos) varía. La opción B corresponde en realidad al medidor de cono en V, un elemento distinto que optimiza el perfil de velocidades mediante un cono centrado, lo que constituye una confusión típica entre ambos elementos empleados para fluidos difíciles.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 118",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "¿Qué magnitud física mide directamente el tubo Pitot?",
+      "options": [
+        "La presión estática absoluta del fluido",
+        "La presión dinámica, proporcional al cuadrado de la velocidad",
+        "La presión diferencial generada por un estrechamiento de la tubería",
+        "La frecuencia de los torbellinos generados aguas abajo"
+      ],
+      "correct": 1,
+      "explanation": "El tubo Pitot, ideado por Henri de Pitot, mide la diferencia entre la presión total y la presión estática, es decir, la presión dinámica, que resulta proporcional al cuadrado de la velocidad del fluido en el eje del impacto. Con el eje del tubo centrado en la tubería se considera un coeficiente de velocidad C = 0,9, obteniéndose una exactitud del ±2% al ±5%. La opción D es un error frecuente porque confunde este principio con el de los medidores de vórtex o remolino, que se basan en la frecuencia de desprendimiento de torbellinos y no en una diferencia de presiones de impacto.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 138",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "¿En qué principio físico se basa el medidor de caudal de codo (elbow meter)?",
+      "options": [
+        "En la fuerza centrífuga ejercida por el fluido a su paso por un codo de la tubería",
+        "En el efecto Von Karman generado por un cuerpo no aerodinámico",
+        "En la inducción electromagnética de Faraday",
+        "En la elevación de temperatura de un fluido al paso por un punto caliente"
+      ],
+      "correct": 0,
+      "explanation": "El medidor de codo se basa en la fuerza centrífuga que ejerce el fluido al circular por un codo de la tubería, fuerza proporcional al producto de la densidad del líquido por el cuadrado de la velocidad e inversamente proporcional al radio del codo; situando dos tomas de presión a 45 grados en el codo se obtiene una diferencia de presiones que permite deducir el caudal. Su coste es bajo y su pérdida de carga es solo la propia del codo, pero al ser la diferencia de presiones pequeña su exactitud también lo es, por lo que se reserva a aplicaciones donde otros sistemas resultarían muy costosos, como la detección de altas velocidades en roturas de tubería en la industria nuclear. La opción B es un error típico porque atribuye a este medidor el principio de los medidores de vórtex, que es un elemento primario completamente distinto.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 140",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "En la instalación de un transmisor de presión diferencial, ¿cuál es la doble misión del conjunto de tres válvulas denominado 'manifold'?",
+      "options": [
+        "Amplificar la señal eléctrica y filtrar el ruido de alta frecuencia",
+        "Aislar el instrumento del proceso para mantenimiento e igualar las presiones en las dos cámaras en la puesta en marcha",
+        "Medir la temperatura del fluido y compensar la densidad automáticamente",
+        "Extraer la raíz cuadrada de la presión diferencial antes de transmitirla"
+      ],
+      "correct": 1,
+      "explanation": "El manifold de tres válvulas, instalado entre las tomas del elemento deprimógeno y el transmisor, cumple una doble misión: aislar el instrumento del proceso para permitir su mantenimiento y, mediante la válvula de igualación, equilibrar las presiones en las dos cámaras del instrumento durante la puesta en marcha de la instalación. La opción D es una confusión común porque la extracción de raíz cuadrada es una función del transmisor inteligente o del integrador, no de las válvulas del manifold, cuya función es exclusivamente hidráulica.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 141",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "¿Qué función realizan los integradores neumáticos en un lazo de medida de caudal por presión diferencial?",
+      "options": [
+        "Reciben la señal de transmisión, extraen la raíz cuadrada y totalizan el caudal en un contador de 5-6 dígitos",
+        "Generan directamente la presión diferencial a partir del caudal medido",
+        "Convierten la señal analógica en un protocolo digital HART sin totalizar",
+        "Corrigen automáticamente la viscosidad del fluido medido"
+      ],
+      "correct": 0,
+      "explanation": "Los integradores neumáticos reciben la señal de transmisión típica (0,2-1 bar o 3-15 psi), extraen la raíz cuadrada de dicha señal -necesaria porque el caudal varía con la raíz de la presión diferencial- y totalizan continuamente el resultado en un contador mecánico de 5-6 dígitos. Esto se diferencia de los integradores electrónicos o digitales, que integran un valor analógico o un número de pulsos según una base de tiempo seleccionada, empleando algoritmos triangular, cuadrado, trapezoidal o de pulsos. La opción C confunde la función de integración/totalización con la simple comunicación digital, que es una capacidad añadida de los transmisores modernos pero no sustituye al integrador.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 143",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "¿Quién inventó el primer rotámetro (elemento de área variable con flotador giratorio) y en qué año?",
+      "options": [
+        "Henri de Pitot en 1732",
+        "Kart Kueppers en 1908",
+        "Christian Doppler en 1842",
+        "Gaspard-Gustave de Coriolis en 1835"
+      ],
+      "correct": 1,
+      "explanation": "El primer rotámetro, es decir, el primer elemento de área variable con flotador giratorio, fue inventado en 1908 por Kart Kueppers en Aachen, quedando protegido mediante la patente alemana 215225. Los otros nombres corresponden a otros hitos de la medida de caudal tratados en el mismo capítulo: Henri de Pitot ideó el tubo que lleva su nombre en el siglo XVIII, Christian Doppler describió el efecto que fundamenta los caudalímetros ultrasónicos Doppler en 1842, y Gaspard-Gustave de Coriolis formuló el teorema en que se basan los medidores másicos de Coriolis. Confundir estos hitos históricos es un error común al estudiar el capítulo de medidas de caudal.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 144",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "¿Cuál es la rangeabilidad típica (relación entre caudal máximo y mínimo medible conservando la exactitud) de un rotámetro convencional?",
+      "options": [
+        "3 a 1",
+        "10 a 1",
+        "50 a 1",
+        "100 a 1"
+      ],
+      "correct": 1,
+      "explanation": "Según Creus, la rangeabilidad de los rotámetros, es decir, la relación entre el valor máximo y el valor mínimo del caudal medible conservando la exactitud del aparato, es de 10 a 1. Este valor es superior al 3 a 1 clásico de la placa-orificio, pero inferior al 100 a 1 que puede alcanzar un medidor magnético con microprocesador (opción D) o al 50 a 1 de una placa-orificio variable (opción C), valores que corresponden a otros elementos primarios y son una confusión frecuente entre estudiantes.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 148",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "Frente a los demás tipos de vertederos, ¿qué característica distingue al vertedero triangular o en V?",
+      "options": [
+        "Es el más económico de construir de todos los vertederos",
+        "A igualdad de tamaño, su campo de medida es más amplio que el de los otros vertederos",
+        "Solo puede emplearse en canales con sedimentos",
+        "Su fórmula de caudal es independiente de la altura de lámina H"
+      ],
+      "correct": 1,
+      "explanation": "El vertedero triangular o en V consiste en una placa con un corte en V de vértice hacia abajo y, a igualdad de tamaño, su campo de medida es más amplio que el de los otros vertederos, cubriendo un intervalo de 0-30 m3/h a 0-2.300 m3/h con la fórmula empírica Q = 1,33 H^2,475 para un vertedero de 90 grados. La opción A describe en realidad al vertedero rectangular, que es el más simple y económico de construir; y la opción D es incorrecta porque, como en todos los vertederos, el caudal depende directamente de la altura de lámina H elevada a un exponente característico del tipo de vertedero.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 154",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "En el medidor de placa (fuerza de impacto), ¿cuál es el valor típico de la constante experimental Cd (coeficiente de rozamiento del disco) para placas planas?",
+      "options": [
+        "0,07",
+        "0,5",
+        "1,28",
+        "3,14"
+      ],
+      "correct": 2,
+      "explanation": "En el medidor de placa, la fuerza de impacto sobre el disco sigue una ecuación proporcional a Cd por la energía cinética del fluido y por el área de la placa, y el valor típico de la constante Cd es 1,28 para placas planas, mientras que para esferas el rango es de 0,07 a 0,5. Confundir estos valores (opciones A y B) es habitual porque ambos corresponden a la misma fórmula pero para una geometría distinta del elemento sensor (esfera en lugar de placa plana). La señal transmitida por este instrumento es proporcional a la raíz cuadrada de la fuerza de impacto, siendo independiente de la temperatura y de la presión estática del fluido.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 162",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "¿Qué solución permite eliminar la influencia de las corrientes y tensiones eléctricas parásitas de la planta sobre un medidor magnético de caudal, sin necesidad de reajustes tras cada cambio en las condiciones de ruido?",
+      "options": [
+        "Aumentar la frecuencia de excitación de las bobinas de campo por encima de 1 MHz",
+        "Introducir un tercer electrodo en el medidor y conectarlo a masa",
+        "Sustituir el revestimiento interior por uno de titanio",
+        "Reducir la conductividad del fluido medido"
+      ],
+      "correct": 1,
+      "explanation": "La solución consiste en introducir un tercer electrodo en el medidor y conectarlo a masa, de modo que la unidad de medida queda puesta a tierra respecto a las señales de ruido generadas por motores y líneas eléctricas de la planta, resultando completamente insensible a ellas sin necesidad de ajustes de posición cada vez que varían las condiciones. La opción D es contraproducente, ya que reducir la conductividad del fluido dificulta la medida, pues el medidor magnético exige un mínimo de conductividad eléctrica para funcionar, en vez de eliminar el ruido eléctrico externo.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 170",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "¿Cuáles son las condiciones típicas de aplicación del medidor de desplazamiento positivo de disco basculante (nutating disc)?",
+      "options": [
+        "Caudales de agua fría, agua caliente, aceite y líquidos alimenticios, con presión máxima de 100 bar y caudal máximo de 600 l/min",
+        "Grandes caudales de crudos viscosos de hasta 64.000 l/min en la industria petroquímica",
+        "Medida de caudales de gas seco a alta presión, superiores a 900 bar",
+        "Medida bidireccional de caudal con pérdida de carga prácticamente nula"
+      ],
+      "correct": 0,
+      "explanation": "El medidor de disco basculante, empleado originalmente en aplicaciones domésticas para agua, se utiliza industrialmente en la medición de caudales de agua fría, agua caliente, aceite y líquidos alimenticios, con una exactitud del ±1% al ±5%, una presión máxima de 100 bar y un caudal máximo de 600 l/min en pequeños tamaños de tubería. La opción B describe en cambio la aplicación típica de los medidores rotativos cicloidales, que sí manejan crudos viscosos en rangos mucho mayores, lo cual constituye una confusión habitual entre los distintos tipos de medidores de desplazamiento positivo.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 175",
+      "difficulty": 1,
+      "module": 3
+    },
+    {
+      "q": "¿Por qué el tubo Dall, una combinación del tubo Venturi y la placa-orificio, cayó en desuso como elemento deprimógeno?",
+      "options": [
+        "Porque en 1970 se descubrió que su coeficiente de descarga era función del número de Reynolds, con un error de hasta el 12% en la medida del caudal",
+        "Porque su pérdida de carga permanente superaba el 85% de la presión diferencial",
+        "Porque no podía fabricarse en tamaños superiores a 2 pulgadas",
+        "Porque requería electrodos de platino para su fabricación"
+      ],
+      "correct": 0,
+      "explanation": "El tubo Dall, introducido en los años 1960, se caracterizaba por un ángulo brusco en su parte central que magnificaba la presión diferencial respecto al tubo Venturi; sin embargo, en 1970 se descubrió que su coeficiente de descarga era una función del número de Reynolds y que presentaba un error en la medida del caudal de un 12%, lo que hizo que cayera en desuso al no poder predecirse con suficiente exactitud su rendimiento. La opción B describe en realidad a la placa-orificio, que sí tiene la mayor pérdida de carga permanente (hasta el 85%) entre los elementos deprimógenos clásicos, muy superior a la del Venturi o la tobera.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 118",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "Comparado con la placa-orificio clásica, ¿qué ventaja de instalación ofrece el medidor de cono en V?",
+      "options": [
+        "Requiere solo de 0 a 3 diámetros de tubería recta aguas arriba y de 0 a 1 diámetro aguas abajo, gracias a que el cono optimiza el perfil de velocidades",
+        "No necesita ningún tramo recto de tubería en ninguna condición de servicio",
+        "Debe instalarse siempre en posición vertical con flujo ascendente",
+        "Exige tramos rectos de 44 diámetros aguas arriba, igual que la placa-orificio en condiciones críticas"
+      ],
+      "correct": 0,
+      "explanation": "El medidor de cono en V tiene un cono centrado en la tubería que optimiza el perfil de velocidades del fluido al mezclar la alta velocidad del centro con la baja velocidad cercana a las paredes, lo que amortigua las pulsaciones y permite reducir los requisitos de tramo recto a solo 0-3 diámetros aguas arriba y 0-1 diámetro aguas abajo, muy inferiores a los 16-44 diámetros aguas arriba que puede exigir una placa-orificio. Su rangeabilidad de 10 a 1 (frente al clásico 3 a 1 de la placa-orificio) y su exactitud del ±0,5% con una repetibilidad del ±0,1% son otras ventajas asociadas a este mismo diseño.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 118",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "¿En qué aspecto principal mejora el tubo Annubar al tubo Pitot convencional?",
+      "options": [
+        "Ofrece una precisión mayor, del orden del ±1%, gracias a varios orificios de posición crítica que cubren anillos de área transversal igual",
+        "Elimina por completo la necesidad de una toma de presión estática",
+        "Solo puede emplearse en gases, nunca en líquidos",
+        "Su pérdida de carga es mayor, lo que mejora la señal captada"
+      ],
+      "correct": 0,
+      "explanation": "El tubo Annubar es una innovación del tubo Pitot que incorpora varios orificios de posición crítica, determinada por computador, a lo largo de un diámetro transversal de la tubería, cubriendo cada uno la presión total en un anillo de área transversal igual; esto le proporciona una precisión del orden del ±1%, superior al ±2%-±5% del Pitot simple, además de una baja pérdida de carga. Su aplicación no se limita a gases, pudiendo emplearse tanto en líquidos como en gases y para caudales tanto pequeños como grandes, por lo que la opción C es incorrecta.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 139",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "¿Cuál es la diferencia técnica clave entre un transmisor de presión diferencial de fuelle y uno de diafragma?",
+      "options": [
+        "El de diafragma separa las cámaras mediante diafragmas en lugar de fuelles, logrando un desplazamiento volumétrico casi nulo, mientras que el de fuelle requiere cámaras de condensación en la medida de vapor",
+        "El de fuelle es siempre neumático y el de diafragma siempre electrónico",
+        "El de diafragma no puede protegerse contra sobrecargas, a diferencia del de fuelle",
+        "El de fuelle emplea silicona como material del cuerpo y el de diafragma acero inoxidable como líquido de llenado"
+      ],
+      "correct": 0,
+      "explanation": "El transmisor de diafragma se diferencia del de fuelle en que la separación entre las dos cámaras de alta y baja presión se realiza mediante diafragmas en lugar de fuelles, lo que hace que el desplazamiento volumétrico sea prácticamente nulo; por ello, en la medida de caudales de vapor con transmisores de fuelle es necesario emplear cámaras de condensación para compensar los cambios de volumen de las cámaras, mientras que en los de diafragma esto no es necesario. La opción D invierte los materiales reales descritos por Creus: el cuerpo suele ser de acero al carbono, inoxidable o aluminio, el fuelle o diafragma de acero inoxidable 316, y el líquido de llenado silicona.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 141",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "Según las recomendaciones para sistemas de purga en elementos de presión diferencial, ¿qué caudal de fluido de purga debe circular de forma constante?",
+      "options": [
+        "0,6 cm3/s para líquidos y 60 cm3/s para gas",
+        "6 cm3/s para líquidos y 0,6 cm3/s para gas",
+        "60 l/min para líquidos y 6 l/min para gas",
+        "No existe un valor recomendado; depende únicamente de la presión de línea"
+      ],
+      "correct": 0,
+      "explanation": "Cuando los problemas de condensación, evaporación u obturación del elemento no pueden resolverse de otro modo, se emplea un sistema de purga cuyo fluido debe ser limpio, no reaccionar con el fluido medido y circular a un caudal bajo y constante de 0,6 cm3/s para líquidos y 60 cm3/s para gas, además de disponer de un sistema que impida la entrada de fluido de proceso en caso de fallo de la purga. Confundir estas magnitudes (opción B invierte los valores) es un error común, ya que ambos números aparecen juntos en el texto y solo se diferencian por el estado del fluido de purga.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 142",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "En un vertedero Parshall (Venturi) con una anchura de garganta de 200 mm, ¿qué condición debe cumplirse para que el caudal se considere de tipo 'libre'?",
+      "options": [
+        "Que la relación Hu/Hd sea menor de 0,6",
+        "Que la relación Hu/Hd sea mayor de 0,7",
+        "Que el caudal supere los 2.000 m3/h",
+        "Que la garganta tenga una anchura mínima de 300 mm"
+      ],
+      "correct": 0,
+      "explanation": "La condición de caudal libre en un vertedero Parshall se tiene cuando la relación entre las alturas de cresta en la parte plana y en la parte final del elemento (Hu/Hd) es menor de 0,6 para gargantas de hasta 230 mm, y menor de 0,7 para anchuras mayores de 300 mm; en la condición de caudal libre el flujo depende únicamente de Hu, mientras que relaciones mayores producen un caudal sumergido que depende tanto de Hu como de Hd y complica los cálculos de descarga. Como la garganta del enunciado mide 200 mm (menor de 230 mm), el límite aplicable es 0,6, no 0,7 como en la opción B, que corresponde a gargantas más anchas.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 155",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "¿Qué efecto tiene un aumento de la viscosidad del fluido por encima de 3-5 centistokes sobre un medidor de caudal de turbina?",
+      "options": [
+        "Reduce considerablemente el intervalo de medida del instrumento",
+        "Aumenta la rangeabilidad hasta 100 a 1",
+        "Mejora la exactitud del medidor hasta el ±0,05%",
+        "No tiene ningún efecto, ya que la turbina es inmune a la viscosidad"
+      ],
+      "correct": 0,
+      "explanation": "La turbina está limitada por la viscosidad del fluido, ya que esta modifica el perfil de velocidades a través de la tubería: en las paredes el fluido se mueve más lentamente que en el centro, de modo que las puntas de las palas no pueden girar a mayor velocidad; en general, para viscosidades superiores a 3-5 centistokes se reduce considerablemente el intervalo de medida del instrumento. La opción D es un error frecuente, ya que precisamente la sensibilidad a la viscosidad es una limitación característica y documentada de los medidores de turbina, a diferencia de otros elementos como los ultrasónicos multihaz.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 157",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "¿Cómo varía la exactitud de un transductor ultrasónico de tiempo de tránsito al aumentar el número de haces de medida?",
+      "options": [
+        "Un solo haz da ±2%-±3%; con dos haces se alcanza ±0,5%; con tres haces, usando software inteligente, se llega a ±0,3%",
+        "La exactitud es siempre ±0,3% independientemente del número de haces",
+        "Un mayor número de haces empeora la exactitud por interferencia entre señales",
+        "Solo existen configuraciones de un haz o de diez haces; no hay valores intermedios"
+      ],
+      "correct": 0,
+      "explanation": "Según Creus, los transductores ultrasónicos con un solo haz tienen una exactitud del ±2% al ±3% y un intervalo de medida de 20 a 1; con dos haces la exactitud alcanza el ±0,5%; y con tres haces, capaces de diferenciar el flujo laminar del turbulento mediante software inteligente, la exactitud llega al ±0,3%. Un transductor de cinco haces (diez sensores) se reserva para las condiciones más rigurosas de trasvase y medida de productos petrolíferos de alto valor, por lo que la opción D, que descarta configuraciones intermedias, es incorrecta.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 159",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "¿Por qué se desaconseja montar un sensor Doppler mediante abrazaderas externas (clamp-on) sobre tuberías de cobre, hormigón, plástico o fibra de vidrio?",
+      "options": [
+        "Porque las discontinuidades del material pueden afectar la medida, empeorando la exactitud hasta el ±20%",
+        "Porque estos materiales no permiten el paso de ninguna señal ultrasónica",
+        "Porque el método Doppler solo funciona con sensores instalados en contacto directo con el fluido",
+        "Porque estos materiales generan un campo magnético que interfiere con la señal"
+      ],
+      "correct": 0,
+      "explanation": "El montaje del sensor Doppler mediante abrazaderas externas se desaconseja en materiales como el cobre, el hormigón, el plástico y la fibra de vidrio porque las discontinuidades existentes en el propio material de la tubería pueden afectar la propagación y reflexión de la señal ultrasónica, haciendo que la exactitud, normalmente del ±2%, pueda empeorar hasta el ±20%. La opción D es un error de confusión con el principio de los medidores magnéticos de caudal, que sí se basan en campos magnéticos, mientras que el método Doppler es puramente acústico.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 161",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "En los medidores magnéticos de caudal, ¿qué ventaja presenta el sistema de alimentación con corriente continua pulsante frente a la alimentación con corriente alterna?",
+      "options": [
+        "Establece el cero durante cada ciclo de desexcitación de las bobinas, eliminando la deriva de cero y mejorando la exactitud hasta el ±0,5% con rangeabilidad 10:1",
+        "Responde con mayor rapidez que la alimentación en corriente alterna",
+        "Es el sistema más empleado, presente en el 15% de las instalaciones frente al 85% de la alimentación en corriente alterna",
+        "Permite eliminar por completo la necesidad de conductividad eléctrica del fluido"
+      ],
+      "correct": 0,
+      "explanation": "El sistema de alimentación con corriente continua pulsante, presente en el 85% de las instalaciones, toma una medida de la señal generada cuando las bobinas están excitadas y otra cuando están desexcitadas, restando el ruido de la instalación y estableciendo el cero en cada ciclo, lo que elimina la deriva de cero y mejora la exactitud hasta el ±0,5% dentro de una rangeabilidad de 10:1. Su principal limitación, precisamente, es una respuesta más lenta (0,2 a 2 segundos) que la de la alimentación en corriente alterna, por lo que la opción B invierte la relación real entre ambos sistemas; la alimentación en corriente alterna, más rápida pero con deriva de cero, es la empleada en el 15% de las instalaciones, no en el 85% como afirma la opción C.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, págs. 164-165",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "¿Qué característica distintiva presenta el medidor de desplazamiento positivo tipo birrotor frente a otros medidores rotativos?",
+      "options": [
+        "Sus dos rotores giran sin contacto mecánico entre sí, sincronizados por engranajes helicoidales externos, lo que alarga su vida útil y facilita el mantenimiento",
+        "Utiliza dos lóbulos tipo Root engranados entre sí en contacto mecánico directo",
+        "Solo puede emplearse con gases, nunca con líquidos",
+        "Requiere una pérdida de carga mínima de 5 bar para funcionar correctamente"
+      ],
+      "correct": 0,
+      "explanation": "El sistema birrotor consiste en dos rotores que giran como únicos elementos móviles en la cámara de medida sin contacto mecánico entre sí, manteniendo su relación de giro mediante un conjunto de engranajes helicoidales totalmente cerrado y sin contacto con el líquido, lo que le da una vida útil larga y un mantenimiento fácil, además de admitir sobrevelocidades esporádicas sin daño y trabajar con pérdidas diferenciales bajas del orden de 1 pulgada de columna de agua. La opción B describe en cambio al medidor cicloidal de lóbulos Root, un tipo distinto de medidor rotativo que sí presenta un engrane directo entre sus dos lóbulos.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 178",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "¿Qué ventaja aporta un transmisor multivariable, con compensación digital incorporada, frente a los tres transmisores clásicos de caudal volumétrico, presión y temperatura por separado?",
+      "options": [
+        "Ofrece una exactitud en el caudal masa del ±1% y una rangeabilidad de 8:1 frente a la clásica 3:1, además de diagnóstico y comunicaciones digitales integradas",
+        "Elimina por completo la necesidad de una sonda de temperatura o toma de presión adicional",
+        "Solo puede emplearse con líquidos incompresibles, nunca con gases",
+        "Reduce la exactitud a cambio de eliminar el elemento deprimógeno primario"
+      ],
+      "correct": 0,
+      "explanation": "El transmisor multivariable incorpora las compensaciones de presión y temperatura reemplazando a los tres transmisores clásicos de caudal volumétrico, presión y temperatura, proporcionando un cálculo dinámico del coeficiente de descarga y del factor de expansión del gas; tiene una exactitud en el caudal masa del ±1% y una rangeabilidad de 8:1 en lugar de la clásica 3:1, además de facilitar diagnósticos y comunicaciones digitales (HART, FOUNDATION Fieldbus, Profibus PA, Modbus). La opción B es incorrecta porque el transmisor multivariable sigue necesitando las conexiones de la sonda de temperatura y de la toma de presión en la tubería; solo sustituye a los transmisores independientes, no a los sensores de campo.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 184",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "Un medidor de caudal de turbina tiene un rotor de ocho palas que gira a 75 revoluciones por segundo en el caudal máximo de diseño. Aplicando el principio de que la frecuencia generada es proporcional al número de palas multiplicado por las revoluciones por segundo, ¿cuántos impulsos por segundo genera el captador?",
+      "options": [
+        "600 impulsos por segundo",
+        "525 impulsos por segundo",
+        "83 impulsos por segundo",
+        "675 impulsos por segundo"
+      ],
+      "correct": 0,
+      "explanation": "Creus ilustra este principio con el ejemplo de un rotor de seis palas que, girando a 100 revoluciones por segundo, genera 600 impulsos por segundo, ya que cada pala que pasa frente al captador magnético produce un impulso: frecuencia = número de palas x revoluciones por segundo. Aplicando la misma relación al caso planteado: 8 palas x 75 rev/s = 600 impulsos por segundo. Las opciones B y D surgen de multiplicar por un número de palas o de revoluciones ligeramente distinto al indicado, y la opción C resulta de dividir en vez de multiplicar ambas magnitudes, un error común al aplicar esta relación.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 157",
+      "difficulty": 3,
+      "module": 3
+    },
+    {
+      "q": "Un vertedero rectangular con contracción lateral tiene una anchura de garganta l = 1,0 m y una altura de lámina H = 0,3 m. Aplicando la fórmula de Francis Q = 1,84 x (l - 0,2H) x H^(3/2), ¿cuál es el caudal aproximado?",
+      "options": [
+        "0,284 m3/s",
+        "0,302 m3/s",
+        "1,840 m3/s",
+        "0,164 m3/s"
+      ],
+      "correct": 0,
+      "explanation": "Aplicando la fórmula de Francis para vertederos rectangulares con contracción lateral: primero se calcula (l - 0,2H) = 1,0 - 0,2x0,3 = 0,94 m; luego H^(3/2) = 0,3^1,5 aproximadamente 0,1643; finalmente Q = 1,84 x 0,94 x 0,1643 aproximadamente 0,284 m3/s. La opción B (0,302) resulta de omitir la corrección por contracción lateral, usando directamente Q = 1,84 x l x H^1,5 sin restar 0,2H; y la opción D (0,164) corresponde a calcular solo H^1,5 olvidando multiplicar por el factor 1,84x(l-0,2H), errores típicos al aplicar fórmulas empíricas con varios términos.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 154",
+      "difficulty": 3,
+      "module": 3
+    },
+    {
+      "q": "Un vertedero triangular (en V) de 90 grados tiene una altura de lámina de agua H = 0,4 m. Aplicando la fórmula empírica Q = 1,33 x H^2,475, ¿cuál es el caudal aproximado?",
+      "options": [
+        "0,138 m3/s",
+        "0,532 m3/s",
+        "1,330 m3/s",
+        "0,400 m3/s"
+      ],
+      "correct": 0,
+      "explanation": "Aplicando la fórmula empírica para el vertedero triangular de 90 grados: H^2,475 = 0,4^2,475 aproximadamente 0,1035 (usando logaritmos: log(0,4) x 2,475 aproximadamente -0,985, y 10^-0,985 aproximadamente 0,1035); luego Q = 1,33 x 0,1035 aproximadamente 0,138 m3/s. La opción B (0,532) resulta de multiplicar 1,33x0,4 sin elevar H al exponente 2,475, y la opción C (1,330) es simplemente el coeficiente de la fórmula sin aplicar el término de la altura, errores comunes al operar con exponentes no enteros.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 154",
+      "difficulty": 3,
+      "module": 3
+    },
+    {
+      "q": "En un medidor de caudal de codo (elbow meter), si la velocidad del fluido se duplica manteniendo constantes la densidad y el radio del codo, ¿en qué factor aproximado varía la diferencia de presión detectada entre las tomas situadas a 45 grados?",
+      "options": [
+        "Se cuadruplica (factor 4)",
+        "Se duplica (factor 2)",
+        "Se mantiene igual (factor 1)",
+        "Se multiplica por 8 (factor 8)"
+      ],
+      "correct": 0,
+      "explanation": "La fuerza centrífuga -y por tanto la diferencia de presión- en un medidor de codo es proporcional al producto de la densidad del fluido por el cuadrado de la velocidad e inversamente proporcional al radio del codo. Si la velocidad se duplica (v hacia 2v) manteniendo constantes la densidad y el radio, la diferencia de presión varía según (2v)^2 = 4v^2, es decir, se cuadruplica. La opción B (factor 2) es el error típico de asumir una relación lineal con la velocidad, ignorando que la dependencia real es cuadrática, tal como ocurre también en la relación general Q=K raíz de h de los elementos deprimógenos.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 140",
+      "difficulty": 3,
+      "module": 3
+    },
+    {
+      "q": "Un medidor magnético de caudal está instalado en una tubería de 100 mm de diámetro interior. Si la gama de velocidades admisible del instrumento es de 0,1 a 10 m/s, ¿cuál es el caudal máximo aproximado, en m3/h, que puede medir este medidor?",
+      "options": [
+        "283 m3/h",
+        "2,83 m3/h",
+        "1.131 m3/h",
+        "141,5 m3/h"
+      ],
+      "correct": 0,
+      "explanation": "Creus indica que la gama de velocidades de los medidores magnéticos de caudal varía de 0,1 a 10 m/s. El caudal es Q = v x A, con A el área de la sección circular: A = pi x (0,05 m)^2 aproximadamente 0,007854 m2. Con la velocidad máxima de 10 m/s: Q = 10 x 0,007854 aproximadamente 0,07854 m3/s, equivalente a unos 283 m3/h al multiplicar por 3600 s/h. La opción B (2,83 m3/h) corresponde a usar por error la velocidad mínima (0,1 m/s) en lugar de la máxima, y la opción C (1.131 m3/h) surge de tomar el diámetro completo (0,1 m) como si fuera el radio al calcular el área, lo que multiplica el resultado por cuatro.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 174",
+      "difficulty": 3,
+      "module": 3
+    },
+    {
+      "q": "En un sistema de caudal másico por medidor volumétrico compensado, la fórmula simplificada es Qp = K x raíz de [(pa - pc) x rho0]. Si la densidad real del fluido pasa a ser el doble de la considerada en el cálculo, manteniendo constante la presión diferencial (pa - pc), ¿en qué factor aproximado varía el caudal másico indicado?",
+      "options": [
+        "x1,41 (raíz de 2)",
+        "x2",
+        "x0,71",
+        "x4"
+      ],
+      "correct": 0,
+      "explanation": "Según la fórmula simplificada Qp = K x raíz de [(pa - pc) x rho0], el caudal másico es proporcional a la raíz cuadrada de la densidad cuando la presión diferencial se mantiene constante. Si la densidad rho0 se duplica, el nuevo caudal es K x raíz de [(pa-pc) x 2rho0] = raíz de 2 x K x raíz de [(pa-pc) x rho0] aproximadamente 1,41 veces el caudal original. La opción B (x2) es el error típico de asumir una relación lineal entre densidad y caudal, ignorando que -al igual que en la relación general Q=K raíz de h de los elementos deprimógenos- la dependencia es a través de una raíz cuadrada y no de forma directamente proporcional.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 183",
       "difficulty": 3,
       "module": 3
     }

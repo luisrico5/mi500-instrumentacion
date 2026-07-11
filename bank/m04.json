@@ -11,9 +11,10 @@
         "La atenuación de la intensidad de onda al atravesar la espuma."
       ],
       "correct": 2,
-      "explanation": "El sistema ultrasónico determina el nivel midiendo el tiempo de tránsito entre la emisión de un impulso sónico y la recepción de su eco tras reflejarse en la superficie del líquido. Este cálculo se basa en la fórmula h = v * t / 2, donde la distancia es directamente proporcional al tiempo detectado por el cristal piezoeléctrico. Una confusión común es asociarlo al efecto Doppler (opción B), el cual se utiliza para medir velocidad de flujo mediante el corrimiento de frecuencia y no para determinar distancias estáticas por retorno de señal [3, 4]. Es fundamental recordar que este método requiere compensación térmica, ya que la velocidad del sonido varía un 0,2% por cada grado centígrado de cambio en el ambiente.",
+      "explanation": "El sistema ultrasónico determina el nivel midiendo el tiempo de tránsito entre la emisión de un impulso sónico y la recepción de su eco tras reflejarse en la superficie del líquido. Este cálculo se basa en la fórmula h = v * t / 2, donde la distancia es directamente proporcional al tiempo detectado por el cristal piezoeléctrico. Una confusión común es asociarlo al efecto Doppler (opción B), el cual se utiliza para medir velocidad de flujo mediante el corrimiento de frecuencia y no para determinar distancias estáticas por retorno de señal. Es fundamental recordar que este método requiere compensación térmica, ya que la velocidad del sonido varía un 0,2% por cada grado centígrado de cambio en el ambiente.",
       "difficulty": 1,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "¿Cuál de los siguientes instrumentos es un detector de nivel de sólidos de punto fijo (on-off) comúnmente utilizado en materiales granulares?",
@@ -24,9 +25,10 @@
         "Transmisor de radar de onda guiada"
       ],
       "correct": 1,
-      "explanation": "El detector de paletas rotativas es un instrumento de punto fijo que utiliza un motor síncrono para girar un eje con palas; cuando el sólido las alcanza, el motor se detiene y activa microrruptores de alarma. Se diferencia técnicamente del sondeo electromecánico (opción A), ya que este último realiza una medición continua mediante un peso móvil que baja y sube en ciclos programados [7, 8]. Este dispositivo es ideal para materiales granulares y carbón debido a su robustez mecánica y capacidad para trabajar con diversas densidades. Según la fuente, cuando el nivel baja, un resorte libera los interruptores y permite que las palas vuelvan a girar automáticamente.",
+      "explanation": "El detector de paletas rotativas es un instrumento de punto fijo que utiliza un motor síncrono para girar un eje con palas; cuando el sólido las alcanza, el motor se detiene y activa microrruptores de alarma. Se diferencia técnicamente del sondeo electromecánico (opción A), ya que este último realiza una medición continua mediante un peso móvil que baja y sube en ciclos programados. Este dispositivo es ideal para materiales granulares y carbón debido a su robustez mecánica y capacidad para trabajar con diversas densidades. Según la fuente, cuando el nivel baja, un resorte libera los interruptores y permite que las palas vuelvan a girar automáticamente.",
       "difficulty": 1,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "En un medidor de nivel de tipo burbujeo, ¿qué representa la presión del aire detectada en la tubería de inmersión?",
@@ -37,9 +39,10 @@
         "La pérdida de carga debida a la viscosidad del fluido."
       ],
       "correct": 2,
-      "explanation": "En un medidor de tipo burbujeo, la presión del aire detectada en la tubería de inmersión es exactamente equivalente a la presión hidrostática ejercida por la columna de líquido sobre el extremo del tubo. El cálculo operativo para determinar el nivel se rige por la expresión P = 0,098 * h * ρ, donde h es la altura en metros y ρ la densidad en g/cm³. Una confusión frecuente es pensar que mide la presión de vapor (opción A), la cual es en realidad una interferencia en tanques cerrados que debe ser compensada mediante una toma de baja presión conectada a la parte superior [11, 12]. El sistema mantiene un caudal de aire constante (unos 150 l/h) para asegurar que la lectura sea independiente del nivel de llenado.",
+      "explanation": "En un medidor de tipo burbujeo, la presión del aire detectada en la tubería de inmersión es exactamente equivalente a la presión hidrostática ejercida por la columna de líquido sobre el extremo del tubo. El cálculo operativo para determinar el nivel se rige por la expresión P = 0,098 * h * ρ, donde h es la altura en metros y ρ la densidad en g/cm³. Una confusión frecuente es pensar que mide la presión de vapor (opción A), la cual es en realidad una interferencia en tanques cerrados que debe ser compensada mediante una toma de baja presión conectada a la parte superior. El sistema mantiene un caudal de aire constante (unos 150 l/h) para asegurar que la lectura sea independiente del nivel de llenado.",
       "difficulty": 1,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "¿Cuál es la principal ventaja técnica del radar FMCW (Onda continua modulada en frecuencia) frente a los ultrasonidos en tanques de proceso complejos?",
@@ -50,9 +53,10 @@
         "El radar FMCW puede medir niveles de sólidos con una exactitud de ±50 mm."
       ],
       "correct": 1,
-      "explanation": "El radar FMCW emite ondas electromagnéticas cuya velocidad es cercana a la de la luz y no se ve afectada por cambios de temperatura o presión en el gas, a diferencia de los ultrasonidos que dependen de la densidad del aire [13, 14]. Según las fuentes técnicas, la señal de radar es transparente a la espuma, eliminando los errores por absorción o falsos ecos que inhabilitan frecuentemente a los sensores acústicos [14, 15]. Se suele confundir esta ventaja con la inmunidad a vibraciones (opción A), pero aunque el radar puede filtrar ecos de agitadores mediante algoritmos complejos, su beneficio físico primordial reside en no depender de las propiedades acústicas del medio.",
+      "explanation": "El radar FMCW emite ondas electromagnéticas cuya velocidad es cercana a la de la luz y no se ve afectada por cambios de temperatura o presión en el gas, a diferencia de los ultrasonidos que dependen de la densidad del aire. Según las fuentes técnicas, la señal de radar es transparente a la espuma, eliminando los errores por absorción o falsos ecos que inhabilitan frecuentemente a los sensores acústicos. Se suele confundir esta ventaja con la inmunidad a vibraciones (opción A), pero aunque el radar puede filtrar ecos de agitadores mediante algoritmos complejos, su beneficio físico primordial reside en no depender de las propiedades acústicas del medio.",
       "difficulty": 2,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "Al medir el nivel de un líquido con una constante dieléctrica muy baja (K < 1,7), ¿cuál es la tecnología recomendada para evitar la degradación de la señal?",
@@ -63,9 +67,10 @@
         "Transmisor ultrasónico de alta frecuencia (200 kHz)."
       ],
       "correct": 1,
-      "explanation": "El radar de onda guiada (GWR) enfoca íntegramente la energía electromagnética a través de una varilla o cable, lo que permite medir niveles de líquidos con constantes dieléctricas muy bajas (K < 1,7) que no reflejarían suficiente energía en un sistema de haz libre. La tecnología TDR integrada en estos equipos genera impulsos que atraviesan el fluido y detectan cambios de impedancia con un rendimiento 20 veces mayor que los métodos convencionales [15, 17]. Es un error común recomendar medidores capacitivos (opción C) para estas aplicaciones, pero estos requieren una diferencia de capacitancia mínima de 0,5 pF para ser estables, algo difícil de lograr en productos con baja constante dieléctrica [18, 19].",
+      "explanation": "El radar de onda guiada (GWR) enfoca íntegramente la energía electromagnética a través de una varilla o cable, lo que permite medir niveles de líquidos con constantes dieléctricas muy bajas (K < 1,7) que no reflejarían suficiente energía en un sistema de haz libre. La tecnología TDR integrada en estos equipos genera impulsos que atraviesan el fluido y detectan cambios de impedancia con un rendimiento 20 veces mayor que los métodos convencionales. Es un error común recomendar medidores capacitivos (opción C) para estas aplicaciones, pero estos requieren una diferencia de capacitancia mínima de 0,5 pF para ser estables, algo difícil de lograr en productos con baja constante dieléctrica.",
       "difficulty": 2,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "En la medición de nivel por presión diferencial en tanques cerrados con vapores condensables, ¿cuándo se utiliza la configuración de 'elevación de cero'?",
@@ -76,9 +81,10 @@
         "Para compensar el error de angularidad en transmisores neumáticos de equilibrio de fuerzas."
       ],
       "correct": 1,
-      "explanation": "La elevación de cero es necesaria en tanques cerrados con vapores condensables porque la línea de compensación (wet leg) se llena gradualmente de líquido, ejerciendo una presión constante en el lado de baja (LP) que supera a la de alta (HP) cuando el nivel está al mínimo [1, 2]. De acuerdo con la fuente, este procedimiento consiste en trasladar el cero del instrumento a la izquierda en la gráfica de respuesta para que la señal resultante al nivel mínimo sea de 4 mA c.c.. Una confusión típica es la opción A, pero instalar el transmisor por encima de las tomas de proceso es una práctica poco habitual que suele asociarse a la medición de gases para evitar condensados en el instrumento.",
+      "explanation": "La elevación de cero es necesaria en tanques cerrados con vapores condensables porque la línea de compensación (wet leg) se llena gradualmente de líquido, ejerciendo una presión constante en el lado de baja (LP) que supera a la de alta (HP) cuando el nivel está al mínimo. De acuerdo con la fuente, este procedimiento consiste en trasladar el cero del instrumento a la izquierda en la gráfica de respuesta para que la señal resultante al nivel mínimo sea de 4 mA c.c.. Una confusión típica es la opción A, pero instalar el transmisor por encima de las tomas de proceso es una práctica poco habitual que suele asociarse a la medición de gases para evitar condensados en el instrumento.",
       "difficulty": 2,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "Un transmisor ultrasónico no compensado mide el nivel en un tanque donde el aire ambiente pasa de 0 °C a 70 °C. Según los datos técnicos, ¿qué error aproximado se introducirá?",
@@ -89,9 +95,10 @@
         "Un error del 50% debido a la absorción de la onda por el calor."
       ],
       "correct": 2,
-      "explanation": "Según los datos técnicos de la fuente, la velocidad del sonido depende de la temperatura del medio, variando aproximadamente un 0,2% por cada grado centígrado de cambio [5, 6]. Para un incremento de 70 °C (de 0 °C a 70 °C), el error acumulado se sitúa en un valor aproximado del 12% en la medición de nivel si el sensor no dispone de compensación térmica automática. Es un error conceptual común pensar que el efecto es despreciable (opción B), ignorando que en la tecnología ultrasónica la temperatura ambiente es la variable de influencia más crítica para la exactitud del cálculo de la distancia.",
+      "explanation": "Según los datos técnicos de la fuente, la velocidad del sonido depende de la temperatura del medio, variando aproximadamente un 0,2% por cada grado centígrado de cambio. Para un incremento de 70 °C (de 0 °C a 70 °C), el error acumulado se sitúa en un valor aproximado del 12% en la medición de nivel si el sensor no dispone de compensación térmica automática. Es un error conceptual común pensar que el efecto es despreciable (opción B), ignorando que en la tecnología ultrasónica la temperatura ambiente es la variable de influencia más crítica para la exactitud del cálculo de la distancia.",
       "difficulty": 3,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "Calcule la presión que detectará un transmisor manométrico situado a una altura 'h' de 5 metros por debajo del nivel de un líquido con densidad 0,8 g/cm³ (Use g=9,8 m/s²).",
@@ -104,7 +111,8 @@
       "correct": 1,
       "explanation": "La presión hidrostática detectada por el sensor se rige por la fórmula técnica P = 0,098 * h * ρ bar, donde h es la altura en metros y ρ la densidad en g/cm³. Realizando el desarrollo numérico paso a paso con los datos proporcionados: 0,098 * 5 m * 0,8 g/cm³ = 0,392 bar, lo que valida la opción B como la única correcta. Un error frecuente entre técnicos es utilizar una gravedad simplificada de 10 m/s² (opción A), lo que daría un resultado de 0,400 bar, desviándose del valor estándar requerido en metrología industrial.",
       "difficulty": 3,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "En un lazo de control de interfase entre agua (ρ=1,0) y queroseno (ρ=0,8) en tanque cerrado, ¿qué lectura de señal entregará un transmisor de DP de 4-20 mA cuando el tanque esté totalmente lleno de queroseno?",
@@ -115,9 +123,10 @@
         "20 mA"
       ],
       "correct": 1,
-      "explanation": "En la medición de interfase por presión diferencial, el instrumento se calibra de modo que el 0% del alcance (señal de 4 mA) corresponda al tanque lleno exclusivamente con el líquido menos denso [11, 12]. En este escenario práctico, al estar el tanque totalmente lleno de queroseno (ρ=0,8), el transmisor detecta la presión hidrostática mínima prevista en su calibración y entrega la señal de inicio de rango [13, 14]. Una confusión común es seleccionar la opción D (20 mA), la cual representaría la condición opuesta en la que el tanque está lleno del fluido más pesado, en este caso el agua.",
+      "explanation": "En la medición de interfase por presión diferencial, el instrumento se calibra de modo que el 0% del alcance (señal de 4 mA) corresponda al tanque lleno exclusivamente con el líquido menos denso. En este escenario práctico, al estar el tanque totalmente lleno de queroseno (ρ=0,8), el transmisor detecta la presión hidrostática mínima prevista en su calibración y entrega la señal de inicio de rango. Una confusión común es seleccionar la opción D (20 mA), la cual representaría la condición opuesta en la que el tanque está lleno del fluido más pesado, en este caso el agua.",
       "difficulty": 3,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "¿A qué fenómeno físico se debe la formación de la onda de torsión que permite determinar la posición del flotador en un transmisor de nivel magnetoestrictivo?",
@@ -128,9 +137,10 @@
         "A la reflexión de una onda electromagnética en la superficie de separación de fases"
       ],
       "correct": 1,
-      "explanation": "El funcionamiento de un transmisor magnetoestrictivo se fundamenta en el envío de un impulso de corriente que genera un campo magnético tubular a lo largo de un tubo guía de ondas. La interacción instantánea de este campo con el flujo magnético de los imanes situados en el flotador produce una fuerza de torsión mecánica que viaja como una vibración ultrasónica hacia el circuito sensor. Se suele confundir este fenómeno con la opción D (reflexión de onda electromagnética), pero dicho principio pertenece exclusivamente a la tecnología de radar y no a la deformación física por magnetoestricción [18, 19].",
+      "explanation": "El funcionamiento de un transmisor magnetoestrictivo se fundamenta en el envío de un impulso de corriente que genera un campo magnético tubular a lo largo de un tubo guía de ondas. La interacción instantánea de este campo con el flujo magnético de los imanes situados en el flotador produce una fuerza de torsión mecánica que viaja como una vibración ultrasónica hacia el circuito sensor. Se suele confundir este fenómeno con la opción D (reflexión de onda electromagnética), pero dicho principio pertenece exclusivamente a la tecnología de radar y no a la deformación física por magnetoestricción.",
       "difficulty": 1,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "En la terminología de medidores de nivel por capacitancia de radiofrecuencia (RF), ¿cómo se define técnicamente el concepto de 'admitancia'?",
@@ -141,9 +151,10 @@
         "Es la capacidad máxima de almacenamiento de carga eléctrica en condiciones de vacío"
       ],
       "correct": 0,
-      "explanation": "La admitancia se define técnicamente en los medidores de radiofrecuencia como la medida de la conductividad de un circuito de corriente alterna, siendo exactamente la magnitud inversa a la impedancia. En estos instrumentos, el sistema mide cómo varía esta propiedad eléctrica en el condensador formado por el electrodo y las paredes del tanque a medida que cambia el nivel del líquido [1, 2]. Es un error conceptual común confundir este término con la capacitancia pura (opción D), pues aunque el equipo se base en principios capacitivos, la admitancia integra tanto la susceptancia como la conductancia del medio para mejorar la precisión [3, 4].",
+      "explanation": "La admitancia se define técnicamente en los medidores de radiofrecuencia como la medida de la conductividad de un circuito de corriente alterna, siendo exactamente la magnitud inversa a la impedancia. En estos instrumentos, el sistema mide cómo varía esta propiedad eléctrica en el condensador formado por el electrodo y las paredes del tanque a medida que cambia el nivel del líquido. Es un error conceptual común confundir este término con la capacitancia pura (opción D), pues aunque el equipo se base en principios capacitivos, la admitancia integra tanto la susceptancia como la conductancia del medio para mejorar la precisión.",
       "difficulty": 1,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "En un sensor de nivel capacitivo destinado a medir líquidos sucios o pegajosos, ¿con qué fin técnico se emplea el 'blindaje de excitación' o tecnología de escudo perforado?",
@@ -154,9 +165,10 @@
         "Para compensar automáticamente los cambios en la presión estática del tanque"
       ],
       "correct": 2,
-      "explanation": "El blindaje de excitación, también conocido como tecnología de escudo perforado, se emplea para que el electrodo ignore por completo el efecto del recubrimiento conductor que dejan los líquidos sucios o pegajosos al bajar el nivel. Al alimentar este blindaje con el mismo voltaje y frecuencia que la sección de medida, se anula la diferencia de potencial y la corriente deja de fluir a través del residuo hacia las paredes del tanque, eliminando señales erróneas. Una confusión habitual es la opción B, suponiendo que se trata de una protección física contra impactos, cuando su función es puramente electrónica para garantizar la integridad de la señal de nivel [4, 5].",
+      "explanation": "El blindaje de excitación, también conocido como tecnología de escudo perforado, se emplea para que el electrodo ignore por completo el efecto del recubrimiento conductor que dejan los líquidos sucios o pegajosos al bajar el nivel. Al alimentar este blindaje con el mismo voltaje y frecuencia que la sección de medida, se anula la diferencia de potencial y la corriente deja de fluir a través del residuo hacia las paredes del tanque, eliminando señales erróneas. Una confusión habitual es la opción B, suponiendo que se trata de una protección física contra impactos, cuando su función es puramente electrónica para garantizar la integridad de la señal de nivel.",
       "difficulty": 2,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "Al utilizar un medidor de nivel de radiación (rayos gamma) de forma continua, ¿qué característica debe incorporar la electrónica para mantener la exactitud a lo largo del tiempo?",
@@ -167,9 +179,10 @@
         "Un sistema de purga de aire constante para evitar el recubrimiento del contador Geiger"
       ],
       "correct": 1,
-      "explanation": "Debido a que las fuentes radiactivas pierden actividad de forma exponencial según su vida media (por ejemplo, 33 años para el Cesio 137), la electrónica del receptor debe incorporar obligatoriamente una compensación automática de esta deriva por decaimiento [6, 7]. Este reajuste constante es el que permite mantener la exactitud de la medida a lo largo de los años sin necesidad de recalibraciones manuales frecuentes del sensor de radiación [7, 8]. Seleccionar la opción A representa un error técnico típico, ya que la extracción de raíz cuadrada es una función propia de los medidores de caudal por presión diferencial y no guarda relación con la atenuación de rayos gamma [7, 9].",
+      "explanation": "Debido a que las fuentes radiactivas pierden actividad de forma exponencial según su vida media (por ejemplo, 33 años para el Cesio 137), la electrónica del receptor debe incorporar obligatoriamente una compensación automática de esta deriva por decaimiento. Este reajuste constante es el que permite mantener la exactitud de la medida a lo largo de los años sin necesidad de recalibraciones manuales frecuentes del sensor de radiación. Seleccionar la opción A representa un error técnico típico, ya que la extracción de raíz cuadrada es una función propia de los medidores de caudal por presión diferencial y no guarda relación con la atenuación de rayos gamma.",
       "difficulty": 2,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
     },
     {
       "q": "Se desea configurar un transmisor de presión diferencial para medir la interfase en un tanque cerrado entre agua (ρ1 = 1,0 g/cm³) y aceite (ρ2 = 0,85 g/cm³). El campo de medida (h) es de 4 metros y existe una distancia ha = 1 metro por debajo del nivel mínimo. La tubería húmeda (wet leg) está llena de aceite (ρ'2 = 0,85 g/cm³). Calcule el alcance (span) en bar que debe configurarse en el instrumento (Utilice el factor de conversión g = 0,098 bar por cada metro de altura y unidad de densidad).",
@@ -180,9 +193,318 @@
         "0,1960 bar"
       ],
       "correct": 1,
-      "explanation": "El alcance (span) se determina por la diferencia de presión hidrostática entre el tanque lleno del líquido pesado y el tanque lleno del líquido ligero, utilizando la fórmula Span = (h + ha) * (ρ1 - ρ2) * 0,098 [10, 11]. El desarrollo numérico es: (4 m + 1 m) * (1,0 - 0,85) * 0,098 = 5 * 0,15 * 0,098 = 0,0735 bar, lo que valida la opción B. Un error frecuente de cálculo es la opción A, que resulta de omitir la distancia 'ha' de 1 metro situada por debajo del nivel mínimo, ignorando que la presión diferencial depende de la columna total de fluido que afecta al instrumento [10, 13].",
+      "explanation": "El alcance (span) se determina por la diferencia de presión hidrostática entre el tanque lleno del líquido pesado y el tanque lleno del líquido ligero, utilizando la fórmula Span = (h + ha) * (ρ1 - ρ2) * 0,098. El desarrollo numérico es: (4 m + 1 m) * (1,0 - 0,85) * 0,098 = 5 * 0,15 * 0,098 = 0,0735 bar, lo que valida la opción B. Un error frecuente de cálculo es la opción A, que resulta de omitir la distancia 'ha' de 1 metro situada por debajo del nivel mínimo, ignorando que la presión diferencial depende de la columna total de fluido que afecta al instrumento.",
       "difficulty": 3,
-      "module": 4
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5 (Medición de nivel)"
+    },
+    {
+      "q": "¿Qué condición operativa es indispensable para efectuar una lectura correcta con un medidor de nivel de sonda (varilla o regla graduada)?",
+      "options": [
+        "Que el tanque esté presurizado a más de 7 bar para estabilizar la lectura.",
+        "Que el tanque esté abierto a la presión atmosférica en el momento de la lectura.",
+        "Que el líquido tenga una constante dieléctrica superior a 80.",
+        "Que el instrumento disponga de un transmisor electrónico de 4-20 mA."
+      ],
+      "correct": 1,
+      "explanation": "El medidor de sonda consiste en una varilla o regla graduada que se introduce en el depósito, determinando el nivel por lectura directa de la longitud mojada por el líquido; según la fuente, en el momento de la lectura el tanque debe estar abierto a la presión atmosférica, por lo que se emplea generalmente en tanques de fuel-oil o gasolina. Es un instrumento de medida directa y manual, sin componentes electrónicos ni transmisión continua de señal, a diferencia de lo que sugiere la opción D. La opción A es una confusión típica, ya que precisamente la presurización del tanque invalida este método simple de lectura directa. La opción C corresponde a un criterio propio de los medidores capacitivos o de radar, no de los instrumentos de medida directa como la sonda.",
+      "difficulty": 1,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 196"
+    },
+    {
+      "q": "Según Creus, ¿hasta qué presión máxima puede emplearse un nivel de cristal normal antes de requerir un cristal grueso de sección rectangular protegido por una armadura metálica?",
+      "options": [
+        "25 bar",
+        "7 bar",
+        "50 bar",
+        "0,5 bar"
+      ],
+      "correct": 1,
+      "explanation": "El nivel de cristal normal se emplea para presiones de hasta 7 bar; a presiones más elevadas, el cristal debe ser grueso, de sección rectangular, y quedar protegido por una armadura metálica. La opción A (25 bar) es una confusión típica porque corresponde al umbral a partir del cual se recomienda sustituir el nivel de vidrio por un indicador de nivel magnético, un criterio distinto relacionado con el riesgo de rotura del vidrio. Las opciones C y D no se corresponden con ningún valor mencionado en la fuente para este instrumento. Este dato es relevante para seleccionar correctamente el tipo de cristal según la presión de servicio del tanque.",
+      "difficulty": 1,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 196"
+    },
+    {
+      "q": "En un instrumento de nivel de flotador con conexión directa (cable y poleas hacia un índice exterior), ¿cómo está graduada la escala de lectura?",
+      "options": [
+        "De forma directa: el índice señala 100% en la parte superior cuando el tanque está lleno.",
+        "De forma inversa: el índice señala 100% en la parte inferior de la escala cuando el tanque está lleno.",
+        "De forma logarítmica, proporcional al cuadrado del nivel.",
+        "No tiene escala fija, requiere calibración electrónica en campo."
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, la escala de un flotador de conexión directa está graduada de forma inversa: cuando el tanque está lleno, el índice exterior se encuentra en la parte inferior de la escala señalando el 100% del nivel, y cuando el tanque está vacío el índice está en la parte superior señalando el 0%. Esto se debe a la disposición mecánica del cable y el juego de poleas que traducen el ascenso del flotador en un movimiento descendente del índice. La opción A es la confusión más habitual, al asumir intuitivamente que una escala sube con el nivel del mismo modo que sube el flotador. Este modelo es el más antiguo y utilizado en tanques de gran capacidad, como los de fuel-oil y gas-oil, y no requiere calibración electrónica alguna, siendo un dispositivo puramente mecánico.",
+      "difficulty": 1,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 197"
+    },
+    {
+      "q": "¿Cuál es la exactitud y el campo de medida típicos de un medidor de nivel por palpador servooperado (disco de desplazamiento suspendido por cinta perforada)?",
+      "options": [
+        "± 3 mm, con un campo de medida de 1 mm a 30 m.",
+        "± 0,01%, con un campo de medida de 0,1 m a 5 m.",
+        "± 50 mm, con un campo de medida ilimitado.",
+        "± 0,5%, únicamente para tanques a presión atmosférica."
+      ],
+      "correct": 0,
+      "explanation": "El medidor por palpador servooperado utiliza un disco de desplazamiento suspendido por una cinta perforada acoplada a un tambor ranurado accionado por un servomotor, y según la fuente tiene una exactitud de ± 3 mm y un campo de medida de 1 mm a 30 m. La opción B corresponde en realidad a las características del medidor magnetoestrictivo (± 0,01% de exactitud, 0,1 a 5 m de alcance), una confusión frecuente entre ambos instrumentos de tecnología de flotador o disco desplazable. El tambor de medida se monta en el techo del tanque y dispone de un codificador óptico y de un transmisor de datos digital serie, protegiéndose el disco del oleaje mediante un tubo tranquilizador con orificios. La opción C (± 50 mm) corresponde en cambio a la exactitud del detector de diafragma para sólidos, un instrumento de naturaleza completamente distinta.",
+      "difficulty": 1,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 199"
+    },
+    {
+      "q": "¿Cómo genera la señal de salida un medidor de nivel manométrico basado en un sensor de presión piezoresistivo?",
+      "options": [
+        "Mediante la reflexión de un impulso ultrasónico sobre la superficie del líquido.",
+        "Mediante la flexión del sensor bajo la presión del líquido, captada por galgas extensiométricas que desequilibran un puente de Wheatstone.",
+        "Mediante la variación de la admitancia de un circuito de radiofrecuencia.",
+        "Mediante el burbujeo de aire a caudal constante a través de un tubo sumergido."
+      ],
+      "correct": 1,
+      "explanation": "El medidor manométrico consiste en un sensor de presión piezoresistivo suspendido de la parte superior del tanque e inmerso en el líquido, que contiene un puente de Wheatstone; bajo la presión del líquido el sensor se flexa y la tensión creada es captada por galgas extensiométricas, dando lugar a un desequilibrio del puente y a una señal de salida proporcional al nivel. El sensor está contenido en una caja protectora con un diafragma flexible relleno de aceite de silicona, lo que le confiere una exactitud de ± 0,25%. La opción D describe en cambio el principio del medidor de tipo burbujeo, un instrumento distinto también basado en presión hidrostática pero sin sensor piezoresistivo interno. La opción C corresponde al medidor de capacidad o admitancia de radiofrecuencia, una tecnología eléctrica no hidrostática.",
+      "difficulty": 1,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 200"
+    },
+    {
+      "q": "En el medidor de nivel conductivo o resistivo, ¿por qué se alimenta la tensión entre los electrodos y el tanque con corriente alterna en lugar de corriente continua?",
+      "options": [
+        "Para aumentar el alcance de medida hasta 40 metros.",
+        "Para evitar fenómenos de oxidación en las sondas causados por la electrólisis.",
+        "Para permitir la compensación automática de la deriva por decaimiento radiactivo.",
+        "Para reducir la reactancia capacitiva del conjunto electrodo-tanque."
+      ],
+      "correct": 1,
+      "explanation": "El medidor de nivel conductivo o resistivo excita un relé cuando los electrodos son mojados por el líquido, que debe tener una impedancia mínima del orden de los 25 MΩ/cm; la tensión de alimentación entre los electrodos y el tanque es alterna precisamente para evitar fenómenos de oxidación en las sondas causados por el fenómeno de la electrólisis. La opción D describe en cambio una característica del medidor de capacidad de radiofrecuencia, donde la alta frecuencia de excitación disminuye la reactancia capacitiva para aliviar el recubrimiento del electrodo, un instrumento distinto. La opción C es un distractor propio de los medidores de radiación por rayos gamma, sin relación con la electrólisis. Este instrumento suele emplearse como alarma o control de nivel alto y bajo, incorporando un temporizador de retardo para evitar falsos enclavamientos por oleaje.",
+      "difficulty": 1,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 211"
+    },
+    {
+      "q": "¿En qué intervalo de frecuencias trabajan típicamente los sensores de los medidores de nivel de ultrasonidos, y qué ventaja ofrecen las frecuencias más altas dentro de ese rango?",
+      "options": [
+        "De 20 kHz a 200 kHz; a frecuencias mayores (unas 50 kHz) las ondas penetran las capas de aire o vapor con menor amortiguamiento.",
+        "De 10 a 11 GHz; a frecuencias mayores se elimina el efecto Doppler.",
+        "De 1 a 4 Hz; a frecuencias mayores aumenta la resolución de la transformada de Fourier.",
+        "De 0,5 a 2 MHz; a frecuencias mayores se reduce la reactancia capacitiva."
+      ],
+      "correct": 0,
+      "explanation": "Según la fuente, los sensores ultrasónicos trabajan a una frecuencia de 20 kHz a 200 kHz, y a frecuencias mayores (unos 50 kHz) las ondas sónicas penetran las capas de aire o vapores del tanque con menor amortiguamiento. La opción B corresponde en cambio al rango de frecuencias del radar de microondas (10-11 GHz), una tecnología electromagnética completamente distinta a la acústica. La opción C hace referencia a la velocidad de muestreo del radar FMCW (1 a 4 mediciones por segundo mediante transformada rápida de Fourier), no a una frecuencia de la onda portadora. Es un error común confundir el rango de frecuencias acústicas del ultrasonido con el de las microondas del radar, siendo ambos fenómenos físicos de naturaleza distinta.",
+      "difficulty": 1,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 216"
+    },
+    {
+      "q": "¿Cuál es el principio de funcionamiento del detector de nivel de vibración empleado en sólidos (silos y tolvas)?",
+      "options": [
+        "Una horquilla forma parte de un sistema resonante mecánico excitado piezoeléctricamente, y reduce su vibración al ser amortiguada por el contacto con el material.",
+        "Un disco de desplazamiento suspendido por una cinta perforada sube o baja siguiendo la superficie del sólido.",
+        "Un haz de microondas se refleja sobre el sólido y es captado por un detector situado en el lado opuesto.",
+        "Un electrodo capacitivo entra en oscilación al detectar la presencia de humedad en el lecho del sólido."
+      ],
+      "correct": 0,
+      "explanation": "El detector de vibración consiste en una sonda en forma de horquilla que forma parte de un sistema resonante mecánico excitado piezoeléctricamente; cuando el material entra en contacto con la sonda, amortigua su vibración, lo que detecta el circuito electrónico actuando sobre un relé y una alarma tras un tiempo de retardo ajustable. Es adecuado para una gran variedad de polvos, carbón, azúcar, grano, cemento y arena, con una exactitud del ± 1%, y algunos modelos incorporan un sistema autolimpiante. La opción B describe en cambio el palpador servooperado, un instrumento de medida continua y no de punto fijo por vibración. La opción D es un distractor que combina de forma incorrecta el principio capacitivo con la detección de vibración, tecnologías independientes entre sí.",
+      "difficulty": 1,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 229"
+    },
+    {
+      "q": "¿Cuál es la exactitud típica del detector de nivel de diafragma empleado como punto fijo en sólidos, y cuál es su principal ventaja?",
+      "options": [
+        "± 50 mm; su bajo coste y su buen desempeño con materiales de muy diversa densidad.",
+        "± 2 mm; su capacidad para medir hasta 40 metros de alcance.",
+        "± 0,01%; su inmunidad total a la vibración del agitador.",
+        "± 25 mm; su uso exclusivo en tanques cerrados a presión."
+      ],
+      "correct": 0,
+      "explanation": "El detector de diafragma consiste en una membrana flexible, que puede ser de tela, goma, neopreno o fibra de vidrio, que entra en contacto con el producto y actúa sobre un microrruptor; su ventaja principal es el bajo coste y el buen funcionamiento con materiales de muy diversa densidad, con una exactitud de ± 50 mm. La opción B corresponde en realidad al medidor de radar de microondas para sólidos, cuya exactitud es de ± 2 mm y alcance de hasta 40 m, una tecnología mucho más precisa y costosa. La opción D (± 25 mm) es la exactitud típica de los interruptores de nivel alto por sonda o de las paletas rotativas, instrumentos distintos al diafragma. El diafragma es, por tanto, de los detectores de punto fijo más económicos y sencillos mecánicamente.",
+      "difficulty": 1,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 228"
+    },
+    {
+      "q": "¿En qué tipo de aplicación industrial extrema resulta especialmente útil el medidor de nivel láser, y en qué se diferencia físicamente de un medidor ultrasónico?",
+      "options": [
+        "En la medición de metal fundido, ya que emplea luz en lugar de sonido para determinar la distancia sin contacto.",
+        "En la medición de interfases líquido-líquido, ya que emplea un flotador con imanes internos.",
+        "En la detección de espuma, ya que emplea la variación de la constante dieléctrica del medio.",
+        "En la medición de niveles bajo presión extrema, ya que emplea burbujeo de gas inerte a alta velocidad."
+      ],
+      "correct": 0,
+      "explanation": "El medidor de nivel láser encuentra su aplicación en condiciones muy duras donde fallan los instrumentos convencionales, como la medición de metal fundido, ya que permite medir el nivel sin contacto y a distancia, resistiendo el calor extremo; su principio es similar al del ultrasonido, pero emplea un rayo láser en lugar de un impulso sónico, calculando la distancia mediante la velocidad de la luz y el tiempo transcurrido. La opción B describe en cambio el principio del medidor magnetoestrictivo, que sí incorpora un flotador con imanes, tecnología completamente distinta a la óptica del láser. Una ventaja adicional es que el sistema láser no se ve influido por cambios de temperatura, presión, turbulencias, capas de gases ni por la constante dieléctrica del material, a diferencia del radar. La opción D es un distractor sin relación real con la tecnología láser descrita en la fuente.",
+      "difficulty": 2,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 223"
+    },
+    {
+      "q": "Según Creus, ¿cuál de las siguientes es una condición que justifica sustituir un nivel de cristal por un indicador de nivel magnético?",
+      "options": [
+        "Que la presión de servicio sea inferior a 7 bar.",
+        "Que los líquidos sean sucios o viscosos, como asfaltos, residuos de vacío o crudos.",
+        "Que el tanque tenga un volumen inferior a 300 mm c.d.a.",
+        "Que el líquido tenga una constante dieléctrica superior a la del agua."
+      ],
+      "correct": 1,
+      "explanation": "La fuente enumera varias condiciones que justifican la sustitución del nivel de vidrio por un indicador de nivel magnético: presión superior a 25 bar, riesgo de rotura del vidrio, necesidad de evitar el escape de gases tóxicos o líquidos inflamables, tanques enterrados o de difícil visión, y líquidos sucios o viscosos como asfaltos, residuos de vacío o crudos. La opción A es incorrecta porque una presión baja (inferior a 7 bar) es precisamente el rango en que puede emplearse sin problema el nivel de cristal normal, situación contraria a la que motiva el cambio de tecnología. La opción C hace referencia a un rango de medida propio de los medidores de desplazamiento, no una condición de sustitución del nivel de cristal. El indicador magnético resuelve estos problemas siguiendo el movimiento de un flotador mediante un potente electroimán, sin exponer al operador a la visión directa del líquido.",
+      "difficulty": 2,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 198"
+    },
+    {
+      "q": "Cuando un transmisor de nivel de presión diferencial está montado por debajo de la tubería que lo conecta al tanque, la toma de alta presión detecta una presión positiva incluso con el nivel al mínimo. ¿Qué ajuste debe aplicarse en un transmisor convencional para que la señal sea de 4 mA c.c. en esa condición?",
+      "options": [
+        "El tornillo de elevación, que traslada el cero del instrumento a la izquierda.",
+        "El tornillo de supresión, que traslada el cero del instrumento a la derecha.",
+        "La instalación de un pote de condensado en la tubería húmeda (wet leg).",
+        "El aumento del caudal de aire de purga hasta 150 l/h."
+      ],
+      "correct": 1,
+      "explanation": "Cuando el transmisor está montado por debajo de la tubería de conexión al tanque, la toma de alta presión señala un nivel positivo incluso con el nivel mínimo real, por lo que es necesario suprimir esa altura de líquido indicada; en los transmisores neumáticos y electrónicos convencionales esto se logra con el tornillo de supresión, que traslada el cero del instrumento a la derecha. La opción A describe el procedimiento inverso, el de elevación de cero, empleado cuando la tubería húmeda (wet leg) se llena de condensado y genera una presión superior a la de alta presión, situación opuesta a la descrita en el enunciado. La opción D es un distractor que corresponde al caudal característico del medidor de tipo burbujeo, sin relación con este ajuste de calibración de un transmisor de presión diferencial montado en tanques cerrados. En los transmisores digitales modernos con HART o Foundation Fieldbus, este ajuste de cero se realiza por software y los conceptos de supresión y elevación pierden relevancia práctica.",
+      "difficulty": 2,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 204"
+    },
+    {
+      "q": "¿Qué tres variables mide internamente un transmisor de nivel multivariable con sensor piezoresistivo, y qué problema resuelve frente a un transmisor de diafragma clásico?",
+      "options": [
+        "Presión diferencial, temperatura y presión estática; corrige la variación de densidad del líquido para que la señal se corresponda con el nivel real.",
+        "Constante dieléctrica, admitancia e impedancia; elimina el error de recubrimiento del electrodo.",
+        "Tiempo de tránsito, frecuencia y fase; elimina el efecto Doppler producido por el oleaje.",
+        "Actividad radiactiva, vida media y temperatura; compensa la deriva por decaimiento de la fuente."
+      ],
+      "correct": 0,
+      "explanation": "El transmisor multivariable de nivel dispone de un sensor piezoresistivo que contiene tres sensores: presión diferencial, temperatura y presión estática, lo que permite utilizarlo en líquidos donde varían las condiciones de presión y temperatura y, por lo tanto, la densidad. Dado que el transmisor de diafragma clásico mide la presión del líquido dentro del tanque, la cual depende de la densidad, el transmisor multivariable soluciona este inconveniente mediante software que corrige la variación de densidad para que la señal de salida se corresponda con el nivel real. La opción B describe en cambio las variables propias del medidor capacitivo de radiofrecuencia, una tecnología eléctrica no basada en presión. Un caso de aplicación típico es la medición de nivel en una caldera de vapor, donde la tubería de baja presión llena de condensado puede secarse por vaporización, provocando lecturas incorrectas que el sistema multivariable corrige.",
+      "difficulty": 2,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 206"
+    },
+    {
+      "q": "En un medidor de nivel de tipo desplazamiento con tubo de torsión, ¿qué principio físico determina el empuje que recibe el flotador parcialmente sumergido, y cómo se expresa dicho empuje?",
+      "options": [
+        "El principio de Arquímedes, mediante la fórmula F = S · H · ρ · g, donde S es la sección del flotador y H su altura sumergida.",
+        "El efecto Doppler, mediante la fórmula que relaciona la frecuencia emitida y recibida por el sensor.",
+        "La ley de Coulomb, mediante la fórmula que relaciona la carga eléctrica y la distancia entre electrodos.",
+        "El principio de Bernoulli, mediante la fórmula que relaciona la velocidad y la presión del fluido."
+      ],
+      "correct": 0,
+      "explanation": "El flotador del medidor de desplazamiento, según el principio de Arquímedes, sufre un empuje hacia arriba dado por la fórmula F = S · H · ρ · g, donde S es la sección del flotador, H la altura sumergida, ρ la densidad del líquido y g la aceleración de la gravedad. Este empuje se opone al peso propio del flotador, generando un momento de torsión M = (S · H · ρ · g - P) · l sobre la barra o tubo de torsión, cuyo movimiento angular en el extremo libre es muy pequeño, del orden de los 9°. La opción C es un distractor que introduce un principio eléctrico (ley de Coulomb) sin relación alguna con el fenómeno mecánico de flotación descrito en la fuente. Al aumentar el nivel, mayor es la parte sumergida del flotador y mayor el empuje que neutraliza su peso, por lo que el esfuerzo medido por el tubo de torsión disminuye, y ocurre lo contrario cuando el nivel baja.",
+      "difficulty": 2,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 209"
+    },
+    {
+      "q": "¿Cuál es una desventaja característica del radar de onda continua modulada en frecuencia (FMCW) de haz libre frente a materiales de muy baja constante dieléctrica?",
+      "options": [
+        "No puede compensar el efecto Doppler producido por el oleaje del líquido.",
+        "Presenta dificultad para operar con materiales de constante dieléctrica menor de 2,5, por la incapacidad de obtener una señal de retorno suficiente.",
+        "Requiere recalibración cada vez que cambia la temperatura del vapor sobre el líquido.",
+        "No puede emplearse en tanques metálicos de gran diámetro."
+      ],
+      "correct": 1,
+      "explanation": "Entre las desventajas del radar FMCW, la fuente señala la dificultad de operar con materiales de baja constante dieléctrica, menor de 2,5, debido a la incapacidad para obtener una señal de retorno suficiente al receptor, además de la limitación de trabajar con haces de gran divergencia. La opción A es incorrecta porque el sistema FMCW sí resuelve el efecto Doppler emitiendo una onda cuya frecuencia aumenta en un tramo y disminuye en otro, cancelando dicho efecto mediante el promedio de ambas lecturas. La opción C confunde esta tecnología con los ultrasonidos, que sí requieren compensación térmica de la velocidad del sonido, mientras que el radar es prácticamente insensible a la temperatura del gas. Precisamente para resolver esta limitación con líquidos de baja constante dieléctrica, la fuente recomienda emplear el radar de onda guiada (GWR), que enfoca la energía a través de una varilla o cable.",
+      "difficulty": 2,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 219"
+    },
+    {
+      "q": "Además de permitir la medida de líquidos de baja constante dieléctrica, ¿qué otras ventajas presenta el radar de onda guiada (GWR) frente al radar FMCW de haz libre?",
+      "options": [
+        "No es influido por la composición del gas o vapor superior, ni por la temperatura ni la presión, puede trabajar en vacío sin recalibración y logra un rendimiento 20 veces mayor.",
+        "Elimina por completo el riesgo de corrosión de la varilla guía en cualquier tipo de líquido.",
+        "Permite prescindir del reflectómetro en el dominio del tiempo (TDR) para calcular la distancia.",
+        "Reduce la frecuencia de barrido a valores inferiores a 1 GHz para abaratar el equipo."
+      ],
+      "correct": 0,
+      "explanation": "El radar de onda guiada (GWR), al enfocar íntegramente la energía electromagnética a través de una varilla o cable en lugar de enviarla por el aire, evita los efectos de la espuma, las turbulencias y las obstrucciones del tanque, logrando un rendimiento 20 veces mayor; además, el sistema no es influido por la composición del gas o vapor sobre el líquido, ni por la temperatura ni la presión, y puede trabajar en vacío sin necesidad de recalibración. La opción B es incorrecta porque la propia fuente advierte que la varilla o cable guía sí puede verse afectada por la corrosión del líquido o por choques mecánicos con el agitador del tanque, siendo esta una limitación real del sistema. La opción C es falsa, ya que el GWR se basa precisamente en un reflectómetro en el dominio del tiempo (TDR) que genera más de 200.000 impulsos de energía electromagnética para detectar el cambio de impedancia. El GWR es especialmente adecuado para asfaltos, parafinas y productos densos o viscosos que sufren estratificaciones.",
+      "difficulty": 2,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 220"
+    },
+    {
+      "q": "¿Cómo determina el nivel un medidor de nivel de báscula para sólidos, y cuál es su exactitud típica según el sensor empleado?",
+      "options": [
+        "Mide directamente la altura del lecho de sólidos mediante un haz de microondas reflejado.",
+        "Mide indirectamente el nivel a través del peso del conjunto tolva más producto, con una exactitud de ± 0,5% a ± 1% según el sensor.",
+        "Mide el nivel mediante un haz de ultrasonidos horizontal que se interrumpe al llegar el sólido.",
+        "Mide el nivel mediante la variación de capacitancia de una varilla vertical aislada."
+      ],
+      "correct": 1,
+      "explanation": "El medidor de nivel de báscula mide el nivel de sólidos indirectamente a través del peso del conjunto tolva más producto: como el peso de la tolva es conocido, es fácil determinar el peso del producto y, por lo tanto, el nivel; la tolva se apoya sobre una plataforma de carga con galga extensiométrica u otros elementos neumáticos, hidráulicos o eléctricos, con una exactitud que depende del sensor utilizado y puede variar del ± 0,5% al ± 1%. Es un sistema relativamente caro, en particular para grandes tolvas, aunque puede trabajar a altas presiones y temperaturas. La opción D describe en cambio el medidor de nivel capacitivo para sólidos, que usa una varilla aislada y presenta más riesgo de error por adherencia del sólido, un principio de medida completamente distinto al peso. La opción C corresponde al medidor de ultrasonidos para sólidos con haz horizontal, que detecta la intercepción del haz en un punto fijo y no el peso total del sistema.",
+      "difficulty": 2,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 231"
+    },
+    {
+      "q": "¿Cuál es la exactitud y el campo de medida típicos del medidor de radar de microondas aplicado a sólidos, y en qué tipo de producto es especialmente adecuado?",
+      "options": [
+        "± 2 mm, con un campo de medida de hasta 40 metros; ideal en productos muy viscosos como el asfalto.",
+        "± 50 mm, con un campo de medida ilimitado; ideal en materiales granulares y carbón.",
+        "± 25 mm, únicamente en tanques abiertos a baja presión.",
+        "± 15 mm, limitado a materiales granulares que sean buenos aislantes."
+      ],
+      "correct": 0,
+      "explanation": "El medidor de radar de microondas para sólidos, similar al de nivel de líquidos, consta de una fuente de microondas situada en la parte superior del tanque que emite un haz reflejado sobre el sólido y captado por un detector; según la fuente, es ideal en productos muy viscosos como el asfalto, con una exactitud de ± 2 mm y un campo de medida que puede llegar a 40 metros. La opción B (± 50 mm) corresponde en realidad al detector de diafragma, mientras que la opción C (± 25 mm) es propia de las paletas rotativas o los interruptores de nivel alto por sonda, ambos instrumentos de punto fijo mucho menos precisos. La opción D (± 15 mm) describe la precisión del medidor capacitivo para sólidos, limitado a materiales granulares o en polvo que sean buenos aislantes, una tecnología distinta a las microondas. El radar de microondas destaca así por ofrecer, entre los medidores de sólidos, una de las mayores exactitudes junto con el láser.",
+      "difficulty": 2,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 233"
+    },
+    {
+      "q": "En un tanque cerrado con interfase agua-queroseno, donde el alcance (span) calibrado del transmisor de presión diferencial es de 0,0745 bar y la presión al 0% del alcance (pa(0%)) es de 0,0235 bar, con h + ha = 3,8 m, el transmisor lee 0,085 bar (17 mA c.c.). ¿A qué altura se encuentra la interfase?",
+      "options": [
+        "2,50 m",
+        "3,17 m",
+        "3,80 m",
+        "0,74 m"
+      ],
+      "correct": 1,
+      "explanation": "La posición de la interfase se calcula con la fórmula Interfase = [(Presión diferencial leída - pa(0%)) / Alcance] · (h + ha). Sustituyendo los valores del ejemplo: [(0,085 - 0,0235) / 0,0745] · 3,8 = (0,0615/0,0745) · 3,8 ≈ 0,8255 · 3,8 ≈ 3,17 m, resultado que coincide con el valor de referencia del libro. La opción C (3,80 m) es un error común al confundir el valor de (h + ha) con la posición de la interfase, olvidando aplicar el factor de proporción de la presión leída. La opción A (2,50 m) corresponde en cambio al resultado del ejemplo equivalente en un tanque abierto con distintos valores de presión y alcance, por lo que mezclar los datos de ambos ejemplos lleva a un resultado incorrecto.",
+      "difficulty": 3,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 208"
+    },
+    {
+      "q": "Una fuente de Cesio 137 de 10 mCi se instala en un tanque de agua de alta presión con paredes de 13 mm. La dosis de radiación en el aire (sin tanque) a 1,2 m es de 2,4 mR/h, y las paredes del tanque vacío reducen la energía captada por el detector a un 49% de ese valor. Si al llenarse el tanque el espesor de agua reduce la intensidad en un 3,5% adicional respecto a la dosis en el aire, ¿qué dosis final recibe el detector con el tanque lleno?",
+      "options": [
+        "1,176 mR/h",
+        "1,092 mR/h",
+        "2,400 mR/h",
+        "0,084 mR/h"
+      ],
+      "correct": 1,
+      "explanation": "Con el tanque vacío, el detector recibe el 49% de la dosis en el aire: 0,49 × 2,4 mR/h = 1,176 mR/h. Al llenarse el tanque, el espesor de agua reduce la intensidad en un 3,5% adicional de la dosis en el aire: 0,035 × 2,4 = 0,084 mR/h, por lo que la dosis final con el tanque lleno es 1,176 - 0,084 = 1,092 mR/h, tal como indica la fuente. La opción A (1,176 mR/h) corresponde únicamente a la condición de tanque vacío, sin restar la atenuación adicional producida por la columna de agua al llenarse el tanque. Este valor final (1,092 mR/h) sigue siendo superior a 1 mR/h, el mínimo necesario para excitar el detector de cámara iónica, cumpliendo así el segundo criterio de diseño exigido en la instalación.",
+      "difficulty": 3,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 223"
+    },
+    {
+      "q": "Un flotador de un medidor de nivel de desplazamiento tiene una sección S de 40 cm² y una altura sumergida H de 25 cm en un líquido de densidad ρ = 0,9 g/cm³ (900 kg/m³). Aplicando la fórmula F = S · H · ρ · g (g = 9,8 m/s²), calcule el empuje F que recibe el flotador.",
+      "options": [
+        "8,82 N",
+        "10,00 N",
+        "88,20 N",
+        "0,882 N"
+      ],
+      "correct": 0,
+      "explanation": "Convirtiendo las unidades al Sistema Internacional: S = 40 cm² = 0,004 m², H = 25 cm = 0,25 m, ρ = 900 kg/m³. Aplicando la fórmula del principio de Arquímedes F = S · H · ρ · g: F = 0,004 × 0,25 × 900 × 9,8 = 8,82 N, que corresponde a la opción A. La opción B (10,00 N) es un error típico de quien aproxima g a un valor redondeado sin usar el 9,8 m/s² indicado por la fuente, o que comete un error de conversión de unidades. La opción C (88,20 N) resulta de olvidar convertir la sección de cm² a m², multiplicando por un factor 10 de más; este tipo de empuje es el que, según Creus, se opone al peso propio del flotador y determina el momento de torsión medido por el tubo de torsión del instrumento.",
+      "difficulty": 3,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 209"
+    },
+    {
+      "q": "Según la fórmula de capacitancia del conjunto electrodo-tanque C = K · A / D, si el área efectiva de los conductores A se mantiene constante, la distancia D se reduce a la mitad y la constante dieléctrica K aumenta de 2 a 3 debido a un cambio de líquido, ¿en qué factor multiplicativo cambia la capacitancia C respecto a su valor original?",
+      "options": [
+        "×3",
+        "×1,5",
+        "×6",
+        "×0,5"
+      ],
+      "correct": 0,
+      "explanation": "La fórmula de capacitancia del conjunto electrodo-tanque es C = K · A / D, de modo que C es directamente proporcional a la constante dieléctrica K e inversamente proporcional a la distancia D entre conductores, permaneciendo A constante. Si K pasa de 2 a 3 (factor ×1,5) y D se reduce a la mitad (lo que equivale a multiplicar por 2 el término 1/D), el efecto combinado sobre C es 1,5 × 2 = 3, es decir, la capacitancia se triplica respecto a su valor original. La opción B (×1,5) es el resultado de considerar únicamente el cambio de K, olvidando el efecto adicional de reducir D a la mitad. La opción D (×0,5) invierte incorrectamente la relación de proporcionalidad, tratando a C como si fuera inversamente proporcional a K, un error conceptual que confunde esta fórmula con la de la impedancia del circuito, la cual sí es inversamente proporcional a la capacitancia.",
+      "difficulty": 3,
+      "module": 4,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 212"
     }
   ]
 }

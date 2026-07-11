@@ -11,9 +11,10 @@
         "El grado de conformidad de un valor indicado con un valor estándar aceptado."
       ],
       "correct": 1,
-      "explanation": "El alcance (span) se define técnicamente como la diferencia algebraica entre los valores superior e inferior del campo de medida del instrumento [1, 2]. Es fundamental no confundirlo con la opción A, que corresponde a la definición de 'campo de medida' (range), el cual representa el espectro completo de valores y no solo su magnitud numérica [3, 4]. Mientras que el campo se expresa citando los dos valores extremos (ej. 0 a 10 bar), el alcance es el resultado escalar de la resta de ambos (10 bar).",
+      "explanation": "El alcance (span) se define técnicamente como la diferencia algebraica entre los valores superior e inferior del campo de medida del instrumento. Es fundamental no confundirlo con la opción A, que corresponde a la definición de 'campo de medida' (range), el cual representa el espectro completo de valores y no solo su magnitud numérica. Mientras que el campo se expresa citando los dos valores extremos (ej. 0 a 10 bar), el alcance es el resultado escalar de la resta de ambos (10 bar).",
       "difficulty": 1,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "En la identificación de instrumentos bajo la norma ISA-S5.1, ¿qué indica la primera letra del código alfanumérico?",
@@ -24,9 +25,10 @@
         "La ubicación física del instrumento en la planta."
       ],
       "correct": 2,
-      "explanation": "Bajo la norma ISA-S5.1, la primera letra de un código de identificación siempre indica la variable medida o inicial del proceso, como la 'P' para presión o 'T' para temperatura [5, 6]. Una confusión común es la opción A, ya que la función de salida o lectura del instrumento se describe mediante las letras sucesivas y no por la inicial. Por ejemplo, en el código 'TIC', la 'T' identifica la variable temperatura mientras que las letras siguientes indican las funciones de indicación y control.",
+      "explanation": "Bajo la norma ISA-S5.1, la primera letra de un código de identificación siempre indica la variable medida o inicial del proceso, como la 'P' para presión o 'T' para temperatura. Una confusión común es la opción A, ya que la función de salida o lectura del instrumento se describe mediante las letras sucesivas y no por la inicial. Por ejemplo, en el código 'TIC', la 'T' identifica la variable temperatura mientras que las letras siguientes indican las funciones de indicación y control.",
       "difficulty": 1,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "¿Qué nombre recibe el instrumento que capta la variable de proceso y la envía a distancia en forma de señal estandarizada, pero carece de indicación local?",
@@ -37,9 +39,10 @@
         "Registrador"
       ],
       "correct": 2,
-      "explanation": "Un transmisor ciego es aquel instrumento que capta la variable de proceso y envía la señal a distancia de forma estandarizada sin disponer de una indicación visible local [8, 9]. Se diferencia radicalmente de un indicador (opción A), cuya función principal es precisamente permitir la lectura del valor mediante una escala o pantalla local. Este tipo de transmisores es muy habitual en instalaciones de campo donde el monitoreo se centraliza exclusivamente en la sala de control o paneles alejados del proceso.",
+      "explanation": "Un transmisor ciego es aquel instrumento que capta la variable de proceso y envía la señal a distancia de forma estandarizada sin disponer de una indicación visible local. Se diferencia radicalmente de un indicador (opción A), cuya función principal es precisamente permitir la lectura del valor mediante una escala o pantalla local. Este tipo de transmisores es muy habitual en instalaciones de campo donde el monitoreo se centraliza exclusivamente en la sala de control o paneles alejados del proceso.",
       "difficulty": 1,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "Un manómetro con un rango de 0-10 bar muestra lecturas constantes de 7.049, 7.050 y 7.051 bar para una presión real de 5.000 bar. ¿Cómo se califica este instrumento?",
@@ -52,7 +55,8 @@
       "correct": 2,
       "explanation": "Este instrumento presenta baja exactitud porque sus lecturas promedio de 7,050 bar están muy alejadas del valor real de 5,000 bar, incurriendo en un error sistemático considerable. Sin embargo, califica con alta precisión debido a que la dispersión máxima entre sus lecturas (7,051 - 7,049) es de solo 0,002 bar, evidenciando una excelente repetibilidad. Es una confusión frecuente (opción A) asumir que exactitud y precisión son sinónimos, pero un equipo puede ser sumamente preciso y estar totalmente descalibrado.",
       "difficulty": 2,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "¿Cuál es la principal distinción entre la Incertidumbre Tipo A y la Incertidumbre Tipo B en metrología industrial?",
@@ -63,9 +67,10 @@
         "La Tipo A solo aplica a instrumentos analógicos y la Tipo B a digitales."
       ],
       "correct": 1,
-      "explanation": "La incertidumbre Tipo A se evalúa obligatoriamente mediante el análisis estadístico de una serie de observaciones independientes y repetidas bajo las mismas condiciones de medida [14, 15]. Por el contrario, la Tipo B se determina basándose en información externa disponible, como certificados de calibración previos, especificaciones del fabricante o la experiencia del operador [16, 17]. Una confusión habitual es asignar estas categorías según el tipo de error (aleatorio o sistemático), cuando la distinción normativa real reside exclusivamente en la metodología empleada para su cálculo.",
+      "explanation": "La incertidumbre Tipo A se evalúa obligatoriamente mediante el análisis estadístico de una serie de observaciones independientes y repetidas bajo las mismas condiciones de medida. Por el contrario, la Tipo B se determina basándose en información externa disponible, como certificados de calibración previos, especificaciones del fabricante o la experiencia del operador. Una confusión habitual es asignar estas categorías según el tipo de error (aleatorio o sistemático), cuando la distinción normativa real reside exclusivamente en la metodología empleada para su cálculo.",
       "difficulty": 2,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "Según la clasificación ISA-S5.1, si un instrumento tiene las letras 'TIC', ¿cuál es su función?",
@@ -76,9 +81,10 @@
         "Controlador con Indicación de Corriente."
       ],
       "correct": 1,
-      "explanation": "Según la norma ISA-S5.1, la primera letra 'T' identifica la variable medida (Temperatura) y las letras sucesivas 'I' y 'C' indican las funciones de indicación y control respectivamente [1, 2]. Es un error común confundir la 'T' inicial con la función de transmisión, pero esta última siempre se representa como una letra sucesiva (ej. TT para Transmisor de Temperatura) [1, 3]. Por tanto, 'TIC' describe específicamente a un Controlador Indicador de Temperatura.",
+      "explanation": "Según la norma ISA-S5.1, la primera letra 'T' identifica la variable medida (Temperatura) y las letras sucesivas 'I' y 'C' indican las funciones de indicación y control respectivamente. Es un error común confundir la 'T' inicial con la función de transmisión, pero esta última siempre se representa como una letra sucesiva (ej. TT para Transmisor de Temperatura). Por tanto, 'TIC' describe específicamente a un Controlador Indicador de Temperatura.",
       "difficulty": 2,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "Un transmisor de temperatura tiene un campo de medida de -20 °C a 180 °C. Calcule su alcance (span) y el porcentaje de elevación de cero que presenta.",
@@ -89,9 +95,10 @@
         "Alcance: 180 °C; Elevación de cero: 11.1%."
       ],
       "correct": 0,
-      "explanation": "El alcance (span) es la diferencia algebraica entre los límites: 180 - (-20) = 200 °C [4, 5]. La elevación de cero es la cantidad en que el cero supera al límite inferior, es decir, 20 °C (0 - (-20) = 20), por lo que el porcentaje respecto al alcance es (20 / 200) * 100 = 10% [6, 7]. Una confusión típica es calcular este porcentaje sobre el valor superior de la escala (180 °C), lo que ignora la definición técnica ligada estrictamente al span.",
+      "explanation": "El alcance (span) es la diferencia algebraica entre los límites: 180 - (-20) = 200 °C. La elevación de cero es la cantidad en que el cero supera al límite inferior, es decir, 20 °C (0 - (-20) = 20), por lo que el porcentaje respecto al alcance es (20 / 200) * 100 = 10%. Una confusión típica es calcular este porcentaje sobre el valor superior de la escala (180 °C), lo que ignora la definición técnica ligada estrictamente al span.",
       "difficulty": 3,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "Se realiza una medición de caudal utilizando cuatro elementos en serie con errores máximos de ±2%, ±0.5%, ±0.5% y ±0.5%. ¿Cuál es el error total probable de la medición?",
@@ -102,9 +109,10 @@
         "±1.25%"
       ],
       "correct": 1,
-      "explanation": "El error total probable de una medición con varios instrumentos en serie se calcula como la raíz cuadrada de la suma de los cuadrados de los errores individuales [8, 9]. El desarrollo numérico es √(2² + 0.5² + 0.5² + 0.5²) = √4.75 = 2.18% [10, 11]. Es un error conceptual típico sumar los porcentajes de error directamente (obteniendo 3.5%), ya que estadísticamente es improbable que todos los instrumentos alcancen su error máximo simultáneamente.",
+      "explanation": "El error total probable de una medición con varios instrumentos en serie se calcula como la raíz cuadrada de la suma de los cuadrados de los errores individuales. El desarrollo numérico es √(2² + 0.5² + 0.5² + 0.5²) = √4.75 = 2.18%. Es un error conceptual típico sumar los porcentajes de error directamente (obteniendo 3.5%), ya que estadísticamente es improbable que todos los instrumentos alcancen su error máximo simultáneamente.",
       "difficulty": 3,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "En un lazo de control, se observa un fenómeno donde la señal de salida no varía ante cambios pequeños de la variable hasta que estos superan un umbral de ±0.2 °C. Si el alcance es de 200 °C, ¿cuál es la zona muerta del instrumento?",
@@ -115,9 +123,10 @@
         "±1.0%"
       ],
       "correct": 1,
-      "explanation": "La zona muerta se define como el campo de valores que no produce variación en la salida del instrumento y se expresa habitualmente como porcentaje del alcance [12, 13]. En este caso, el cálculo es (0.2 °C / 200 °C) * 100 = 0.1%, por lo que la zona muerta es de ±0.1%. Una confusión habitual es asimilar este término a la sensibilidad, la cual representa en realidad una razón entre incrementos de salida y entrada tras alcanzar el reposo [14, 15].",
+      "explanation": "La zona muerta se define como el campo de valores que no produce variación en la salida del instrumento y se expresa habitualmente como porcentaje del alcance. En este caso, el cálculo es (0.2 °C / 200 °C) * 100 = 0.1%, por lo que la zona muerta es de ±0.1%. Una confusión habitual es asimilar este término a la sensibilidad, la cual representa en realidad una razón entre incrementos de salida y entrada tras alcanzar el reposo.",
       "difficulty": 3,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "¿Cómo se define la 'rangeabilidad' (rangeability) o dinámica de medida de un instrumento según la terminología técnica?",
@@ -128,9 +137,10 @@
         "Magnitud de los cambios en escalón de la señal de salida al variar el campo"
       ],
       "correct": 1,
-      "explanation": "La rangeabilidad o dinámica de medida es técnicamente el cociente entre el valor de medida superior e inferior de un instrumento [16, 17]. Por ejemplo, un transmisor inteligente de caudal puede mejorar esta relación de 3:1 a 10:1 manteniendo su exactitud [18, 19]. Es frecuente confundir este término con el alcance (opción A), pero el alcance se obtiene mediante una resta algebraica y no mediante una relación de división entre los límites [4, 17].",
+      "explanation": "La rangeabilidad o dinámica de medida es técnicamente el cociente entre el valor de medida superior e inferior de un instrumento. Por ejemplo, un transmisor inteligente de caudal puede mejorar esta relación de 3:1 a 10:1 manteniendo su exactitud. Es frecuente confundir este término con el alcance (opción A), pero el alcance se obtiene mediante una resta algebraica y no mediante una relación de división entre los límites.",
       "difficulty": 1,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "¿Qué término metrológico define la propiedad de un resultado de medición de poder relacionarse con patrones nacionales o internacionales mediante una cadena ininterrumpida de comparaciones con incertidumbres determinadas?",
@@ -143,7 +153,8 @@
       "correct": 2,
       "explanation": "La trazabilidad es la propiedad metrológica que permite vincular el resultado de una medición con patrones de referencia nacionales o internacionales a través de una cadena ininterrumpida y documentada de comparaciones con incertidumbres conocidas. Un error común es confundirla con la exactitud (opción D), la cual se refiere meramente a qué tan cerca está una lectura del valor verdadero sin implicar necesariamente esta jerarquía de calibración. De acuerdo con las fuentes, garantizar esta cadena es el atributo indispensable para la confiabilidad universal de cualquier resultado de medida.",
       "difficulty": 1,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "Bajo la norma ISA-S5.1, si un instrumento se identifica con las letras 'TDI', ¿qué función cumple específicamente la letra 'D' en esta combinación?",
@@ -156,7 +167,8 @@
       "correct": 1,
       "explanation": "Según la norma ISA-S5.1, la letra 'D' actuando inmediatamente después de la primera letra funciona como una letra de modificación que redefine la variable medida, transformando en este caso 'Temperatura' en 'Temperatura Diferencial'. Una confusión técnica frecuente es asociar esta 'D' con la función de control derivativo (opción A); sin embargo, las funciones de salida se describen en las letras sucesivas finales y no modifican la naturaleza de la variable inicial. Esta nomenclatura permite al instrumentista identificar que el equipo 'TDI' mide y muestra la diferencia térmica entre dos puntos del proceso.",
       "difficulty": 2,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "En la simbología de sistemas de control compartido (ISA-S5.3), ¿qué representación gráfica identifica a un instrumento con funciones de visualización y control compartido que es accesible normalmente al operador?",
@@ -169,7 +181,8 @@
       "correct": 1,
       "explanation": "En la simbología de sistemas digitales y de control compartido definida por la norma ISA-S5.3, un círculo inscrito dentro de un cuadrado representa funciones de visualización y control que son accesibles normalmente al operador desde su consola. Es habitual confundirlo con el círculo simple sin recuadro (opción A), símbolo que identifica instrumentos físicos montados localmente en campo sin integración en redes compartidas. El uso del cuadrado exterior es el criterio técnico que permite discernir si la interfaz del instrumento reside en el software de una estación de operación o en un dispositivo físico tradicional.",
       "difficulty": 2,
-      "module": 1
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
     },
     {
       "q": "Un transmisor inteligente de caudal configurado con una placa de orificio reporta una mejora en su rangeabilidad a una relación de 10:1 manteniendo su exactitud. Si el caudal máximo de diseño (100% del rango) es de 150 m³/h, ¿cuál es el caudal mínimo que el instrumento puede medir conservando la exactitud del ±1%?",
@@ -181,6 +194,343 @@
       ],
       "correct": 2,
       "explanation": "La rangeabilidad o dinámica de medida se define técnicamente como el cociente entre el valor de medida superior y el inferior que el instrumento puede manejar conservando su exactitud. El desarrollo numérico para este caso consiste en dividir el caudal máximo por la relación de rangeabilidad: 150 m³/h / 10 = 15 m³/h. Un error conceptual típico es confundir el alcance o span con esta relación, pero las fuentes técnicas subrayan que los transmisores inteligentes aplicados a elementos deprimógenos han mejorado este límite operativo de una proporción clásica de 3:1 a una de 10:1.",
+      "difficulty": 3,
+      "module": 1,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1 (Generalidades)"
+    },
+    {
+      "q": "Según la terminología normalizada (ANSI/ISA-S51.1), ¿cómo se define el 'campo de medida' (range) de un instrumento?",
+      "options": [
+        "El espectro de valores de la variable medida comprendido entre los límites superior e inferior de la capacidad de medida, recepción o transmisión del instrumento, expresado citando ambos valores extremos.",
+        "La diferencia algebraica entre los valores superior e inferior de dicho espectro de valores.",
+        "El cociente entre el valor de medida superior y el valor de medida inferior del instrumento.",
+        "La capacidad máxima que puede soportar el instrumento sin sufrir daños permanentes."
+      ],
+      "correct": 0,
+      "explanation": "El campo de medida (range) es el espectro o conjunto de valores comprendidos entre los límites superior e inferior de la capacidad de medida del instrumento, y se expresa citando los dos valores extremos, por ejemplo 0-10 bar. La opción B corresponde en realidad a la definición de alcance (span), un valor escalar resultante de una resta y no un conjunto de valores. La opción C describe la rangeabilidad o dinámica de medida, un término distinto derivado del campo de medida. Confundir estos tres términos es habitual porque las tres magnitudes se calculan a partir de los mismos dos límites del instrumento.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 4",
+      "difficulty": 1,
+      "module": 1
+    },
+    {
+      "q": "En el cálculo de la incertidumbre de medida, ¿qué se entiende por 'mensurando'?",
+      "options": [
+        "El instrumento patrón empleado para calibrar el equipo bajo prueba.",
+        "La magnitud particular objeto de una medición, que puede determinarse de forma directa o indirecta a partir de otras magnitudes relacionadas matemática o funcionalmente.",
+        "El valor de la incertidumbre expandida obtenido tras aplicar el factor de cobertura.",
+        "La diferencia entre el valor leído y el valor verdadero convencional de la variable."
+      ],
+      "correct": 1,
+      "explanation": "El mensurando es, según la terminología empleada en el cálculo de incertidumbre, la magnitud particular objeto de una medición; puede medirse directamente (la temperatura de un cuerpo con un termómetro) o indirectamente a partir de otras magnitudes relacionadas, como la densidad calculada mediante la relación masa/volumen. La opción D describe en realidad el error, y la opción A confunde el mensurando con el patrón de referencia usado en la calibración. Distinguir el mensurando de estos otros conceptos es clave porque la forma de su función (directa, indirecta o combinada) determina cómo se calcula posteriormente la incertidumbre combinada.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 7",
+      "difficulty": 1,
+      "module": 1
+    },
+    {
+      "q": "¿Cómo se calcula el error absoluto de una medida según la terminología del texto?",
+      "options": [
+        "Error absoluto = Valor leído - Valor verdadero",
+        "Error absoluto = Valor verdadero - Valor leído",
+        "Error absoluto = Valor leído / Valor verdadero",
+        "Error absoluto = Valor ideal - Valor leído"
+      ],
+      "correct": 0,
+      "explanation": "El texto define el error absoluto como la diferencia entre el valor leído en el instrumento y el valor verdadero de la variable medida, es decir, Error absoluto = Valor leído - Valor verdadero. Este error absoluto se distingue del error relativo, que representa la calidad de la medida relacionando dicho error absoluto con una magnitud de referencia, y ambos derivan del error general del instrumento, definido como valor leído menos valor ideal de la variable medida. La opción D corresponde en realidad a esta fórmula general del error (no específicamente a la del error absoluto), por lo que confundir ambas expresiones -que difieren en si se usa el valor verdadero o el valor ideal como referencia- es un error conceptual frecuente.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 5",
+      "difficulty": 1,
+      "module": 1
+    },
+    {
+      "q": "Cuando un proceso se encuentra en condiciones de régimen permanente, ¿qué tipo de error presenta el instrumento, en contraste con el error dinámico?",
+      "options": [
+        "Error medio",
+        "Error estático",
+        "Error de cero",
+        "Error de histéresis"
+      ],
+      "correct": 1,
+      "explanation": "El texto establece que si el proceso está en condiciones de régimen permanente existe el llamado error estático, mientras que en condiciones dinámicas el error varía considerablemente y se denomina error dinámico, definido como la diferencia entre el valor instantáneo y el indicado por el instrumento. Este último depende del tipo de fluido del proceso, de su velocidad, del elemento primario (termopar, bulbo y capilar) y de los medios de protección (vaina) empleados. La opción A corresponde a un concepto distinto: la media aritmética de los errores en cada punto de la medida para todos los valores crecientes y decrecientes, y no a la condición de régimen del proceso.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 5",
+      "difficulty": 1,
+      "module": 1
+    },
+    {
+      "q": "Para que la comparación en una operación de calibración sea correcta, ¿qué relación de precisión se recomienda entre el patrón de medida y el instrumento a calibrar, según la norma ISA S37.3 para sensores de presión?",
+      "options": [
+        "1:1",
+        "2:1",
+        "4:1",
+        "10:1"
+      ],
+      "correct": 2,
+      "explanation": "El procedimiento general indicado en el texto exige que el patrón de medida sea suficientemente más preciso que el instrumento que se calibra, recomendándose una relación de 4:1 en los sensores de presión de acuerdo con la norma ISA S37.3. Confundir esta relación con la rangeabilidad de un instrumento (que en los transmisores inteligentes de caudal puede llegar a 10:1) es un error común, ya que ambos son cocientes pero se aplican a conceptos metrológicos distintos: uno a la jerarquía de calibración patrón-instrumento y otro al rango dinámico de medida del propio instrumento.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 6",
+      "difficulty": 1,
+      "module": 1
+    },
+    {
+      "q": "Según la tabla de valores T de Student empleada para el cálculo de la incertidumbre expandida, ¿qué valor del factor de cobertura K se utiliza cuando el número de observaciones es mayor de 20, para un nivel de confianza del 95,45%?",
+      "options": [
+        "K = 1",
+        "K = 1,64",
+        "K = 2",
+        "K = 2,58"
+      ],
+      "correct": 2,
+      "explanation": "El texto indica explícitamente que con un nivel de confianza del 95,45% y para un número de valores mayor de 20 el factor de cobertura es K=2, tal como se observa en la fila de grados de libertad infinitos de la tabla de valores T de Student. La opción D (2,58) corresponde en esa misma tabla al nivel de confianza del 99% con grados de libertad infinitos, y la opción B (1,64) al nivel de confianza del 90%, por lo que ambas son confusiones típicas de leer la columna equivocada. El valor de K crece a medida que se exige mayor nivel de confianza o cuando se dispone de menos observaciones (menor número de grados de libertad), como ocurre en el ejemplo del manómetro Bourdon calibrado con solo 4 medidas, donde K=1,87.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 7",
+      "difficulty": 1,
+      "module": 1
+    },
+    {
+      "q": "¿Cuál es la diferencia conceptual fundamental entre la sensibilidad y la zona muerta de un instrumento?",
+      "options": [
+        "Son sinónimos y ambos términos se usan indistintamente en la norma ISA.",
+        "La sensibilidad es la razón entre el incremento de la señal de salida y el de la variable que lo ocasiona tras alcanzar el reposo, mientras que la zona muerta es el campo de valores de la variable que no produce ninguna variación en la salida.",
+        "La sensibilidad se expresa solo en unidades de la variable medida, mientras que la zona muerta se expresa únicamente en unidades de tiempo.",
+        "La sensibilidad se aplica solo a instrumentos digitales y la zona muerta solo a instrumentos analógicos."
+      ],
+      "correct": 1,
+      "explanation": "El texto señala explícitamente que no debe confundirse la sensibilidad con la zona muerta porque son definiciones básicamente distintas: la sensibilidad es la razón entre el incremento de la señal de salida (o lectura) y el incremento de la variable que lo ocasiona una vez alcanzado el estado de reposo, mientras que la zona muerta es el campo de valores que no hace variar en absoluto la indicación o señal de salida. Esta confusión era habitual antiguamente porque una definición antigua de sensibilidad la describía como el 'valor mínimo en que se ha de modificar la variable para apreciar un cambio medible en el índice o en la pluma de registro', acercándola conceptualmente a la zona muerta. Ambos términos, sin embargo, se expresan en tanto por ciento del alcance de la medida.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 16",
+      "difficulty": 1,
+      "module": 1
+    },
+    {
+      "q": "Respecto a la relación entre repetibilidad e histéresis, ¿cuál de las siguientes afirmaciones es correcta según la terminología técnica?",
+      "options": [
+        "La repetibilidad incluye siempre el efecto de la histéresis en su valor numérico.",
+        "El término repetibilidad no incluye la histéresis, ya que para determinar la repetibilidad el fabricante parte siempre desde el valor mínimo del campo de medida en cada determinación.",
+        "La histéresis es un caso particular de la repetibilidad medido únicamente en sentido ascendente.",
+        "La repetibilidad y la histéresis son términos legalmente intercambiables en la norma ISA-S5.1."
+      ],
+      "correct": 1,
+      "explanation": "El texto indica de forma explícita que el término repetibilidad no incluye la histéresis; para determinarla, el fabricante comprueba la diferencia entre el valor verdadero de la variable y la indicación o señal de salida recorriendo todo el campo, partiendo siempre desde el valor mínimo del campo de medida en cada determinación. La histéresis, en cambio, se mide comparando las lecturas obtenidas para un mismo valor de la variable al recorrer la escala en ambos sentidos, ascendente y descendente. Un error conceptual habitual es asumir que ambos términos se solapan completamente, cuando en realidad la repetibilidad es sinónimo de precisión y la histéresis es un fenómeno distinto asociado al sentido de recorrido de la variable.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 17",
+      "difficulty": 1,
+      "module": 1
+    },
+    {
+      "q": "¿Qué diferencia existe entre la 'deriva de cero' y la 'deriva térmica de cero' de un instrumento?",
+      "options": [
+        "La deriva de cero es una variación en la señal de salida para el valor cero de la medida atribuible a cualquier causa interna, mientras que la deriva térmica de cero es la variación en la señal de salida a medida cero debida específicamente a los efectos únicos de la temperatura.",
+        "La deriva de cero solo ocurre en instrumentos neumáticos y la deriva térmica solo en instrumentos electrónicos.",
+        "Ambos términos son sinónimos y se calculan siempre como porcentaje de la lectura instantánea.",
+        "La deriva de cero se mide en unidades de tiempo y la deriva térmica en unidades de temperatura únicamente."
+      ],
+      "correct": 0,
+      "explanation": "El texto define la deriva como una variación en la señal de salida que se presenta en un período de tiempo determinado mientras se mantienen constantes la variable medida y todas las condiciones ambientales, distinguiendo entre la deriva de cero -atribuible a cualquier causa interna- y la deriva térmica de cero -debida específicamente a los efectos de la temperatura-. Como ejemplo, el texto cita que la deriva térmica de cero de un instrumento en condiciones de temperatura ambiente durante 1 mes fue de 0,2% del alcance. Confundir ambos términos como sinónimos (opción C) ignora que la deriva térmica es un caso particular y más específico de la deriva de cero, causado únicamente por variaciones de temperatura.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 18",
+      "difficulty": 1,
+      "module": 1
+    },
+    {
+      "q": "¿Por qué se consideran 'instrumentos ciegos' los presostatos y termostatos, a pesar de disponer de una escala exterior con un índice de selección de la variable?",
+      "options": [
+        "Porque no pueden instalarse en campo y solo funcionan integrados en sistemas digitales.",
+        "Porque únicamente ajustan el punto de disparo del interruptor o conmutador al cruzar la variable el valor seleccionado, sin ofrecer una indicación visible continua de la variable de proceso.",
+        "Porque su señal de salida siempre es neumática y nunca electrónica.",
+        "Porque carecen de elemento primario y no pueden clasificarse según ninguna variable de proceso."
+      ],
+      "correct": 1,
+      "explanation": "El texto aclara que los presostatos y termostatos (interruptores de presión y temperatura) son instrumentos ciegos porque, aunque poseen una escala exterior con un índice de selección, esta escala solo sirve para ajustar el punto de disparo del interruptor o conmutador cuando la variable cruza el valor seleccionado, sin ofrecer una indicación continua y visible de la variable como haría un indicador. También se consideran ciegos los transmisores de caudal, presión, nivel y temperatura sin indicación. La opción B es correcta porque distingue precisamente esta diferencia entre 'ajuste de disparo' e 'indicación visible', mientras que las demás opciones introducen restricciones (tipo de señal, ausencia de elemento primario) sin relación con la definición real de instrumento ciego.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 22",
+      "difficulty": 1,
+      "module": 1
+    },
+    {
+      "q": "Una válvula de control lineal regula el caudal desde el 2% hasta el 100% de su carrera manteniendo la linealidad. ¿Cuál es su rangeabilidad (dinámica de medida)?",
+      "options": [
+        "2",
+        "50",
+        "98",
+        "100"
+      ],
+      "correct": 1,
+      "explanation": "La rangeabilidad o dinámica de medida es el cociente entre el valor de medida superior y el inferior de un instrumento; el propio texto ejemplifica esto con una válvula de control lineal que regula el caudal entre el 2% y el 100% de su carrera, resultando en una rangeabilidad de 100/2 = 50. Un error típico es restar los valores en lugar de dividirlos (100-2=98), operación que en realidad correspondería al cálculo del alcance o span y no de la rangeabilidad. Cuanto mayor es este cociente, mayor es la capacidad del instrumento para medir con exactitud aceptable en un rango dinámico más amplio.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 4",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Si en la evaluación de la incertidumbre de un instrumento no existen componentes evaluadas estadísticamente, ¿a qué corresponde la evaluación de la incertidumbre tipo A?",
+      "options": [
+        "A la incertidumbre del calibrador especificada por el fabricante.",
+        "A la repetibilidad del instrumento a calibrar.",
+        "A la resolución del instrumento expresada como distribución rectangular.",
+        "A la incertidumbre expandida multiplicada por el factor de cobertura K."
+      ],
+      "correct": 1,
+      "explanation": "El texto establece que la evaluación de la incertidumbre estándar tipo A se efectúa por análisis estadístico de una serie de observaciones independientes de la magnitud de entrada bajo las mismas condiciones de medida, y que si no existen componentes evaluadas estadísticamente, la evaluación de tipo A corresponde a la repetibilidad del instrumento a calibrar. La opción C describe en cambio un componente típico de la incertidumbre tipo B, ya que la resolución y las distribuciones rectangular o triangular se asocian a esta última categoría, basada en información externa como especificaciones del fabricante. Confundir el origen estadístico (tipo A) con el origen basado en especificaciones o experiencia (tipo B) es el error conceptual más frecuente en este tema.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 8",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "¿Para qué tipo de instrumentos es propia la distribución triangular al calcular la incertidumbre tipo B, y cuál es su expresión característica?",
+      "options": [
+        "Para instrumentos digitales, con la expresión u(xi) = a/√3.",
+        "Para instrumentos analógicos, con la expresión u(xi) = a/√24, siendo 'a' la diferencia entre los valores máximo y mínimo o la histéresis máxima.",
+        "Para instrumentos digitales, con la expresión u(xi) = a/3.",
+        "Para patrones de peso muerto, con la expresión u(xi) = a/√12."
+      ],
+      "correct": 1,
+      "explanation": "El texto indica que la distribución triangular es propia de los instrumentos analógicos, con la expresión u(xi) = a/√24, donde 'a' representa la diferencia entre los valores máximo y mínimo o la histéresis máxima del instrumento. En cambio, la distribución rectangular se calcula con un divisor distinto (a/√12) y se aplica típicamente a instrumentos digitales al evaluar su resolución, como se ilustra en el ejemplo del manómetro digital de 0-200 kPa del propio texto. Confundir ambas distribuciones es habitual porque comparten la misma variable 'a', pero se dividen por factores distintos según la naturaleza analógica o digital del instrumento evaluado.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 9",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Un instrumento de temperatura tiene una exactitud especificada como ±1% de la lectura efectuada. Si el instrumento marca 150°C, ¿cuál es la inexactitud en unidades de temperatura?",
+      "options": [
+        "±0,5°C",
+        "±1°C",
+        "±1,5°C",
+        "±2°C"
+      ],
+      "correct": 2,
+      "explanation": "El texto ejemplifica esta forma de expresar la exactitud -tanto por ciento de la lectura efectuada- precisamente con este caso: una exactitud de ±1% de 150°C equivale a ±1,5°C. Esta forma de expresión se diferencia de la exactitud en tanto por ciento del alcance o campo de medida, donde el porcentaje se aplica sobre el span total del instrumento y no sobre el valor puntual leído. Confundir ambas formas conduce a resultados numéricos distintos, por lo que es fundamental identificar sobre qué magnitud de referencia se aplica el porcentaje de exactitud especificado por el fabricante.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 15",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "¿Qué distingue conceptualmente a la reproducibilidad de la repetibilidad, según el texto?",
+      "options": [
+        "La reproducibilidad es la capacidad de reproducción de las medidas repetidas de la lectura o señal de salida para el mismo valor de la variable, alcanzado en ambos sentidos, en las mismas condiciones de servicio y a lo largo de un período de tiempo determinado (por ejemplo, ±0,2% del alcance en 30 días).",
+        "La reproducibilidad únicamente se aplica a instrumentos neumáticos y no a los electrónicos.",
+        "La reproducibilidad es sinónimo exacto de exactitud y se expresa siempre en unidades absolutas de la variable.",
+        "La reproducibilidad mide la diferencia entre el valor máximo y mínimo del campo de medida."
+      ],
+      "correct": 0,
+      "explanation": "El texto define la reproducibilidad como la capacidad de reproducción de un instrumento de las medidas repetidas para el mismo valor de la variable alcanzado en ambos sentidos, en las mismas condiciones de servicio, pero a lo largo de un período de tiempo determinado, poniendo como valor representativo ±0,2% del alcance de la lectura o señal de salida a lo largo de 30 días. La diferencia clave con la repetibilidad es justamente ese período extendido de tiempo, mientras que la repetibilidad se evalúa dentro de una misma sesión de medida sin ese componente temporal explícito. Confundir ambos términos es frecuente porque ambos se expresan como porcentaje del alcance y ambos están asociados a la precisión del instrumento en sentido amplio.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 19",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Un instrumento tiene un campo de medida de 20°C a 60°C. ¿Cuál es el porcentaje de supresión de cero de este instrumento?",
+      "options": [
+        "25%",
+        "33,3%",
+        "50%",
+        "66,6%"
+      ],
+      "correct": 2,
+      "explanation": "La supresión de cero es la cantidad con que el valor inferior del campo supera el valor cero de la variable; el propio texto ejemplifica este caso con un campo de 20°C a 60°C, donde el valor inferior (20°C) supera al cero en 20°C, y expresado como porcentaje del alcance (40°C) resulta (20/40) × 100 = 50%. Confundir el alcance (40°C, diferencia entre 60 y 20) con el valor máximo del campo (60°C) es un error habitual que llevaría a un resultado incorrecto de 33,3%. Este tipo de campo de medida, en el que el cero de la variable queda por debajo del límite inferior, se denomina campo de medida con supresión de cero.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 18",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Un instrumento tiene un campo de medida de -10°C a 30°C, es decir, un campo de medida con elevación de cero. ¿Cuál es el porcentaje de elevación de cero?",
+      "options": [
+        "10%",
+        "25%",
+        "40%",
+        "75%"
+      ],
+      "correct": 1,
+      "explanation": "La elevación de cero es la cantidad con que el valor cero de la variable supera el valor inferior del campo; el texto ejemplifica exactamente este campo de -10°C a 30°C, donde el cero supera al límite inferior en 10°C, y expresado en porcentaje del alcance (40°C, resultado de 30-(-10)) es (10/40) × 100 = 25%. Un error típico es calcular el porcentaje sobre el valor superior del campo (30°C) en lugar de sobre el alcance total, lo que daría un resultado distinto e incorrecto. Este campo de medida se denomina 'campo de medida con elevación de cero' precisamente porque el valor cero de la variable es mayor que el límite inferior del campo.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 18",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Según la terminología del texto, ¿cuál es la diferencia entre un transductor y un convertidor?",
+      "options": [
+        "El transductor es un término general que recibe una señal de entrada función de una o más cantidades físicas y la convierte en una señal de salida, mientras que el convertidor específicamente recibe una señal de entrada neumática o electrónica de un instrumento y envía la resultante en forma de señal de salida estándar tras modificarla.",
+        "El transductor solo existe en forma neumática y el convertidor solo en forma electrónica.",
+        "Ambos términos son sinónimos exactos y pueden aplicarse indistintamente a cualquier aparato que convierta una señal de instrumentos.",
+        "El convertidor únicamente transforma energía mecánica en energía eléctrica, mientras que el transductor hace lo contrario."
+      ],
+      "correct": 0,
+      "explanation": "El texto define al transductor como un término general para cualquier aparato que recibe una señal de entrada función de una o más cantidades físicas y la convierte -modificada o no- en una señal de salida (un relé, un elemento primario o un transmisor son ejemplos de transductores). El convertidor, en cambio, es un aparato más específico que recibe una señal de entrada neumática (3-15 psi) o electrónica (4-20 mA c.c.) procedente de un instrumento, y tras modificarla envía la resultante como señal de salida estándar (por ejemplo, un convertidor I/P). El propio texto advierte que es un error frecuente confundir ambos términos, señalando explícitamente que 'transductor' es general y no debe aplicarse a un aparato que simplemente convierte una señal de instrumentos, lo que descarta la opción C.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 24",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Según la norma ISA-S5.1, ¿cuál es la diferencia entre la numeración de lazos paralela y la numeración en serie?",
+      "options": [
+        "La numeración paralela inicia una secuencia numérica para cada nueva primera letra (TIC-100, FRC-100, LIC-100), mientras que la numeración en serie identifica los lazos de un proyecto con una secuencia única de números sin tener en cuenta la primera letra (TIC-100, FRC-101, LIC-102).",
+        "La numeración paralela solo se aplica a instrumentos neumáticos y la numeración en serie solo a instrumentos electrónicos.",
+        "La numeración paralela debe comenzar siempre en el número 1, mientras que la numeración en serie puede comenzar en cualquier número.",
+        "La numeración en serie exige el uso obligatorio de sufijos alfabéticos A, B, C para cada instrumento del lazo."
+      ],
+      "correct": 0,
+      "explanation": "El texto explica que la numeración paralela inicia una secuencia numérica distinta para cada nueva primera letra, de modo que TIC, FRC y LIC pueden compartir el número 100 sin conflicto, mientras que la numeración en serie asigna una secuencia única de números a todos los lazos de un proyecto o sección, independientemente de la primera letra de cada uno (TIC-100, FRC-101, LIC-102). La opción C es incorrecta porque el texto aclara que en cualquiera de los dos sistemas la secuencia puede empezar con el número 1 o con cualquier otro número conveniente, como 001, 301 o 1201. Los sufijos alfabéticos A, B, C mencionados en la opción D se emplean para una situación distinta: identificar varios instrumentos con la misma identificación funcional dentro de un mismo lazo.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 28",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "En el ejemplo del texto sobre la calibración de un manómetro tipo Bourdon de escala 0-4 bar, la incertidumbre combinada (tipo A + tipo B) resultó uc = 0,01203 bar. Aplicando el factor de cobertura K = 1,87 (correspondiente al nivel de confianza obtenido con el número de medidas realizadas, según la tabla T de Student), ¿cuál es la incertidumbre expandida del instrumento?",
+      "options": [
+        "0,00643 bar",
+        "0,01203 bar",
+        "0,0225 bar",
+        "0,0401 bar"
+      ],
+      "correct": 2,
+      "explanation": "La incertidumbre expandida se calcula mediante la fórmula U(expandida) = K × uc; sustituyendo los valores dados en el ejemplo del texto, U = 1,87 × 0,01203 = 0,022506 bar, que el propio texto redondea y expresa como 4 ± 0,022 bar. Un error común es confundir la incertidumbre expandida con la incertidumbre combinada sin multiplicar por el factor de cobertura (opción B), omitiendo así el margen de seguridad estadístico asociado al nivel de confianza deseado. El factor K=1,87 corresponde a un número reducido de observaciones (grados de libertad limitados, ya que la calibración se realizó con solo 4 medidas) según la tabla de valores T de Student, y sería igual a 2 si el número de valores fuera superior a 20.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 11",
+      "difficulty": 3,
+      "module": 1
+    },
+    {
+      "q": "En el ejemplo del manómetro digital de escala 0-200 kPa (0-2 bar) del texto, la incertidumbre experimental tipo A resultó u = 0,0012028 bar y la incertidumbre tipo B resultó u = 0,0000331 bar. ¿Cuál es la incertidumbre combinada uc de este instrumento?",
+      "options": [
+        "0,0012028 bar",
+        "0,0000331 bar",
+        "0,00120329 bar",
+        "0,0012359 bar"
+      ],
+      "correct": 2,
+      "explanation": "La incertidumbre combinada se calcula como la raíz cuadrada de la suma de los cuadrados de las incertidumbres tipo A y tipo B: uc = √(0,0012028² + 0,0000331²) ≈ 0,00120329 bar, tal como indica el texto en este ejemplo. Un error típico es sumar directamente ambos valores de forma lineal (0,0012028 + 0,0000331 = 0,0012359, opción D) en lugar de aplicar la raíz de la suma de cuadrados, lo que sobrestima la incertidumbre real. Nótese que, al ser la incertidumbre tipo B mucho menor que la tipo A en este caso (por tratarse de un instrumento digital de alta resolución), su aporte al resultado combinado es prácticamente insignificante.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 13",
+      "difficulty": 3,
+      "module": 1
+    },
+    {
+      "q": "En un transmisor electrónico de presión con campo de medida 0-10 bar y señal de salida 4-20 mA c.c., la presión pasa de 5 a 5,5 bar y la señal de salida varía de 11,9 a 12,3 mA c.c. ¿Cuál es la sensibilidad del instrumento, calculada según el método del texto?",
+      "options": [
+        "0,4 mA c.c./bar",
+        "0,8 mA c.c./bar",
+        "0,5 mA c.c./bar",
+        "1,6 mA c.c./bar"
+      ],
+      "correct": 2,
+      "explanation": "El texto calcula la sensibilidad como el cociente entre el incremento relativo de la señal de salida -expresado respecto a su alcance de 16 mA c.c. (20-4 mA)- y el incremento relativo de la variable de entrada -expresado respecto a su alcance de 10 bar-: [(12,3-11,9)/16] / [(5,5-5)/10] = (0,4/16)/(0,5/10) = 0,025/0,05 = 0,5 mA c.c./bar. El error más común (opción B, 0,8 mA c.c./bar) consiste en dividir directamente el incremento absoluto de salida (0,4 mA) entre el incremento absoluto de la variable (0,5 bar), sin normalizar ambos incrementos respecto a sus respectivos alcances, tal como exige el procedimiento de cálculo empleado en el texto. La sensibilidad, al igual que la zona muerta, se expresa habitualmente en tanto por ciento del alcance de la medida.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 16",
+      "difficulty": 3,
+      "module": 1
+    },
+    {
+      "q": "En un termómetro de escala 0-100°C, para un valor real de la variable de 40°C, la aguja marca 39,9°C al subir la temperatura desde 0°C, e indica 40,1°C al bajar la temperatura desde 100°C. ¿Cuál es el valor de la histéresis de este instrumento?",
+      "options": [
+        "±0,1%",
+        "±0,2%",
+        "±0,4%",
+        "±2%"
+      ],
+      "correct": 1,
+      "explanation": "La histéresis es la diferencia máxima observada entre los valores indicados para un mismo valor de la variable al recorrer la escala en sentido ascendente y descendente, expresada en tanto por ciento del alcance. En este ejemplo, tomado literalmente del texto, la diferencia entre ambas lecturas es 40,1-39,9=0,2°C, y como el alcance del instrumento es 100°C (de 0 a 100°C), el resultado es (0,2/100) × 100 = ±0,2%. Un error típico es confundir la histéresis con la zona muerta (opción A), que es un concepto relacionado pero distinto: la zona muerta es el campo de valores que no produce ninguna respuesta del instrumento, mientras que la histéresis compara las lecturas obtenidas al recorrer la escala en ambos sentidos.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 17",
+      "difficulty": 3,
+      "module": 1
+    },
+    {
+      "q": "Según la nota explicativa de la tabla de código de identificación ISA-S5.1, una válvula autorreguladora de presión que alivia fluido al exterior para regular la presión de salida de un sistema en condiciones normales de operación se designa PCV. Sin embargo, si esta misma válvula se emplea para proteger contra condiciones de emergencia, ¿cómo debe designarse?",
+      "options": [
+        "PCV, ya que la designación no cambia independientemente del uso.",
+        "PSV",
+        "PIC",
+        "PDV"
+      ],
+      "correct": 1,
+      "explanation": "El texto establece que el término 'seguridad' solo debe aplicarse a elementos primarios y elementos finales de control que protejan contra condiciones de emergencia peligrosas para el personal o el equipo; por ello, una válvula autorreguladora de presión de salida se designa PCV en operación normal, pero si se emplea contra condiciones de emergencia debe designarse PSV, sin importar si sus características técnicas la ubican como válvula de seguridad, de alivio o de seguridad de alivio. La designación PSV se aplica a todas las válvulas proyectadas para proteger contra emergencias de presión, y un disco de ruptura se designa PSE. Confundir estas designaciones (opción A) ignora que la letra funcional S ('seguridad') en la nomenclatura ISA-S5.1 depende específicamente del propósito de protección ante emergencias y no de las características constructivas del dispositivo.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 30",
       "difficulty": 3,
       "module": 1
     }

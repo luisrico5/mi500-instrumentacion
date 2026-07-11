@@ -1,25 +1,46 @@
-"""Parsea la respuesta de notebooklm ask y anexa las preguntas nuevas al bank/mXX.json correspondiente."""
+"""Parsea la respuesta de notebooklm ask (preguntas nuevas completas) y las anexa al bank/mXX.json correspondiente."""
 import json, re, sys, os
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-
+BAD_ESCAPE_RE = re.compile(r'\\(?!["\\/bfnrtu])')
 CITE_RE = re.compile(r"\s*\[[0-9,\s\-]+\]")
 
+LATEX_REPLACEMENTS = [
+    (re.compile(r"\\sqrt\{([^}]*)\}"), r"√(\1)"),
+    (re.compile(r"\\frac\{([^}]*)\}\{([^}]*)\}"), r"(\1/\2)"),
+    (re.compile(r"\\times"), "×"),
+    (re.compile(r"\\cdot"), "·"),
+    (re.compile(r"\\Delta"), "Δ"),
+    (re.compile(r"\\pm"), "±"),
+    (re.compile(r"\\approx"), "≈"),
+    (re.compile(r"\\text\{([^}]*)\}"), r"\1"),
+    (re.compile(r"[{}$]"), ""),
+]
+
+def fix_invalid_json_escapes(raw):
+    return BAD_ESCAPE_RE.sub(r"\\\\", raw)
+
 def clean(s):
-    if isinstance(s, str):
-        return CITE_RE.sub("", s).strip()
-    return s
+    if not isinstance(s, str):
+        return s
+    s = CITE_RE.sub("", s).strip()
+    for pattern, repl in LATEX_REPLACEMENTS:
+        s = pattern.sub(repl, s)
+    return s.strip()
 
 def main(mod_num):
-    resp_path = os.path.join(ROOT, f"_resp_m{mod_num:02d}.json")
+    resp_path = os.path.join(ROOT, f"_newresp_m{mod_num:02d}.json")
     bank_path = os.path.join(ROOT, f"m{mod_num:02d}.json")
 
     with open(resp_path, encoding="utf-8") as f:
         resp = json.load(f)
+    if "answer" not in resp:
+        raise SystemExit(f"m{mod_num:02d}: respuesta con error: {resp}")
+
     answer = resp["answer"].strip()
-    # quita posibles fences de markdown
-    answer = re.sub(r"^```(json)?", "", answer.strip()).strip()
-    answer = re.sub(r"```$", "", answer.strip()).strip()
+    answer = re.sub(r"^```(json)?", "", answer).strip()
+    answer = re.sub(r"```$", "", answer).strip()
+    answer = fix_invalid_json_escapes(answer)
 
     new_qs = json.loads(answer)
     if not isinstance(new_qs, list):
@@ -31,7 +52,7 @@ def main(mod_num):
     existing_texts = {q["q"].strip().lower() for q in bank["questions"]}
     added = 0
     for q in new_qs:
-        for k in ("q", "options", "correct", "explanation", "difficulty"):
+        for k in ("q", "options", "correct", "explanation", "source", "difficulty"):
             if k not in q:
                 raise SystemExit(f"m{mod_num:02d}: falta campo '{k}' en una pregunta nueva: {q}")
         if len(q["options"]) != 4:
@@ -42,6 +63,7 @@ def main(mod_num):
             raise SystemExit(f"m{mod_num:02d}: 'difficulty' invalida: {q}")
         q["q"] = clean(q["q"])
         q["explanation"] = clean(q["explanation"])
+        q["source"] = clean(q["source"])
         q["options"] = [clean(o) for o in q["options"]]
         q["module"] = mod_num
         if q["q"].strip().lower() in existing_texts:

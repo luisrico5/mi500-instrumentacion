@@ -2,7 +2,7 @@
 import json, re, sys, os
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-CITE_RE = re.compile(r"\s*\[\d+\](,\s*\[\d+\])*")
+CITE_RE = re.compile(r"\s*\[[0-9,\s\-]+\]")
 
 def clean(s):
     return CITE_RE.sub("", s).strip()

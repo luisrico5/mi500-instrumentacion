@@ -2,7 +2,7 @@
 import json, re, sys, os
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-CITE_RE = re.compile(r"\s*\[\d+(-\d+)?\](,\s*\[\d+(-\d+)?\])*")
+CITE_RE = re.compile(r"\s*\[[0-9,\s\-]+\]")
 BAD_ESCAPE_RE = re.compile(r'\\(?!["\\/bfnrtu])')
 
 LATEX_REPLACEMENTS = [

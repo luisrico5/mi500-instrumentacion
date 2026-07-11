@@ -13,7 +13,8 @@
       "correct": 1,
       "explanation": "La respuesta B es correcta porque las fuentes definen técnicamente el 'offset' como la desviación permanente que se estabiliza entre el punto de consigna y la variable controlada cuando solo se utiliza acción proporcional. Este fenómeno ocurre porque la válvula de control regresa a una posición fija para cada valor de la variable, resultando incapaz de compensar cambios de carga sin mantener un error residual. Una confusión habitual es la opción A, pero la inestabilidad no es el inconveniente intrínseco de la acción P, sino una consecuencia de configurar una ganancia excesivamente alta o una banda proporcional demasiado estrecha.",
       "difficulty": 1,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "¿En un esquema de control en cascada, de qué manera interactúan los controladores primario y secundario?",
@@ -26,7 +27,8 @@
       "correct": 2,
       "explanation": "La opción C es correcta ya que, en un esquema de control en cascada, el controlador primario o maestro determina el punto de consigna que debe seguir el controlador secundario o esclavo. Esta interacción jerárquica permite que el lazo interno corrija perturbaciones locales de forma rápida antes de que afecten significativamente a la variable principal del proceso. Se suele confundir con el control selectivo u 'override' (opción A), pero en este último las salidas de los controladores compiten a través de un selector para decidir cuál actúa sobre el elemento final, en lugar de conectarse en serie.",
       "difficulty": 1,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "¿Qué acción de control se caracteriza por mover la válvula en una cantidad proporcional a la pendiente de la variable de proceso?",
@@ -39,7 +41,8 @@
       "correct": 3,
       "explanation": "La acción derivativa (opción D) es la correcta porque, según los textos técnicos, su respuesta es proporcional a la pendiente o velocidad de cambio de la variable de proceso, proporcionando un efecto de anticipación. Matemáticamente, el controlador calcula la derivada de la desviación para mover la válvula durante el 'tiempo de anticipo', lo que compensa retardos y reduce el rebasamiento en el arranque. Un error conceptual típico es seleccionar la acción integral (opción B), la cual no reacciona a la pendiente, sino a la suma o integración de las áreas de error a lo largo del tiempo para eliminar el offset.",
       "difficulty": 1,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "¿Cuál es la distinción fundamental entre el control anticipativo (feedforward) y el control de realimentación (feedback)?",
@@ -52,7 +55,8 @@
       "correct": 0,
       "explanation": "La respuesta A es correcta porque la distinción fundamental reside en que el control anticipativo (feedforward) mide las variables de entrada o perturbaciones para actuar preventivamente, mientras que el de realimentación (feedback) espera a que exista un error en la salida. El feedforward utiliza un modelo matemático del proceso para calcular la corrección necesaria en lazo abierto, logrando mayor velocidad de respuesta ante cambios dinámicos. Una confusión frecuente es la opción D, ignorando que el feedback es inherentemente más lento que el feedforward al ser puramente reactivo a la desviación ya producida.",
       "difficulty": 2,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "En el contexto de la seguridad funcional IEC 61508, ¿qué implica una arquitectura redundante de tipo 2oo3 (dos de tres)?",
@@ -65,7 +69,8 @@
       "correct": 2,
       "explanation": "De acuerdo con la norma IEC 61508, una arquitectura redundante 2oo3 implica que el sistema consta de tres canales de seguridad independientes, de los cuales al menos dos deben estar operativos para realizar la función de mando. Este diseño, conocido como TMR (Triple Modular Redundant), ofrece una alta disponibilidad y seguridad al ser tolerante a un fallo simple en cualquiera de sus canales. Es un error conceptual la opción B, ya que en una lógica 'dos de tres', el sistema perdería su capacidad de votación y funcionalidad segura con el fallo de solo dos de sus componentes, no requiriendo tres fallos simultáneos para detenerse.",
       "difficulty": 2,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "Al emplear el método de sintonización de ganancia límite de Ziegler-Nichols, ¿cómo deben configurarse las acciones integral y derivada antes de iniciar el ensayo?",
@@ -78,7 +83,8 @@
       "correct": 1,
       "explanation": "La opción B es correcta porque el método de ganancia límite de Ziegler-Nichols requiere que el proceso se lleve a un estado de oscilación mantenida actuando únicamente con la ganancia proporcional. Para lograrlo, las acciones integral y derivada deben anularse, lo que técnicamente significa ajustar el tiempo integral a su valor más bajo (infinito en minutos/repetición para que no integre) y el tiempo derivativo en cero. Una confusión común es la opción A, pero poner la derivada al máximo introduciría un adelanto de fase excesivo que impediría encontrar la frecuencia de oscilación natural requerida por el ensayo.",
       "difficulty": 2,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "Un controlador proporcional tiene ganancia 2 en una escala de 0-100 °C. Si el punto de consigna es 50 °C, ¿en qué intervalo de temperatura la válvula realizará su carrera completa?",
@@ -91,7 +97,8 @@
       "correct": 0,
       "explanation": "La respuesta A se obtiene mediante el concepto de Banda Proporcional, que es el porcentaje del campo de medida necesario para que la válvula realice una carrera completa y es numéricamente la inversa de la ganancia. Con una ganancia de 2, la banda es del 50% (100 / 2 = 50%), lo que sobre un campo de 100 °C equivale a un intervalo de actuación de 50 °C. El desarrollo numérico consiste en centrar esta banda en el punto de consigna: 50 °C ± (50 °C / 2), resultando en un rango de 25 °C a 75 °C. Seleccionar la opción C (40 a 60) es un error típico al confundir la banda con el valor de la ganancia o no aplicar correctamente la relación inversa entre ambas.",
       "difficulty": 3,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "Utilizando el método de ganancia límite, se obtiene una oscilación mantenida con un periodo Pu = 12 minutos. ¿Qué tiempo de acción integral (Ti) debe ajustarse para un controlador PI?",
@@ -104,7 +111,8 @@
       "correct": 1,
       "explanation": "De acuerdo con las reglas de sintonización de Ziegler-Nichols, en un controlador PI el tiempo de acción integral (Ti) debe ajustarse como el periodo de oscilación crítica dividido por un factor constante de 1,2. El desarrollo numérico para este caso es: Ti = Pu / 1,2 = 12 minutos / 1,2 = 10,0 minutos por repetición, lo que valida técnicamente la opción B. Una confusión habitual es aplicar el divisor de 2 (opción C), pero dicha relación (Pu / 2) corresponde específicamente al cálculo para un controlador PID completo y no para el PI.",
       "difficulty": 3,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "En un proceso discontinuo (batch), ¿cuál es la causa principal del fenómeno conocido como saturación integral o 'reset windup'?",
@@ -117,7 +125,8 @@
       "correct": 2,
       "explanation": "La opción C es correcta porque la saturación integral o 'reset windup' ocurre físicamente cuando el controlador permanece integrando una desviación mientras la variable está fuera de la banda proporcional, acumulando un exceso de acción correctora. Al estar el actuador saturado al 100%, el integrador continúa sumando áreas de error, lo que provocará que la variable rebase ampliamente el punto de consigna antes de que la acción integral pueda iniciar la resta del error acumulado. No debe confundirse con fallos mecánicos o de aire (opción A), ya que es un fenómeno puramente algorítmico característico de procesos discontinuos (batch) que no disponen de sistemas de desaturación.",
       "difficulty": 3,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "¿Qué característica define técnicamente al control flotante de velocidad constante?",
@@ -130,7 +139,8 @@
       "correct": 1,
       "explanation": "El control flotante de velocidad constante se define técnicamente como aquel que mueve el elemento final a una velocidad única y fija siempre que la variable rebasa una zona neutra, independientemente de la magnitud de la desviación. Su comportamiento implica que la válvula permanece inmóvil dentro de la zona neutra y se desplaza de forma continua hasta alcanzar sus extremos si la variable no retorna al intervalo deseado. Una confusión frecuente es la opción D, la cual corresponde al control todo-nada simple donde el elemento final solo tiene dos posiciones fijas y no una velocidad de desplazamiento regulada.",
       "difficulty": 1,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "¿Cuál es el objetivo principal de implementar una estrategia de control selectivo (override control) en un proceso industrial?",
@@ -141,9 +151,10 @@
         "Sincronizar el arranque y parada de diversos motores de forma secuencial"
       ],
       "correct": 2,
-      "explanation": "El control selectivo u override se implementa fundamentalmente para limitar una variable de proceso dentro de un rango de seguridad predefinido, evitando daños materiales al equipo o degradación del producto final [1, 2]. Funciona mediante un selector, normalmente de alta o de baja, que decide qué controlador toma el mando sobre el elemento final basándose en la proximidad a los límites críticos [3, 4]. Es común confundirlo con el control multivariable (Opción B), pero este último busca desacoplar interacciones mutuas entre variables en sistemas complejos y no solo proteger el proceso mediante el uso de límites de seguridad [5, 6].",
+      "explanation": "El control selectivo u override se implementa fundamentalmente para limitar una variable de proceso dentro de un rango de seguridad predefinido, evitando daños materiales al equipo o degradación del producto final. Funciona mediante un selector, normalmente de alta o de baja, que decide qué controlador toma el mando sobre el elemento final basándose en la proximidad a los límites críticos. Es común confundirlo con el control multivariable (Opción B), pero este último busca desacoplar interacciones mutuas entre variables en sistemas complejos y no solo proteger el proceso mediante el uso de límites de seguridad.",
       "difficulty": 1,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "En un sistema de control de gama partida (split range), ¿de qué manera se logra habitualmente que dos válvulas actúen sobre diferentes sectores de la señal de salida (por ejemplo, 4-12 mA y 12-20 mA)?",
@@ -154,9 +165,10 @@
         "Configurando transmisores con diferentes tiempos de respuesta para cada sector"
       ],
       "correct": 1,
-      "explanation": "En el control de gama partida (split range), se logra que dos o más válvulas operen en sectores distintos de la señal de control ajustando individualmente el cero y el alcance (span) de sus posicionadores o convertidores I/P [7, 8]. Esta técnica permite que un solo controlador gestione secuencialmente diferentes agentes de control, como vapor para calentar y agua para enfriar, actuando cada uno en su sub-margen correspondiente [1, 9]. Una confusión típica es la opción A, pues aunque los sistemas digitales permiten lógica de bloques, la implementación física estándar y robusta reside en la calibración de los dispositivos de campo para responder a rangos específicos [7, 10].",
+      "explanation": "En el control de gama partida (split range), se logra que dos o más válvulas operen en sectores distintos de la señal de control ajustando individualmente el cero y el alcance (span) de sus posicionadores o convertidores I/P. Esta técnica permite que un solo controlador gestione secuencialmente diferentes agentes de control, como vapor para calentar y agua para enfriar, actuando cada uno en su sub-margen correspondiente. Una confusión típica es la opción A, pues aunque los sistemas digitales permiten lógica de bloques, la implementación física estándar y robusta reside en la calibración de los dispositivos de campo para responder a rangos específicos.",
       "difficulty": 2,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "Al configurar un lazo de control de relación (ratio control), ¿qué factor técnico es determinante para el ajuste del dial del relé de relación?",
@@ -167,9 +179,10 @@
         "La frecuencia crítica obtenida en el ensayo de lazo abierto"
       ],
       "correct": 0,
-      "explanation": "El ajuste del dial en un relé de relación es determinado técnicamente por la relación entre los campos de medida (spans) de los transmisores primario y secundario, asegurando que la proporción física deseada se mantenga fiel en las señales del lazo. La fuente establece que el dial debe configurarse considerando la capacidad de medida de ambos instrumentos para normalizar la ganancia del sistema de mezcla [11, 12]. Seleccionar la opción B representa un error conceptual, ya que el tiempo de retardo dominante es una variable de análisis dinámico para la sintonización PID y no interviene en el cálculo estático de la relación de caudales [13, 14].",
+      "explanation": "El ajuste del dial en un relé de relación es determinado técnicamente por la relación entre los campos de medida (spans) de los transmisores primario y secundario, asegurando que la proporción física deseada se mantenga fiel en las señales del lazo. La fuente establece que el dial debe configurarse considerando la capacidad de medida de ambos instrumentos para normalizar la ganancia del sistema de mezcla. Seleccionar la opción B representa un error conceptual, ya que el tiempo de retardo dominante es una variable de análisis dinámico para la sintonización PID y no interviene en el cálculo estático de la relación de caudales.",
       "difficulty": 2,
-      "module": 9
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
     },
     {
       "q": "Durante un ensayo de sintonización por el método de ganancia límite de Ziegler-Nichols, se obtiene una oscilación mantenida con una ganancia crítica Kc = 5 y un período Pu = 16 minutos. ¿Qué valores de ganancia (g) y tiempo de acción derivada (Td) deben configurarse para un controlador PID?",
@@ -180,7 +193,456 @@
         "g = 2,0; Td = 5,3 min"
       ],
       "correct": 2,
-      "explanation": "Para un controlador PID bajo el método de ganancia límite de Ziegler-Nichols, las fórmulas de sintonización exigen que la ganancia se ajuste a g = 0,6 * Kc y el tiempo derivativo a Td = Pu / 8 [15, 16]. El desarrollo numérico es el siguiente: Ganancia (g) = 0,6 * 5 = 3,0; Tiempo derivativo (Td) = 16 minutos / 8 = 2 minutos, lo que confirma la opción C como correcta [15, 17]. Un error frecuente es emplear el factor 0,5 * Kc (Opción B), el cual representaría un ajuste insuficiente diseñado exclusivamente para controladores de tipo Proporcional puro y no para un sistema PID [16, 18].",
+      "explanation": "Para un controlador PID bajo el método de ganancia límite de Ziegler-Nichols, las fórmulas de sintonización exigen que la ganancia se ajuste a g = 0,6 * Kc y el tiempo derivativo a Td = Pu / 8. El desarrollo numérico es el siguiente: Ganancia (g) = 0,6 * 5 = 3,0; Tiempo derivativo (Td) = 16 minutos / 8 = 2 minutos, lo que confirma la opción C como correcta. Un error frecuente es emplear el factor 0,5 * Kc (Opción B), el cual representaría un ajuste insuficiente diseñado exclusivamente para controladores de tipo Proporcional puro y no para un sistema PID.",
+      "difficulty": 3,
+      "module": 9,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9 (Regulación automática)"
+    },
+    {
+      "q": "Según Creus, ¿qué ocurre con la variable controlada en un lazo de control todo-nada en régimen permanente?",
+      "options": [
+        "Se estabiliza exactamente en el punto de consigna sin desviación alguna.",
+        "Oscila de forma continua, y la frecuencia y la magnitud de esa oscilación varían si se presentan cambios de carga en el proceso.",
+        "Permanece inmóvil dentro de una banda proporcional ajustable por el operador.",
+        "Se satura de forma permanente en una única posición intermedia entre abierta y cerrada."
+      ],
+      "correct": 1,
+      "explanation": "El texto indica que el control todo-nada 'se caracteriza por un ciclo continuo de variación de la variable controlada' y que 'la variable controlada oscila continuamente y estas oscilaciones variarán, en frecuencia y magnitud, si se presentan cambios de carga en el proceso'. Esto ocurre porque la válvula solo adopta dos posiciones (abierta o cerrada) para un único valor de la variable, generando un ciclo límite permanente en torno al punto de consigna. La opción C confunde este control con la banda proporcional de un controlador proporcional; el control todo-nada emplea en cambio una banda diferencial o zona neutra, concepto distinto ligado a las dos posiciones fijas del elemento final.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 505",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "En el control proporcional de tiempo variable, ¿qué magnitud permanece constante mientras la variable controlada se desvía del punto de consigna?",
+      "options": [
+        "La longitud de un ciclo completo (tiempo de conexión más tiempo de desconexión).",
+        "El tiempo de conexión del elemento final de control.",
+        "La banda proporcional del controlador.",
+        "El punto de consigna del proceso."
+      ],
+      "correct": 0,
+      "explanation": "El libro precisa que en este sistema 'la longitud de un ciclo completo (conexión + desconexión) es constante pero la relación entre los tiempos de conexión a desconexión, dentro de cada ciclo, varía al desviarse la variable controlada del punto de consigna'. Es decir, el ciclo total (por ejemplo 10 segundos en el ejemplo del intercambiador) no cambia, pero sí cambia el reparto interno entre el tiempo en que el elemento final está conectado y desconectado. La opción B es un error típico porque precisamente el tiempo de conexión es la variable que sí se modifica proporcionalmente a la desviación, no la que permanece fija.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 506",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "Un controlador proporcional de tiempo variable tiene un ciclo completo de 8 segundos y un margen de actuación de 16 °C. Si la temperatura se encuentra 4 °C por debajo del punto de consigna, ¿durante cuánto tiempo de cada ciclo permanecerá conectado el elemento final de control?",
+      "options": [
+        "6 segundos conectado y 2 segundos desconectado.",
+        "2 segundos conectado y 6 segundos desconectado.",
+        "4 segundos conectado y 4 segundos desconectado.",
+        "8 segundos conectado y 0 segundos desconectado."
+      ],
+      "correct": 0,
+      "explanation": "El libro ilustra esta relación lineal con su propio ejemplo: con un ciclo de 10 s y margen de 20 °C, en el punto de consigna el elemento conecta 5 s (mitad del ciclo); si la variable baja 10 °C (la mitad del margen) el elemento está 'siempre conectado', y a 5 °C por encima del punto de consigna conecta solo 2,5 s. Aplicando la misma proporción al caso planteado (ciclo de 8 s, margen de 16 °C): en el punto de consigna el tiempo de conexión base es la mitad del ciclo, es decir 4 s; como la variable está 4 °C por debajo del punto de consigna, que equivale a la mitad de la distancia hasta el extremo inferior del margen (mitad de 8 °C), el tiempo de conexión aumenta en la mitad del tiempo restante del ciclo (2 s adicionales), dando 4 + 2 = 6 s conectado y 2 s desconectado. La opción B invierte el sentido físico del fenómeno: al estar la temperatura por debajo de consigna se necesita más aporte de energía, no menos.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 506-507",
+      "difficulty": 3,
+      "module": 9
+    },
+    {
+      "q": "¿Cómo se relacionan matemáticamente la ganancia y la banda proporcional de un controlador, según Creus?",
+      "options": [
+        "Son directamente proporcionales: BP = Ganancia × 100.",
+        "La banda proporcional es la inversa de la ganancia: BP(%) = 100/Ganancia.",
+        "Son magnitudes independientes, sin relación matemática definida entre ellas.",
+        "La banda proporcional equivale al cuadrado de la ganancia expresada en tanto por ciento."
+      ],
+      "correct": 1,
+      "explanation": "El texto define la banda proporcional como 'el porcentaje del campo de medida de la variable que la válvula necesita para efectuar una carrera completa... Es la inversa de la ganancia. En el ejemplo anterior con ganancia de valor 2 sería del 50%, es decir 100/2 = 50%'. Esta relación inversa es la que permite pasar de un parámetro a otro sin necesidad de recalibrar el instrumento. La opción A es un error común porque plantea una relación directa (multiplicativa) cuando en realidad es inversa, lo que daría resultados incoherentes (una ganancia de 2 produciría, según esa fórmula errónea, una banda del 200%).",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 508",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "Según el texto, ¿de qué dos formas puede reducirse o eliminarse el offset en un control estrictamente proporcional?",
+      "options": [
+        "Disminuyendo la banda proporcional (sin que ello produzca inestabilidad) o reajustando manualmente el punto de consigna.",
+        "Aumentando el tiempo de acción derivada o instalando un relé de relación en el lazo.",
+        "Incrementando el tiempo de acción integral hasta llevarlo a su valor más alto.",
+        "Sustituyendo la válvula de control por un elemento final todo-nada."
+      ],
+      "correct": 0,
+      "explanation": "El libro afirma textualmente: 'El offset puede reducirse disminuyendo la banda proporcional, con la salvedad de que esta disminución no debe producir inestabilidad en el proceso. La desviación puede eliminarse reajustando manualmente el punto de consigna. Sin embargo, una nueva perturbación que se produzca en el proceso provocará un nuevo offset'. Es decir, ambas soluciones son paliativos dentro del control puramente proporcional, no una eliminación estructural del fenómeno. La opción C es una confusión típica, ya que un controlador estrictamente proporcional, por definición, carece de acción integral; el offset se elimina de raíz añadiendo dicha acción (convirtiendo el controlador en PI), no ajustando un tiempo integral inexistente en el P puro.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 509",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "¿Cuáles son los métodos que Creus describe para evitar la saturación integral (reset windup) en controladores digitales?",
+      "options": [
+        "Cálculo al revés y seguimiento; integración condicional; incorporación de un modelo de saturación que carga la acción integral con valores predefinidos.",
+        "Aumento permanente del tiempo de acción derivada y reducción simultánea de la ganancia proporcional.",
+        "Instalación de una válvula de alivio mecánica en paralelo con el elemento final de control.",
+        "Sustitución completa del controlador PID por un relé todo-nada durante todo el ciclo de producción."
+      ],
+      "correct": 0,
+      "explanation": "El texto enumera exactamente estos tres métodos digitales: '1. Cálculo al revés y seguimiento... 2. Integración condicional. Se fija la acción integral en un valor constante cuando la salida del controlador está saturada... 3. Se incorpora un modelo de saturación que carga la acción integral con valores predefinidos cuando se satura la señal de salida'. Estos métodos evitan que el término integral siga acumulando error mientras el actuador está en su límite físico. La opción B es una confusión frecuente porque describe acciones de sintonía general del lazo, no mecanismos específicos de anti-windup como los descritos en el texto.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 559",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "¿Cómo se denominan los controladores dotados de sistemas anti-saturación de la acción integral (reset windup), según Creus?",
+      "options": [
+        "Controladores para procesos discontinuos (batch controllers).",
+        "Controladores universales digitales.",
+        "Controladores adaptativos.",
+        "Controladores robustos."
+      ],
+      "correct": 0,
+      "explanation": "El libro afirma directamente: 'Los controladores que disponen de sistemas anti-saturación de la acción integral (reset windup) se llaman controladores para procesos discontinuos (batch controllers)'. Este nombre responde a que el fenómeno de windup es particularmente crítico en procesos batch, donde la variable se aleja mucho del punto de consigna entre ciclo y ciclo de fabricación. La opción C es una confusión conceptual habitual, ya que 'adaptativo' se refiere a un controlador que ajusta automáticamente sus propios parámetros de sintonía ante cambios del proceso, un concepto distinto al de la protección anti-windup.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 559",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "En la caracterización de las tres acciones combinadas de un controlador PID, ¿cómo mueve la acción integral al elemento final de control?",
+      "options": [
+        "A una velocidad proporcional a la desviación con respecto al punto de consigna.",
+        "A una posición proporcional a la desviación con respecto al punto de consigna.",
+        "A una velocidad proporcional a la pendiente (derivada) de la variable controlada.",
+        "A una posición fija, independiente de la magnitud del error existente."
+      ],
+      "correct": 0,
+      "explanation": "El texto describe: '1. La acción proporcional cambia la posición de la válvula proporcionalmente a la desviación... 2. La acción integral mueve la válvula a una velocidad proporcional a la desviación con respecto al punto de consigna... 3. La acción derivada corrige la posición de la válvula proporcionalmente a la velocidad de cambio de la variable controlada'. La clave distintiva es que la acción integral actúa sobre la velocidad de la válvula (va sumando áreas de desviación en el tiempo), mientras que la acción proporcional actúa sobre su posición. La opción B es el error típico de confundir estas dos acciones, atribuyendo a la integral el comportamiento que en realidad corresponde a la proporcional.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 514-515",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "¿Qué filosofía caracteriza al control distribuido (DCS), cuyo primer sistema industrial (TDC 2000 de Honeywell) apareció en noviembre de 1975?",
+      "options": [
+        "Distribuir el riesgo de fallo agrupando los instrumentos en varios microprocesadores, de modo que disminuya la probabilidad de que ocurran dos o más fallos simultáneos.",
+        "Concentrar todo el control de la planta en un único ordenador central de gran capacidad para simplificar el mantenimiento.",
+        "Eliminar por completo los controladores PID, sustituyéndolos únicamente por lógica de relés cableada.",
+        "Transmitir todas las señales de campo exclusivamente a través de líneas telefónicas de baja velocidad."
+      ],
+      "correct": 0,
+      "explanation": "Creus explica que 'el control distribuido es un sistema jerarquizado en varios niveles con uno o varios microprocesadores controlando las variables que están repartidas por la planta... La filosofía de este control es distribuir el riesgo de fallo (limitando sus consecuencias) agrupando los instrumentos de tal forma que los diversos estados de operación, reserva y espera... disminuyan la probabilidad de la ocurrencia de dos o más fallos simultáneos'. La opción B describe justamente el enfoque clásico centralizado que el DCS vino a sustituir, precisamente porque en ese esquema un único fallo del ordenador central resultaba catastrófico para toda la planta.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 583",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "En una aplicación de control selectivo (override) para proteger la aspiración de la bomba de un oleoducto, ¿cómo deben configurarse el controlador de aspiración y el relé selector para que actúen solo en caso de emergencia?",
+      "options": [
+        "El controlador de aspiración es de acción inversa, su punto de consigna es inferior a los valores normales de trabajo, y el relé selector escoge la señal mínima entre los dos controladores.",
+        "El controlador de aspiración es de acción directa y el relé selector escoge siempre la señal máxima entre los dos controladores.",
+        "Ambos controladores comparten el mismo punto de consigna y el relé selector alterna automáticamente entre ellos cada cierto tiempo fijo.",
+        "El controlador de aspiración sustituye de forma permanente al de impulsión desde el arranque de la bomba."
+      ],
+      "correct": 0,
+      "explanation": "El texto explica que 'este último instrumento es de acción inversa, el punto de consigna del controlador de aspiración es inferior a los valores normales de trabajo y el relé selector selecciona la mínima de las dos señales que le llegan... El control normal se efectúa con el controlador de impulsión. La bomba es controlada por la presión de aspiración sólo cuando ésta baja demasiado de valor'. Esta configuración asegura que el controlador de emergencia permanezca inactivo mientras el proceso opera normalmente. La opción B invierte la lógica de acción y de selección, un error típico al diseñar sistemas de override que puede hacer que el selector nunca ceda el control al lazo de protección cuando realmente se necesita.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 557",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "¿Qué parámetro es indispensable definir para poder discretizar (calcular en forma digital) las acciones de un controlador PID?",
+      "options": [
+        "El período de muestreo (Tm), es decir, el intervalo de tiempo entre lecturas sucesivas del error.",
+        "La temperatura ambiente en la que opera el microprocesador del controlador.",
+        "El número de bits del bus de direcciones del computador.",
+        "La frecuencia del oscilador de cuarzo del microprocesador."
+      ],
+      "correct": 0,
+      "explanation": "El texto introduce la discretización del PID definiendo 'Tm = período de muestreo, es decir Tm = tk - tk-1' junto con el error en distintos instantes de muestreo e(tk), e(tk-1) y e(tk-2), necesarios para calcular de forma incremental las tres acciones. Sin este período de muestreo no es posible expresar las integrales y derivadas continuas del algoritmo PID clásico como sumas y diferencias discretas. La opción D confunde este concepto con la frecuencia del reloj del microprocesador (mencionada en el texto en relación a la velocidad de ejecución general del ordenador), que es un parámetro de hardware distinto del período de muestreo del lazo de control.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 527",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "¿Qué caracteriza a la transmisión de señales en un sistema SCADA (Supervisory Control and Data Acquisition) frente al control distribuido, según Creus?",
+      "options": [
+        "SCADA transmite las señales mediante circuitos de baja velocidad (300 a 2.400 bits/s) y menos fiables, como líneas telefónicas o radio, adecuados para procesos repartidos en grandes áreas.",
+        "SCADA solo puede recibir información de campo, sin capacidad de enviar órdenes a los instrumentos distantes.",
+        "SCADA emplea exclusivamente fibra óptica de alta velocidad entre el ordenador central y las unidades remotas.",
+        "SCADA es idéntico en velocidad y fiabilidad al control distribuido; solo cambia el nombre comercial del sistema."
+      ],
+      "correct": 0,
+      "explanation": "El libro señala que 'SCADA transmite las señales a través de circuitos de baja velocidad (300 bits/s a 2.400 bits/s) y poco fiables para la integridad de los datos (líneas telefónicas y radio), mientras que el control distribuido o el integrado lo hacen mediante circuitos locales de alta velocidad y seguridad de transmisión'. Además, se aclara que SCADA 'es un sistema de dos vías, que no sólo examina o recibe información de lo que ocurre a distancias remotas sino que también puede dar órdenes a los instrumentos distantes', lo que descarta directamente la opción B como error típico al asumir que SCADA es solo de supervisión pasiva.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 582",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "¿En qué consiste el criterio de estabilidad de razón de amortiguamiento 1/4, el más utilizado para ajustar las acciones de control según Creus?",
+      "options": [
+        "En que, tras una perturbación, las amplitudes de las crestas de recuperación sucesivas guardan una relación de 4 a 1.",
+        "En que la variable debe retornar exactamente al punto de consigna en menos de 4 segundos tras la perturbación.",
+        "En que se permite un máximo de 4 oscilaciones antes de declarar inestable el lazo de control.",
+        "En que la banda proporcional debe fijarse siempre en la cuarta parte del campo de medida del transmisor."
+      ],
+      "correct": 0,
+      "explanation": "El texto define este criterio como aquel 'en el que después de una perturbación la variable se estabiliza cuando las relaciones entre las amplitudes de las crestas de recuperación sucesivas son de 4 a 1'. Se trata de un compromiso: 'una relación mayor de 1/4 dará mayor estabilidad pero prolongará el tiempo de normalización de la variable... mientras que una relación menor de 1/4 devolverá la variable más rápidamente al punto de consigna... pero perjudicará la estabilidad del sistema'. La opción D confunde este criterio dinámico de amortiguamiento con un valor fijo de banda proporcional, magnitud que no guarda relación directa con la razón de amortiguamiento entre crestas.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 530",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "El criterio de área mínima (IAE), ¿qué magnitud exige minimizar durante la curva de recuperación de un lazo tras una perturbación?",
+      "options": [
+        "La integral en el tiempo del valor absoluto del error.",
+        "La integral en el tiempo del cuadrado del error.",
+        "El tiempo de pico entre el instante de la perturbación y el primer máximo de la variable.",
+        "El número total de oscilaciones antes de alcanzar la estabilización."
+      ],
+      "correct": 0,
+      "explanation": "El texto define el criterio de área mínima como 'el criterio de la integral mínima del valor absoluto del error (IAE), indica que el área de la curva de recuperación debe ser mínima, para lograr que la desviación sea mínima en el tiempo más corto', expresado como la integral de |e| en el tiempo. La opción B describe en realidad el criterio ISE (integral del cuadrado del error), que penaliza los errores grandes elevándolos al cuadrado y da lugar a respuestas poco amortiguadas; confundir IAE con ISE es un error frecuente por la similitud de sus siglas y de su formulación integral.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 531",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "¿Qué diferencia fundamental existe entre los criterios ISE (integral del cuadrado del error) e ITAE (integral en el tiempo del valor absoluto del error), según Creus?",
+      "options": [
+        "El ISE penaliza fuertemente los errores grandes, dando respuestas poco amortiguadas; el ITAE penaliza los errores pequeños que aparecen al final de la curva, dando respuestas altamente amortiguadas.",
+        "El ISE solo puede aplicarse a controladores neumáticos y el ITAE únicamente a controladores digitales.",
+        "El ISE minimiza el tiempo muerto del proceso mientras que el ITAE minimiza directamente la banda proporcional del controlador.",
+        "Ambos criterios son matemáticamente idénticos y solo cambian de nombre según el fabricante del instrumento."
+      ],
+      "correct": 0,
+      "explanation": "El libro explica que el ISE 'penaliza los grandes errores [e(t) está elevado al cuadrado], con lo cual las respuestas son poco amortiguadas', mientras que el ITAE 'penaliza los pequeños errores que se presentan al final de la curva de recuperación, con lo cual, las respuestas son altamente amortiguadas'. Esta diferencia surge de cómo cada integral pondera el error: el cuadrado agranda los errores grandes iniciales, mientras que el factor de tiempo (t) agranda la importancia de los errores residuales tardíos. La opción C es un error de invención, ya que ninguno de los dos criterios está definido en el texto en relación al tiempo muerto o a la banda proporcional, sino en términos de la propia señal de error a lo largo del tiempo.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 531",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "¿En qué situación se aplica preferentemente el criterio de mínima perturbación en el ajuste de un lazo de control, según Creus?",
+      "options": [
+        "Cuando correcciones rápidas o cíclicas de una válvula pueden perturbar seriamente otros procesos alimentados por la misma fuente, como sucede en el control en cascada.",
+        "Cuando se desea maximizar el número de ciclos de oscilación tras cada perturbación del proceso.",
+        "Cuando el proceso posee un tiempo de retardo completamente despreciable frente a su constante de tiempo.",
+        "Cuando el controlador carece de acción integral y por tanto no puede eliminar el offset."
+      ],
+      "correct": 0,
+      "explanation": "El texto indica que este criterio 'requiere una curva de recuperaciones no cíclicas y se aplica cuando, por ejemplo, las correcciones rápidas o cíclicas de una válvula de control de vapor pueden perturbar, seriamente, las presiones de vapor de alimentación e influir en otros procesos alimentados por la misma fuente. Otro caso puede ser el control en cascada en que la señal de salida de un controlador varíe cíclicamente y se aplique como punto de consigna en un segundo controlador, creándole serias variaciones de carga'. La opción B contradice directamente el objetivo del criterio, que busca minimizar, no maximizar, el carácter cíclico de la recuperación.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 531",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "¿Para qué tipo de procesos resulta especialmente relevante el criterio de amplitud mínima al ajustar un controlador, según Creus?",
+      "options": [
+        "Procesos donde el producto o el equipo puede dañarse por desviaciones momentáneas excesivas, como la fusión de aleaciones metálicas o reacciones exotérmicas próximas a su temperatura de disparo.",
+        "Procesos de nivel de líquidos en tanques de gran capacitancia con un tiempo de retardo mínimo.",
+        "Procesos controlados exclusivamente de forma manual, sin transmisor instalado en el lazo.",
+        "Procesos que emplean únicamente control todo-nada con una banda diferencial muy amplia."
+      ],
+      "correct": 0,
+      "explanation": "El texto señala que el criterio de amplitud mínima 'se aplica, especialmente, a procesos en que el producto o el equipo puede ser dañado por desviaciones momentáneas excesivas y, en este caso, la magnitud de la desviación es más importante que su duración. Por ejemplo, en el caso de fusión de algunas aleaciones metálicas, el sobrepasar temporalmente una determinada temperatura puede destruir el metal. Se aplica este criterio también en el caso de procesos exotérmicos con el punto de consigna próximo a la temperatura de disparo de la reacción exotérmica incontrolable'. La opción B es un distractor porque describe un proceso lento y de bajo riesgo, justo el escenario opuesto al que motiva este criterio de seguridad frente a picos de desviación.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 532",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "Al ajustar un controlador P + I + D por el método de tanteo, ¿cuál es el orden correcto de los pasos según Creus?",
+      "options": [
+        "Ajustar primero la ganancia proporcional con la derivada en cero y la integral en su valor más bajo hasta una relación de amortiguamiento de 0,25; después aumentar la banda integral; finalmente incrementar la banda derivada.",
+        "Ajustar primero la acción derivada al máximo valor posible, luego la acción integral, y por último la acción proporcional.",
+        "Ajustar simultáneamente las tres acciones a la mitad de su rango de calibración y observar el resultado obtenido.",
+        "Ajustar primero la acción integral hasta eliminar completamente el offset y después desactivar la acción proporcional."
+      ],
+      "correct": 0,
+      "explanation": "El texto describe el procedimiento paso a paso: 'Con la banda derivada en 0 y la integral en ∞ minutos/repetición, se aumenta la ganancia proporcional (se estrecha la banda proporcional) hasta obtener una relación de amortiguamiento de 0,25. Se aumenta, lentamente, la banda integral en la forma indicada anteriormente hasta acercarse al punto de inestabilidad. Se aumenta la banda derivativa en pequeños incrementos...'. Este orden secuencial (proporcional, luego integral, luego derivativa) es el que garantiza un ajuste progresivo y controlado. La opción D es incorrecta porque un controlador PID nunca 'desactiva' la acción proporcional; esta acción es la base sobre la que se ajustan después la integral y la derivada.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 535",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "Si al sintonizar un controlador PID por tanteo se observa una oscilación de período muy largo en la que la variable tarda bastante tiempo en estabilizarse, ¿qué acción de control está probablemente sobreajustada, según las reglas descritas por Creus para distinguir las oscilaciones?",
+      "options": [
+        "La acción derivada.",
+        "La acción proporcional.",
+        "La acción integral.",
+        "Ninguna acción; es un comportamiento normal e independiente del ajuste del controlador."
+      ],
+      "correct": 0,
+      "explanation": "El texto establece tres reglas para distinguir las oscilaciones producidas por un sobreajuste: 'a) La oscilación integral tiene un período relativamente largo. b) La oscilación proporcional tiene un período relativamente moderado. c) La oscilación derivada tiene un período muy largo y la variable tarda bastante tiempo en estabilizarse'. El rasgo distintivo de 'tardar bastante tiempo en estabilizarse', además de un período muy largo, es el que el texto atribuye específicamente a la oscilación derivada. La opción C es la confusión más habitual, ya que la oscilación integral también es de período largo, pero el libro reserva la descripción más extrema (período muy largo y estabilización lenta) para la acción derivada excesiva.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 537",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "En el método de ganancia límite de Ziegler y Nichols, ¿qué dos datos se registran al obtener la oscilación mantenida del proceso?",
+      "options": [
+        "El período del ciclo de oscilaciones (Pu) y la última ganancia o banda proporcional límite (Kc o PBu).",
+        "El tiempo muerto del transmisor y la presión de suministro de aire del posicionador de la válvula.",
+        "La temperatura ambiente de la sala de control y la humedad relativa del proceso.",
+        "El número de vueltas de la válvula y su coeficiente de caudal Cv."
+      ],
+      "correct": 0,
+      "explanation": "El texto indica que, tras aumentar gradualmente la ganancia hasta que el proceso oscila de modo continuo, 'se anota el período del ciclo de las oscilaciones Pu en minutos, y la última ganancia límite Kc (o la última banda proporcional PBu)'. Estos dos valores (Pu y Kc/PBu) son la base de todas las fórmulas posteriores de sintonía para controladores P, PI y PID según este método. La opción B es un distractor que introduce magnitudes no relacionadas con el objetivo del ensayo de ganancia límite, que se centra exclusivamente en el comportamiento oscilatorio del lazo cerrado.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 538",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "En un ensayo de ganancia límite se obtiene una banda proporcional límite PBu = 30%. ¿Qué banda proporcional debe ajustarse en un controlador estrictamente proporcional según las reglas de Ziegler-Nichols?",
+      "options": [
+        "60%",
+        "15%",
+        "66%",
+        "33%"
+      ],
+      "correct": 0,
+      "explanation": "Para el controlador proporcional, el método de ganancia límite establece 'Banda proporcional (%) = 2 PBu'. El desarrollo numérico es directo: BP = 2 × 30% = 60%. La opción B (15%) es el error típico de dividir en lugar de multiplicar, es decir, de calcular PBu/2 en vez de 2×PBu, invirtiendo el sentido de la fórmula de sintonía para el controlador puramente proporcional.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 539",
+      "difficulty": 3,
+      "module": 9
+    },
+    {
+      "q": "Utilizando la variante de mínimo rebasamiento del punto de consigna del método de ganancia límite, se obtiene una banda proporcional límite PBu = 40% y un período de oscilación Pu = 10 minutos. ¿Qué tiempo de acción derivada (en minutos) debe ajustarse?",
+      "options": [
+        "1,9 minutos",
+        "5,0 minutos",
+        "8,3 minutos",
+        "0,6 minutos"
+      ],
+      "correct": 0,
+      "explanation": "El texto describe esta variante del método de ganancia límite con las fórmulas: 'Banda proporcional (%) = 1,25 PBu; Acción integral (min/rep) = 0,6 Pu; Acción derivada (min) = 0,19 Pu'. El desarrollo numérico para la acción derivada es: Td = 0,19 × 10 minutos = 1,9 minutos. La opción D (0,6 minutos) corresponde a aplicar por error el factor reservado para la acción integral en esta variante (0,6 Pu = 6,0 minutos/repetición), confundiendo el coeficiente de la acción integral con el de la derivada.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 539",
+      "difficulty": 3,
+      "module": 9
+    },
+    {
+      "q": "¿En qué circunstancia recomienda Creus emplear el método de curva de reacción (Ziegler & Nichols en lazo abierto) en lugar del método de ganancia límite?",
+      "options": [
+        "Cuando en la planta no es posible tolerar oscilaciones continuas del proceso.",
+        "Cuando el proceso carece por completo de cualquier tiempo de retardo.",
+        "Cuando el controlador que se va a sintonizar no dispone de acción proporcional.",
+        "Cuando se dispone de tiempo ilimitado para realizar el ensayo en lazo cerrado."
+      ],
+      "correct": 0,
+      "explanation": "El texto es explícito: 'En una planta industrial no siempre es posible tolerar oscilaciones continuas, de modo que se emplea el método de lazo abierto, llamado también método de Ziegler & Nichols en lazo abierto'. En este método se abre el lazo, se opera la válvula en manual con un pequeño escalón, y se miden sobre la curva de reacción la pendiente R y el retardo L en el punto de inflexión. La opción D contradice el propósito del método, que precisamente busca evitar los ensayos prolongados en lazo cerrado con oscilación mantenida que requiere el método de ganancia límite.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 539",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "¿Qué inconveniente del método de Ziegler & Nichols en lazo abierto vino a corregir el método de Cohen-Coon, presentado en 1953?",
+      "options": [
+        "Su respuesta lenta cuando existe un retardo considerable en el proceso, que de otro modo obligaría a usar ganancias altas generadoras de inestabilidad.",
+        "Su incapacidad total para aplicarse a controladores estrictamente proporcionales.",
+        "La imposibilidad de determinar el tiempo de retardo L del proceso mediante ensayo.",
+        "Su dependencia exclusiva de ensayos en lazo cerrado con oscilación mantenida."
+      ],
+      "correct": 0,
+      "explanation": "El texto indica que 'el método de Ziegler & Nichols se caracteriza por una respuesta lenta cuando existe un retardo considerable en el proceso... en cuyo caso sería necesario ajustar el controlador con altas ganancias para una mayor rapidez, lo que conduciría a una inestabilidad en el proceso. El método de Cohen-Coon... corrige este inconveniente'. Al igual que el método en lazo abierto de Ziegler-Nichols, Cohen-Coon 'introduce en manual, un escalón en la variable del proceso, mediante la válvula de control', por lo que la opción D es un error, ya que ambos métodos comparten el enfoque de lazo abierto y no dependen de la oscilación mantenida propia del método de ganancia límite.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 540",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "¿En qué consiste el método del relé, ideado en 1984 por Karl Johan Åström y Tore Hägglund del Instituto de Tecnología de Lund, para el autoajuste de controladores?",
+      "options": [
+        "Sustituir temporalmente el controlador por un relé (controlador todo-nada) que aplica escalones sucesivos hasta que la variable oscila cruzando el punto de consigna, obteniendo así el período límite de la oscilación.",
+        "Instalar un relé de relación entre dos transmisores para calcular directamente la ganancia límite sin necesidad de ningún ensayo.",
+        "Registrar la respuesta del proceso ante un escalón en lazo abierto midiendo únicamente el tiempo de retardo L.",
+        "Reemplazar permanentemente la acción derivada por un relé electromagnético en los controladores neumáticos."
+      ],
+      "correct": 0,
+      "explanation": "El texto describe: 'En 1984, Karl Johan Aström y Tore Hägglund del Instituto de Tecnología de Lund (Suecia) idearon el método del relé basado en sustituir temporalmente el controlador por un relé (controlador todo-nada), aplicar un escalón al proceso y mantenerlo hasta que la oscilación resultante haga que la variable cruce el punto de consigna. En este momento, el relé aplica un escalón negativo hasta que la variable vuelve a cruzar el punto de consigna en sentido opuesto... obteniéndose una oscilación continua' de la que se determinan el período límite (Tu) y la amplitud relativa de las oscilaciones. La opción C describe en cambio el método de curva de reacción, un procedimiento distinto de lazo abierto que no emplea ningún relé todo-nada.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 544",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "Como guía para seleccionar la variable secundaria en un control en cascada, ¿qué relación mínima recomienda Creus entre las constantes de tiempo del lazo principal y del lazo secundario?",
+      "options": [
+        "Como mínimo de 3, e idealmente de 5 a 10.",
+        "Exactamente de 1, para que ambos lazos respondan exactamente a la misma velocidad.",
+        "Como mínimo de 20, con el fin de evitar cualquier posible interacción entre los lazos.",
+        "No existe ninguna relación mínima recomendada; solo cuenta el criterio particular del instrumentista."
+      ],
+      "correct": 0,
+      "explanation": "El texto establece, entre las condiciones para elegir bien la variable secundaria en cascada: 'El lazo secundario debe ser de respuesta rápida y, para ello, debe incluir los retardos mínimos del sistema de control. Como guía, la relación de constantes de tiempo entre el lazo principal y el lazo secundario debe ser como mínimo de 3, e idealmente de 5 a 10'. Esta diferencia de velocidad es la que permite que el lazo secundario corrija con rapidez las perturbaciones antes de que afecten a la variable primaria. La opción B es un error conceptual, ya que si ambos lazos respondieran a la misma velocidad, el lazo secundario no podría corregir las perturbaciones con suficiente antelación respecto al lazo primario, perdiendo la cascada su principal ventaja.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 548",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "En un control de relación con una razón deseada de 0,75 (caudal controlado:caudal variable = 1:2) y transmisores cuadráticos con una rangeabilidad de 4:1, ¿por debajo de qué porcentaje de su campo de medida el caudal controlado (secundario) empieza a perder exactitud, según el ejemplo de Creus?",
+      "options": [
+        "33,3%",
+        "25%",
+        "50%",
+        "12,5%"
+      ],
+      "correct": 0,
+      "explanation": "El texto explica que 'si los transmisores son cuadráticos con la rangeabilidad 4:1 y hay que mantener una razón de 0,75, el controlador perderá su exactitud cuando el caudal variable (primario) baje por debajo del 0,25% (25%) de su campo de medida, lo que equivaldrá a que se pierda también la exactitud si el caudal controlado (secundario) es inferior al 33% de su campo de medida... El 25% de la señal salida del transmisor primario es igual al 25/0,75 (33,3%) de la señal de salida del transmisor secundario'. El desarrollo numérico es, por tanto, 25/0,75 = 33,3%. La opción B (25%) es el umbral de pérdida de exactitud del caudal primario, no del secundario, y es un error frecuente no dividir ese valor entre la razón 0,75 para obtener el umbral correspondiente al caudal controlado.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 552",
+      "difficulty": 3,
+      "module": 9
+    },
+    {
+      "q": "Según Creus, ¿en cuál de los siguientes casos resulta especialmente útil aplicar un control anticipativo (feedforward)?",
+      "options": [
+        "En procesos con tiempos muertos y retardos considerables, difíciles o casi imposibles de controlar con el clásico control de realimentación.",
+        "En procesos donde la variable controlada se mide con extrema precisión y de forma perfectamente continua.",
+        "En procesos completamente libres de cualquier perturbación de entrada, en los que el punto de consigna nunca cambia.",
+        "Únicamente en procesos discontinuos (batch) de la industria farmacéutica."
+      ],
+      "correct": 0,
+      "explanation": "El texto enumera los procesos en que el control anticipativo es útil: 'a) Procesos con tiempos muertos y retardos considerables, difíciles o casi imposibles de controlar con el clásico control de realimentación (caso más frecuente de aplicación del control anticipativo). b) Procesos en los que la variable a controlar no puede medirse con exactitud o de modo continuo...'. Precisamente porque el control anticipativo actúa en lazo abierto a partir de las perturbaciones de entrada, resulta idóneo cuando el retardo dificulta que la realimentación reaccione a tiempo. La opción B contradice directamente el punto b) del texto, que menciona el caso opuesto (variable difícil de medir con exactitud o continuidad) como aplicación típica del feedforward.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 555",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "¿Qué diferencia existe entre el control anticipativo estático y el control anticipativo dinámico descritos por Creus?",
+      "options": [
+        "El estático combina la señal derivada de la perturbación directamente con la del controlador de realimentación; el dinámico incorpora además un relé de adelanto-retardo que ajusta mejor la respuesta a las características dinámicas del proceso.",
+        "El estático se emplea solo en controladores neumáticos y el dinámico únicamente en controladores digitales.",
+        "El estático no necesita ningún modelo del proceso, mientras que el dinámico exige un modelo exacto e infalible del proceso.",
+        "El estático controla solamente el caudal del producto y el dinámico controla exclusivamente la temperatura de salida."
+      ],
+      "correct": 0,
+      "explanation": "El texto describe el primer esquema como 'control anticipativo estático', en el que 'el controlador anticipativo es de acción derivada. De este modo, si el caudal es fijo, la señal procedente del controlador de temperatura pasa sin cambios hacia la válvula. En cambio, si se presentan variaciones en el caudal, la señal derivada correspondiente se suma o se resta... a la de temperatura'. El esquema más perfeccionado se denomina 'control anticipativo dinámico dotado de un relé de adelanto-retardo (el lazo de control se ajusta más a las características dinámicas del proceso) combinado con el clásico control de realimentación'. La opción C es incorrecta porque tanto el esquema estático como el dinámico dependen de un modelo (aunque sea aproximado) de cómo la perturbación afecta a la variable controlada; ningún control anticipativo puede prescindir completamente de un modelo del proceso.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 554",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "En el control de gama partida denominado dúplex proporcional en tiempo, aplicado a cámaras térmicas, ¿cómo se reparte la actuación entre refrigeración y calefacción según Creus?",
+      "options": [
+        "Mediante dos válvulas de solenoide accionadas por relés distintos: uno actúa con impulsos sobre un refrigerador y el otro sobre una resistencia de calefacción.",
+        "Mediante una sola válvula proporcional que modula continuamente entre refrigeración y calefacción sin necesidad de ningún relé.",
+        "Mediante posicionadores calibrados en sub-márgenes de 4-12 mA y 12-20 mA, igual que en el split range convencional de válvulas neumáticas.",
+        "El control dúplex prescinde por completo de relés y utiliza directamente un único controlador todo-nada de una sola salida."
+      ],
+      "correct": 0,
+      "explanation": "El texto explica que 'otro tipo de control de gama partida es el control dúplex proporcional en tiempo que se aplica a cámaras térmicas que se controlan a temperaturas inferior y superior a la temperatura ambiente, mediante dos válvulas de solenoide accionadas por relés... El relé nº 1 puede actuar con impulsos en un refrigerador y el relé nº 2 lo hace sobre una resistencia de calefacción'. Este esquema es una variante de tiempo (todo-nada por impulsos) distinta del split range convencional. La opción C describe precisamente el mecanismo del split range clásico con posicionadores en sub-márgenes de corriente, que el propio texto presenta como un caso diferente al del control dúplex descrito aquí.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 556",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "La disponibilidad de un único instrumento de control se calcula, según Creus, como D = μ/(λ+μ), siendo λ la tasa de fallos y μ la tasa de reparaciones. Si λ = 0,002 fallos/hora y μ = 0,2 reparaciones/hora, ¿cuál es la disponibilidad aproximada del instrumento?",
+      "options": [
+        "99,01%",
+        "90,10%",
+        "50,00%",
+        "0,99%"
+      ],
+      "correct": 0,
+      "explanation": "El texto presenta la fórmula de disponibilidad de un solo instrumento como D = μ/(λ+μ), donde λ es la tasa de fallos y μ la tasa de reparaciones. El desarrollo numérico es: D = 0,2 / (0,2 + 0,002) = 0,2 / 0,202 ≈ 0,9901, es decir, 99,01%. La opción D (0,99%) es un error típico de escala, al no multiplicar correctamente el cociente por 100 o al confundir la tasa de fallos λ directamente con el porcentaje de indisponibilidad del sistema.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 589",
+      "difficulty": 3,
+      "module": 9
+    },
+    {
+      "q": "Un relé inversor electrónico realiza la operación I0 = 24 - I1 (señales en mA c.c.). Si la señal de entrada es I1 = 8 mA c.c., ¿cuál es la señal de salida I0?",
+      "options": [
+        "16 mA c.c.",
+        "8 mA c.c.",
+        "24 mA c.c.",
+        "4 mA c.c."
+      ],
+      "correct": 0,
+      "explanation": "El texto define el relé inversor, 'empleado generalmente en instrumentos electrónicos', mediante la operación 'I0 = 24 - I1', ilustrándolo con los ejemplos: 'si I1 = 4 mA c.c., I0 = 20 mA c.c.; si I1 = 12 mA c.c., I0 = 12 mA c.c.'. Aplicando la misma fórmula al caso planteado: I0 = 24 - 8 = 16 mA c.c. La opción B (8 mA) es el error de copiar directamente la señal de entrada como si fuera la salida, ignorando por completo la función de inversión que realiza el relé sobre el rango de 4-20 mA.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 563",
       "difficulty": 3,
       "module": 9
     }

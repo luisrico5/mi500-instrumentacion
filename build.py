@@ -24,7 +24,8 @@ INDEX = os.path.join(ROOT, "index.html")  # copia para GitHub Pages (sirve la ra
 
 def main():
     modules = []
-    files = sorted(f for f in os.listdir(BANK_DIR) if f.endswith(".json"))
+    import re
+    files = sorted(f for f in os.listdir(BANK_DIR) if re.fullmatch(r"m\d{2}\.json", f))
     for fname in files:
         with open(os.path.join(BANK_DIR, fname), encoding="utf-8") as f:
             modules.append(json.load(f))

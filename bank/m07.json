@@ -11,9 +11,10 @@
         "La presión diferencial máxima que el servomotor puede vencer para cerrar la válvula."
       ],
       "correct": 1,
-      "explanation": "El coeficiente de caudal Cv se define técnicamente como el volumen de agua en galones USA por minuto a una temperatura de 60 °F que circula a través de la válvula con una caída de presión de 1 psi [1, 2]. Una confusión típica es la opción A, la cual corresponde a la definición del coeficiente métrico Kv, que utiliza unidades de m³/h y bar con una temperatura de referencia de 20 °C [2, 3]. La equivalencia estándar entre ambos establece que el Cv es aproximadamente 1,16 veces el valor del Kv, permitiendo normalizar la capacidad de las válvulas para el cálculo de su tamaño [4, 5].",
+      "explanation": "El coeficiente de caudal Cv se define técnicamente como el volumen de agua en galones USA por minuto a una temperatura de 60 °F que circula a través de la válvula con una caída de presión de 1 psi. Una confusión típica es la opción A, la cual corresponde a la definición del coeficiente métrico Kv, que utiliza unidades de m³/h y bar con una temperatura de referencia de 20 °C. La equivalencia estándar entre ambos establece que el Cv es aproximadamente 1,16 veces el valor del Kv, permitiendo normalizar la capacidad de las válvulas para el cálculo de su tamaño.",
       "difficulty": 1,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "En una válvula con característica de caudal inherente de 'igual porcentaje' (isoporcentual), ¿cuál es su comportamiento operativo?",
@@ -24,9 +25,10 @@
         "El obturador tiene forma de disco plano para alcanzar el caudal máximo rápidamente."
       ],
       "correct": 2,
-      "explanation": "En una válvula con característica isoporcentual, cada incremento igual en el porcentaje de la carrera del obturador produce un cambio porcentual idéntico en el caudal que circula por ella. Se suele confundir con la característica lineal (opción A), en la cual el caudal es directamente proporcional a la carrera y no a su variación porcentual. Técnicamente, este diseño permite compensar las variaciones de ganancia del proceso en instalaciones con pérdidas de carga variables, manteniendo estable la respuesta del lazo de control [8, 9].",
+      "explanation": "En una válvula con característica isoporcentual, cada incremento igual en el porcentaje de la carrera del obturador produce un cambio porcentual idéntico en el caudal que circula por ella. Se suele confundir con la característica lineal (opción A), en la cual el caudal es directamente proporcional a la carrera y no a su variación porcentual. Técnicamente, este diseño permite compensar las variaciones de ganancia del proceso en instalaciones con pérdidas de carga variables, manteniendo estable la respuesta del lazo de control.",
       "difficulty": 1,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "¿Qué fenómeno físico se produce cuando la presión del fluido en la vena contraída cae por debajo de la presión de vapor y la presión de salida permanece también por debajo de dicha presión de vapor?",
@@ -37,9 +39,10 @@
         "Efecto vórtex por alta viscosidad."
       ],
       "correct": 1,
-      "explanation": "El fenómeno de vaporización o flashing ocurre cuando la presión del fluido cae por debajo de su presión de vapor en la vena contraída y se mantiene por debajo de dicha presión al salir del cuerpo de la válvula [10, 11]. Es fundamental no confundirlo con la cavitación (opción A), donde el fluido recupera una presión superior a la de vapor a la salida, provocando el colapso violento de las burbujas [11, 12]. El flashing genera un flujo bifásico de líquido y vapor a alta velocidad que requiere el uso de materiales internos resistentes a la erosión [10, 13].",
+      "explanation": "El fenómeno de vaporización o flashing ocurre cuando la presión del fluido cae por debajo de su presión de vapor en la vena contraída y se mantiene por debajo de dicha presión al salir del cuerpo de la válvula. Es fundamental no confundirlo con la cavitación (opción A), donde el fluido recupera una presión superior a la de vapor a la salida, provocando el colapso violento de las burbujas. El flashing genera un flujo bifásico de líquido y vapor a alta velocidad que requiere el uso de materiales internos resistentes a la erosión.",
       "difficulty": 1,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "Al comparar válvulas de globo, ¿cuál es la ventaja principal de un diseño de simple asiento frente a uno de doble asiento?",
@@ -50,9 +53,10 @@
         "Tiene una capacidad de caudal (Cv) superior para el mismo diámetro de cuerpo."
       ],
       "correct": 0,
-      "explanation": "La ventaja técnica primordial de la válvula de globo de simple asiento es su capacidad para proporcionar un cierre estanco con fugas mínimas, cumpliendo con los estándares de Clase IV o Clase VI [14, 15]. Existe una confusión frecuente con la opción C, pero es la válvula de doble asiento la que es inherentemente equilibrada, permitiendo el uso de actuadores más pequeños para vencer altas presiones diferenciales [16, 17]. Por tanto, el diseño de simple asiento es la elección obligada cuando el proceso exige una estanqueidad total en la posición de cierre para evitar pérdidas.",
+      "explanation": "La ventaja técnica primordial de la válvula de globo de simple asiento es su capacidad para proporcionar un cierre estanco con fugas mínimas, cumpliendo con los estándares de Clase IV o Clase VI. Existe una confusión frecuente con la opción C, pero es la válvula de doble asiento la que es inherentemente equilibrada, permitiendo el uso de actuadores más pequeños para vencer altas presiones diferenciales. Por tanto, el diseño de simple asiento es la elección obligada cuando el proceso exige una estanqueidad total en la posición de cierre para evitar pérdidas.",
       "difficulty": 2,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "¿Cuál es la función técnica fundamental de un posicionador acoplado a un actuador neumático?",
@@ -63,9 +67,10 @@
         "Controlar la presión de entrada al cuerpo de la válvula para evitar la cavitación."
       ],
       "correct": 1,
-      "explanation": "La función fundamental de un posicionador es garantizar que la posición física del vástago sea exactamente proporcional a la señal de salida del controlador, actuando como un sistema de realimentación de posición [19, 20]. Su empleo permite vencer interferencias críticas como el rozamiento en la empaquetadura y las fuerzas estáticas del fluido que, de otro modo, causarían un control errático o histéresis [19, 21]. Es un error común considerarlo simplemente un amplificador de presión (opción A), ignorando que su valor reside en la corrección activa de la carrera mediante su mecanismo de leva o microprocesador [20, 22].",
+      "explanation": "La función fundamental de un posicionador es garantizar que la posición física del vástago sea exactamente proporcional a la señal de salida del controlador, actuando como un sistema de realimentación de posición. Su empleo permite vencer interferencias críticas como el rozamiento en la empaquetadura y las fuerzas estáticas del fluido que, de otro modo, causarían un control errático o histéresis. Es un error común considerarlo simplemente un amplificador de presión (opción A), ignorando que su valor reside en la corrección activa de la carrera mediante su mecanismo de leva o microprocesador.",
       "difficulty": 2,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "Si la pérdida de carga disponible para la válvula es muy pequeña respecto a la total del sistema (coeficiente r < 0,4), ¿qué característica de caudal inherente se recomienda seleccionar?",
@@ -76,9 +81,10 @@
         "Parabólica profunda."
       ],
       "correct": 2,
-      "explanation": "La opción correcta es la C porque, según la fuente, cuando el coeficiente r es inferior a 0,4, la característica inherente isoporcentual se desplaza gradualmente hacia una característica efectiva lineal, compensando la pérdida de carga del sistema [1, 2]. Una confusión típica es elegir la característica lineal (opción A), la cual bajo estas condiciones se distorsionaría aproximándose a una curva de apertura rápida, volviendo el control inestable al inicio de la carrera [1, 3]. Por ello, en instalaciones donde la válvula absorbe una parte muy pequeña de la presión total, se selecciona 'igual porcentaje' para mantener la estabilidad del lazo [2, 4].",
+      "explanation": "La opción correcta es la C porque, según la fuente, cuando el coeficiente r es inferior a 0,4, la característica inherente isoporcentual se desplaza gradualmente hacia una característica efectiva lineal, compensando la pérdida de carga del sistema. Una confusión típica es elegir la característica lineal (opción A), la cual bajo estas condiciones se distorsionaría aproximándose a una curva de apertura rápida, volviendo el control inestable al inicio de la carrera. Por ello, en instalaciones donde la válvula absorbe una parte muy pequeña de la presión total, se selecciona 'igual porcentaje' para mantener la estabilidad del lazo.",
       "difficulty": 2,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "Calcule el coeficiente Kv necesario para una válvula que debe manejar 100 m3/h de un producto con densidad relativa 0,81 y una caída de presión de 4 bar.",
@@ -89,9 +95,10 @@
         "18,2"
       ],
       "correct": 0,
-      "explanation": "La respuesta A se obtiene aplicando la fórmula general para líquidos incompresibles: Kv = Q * √(ρ / Δp), donde Q es el caudal en m3/h, ρ la densidad relativa y Δp la caída de presión en bar. El desarrollo numérico paso a paso es: 100 * √(0,81 / 4) = 100 * √0,2025 = 100 * 0,45 = 45, validando técnicamente el coeficiente necesario para el proceso. Un error común es omitir la raíz cuadrada en el cálculo (opción C), lo que representaría un fallo de dimensionamiento grave al no considerar las leyes de flujo turbulento descritas en la fuente [6, 7].",
+      "explanation": "La respuesta A se obtiene aplicando la fórmula general para líquidos incompresibles: Kv = Q * √(ρ / Δp), donde Q es el caudal en m3/h, ρ la densidad relativa y Δp la caída de presión en bar. El desarrollo numérico paso a paso es: 100 * √(0,81 / 4) = 100 * √0,2025 = 100 * 0,45 = 45, validando técnicamente el coeficiente necesario para el proceso. Un error común es omitir la raíz cuadrada en el cálculo (opción C), lo que representaría un fallo de dimensionamiento grave al no considerar las leyes de flujo turbulento descritas en la fuente.",
       "difficulty": 3,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "Se dispone de una válvula de acción directa (baja para cerrar) equipada con un actuador de acción inversa (aire para abrir/resorte para cerrar). ¿Cuál es su posición de seguridad ante fallo de aire?",
@@ -102,9 +109,10 @@
         "Posición intermedia al 50% de la carrera."
       ],
       "correct": 1,
-      "explanation": "La válvula es de acción directa (baja para cerrar) y está equipada con un actuador de acción inversa, lo que técnicamente significa que ante un fallo de aire el resorte expande el vástago hacia abajo [8, 9]. Dado que la válvula cierra cuando el vástago baja, la posición de seguridad resultante es totalmente cerrada o 'Fail Closed' (opción B). Es una confusión frecuente pensar que la acción de la válvula y del actuador se anulan para abrir (opción A), pero en esta combinación específica ambas mecánicas colaboran para bloquear el flujo al perder la energía auxiliar.",
+      "explanation": "La válvula es de acción directa (baja para cerrar) y está equipada con un actuador de acción inversa, lo que técnicamente significa que ante un fallo de aire el resorte expande el vástago hacia abajo. Dado que la válvula cierra cuando el vástago baja, la posición de seguridad resultante es totalmente cerrada o 'Fail Closed' (opción B). Es una confusión frecuente pensar que la acción de la válvula y del actuador se anulan para abrir (opción A), pero en esta combinación específica ambas mecánicas colaboran para bloquear el flujo al perder la energía auxiliar.",
       "difficulty": 3,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "Durante una prueba de 'firma' (signature) con un posicionador inteligente, se detecta una histéresis y zona muerta superiores a los valores de fábrica. ¿Cuál es el diagnóstico más probable?",
@@ -115,9 +123,10 @@
         "Pérdida de calibración del cero en el controlador digital."
       ],
       "correct": 2,
-      "explanation": "El diagnóstico más probable es la fricción excesiva en la empaquetadura (estopada) o guías, ya que las fuentes identifican estas fuerzas de rozamiento como las principales causas de histéresis y zonas muertas elevadas [8, 11]. Durante una prueba de 'firma', un posicionador inteligente compara el recorrido real frente al de fábrica; si existe resistencia mecánica, se detecta un aumento en el retardo de respuesta y una desviación en la linealidad [12, 13]. Una confusión típica es atribuir el fallo a la calibración del cero (opción D), pero esto causaría un desplazamiento constante en todas las lecturas sin ensanchar la banda de histéresis del conjunto.",
+      "explanation": "El diagnóstico más probable es la fricción excesiva en la empaquetadura (estopada) o guías, ya que las fuentes identifican estas fuerzas de rozamiento como las principales causas de histéresis y zonas muertas elevadas. Durante una prueba de 'firma', un posicionador inteligente compara el recorrido real frente al de fábrica; si existe resistencia mecánica, se detecta un aumento en el retardo de respuesta y una desviación en la linealidad. Una confusión típica es atribuir el fallo a la calibración del cero (opción D), pero esto causaría un desplazamiento constante en todas las lecturas sin ensanchar la banda de histéresis del conjunto.",
       "difficulty": 3,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "¿Cuál es la desventaja técnica principal de la válvula Saunders (o de diafragma) con relación a su accionamiento según las fuentes?",
@@ -128,9 +137,10 @@
         "Presenta una alta caída de presión en posición de apertura total"
       ],
       "correct": 1,
-      "explanation": "Según la descripción técnica de la fuente Creus, la válvula Saunders o de diafragma tiene como principal desventaja que su servomotor de accionamiento debe ser muy potente para forzar la membrana flexible contra el resalte del cuerpo. Es un error conceptual suponer que es inadecuada para fluidos con sólidos en suspensión (opción C), cuando en realidad su diseño es idóneo para lodos y fluidos corrosivos gracias a su facilidad de revestimiento y ausencia de espacios muertos [15, 16]. Por lo tanto, aunque es una válvula de bajo coste y gran estanqueidad, requiere actuadores con gran capacidad de esfuerzo en comparación con otros diseños [15, 17].",
+      "explanation": "Según la descripción técnica de la fuente Creus, la válvula Saunders o de diafragma tiene como principal desventaja que su servomotor de accionamiento debe ser muy potente para forzar la membrana flexible contra el resalte del cuerpo. Es un error conceptual suponer que es inadecuada para fluidos con sólidos en suspensión (opción C), cuando en realidad su diseño es idóneo para lodos y fluidos corrosivos gracias a su facilidad de revestimiento y ausencia de espacios muertos. Por lo tanto, aunque es una válvula de bajo coste y gran estanqueidad, requiere actuadores con gran capacidad de esfuerzo en comparación con otros diseños.",
       "difficulty": 1,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "Según la norma internacional IEC-534-1987, ¿cómo se define específicamente la 'rangeabilidad' o gama de caudales regulables en una válvula de control?",
@@ -143,7 +153,8 @@
       "correct": 0,
       "explanation": "La rangeabilidad se define técnicamente como la relación entre el caudal máximo y el caudal mínimo que la válvula es capaz de regular manteniendo su curva característica inherente. Según la normativa internacional, este cociente (Kvs/Kv0) determina la gama operativa efectiva, situándose típicamente en 30:1 para válvulas lineales y hasta 50:1 para isoporcentuales. Es un error conceptual común confundirla con el campo de medida (opción B), el cual representa el espectro completo de valores físicos y no la proporción de capacidades de flujo del equipo. Por lo tanto, una alta rangeabilidad indica una mayor flexibilidad para controlar procesos con grandes variaciones de carga sin perder precisión.",
       "difficulty": 1,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "Al comparar materiales de sellado para el vástago, ¿por qué se prefiere técnicamente el empleo de teflón frente al grafito siempre que la temperatura sea inferior a 220 °C?",
@@ -154,9 +165,10 @@
         "Porque el grafito requiere obligatoriamente una válvula de engrase para no corroer el vástago"
       ],
       "correct": 1,
-      "explanation": "Se prefiere técnicamente el empleo de teflón para el sellado del vástago siempre que la temperatura sea inferior a 220 °C debido a que es un material autolubricante con muy bajo rozamiento. Las fuentes señalan explícitamente que el coeficiente de rozamiento del grafito es de 7 a 10 veces mayor que el del teflón, lo que incrementaría drásticamente la histéresis y la zona muerta de la válvula [3, 4]. Una confusión frecuente es la opción D, pero aunque el grafito es necesario para temperaturas extremas, en rangos normales provoca una mayor degradación del control y riesgo de corrosión galvánica en el vástago. Así, el teflón garantiza una respuesta más ágil y precisa del actuador en la mayoría de las aplicaciones industriales estándar.",
+      "explanation": "Se prefiere técnicamente el empleo de teflón para el sellado del vástago siempre que la temperatura sea inferior a 220 °C debido a que es un material autolubricante con muy bajo rozamiento. Las fuentes señalan explícitamente que el coeficiente de rozamiento del grafito es de 7 a 10 veces mayor que el del teflón, lo que incrementaría drásticamente la histéresis y la zona muerta de la válvula. Una confusión frecuente es la opción D, pero aunque el grafito es necesario para temperaturas extremas, en rangos normales provoca una mayor degradación del control y riesgo de corrosión galvánica en el vástago. Así, el teflón garantiza una respuesta más ágil y precisa del actuador en la mayoría de las aplicaciones industriales estándar.",
       "difficulty": 2,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "Considerando la resistencia a la erosión en condiciones extremas, ¿cuál es el diseño de válvula que las fuentes sitúan como el más favorable?",
@@ -167,9 +179,10 @@
         "Válvula de bola segmentada con dirección de flujo para abrir"
       ],
       "correct": 2,
-      "explanation": "La válvula en ángulo de simple asiento con obturador contorneado es clasificada por las fuentes como el diseño más favorable para resistir la erosión en condiciones críticas de operación. Su configuración permite un flujo de salida perpendicular que minimiza las turbulencias internas y el choque directo del fluido contra las paredes del cuerpo comparado con una válvula de globo [6, 7]. Se suele confundir con la robustez de las válvulas de doble asiento (opción A), pero técnicamente estas son más vulnerables al desgaste debido a las altas velocidades de fuga que se generan cerca de la posición de cierre. Por ello, el diseño en ángulo es la opción de ingeniería preferida para manejar fluidos con sólidos en suspensión o altas caídas de presión.",
+      "explanation": "La válvula en ángulo de simple asiento con obturador contorneado es clasificada por las fuentes como el diseño más favorable para resistir la erosión en condiciones críticas de operación. Su configuración permite un flujo de salida perpendicular que minimiza las turbulencias internas y el choque directo del fluido contra las paredes del cuerpo comparado con una válvula de globo. Se suele confundir con la robustez de las válvulas de doble asiento (opción A), pero técnicamente estas son más vulnerables al desgaste debido a las altas velocidades de fuga que se generan cerca de la posición de cierre. Por ello, el diseño en ángulo es la opción de ingeniería preferida para manejar fluidos con sólidos en suspensión o altas caídas de presión.",
       "difficulty": 2,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
     },
     {
       "q": "Una bomba centrífuga alimenta un proceso donde una válvula de control regula un caudal de 50 m³/h absorbiendo una pérdida de carga de 4 bar. Calcule la potencia (en Kw) que consume la válvula y que debe ser suministrada por la bomba, utilizando la fórmula técnica: Potencia (Kw) = 0,0266 × ΔP(bar) × Q(m³/h).",
@@ -182,7 +195,428 @@
       "correct": 2,
       "explanation": "Para determinar la potencia consumida por la válvula de control que debe suministrar la bomba, se utiliza la fórmula técnica Potencia (Kw) = 0,0266 x ΔP(bar) x Q(m³/h) citada en las fuentes. El desarrollo numérico paso a paso con los valores proporcionados es: 0,0266 x 4 bar x 50 m³/h, lo que resulta en un producto final de 5,32 Kw. Es un error típico de cálculo seleccionar la opción B (2,66 Kw), el cual suele derivarse de no aplicar correctamente los factores de conversión de unidades o ignorar la relación lineal entre caída de presión y energía. Este cálculo es vital para el correcto dimensionamiento energético de los sistemas de bombeo y la evaluación de la eficiencia en plantas industriales.",
       "difficulty": 3,
-      "module": 7
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8 (Elementos finales de control)"
+    },
+    {
+      "q": "Según Creus, la válvula de mariposa se acciona con un servomotor exterior que ejerce su par máximo en una zona concreta de la carrera, ya que la última parte del giro es bastante inestable. ¿En qué posición se produce este par máximo?",
+      "options": [
+        "Prácticamente cerrada: a 90° del cierre en control todo-nada y a 60° en control continuo",
+        "En la apertura total del disco, a 90° de la posición de cierre",
+        "Exactamente en el punto medio del giro, a 45° de la posición de cierre",
+        "El par se mantiene constante durante todo el recorrido de 0° a 90°"
+      ],
+      "correct": 0,
+      "explanation": "El texto señala expresamente que el servomotor exterior de la válvula de mariposa ejerce su par máximo cuando la válvula está casi cerrada, considerándose 90° en control todo-nada y 60° en control continuo a partir de la posición de cierre, siempre que la presión diferencial permanezca constante. Un error típico es situar el par máximo a 45°, valor que corresponde a otro tipo de válvula (la de obturador de disco excéntrico rotativo), donde el par del servomotor sí varía siendo máximo cuando el giro del obturador es de 45°. Por ello, al seleccionar la válvula de mariposa hay que considerar cuidadosamente las presiones diferenciales en apertura completa y en cierre, ya que se necesita una fuerza grande del actuador para vencer una caída de presión elevada precisamente cerca del cierre.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 386"
+    },
+    {
+      "q": "En una válvula de bola convencional (no de paso total) en posición de apertura completa, ¿qué porcentaje aproximado del tamaño nominal de la tubería representa el área de paso, según Creus?",
+      "options": [
+        "El 100%, ya que el paso es idéntico al diámetro interior de la tubería",
+        "Aproximadamente el 75% del tamaño de la tubería",
+        "Aproximadamente el 50% del tamaño de la tubería",
+        "Aproximadamente el 90% del tamaño de la tubería"
+      ],
+      "correct": 1,
+      "explanation": "Creus indica textualmente que, en posición de apertura total, la válvula de bola equivale aproximadamente al 75% del tamaño de la tubería, ya que la bola dispone de un corte en V que fija su curva característica y reduce el área de paso efectiva frente a un diseño de paso totalmente circular. La opción del 100% es una confusión típica con las válvulas de bola de 'paso total' (full-bore), un diseño distinto del descrito en este apartado del texto. Por su cierre estanco mediante un aro de teflón contra el que asienta la bola, y por su capacidad de manejar sólidos en suspensión, la válvula de bola segmentada se emplea principalmente en fluidos negros o con alto contenido de partículas.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 386"
+    },
+    {
+      "q": "¿Cuál es la ventaja mecánica principal del obturador de superficie segmentada esférica autoalineante de la válvula de disco excéntrico (Camflex), según Creus?",
+      "options": [
+        "Elimina por completo la necesidad de cualquier aro de teflón en el asiento",
+        "Aumenta la capacidad de caudal muy por encima de las válvulas de mariposa y de bola",
+        "Proporciona un cierre estanco con bajas fuerzas dinámicas del fluido, permitiendo un servomotor de par reducido",
+        "Obliga siempre a instalar una tapa de extensión, cualquiera que sea la temperatura de trabajo"
+      ],
+      "correct": 2,
+      "explanation": "El texto describe que el obturador autoalineante de la válvula Camflex proporciona un cierre estanco con unas bajas fuerzas dinámicas del fluido, lo que permite utilizar un servomotor de par reducido frente a otros diseños rotativos. Es un error común suponer que su capacidad de caudal supera a las válvulas de mariposa y de bola; el texto la califica como 'comparable', no superior. La tapa de extensión sí permite operar en un margen amplio de temperaturas, pero no es un requisito obligatorio en toda condición de servicio, por lo que esa opción también es incorrecta.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 386"
+    },
+    {
+      "q": "¿Para qué tipo de servicio es adecuada, de forma general, la válvula de compuerta (o de tajadera) descrita por Creus?",
+      "options": [
+        "Para control continuo de precisión, gracias a su comportamiento estable en posiciones intermedias",
+        "Para control todo-nada, ya que en posiciones intermedias tiende a bloquearse, y se caracteriza por muy baja pérdida de carga en apertura total",
+        "Exclusivamente para fluidos con alto contenido de sólidos en suspensión",
+        "Para vaporización (flashing), por su recorrido interno poco curvilíneo"
+      ],
+      "correct": 1,
+      "explanation": "Creus señala que, por su disposición de disco vertical plano que se mueve verticalmente al flujo, la válvula de compuerta es adecuada generalmente para control todo-nada, ya que en posiciones intermedias tiende a bloquearse; en cambio, en apertura total presenta muy poca resistencia al flujo, lo que se traduce en una baja caída de presión. La opción de control continuo de precisión es una confusión típica, pues es precisamente la inestabilidad en posiciones intermedias lo que descarta este uso. El diseño idóneo para fluidos que vaporizan (flashing) es la válvula en ángulo, no la de compuerta.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 384"
+    },
+    {
+      "q": "¿Qué característica distintiva presenta la válvula en Y cuando se instala inclinada con un cierto ángulo, según Creus?",
+      "options": [
+        "Una característica de autodrenaje, por lo que se emplea usualmente en instalaciones criogénicas",
+        "Una capacidad de caudal inferior a la de una válvula de globo del mismo tamaño",
+        "La imposibilidad de usarse como válvula de cierre todo-nada",
+        "Un asiento y obturador perpendiculares al eje del flujo, igual que en la válvula de globo"
+      ],
+      "correct": 0,
+      "explanation": "El texto indica que la válvula en Y, con su asiento y obturador inclinados 45° respecto al flujo, posee una característica de autodrenaje cuando está inclinada con cierto ángulo, por lo que se emplea usualmente en instalaciones criogénicas donde debe evitarse la acumulación de líquido. Una confusión frecuente es pensar que tiene menor capacidad de caudal que la de globo, cuando en realidad Creus destaca justo lo contrario: como válvula de control presenta una gran capacidad de caudal. Además, sí puede emplearse como válvula de cierre todo-nada, caracterizándose en ese uso por su baja pérdida de carga.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 385"
+    },
+    {
+      "q": "Al comparar los servomotores eléctricos dedicados a control de clima (HVAC) frente a los proyectados para control industrial, ¿cuál es la diferencia fundamental que señala Creus?",
+      "options": [
+        "Los de HVAC tienen poco par y un tiempo de accionamiento largo (del orden de 1 minuto); los industriales tienen par elevado y accionamiento rápido (10 a 60 segundos)",
+        "Los de HVAC requieren aire comprimido y los industriales no",
+        "Los servomotores industriales solo admiten control todo-nada, mientras que los de HVAC permiten control proporcional",
+        "Ambos tipos tienen exactamente las mismas prestaciones de par y velocidad"
+      ],
+      "correct": 0,
+      "explanation": "Creus distingue explícitamente dos tipos de servomotores eléctricos: los de HVAC (calefacción, ventilación y aire acondicionado), caracterizados por poco par y un tiempo de accionamiento largo de alrededor de 1 minuto, y los de control industrial, con un par elevado y un tiempo de accionamiento rápido de 10 a 60 segundos. Ninguno de los dos tipos necesita aire para su accionamiento, ya que ambos son eléctricos, por lo que la opción sobre el aire comprimido es un error conceptual. Debido a la exigencia de rapidez y exactitud en los procesos industriales, los servomotores para HVAC casi nunca se emplean en la industria de proceso.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 426"
+    },
+    {
+      "q": "En una válvula de solenoide de acción directa (la más habitual), ¿en qué posición se encuentra la válvula cuando la bobina está desexcitada (sin alimentación eléctrica)?",
+      "options": [
+        "Abierta, ya que un muelle mantiene el émbolo separado del obturador",
+        "Cerrada mediante un muelle; al excitar el solenoide se abre por atracción del émbolo unido al obturador",
+        "En una posición intermedia indeterminada hasta recibir la primera señal",
+        "Abierta solo si la presión del fluido supera un valor mínimo prefijado"
+      ],
+      "correct": 1,
+      "explanation": "Creus describe que en la válvula de solenoide de acción directa, en ausencia de alimentación eléctrica la válvula está cerrada mediante un muelle y, al excitar el solenoide, se abre por atracción del émbolo unido al obturador. Existe también la variante normalmente abierta (acción inversa), en la que un muelle lleva la válvula a la posición abierta ante un fallo de alimentación; confundir ambas variantes es un error común al especificar la posición de seguridad del enclavamiento. Por motivos de máxima seguridad, la práctica habitual es mantener la bobina continuamente excitada, de modo que un fallo de corriente lleve automáticamente al sistema a su posición de seguridad predefinida.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 430"
+    },
+    {
+      "q": "¿Cuál fue el motivo principal por el que los fabricantes de válvulas de control rediseñaron las empaquetaduras del vástago a partir de la Norma de Aire Limpio (Clean Air Act) de 24 de febrero de 2004?",
+      "options": [
+        "Reducir el coste de fabricación de las estopadas independientemente de las fugas",
+        "Limitar las emisiones a la atmósfera de fluidos químicos orgánicos volátiles, principal causa de emisiones fugitivas en la empaquetadura del vástago",
+        "Aumentar el tamaño del actuador para vencer un mayor rozamiento",
+        "Sustituir el acero del vástago por materiales cerámicos"
+      ],
+      "correct": 1,
+      "explanation": "Según Creus, la Norma de Aire Limpio de 2004 limita las emisiones atmosféricas de fluidos químicos orgánicos volátiles, y su observancia obligó a los fabricantes a rediseñar las empaquetaduras del vástago, identificadas como la causa principal de dichas emisiones fugitivas. El resultado fue una mejora de los materiales (aros de perfluoroelastómero alternando con teflón relleno de fibras de grafito) que alarga la vida útil sin degradación y reduce el rozamiento, evitando así tener que aumentar el tamaño del actuador, que es precisamente la confusión que plantea la opción C. La norma no obliga a cambiar el material del vástago en sí, sino el sistema de estopada que lo rodea.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 394"
+    },
+    {
+      "q": "¿Hasta qué condiciones límite de temperatura y presión son de elección las válvulas termoplásticas en aplicaciones químicas, según Creus?",
+      "options": [
+        "Hasta 140 °C y 10 bar",
+        "Hasta 450 °C y 100 bar",
+        "Hasta 220 °C y 1 bar únicamente",
+        "No existe límite de presión, solo de temperatura"
+      ],
+      "correct": 0,
+      "explanation": "El texto indica que, en aplicaciones químicas hasta 140 °C y 10 bar, son de elección las válvulas termoplásticas, en particular por su resistencia a la corrosión, la abrasión y la congelación, además de su alta pureza y bajo coste. Una confusión típica es asociar estos materiales con los rangos de temperatura de las tapas con aletas de radiación (-20 °C a 450 °C), que corresponden a un componente metálico distinto de la válvula, no al cuerpo termoplástico. Además, el propio texto advierte que estos materiales no son adecuados en casos de fuerte vibración o ambientes con posible abuso mecánico.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 389"
+    },
+    {
+      "q": "En el procedimiento general de calibración de una válvula de control de acción inversa (sin aire cierra), descrito en 'Instrumentos industriales: su ajuste y calibración', ¿qué debe ocurrir al aplicar 0,2 bar (3 psi) de señal neumática?",
+      "options": [
+        "La válvula debe estar completamente cerrada al 0% de carrera",
+        "La válvula debe iniciar ya su apertura, ajustando el tornillo de cero si no ocurre así",
+        "La válvula debe marcar 100% de carrera en el indicador de posición",
+        "No debe realizarse ningún ajuste hasta llegar a 1 bar"
+      ],
+      "correct": 1,
+      "explanation": "El procedimiento descrito indica que, en una válvula de acción inversa, al llegar a 0,2 bar (20 kPa, 3 psi) la válvula debe iniciar ya su apertura; si esto no ocurre, se acciona el tornillo de cero (posición A) que regula la carrera del vástago hasta lograr ese punto, fijando entonces la placa indicadora al 0%. Posteriormente, al dar 1 bar (15 psi), el indicador debe marcar el 100% de la carrera, ajustando en ese caso el tornillo de multiplicación o span (posición B) si es necesario. Confundir esta secuencia con una válvula de acción directa es un error común, ya que en esa variante el comportamiento es exactamente el inverso: a 1 bar debería estar cerrada y a 0,2 bar completamente abierta.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 4, pág. 142"
+    },
+    {
+      "q": "Según 'Instrumentos industriales: su ajuste y calibración', ¿qué proporción aproximada del coste total a lo largo de la vida útil de una válvula de control corresponde a su mantenimiento?",
+      "options": [
+        "Alrededor del 10%",
+        "Alrededor del 30%",
+        "Alrededor del 70%",
+        "Prácticamente el 100%, ya que el coste inicial es insignificante"
+      ],
+      "correct": 2,
+      "explanation": "El texto afirma que el coste del mantenimiento de una válvula a lo largo de su vida útil es del orden del 70%, lo que justifica que un cuidado adecuado pueda ahorrar cifras importantes a la fábrica, tanto en equipo como en riesgos de seguridad (fugas de productos tóxicos, vibraciones, ruido). Subestimar esta cifra (por ejemplo, con el 10% o el 30%) es un error frecuente que lleva a infravalorar los programas de mantenimiento predictivo basados en posicionadores inteligentes. El coste inicial de compra, aunque relevante, no domina el coste total del ciclo de vida del equipo.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 4, pág. 152"
+    },
+    {
+      "q": "Si una válvula de control no recibe mantenimiento adecuado, ¿cómo evoluciona típicamente su exactitud de posicionamiento del obturador, según 'Instrumentos industriales: su ajuste y calibración'?",
+      "options": [
+        "Se mantiene siempre en 0,025%, independientemente del desgaste",
+        "Mejora progresivamente gracias al rodaje de las piezas móviles",
+        "Se deteriora desde una exactitud de 0,025% hasta valores de 2% a 5%",
+        "Pasa instantáneamente a un fallo total sin degradación gradual"
+      ],
+      "correct": 2,
+      "explanation": "El texto señala que, si la válvula no se mantiene, en vez de conservar una exactitud de 0,025% en el movimiento del obturador por la señal del servomotor neumático, esta se va deteriorando y deriva, al cabo del tiempo, hacia valores de 2% a 5%, lo que disminuye la calidad del proceso y contribuye a una degradación final del producto. Suponer que la exactitud mejora con el uso es un error conceptual, ya que el desgaste de la empaquetadura, el rozamiento y la pérdida de calibración actúan en sentido contrario. Esta degradación gradual, y no un fallo súbito, es precisamente lo que el diagnóstico predictivo mediante posicionadores inteligentes busca detectar a tiempo.",
+      "difficulty": 1,
+      "module": 7,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 4, pág. 153"
+    },
+    {
+      "q": "Comparando las ecuaciones matemáticas de las características de caudal inherente, ¿qué diferencia fundamental existe entre la característica lineal (q = K·l) y la isoporcentual (q = b·e^(a·l))?",
+      "options": [
+        "En la lineal, el caudal es proporcional a la carrera; en la isoporcentual, el caudal crece exponencialmente con la carrera, de modo que cada incremento porcentual de esta produce el mismo incremento porcentual de caudal",
+        "Ambas ecuaciones son matemáticamente equivalentes, solo cambia la notación",
+        "La lineal es exponencial y la isoporcentual es directamente proporcional a la carrera",
+        "Ninguna de las dos depende de la carrera del obturador, sino solo de la presión diferencial"
+      ],
+      "correct": 0,
+      "explanation": "Creus deduce que la característica lineal responde a q = K·l (caudal directamente proporcional a la carrera), mientras que la isoporcentual se obtiene integrando dq/dl = a·q, lo que conduce a una relación exponencial q = b·e^(a·l): cada incremento igual en el porcentaje de carrera produce un incremento porcentual igual en el caudal. Confundir ambas ecuaciones, o suponerlas equivalentes, ignora que la isoporcentual crece muy poco al principio de la carrera y muy rápido al final, mientras que la lineal mantiene una pendiente constante. Ambas dependen explícitamente de la carrera del obturador l, no solo de la presión diferencial.",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 403"
+    },
+    {
+      "q": "Según los valores experimentales que cita Creus, ¿cuál es el orden de magnitud de la rangeabilidad (relación Kvs/Kv0) típica de una válvula de característica lineal?",
+      "options": [
+        "De 15:1 a 30:1",
+        "50:1, idéntica a la isoporcentual",
+        "100:1, igual que en una válvula de Cv/Kv ajustable",
+        "Siempre exactamente infinita en la práctica"
+      ],
+      "correct": 0,
+      "explanation": "El texto indica que la rangeabilidad de la válvula lineal es de 15 a 1 o de 30 a 1, y que, aunque teóricamente podría ser infinita, las dificultades de fabricación la limitan a ese valor. Confundirla con el valor de 50:1 es habitual porque ese es precisamente el valor típico citado para la característica isoporcentual, que dispone de una gama de regulación superior. El valor 100:1 corresponde a otro concepto distinto: el margen de ajuste del coeficiente Cv o Kv en las válvulas de capacidad ajustable, no a la rangeabilidad inherente de una curva característica fija.",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 403"
+    },
+    {
+      "q": "Cuando, por exigencias del proceso, la pérdida de carga absorbida por la válvula de control es elevada (del orden del 30% o más de la pérdida de carga total del sistema), ¿qué característica de caudal inherente resulta más idónea según Creus?",
+      "options": [
+        "Isoporcentual",
+        "Lineal",
+        "Apertura rápida",
+        "Parabólica"
+      ],
+      "correct": 0,
+      "explanation": "Creus concluye explícitamente que, cuando la pérdida de carga a través de la válvula es elevada, del orden del 30% o más de la pérdida de carga total del sistema, la válvula más idónea a emplear es la isoporcentual. Esto se debe a que, en esas condiciones, la ganancia de la válvula isoporcentual (proporcional al caudal) compensa mejor las variaciones de ganancia típicas de procesos de caudal y temperatura. La opción lineal sería preferible en el caso opuesto, cuando la válvula absorbe una fracción muy pequeña de la pérdida de carga total (r pequeño), situación en la que la isoporcentual efectiva tiende a distorsionarse hacia una curva lineal.",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 413"
+    },
+    {
+      "q": "Desde un punto de vista ideal de estabilidad del bucle de control, ¿qué condición debe cumplir la ganancia total del lazo (producto de las ganancias del proceso, transmisor, controlador y válvula), según Creus?",
+      "options": [
+        "Debe ser mayor que 10 para asegurar rapidez de respuesta",
+        "Debe ser menor que 1 para que el bucle sea estable",
+        "Debe ser exactamente igual a 1 en todo punto de la carrera",
+        "Es indiferente, ya que solo influye la ganancia de la válvula"
+      ],
+      "correct": 1,
+      "explanation": "El texto afirma que un bucle de control es estable si la ganancia del bucle es menor que 1, siendo esta ganancia total el producto de las ganancias del proceso, del transmisor, del controlador y de la válvula de control. Suponer que una ganancia alta (mayor que 10) favorece la estabilidad es un error grave, ya que en realidad incrementa el riesgo de oscilaciones e inestabilidad del lazo. La válvula de control puede modificar sensiblemente esta ganancia total, de ahí la importancia de estudiar su influencia y seleccionar adecuadamente su curva característica para evitar inestabilidades en algún punto de su carrera.",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 408"
+    },
+    {
+      "q": "En la ecuación de equilibrio de fuerzas de una válvula de control, ¿cómo describe Creus la influencia relativa de las fuerzas dinámicas del fluido (Fp) frente a las fuerzas estáticas, en particular con el obturador en posición de cierre?",
+      "options": [
+        "Las fuerzas dinámicas son casi despreciables frente a las demás fuerzas estáticas",
+        "Las fuerzas dinámicas siempre superan a las estáticas y determinan el tamaño del actuador",
+        "Las fuerzas estáticas desaparecen por completo cuando la válvula está cerrada",
+        "Ambas fuerzas son de magnitud idéntica en cualquier posición de la carrera"
+      ],
+      "correct": 0,
+      "explanation": "Creus señala que la influencia de las fuerzas dinámicas es casi despreciable frente a las demás fuerzas estáticas, en particular con el obturador en la posición de cierre, debido en parte a la falta de datos de ensayo suficientes sobre fenómenos como el empuje lateral del fluido o la succión del obturador al aproximarse al asiento. Un error común es suponer que estas fuerzas dinámicas dominan el dimensionamiento del actuador, cuando en la práctica son las fuerzas estáticas (Fp, derivada de la presión sobre el obturador) las que se calculan explícitamente mediante fórmulas específicas para cada tipo de válvula. Precisamente por ser la posición de cierre la más exigente en términos de presión diferencial estática, los fabricantes tabulan la presión diferencial máxima admisible en esa condición.",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 419"
+    },
+    {
+      "q": "En el ejemplo comparativo de Creus entre el accionamiento neumático (con compresor de aire) y el accionamiento eléctrico (motor de 30 W) de una válvula similar, ¿aproximadamente cuántas veces resulta mayor el coste anual de operación de la válvula neumática?",
+      "options": [
+        "Aproximadamente 157 veces mayor",
+        "Aproximadamente 5 veces mayor",
+        "Son prácticamente idénticos",
+        "La válvula eléctrica siempre resulta más cara de operar"
+      ],
+      "correct": 0,
+      "explanation": "Según el cálculo de Creus, el coste anual de operación del compresor de aire que alimenta la válvula neumática (estimado en 557 € incluyendo reparaciones) resulta ser 157 veces mayor que el coste anual de operar una válvula equivalente con motor eléctrico de 30 W (3,54 €/año). Suponer que ambos costes son similares ignora la pérdida de energía del 40-50% que supone convertir electricidad o vapor en aire comprimido. Pese a ello, el texto matiza que el servomotor neumático sigue empleándose por su comportamiento como filtro ante oscilaciones rápidas de la señal, su bajo coste de compra, mayor fiabilidad y posición de seguridad ante fallo de aire.",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 428"
+    },
+    {
+      "q": "Según el ejemplo de Creus de una válvula de globo de 6\" con Kv=340 frente a una válvula de igual tamaño con Kv ajustable, cuando se sobredimensiona una válvula al elegirla de las tablas del fabricante (p. ej. Kv=130 de 3\" en vez de un valor calculado inferior), ¿qué consecuencia práctica tiene esto sobre el control?",
+      "options": [
+        "Se reduce la ganancia de la válvula y mejora automáticamente la estabilidad del lazo",
+        "Aumenta la zona muerta de la válvula y su ganancia, empeorando el control y obligando a una banda proporcional mayor",
+        "No tiene ningún efecto, ya que el Cv o Kv seleccionado siempre coincide con el calculado",
+        "Disminuye el coste de la instalación sin ninguna contrapartida técnica"
+      ],
+      "correct": 1,
+      "explanation": "Creus explica que, al sobredimensionar la válvula (en su ejemplo, en promedio un 40%, llegando a un 75% al pasar de Kv=130 a Kv=235), la válvula solo aprovecha una fracción reducida del margen de la señal de control (en su ejemplo, del 60%), lo que aumenta tanto la zona muerta como la ganancia de la válvula y empeora el control, exigiendo una banda proporcional mayor y un tiempo de acción integral más reducido. Suponer que esto mejora automáticamente la estabilidad es un error, ya que en realidad ocurre lo contrario. Como solución, Creus propone el empleo de válvulas con Kv o Cv ajustable, que fijan la señal de control integral a la carrera realmente utilizada, reduciendo la zona muerta y mejorando la respuesta del lazo.",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 458"
+    },
+    {
+      "q": "Según la norma ANSI/ISA-75.01.01-2002 citada por Creus, ¿qué representa conceptualmente el factor de recuperación de presión FL de una válvula de control?",
+      "options": [
+        "La relación entre el caudal máximo real en condiciones de caudal crítico y el caudal teórico que resultaría con la presión diferencial entre la entrada y la vena contraída en esas mismas condiciones",
+        "El cociente entre el coeficiente Cv y el coeficiente Kv de la válvula",
+        "La relación entre la presión de vapor del líquido y la presión crítica termodinámica del fluido",
+        "El porcentaje de fuga admisible de la válvula en posición de cierre"
+      ],
+      "correct": 0,
+      "explanation": "El texto define FL como la relación entre el caudal máximo real en condiciones de caudal crítico y el caudal teórico que se obtendría si la presión diferencial fuese la diferencia entre la presión de entrada de la válvula y la presión aparente en la vena contraída en esas mismas condiciones críticas; depende de la geometría interna de la válvula. Confundirlo con la relación Cv/Kv es un error común, ya que esa relación (1,16) es una simple equivalencia de unidades sin relación con la recuperación de presión. El factor FF, distinto de FL, es el que relaciona la presión en la vena contraída con la presión de vapor y la presión crítica termodinámica.",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 463"
+    },
+    {
+      "q": "En el flujo de un gas a través de una válvula de control, manteniendo constante la presión de entrada y disminuyendo progresivamente la presión de salida, ¿qué ocurre al alcanzarse la condición de caudal crítico (velocidad Mach 1 en la vena contraída)?",
+      "options": [
+        "El caudal masa deja de aumentar, aunque la presión de salida siga disminuyendo (caudal estrangulado o chocked flow)",
+        "El caudal masa aumenta indefinidamente de forma proporcional a la caída de presión",
+        "La válvula cierra automáticamente por sobrepresión",
+        "El factor de expansión Y se hace igual a cero"
+      ],
+      "correct": 0,
+      "explanation": "Creus explica que, si la presión de entrada se mantiene constante y la presión de salida se reduce progresivamente, el caudal masa del gas aumenta hasta un límite (caudal crítico); una ulterior disminución de la presión de salida no produce ningún aumento adicional de caudal, fenómeno conocido como caudal estrangulado (chocked flow), alcanzado cuando la velocidad del fluido en la vena contraída llega a la velocidad del sonido (Mach 1). Suponer un aumento indefinido del caudal es un error conceptual frecuente al aplicar mecánicamente las fórmulas de líquidos incompresibles a gases. En esta condición límite, el factor de expansión Y no se anula, sino que alcanza su valor mínimo de 0,667 (frente al máximo de 1 para presiones diferenciales muy bajas).",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 472"
+    },
+    {
+      "q": "Para reducir el ruido generado en una válvula de control atacando su fuente (divergiendo el flujo en chorros), Creus menciona el uso de un obturador tipo jaula con múltiples orificios parecidos a panales de abeja. ¿Qué reducción de ruido aproximada se consigue con este diseño frente a una válvula de globo convencional seleccionada solo por su capacidad?",
+      "options": [
+        "Unos 20 dB",
+        "Unos 2 dB, una reducción prácticamente inapreciable",
+        "Unos 60 dB, eliminando el ruido casi por completo",
+        "No se logra ninguna reducción, solo se traslada el ruido aguas abajo"
+      ],
+      "correct": 0,
+      "explanation": "El texto indica que, con un cuerpo de tamaño adecuado y un obturador tipo jaula de múltiples orificios (que divide el flujo en chorros), es fácil disminuir el ruido en unos 20 dB en comparación con una válvula de globo convencional seleccionada solo considerando su capacidad de caudal. Este valor contrasta con el logrado mediante el alargamiento del recorrido con conductos laberínticos complejos (del orden de 30 dB) y con los silenciadores en línea con material absorbente (30 dB o más), que atacan el problema por vías distintas: reducción de velocidad o atenuación de la transmisión del sonido, respectivamente. Suponer una reducción despreciable ignora que el ruido aerodinámico, principal causa del ruido en válvulas con gases y vapores, es precisamente sensible a este tipo de rediseño del obturador.",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 491"
+    },
+    {
+      "q": "Durante una prueba en banco descrita en 'Instrumentos industriales: su ajuste y calibración', se afloja un 75% la tensión de la empaquetadura de una válvula situada al 50% de su carrera y se mide la respuesta en escalón del servomotor neumático. ¿Qué efecto se observó y qué recomendación se deriva de mantenimiento?",
+      "options": [
+        "El retardo en el llenado o vaciado del servomotor se redujo en un 75%, por lo que se recomienda reajustar la empaquetadura y comprobar fugas",
+        "No se observó ningún cambio en el retardo de respuesta, por lo que el rozamiento es irrelevante",
+        "El retardo aumentó un 75%, lo que indica que la empaquetadura debe apretarse aún más",
+        "La prueba solo sirve para calibrar el cero del posicionador, sin relación con el rozamiento"
+      ],
+      "correct": 0,
+      "explanation": "El texto describe que, al aflojar un 75% la tensión de la empaquetadura de una válvula al 50% de su carrera, se observa que el retardo en el llenado o vaciado del servomotor neumático se reduce en un 75%, lo que evidencia el fuerte impacto del rozamiento de la estopada sobre la dinámica de la válvula. La recomendación derivada es que el servicio de mantenimiento reajuste la empaquetadura y compruebe si existen fugas, ya que el ahorro de energía en el movimiento del vástago y la menor frecuencia de cambio de empaquetadura compensan ese ajuste. Suponer que el retardo aumenta al aflojar la empaquetadura invierte la relación física real entre rozamiento y velocidad de respuesta del actuador.",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Instrumentos industriales: su ajuste y calibración, cap. 4, pág. 149"
+    },
+    {
+      "q": "Según la tabla de fugas de la norma ANSI/FCI 70-2-2006 citada por Creus, ¿qué caudal de fuga admite una válvula de control cuyo asiento está dotado de un anillo de teflón para lograr un cierre estanco de Clase VI?",
+      "options": [
+        "0,00001% del caudal máximo, equivalente a 0,15-6,75 ml/minuto de aire o nitrógeno",
+        "0,01% del caudal máximo, la misma que en simple asiento metal-metal (Clase IV)",
+        "0,1% del caudal máximo, la misma que en doble asiento (Clase III)",
+        "1% del caudal máximo, sin ningún límite volumétrico especificado"
+      ],
+      "correct": 0,
+      "explanation": "Creus cita que las válvulas con asiento dotado de anillo de teflón para cierre estanco (Clase VI) admiten un caudal de fuga del 0,00001%, equivalente a 0,15-6,75 ml/minuto de aire o nitrógeno, según el tamaño de la válvula. Confundir este valor con el 0,01% de la Clase IV (simple asiento metal-metal) o el 0,1% de la Clase III (doble asiento) es habitual porque las tres clases forman una escala progresiva de estanqueidad dentro de la misma norma. El uso del anillo blando de teflón, en lugar de un asiento metal-metal, es precisamente lo que permite alcanzar ese nivel de estanqueidad tan exigente.",
+      "difficulty": 2,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 435"
+    },
+    {
+      "q": "Una válvula de control regula un caudal de 30 m³/h de fuel de densidad relativa 0,8, absorbiendo una pérdida de carga de 3,5 bar. Aplicando la fórmula Potencia (Kw) = 0,0266 × ΔP(bar) × Q(m³/h), ¿qué potencia consume la válvula y que debe suministrar la bomba centrífuga?",
+      "options": [
+        "2,8 Kw",
+        "0,80 Kw",
+        "5,6 Kw",
+        "1,4 Kw"
+      ],
+      "correct": 0,
+      "explanation": "Aplicando directamente la fórmula citada por Creus con los datos del enunciado: Potencia (Kw) = 0,0266 × 3,5 bar × 30 m³/h = 2,8 Kw, que debe ser suministrada por la bomba centrífuga instalada en la tubería. Este es precisamente el ejemplo numérico que el propio texto desarrolla para ilustrar el criterio de ahorro energético al reducir la pérdida de carga fijada para la válvula (comparándolo con un segundo caso de 0,4 bar, que arroja solo 0,32 Kw). Un error típico es omitir el factor 0,0266 o confundir el orden de las magnitudes, obteniendo la mitad o el doble del resultado correcto, como ocurre en las opciones B y C.",
+      "difficulty": 3,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 453"
+    },
+    {
+      "q": "Una válvula de control de acción directa (sin aire abre, aire para cerrar) tiene un área efectiva de diafragma Ad = 940 cm² y, para el recorrido del obturador considerado, una compresión inicial del muelle F1 = 1,26 bar. Aplicando Fa = Ad × F1 × 1,02, ¿cuál es la fuerza máxima Fa que ejerce el servomotor en la posición de cierre?",
+      "options": [
+        "1208 kg",
+        "940 kg",
+        "1184 kg",
+        "1600 kg"
+      ],
+      "correct": 0,
+      "explanation": "Sustituyendo los valores en la fórmula de Creus para válvulas de acción directa: Fa = Ad × F1 × 1,02 = 940 × 1,26 × 1,02 = 1208 kg, resultado que coincide exactamente con el Ejemplo 1 resuelto en el texto para una válvula de 2\" con obturador en V. Un error común (opción C) es omitir el factor de conversión 1,02 (que ajusta de kg/cm² a bar), obteniendo 1184 kg en vez del valor correcto. Este valor de Fa es el punto de partida para, junto con la fuerza de rozamiento, de asentamiento y el peso del obturador, determinar la presión diferencial máxima que la válvula puede cerrar.",
+      "difficulty": 3,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 422"
+    },
+    {
+      "q": "La misma válvula de control, ahora de acción inversa (sin aire cierra, aire para abrir), tiene Ad = 940 cm², una presión máxima de aire Pa = 1,4 bar y una compresión final del muelle F2 = 0,57 bar. Aplicando Fa = Ad × (Pa − F2) × 1,02, ¿cuál es la fuerza del actuador con la válvula en posición de cierre?",
+      "options": [
+        "795,8 kg",
+        "1208 kg",
+        "1316 kg",
+        "780,2 kg"
+      ],
+      "correct": 0,
+      "explanation": "Sustituyendo los datos en la fórmula de acción inversa que emplea Creus: Fa = Ad × (Pa − F2) × 1,02 = 940 × (1,4 − 0,57) × 1,02 = 940 × 0,83 × 1,02 = 795,8 kg, coincidiendo con el Ejemplo 2 del texto. Confundir este resultado con el de la válvula de acción directa (1208 kg, calculada con Fa = Ad × F1 × 1,02 en el Ejemplo 1) es un error frecuente, ya que ambas ecuaciones usan variables distintas: F1 (compresión inicial) para acción directa y (Pa − F2) para acción inversa. Omitir el factor 1,02 de conversión de unidades produce el resultado incorrecto de 780,2 kg (opción D).",
+      "difficulty": 3,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 423"
+    },
+    {
+      "q": "En una válvula de obturador de disco excéntrico rotativo, la fuerza del actuador en la posición de cierre es Fa = 73,4 kg. Si la longitud del brazo del obturador es de 5,5 cm y la distancia entre el eje del árbol y el eje del obturador es de 1,8 cm, ¿cuál es la fuerza equivalente a nivel del obturador, aplicando Fuerza = (Fa × longitud del brazo) / distancia entre ejes?",
+      "options": [
+        "224 kg",
+        "73,4 kg",
+        "40,4 kg",
+        "132 kg"
+      ],
+      "correct": 0,
+      "explanation": "Aplicando la relación de brazos de palanca del Ejemplo 3 de Creus: Fuerza = (73,4 × 5,5) / 1,8 = 403,7 / 1,8 ≈ 224 kg, que es la fuerza equivalente actuando sobre el obturador, mayor que la fuerza directa del actuador (73,4 kg) precisamente gracias a la ventaja mecánica de la relación de brazos. Confundir ambos valores (opción B) ignora que, en válvulas con obturador de movimiento rotativo, esta relación de brazos (típicamente de 3 o más) permite usar un servomotor más pequeño que en válvulas de movimiento lineal equivalentes. Invertir la relación (multiplicar por 1,8 y dividir por 5,5) daría el resultado erróneo de la opción C.",
+      "difficulty": 3,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 423"
+    },
+    {
+      "q": "Se mide un sonido cuya presión sonora efectiva es P = 2 Pa, tomando como presión de referencia P0 = 2×10⁻⁵ Pa. Aplicando la fórmula Lp(dB) = 20 × log₁₀(P/P0), ¿cuál es el nivel de presión del sonido Lp?",
+      "options": [
+        "100 dB",
+        "50 dB",
+        "20 dB",
+        "10 dB"
+      ],
+      "correct": 0,
+      "explanation": "El cociente P/P0 = 2 / (2×10⁻⁵) = 100.000; log₁₀(100.000) = 5; por lo tanto Lp = 20 × 5 = 100 dB, aplicando exactamente la fórmula del nivel de presión de sonido que cita Creus. Un error típico (opción B) es usar el factor 10 en lugar de 20, que corresponde a la fórmula de nivel de potencia sónica y no a la de presión sonora, dando un resultado erróneamente reducido a la mitad. Este tipo de cálculo es la base para evaluar el ruido generado por una válvula de control frente a los tiempos máximos de exposición admisibles por motivos de salud laboral.",
+      "difficulty": 3,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 487"
+    },
+    {
+      "q": "Una válvula de bola segmentada (FL = 0,6) trabaja con P1 = 6,8 bar, P2 = 2,2 bar, presión de vapor Pv = 0,701 bar y factor FF = 0,944. Aplicando la fórmula de pérdida de presión crítica Δp_crítica = FL² × (P1 − FF × Pv), ¿cuál es el valor de Δp_crítica y qué se concluye sobre la condición de funcionamiento (Δp real = P1 − P2 = 4,6 bar)?",
+      "options": [
+        "Δp_crítica ≈ 2,21 bar; como 4,6 bar > 2,21 bar, la válvula está en condiciones críticas (cavitando)",
+        "Δp_crítica ≈ 4,97 bar; como 4,6 bar < 4,97 bar, la válvula está en condiciones subcríticas",
+        "Δp_crítica ≈ 6,14 bar; la válvula está siempre en condiciones subcríticas",
+        "Δp_crítica ≈ 0,66 bar; la válvula está en condiciones críticas por una razón distinta"
+      ],
+      "correct": 0,
+      "explanation": "Sustituyendo los valores: FF × Pv = 0,944 × 0,701 ≈ 0,662; P1 − FF·Pv = 6,8 − 0,662 = 6,138; FL² = 0,6² = 0,36; Δp_crítica = 0,36 × 6,138 ≈ 2,21 bar, tal como calcula Creus en su Ejemplo 2 para una válvula de bola. Como la pérdida de carga real (4,6 bar) supera claramente a la crítica (2,21 bar), la válvula se encuentra en condiciones críticas, es decir, cavitando. La opción B es la confusión típica, pues 4,97 bar es precisamente el resultado que se obtiene con el mismo P1, P2 y Pv pero usando el FL = 0,9 de una válvula de globo (Ejemplo 1 del texto), lo que ilustra cómo un menor FL (como en la válvula de bola) hace que la cavitación se alcance con una pérdida de carga real mucho menor.",
+      "difficulty": 3,
+      "module": 7,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 468"
     }
   ]
 }

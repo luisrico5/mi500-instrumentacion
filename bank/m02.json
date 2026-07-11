@@ -13,7 +13,8 @@
       "correct": 1,
       "explanation": "Según la fuente técnica, en el Sistema Internacional (S.I.) la presión está normalizada en pascal (N/m²), estableciéndose la equivalencia exacta de 1 bar como 10^5 Pa, es decir, 100.000 pascales. Una confusión habitual es seleccionar la opción C (1,02 kg/cm²), la cual, aunque es una equivalencia numérica válida y muy usada en la industria, no forma parte de las unidades base o derivadas del SI. El cálculo se basa en la definición directa del bar como un múltiplo decimal estandarizado del pascal.",
       "difficulty": 1,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "¿Qué característica geométrica define al tubo Bourdon original utilizado para la medición de presión?",
@@ -26,7 +27,8 @@
       "correct": 1,
       "explanation": "El tubo Bourdon original se define geométricamente como un tubo de sección elíptica que está curvado formando un anillo casi completo. Al aplicar presión en su interior, la sección elíptica tiende a volverse circular, provocando que el tubo se enderece y genere un desplazamiento mecánico en su extremo libre que se transmite a la aguja indicadora. Una confusión típica es la opción A (sección circular), pero un tubo de sección perfectamente circular no experimentaría el cambio de forma necesario para generar movimiento mecánico bajo presión interna.",
       "difficulty": 1,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "¿Cuál es la función principal del medidor McLeod en el ámbito de la instrumentación industrial?",
@@ -39,7 +41,8 @@
       "correct": 1,
       "explanation": "El medidor McLeod se fundamenta en la compresión de una muestra de gas de volumen conocido para medir presiones muy bajas aplicando la ley de Boyle-Mariotte. En el ámbito industrial, su función técnica principal es actuar como aparato primario de calibración para otros instrumentos de vacío en un intervalo de 1 a 10⁻⁴ mm Hg. Es común confundir su aplicación con medidas de proceso continuas (opción A), pero debido a que requiere manipulación manual con mercurio y es incompatible con vapores, su uso es estrictamente metrológico.",
       "difficulty": 1,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "En la medición de presión de vapor de agua, ¿por qué es técnica y económicamente preferible el uso de una 'lira' o 'pigtail'?",
@@ -52,7 +55,8 @@
       "correct": 2,
       "explanation": "La utilización de una lira o pigtail es una solución técnica que permite enfriar el vapor de agua y condensarlo antes de que entre en contacto con el sensor. El condensado resultante queda atrapado en la espira del tubo, funcionando como un sello de agua que protege el elemento elástico de las altas temperaturas que podrían dañarlo o descalibrarlo. Una confusión común es la opción B, pero a diferencia de los sellos químicos que usan fluidos externos como silicona, la lira emplea el propio vapor condensado como barrera de protección.",
       "difficulty": 2,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "Al comparar elementos elásticos, ¿cuál es la principal ventaja de los elementos en espiral y helicoidales frente al tubo Bourdon simple?",
@@ -63,9 +67,10 @@
         "Son capaces de medir vacíos de hasta 10^-9 mm Hg."
       ],
       "correct": 1,
-      "explanation": "Los elementos en espiral y helicoidales consisten esencialmente en un tubo Bourdon arrollado sobre sí mismo, lo que multiplica la longitud del elemento y permite un desplazamiento del extremo libre mucho mayor que el modelo simple [2, 3]. Esta ventaja técnica los hace ideales para mover directamente las plumillas de los registradores sin necesidad de sistemas de amplificación mecánicos complejos. Una confusión frecuente es la opción C, pero estos elementos miden presión relativa y, al igual que el Bourdon simple, se ven afectados por las variaciones atmosféricas.",
+      "explanation": "Los elementos en espiral y helicoidales consisten esencialmente en un tubo Bourdon arrollado sobre sí mismo, lo que multiplica la longitud del elemento y permite un desplazamiento del extremo libre mucho mayor que el modelo simple. Esta ventaja técnica los hace ideales para mover directamente las plumillas de los registradores sin necesidad de sistemas de amplificación mecánicos complejos. Una confusión frecuente es la opción C, pero estos elementos miden presión relativa y, al igual que el Bourdon simple, se ven afectados por las variaciones atmosféricas.",
       "difficulty": 2,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "¿Qué principio físico permite a los sensores piezoeléctricos realizar medidas dinámicas de presión con respuestas de hasta un millón de ciclos por segundo?",
@@ -76,9 +81,10 @@
         "La emisión de electrones termoiónicos desde un cátodo caliente."
       ],
       "correct": 2,
-      "explanation": "La respuesta correcta es la C porque las fuentes definen a los elementos piezoeléctricos como materiales cristalinos, como el cuarzo, que generan un potencial eléctrico al deformarse físicamente por la acción de una presión. Gracias a su construcción robusta y señal lineal, son los únicos sensores capaces de alcanzar respuestas frecuenciales de hasta un millón de ciclos por segundo, lo que los hace ideales para medidas dinámicas [1, 2]. Una confusión típica es la opción B, la cual describe a los sensores piezorresistivos que, aunque también usan cristales de silicio, funcionan variando su resistencia eléctrica en un puente de Wheatstone y no generando un potencial propio.",
+      "explanation": "La respuesta correcta es la C porque las fuentes definen a los elementos piezoeléctricos como materiales cristalinos, como el cuarzo, que generan un potencial eléctrico al deformarse físicamente por la acción de una presión. Gracias a su construcción robusta y señal lineal, son los únicos sensores capaces de alcanzar respuestas frecuenciales de hasta un millón de ciclos por segundo, lo que los hace ideales para medidas dinámicas. Una confusión típica es la opción B, la cual describe a los sensores piezorresistivos que, aunque también usan cristales de silicio, funcionan variando su resistencia eléctrica en un puente de Wheatstone y no generando un potencial propio.",
       "difficulty": 2,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "Se desea mantener una presión absoluta de 50 mm Hg en una columna de destilación utilizando un vacuómetro relativo. Si la presión atmosférica sube de 760 mm Hg a 775 mm Hg, ¿qué lectura debe mostrar el instrumento para mantener la presión absoluta deseada?",
@@ -89,9 +95,10 @@
         "825 mm Hg"
       ],
       "correct": 1,
-      "explanation": "La opción B es correcta basándose en la relación fundamental de que la presión absoluta es igual a la presión atmosférica menos la lectura del vacío (P_abs = P_atm - P_vac). El cálculo paso a paso inicia con la condición original para hallar el punto de consigna: 760 mm Hg - 50 mm Hg = 710 mm Hg; al subir la presión atmosférica a 775 mm Hg, el instrumento debe indicar 775 mm Hg - 50 mm Hg = 725 mm Hg para mantener la presión absoluta deseada. Seleccionar la opción A (710 mm Hg) es un error común que ignora que los vacuómetros relativos se ven afectados por las variaciones de la presión atmosférica local, desplazando la medida real del proceso [3, 4].",
+      "explanation": "La opción B es correcta basándose en la relación fundamental de que la presión absoluta es igual a la presión atmosférica menos la lectura del vacío (P_abs = P_atm - P_vac). El cálculo paso a paso inicia con la condición original para hallar el punto de consigna: 760 mm Hg - 50 mm Hg = 710 mm Hg; al subir la presión atmosférica a 775 mm Hg, el instrumento debe indicar 775 mm Hg - 50 mm Hg = 725 mm Hg para mantener la presión absoluta deseada. Seleccionar la opción A (710 mm Hg) es un error común que ignora que los vacuómetros relativos se ven afectados por las variaciones de la presión atmosférica local, desplazando la medida real del proceso.",
       "difficulty": 3,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "Un transmisor de presión relativa marca 4 bar en una planta donde la presión atmosférica es de 1,013 bar. ¿Cuál es el valor aproximado de la presión absoluta en unidades psi (libras por pulgada cuadrada)?",
@@ -102,9 +109,10 @@
         "14,5 psi"
       ],
       "correct": 2,
-      "explanation": "La respuesta C se obtiene sumando la presión relativa marcada por el transmisor y la presión atmosférica del lugar para obtener la presión absoluta: 4 bar + 1,013 bar = 5,013 bar absolutos. Al realizar la conversión a unidades inglesas utilizando el factor de 1 bar ≈ 14,50377 psi indicado en las tablas de equivalencias de las fuentes, el desarrollo numérico es 5,013 * 14,50377 = 72,707 psi [5, 6]. Un error frecuente es convertir directamente la presión relativa (4 bar) a psi, obteniendo aproximadamente 58 psi (opción A), lo cual omite el peso de la atmósfera necesario para definir una medida absoluta.",
+      "explanation": "La respuesta C se obtiene sumando la presión relativa marcada por el transmisor y la presión atmosférica del lugar para obtener la presión absoluta: 4 bar + 1,013 bar = 5,013 bar absolutos. Al realizar la conversión a unidades inglesas utilizando el factor de 1 bar ≈ 14,50377 psi indicado en las tablas de equivalencias de las fuentes, el desarrollo numérico es 5,013 * 14,50377 = 72,707 psi. Un error frecuente es convertir directamente la presión relativa (4 bar) a psi, obteniendo aproximadamente 58 psi (opción A), lo cual omite el peso de la atmósfera necesario para definir una medida absoluta.",
       "difficulty": 3,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "Si en un sistema de medición con sello de diafragma se produce una microrrotura que provoca el escape del fluido de llenado (glicerina o silicona), ¿cuál es la consecuencia inmediata según las fuentes técnicas?",
@@ -117,7 +125,8 @@
       "correct": 1,
       "explanation": "La opción B es la correcta porque los sellos de diafragma dependen estrictamente de un líquido incompresible de llenado para transmitir la presión del proceso hacia el sensor interno; las fuentes técnicas establecen explícitamente que una rotura con escape de dicho fluido inhabilita totalmente el instrumento. Es una confusión común pensar que el equipo simplemente perdería exactitud o presentaría un error de cero (opción C), pero sin el fluido de sello desaparece el vínculo hidráulico necesario para la medición. Estos sistemas se emplean por economía para proteger elementos elásticos contra fluidos altamente viscosos o temperaturas extremas que dañarían el sensor directo.",
       "difficulty": 3,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "¿Cuál es el valor de la presión atmosférica estándar al nivel del mar expresado en bar según las definiciones de las fuentes técnicas?",
@@ -128,9 +137,10 @@
         "0,98700 bar"
       ],
       "correct": 1,
-      "explanation": "La opción B es correcta ya que las fuentes definen la presión ejercida por la atmósfera estándar exactamente como 1,01325 bar, valor que equivale a 760 mm de mercurio absolutos al nivel del mar [4, 6]. Una confusión técnica habitual es seleccionar la opción C (1,03322), la cual representa el valor de la atmósfera estándar pero expresado en kilogramos por centímetro cuadrado (kg/cm²), no en bar. El conocimiento de esta equivalencia exacta es fundamental en instrumentación para realizar cálculos de compensación y ajustes de calibración precisos en transmisores de presión absoluta y relativa.",
+      "explanation": "La opción B es correcta ya que las fuentes definen la presión ejercida por la atmósfera estándar exactamente como 1,01325 bar, valor que equivale a 760 mm de mercurio absolutos al nivel del mar. Una confusión técnica habitual es seleccionar la opción C (1,03322), la cual representa el valor de la atmósfera estándar pero expresado en kilogramos por centímetro cuadrado (kg/cm²), no en bar. El conocimiento de esta equivalencia exacta es fundamental en instrumentación para realizar cálculos de compensación y ajustes de calibración precisos en transmisores de presión absoluta y relativa.",
       "difficulty": 1,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "¿En qué principio físico se basan los elementos térmicos de vacío, como el sensor Pirani o el de termopar?",
@@ -143,7 +153,8 @@
       "correct": 2,
       "explanation": "La opción C es correcta porque las fuentes definen que los elementos térmicos de vacío, como el sensor Pirani, operan bajo el principio de proporcionalidad entre la energía térmica disipada por un filamento y la presión del gas ambiente en condiciones de vacío. Una confusión técnica frecuente es la opción A, que corresponde a los medidores de ionización (como el de cátodo caliente), los cuales se reservan para vacíos mucho más elevados mediante el bombardeo de electrones. Es fundamental entender que en estos sensores la transferencia de calor del filamento al medio es la que permite inferir la densidad molecular del gas residual.",
       "difficulty": 1,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "En un transmisor inteligente de presión de tipo capacitivo, ¿cómo se realiza la transmisión de la presión del proceso hacia el diafragma sensible interno?",
@@ -156,7 +167,8 @@
       "correct": 1,
       "explanation": "La respuesta correcta es la B, ya que en los transmisores inteligentes modernos la presión del proceso no actúa directamente sobre las placas, sino que se transmite mediante un fluido de relleno incompresible (generalmente aceite de silicona) contenido entre diafragmas aisladores externos y el diafragma sensor interno. Seleccionar la opción C es un error conceptual grave, pues el contacto directo del fluido de proceso con el sensor eléctrico provocaría corrosión o cortocircuitos inmediatos. Este acoplamiento hidráulico permite proteger la electrónica sensible mientras se mantiene una transmisión de presión fiel y lineal.",
       "difficulty": 2,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "Al seleccionar un sensor de presión basado en galgas extensiométricas, ¿qué limitación técnica principal debe considerarse según los criterios de estabilidad y señal?",
@@ -169,7 +181,8 @@
       "correct": 1,
       "explanation": "De acuerdo con la tabla comparativa de las fuentes, los sensores de galgas extensiométricas presentan la limitación técnica de poseer una señal de salida muy débil (nivel de milivoltios) y una alta sensibilidad a las vibraciones, lo que requiere un acondicionamiento de señal robusto. No debe confundirse esta desventaja con una pobre respuesta frecuencial (opción C), ya que, por el contrario, su construcción ligera les permite medir variaciones dinámicas con rapidez. La nota de estudio clave aquí es que, aunque son precisos, su fragilidad mecánica ante ruidos de planta exige instalaciones con filtrado o amortiguamiento.",
       "difficulty": 2,
-      "module": 2
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
     },
     {
       "q": "Un transmisor electrónico de presión tiene un campo de medida de 0 a 100 bar y una exactitud del ±0,25% de toda la escala. Si se desea cumplir con la regla metrológica de relación 4:1 entre la exactitud del aparato patrón y la del instrumento a calibrar, ¿cuál debe ser la exactitud (en bar) requerida para el patrón?",
@@ -181,6 +194,231 @@
       ],
       "correct": 2,
       "explanation": "Para cumplir con la regla metrológica 4:1, el desarrollo numérico inicia calculando la exactitud del instrumento en bar: 100 bar * (0,25 / 100) = ±0,25 bar. Posteriormente, se divide este valor entre la relación de jerarquía requerida: 0,25 bar / 4 = ±0,0625 bar, confirmando la opción C. Una confusión típica es la opción B, la cual representa la exactitud del propio transmisor; utilizar un patrón con la misma exactitud que el equipo a calibrar invalidaría la trazabilidad de la prueba según los estándares industriales descritos.",
+      "difficulty": 3,
+      "module": 2,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3 (Medidas de presión)"
+    },
+    {
+      "q": "Según la definición dada en las fuentes técnicas, ¿qué es exactamente 1 pascal (Pa), unidad de presión del Sistema Internacional?",
+      "options": [
+        "La fuerza necesaria para comprimir 1 litro de gas a la mitad de su volumen.",
+        "1 newton por metro cuadrado (1 N/m²).",
+        "La presión ejercida por una columna de 1 mm de mercurio.",
+        "1 kilogramo-fuerza por centímetro cuadrado."
+      ],
+      "correct": 1,
+      "explanation": "El texto define el pascal de forma explícita como 1 newton por metro cuadrado (1 N/m²), siendo el newton la fuerza que aplicada a un cuerpo de masa 1 kg le comunica una aceleración de 1 m/s². Esta es la unidad base de presión normalizada en el Sistema Internacional según las Conferencias Generales de Pesas y Medidas de 1967 y 1971. Una confusión típica es la opción D (kg/cm²), unidad todavía muy usada en la industria pero que no pertenece al S.I. y que, además, no es equivalente numéricamente al pascal. Confundir el pascal con una columna de mercurio (opción C) también es un error frecuente, ya que esa es una forma práctica de expresar presión pero no su definición formal en el S.I.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 91",
+      "difficulty": 1,
+      "module": 2
+    },
+    {
+      "q": "¿Qué materiales se emplean normalmente en la fabricación de los elementos primarios elásticos de presión (Bourdon, espiral, helicoidal, diafragma, fuelle) según las fuentes?",
+      "options": [
+        "Acero inoxidable, aleación de cobre o níquel, o aleaciones especiales como hastelloy y monel.",
+        "Exclusivamente vidrio borosilicatado y cuarzo fundido.",
+        "Aluminio anodizado y polímeros termoplásticos reforzados.",
+        "Titanio puro y grafito pirolítico."
+      ],
+      "correct": 0,
+      "explanation": "Las fuentes indican textualmente que los materiales empleados normalmente en los elementos elásticos son el acero inoxidable, la aleación de cobre o níquel, o aleaciones especiales como hastelloy y monel, elegidas según la compatibilidad química con el fluido de proceso. Ninguna de las otras opciones (vidrio, polímeros, titanio o grafito) se menciona como material habitual para estos elementos mecánicos. Confundir estos materiales metálicos estructurales con materiales de sensores electrónicos (como el cuarzo piezoeléctrico) es un error común al mezclar las secciones de elementos mecánicos y electromecánicos del capítulo.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 93",
+      "difficulty": 1,
+      "module": 2
+    },
+    {
+      "q": "Según la definición de las fuentes, ¿qué es la presión diferencial?",
+      "options": [
+        "La diferencia entre la presión absoluta y la presión atmosférica del lugar de medición.",
+        "La diferencia entre dos presiones (puntos C y C' de la figura).",
+        "La presión medida por debajo de la presión atmosférica.",
+        "La presión ejercida por la atmósfera terrestre medida mediante un barómetro."
+      ],
+      "correct": 1,
+      "explanation": "El texto define la presión diferencial de forma directa y simple como la diferencia entre dos presiones, identificada en la figura con los puntos C y C'. La opción A corresponde en realidad a la definición de presión relativa, y la opción C describe el vacío; confundir estas tres clases de presión (relativa, diferencial y vacío) es un error frecuente en instrumentación, pero cada una tiene un uso y una referencia distintos. La opción D describe simplemente la presión atmosférica, que es solo uno de los términos que puede intervenir en un cálculo de presión relativa, no la definición de diferencial.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 92",
+      "difficulty": 1,
+      "module": 2
+    },
+    {
+      "q": "¿Cómo definen las fuentes el concepto de 'vacío' en la medición de presión, y en qué unidades se expresa habitualmente?",
+      "options": [
+        "Es la presión absoluta menos la presión relativa, expresada siempre en pascal.",
+        "Es la diferencia entre la presión atmosférica existente y la presión absoluta, expresada en mm de columna de mercurio, mm de columna de agua o pulgadas de columna de agua.",
+        "Es la presión ejercida por un fluido de densidad y altura conocidas, expresada en bar.",
+        "Es la diferencia entre dos presiones diferenciales, expresada en kg/cm²."
+      ],
+      "correct": 1,
+      "explanation": "Las fuentes definen el vacío como la presión medida por debajo de la atmosférica, es decir, la diferencia entre la presión atmosférica existente y la presión absoluta, y señalan expresamente que se expresa en mm de columna de mercurio, mm de columna de agua o pulgadas de columna de agua. El texto añade una advertencia clave para el estudio: las variaciones de la presión atmosférica influyen considerablemente en las lecturas de vacío, a diferencia de lo que ocurre al medir presiones elevadas. La opción C describe en cambio el principio de los manómetros de medida directa (columna líquida), un concepto relacionado pero distinto de la definición de vacío como clase de presión.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 92",
+      "difficulty": 1,
+      "module": 2
+    },
+    {
+      "q": "Según la clasificación de las fuentes técnicas, ¿cuáles son los cinco tipos principales en que se dividen los elementos electrónicos de vacío?",
+      "options": [
+        "Resistivos, capacitivos, inductivos, piezoeléctricos y ópticos.",
+        "Medidor McLeod, mecánicos, basados en propiedades de un gas, térmicos e ionización.",
+        "Bourdon, espiral, helicoidal, diafragma y fuelle.",
+        "LVDT, galga extensiométrica, silicio difundido, película delgada y cuarzo."
+      ],
+      "correct": 1,
+      "explanation": "El texto clasifica explícitamente los elementos electrónicos de vacío (sección 3.4) en cinco tipos: medidor McLeod, mecánicos (tubo Bourdon, fuelle y diafragma), basados en propiedades de un gas (conductividad térmica), térmicos (termopar, Pirani, bimetal) e ionización (filamento caliente, cátodo frío). La opción A enumera en cambio los tipos de elementos electromecánicos de presión relativa descritos en la sección 3.3, y la opción D mezcla varias tecnologías de esa misma sección; confundir ambas secciones del capítulo es un error habitual de estudio. La opción C solo lista elementos mecánicos primarios de presión relativa, no la clasificación de vacío.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 100",
+      "difficulty": 1,
+      "module": 2
+    },
+    {
+      "q": "¿Cuáles son los dos materiales típicos empleados en los transductores piezoeléctricos y qué temperatura máxima soportan en servicio continuo según las fuentes?",
+      "options": [
+        "Cuarzo y titanato de bario, hasta 150°C en servicio continuo (y 230°C en servicio intermitente).",
+        "Silicio dopado con boro y óxido de silicio, hasta 500°C en servicio continuo.",
+        "Platino e Inconel, hasta 25°C en servicio continuo.",
+        "Mercurio y vidrio borosilicatado, hasta 100°C en servicio continuo."
+      ],
+      "correct": 0,
+      "explanation": "Las fuentes indican que los dos materiales típicos en los transductores piezoeléctricos son el cuarzo y el titanato de bario, capaces de soportar temperaturas del orden de 150°C en servicio continuo y de 230°C en servicio intermitente. La opción B es una confusión frecuente porque el silicio dopado con boro corresponde en realidad al elemento de silicio difundido, una tecnología distinta basada en galgas extensiométricas y no en el efecto piezoeléctrico. Los valores concretos de temperatura (150°C/230°C) son un dato de estudio importante porque limitan la aplicación de estos sensores en procesos de alta temperatura frente a otras tecnologías.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 99",
+      "difficulty": 1,
+      "module": 2
+    },
+    {
+      "q": "¿En qué se diferencia constructivamente el fuelle del diafragma como elementos primarios elásticos de presión?",
+      "options": [
+        "El fuelle es una sola pieza flexible axialmente, mientras que el diafragma está formado por una o varias cápsulas circulares conectadas rígidamente entre sí por soldadura.",
+        "El fuelle solo puede medir vacío, mientras que el diafragma solo puede medir presión relativa.",
+        "El fuelle se fabrica exclusivamente en vidrio, mientras que el diafragma se fabrica exclusivamente en cerámica.",
+        "El fuelle no puede dilatarse ni contraerse, a diferencia del diafragma, que sí se deforma con la presión."
+      ],
+      "correct": 0,
+      "explanation": "El texto describe el diafragma como una o varias cápsulas circulares conectadas rígidamente entre sí por soldadura, cuya deformación se amplifica mediante un juego de palancas, mientras que el fuelle es parecido pero de una sola pieza flexible axialmente, capaz de dilatarse o contraerse con un desplazamiento considerable. La opción D invierte precisamente la característica distintiva del fuelle, que es su capacidad de dilatación y contracción axial; este es el error conceptual más común al comparar ambos elementos. Ambos elementos, además, miden presión relativa (no exclusivamente vacío o exclusivamente relativa como sugiere la opción B), salvo cuando se combinan en un conjunto especial para presión absoluta.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 94",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "¿Cómo están constituidos los elementos primarios de presión absoluta descritos en las fuentes, y qué material se emplea normalmente para los fuelles?",
+      "options": [
+        "Un conjunto de fuelle y muelle opuesto a un fuelle sellado al vacío absoluto, fabricado en latón o acero inoxidable.",
+        "Un tubo Bourdon doble relleno de mercurio, fabricado en vidrio templado.",
+        "Dos diafragmas cerámicos unidos por un resorte de titanio.",
+        "Una cápsula de silicio difundido sellada con nitrógeno a presión atmosférica."
+      ],
+      "correct": 0,
+      "explanation": "Según el texto, los elementos primarios de presión absoluta consisten en un conjunto de fuelle y muelle opuesto a un fuelle sellado al vacío absoluto, de modo que el movimiento resultante de la unión de ambos fuelles equivale directamente a la presión absoluta del fluido; el material empleado para los fuelles es latón o acero inoxidable. Se utilizan específicamente para la medida exacta y el control preciso de bajas presiones que puedan verse afectadas por las variaciones de la presión atmosférica, a diferencia del Bourdon, espiral, diafragma o fuelle simples, que solo miden presión relativa. Las opciones B, C y D describen construcciones y materiales que no aparecen en la descripción técnica de este elemento.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 94",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Según el procedimiento de seguridad descrito en las fuentes para el desmontaje de instrumentos de presión, ¿a partir de qué valor de presión del proceso se necesita instalar una válvula de alivio adicional a la válvula de cierre?",
+      "options": [
+        "Por encima de 10 bar.",
+        "Por encima de 25 bar.",
+        "Por encima de 50 bar.",
+        "Por encima de 100 bar."
+      ],
+      "correct": 1,
+      "explanation": "El texto establece que cuando la presión del proceso supera los 25 bar se necesita otra válvula de alivio para evitar un posible accidente durante el desmontaje del aparato. El procedimiento correcto es que el operario primero cierre la válvula de aislamiento y a continuación abra la válvula de alivio para liberar la presión dentro de la toma interna de presión del instrumento, evitando así que el fluido impacte al operario en la cara al desenroscar el instrumento. Elegir un umbral distinto de 25 bar (opciones A, C o D) ignora el valor exacto especificado en la norma de seguridad de las fuentes.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 95",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Según las fuentes, cuando la longitud de tubería necesaria para enfriar un fluido de proceso caliente (por ejemplo, vapor de agua) antes de llegar al instrumento supera los 25 metros, ¿qué solución se recomienda?",
+      "options": [
+        "Instalar dos liras (pigtails) en serie.",
+        "El uso de un transmisor.",
+        "Aumentar al doble el diámetro de la tubería.",
+        "Añadir un sello químico de silicona adicional."
+      ],
+      "correct": 1,
+      "explanation": "El texto indica explícitamente que, si el fluido no condensa, basta una longitud de tubería relativamente larga para enfriarlo, pero longitudes mayores de 25 m requieren el uso de un transmisor en lugar de un instrumento local con tubería de enfriamiento. Esto se debe a que instalar tramos de tubería excesivamente largos no es práctico ni económico, y un transmisor permite ubicar el elemento sensor en un punto más adecuado del proceso. Las opciones A, C y D no corresponden a la solución indicada en las fuentes para este problema específico de longitud de tubería.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 95",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "En los elementos electromecánicos resistivos de presión, ¿cómo se transmite el movimiento del elemento elástico hasta convertirse en señal eléctrica?",
+      "options": [
+        "El elemento elástico varía directamente la capacidad de un condensador de placas fijas.",
+        "El movimiento se transmite a un brazo móvil aislado que se apoya sobre un potenciómetro de precisión, conectado a un circuito de puente de Wheatstone.",
+        "El elemento elástico genera un potencial eléctrico al deformarse, sin necesidad de fuente de alimentación externa.",
+        "El movimiento se transmite mediante un núcleo magnético que varía la reluctancia de dos bobinas."
+      ],
+      "correct": 1,
+      "explanation": "El texto describe que en los elementos resistivos el elemento elástico (tipo Bourdon o cápsula) varía la resistencia óhmica de un potenciómetro, y que el movimiento se transmite mediante un brazo móvil aislado que se apoya sobre dicho potenciómetro de precisión, el cual está conectado a un circuito de puente de Wheatstone. La opción C describe en realidad el principio de los elementos piezoeléctricos, y la opción D corresponde a los elementos de reluctancia variable; confundir estos tres tipos de transductores electromecánicos es un error común porque todos convierten desplazamiento mecánico en señal eléctrica, pero mediante principios físicos distintos.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 97",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "¿En qué principio se basan los elementos de inductancia variable de tipo LVDT (transformador diferencial variable lineal) utilizados en transductores de presión?",
+      "options": [
+        "En la variación del flujo magnético al desplazarse una armadura de material magnético dentro de un imán permanente o una bobina, generando una corriente inducida proporcional al desplazamiento.",
+        "En la ionización de moléculas de gas producida por el desplazamiento de un cátodo frío.",
+        "En el cambio de capacidad entre dos placas fijas separadas por un dieléctrico de aire.",
+        "En la disipación de energía térmica de un filamento calentado por una corriente constante."
+      ],
+      "correct": 0,
+      "explanation": "Las fuentes describen que el LVDT proporciona una señal en corriente alterna proporcional al movimiento de una armadura de material magnético situada dentro de un imán permanente o de una bobina que crea un campo magnético; al cambiar la posición de la armadura por un cambio en la presión del proceso, varía el flujo magnético, lo que induce una corriente en la bobina proporcional al desplazamiento. La opción B describe un elemento de vacío por ionización, y la opción D describe un elemento térmico de vacío (como el Pirani), ambos pertenecientes a secciones distintas del capítulo. Confundir el LVDT con estos otros principios es habitual porque todos son transductores electromecánicos, pero cada uno mide una magnitud física diferente para inferir la presión.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 97",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "¿Qué ventaja principal ofrecen los elementos de presión de silicio difundido frente a los instrumentos analógicos convencionales, según las fuentes?",
+      "options": [
+        "Requieren calibración manual diaria para mantener su exactitud.",
+        "Al estar unidos a aparatos digitales con microprocesador, permiten autodiagnóstico y linealización de la señal sin necesidad de las operaciones periódicas de calibración típicas de los instrumentos analógicos.",
+        "Eliminan por completo la necesidad de un diafragma en contacto con el proceso.",
+        "Solo pueden emplearse en medidas estáticas, nunca en medidas dinámicas."
+      ],
+      "correct": 1,
+      "explanation": "El texto explica que los elementos de silicio difundido, formados por un monocristal de silicio con boro difundido para constituir varios puentes de Wheatstone, forman una galga extensiométrica autocontenida que, al estar unida a aparatos digitales con microprocesador, permite funciones como la selección de unidades de ingeniería, autodiagnóstico y linealización perfecta de la señal de salida, sin necesitar las operaciones periódicas de calibración típicas de los instrumentos analógicos convencionales. La opción A contradice directamente esta ventaja descrita en el texto, y la opción C es incorrecta porque el silicio está en contacto con el proceso precisamente a través de un diafragma flexible que contiene silicona. Estos elementos, además, son muy robustos y pueden trabajar largos períodos prácticamente sin mantenimiento.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 99",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Un instrumento registra una presión de 350 kPa. Utilizando las equivalencias de la tabla de unidades del capítulo (1 kPa = 10⁻² bar; 1 bar ≈ 14,50377 psi), ¿cuál es el valor aproximado de esa presión en psi?",
+      "options": [
+        "3,5 psi",
+        "35,0 psi",
+        "50,76 psi",
+        "507,6 psi"
+      ],
+      "correct": 2,
+      "explanation": "El desarrollo numérico correcto exige dos conversiones sucesivas: primero, de kilopascal a bar, usando la equivalencia 1 kPa = 10⁻² bar, se obtiene 350 kPa * 0,01 = 3,5 bar; después, de bar a psi, usando 1 bar ≈ 14,50377 psi, resulta 3,5 * 14,50377 = 50,76 psi, lo que confirma la opción C. Un error común es la opción B (35,0 psi), que surge de aplicar solo un factor de 0,1 en vez de completar ambas conversiones correctamente, mientras que la opción D (507,6 psi) resulta de olvidar el paso intermedio a bar y desplazar la coma decimal.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 91",
+      "difficulty": 3,
+      "module": 2
+    },
+    {
+      "q": "Un compresor debe soportar una presión de trabajo de 12 bar. Utilizando la equivalencia de la tabla de unidades del capítulo (1 bar = 1,02 kg/cm²), calcule el valor aproximado de esa presión expresado en kg/cm².",
+      "options": [
+        "10,20 kg/cm²",
+        "11,76 kg/cm²",
+        "12,24 kg/cm²",
+        "14,02 kg/cm²"
+      ],
+      "correct": 2,
+      "explanation": "La conversión correcta se obtiene multiplicando el valor en bar por el factor de equivalencia indicado en la tabla de unidades: 12 bar * 1,02 kg/cm²/bar = 12,24 kg/cm², lo que confirma la opción C. Un error típico es la opción B (11,76 kg/cm²), que resulta de dividir en lugar de multiplicar por el factor 1,02, invirtiendo incorrectamente el sentido de la conversión. La opción A (10,20 kg/cm²) corresponde a un error de cálculo que confunde el factor de conversión con una simple resta de unidades enteras.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 91",
+      "difficulty": 3,
+      "module": 2
+    },
+    {
+      "q": "Una prueba hidrostática de un componente de alta presión alcanza 0,05 GPa. Utilizando la equivalencia de la tabla de unidades del capítulo (1 GPa = 10.000 bar), ¿a cuántos bar equivale dicha presión?",
+      "options": [
+        "50 bar",
+        "500 bar",
+        "5.000 bar",
+        "50.000 bar"
+      ],
+      "correct": 1,
+      "explanation": "El cálculo correcto multiplica el valor en gigapascales por el factor de equivalencia dado en la tabla de unidades: 0,05 GPa * 10.000 bar/GPa = 500 bar, lo que confirma la opción B. Un error frecuente es la opción A (50 bar), que surge de aplicar por error el factor de conversión del megapascal (1 MPa = 10 bar) en lugar del correspondiente al gigapascal, olvidando que el gigapascal es mil veces mayor que el megapascal. La opción D (50.000 bar) es el resultado de desplazar la coma decimal un orden de magnitud de más al multiplicar.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 91",
       "difficulty": 3,
       "module": 2
     }

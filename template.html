@@ -266,6 +266,15 @@
   .rev-item .ok{color:var(--good-text)}
   .rev-item .bad{color:var(--crit-text)}
   .rev-item .rx{font-size:13px; color:var(--ink-2); margin-top:6px}
+  .src-line{display:block; margin-top:8px; font-size:12px; color:var(--muted)}
+  .src-line a{color:var(--muted)}
+  .speak-btn{
+    margin-top:10px; display:inline-flex; align-items:center; gap:6px;
+    background:none; border:1px solid var(--line); border-radius:999px;
+    padding:4px 12px; font-size:12px; color:var(--ink-2); cursor:pointer;
+  }
+  .speak-btn:hover{border-color:var(--accent); color:var(--ink)}
+  .speak-btn.playing{border-color:var(--accent); color:var(--accent)}
   .rev-flag{
     font-family:var(--font-mono); font-size:10px; letter-spacing:.08em;
     padding:1px 7px; border-radius:3px; margin-right:8px;
@@ -431,6 +440,46 @@ const blank = () => ({ history: [], qstats: {}, mlog: {}, updated_at: 0 });
 let S = blank();
 try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch (e) {}
 const save = () => { S.updated_at = Date.now(); try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+
+/* ============ audio: lectura de explicaciones ============ */
+let VOICES = [];
+function loadVoices() { VOICES = ("speechSynthesis" in window) ? speechSynthesis.getVoices() : []; }
+loadVoices();
+if ("speechSynthesis" in window) speechSynthesis.onvoiceschanged = loadVoices;
+
+function bestSpanishVoice() {
+  const es = VOICES.filter(v => /^es/i.test(v.lang));
+  if (!es.length) return null;
+  const score = v => /natural|neural|online/i.test(v.name) ? 2 : /google|microsoft/i.test(v.name) ? 1 : 0;
+  return es.slice().sort((a, b) => score(b) - score(a))[0];
+}
+
+let speakingBtn = null;
+function speak(text, btn) {
+  if (!("speechSynthesis" in window)) { alert("Este navegador no soporta lectura en voz alta."); return; }
+  const wasThis = speakingBtn === btn && speechSynthesis.speaking;
+  speechSynthesis.cancel();
+  if (speakingBtn) speakingBtn.classList.remove("playing");
+  if (wasThis) { speakingBtn = null; return; }
+  const u = new SpeechSynthesisUtterance(text);
+  const v = bestSpanishVoice();
+  if (v) u.voice = v;
+  u.lang = v ? v.lang : "es-ES";
+  u.rate = 0.97;
+  u.onend = () => { btn.classList.remove("playing"); if (speakingBtn === btn) speakingBtn = null; };
+  speakingBtn = btn;
+  btn.classList.add("playing");
+  speechSynthesis.speak(u);
+}
+
+function sourceHtml(source) {
+  if (!source) return "";
+  let url = null;
+  if (/instrumentacionycontrol\.net/i.test(source)) url = "https://instrumentacionycontrol.net/";
+  else if (/instrumentationtools\.com/i.test(source)) url = "https://instrumentationtools.com/";
+  const inner = url ? `<a href="${url}" target="_blank" rel="noopener">${esc(source)}</a>` : esc(source);
+  return `<span class="src-line">Fuente: ${inner}</span>`;
+}
 
 /* ============ sincronización GitHub ============ */
 const GH_KEY = "mi500_gh_cfg";
@@ -789,8 +838,15 @@ function renderQ() {
 
   const ex = $("qExplain");
   if (revealed && q.explanation) {
-    ex.innerHTML = `<b>${sel === it.correct ? "Correcto." : "Incorrecto."}</b> ${esc(q.explanation)}`;
+    const wrong = sel != null && sel !== it.correct;
+    ex.innerHTML = `<b>${wrong ? "Incorrecto." : "Correcto."}</b> ${esc(q.explanation)}` +
+      sourceHtml(q.source) +
+      (wrong ? `<button type="button" class="speak-btn" id="btnSpeakQ">🔊 Escuchar explicación</button>` : "");
     ex.classList.remove("hidden");
+    if (wrong) {
+      const sb = document.getElementById("btnSpeakQ");
+      sb.addEventListener("click", () => speak(q.explanation + (q.source ? ". Fuente: " + q.source : ""), sb));
+    }
   } else ex.classList.add("hidden");
 
   $("btnPrev").disabled = X.idx === 0 || X.immediate;
@@ -872,6 +928,7 @@ function renderResults(score, total, secs) {
   rev.innerHTML = order.map(i => {
     const it = X.items[i], q = it.q, sel = X.ans[i];
     const ok = sel === it.correct;
+    const wrong = sel != null && !ok;
     const modName = (MODS.find(m => m.id === q.module) || {}).name || "";
     return `<div class="rev-item">
       <p class="rq"><span class="rev-flag ${ok ? "ok" : "bad"}">${ok ? "OK" : "FALLO"}</span>${esc(q.q)}
@@ -880,9 +937,16 @@ function renderResults(score, total, secs) {
         : ok ? `<p class="ra ok">✓ ${KEYS[it.correct]} · ${esc(it.options[it.correct])}</p>`
         : `<p class="ra bad">✗ Tu respuesta: ${KEYS[sel]} · ${esc(it.options[sel])}</p>
            <p class="ra ok">✓ Correcta: ${KEYS[it.correct]} · ${esc(it.options[it.correct])}</p>`}
-      ${q.explanation ? `<p class="rx">${esc(q.explanation)}</p>` : ""}
+      ${q.explanation ? `<p class="rx">${esc(q.explanation)}${sourceHtml(q.source)}${wrong ? `<button type="button" class="speak-btn" data-ridx="${i}">🔊 Escuchar explicación</button>` : ""}</p>` : ""}
     </div>`;
   }).join("");
+  rev.querySelectorAll(".speak-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const idx = +btn.dataset.ridx;
+      const q = X.items[idx].q;
+      speak(q.explanation + (q.source ? ". Fuente: " + q.source : ""), btn);
+    });
+  });
   show("view-results");
 }
 

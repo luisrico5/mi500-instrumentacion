@@ -4,4 +4,10 @@ bank/_xprompt_*
 bank/_xresp_*
 bank/_bxprompt_*
 bank/_bxresp_*
+bank/_srcprompt_*
+bank/_srcresp_*
+bank/_newprompt_*
+bank/_newresp_*
 .claude/
+*.pdf
+bank/_manual_*

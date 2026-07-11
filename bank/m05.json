@@ -11,9 +11,10 @@
         "Montaje en puente de Wheatstone simple"
       ],
       "correct": 2,
-      "explanation": "El montaje de 4 hilos es el más exacto porque utiliza una fuente de corriente constante que asegura que la misma intensidad circule por el sensor, independientemente de la resistencia de los hilos de conexión. Una confusión típica es optar por el montaje de 3 hilos (opción B), el cual compensa la resistencia de la línea solo si los hilos son idénticos, pero no elimina el error de forma tan absoluta como el sistema de 4 hilos [2, 3]. Al ser las resistencias del puente elevadas, la corriente por sus brazos es despreciable y el voltímetro indica fielmente la resistencia de la sonda, y por tanto, la temperatura.",
+      "explanation": "El montaje de 4 hilos es el más exacto porque utiliza una fuente de corriente constante que asegura que la misma intensidad circule por el sensor, independientemente de la resistencia de los hilos de conexión. Una confusión típica es optar por el montaje de 3 hilos (opción B), el cual compensa la resistencia de la línea solo si los hilos son idénticos, pero no elimina el error de forma tan absoluta como el sistema de 4 hilos. Al ser las resistencias del puente elevadas, la corriente por sus brazos es despreciable y el voltímetro indica fielmente la resistencia de la sonda, y por tanto, la temperatura.",
       "difficulty": 1,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "¿Cuál es el termopar que posee la fuerza electromotriz (f.e.m.) más alta por variación de temperatura, alcanzando una sensibilidad de 68 microvoltios por grado centígrado?",
@@ -26,7 +27,8 @@
       "correct": 3,
       "explanation": "El termopar tipo E (Cromel-Constantan) posee la fuerza electromotriz más alta por variación de temperatura entre los modelos industriales, permitiendo una sensibilidad técnica de 68 µV/°C. Es frecuente confundirlo con el tipo K (opción A), que aunque es el más utilizado en la industria por su robustez, tiene una sensibilidad menor en comparación con el tipo E. Esta alta f.e.m. lo hace ideal para aplicaciones que requieren detectar cambios térmicos muy sutiles dentro de su rango de operación de -200 °C a 900 °C.",
       "difficulty": 1,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "¿En qué ley física se fundamentan los pirómetros de radiación, la cual establece que la intensidad de energía radiante emitida es proporcional a la cuarta potencia de la temperatura absoluta?",
@@ -37,9 +39,10 @@
         "Efecto Peltier"
       ],
       "correct": 0,
-      "explanation": "Los pirómetros de radiación se fundamentan en la Ley de Stefan-Boltzmann, la cual establece matemáticamente que la intensidad de energía radiante (W) emitida por un cuerpo es proporcional a la cuarta potencia de su temperatura absoluta (W = K * T⁴) [5, 6]. Una confusión habitual es asociar estos equipos con el Efecto Seebeck (opción B), pero dicho fenómeno físico describe la generación de tensión en la unión de metales distintos (termopares) y no la captación de energía electromagnética a distancia [7, 8]. Esta ley es el pilar que permite a los pirómetros inferir la temperatura del proceso sin necesidad de contacto físico.",
+      "explanation": "Los pirómetros de radiación se fundamentan en la Ley de Stefan-Boltzmann, la cual establece matemáticamente que la intensidad de energía radiante (W) emitida por un cuerpo es proporcional a la cuarta potencia de su temperatura absoluta (W = K * T⁴). Una confusión habitual es asociar estos equipos con el Efecto Seebeck (opción B), pero dicho fenómeno físico describe la generación de tensión en la unión de metales distintos (termopares) y no la captación de energía electromagnética a distancia. Esta ley es el pilar que permite a los pirómetros inferir la temperatura del proceso sin necesidad de contacto físico.",
       "difficulty": 1,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "Al comparar las clases de termómetros de bulbo y capilar, ¿qué característica distingue a la Clase II (vapor) de la Clase III (gas)?",
@@ -52,7 +55,8 @@
       "correct": 1,
       "explanation": "Los termómetros de Clase II (vapor) operan bajo el principio de presión de vapor, lo que genera una escala no uniforme con divisiones más anchas y mayor sensibilidad en la parte superior del rango. Por el contrario, los de Clase III (gas) se basan en la ley de los gases perfectos, donde el aumento de presión es proporcional a la temperatura, resultando en una escala lineal o uniforme. Es un error conceptual común creer que la Clase II requiere compensación de temperatura ambiente (opción C), cuando técnicamente la presión del sistema es independiente de lo que ocurra en el capilar si el bulbo contiene la interfase líquido-vapor.",
       "difficulty": 2,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "Según la 'Ley de los metales intermedios' aplicada a termopares, ¿cuál es la consecuencia de insertar un tercer conductor en el circuito?",
@@ -63,9 +67,10 @@
         "Es estrictamente necesario que el tercer metal sea platino para no introducir errores."
       ],
       "correct": 1,
-      "explanation": "La 'Ley de los metales intermedios' indica que la suma de las fuerzas electromotrices en un circuito con diversos conductores es totalmente independiente de los metales intermedios, siempre que las uniones adicionales estén a la misma temperatura. Esto permite integrar instrumentos de medida con terminales de materiales distintos (como cobre) en el lazo del termopar sin introducir errores significativos [11, 12]. Una confusión típica es la opción D, suponiendo que se requiere un metal noble como el platino para no alterar la señal, cuando el criterio técnico real reside en la uniformidad térmica de las uniones.",
+      "explanation": "La 'Ley de los metales intermedios' indica que la suma de las fuerzas electromotrices en un circuito con diversos conductores es totalmente independiente de los metales intermedios, siempre que las uniones adicionales estén a la misma temperatura. Esto permite integrar instrumentos de medida con terminales de materiales distintos (como cobre) en el lazo del termopar sin introducir errores significativos. Una confusión típica es la opción D, suponiendo que se requiere un metal noble como el platino para no alterar la señal, cuando el criterio técnico real reside en la uniformidad térmica de las uniones.",
       "difficulty": 2,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "¿Cuál es la característica principal de un termistor tipo NTC en comparación con una termorresistencia Pt100 convencional?",
@@ -78,7 +83,8 @@
       "correct": 1,
       "explanation": "Los termistores NTC se definen técnicamente como semiconductores con un coeficiente de temperatura negativo de valor elevado, lo que les otorga una sensibilidad mucho mayor y una respuesta más rápida que las RTD de platino. Es un error común confundirlos con la opción A, ya que las termorresistencias Pt100 poseen un coeficiente positivo y una relación resistencia-temperatura mucho más lineal que la de los termistores. Según las fuentes, su pequeño tamaño y baja capacidad térmica son los factores físicos que permiten alcanzar tiempos de respuesta de entre 0,5 y 10 segundos.",
       "difficulty": 2,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "Se dispone de un montaje de Pt100 a 2 hilos donde cada hilo tiene 1 ohm de resistencia. Si la temperatura real es de 20 °C (107,793 ohms), ¿cuál será el error de lectura aproximado introducido por los cables?",
@@ -91,7 +97,8 @@
       "correct": 2,
       "explanation": "En un montaje a 2 hilos, la resistencia de los cables se suma directamente a la del sensor, provocando un error positivo sistemático en la lectura final. El desarrollo numérico suma los 2 ohms de los hilos a los 107,793 ohms de la sonda (total 109,793 ohms) y, al despejar la temperatura en la fórmula Rt = R0(1 + αt) con α=0,00385, se obtiene una lectura de 25,43 °C, lo que arroja un error de 5,43 °C. Una confusión típica es la opción B, que representaría el error en un montaje de 3 hilos con conductores descompensados, ignorando que en 2 hilos no existe mecanismo de anulación para la resistencia de línea.",
       "difficulty": 3,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "Un transmisor de temperatura para termopar Tipo J está calibrado de 0 a 700 °C. Si la temperatura ambiente en el instrumento es de 20 °C (1,019 mV), ¿qué f.e.m. debe inyectar un calibrador para verificar el punto de 700 °C (39,132 mV)?",
@@ -104,7 +111,8 @@
       "correct": 2,
       "explanation": "Para verificar un instrumento que posee compensación interna de unión fría, el calibrador debe inyectar únicamente la diferencia algebraica entre la f.e.m. del punto deseado y la f.e.m. que genera el propio instrumento por su temperatura ambiente. El cálculo paso a paso resta los 1,019 mV (correspondientes a 20 °C según tablas) de los 39,132 mV (punto de 700 °C), resultando en una inyección necesaria de 38,113 mV para que el equipo indique el valor correcto. Seleccionar la opción B es un error conceptual frecuente, ya que inyectar el valor total de la tabla sin considerar la compensación de la caja causaría un desplazamiento en la lectura igual a la temperatura del lugar de prueba.",
       "difficulty": 3,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "En el contexto de la pirometría de radiación, si se utiliza un instrumento ajustado para 'cuerpo negro' (emisividad = 1) sobre un metal pulido con emisividad de 0,1, ¿cuál será el efecto en la medida?",
@@ -117,7 +125,8 @@
       "correct": 1,
       "explanation": "Los pirómetros se calibran para 'cuerpo negro' (emisividad = 1), por lo que al medir superficies con emisividades bajas, como un metal pulido (ε = 0,1), el sensor capta mucha menos energía radiante de la que corresponde a su temperatura real. El criterio técnico establece que la 'temperatura de brillo' detectada será significativamente inferior a la verdadera, siendo obligatorio ajustar manualmente el factor de emisividad en el receptor para obtener una medida fiable. Una confusión habitual es la opción A, suponiendo que el detector compensa automáticamente la naturaleza del material, cuando físicamente solo puede medir la radiación neta que impacta en su termopila o fotocélula.",
       "difficulty": 3,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "¿Cómo se define la 'constante de tiempo' de un instrumento de temperatura según las fuentes técnicas?",
@@ -130,7 +139,8 @@
       "correct": 1,
       "explanation": "La constante de tiempo se define técnicamente como el tiempo necesario para que el sensor alcance el 63,2% de la variación total de temperatura tras experimentar un cambio súbito o en escalón. Este valor permite evaluar la velocidad de respuesta dinámica, la cual depende del intercambio térmico entre el fluido y la masa del elemento (vaina y sensor). Es un error conceptual típico elegir la opción A (50%) por analogía con la vida media estadística, u optar por la C, ignorando que, según las leyes de transferencia de calor de primer orden, el instrumento solo alcanza el 100% del valor final de forma asintótica a través del tiempo.",
       "difficulty": 1,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "¿Cuál es una ventaja principal de los sensores de temperatura de silicio (IC) frente a los sensores industriales clásicos?",
@@ -143,7 +153,8 @@
       "correct": 2,
       "explanation": "Los sensores de temperatura de silicio son circuitos integrados (IC) que permiten integrar en el mismo chip funciones avanzadas como el procesamiento de señales, la linealización y la compensación de la unión fría. Esta capacidad de miniaturización y multifuncionalidad los hace ideales para proteger componentes electrónicos y sistemas compactos de visualización. Es una confusión frecuente (opción A) considerarlos aptos para temperaturas extremas de horno, pero técnicamente su rango operativo real está limitado a un intervalo de entre -55 °C y 150 °C.",
       "difficulty": 1,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "Al comparar materiales para termorresistencias, ¿cuál es la ventaja técnica del níquel frente al platino en el rango de -100 °C a 200 °C?",
@@ -154,9 +165,10 @@
         "Puede utilizarse en aplicaciones criogénicas hasta los -260 °C"
       ],
       "correct": 1,
-      "explanation": "El níquel presenta una clara ventaja técnica frente al platino por poseer una mayor sensibilidad, con una variación de 0,62 ohmios por grado centígrado frente a los 0,39 del platino, además de tener un coste de mercado mucho más bajo. Estas propiedades lo hacen muy eficiente para aplicaciones industriales dentro de su rango de trabajo de -100 °C a 200 °C. Un error conceptual típico es atribuirle una mejor linealidad (opción A), cuando las tablas comparativas señalan explícitamente que su falta de linealidad y las variaciones en su coeficiente son sus principales desventajas [3, 4].",
+      "explanation": "El níquel presenta una clara ventaja técnica frente al platino por poseer una mayor sensibilidad, con una variación de 0,62 ohmios por grado centígrado frente a los 0,39 del platino, además de tener un coste de mercado mucho más bajo. Estas propiedades lo hacen muy eficiente para aplicaciones industriales dentro de su rango de trabajo de -100 °C a 200 °C. Un error conceptual típico es atribuirle una mejor linealidad (opción A), cuando las tablas comparativas señalan explícitamente que su falta de linealidad y las variaciones en su coeficiente son sus principales desventajas.",
       "difficulty": 2,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "En la selección de lentes para pirómetros de radiación, ¿qué material es el recomendado para operar en el intervalo de temperaturas de 450 °C a 1.250 °C?",
@@ -169,7 +181,8 @@
       "correct": 2,
       "explanation": "Para operar en el intervalo térmico de 450 °C a 1.250 °C, las fuentes prescriben el uso de lentes de sílice fundida para asegurar que la máxima energía radiante llegue a la termopila del pirómetro. La selección del material de la lente es fundamental, ya que debe ser transparente a la longitud de onda dominante en esa gama de temperaturas. Es habitual confundirlas con las lentes de pírex (opción A), pero estas se reservan técnicamente para temperaturas superiores, situadas en el campo de los 850 °C a los 1.750 °C.",
       "difficulty": 2,
-      "module": 5
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
     },
     {
       "q": "Un termómetro bimetálico tiene una lámina de 100 mm de longitud y 0,5 mm de espesor, con un coeficiente de expansión térmica (a) de 0,000015. Calcule el ángulo de torsión (en grados) que experimentará la lámina ante un incremento de temperatura de 40 °C.",
@@ -181,6 +194,399 @@
       ],
       "correct": 1,
       "explanation": "El ángulo de torsión de una lámina bimetálica se calcula mediante la fórmula A = (360 * a * l * Δt) / s, donde la deflexión es proporcional al coeficiente de expansión y la longitud. El desarrollo numérico paso a paso es: (360 * 0,000015 * 100 mm * 40 °C) / 0,5 mm, lo que resulta en 21,6 / 0,5 = 43,2°. Un error común de cálculo es la opción A (21,6°), que se produce al olvidar dividir el producto por el espesor (s) de la lámina, ignorando que a menor espesor, mayor es la torsión mecánica resultante.",
+      "difficulty": 3,
+      "module": 5,
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6 (Medida de temperaturas)"
+    },
+    {
+      "q": "¿En qué año descubrió Seebeck el efecto termoeléctrico que constituye la base de funcionamiento de los termopares?",
+      "options": [
+        "1821",
+        "1834",
+        "1854",
+        "1900"
+      ],
+      "correct": 0,
+      "explanation": "El efecto Seebeck, que consiste en la circulación de una corriente en un circuito cerrado formado por dos metales distintos cuyas uniones se mantienen a distinta temperatura, fue descubierto en 1821. Es un error común confundir esta fecha con 1834 (opción B), año en que Peltier descubrió el efecto que lleva su nombre, referido a la liberación o absorción de calor en la unión de los metales al paso de una corriente. El efecto Seebeck es en realidad la combinación resultante de los efectos Peltier y Thomson (este último descubierto en 1854), siendo el fenómeno físico fundamental que permite la medida de temperatura con termopares.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 254",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿Qué describe el efecto Peltier, descubierto en 1834, dentro del funcionamiento de un termopar?",
+      "options": [
+        "La liberación o absorción de calor en la unión de dos metales distintos cuando una corriente circula a través de dicha unión",
+        "La liberación o absorción de calor cuando una corriente circula a través de un metal homogéneo en el que existe un gradiente de temperaturas",
+        "La generación espontánea de corriente en un conductor homogéneo por la sola aplicación de calor",
+        "La variación de la resistencia de un conductor en función de la temperatura"
+      ],
+      "correct": 0,
+      "explanation": "El efecto Peltier provoca la liberación o absorción de calor precisamente en la unión de los metales distintos cuando una corriente circula a través de ella, y puede ponerse de manifiesto en una cruz térmica donde se observa un remanente de temperatura positivo o negativo según el sentido de la corriente. La opción B es un distractor típico porque describe, en realidad, el efecto Thomson, que ocurre en un metal homogéneo con gradiente de temperatura y no en la unión de dos metales. La combinación de ambos efectos (Peltier y Thomson) es la causa física de la circulación de corriente al cerrar el circuito de un termopar.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 254",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿En qué consiste el efecto Thomson (1854), el segundo de los dos efectos termoeléctricos que, combinados, provocan la circulación de corriente en un termopar?",
+      "options": [
+        "La liberación o absorción de calor en la unión de dos metales distintos al paso de una corriente",
+        "La liberación o absorción de calor cuando una corriente circula a través de un metal homogéneo en el que existe un gradiente de temperaturas",
+        "La variación de resistencia de un semiconductor con coeficiente negativo",
+        "La expansión volumétrica diferencial de dos metales laminados conjuntamente"
+      ],
+      "correct": 1,
+      "explanation": "El efecto Thomson se detecta en una barra metálica homogénea: al calentar un punto con una bobina y hacer pasar una corriente por la barra, se observa un aumento o disminución de la diferencia de temperaturas según el sentido de la corriente, lo que demuestra la liberación o absorción de calor en un conductor homogéneo con gradiente térmico. La opción A es la confusión típica con el efecto Peltier, que ocurre específicamente en la unión de dos metales distintos y no en un conductor homogéneo. Ambos efectos, combinados, son la causa de la pequeña corriente que puede calentar el termopar y afectar la exactitud de la medida si no se minimiza.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 255",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "Según la primera de las tres leyes fundamentales de los termopares, la 'ley del circuito homogéneo', ¿qué principio establece?",
+      "options": [
+        "En un conductor metálico homogéneo no puede sostenerse la circulación de una corriente eléctrica por la aplicación exclusiva de calor",
+        "La suma algebraica de las fuerzas electromotrices es independiente de los conductores metálicos intermedios si sus uniones están a la misma temperatura",
+        "La f.e.m. generada por un termopar con sus uniones a T1 y T3 es la suma algebraica de la f.e.m. con uniones a T1-T2 y a T2-T3",
+        "La f.e.m. depende exclusivamente del coeficiente de emisión de la superficie del metal"
+      ],
+      "correct": 0,
+      "explanation": "La ley del circuito homogéneo afirma que un conductor metálico homogéneo no puede, por sí solo, sostener la circulación de una corriente eléctrica por la mera aplicación de calor; se necesita la unión de dos metales distintos. La opción B corresponde en realidad a la 'ley de los metales intermedios' (segunda ley) y la opción C a la 'ley de las temperaturas sucesivas' (tercera ley), ambas leyes distintas descritas en el mismo apartado del texto. Esta primera ley es la razón por la que un termopar requiere, necesariamente, dos metales diferentes unidos para generar f.e.m.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 256",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿Qué establece la 'ley de las temperaturas sucesivas', la tercera de las leyes fundamentales de los termopares?",
+      "options": [
+        "La suma algebraica de las fuerzas electromotrices es independiente de los conductores metálicos intermedios si sus uniones están a la misma temperatura",
+        "En un conductor metálico homogéneo no puede sostenerse la circulación de corriente por la aplicación exclusiva de calor",
+        "La f.e.m. generada por un termopar con sus uniones a las temperaturas T1 y T3 es la suma algebraica de la f.e.m. del termopar con uniones a T1 y T2, y de la f.e.m. del mismo termopar con uniones a T2 y T3",
+        "La f.e.m. es proporcional al cuadrado de la diferencia de temperaturas entre las dos uniones"
+      ],
+      "correct": 2,
+      "explanation": "La ley de las temperaturas sucesivas permite descomponer la f.e.m. total entre dos temperaturas extremas en la suma de las f.e.m. parciales correspondientes a temperaturas intermedias, lo que es precisamente el fundamento matemático que se emplea en los procedimientos de verificación y calibración de termopares donde se suman o restan f.e.m. de tablas a distintas temperaturas. La opción A es un distractor porque corresponde a la ley de los metales intermedios (segunda ley), y la opción B a la ley del circuito homogéneo (primera ley). Estas tres leyes, tomadas en conjunto, explican por qué puede insertarse un instrumento de medida en el circuito de un termopar sin alterar la f.e.m. generada.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 256",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿Qué fluido termométrico de vidrio se emplea para el intervalo de trabajo más bajo entre los citados en las fuentes, correspondiente a -200°C hasta +20°C?",
+      "options": [
+        "Mercurio",
+        "Pentano",
+        "Alcohol",
+        "Tolueno"
+      ],
+      "correct": 1,
+      "explanation": "El pentano es el fluido de los termómetros de vidrio recomendado para el margen de trabajo más frío, entre -200°C y +20°C, mientras que el mercurio cubre de -35°C a +280°C (o hasta +450°C con tubo capilar lleno de gas), el alcohol de -110°C a +50°C y el tolueno de -70°C a +100°C. Confundir el pentano con el alcohol (opción C) es habitual porque ambos cubren rangos fríos, pero solo el pentano alcanza los -200°C. El termómetro de vidrio se basa en la expansión del líquido dentro de un depósito que sube por el tubo capilar al calentarse.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 236",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿Qué aleación se combina habitualmente con latón, monel o acero para formar la lámina de un termómetro bimetálico?",
+      "options": [
+        "Constantán",
+        "Ferroníquel o Invar (35,5% de níquel)",
+        "Cromel",
+        "Alumel"
+      ],
+      "correct": 1,
+      "explanation": "Los termómetros bimetálicos se fundamentan en el distinto coeficiente de dilatación de dos metales diferentes laminados conjuntamente, siendo la combinación típica latón, monel o acero junto con una aleación de ferroníquel o Invar con un 35,5% de níquel. Confundir el Invar con el constantán (opción A) es un error frecuente, ya que este último es una aleación de cobre-níquel empleada en termopares (tipos J, T, E) y no en láminas bimetálicas. Estas láminas pueden ser rectas o curvas, formando espirales o hélices, según el diseño del instrumento.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 236",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿Qué líquido se emplea típicamente en los termómetros de bulbo y capilar de Clase I (actuados por líquido), con un campo de medición entre -75°C y 300°C?",
+      "options": [
+        "Cloruro de metilo",
+        "Xileno (C8H10)",
+        "Nitrógeno",
+        "Helio"
+      ],
+      "correct": 1,
+      "explanation": "Los termómetros de Clase I, actuados por líquido, utilizan como líquido un hidrocarburo inerte, el xileno (C8H10), entre otros líquidos, cubriendo un campo de medición de -75°C a 300°C según el tipo de líquido empleado. El cloruro de metilo (opción A) es un distractor porque corresponde a los líquidos volátiles usados en los termómetros de Clase II (actuados por vapor), no en la Clase I. La presión dentro del bulbo y el capilar debe mantenerse siempre superior a la presión de vapor del líquido para evitar la formación de burbujas.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 237",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿Qué característica distingue a los termómetros de bulbo y capilar de Clase IV (actuados por mercurio) frente a los de Clase I (actuados por líquido)?",
+      "options": [
+        "Trabajan con una escala no uniforme basada en el principio de presión de vapor",
+        "Poseen una presión interna que varía de 28 bar a bajas temperaturas hasta 80 bar a altas temperaturas, lo que elimina los errores por diferencia de altura entre el bulbo y el tubo Bourdon",
+        "Se basan en la ley de los gases perfectos, con escala completamente lineal",
+        "Solo pueden emplearse en aplicaciones criogénicas inferiores a -200°C"
+      ],
+      "correct": 1,
+      "explanation": "Los termómetros de Clase IV, actuados por mercurio, son similares a los de Clase I pero se caracterizan por su rápida respuesta y por una presión interna del mercurio que varía de 28 bar a bajas temperaturas hasta 80 bar a altas temperaturas, lo que elimina los errores de diferencia de altura entre el bulbo y el tubo Bourdon. La opción A describe, en realidad, a los termómetros de Clase II (actuados por vapor), un error de confusión frecuente entre clases. Su campo de medición abarca de -40°C a 650°C, y pueden tener compensación en la caja o compensación total.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 239",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿Qué ventaja ofrece el termopar tipo N (84,6% Níquel-14% Cromo-1,4% Silicio / 95,6% Níquel-0,4% Silicio) frente al tipo K, motivo por el cual se emplea cada vez con mayor frecuencia para sustituirlo?",
+      "options": [
+        "Posee una sensibilidad mucho mayor en microvoltios por grado",
+        "Tiene un coste de fabricación considerablemente menor",
+        "Presenta una mejor estabilidad y una mejor resistencia a la oxidación a altas temperaturas, con un campo de trabajo protegido de hasta 2.316°C",
+        "Es el único tipo apto para atmósferas reductoras sin necesidad de tubo de protección"
+      ],
+      "correct": 2,
+      "explanation": "El termopar tipo N, protegido con aislamiento de óxido de berilio y camisa de molibdeno y tantalio, se emplea cada vez con mayor frecuencia para sustituir al tipo K por presentar una mejor estabilidad y una mejor resistencia a la oxidación a altas temperaturas, trabajando en atmósferas inertes o en vacío hasta los 2.316°C. La opción A es un distractor porque, según las fuentes, el termopar de mayor sensibilidad es el tipo E (68 µV/°C), no el tipo N. La sustitución del tipo K por el tipo N responde, por tanto, a un criterio de durabilidad y estabilidad química, no de sensibilidad ni de coste.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 257",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿Para qué aplicación específica se emplea la sonda de resistencia de germanio, capaz de trabajar entre 0,05 K y 100 K?",
+      "options": [
+        "Medición de temperaturas criogénicas, con una sensibilidad de hasta 35.000 ohmios/K a 4,2 K y coeficiente de resistencia negativo",
+        "Medición de altas temperaturas en hornos industriales superiores a 1.500°C",
+        "Compensación de la unión fría en termopares tipo R y S",
+        "Sustitución directa de las sondas Pt100 por poseer mayor linealidad"
+      ],
+      "correct": 0,
+      "explanation": "La sonda de resistencia de germanio se emplea para temperaturas criogénicas, trabajando entre 0,05 K y 100 K (-272,95°C y -173°C), con una resistencia de 10.000 ohmios a 1 K, una sensibilidad de 35.000 ohmios/K a 4,2 K y un coeficiente de resistencia negativo (a más temperatura, menos resistencia). La opción D es un error conceptual típico, ya que el texto señala explícitamente que su relación resistencia-temperatura es compleja y requiere calibración en muchos puntos, lo contrario de una mayor linealidad. Su uso está restringido a laboratorios y procesos criogénicos especializados, no a aplicaciones industriales convencionales de alta temperatura.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 251",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿Con qué materiales se fabrican habitualmente los termistores, según las fuentes técnicas?",
+      "options": [
+        "Aleaciones de platino y rodio",
+        "Óxidos de níquel, manganeso, hierro, cobalto, cobre, magnesio y titanio, encapsulados en sondas y discos",
+        "Cerámicas de óxido de berilio y camisas de molibdeno",
+        "Aleaciones de cobre y cobre-níquel (constantán)"
+      ],
+      "correct": 1,
+      "explanation": "Los termistores son semiconductores electrónicos que se fabrican con óxidos de níquel, manganeso, hierro, cobalto, cobre, magnesio, titanio y otros metales, y se encapsulan en sondas y en discos. La opción A es un distractor porque el platino y el rodio se usan en termopares de alta temperatura (tipos R, S, B) y en las termopilas de los pirómetros de radiación total, no en termistores. A diferencia de las sondas de resistencia de hilo bobinado, los termistores obtienen su alta sensibilidad de la naturaleza semiconductora de estos óxidos metálicos.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 251",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "¿En qué principio se basa el sensor de temperatura por tecnología radar empleado en máquinas rotativas, y cuál es su amplitud de medida aproximada?",
+      "options": [
+        "Analiza la forma y características de un pulso de radar de baja energía y alta frecuencia reflejado por el sensor, cuyas propiedades dependen únicamente del volumen del sensor (su temperatura); amplitud de 0°C a 200°C con precisión de ±2°C",
+        "Mide el tiempo de vuelo de un haz láser reflejado en la superficie rotativa",
+        "Se basa en la variación de la frecuencia de resonancia de un cristal de cuarzo en contacto con el eje",
+        "Capta la radiación infrarroja emitida por la superficie en rotación mediante una lente de sílice"
+      ],
+      "correct": 0,
+      "explanation": "El sensor radar, separado de 1 a 50 mm de la antena, recibe un pulso de radar de baja energía y alta frecuencia que refleja hacia la unidad de señal de proceso; la forma y características de ese pulso reflejado dependen únicamente del volumen del sensor, es decir, de su temperatura, con una amplitud de medida de 0°C a 200°C y una precisión de ±2°C. La opción C es un distractor porque el cristal de cuarzo corresponde a otro instrumento distinto (el termómetro de cristal de cuarzo, con exactitud ±0,075°C), que no usa tecnología radar. Este sensor resulta útil en máquinas rotativas porque no requiere contacto eléctrico directo con la parte en movimiento.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 310",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "¿Qué principio de medida utiliza el termómetro de cristal de cuarzo y cuál es su exactitud característica?",
+      "options": [
+        "Mide la frecuencia de un oscilador de cuarzo mediante un contador que emplea como referencia la señal de un oscilador a temperatura controlada, con una exactitud de ±0,075°C",
+        "Mide la resistencia eléctrica de un cristal piezoeléctrico, con una exactitud de ±1°C",
+        "Mide la velocidad del sonido a través del cristal, con una exactitud de ±0,4°C",
+        "Mide la dilatación mecánica del cristal mediante un sensor capacitivo"
+      ],
+      "correct": 0,
+      "explanation": "El termómetro de cristal de cuarzo mide la frecuencia de un oscilador de cuarzo en contacto con el cuerpo, mediante un contador que utiliza como reloj de referencia la señal de un oscilador a temperatura controlada, alcanzando una exactitud muy elevada de ±0,075°C dentro de un margen de trabajo de -80°C a +250°C. La opción C es un distractor porque describe el principio del termómetro ultrasónico, que sí basa su medida en la velocidad del sonido, pero con una exactitud menor (±0,4°C) y un rango de aplicación distinto (0°C a 80°C, para aire). Esta elevada exactitud hace del termómetro de cuarzo un instrumento de referencia en laboratorio.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 310",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "¿En qué principio se basan los pirómetros ópticos manuales de desaparición de filamento, aparecidos en el mercado en 1900?",
+      "options": [
+        "En la comparación visual entre el filamento de una lámpara, cuya corriente se varía, y la imagen del objeto enfocado, hasta que el filamento deja de verse sobre el fondo",
+        "En la medición directa de la corriente generada por una termopila de Pt-Pt/Rh",
+        "En la relación entre la radiación emitida en dos bandas estrechas del espectro",
+        "En la variación de resistencia de un detector fotoeléctrico de silicio"
+      ],
+      "correct": 0,
+      "explanation": "Los pirómetros ópticos manuales de desaparición de filamento se basan en variar la corriente de una lámpara hasta que su filamento deje de verse sobre el fondo del objeto caliente enfocado, restringiendo el sistema óptico el ancho de banda a 0,65-0,66 micras (zona roja del espectro) y alcanzando una exactitud del ±1% al ±2%. La opción C es un distractor porque describe el principio del pirómetro de dos colores, un instrumento distinto y de aparición más reciente. Estos pirómetros ópticos solo pueden medir la temperatura de objetos incandescentes o en fusión, a diferencia del pirómetro de infrarrojos, que trabaja eficazmente por debajo de los 700°C.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 302",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "¿Por qué motivo económico se generaliza el uso de cables de extensión o compensación en termopares tipo R o S en lugar de prolongar el propio hilo del termopar hasta el instrumento receptor?",
+      "options": [
+        "Porque el hilo de platino es mucho más caro, y el cable de extensión, con propiedades eléctricas similares a las del termopar dentro del rango 0-200°C, resulta más económico en tramos largos entre el campo y el panel",
+        "Porque el platino se oxida rápidamente si se prolonga su longitud más allá de unos metros",
+        "Porque los cables de extensión eliminan por completo la necesidad de compensar la unión fría",
+        "Porque la normativa exige obligatoriamente el uso de cobre en cualquier instalación de más de 10 metros"
+      ],
+      "correct": 0,
+      "explanation": "El uso del cable de extensión es claro en el caso de termopares tipo R o S, debido al elevado precio del platino, que encarecería considerablemente el coste del hilo desde el campo hasta el panel; el cable de extensión tiene propiedades eléctricas similares a las del termopar dentro de las temperaturas límite del proceso (0-200°C) y es más económico. La opción C es incorrecta porque la compensación de la unión fría es un problema independiente que sigue siendo necesario resolver, tanto si se usa cable de extensión como si no. Es importante que las conexiones sean perfectas, sin empalmes en el cable de compensación, para no generar tensiones termoeléctricas parásitas.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 291",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "¿Para qué se emplea la ecuación de Steinhart y Hart en el estudio de los termistores, y cómo se determinan sus coeficientes A, B y C?",
+      "options": [
+        "Es una expresión más representativa que la relación exponencial simple para relacionar resistencia y temperatura absoluta, y sus coeficientes se determinan midiendo la resistencia del termistor a 3 temperaturas distintas espaciadas un mínimo de 10°C",
+        "Es la fórmula que define el coeficiente alfa de una sonda Pt100 según la escala IPTS-68",
+        "Se usa exclusivamente para calcular el ángulo de torsión de las láminas bimetálicas",
+        "Determina la emisividad de un cuerpo opaco en función de su temperatura absoluta"
+      ],
+      "correct": 0,
+      "explanation": "La ecuación de Steinhart y Hart es una expresión empírica más representativa que la relación exponencial simple para relacionar la temperatura absoluta T con la resistencia R de un termistor NTC, y para determinar sus coeficientes característicos A, B y C se mide la resistencia del termistor a 3 temperaturas diferentes espaciadas un mínimo de 10°C, obteniéndose así 3 ecuaciones que permiten despejar dichos valores. La opción B es un distractor porque corresponde a un concepto distinto, propio de las sondas de resistencia de platino, no de los termistores. Esta ecuación permite luego calcular la temperatura del proceso a partir del valor medido de resistencia con gran precisión.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 252",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "En la compensación clásica de la unión fría mediante una resistencia de compensación en instrumentos galvanométricos o potenciométricos, ¿qué limitación presenta este método?",
+      "options": [
+        "Solo es válida para termopares tipo K",
+        "Como la resistencia varía linealmente con la temperatura pero la relación f.e.m.-temperatura del termopar no es lineal, se obtiene una compensación perfecta en solo dos puntos, siendo suficiente en el resto para la mayoría de aplicaciones industriales",
+        "Requiere enfriar artificialmente la unión de referencia por debajo de 0°C",
+        "Solo compensa variaciones de temperatura ambiente superiores a 50°C"
+      ],
+      "correct": 1,
+      "explanation": "En la compensación clásica, la resistencia de compensación de la unión fría absorbe una tensión equivalente a la f.e.m. que tendría el termopar con la unión caliente a la temperatura de la caja del instrumento y la unión fría a 0°C; como la resistencia varía linealmente con la temperatura mientras que la relación f.e.m.-temperatura del termopar no es lineal, solo se logra una compensación perfecta en dos puntos, siendo más que suficiente en el resto para la mayoría de aplicaciones industriales. La opción A es incorrecta porque el método se aplica de forma general a distintos tipos de termopar, no exclusivamente al tipo K. Cuando se requiere gran exactitud, o el instrumento carece de esta resistencia interna, es necesario recurrir a cajas exteriores de compensación instaladas en el propio proceso.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 294",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "En un circuito potenciométrico clásico de medida con termopar, ¿cuál es la función de la resistencia Rd?",
+      "options": [
+        "Compensar las variaciones de temperatura en la unión de referencia del termopar",
+        "Proteger contra la rotura del termopar o del cable de compensación: al producirse la rotura, cierra el circuito del amplificador para desplazar el cursor del reostato hasta el tope de la escala y activar una alarma",
+        "Linealizar la señal de salida de 4-20 mA c.c. del transmisor",
+        "Aislar galvánicamente la entrada de la salida del transmisor inteligente"
+      ],
+      "correct": 1,
+      "explanation": "La resistencia Rd, de valor elevado, produce una caída de tensión despreciable en condiciones normales de trabajo, pero ante la rotura del termopar o del cable de compensación cierra el circuito del amplificador lo suficiente para que el cursor del reostato se desplace hasta el tope de la escala, pudiendo accionar una alarma. La opción A es un distractor porque esa función corresponde a la resistencia Rni, que absorbe una tensión equivalente a la f.e.m. de la unión de referencia, un elemento distinto dentro del mismo circuito. Ambas resistencias, Rni y Rd, cumplen funciones complementarias mas no idénticas dentro del circuito potenciométrico clásico.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 296",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "¿Qué ventaja distintiva presenta el pirómetro de dos colores (o de relación) frente a un pirómetro de radiación convencional al medir cuerpos grises?",
+      "options": [
+        "Necesita conocer con exactitud el valor absoluto de la emisividad del cuerpo",
+        "Su lectura es teóricamente independiente de la absorción de la atmósfera intermedia, permitiendo medir a través de humos, vapor y polvo, ya que se basa en la relación entre las radiaciones emitidas en dos bandas estrechas del espectro",
+        "Elimina por completo la posibilidad de errores por ruido eléctrico",
+        "Solo puede aplicarse a cuerpos negros perfectos, nunca a cuerpos grises"
+      ],
+      "correct": 1,
+      "explanation": "El pirómetro de dos colores se basa en que la relación entre las radiaciones emitidas en dos bandas estrechas del espectro (0,65 y 0,9 micras) es función de la temperatura y de la relación entre las emisividades del cuerpo en esas dos bandas, de modo que su lectura es teóricamente independiente de la absorción de la atmósfera intermedia, permitiendo medir a través de humos, vapor y polvo, y siendo excelente en cuerpos grises (emisividad constante en todas las longitudes de onda). La opción C es incorrecta porque el texto señala explícitamente que este pirómetro es susceptible al ruido eléctrico, ya que las diferencias de intensidad entre las dos bandas son relativamente pequeñas. Solo necesita conocer la relación entre emisividades, no su valor absoluto, lo que corrige el error de la opción A.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 305",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "¿Qué caracteriza a los detectores fotoeléctricos o cuánticos (como InSb, Si, PbS o CdS) frente a los detectores térmicos empleados en pirometría de radiación?",
+      "options": [
+        "Responden a los fotones de radiación liberando cargas eléctricas por fotoelectricidad, fotoconducción o efecto fotovoltaico, con una detectividad espectral hasta un millón de veces mayor que la de los detectores térmicos",
+        "Generan una f.e.m. proporcional a la cuarta potencia de la temperatura absoluta, igual que un pirómetro de radiación total",
+        "Requieren enfriamiento criogénico obligatorio por debajo de 0 K para poder funcionar",
+        "Solo pueden emplearse para medir temperaturas superiores a 3.000°C"
+      ],
+      "correct": 0,
+      "explanation": "Los detectores fotoeléctricos o cuánticos, fabricados con materiales semiconductores cristalinos como el indio antimonio (InSb), el silicio (Si), el sulfuro de plomo (PbS) o el sulfuro de cadmio (CdS), responden a los fotones de radiación liberando cargas eléctricas mediante fotoelectricidad, fotoconducción o efecto fotovoltaico, con una detectividad espectral hasta un millón de veces mayor que la de los detectores térmicos. La opción B es un distractor porque esa relación (proporcional a T⁴) corresponde a la ley de Stefan-Boltzmann aplicada al pirómetro de radiación total; el detector fotoeléctrico, en cambio, genera una tensión proporcional a T³. Además, la señal de salida de estos detectores depende de la temperatura instantánea del volumen del propio detector, evitando los retardos por inercia térmica presentes en los pirómetros térmicos.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 303",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "¿Cómo compensa un pirómetro de radiación total las variaciones de su propia temperatura ambiente (hasta un máximo de 120°C), y cómo está construida su termopila?",
+      "options": [
+        "Mediante una resistencia de níquel conectada en paralelo a los bornes del pirómetro, cuya resistencia aumenta con la temperatura ambiente compensando la pérdida de f.e.m.; la termopila está formada por termopares de Pt-Pt/Rh ennegrecidos para comportarse como cuerpo negro",
+        "Mediante un termopar tipo E adicional conectado en serie que anula el efecto de la temperatura ambiente",
+        "Mediante refrigeración por agua obligatoria en todos los casos, sea cual sea la temperatura ambiente",
+        "La termopila se fabrica en platino puro pulido para reflejar el calor ambiente"
+      ],
+      "correct": 0,
+      "explanation": "El pirómetro de radiación total compensa las variaciones de su temperatura ambiente mediante una resistencia de níquel conectada en paralelo con los bornes de conexión, colocada en su interior de modo que su temperatura es siempre igual a la del cuerpo del instrumento: al aumentar la temperatura ambiente aumenta la resistencia de la bobina de níquel, compensando la pérdida de f.e.m. de la termopila. La termopila está formada por varios termopares de Pt-Pt/Rh de pequeñas dimensiones montados en serie, con la parte expuesta a la radiación ennegrecida para comportarse como un cuerpo negro y maximizar la absorción de energía. La opción C es incorrecta porque, solo por encima de los 120°C ambientales, se recurre a dispositivos de refrigeración por aire o agua que reducen la temperatura de la caja entre 10°C y 40°C por debajo de la ambiente.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 307",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "Utilizando la fórmula Rt = R0(1 + αt), con R0 = 100 ohmios y el coeficiente α = 0,00385 Ω/(Ω·°C) según la escala IPTS-68, calcule la resistencia teórica de una sonda Pt100 a 45°C.",
+      "options": [
+        "117,325 Ω",
+        "145,00 Ω",
+        "103,85 Ω",
+        "138,50 Ω"
+      ],
+      "correct": 0,
+      "explanation": "Aplicando directamente la relación lineal Rt = R0(1 + αt), empleada en el texto para las sondas de resistencia de platino: Rt = 100 × (1 + 0,00385 × 45) = 100 × 1,17325 = 117,325 ohmios. Un error de cálculo típico (opción C) consiste en multiplicar únicamente 0,00385 × 45 = 0,17325 sin sumar la unidad ni multiplicar por R0, obteniendo un resultado incompleto de solo 17,325 (que redondeado a 103,85 confunde otros factores). Esta fórmula lineal es válida como aproximación general; para mayor exactitud metrológica el texto describe la ecuación más precisa de Callendar-Van Dussen, que incluye términos cuadráticos y cúbicos.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 240",
+      "difficulty": 3,
+      "module": 5
+    },
+    {
+      "q": "Un elemento primario de temperatura pasa de un recinto a 70°C a otro recinto a 270°C. Si alcanza el 63,2% de la variación total en el instante correspondiente a su constante de tiempo, ¿a qué temperatura corresponde ese instante?",
+      "options": [
+        "196,4°C",
+        "200°C",
+        "163,2°C",
+        "233,2°C"
+      ],
+      "correct": 0,
+      "explanation": "La constante de tiempo se define como el instante en que el instrumento alcanza el 63,2% de la variación total de temperatura experimentada. El desarrollo numérico es: variación total = 270 - 70 = 200°C; el 63,2% de esos 200°C es 126,4°C; sumando este valor a la temperatura inicial de 70°C se obtiene 70 + 126,4 = 196,4°C. La opción B (200°C) confunde la variación total del salto térmico con la temperatura efectivamente alcanzada en la constante de tiempo, y la opción C (163,2°C) surge de sumar incorrectamente el porcentaje directamente a la temperatura inicial sin multiplicarlo antes por el rango de 200°C.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 311",
+      "difficulty": 3,
+      "module": 5
+    },
+    {
+      "q": "En un montaje de tres hilos, una sonda de resistencia real de 200 ohmios (267°C) se mide mediante un puente de Wheatstone proyectado para R3 = 100 ohmios, con Vs = 6 V, VB = 3 V y VE = 2,0066 V. Si el cálculo del puente arroja un valor de RTD de 199,01 ohmios, ¿a qué error de temperatura equivale la desviación de 0,99 ohmios, según la tabla resistencia-temperatura en la zona de 200°C?",
+      "options": [
+        "2,5°C",
+        "5,43°C",
+        "8,2°C",
+        "0,99°C"
+      ],
+      "correct": 0,
+      "explanation": "Desarrollando la ecuación del montaje de 3 hilos con los valores dados de Vs, VB y VE, el puente arroja un valor calculado de 199,01 ohmios frente a los 200 ohmios reales de la sonda, es decir, una diferencia de 0,99 ohmios. Consultando las tablas de resistencia-temperatura en la zona de 200°C, esa diferencia de ohmios corresponde a un error de 2,5°C. La opción B (5,43°C) es una confusión típica con el ejemplo de error de un montaje de 2 hilos con hilos de 1 ohmio a una sonda de 20°C, un caso numérico distinto que no debe mezclarse con este ejemplo de 3 hilos, donde la compensación parcial de la resistencia de línea reduce considerablemente el error resultante.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 249",
+      "difficulty": 3,
+      "module": 5
+    },
+    {
+      "q": "Se conecta una sonda de resistencia a un puente de Wheatstone en montaje de dos hilos mediante 30 m de hilo de cobre de calibre 12 AWG, con una resistencia de 0,0525 ohm/m. Sabiendo que el coeficiente de la sonda es de 0,385 Ω/°C, calcule el error aproximado de temperatura introducido por la resistencia de los hilos.",
+      "options": [
+        "8,2°C",
+        "2,5°C",
+        "5,43°C",
+        "15,75°C"
+      ],
+      "correct": 0,
+      "explanation": "El error se calcula mediante la expresión (2 × longitud × resistencia por metro) / coeficiente de la sonda: (2 × 30 × 0,0525) / 0,385 = 3,15 / 0,385 = 8,18°C, aproximadamente 8,2°C. El factor 2 aparece porque, en el montaje de dos hilos, tanto el conductor de ida como el de vuelta se suman en serie con la resistencia del sensor, duplicando el efecto de la longitud del cable. Para reducir este error, el texto recomienda emplear hilos de mayor diámetro o sondas de resistencia de mayor sensibilidad (1.000 ohmios en lugar de 100 ohmios), ya que el montaje de dos hilos se reserva para aplicaciones donde la lectura no necesita ser demasiado exacta.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 248",
+      "difficulty": 3,
+      "module": 5
+    },
+    {
+      "q": "En un pirómetro fotoeléctrico, si la estimación de la emisividad del cuerpo tiene un error del 25% al medir un objeto a 3.000°C, ¿cuál es el error aproximado que se produce en la indicación de temperatura, según las fuentes técnicas?",
+      "options": [
+        "±190°C",
+        "±75°C",
+        "±25°C",
+        "±2°C"
+      ],
+      "correct": 0,
+      "explanation": "El texto establece de forma explícita que un error del 25% en la estimación de la emisividad conduce a un error de ±75°C a 1.750°C y de ±190°C a 3.000°C, mientras que un error del 10% produce ±25°C a 1.750°C y ±75°C a 3.000°C. La opción B (±75°C) es la confusión típica de tomar el valor correspondiente a un error del 10% a 3.000°C, o al del 25% a 1.750°C, en lugar del valor correcto para la combinación específica de 25% de error a 3.000°C. Este resultado justifica por qué se recomienda seleccionar instrumentos de corta longitud de onda y pequeño ancho de banda, ya que minimizan la sensibilidad del pirómetro a la incertidumbre en la emisividad.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 304",
+      "difficulty": 3,
+      "module": 5
+    },
+    {
+      "q": "Según la norma ASTM E1137 para sondas de resistencia de platino, la tolerancia de Clase A es ±[0,13 + 0,0017 × |t|°C]. Calcule la tolerancia admisible, en °C, para una sonda Clase A que mide 300°C.",
+      "options": [
+        "±0,64°C",
+        "±0,13°C",
+        "±1,40°C",
+        "±0,51°C"
+      ],
+      "correct": 0,
+      "explanation": "Sustituyendo directamente en la fórmula de la norma ASTM E1137 para Clase A: ±[0,13 + 0,0017 × 300] = ±[0,13 + 0,51] = ±0,64°C. Un error de cálculo común (opción D) es olvidar sumar el término fijo de 0,13°C y quedarse solo con la parte proporcional a la temperatura (0,0017 × 300 = 0,51°C). Esta tolerancia, más estricta que la de Clase B (±[0,25 + 0,0042 × |t|°C]), define la exactitud de fabricación exigida a la sonda en Estados Unidos, mientras que la norma europea DIN IEC 751 emplea coeficientes ligeramente distintos (0,15 y 0,002 para su propia Clase A).",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 242",
       "difficulty": 3,
       "module": 5
     }

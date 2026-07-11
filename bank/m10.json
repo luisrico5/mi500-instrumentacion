@@ -76,7 +76,7 @@
         "100 Mbits/s"
       ],
       "correct": 1,
-      "explanation": "La tarjeta H1 de Foundation Fieldbus está estandarizada por la norma IEC 61158 para operar a una velocidad de 31,25 kbits/s, lo que permite la transmisión de datos y alimentación por el mismo par de hilos [1, 2]. Es un error común confundirla con la tarjeta H2 (opción C), la cual se reserva para comunicaciones de alta velocidad entre PLC y DCS operando técnicamente a 1,0 o 2,5 Mbits/s [3, 4]. Esta velocidad de 31,25 kbits/s es suficiente para el control continuo en campo y ofrece una mayor inmunidad al ruido eléctrico que las señales analógicas convencionales [3, 5].",
+      "explanation": "La tarjeta H1 de Foundation Fieldbus está estandarizada por la norma IEC 61158 para operar a una velocidad de 31,25 kbits/s, lo que permite la transmisión de datos y alimentación por el mismo par de hilos. Es un error común confundirla con la tarjeta H2 (opción C), la cual se reserva para comunicaciones de alta velocidad entre PLC y DCS operando técnicamente a 1,0 o 2,5 Mbits/s. Esta velocidad de 31,25 kbits/s es suficiente para el control continuo en campo y ofrece una mayor inmunidad al ruido eléctrico que las señales analógicas convencionales.",
       "difficulty": 2,
       "module": 10
     },
@@ -89,7 +89,7 @@
         "68 bar"
       ],
       "correct": 2,
-      "explanation": "El valor de la presión se determina mediante la relación lineal de la señal de 4-20 mA, donde el 0% de la variable corresponde a 4 mA y el 100% a 20 mA [6, 7]. El desarrollo numérico consiste en restar el cero vivo (13,6 mA - 4 mA = 9,6 mA), dividir por el span eléctrico (9,6 / 16 mA = 0,6) y multiplicar por el alcance del proceso (0,6 * 100 bar = 60 bar) [8, 9]. Una confusión habitual es omitir la resta del inicio de rango (opción D), lo cual daría un valor erróneo de 68 bar al ignorar que la señal de 4 mA representa físicamente el punto cero bar [7, 8].",
+      "explanation": "El valor de la presión se determina mediante la relación lineal de la señal de 4-20 mA, donde el 0% de la variable corresponde a 4 mA y el 100% a 20 mA. El desarrollo numérico consiste en restar el cero vivo (13,6 mA - 4 mA = 9,6 mA), dividir por el span eléctrico (9,6 / 16 mA = 0,6) y multiplicar por el alcance del proceso (0,6 * 100 bar = 60 bar). Una confusión habitual es omitir la resta del inicio de rango (opción D), lo cual daría un valor erróneo de 68 bar al ignorar que la señal de 4 mA representa físicamente el punto cero bar.",
       "difficulty": 3,
       "module": 10
     },
@@ -102,7 +102,7 @@
         "Almacena las copias de seguridad de la configuración de todos los controladores lógicos (PLC)."
       ],
       "correct": 2,
-      "explanation": "El Programador Activo de Enlace (LAS) actúa como el administrador maestro en una red Foundation Fieldbus, enviando mensajes de autorización a cada dispositivo para organizar el tráfico y evitar colisiones de datos [10, 11]. Según las fuentes, esta función garantiza que solo un instrumento transmita a la vez en el bus, permitiendo un control determinístico y eficiente del proceso. Se suele confundir con un dispositivo de enlace o 'linking device' (opción A), cuya tarea real es interconectar los segmentos H1 con redes Ethernet HSE de alta velocidad [10, 12].",
+      "explanation": "El Programador Activo de Enlace (LAS) actúa como el administrador maestro en una red Foundation Fieldbus, enviando mensajes de autorización a cada dispositivo para organizar el tráfico y evitar colisiones de datos. Según las fuentes, esta función garantiza que solo un instrumento transmita a la vez en el bus, permitiendo un control determinístico y eficiente del proceso. Se suele confundir con un dispositivo de enlace o 'linking device' (opción A), cuya tarea real es interconectar los segmentos H1 con redes Ethernet HSE de alta velocidad.",
       "difficulty": 3,
       "module": 10
     },
@@ -115,7 +115,7 @@
         "Empleando una modulación de amplitud (AM) para filtrar los ruidos parásitos del motor."
       ],
       "correct": 1,
-      "explanation": "El estándar inalámbrico ISA100.11a logra su robustez frente a interferencias mediante la tecnología FHSS (Espectro Ensanchado por Salto de Frecuencia), que hace saltar la señal entre diferentes frecuencias en una banda ancha [13, 14]. Este mecanismo asegura la coexistencia de señales y reduce la interceptación no autorizada en entornos industriales hostiles [15, 16]. Una confusión técnica común es la opción D, pues el uso de modulación de amplitud sería ineficaz al ser extremadamente sensible a los ruidos electromagnéticos generados por maquinaria industrial.",
+      "explanation": "El estándar inalámbrico ISA100.11a logra su robustez frente a interferencias mediante la tecnología FHSS (Espectro Ensanchado por Salto de Frecuencia), que hace saltar la señal entre diferentes frecuencias en una banda ancha. Este mecanismo asegura la coexistencia de señales y reduce la interceptación no autorizada en entornos industriales hostiles. Una confusión técnica común es la opción D, pues el uso de modulación de amplitud sería ineficaz al ser extremadamente sensible a los ruidos electromagnéticos generados por maquinaria industrial.",
       "difficulty": 3,
       "module": 10
     },
@@ -128,7 +128,7 @@
         "Interfaz serie"
       ],
       "correct": 2,
-      "explanation": "El término 'bus' define técnicamente el transporte secuencial de señales eléctricas que representan información digital codificada bajo un protocolo de comunicaciones específico [17, 18]. De acuerdo con las fuentes, esta arquitectura permite integrar múltiples instrumentos inteligentes en un solo cable, mejorando la exactitud de los datos hasta diez veces frente a la señal analógica [17, 18]. Es frecuente confundirlo con una interfaz serie (opción D), pero mientras la interfaz define la conexión física puntual, el bus representa el sistema compartido de comunicación multipunto [5, 19].",
+      "explanation": "El término 'bus' define técnicamente el transporte secuencial de señales eléctricas que representan información digital codificada bajo un protocolo de comunicaciones específico. De acuerdo con las fuentes, esta arquitectura permite integrar múltiples instrumentos inteligentes en un solo cable, mejorando la exactitud de los datos hasta diez veces frente a la señal analógica. Es frecuente confundirlo con una interfaz serie (opción D), pero mientras la interfaz define la conexión física puntual, el bus representa el sistema compartido de comunicación multipunto.",
       "difficulty": 1,
       "module": 10
     },
@@ -141,7 +141,7 @@
         "Se utiliza modulación por salto de frecuencia (FHSS)"
       ],
       "correct": 1,
-      "explanation": "El estándar de comunicación serie RS-232 emplea una lógica negativa para traducir eléctricamente los estados binarios. Según las fuentes técnicas, los 'unos' lógicos se representan con una tensión continua negativa y los 'ceros' con una tensión continua positiva, típicamente en niveles de ±12 V c.c. [1, 2]. Una confusión habitual es optar por la opción A, la cual corresponde a la lógica positiva convencional donde el nivel alto es el estado '1', pero que en este protocolo específico de datos representaría el estado opuesto.",
+      "explanation": "El estándar de comunicación serie RS-232 emplea una lógica negativa para traducir eléctricamente los estados binarios. Según las fuentes técnicas, los 'unos' lógicos se representan con una tensión continua negativa y los 'ceros' con una tensión continua positiva, típicamente en niveles de ±12 V c.c.. Una confusión habitual es optar por la opción A, la cual corresponde a la lógica positiva convencional donde el nivel alto es el estado '1', pero que en este protocolo específico de datos representaría el estado opuesto.",
       "difficulty": 1,
       "module": 10
     },
@@ -167,7 +167,7 @@
         "Permite el uso de protocolos propietarios en lugar de estándares abiertos"
       ],
       "correct": 1,
-      "explanation": "La arquitectura 1oo2D se distingue de la 1oo2 estándar por integrar un diagnóstico automático de fallos que mejora significativamente la disponibilidad del sistema. Mientras que una configuración 1oo2 detiene el proceso ante cualquier fallo detectado, en la 1oo2D un único fallo permite aislar el canal afectado para que el canal sano continúe con la operación normal [5, 6]. La confusión con la opción A radica en que duplicar canales siempre mejora la probabilidad de éxito a la demanda, pero solo la arquitectura con diagnóstico (D) ofrece tolerancia a fallos respecto a la continuidad del proceso.",
+      "explanation": "La arquitectura 1oo2D se distingue de la 1oo2 estándar por integrar un diagnóstico automático de fallos que mejora significativamente la disponibilidad del sistema. Mientras que una configuración 1oo2 detiene el proceso ante cualquier fallo detectado, en la 1oo2D un único fallo permite aislar el canal afectado para que el canal sano continúe con la operación normal. La confusión con la opción A radica en que duplicar canales siempre mejora la probabilidad de éxito a la demanda, pero solo la arquitectura con diagnóstico (D) ofrece tolerancia a fallos respecto a la continuidad del proceso.",
       "difficulty": 2,
       "module": 10
     },
@@ -181,6 +181,342 @@
       ],
       "correct": 2,
       "explanation": "Para determinar la capacidad del segmento, se resta la tensión mínima en bornes (10 V) de la tensión útil de la fuente (24 V - 2 V = 22 V), obteniendo una caída máxima admisible de 12 V. Aplicando la ley de Ohm con la resistencia del cable de 44 ohms, la corriente total disponible es de 12 V / 44 ohms = 272,7 mA. Al dividir este valor por el consumo de cada instrumento (20 mA), el desarrollo numérico arroja 13,6, lo que valida la conexión de máximo 13 aparatos (Opción C). El error de la opción D proviene de confundir el límite físico de direccionamiento con el límite eléctrico real impuesto por la caída de tensión.",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "Según Creus, ¿qué fabricante introdujo en 1983 el primer transmisor digital denominado 'inteligente' (smart transmitter)?",
+      "options": [
+        "Honeywell",
+        "Rosemount",
+        "Yokogawa",
+        "Foxboro"
+      ],
+      "correct": 0,
+      "explanation": "De acuerdo con la evolución histórica de la instrumentación descrita en la fuente, fue la firma Honeywell la que introdujo en 1983 el primer transmisor digital 'inteligente', término que indica que el equipo incorpora funciones adicionales a la simple medida y transmisión de la variable. Es un error común confundir este hito con Rosemount, fabricante que en realidad desarrolló originariamente el protocolo HART y creó la fundación del mismo nombre, pero no el primer transmisor smart. Tres años después, en 1986, la propia Honeywell lanzó el primer transmisor con salida enteramente digital.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 67",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "¿Qué mejora de exactitud en el lazo de control proporcionó el transmisor de salida enteramente digital de Honeywell aparecido en 1986, al eliminar los convertidores A/D del transmisor y D/A del receptor?",
+      "options": [
+        "0,1%",
+        "0,75%",
+        "0,3%",
+        "0,15%"
+      ],
+      "correct": 1,
+      "explanation": "El texto indica expresamente que este primer transmisor con señal de salida enteramente digital proporcionó un aumento de la exactitud del lazo de control del orden del 0,75%, al suprimir las conversiones analógico-digital y digital-analógico presentes en los equipos previos. Es una confusión típica escoger 0,15% (opción D), valor que en realidad corresponde a la exactitud de los transmisores 'inteligentes' con salida analógica 4-20 mA c.c., y no a la mejora aportada específicamente por la señal enteramente digital. El propio texto aclara además que el término 'smart' no aplica a un transmisor que solo tenga comunicabilidad digital vía un conversor A/D, sin funciones adicionales.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 67",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "Un transmisor maneja una señal digital de 8 bits en su microprocesador. Aplicando el criterio del texto, ¿cuál es la exactitud debida exclusivamente a dicha señal digital?",
+      "options": [
+        "± 0,4%",
+        "± 0,0015%",
+        "± 1%",
+        "± 0,04%"
+      ],
+      "correct": 0,
+      "explanation": "El desarrollo numérico parte de que el mayor número binario representable con 8 cifras es 11111111 = 255. La exactitud debida exclusivamente a la señal digital se calcula como (1/255) × 100, lo que arroja un valor de ± 0,4%, tal como indica la fuente. La confusión con la opción B (± 0,0015%) es habitual porque ese valor corresponde en realidad a una señal digital de 16 bits (mayor número binario 65.536), donde el error relativo es mucho menor al disponer de muchas más combinaciones posibles.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 66",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "¿Qué relación existe, según el texto, entre el número de bits que maneja la señal digital de un transmisor y la exactitud debida exclusivamente a esa señal?",
+      "options": [
+        "Cuantos más bits maneje la señal digital, menor es el error porcentual, pues el mayor número binario representable crece exponencialmente (por ejemplo, de ± 0,4% con 8 bits a ± 0,0015% con 16 bits)",
+        "Cuantos más bits maneje la señal, mayor es el error porcentual, porque se requiere más tiempo de procesamiento del microprocesador",
+        "El número de bits no influye en la exactitud de la señal digital, solo afecta a la velocidad de transmisión del bus",
+        "Esta relación solo es válida para el protocolo HART y no se aplica a otros transmisores digitales"
+      ],
+      "correct": 0,
+      "explanation": "La fuente desarrolla explícitamente el cálculo para 8, 16 y 32 bits, mostrando que la exactitud debida solo a la señal digital mejora drásticamente al aumentar los bits: de ± 0,4% (8 bits, 255 combinaciones) a ± 0,0015% (16 bits, 65.536 combinaciones) y a un valor prácticamente despreciable con 32 bits. Es un error conceptual pensar que más bits implican peor exactitud (opción B); en realidad el mayor número de combinaciones binarias posibles reduce el error relativo asociado a la resolución digital, aunque el texto aclara que estos valores no consideran la exactitud propia del sensor de la variable.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 66",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "En la medida de caudal con placa orificio, ¿qué mejora en la 'rangeability' (relación caudal máximo/caudal mínimo) aporta el transmisor inteligente frente al convencional, manteniendo la misma exactitud del ± 1%?",
+      "options": [
+        "De 3:1 a 10:1",
+        "De 10:1 a 3:1",
+        "De 1:1 a 5:1",
+        "De 5:1 a 50:1"
+      ],
+      "correct": 0,
+      "explanation": "El texto señala que el transmisor inteligente mejora la relación caudal máximo/caudal mínimo de 3:1, típica en la placa orificio (o tobera o tubo venturi), a 10:1, manteniendo la misma exactitud del ± 1%. Esta mejora en la rangeability posibilita reducir drásticamente el número de transmisores en stock, ya que un solo modelo puede cubrir diferentes campos de medida. La confusión con la opción B invertiría el sentido de la mejora, sugiriendo erróneamente que el instrumento inteligente empeora la relación respecto al convencional.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 69",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "¿Qué significa el concepto de 'turndown' aplicado a un transmisor inteligente de temperatura, cuando el texto indica que puede alcanzar una relación de hasta 400:1?",
+      "options": [
+        "La relación entre el nivel mínimo de la variable y el máximo que es medible conservando la exactitud de la medida del instrumento",
+        "El número de calibraciones que soporta el instrumento antes de averiarse por desgaste mecánico",
+        "La velocidad máxima de transmisión de datos que soporta el bus de campo asociado al transmisor",
+        "El tiempo de retardo que introduce el microprocesador al procesar la señal de temperatura"
+      ],
+      "correct": 0,
+      "explanation": "Según la fuente, el 'turndown' es la relación entre el nivel mínimo de la variable y el máximo que resulta medible conservando la exactitud de la medida del instrumento, alcanzando hasta 400:1 en la medida de temperatura con transmisores inteligentes. El propio texto matiza que para campos de medida pequeños la exactitud se vería afectada, por lo que el valor de 400:1 es un máximo teórico y no una constante en todo el rango. La opción B confunde este concepto con la resistencia mecánica del instrumento ante recalibraciones, un fenómeno distinto relacionado con el desgaste de los tornillos de ajuste de los transmisores analógicos convencionales.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 69",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿Qué variación compensa automáticamente un transmisor de nivel por ultrasonidos mediante su sistema de autocalibración con reflector situado sobre la superficie del líquido?",
+      "options": [
+        "Las variaciones de velocidad del sonido provocadas por cambios en la temperatura del ambiente del tanque",
+        "Las variaciones de presión atmosférica ejercidas sobre la superficie del líquido",
+        "La densidad del líquido contenido en el tanque",
+        "El caudal de llenado o vaciado del tanque medido"
+      ],
+      "correct": 0,
+      "explanation": "El texto explica que estos transmisores disponen de un reflector de las ondas sónicas situado en el tanque sobre la superficie del líquido, hacia donde el emisor dirige periódicamente los ultrasonidos, ajustando así los parámetros de calibración para compensar las variaciones de velocidad del sonido provocadas por cambios en la temperatura ambiente del tanque. La fuente contrasta este caso con los medidores magnéticos de caudal, donde la autocalibración es mucho más difícil de conseguir porque exigiría hacer pasar un caudal conocido de un fluido determinado durante los intervalos de calibración.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 70",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "¿Cuál es la distancia máxima de transmisión típica entre el equipo de transmisión de datos (DTE) y el equipo de comunicación de datos (DCE) en una interfaz serie RS-232?",
+      "options": [
+        "15 m",
+        "60 m",
+        "1200 m",
+        "1600 m"
+      ],
+      "correct": 0,
+      "explanation": "La fuente establece que la distancia máxima de transmisión entre el DTE y el DCE en RS-232 es de unos 15 m, con una velocidad de transmisión máxima de 20 Kbaudios (9.200 baudios en el entorno industrial). Esta limitación de distancia, junto con la susceptibilidad del cable a actuar como antena de interferencias, es la principal razón por la que RS-232 quedó relegado a conexiones locales cortas, como la de un transmisor con un ordenador personal cercano. Confundir esta cifra con los 1200 m (opción C) sería un error, ya que esa distancia corresponde a interfaces multipunto de mayor alcance como RS-422 o RS-485.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 73",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "¿Cuál es la diferencia principal entre las interfaces serie RS-422 y RS-485 según el uso industrial descrito en el texto?",
+      "options": [
+        "RS-485, introducido en 1993 por la EIA, está diseñado para comunicaciones multipunto (menos de 32 estaciones) priorizando la integridad de los datos, mientras que RS-422 (1978) no alcanzó gran difusión al orientarse a entornos eléctricamente limpios como oficinas",
+        "RS-422 funciona exclusivamente con fibra óptica, mientras que RS-485 emplea siempre par de hilos de cobre apantallado",
+        "RS-485 alcanza como máximo 60 metros de distancia, mientras que RS-422 puede alcanzar 1200 kilómetros",
+        "Ambas interfaces comparten exactamente la misma velocidad máxima de 20 Kbaudios que utiliza RS-232"
+      ],
+      "correct": 0,
+      "explanation": "Según la fuente, RS-485 fue introducido en 1993 por la Electronic Industries Association (EIA) para comunicaciones multipunto cuando el número de estaciones es menor de 32 y es prioritario garantizar la integridad de los datos, alcanzando 1200 m a 10 Mbit/s. En cambio, RS-422, aparecido en 1978 para mayor distancia y velocidad, no alcanzó el grado de utilización esperado porque gran parte de las comunicaciones serie se realizaban en entornos eléctricamente limpios y con equipos próximos entre sí, como oficinas. La opción C invierte y distorsiona las cifras reales de distancia de ambos estándares, que en realidad son del mismo orden de magnitud (1200 m).",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 73",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "En el protocolo híbrido DE, desarrollado por la empresa Honeywell, ¿cómo se codifican eléctricamente los estados discretos '1' y '0'?",
+      "options": [
+        "Estado '1' mediante una corriente de 20 mA c.c. y estado '0' mediante 4 mA c.c., siendo compatible con la señal analógica 4-20 mA c.c. pero no de forma simultánea",
+        "Mediante modulación por desplazamiento de frecuencia (FSK) con 1200 Hz para el '1' y 2200 Hz para el '0'",
+        "Mediante una secuencia de pulsos codificados de 2 mA de amplitud superpuestos a la señal 4-20 mA c.c.",
+        "Mediante codificación Manchester combinada con un pulso de reloj a 31,25 kbit/s"
+      ],
+      "correct": 0,
+      "explanation": "El texto describe el protocolo DE de Honeywell como una modulación en corriente en la que el estado discreto '1' corresponde a 20 mA c.c. y el '0' a 4 mA c.c., siendo compatible con la señal analógica 4-20 mA c.c. pero no simultáneamente con ella, y usando un protocolo propietario. La opción B describe en realidad al protocolo HART (FSK Bell 202), y la opción C corresponde al protocolo BRAIN de Yokogawa, que son confusiones frecuentes entre los distintos protocolos híbridos propietarios que coexistieron antes de la estandarización de HART.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 74",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿A qué fabricante pertenece el protocolo de comunicación propietario denominado INTENSOR, mencionado entre los protocolos híbridos de comunicación digital?",
+      "options": [
+        "Endress & Hauser",
+        "Foxboro",
+        "Yokogawa",
+        "Honeywell"
+      ],
+      "correct": 0,
+      "explanation": "La fuente indica de forma directa que INTENSOR es un protocolo propietario de Endress & Hauser, uno de los varios sistemas híbridos que combinaban la señal analógica 4-20 mA c.c. con comunicación digital antes de la generalización de estándares abiertos. Es habitual confundirlo con FOXCOM (opción B), que es en realidad el protocolo propietario de la compañía Foxboro, o con BRAIN (opción C), desarrollado por Yokogawa mediante modulación de impulsos codificados.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 74",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "En el protocolo BRAIN de la empresa Yokogawa, ¿cómo se representa el estado discreto '0' sobre la señal 4-20 mA c.c.?",
+      "options": [
+        "Mediante una secuencia de dos pulsos de subida y dos de bajada alternos con una amplitud de 2 mA c.c., cuya señal resultante neta es nula sobre la señal 4-20 mA c.c.",
+        "Mediante la ausencia total de pulsos durante todo el ciclo de transmisión",
+        "Mediante una frecuencia fija de 2.200 Hz superpuesta a la señal de proceso",
+        "Mediante una caída instantánea de la corriente de línea a 0 mA c.c."
+      ],
+      "correct": 0,
+      "explanation": "Según la fuente, en el protocolo BRAIN el estado discreto '0' corresponde a una secuencia de dos pulsos de subida y dos de bajada alternos con una amplitud de 2 mA c.c., mientras que el estado '1' corresponde precisamente a la ausencia de pulsos (opción B, que describe el estado contrario). Esta modulación de impulsos codificados va superpuesta sobre la señal 4-20 mA c.c. sin afectarla, ya que la señal resultante de los pulsos es nula en promedio, de forma análoga al principio que emplea HART con sus tonos senoidales de valor medio cero.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 74",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿Cuál es la distancia máxima de transmisión del protocolo FSK desarrollado por Elsag Bailey Hartman and Braun (grupo ABB), basado en una modulación en frecuencia?",
+      "options": [
+        "1,6 Km",
+        "5,5 Km",
+        "8,7 Km",
+        "31,25 Km"
+      ],
+      "correct": 0,
+      "explanation": "El texto especifica que este protocolo FSK propietario del grupo ABB, basado en modulación en frecuencia, tiene una distancia máxima de 1,6 Km. Es un error habitual confundir esta cifra con la distancia máxima de un segmento Foundation Fieldbus H1 calculada por el criterio de atenuación de señal (5,5 Km, opción B) o por el criterio de caída de tensión (8,7 Km, opción C), que son valores propios de una tecnología de bus completamente distinta y no de un protocolo híbrido propietario como el FSK de ABB.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 74",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "¿Qué protocolo se considera, según el texto, el primer bus de campo efectivamente abierto y ampliamente utilizado, desarrollado por Gould Modicon en 1979?",
+      "options": [
+        "MODBUS",
+        "HART",
+        "PROFIBUS",
+        "Foundation Fieldbus"
+      ],
+      "correct": 0,
+      "explanation": "La fuente identifica al MODBUS de Gould Modicon, desarrollado en 1979, como el primer bus de campo efectivamente abierto utilizado ampliamente, si bien únicamente disponía de los niveles 1 (físico) y 2 (enlace) del modelo OSI. Confundirlo con HART (opción B) sería un error, ya que este último es un protocolo híbrido que combina señal analógica y digital superpuesta, desarrollado más tarde por Rosemount, y no un bus de campo puramente digital como MODBUS.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 75",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "¿Qué papel desempeña el protocolo MODBUS TCP/IP, desarrollado por Schneider Automation, respecto al MODBUS clásico?",
+      "options": [
+        "Facilita la interoperabilidad entre los aparatos que utilizan los códigos de función de MODBUS, aprovechando las redes basadas en el protocolo TCP/IP",
+        "Sustituye por completo los niveles físico y de enlace originales de MODBUS por un protocolo inalámbrico",
+        "Elimina la necesidad de direccionar los distintos esclavos conectados en la red de campo",
+        "Restringe la comunicación exclusivamente a la banda ISM de 902-928 MHz utilizada en transmisión por radio"
+      ],
+      "correct": 0,
+      "explanation": "El texto señala que el protocolo MODBUS TCP/IP, desarrollado por Schneider Automation, facilita la interoperabilidad entre los aparatos que utilizan los códigos de función de MODBUS, aprovechando la infraestructura de redes Ethernet estándar. Es un error pensar que este protocolo elimina el direccionamiento de esclavos (opción C), ya que la identificación de cada dispositivo sigue siendo necesaria para gestionar las peticiones y respuestas dentro de la red, solo que ahora estas viajan encapsuladas sobre TCP/IP en lugar de un enlace serie dedicado.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 75",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿Cuál de los tres perfiles de usuario de PROFIBUS está orientado específicamente a la automatización de procesos, incluidas las áreas con riesgo de explosión?",
+      "options": [
+        "PROFIBUS PA",
+        "PROFIBUS DP",
+        "PROFIBUS FMS",
+        "PROFIBUS HSE"
+      ],
+      "correct": 0,
+      "explanation": "La fuente distingue tres perfiles de usuario de PROFIBUS: FMS (universal), DP (rápido) y PA, este último orientado a la automatización de procesos incluso en áreas con riesgo de explosión y a la comunicación con equipos de campo. El nivel físico de PROFIBUS PA cumple la norma IEC 1158-2, que además posibilita alimentar los equipos por el mismo par de hilos que transporta la comunicación. La opción D (PROFIBUS HSE) es una confusión, ya que HSE (High Speed Ethernet) es en realidad una red de alta velocidad asociada a Foundation Fieldbus, no un perfil de PROFIBUS.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 76",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "¿Cómo se originó en 1994 la Fieldbus Foundation, organización responsable del estándar Foundation Fieldbus?",
+      "options": [
+        "Mediante la unión de las organizaciones ISP y World FIP, para definir un único estándar según las normas IEC-ISA",
+        "Como una escisión del comité responsable de la norma RS-485 dentro de la EIA",
+        "Como una división interna de Rosemount, poco después de crear la fundación HART",
+        "Como resultado directo de la fusión entre los comités de PROFIBUS y MODBUS"
+      ],
+      "correct": 0,
+      "explanation": "Según la fuente, la Fieldbus Foundation fue creada en 1994 mediante la unión de ISP y World FIP, con el objetivo de definir un único estándar conforme a las normas IEC-ISA, y se constituyó como una organización sin ánimo de lucro con casi 120 proveedores y usuarios de automatización y control de procesos. Confundir su origen con una escisión de RS-485 (opción B) ignora que este último es simplemente un estándar de interfaz eléctrica serie de la EIA, sin relación organizativa con la fundación de un bus de campo completo como Foundation Fieldbus.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 77",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "En una red Foundation Fieldbus, ¿qué nombre recibe la topología en la que los instrumentos de campo se conectan mediante un bloque de terminales en forma de árbol?",
+      "options": [
+        "Chickenfoot",
+        "Spur",
+        "Multidrop",
+        "Daisy chain"
+      ],
+      "correct": 0,
+      "explanation": "El texto describe que los instrumentos de campo pueden conectarse entre sí mediante un bloque de terminales con topología en árbol, denominada 'chickenfoot' (pata de gallo), o bien a lo largo del propio cable mediante ramales denominados 'spur' (opción B, que corresponde a la otra variante mencionada, no a la de árbol). Un terminador acopla la impedancia del cable para reducir reflexiones de la señal, y un acondicionador de alimentación separa la fuente convencional del cableado del Fieldbus, independientemente de cuál de las dos topologías se emplee.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 77",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "¿Cuál es la longitud máxima del campo de datos dentro de un mensaje transmitido por el bus Foundation Fieldbus H1?",
+      "options": [
+        "266 bytes",
+        "32 bytes",
+        "1.024 bytes",
+        "8 bytes"
+      ],
+      "correct": 0,
+      "explanation": "La fuente detalla que cada mensaje Fieldbus se compone de una señal previa, una señal delimitadora de arranque y otra de fin, intercalando entre estas dos últimas una señal de datos de longitud máxima 266 bytes que contiene la dirección del instrumento, su identificación y los valores de medida, entre otra información. Confundir esta cifra con los 32 bytes (opción B) sería un error frecuente, ya que ese número en realidad corresponde en el texto al máximo de bloques de función (hasta 32) que pueden alojarse en un mismo instrumento de campo.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 79",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿En qué se diferencia la implementación del modelo de referencia OSI entre el protocolo HART y la tecnología Foundation Fieldbus?",
+      "options": [
+        "Ambos implementan los niveles 1, 2 y 7 del modelo OSI, pero Foundation Fieldbus añade además una capa de usuario propia, basada en bloques de función, no contemplada en la implementación de HART",
+        "HART implementa las siete capas completas del modelo OSI, mientras que Foundation Fieldbus solo utiliza el nivel físico",
+        "Foundation Fieldbus no sigue en ningún nivel el modelo de referencia OSI, a diferencia de HART",
+        "HART usa únicamente el nivel de aplicación (capa 7) y Foundation Fieldbus usa únicamente el nivel físico (capa 1)"
+      ],
+      "correct": 0,
+      "explanation": "El texto indica que HART implementa del modelo OSI solo los niveles 1 (físico), 2 (enlace) y 7 (aplicación), ya que los niveles intermedios no son necesarios para su tipo de comunicación. Foundation Fieldbus utiliza igualmente los niveles 1, 2 y 7, pero además incorpora una capa de usuario dedicada, basada en bloques (RB, TB y FB), que organiza las funciones de aplicación de un modo más completo que el simple conjunto de comandos de HART. Suponer que HART implementa las siete capas completas (opción B) contradice directamente lo expuesto en la fuente sobre este protocolo híbrido.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 81",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "¿Qué información gestiona específicamente el Bloque de Recursos (RB, Resource Block) dentro de la capa de usuario de Foundation Fieldbus?",
+      "options": [
+        "Las características del dispositivo: fabricante, modelo y número de serie",
+        "Los parámetros del sensor, su tipo y la fecha de calibración",
+        "Las estrategias de control PID, alarmas y ratio del sistema",
+        "La dirección de red asignada al dispositivo dentro de la red Ethernet HSE"
+      ],
+      "correct": 0,
+      "explanation": "La fuente define el Bloque de Recursos (RB) como el que gestiona las características del dispositivo, su fabricante, modelo y número de serie, diferenciándolo claramente del Bloque de Transductor (TB), que gestiona el tipo de sensor, su estado y la fecha de calibración (opción B), y de los Bloques de Función (FB), que contienen las estrategias de control como PID, alarmas y ratio (opción C). Esta división en tres tipos de bloques dentro de la capa de usuario es la base de la interoperabilidad entre instrumentos de distintos fabricantes en una red Foundation Fieldbus.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 82",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "¿Qué función cumple el lenguaje EDDL (Electronic Device Description Language) en un sistema de bus de campo como Foundation Fieldbus, HART o PROFIBUS?",
+      "options": [
+        "Permite escribir un fichero de descripción (EDD) que define los bloques de función del dispositivo, de modo que cualquier ordenador con el intérprete adecuado puede operar con sus parámetros",
+        "Sustituye la función del Programador Activo de Enlace (LAS) en la gestión del tráfico de la red",
+        "Codifica físicamente la señal transmitida mediante la técnica Manchester a 31,25 kbit/s",
+        "Define exclusivamente las direcciones IP asignadas a los dispositivos conectados a la red Ethernet HSE"
+      ],
+      "correct": 0,
+      "explanation": "Según el texto, el fabricante genera, mediante el lenguaje EDDL, un fichero de texto EDD (Electronic Device Description) que define los bloques de función del dispositivo; cualquier ordenador que use el intérprete del DDS (Device Description Services) puede entonces operar con todos los parámetros definidos en el dispositivo leyendo su descripción DD. La fuente destaca que este lenguaje es compatible con HART, Foundation Fieldbus y PROFIBUS, y que en el año 2006 existían más de 20 millones de instrumentos compatibles con EDDL, lo que evidencia su papel central en la interoperabilidad multiproveedor, muy distinto de la función del LAS (opción B), que solo organiza el orden de transmisión en el bus.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 83",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "Según el texto, ¿qué ahorro aproximado en el coste de cableado se obtiene con Foundation Fieldbus frente a una instalación convencional analógica, gracias a la posibilidad de conectar varios instrumentos en el mismo hilo del bus (multi-drop)?",
+      "options": [
+        "80-90%",
+        "10-20%",
+        "95-99%",
+        "40-50%"
+      ],
+      "correct": 0,
+      "explanation": "La fuente cuantifica que se obtiene un ahorro del 80-90% del coste de cableado de las instalaciones convencionales, ya que en el sistema analógico es necesario un par de hilos por cada variable conectada al controlador, mientras que en el Fieldbus digital pueden conectarse varios instrumentos de la misma área de planta al mismo cable mediante la conexión multi-drop. Es un error habitual confundir este ahorro de cableado con el 95% de ahorro mencionado en la fuente para los costos de recalibración de instrumentos inteligentes (opción C), que es un beneficio económico distinto asociado a la eliminación del calibrador patrón, no al tendido físico de cables.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 87",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "En un segmento Foundation Fieldbus H1, la señal de salida del transmisor es de 1 V pico a pico y la señal mínima aceptable en el receptor es de 0,15 V pico a pico. Si el cable tipo A presenta una atenuación de 3 dB/Km, ¿cuál es la distancia máxima de transmisión que puede alcanzarse según este criterio de atenuación de señal?",
+      "options": [
+        "5,5 Km",
+        "8,7 Km",
+        "1,6 Km",
+        "16,48 Km"
+      ],
+      "correct": 0,
+      "explanation": "El desarrollo, según la fuente, calcula primero la atenuación total admisible en decibelios: Atenuación = 20·log(amplitud transmitida/amplitud recibida) = 20·log(1/0,15) = 16,48 dB. Dividiendo esta atenuación total entre la atenuación del cable (3 dB/Km), se obtiene la distancia máxima = 16,48/3 = 5,5 Km. La opción D confunde el valor intermedio de la atenuación total en dB (16,48) con la distancia final en kilómetros, y la opción B (8,7 Km) corresponde en realidad a la distancia máxima calculada por el criterio distinto de caída de tensión de alimentación del segmento, no por el de atenuación de la señal transmitida.",
+      "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 79",
       "difficulty": 3,
       "module": 10
     }
