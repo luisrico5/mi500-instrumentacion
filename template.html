@@ -1,0 +1,870 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MI-500 · Máster Instrumentación</title>
+</head>
+<body>
+<style>
+  :root{
+    --bg:#eef1f0; --surface:#fbfdfc; --surface-2:#f2f5f4;
+    --ink:#111716; --ink-2:#48534f; --muted:#7d8884;
+    --line:#dbe2df; --hairline:rgba(17,23,22,.10);
+    --accent:#0c7d6d; --accent-ink:#ffffff; --accent-soft:rgba(12,125,109,.10);
+    --amber:#996a00; --amber-bright:#eda100;
+    --chart-line:#2a78d6; --chart-fill:rgba(42,120,214,.08);
+    --st-good:#0ca30c; --st-warn:#fab219; --st-serious:#ec835a; --st-crit:#d03b3b;
+    --good-text:#006300; --crit-text:#b02a2a;
+    --shadow:0 1px 2px rgba(17,23,22,.05), 0 4px 16px rgba(17,23,22,.06);
+    --font-body:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
+    --font-display:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+    --font-mono:"Cascadia Code",Consolas,ui-monospace,"Courier New",monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0e1211; --surface:#171c1b; --surface-2:#1e2423;
+      --ink:#f0f4f2; --ink-2:#b6c0bc; --muted:#84908b;
+      --line:#2a3230; --hairline:rgba(240,244,242,.10);
+      --accent:#2fae9b; --accent-ink:#06201c; --accent-soft:rgba(47,174,155,.14);
+      --amber:#eda100; --amber-bright:#eda100;
+      --chart-line:#3987e5; --chart-fill:rgba(57,135,229,.12);
+      --good-text:#3dbb3d; --crit-text:#e06565;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1211; --surface:#171c1b; --surface-2:#1e2423;
+    --ink:#f0f4f2; --ink-2:#b6c0bc; --muted:#84908b;
+    --line:#2a3230; --hairline:rgba(240,244,242,.10);
+    --accent:#2fae9b; --accent-ink:#06201c; --accent-soft:rgba(47,174,155,.14);
+    --amber:#eda100; --amber-bright:#eda100;
+    --chart-line:#3987e5; --chart-fill:rgba(57,135,229,.12);
+    --good-text:#3dbb3d; --crit-text:#e06565;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+  }
+  :root[data-theme="light"]{
+    --bg:#eef1f0; --surface:#fbfdfc; --surface-2:#f2f5f4;
+    --ink:#111716; --ink-2:#48534f; --muted:#7d8884;
+    --line:#dbe2df; --hairline:rgba(17,23,22,.10);
+    --accent:#0c7d6d; --accent-ink:#ffffff; --accent-soft:rgba(12,125,109,.10);
+    --amber:#996a00; --amber-bright:#eda100;
+    --chart-line:#2a78d6; --chart-fill:rgba(42,120,214,.08);
+    --good-text:#006300; --crit-text:#b02a2a;
+    --shadow:0 1px 2px rgba(17,23,22,.05), 0 4px 16px rgba(17,23,22,.06);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--font-body); font-size:15px; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  button{font-family:inherit; font-size:inherit; cursor:pointer}
+  button:focus-visible, a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important; transition:none!important}
+  }
+
+  .wrap{max-width:1060px; margin:0 auto; padding:0 20px 64px}
+
+  /* ---------- header ---------- */
+  header.top{
+    display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    padding:18px 0 14px; border-bottom:1px solid var(--line); margin-bottom:24px;
+  }
+  .tagplate{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:.08em;
+    border:1px solid var(--ink-2); color:var(--ink);
+    padding:4px 9px; border-radius:3px; white-space:nowrap;
+  }
+  header.top h1{
+    font-family:var(--font-display); font-size:19px; font-weight:650;
+    letter-spacing:-.01em; margin:0; text-wrap:balance;
+  }
+  header.top .sub{font-size:12.5px; color:var(--muted); width:100%; margin-top:-6px}
+  .level-chip{
+    margin-left:auto; display:flex; align-items:center; gap:8px;
+    font-family:var(--font-mono); font-size:12px; letter-spacing:.06em;
+    background:var(--accent-soft); color:var(--accent);
+    border:1px solid var(--accent); border-radius:999px; padding:5px 14px;
+  }
+  :root[data-theme="dark"] .level-chip{color:var(--ink)}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .level-chip{color:var(--ink)} }
+
+  /* ---------- generic panels ---------- */
+  .panel{
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:10px; box-shadow:var(--shadow); padding:18px 20px;
+  }
+  .eyebrow{
+    font-family:var(--font-mono); font-size:10.5px; font-weight:600;
+    text-transform:uppercase; letter-spacing:.14em; color:var(--muted);
+    margin:0 0 10px;
+  }
+  .grid{display:grid; gap:16px}
+
+  /* ---------- KPI row ---------- */
+  .kpis{grid-template-columns:1.35fr 1fr 1fr 1fr; margin-bottom:16px}
+  @media (max-width:840px){ .kpis{grid-template-columns:1fr 1fr} }
+  .kpi .val{
+    font-family:var(--font-display); font-size:30px; font-weight:700;
+    letter-spacing:-.02em; line-height:1.1;
+  }
+  .kpi .cap{font-size:12.5px; color:var(--muted); margin-top:2px}
+  .kpi-hero{display:flex; align-items:center; gap:16px}
+  .gauge-txt{min-width:0}
+  .gauge-txt .lvl{
+    font-family:var(--font-display); font-size:24px; font-weight:700; letter-spacing:-.01em;
+  }
+  .gauge-txt .pct{font-family:var(--font-mono); font-size:12px; color:var(--muted); margin-top:2px}
+
+  /* ---------- main two-col ---------- */
+  .cols{grid-template-columns:1.6fr 1fr; margin-bottom:16px}
+  @media (max-width:840px){ .cols{grid-template-columns:1fr} }
+
+  /* module bars */
+  .mrow{
+    display:grid; grid-template-columns:minmax(130px,180px) 1fr 84px;
+    align-items:center; gap:10px; padding:7px 0; border:0; background:none;
+    width:100%; text-align:left; color:var(--ink); border-radius:6px;
+  }
+  .mrow:hover{background:var(--surface-2)}
+  .mrow .mname{font-size:13.5px; line-height:1.25}
+  .mrow .track{
+    height:12px; background:var(--surface-2); border-radius:4px;
+    border:1px solid var(--hairline); position:relative; overflow:hidden;
+  }
+  .mrow .fill{
+    position:absolute; inset:0 auto 0 0; border-radius:3px;
+    min-width:2px; transition:width .35s ease;
+  }
+  .mrow .mval{
+    font-family:var(--font-mono); font-size:12px; text-align:right;
+    color:var(--ink-2); white-space:nowrap; font-variant-numeric:tabular-nums;
+  }
+  .mrow .mval .word{display:block; font-size:10px; color:var(--muted); letter-spacing:.05em}
+
+  /* exam mode buttons */
+  .modes{display:flex; flex-direction:column; gap:10px}
+  .mode-btn{
+    display:block; width:100%; text-align:left;
+    background:var(--surface-2); border:1px solid var(--line); border-radius:8px;
+    padding:12px 14px; color:var(--ink); transition:border-color .15s ease;
+  }
+  .mode-btn:hover{border-color:var(--accent)}
+  .mode-btn .mt{font-weight:650; font-size:14.5px; display:flex; align-items:center; gap:8px}
+  .mode-btn .md{font-size:12.5px; color:var(--ink-2); margin-top:2px}
+  .mode-btn .mono-tag{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:.08em;
+    border:1px solid var(--hairline); border-radius:3px; padding:1px 6px; color:var(--muted);
+  }
+  .mode-btn.primary{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+  .mode-btn.primary .md{color:var(--accent-ink); opacity:.85}
+  .mode-btn.primary .mono-tag{color:var(--accent-ink); border-color:rgba(255,255,255,.35)}
+  .mode-btn:disabled{opacity:.45; cursor:not-allowed}
+  .mode-btn:disabled:hover{border-color:var(--line)}
+
+  /* progress + recs */
+  .bottom{grid-template-columns:1.6fr 1fr}
+  @media (max-width:840px){ .bottom{grid-template-columns:1fr} }
+  .chart-empty{color:var(--muted); font-size:13px; padding:28px 0; text-align:center}
+  .rec{display:flex; gap:10px; padding:9px 0; border-top:1px solid var(--hairline); font-size:13.5px}
+  .rec:first-of-type{border-top:0}
+  .rec .dot{width:8px; height:8px; border-radius:50%; margin-top:6px; flex:none}
+  .rec b{font-weight:650}
+  .rec .subt{color:var(--ink-2); font-size:12.5px; margin-top:1px}
+
+  .footrow{display:flex; gap:14px; align-items:center; margin-top:20px; flex-wrap:wrap}
+  .linkbtn{
+    background:none; border:none; color:var(--muted); font-size:12px;
+    text-decoration:underline; text-underline-offset:3px; padding:2px;
+  }
+  .linkbtn:hover{color:var(--ink-2)}
+  .src-note{font-size:11.5px; color:var(--muted); margin-left:auto}
+
+  /* ---------- exam view ---------- */
+  .exam-top{display:flex; align-items:center; gap:12px; margin-bottom:14px; flex-wrap:wrap}
+  .exam-top .xtitle{font-family:var(--font-display); font-weight:650; font-size:16px}
+  .exam-top .timer{
+    margin-left:auto; font-family:var(--font-mono); font-size:13px; color:var(--ink-2);
+    font-variant-numeric:tabular-nums;
+  }
+  .pbar{height:4px; background:var(--surface-2); border-radius:2px; margin-bottom:20px; overflow:hidden}
+  .pbar>div{height:100%; background:var(--accent); border-radius:2px; transition:width .25s ease}
+
+  .qcard{max-width:760px; margin:0 auto}
+  .qmeta{display:flex; gap:8px; align-items:center; margin-bottom:12px; flex-wrap:wrap}
+  .chip{
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:.07em;
+    border:1px solid var(--line); border-radius:999px; padding:2px 10px; color:var(--ink-2);
+  }
+  .chip.d1{border-color:var(--st-good); color:var(--good-text)}
+  .chip.d2{border-color:var(--amber); color:var(--amber)}
+  .chip.d3{border-color:var(--st-crit); color:var(--crit-text)}
+  .qtext{
+    font-family:var(--font-display); font-size:19px; font-weight:600;
+    line-height:1.4; letter-spacing:-.005em; margin:0 0 18px; text-wrap:balance;
+  }
+  .opts{display:flex; flex-direction:column; gap:9px}
+  .opt{
+    display:flex; gap:12px; align-items:baseline; width:100%; text-align:left;
+    background:var(--surface); border:1px solid var(--line); border-radius:8px;
+    padding:11px 14px; color:var(--ink); line-height:1.45;
+  }
+  .opt:hover{border-color:var(--accent)}
+  .opt .key{
+    font-family:var(--font-mono); font-size:11.5px; color:var(--muted);
+    border:1px solid var(--line); border-radius:4px; padding:1px 7px; flex:none;
+  }
+  .opt.sel{border-color:var(--accent); background:var(--accent-soft)}
+  .opt.correct{border-color:var(--st-good); background:rgba(12,163,12,.09)}
+  .opt.wrong{border-color:var(--st-crit); background:rgba(208,59,59,.09)}
+  .opt.correct .key{border-color:var(--st-good); color:var(--good-text)}
+  .opt.wrong .key{border-color:var(--st-crit); color:var(--crit-text)}
+  .opt:disabled{cursor:default}
+  .opt:disabled:hover{border-color:var(--line)}
+  .opt.correct:disabled:hover{border-color:var(--st-good)}
+  .opt.wrong:disabled:hover{border-color:var(--st-crit)}
+
+  .explain{
+    margin-top:14px; padding:12px 14px; border-left:3px solid var(--accent);
+    background:var(--surface-2); border-radius:0 8px 8px 0; font-size:13.5px; color:var(--ink-2);
+  }
+  .explain b{color:var(--ink)}
+  .exam-nav{display:flex; gap:10px; margin-top:20px; align-items:center}
+  .btn{
+    background:var(--accent); color:var(--accent-ink); border:1px solid var(--accent);
+    border-radius:8px; padding:9px 20px; font-weight:650; font-size:14px;
+  }
+  .btn:hover{filter:brightness(1.06)}
+  .btn.ghost{background:transparent; color:var(--ink-2); border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--ink-2); filter:none}
+  .btn:disabled{opacity:.45; cursor:not-allowed}
+  .exam-nav .spacer{flex:1}
+  .navdots{display:flex; gap:5px; flex-wrap:wrap; margin-top:16px; justify-content:center}
+  .ndot{
+    width:22px; height:22px; border-radius:5px; border:1px solid var(--line);
+    background:var(--surface); font-family:var(--font-mono); font-size:10px;
+    color:var(--muted); padding:0;
+  }
+  .ndot.done{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+  .ndot.cur{outline:2px solid var(--accent); outline-offset:1px}
+
+  /* ---------- results ---------- */
+  .res-head{display:flex; gap:24px; align-items:center; flex-wrap:wrap; margin-bottom:18px}
+  .res-score .big{
+    font-family:var(--font-display); font-size:44px; font-weight:750; letter-spacing:-.02em; line-height:1;
+  }
+  .res-score .lbl{color:var(--muted); font-size:13px; margin-top:4px}
+  .res-msg{font-size:14.5px; color:var(--ink-2); max-width:420px}
+  .res-msg b{color:var(--ink)}
+  .rev-item{border-top:1px solid var(--hairline); padding:14px 0}
+  .rev-item .rq{font-weight:600; margin:0 0 6px; line-height:1.4}
+  .rev-item .ra{font-size:13.5px; margin:2px 0}
+  .rev-item .ok{color:var(--good-text)}
+  .rev-item .bad{color:var(--crit-text)}
+  .rev-item .rx{font-size:13px; color:var(--ink-2); margin-top:6px}
+  .rev-flag{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:.08em;
+    padding:1px 7px; border-radius:3px; margin-right:8px;
+  }
+  .rev-flag.ok{border:1px solid var(--st-good); color:var(--good-text)}
+  .rev-flag.bad{border:1px solid var(--st-crit); color:var(--crit-text)}
+
+  /* tooltip */
+  #tip{
+    position:fixed; pointer-events:none; z-index:50; display:none;
+    background:var(--ink); color:var(--bg); font-size:12px; line-height:1.4;
+    padding:6px 10px; border-radius:6px; max-width:240px;
+    font-family:var(--font-mono);
+  }
+
+  .hidden{display:none!important}
+  svg text{font-family:var(--font-mono)}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="tagplate">MI-500</span>
+    <h1>Máster en Instrumentación Industrial</h1>
+    <span class="level-chip" id="hdrLevel">SIN CALIBRAR</span>
+    <div class="sub">Entrenamiento y evaluación basados en tu cuaderno <em>masterinstrumentacion</em> (Creus 8ª ed. · Ajuste y calibración · instrumentacionycontrol.net · instrumentationtools.com)</div>
+  </header>
+
+  <!-- ============ DASHBOARD ============ -->
+  <section id="view-dash">
+    <div class="grid kpis">
+      <div class="panel kpi kpi-hero">
+        <svg id="gauge" width="92" height="92" viewBox="0 0 92 92" aria-hidden="true"></svg>
+        <div class="gauge-txt">
+          <div class="lvl" id="kLevel">Sin calibrar</div>
+          <div class="pct" id="kLevelPct">— · realiza el diagnóstico</div>
+        </div>
+      </div>
+      <div class="panel kpi"><div class="val" id="kExams">0</div><div class="cap">exámenes realizados</div></div>
+      <div class="panel kpi"><div class="val" id="kAcc">—</div><div class="cap">precisión global</div></div>
+      <div class="panel kpi"><div class="val" id="kStreak">0</div><div class="cap">días de racha</div></div>
+    </div>
+
+    <div class="grid cols">
+      <div class="panel">
+        <p class="eyebrow">Dominio por módulo · pulsa uno para practicarlo</p>
+        <div id="moduleBars"></div>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Iniciar evaluación</p>
+        <div class="modes">
+          <button class="mode-btn primary" id="btnDiag">
+            <span class="mt">Diagnóstico completo <span class="mono-tag" id="tagDiag">20 PREG</span></span>
+            <span class="md">Barrido de todos los módulos para calibrar tu nivel. Corrección al final.</span>
+          </button>
+          <button class="mode-btn" id="btnAdapt">
+            <span class="mt">Examen adaptativo <span class="mono-tag">15 PREG</span></span>
+            <span class="md">Aleatorio, ponderado hacia tus módulos débiles y tu dificultad objetivo.</span>
+          </button>
+          <button class="mode-btn" id="btnQuick">
+            <span class="mt">Ronda rápida <span class="mono-tag">8 PREG</span></span>
+            <span class="md">Práctica corta con corrección inmediata y explicación.</span>
+          </button>
+          <button class="mode-btn" id="btnWrong">
+            <span class="mt">Repaso de falladas <span class="mono-tag" id="tagWrong">0 PEND</span></span>
+            <span class="md">Vuelve sobre las preguntas que has fallado hasta dominarlas.</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid bottom">
+      <div class="panel">
+        <p class="eyebrow">Evolución de puntuaciones</p>
+        <div id="progChart"></div>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Prioridades de estudio</p>
+        <div id="recs"></div>
+      </div>
+    </div>
+
+    <div class="footrow">
+      <button class="linkbtn" id="btnExport">Descargar respaldo</button>
+      <button class="linkbtn" id="btnImport">Restaurar respaldo</button>
+      <input type="file" id="fileImport" accept="application/json" class="hidden">
+      <button class="linkbtn" id="btnReset">Reiniciar progreso</button>
+      <span class="src-note" id="bankNote"></span>
+    </div>
+  </section>
+
+  <!-- ============ EXAM ============ -->
+  <section id="view-exam" class="hidden">
+    <div class="exam-top">
+      <span class="tagplate" id="xTag">EX-01</span>
+      <span class="xtitle" id="xTitle">Examen</span>
+      <span class="timer" id="xTimer">00:00</span>
+    </div>
+    <div class="pbar"><div id="xProg" style="width:0%"></div></div>
+    <div class="panel qcard">
+      <div class="qmeta" id="qMeta"></div>
+      <p class="qtext" id="qText"></p>
+      <div class="opts" id="qOpts"></div>
+      <div class="explain hidden" id="qExplain"></div>
+      <div class="exam-nav">
+        <button class="btn ghost" id="btnPrev">← Anterior</button>
+        <div class="spacer"></div>
+        <button class="btn ghost" id="btnQuit">Abandonar</button>
+        <button class="btn" id="btnNext">Siguiente →</button>
+      </div>
+      <div class="navdots" id="navDots"></div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="view-results" class="hidden">
+    <div class="exam-top">
+      <span class="tagplate">RESULTADO</span>
+      <span class="xtitle" id="rTitle"></span>
+    </div>
+    <div class="panel" style="margin-bottom:16px">
+      <div class="res-head">
+        <svg id="rGauge" width="110" height="110" viewBox="0 0 110 110" aria-hidden="true"></svg>
+        <div class="res-score">
+          <div class="big" id="rScore">0%</div>
+          <div class="lbl" id="rDetail">0 de 0 correctas</div>
+        </div>
+        <div class="res-msg" id="rMsg"></div>
+      </div>
+      <div class="exam-nav" style="margin-top:6px">
+        <button class="btn" id="btnBack">Volver al tablero</button>
+        <button class="btn ghost" id="btnRetry">Repetir modo</button>
+      </div>
+    </div>
+    <div class="panel">
+      <p class="eyebrow">Revisión de preguntas · falladas primero</p>
+      <div id="review"></div>
+    </div>
+  </section>
+</div>
+
+<div id="tip"></div>
+
+<script id="bank-data" type="application/json">__BANK_DATA__</script>
+<script id="topics-data" type="application/json">{"1":["Exactitud, precisión, histéresis y repetibilidad","Campo de medida, alcance (span) y rangeabilidad","Incertidumbre y trazabilidad de patrones","Norma ISA-S5.1 y código de letras","Clases de instrumentos: ciegos, indicadores, transmisores"],"2":["Clases de presión: absoluta, relativa, diferencial y vacío","Tubo Bourdon, espiral, diafragma y fuelle","Sensores capacitivos, extensométricos y piezoeléctricos","Medidores de vacío Pirani y McLeod","Sellos de diafragma, liras y amortiguadores"],"3":["Placa orificio, tobera, Venturi y Pitot","Rotámetros y medidores de turbina","Caudalímetros magnéticos y ultrasónicos","Vórtex y efecto Von Karman","Caudal másico: térmico y Coriolis"],"4":["Nivel de cristal y flotador","Medidor manométrico, burbujeo y presión diferencial","Supresión y elevación de cero","Capacitivos, conductivos y ultrasónicos","Radar FMCW y radar de onda guiada"],"5":["Termómetros bimetálicos y de bulbo (clases I-IV)","RTD Pt100 y montajes a 2, 3 y 4 hilos","Termopares: efecto Seebeck y tipos J, K, T, E, R, S, B, N","Compensación de la unión fría","Pirómetros de radiación e infrarrojos"],"6":["Medición de densidad y peso específico","Humedad relativa y punto de rocío","Conductividad electrolítica","Medición de pH y redox","Viscosidad, consistencia y turbidez"],"7":["Cuerpos de válvula: globo, bola, mariposa","Característica lineal, isoporcentual y apertura rápida","Actuadores neumáticos y posicionadores","Coeficiente de caudal Cv/Kv","Cavitación y flashing"],"8":["Errores de cero, multiplicación y angularidad","Comprobador de pesas (peso muerto)","Baños y bloques secos de temperatura","Calibradores multifunción y HART","Trazabilidad e ISO 9001"],"9":["Lazo abierto vs. cerrado","Acciones P, I y D: banda proporcional, min/rep","Sintonización Ziegler-Nichols","Cascada, ratio, feedforward y selectivo","Seguridad funcional SIL, IEC 61508/61511"],"10":["Señal 4-20 mA y live zero","Señal neumática 3-15 psi","HART, Foundation Fieldbus y Profibus","DCS, PLC y SCADA","Diagramas P&ID y de lazo"]}</script>
+<script>
+"use strict";
+/* ============ datos ============ */
+const BANK = JSON.parse(document.getElementById("bank-data").textContent);
+const TOPICS = JSON.parse(document.getElementById("topics-data").textContent);
+const QINDEX = {};
+let TOTAL_Q = 0;
+BANK.forEach(m => m.questions.forEach((q, i) => {
+  q.qid = m.id * 100 + i; q.module = m.id;
+  QINDEX[q.qid] = q; TOTAL_Q++;
+}));
+const MODS = BANK.map(m => ({ id: m.id, name: m.name }));
+
+/* ============ estado persistente ============ */
+const KEY = "mi500_state_v1";
+const blank = () => ({ history: [], qstats: {}, mlog: {} });
+let S = blank();
+try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+
+/* ============ métricas ============ */
+function mastery(mid) {
+  const log = S.mlog[mid];
+  if (!log || !log.length) return null;
+  let num = 0, den = 0;
+  log.forEach((v, i) => { const w = i + 1; num += v * w; den += w; });
+  return num / den;
+}
+function globalMastery() {
+  if (!MODS.length) return 0;
+  let sum = 0; MODS.forEach(m => { sum += (mastery(m.id) ?? 0); });
+  return sum / MODS.length;
+}
+const LEVELS = [
+  [0, "Aprendiz"], [.40, "Técnico"], [.60, "Especialista"], [.75, "Ingeniero"], [.90, "Máster"]
+];
+function levelName(g) {
+  let name = LEVELS[0][1];
+  LEVELS.forEach(([th, n]) => { if (g >= th) name = n; });
+  return name;
+}
+function statusColor(v) {
+  if (v == null) return "var(--muted)";
+  if (v < .40) return "var(--st-crit)";
+  if (v < .60) return "var(--st-serious)";
+  if (v < .80) return "var(--st-warn)";
+  return "var(--st-good)";
+}
+function statusWord(v) {
+  if (v == null) return "sin datos";
+  if (v < .40) return "crítico";
+  if (v < .60) return "flojo";
+  if (v < .80) return "en progreso";
+  return "dominado";
+}
+function accuracy() {
+  let c = 0, s = 0;
+  Object.values(S.qstats).forEach(st => { c += st.c; s += st.s; });
+  return s ? c / s : null;
+}
+function streakDays() {
+  if (!S.history.length) return 0;
+  const days = new Set(S.history.map(h => new Date(h.t).toDateString()));
+  let n = 0; const d = new Date();
+  if (!days.has(d.toDateString())) d.setDate(d.getDate() - 1);
+  while (days.has(d.toDateString())) { n++; d.setDate(d.getDate() - 1); }
+  return n;
+}
+function wrongPool() {
+  return Object.entries(S.qstats)
+    .filter(([qid, st]) => st.last === 0 && QINDEX[qid])
+    .map(([qid]) => QINDEX[qid]);
+}
+
+/* ============ utilidades ============ */
+const $ = id => document.getElementById(id);
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]]; } return a; };
+const pct = v => Math.round(v * 100) + "%";
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+function pickWeighted(items, wfn, n) {
+  const pool = items.slice(); const out = [];
+  while (pool.length && out.length < n) {
+    const ws = pool.map(wfn); const tot = ws.reduce((a, b) => a + b, 0);
+    let r = Math.random() * tot, idx = 0;
+    for (; idx < pool.length; idx++) { r -= ws[idx]; if (r <= 0) break; }
+    if (idx >= pool.length) idx = pool.length - 1;
+    out.push(pool.splice(idx, 1)[0]);
+  }
+  return out;
+}
+function freshness(q) { const st = S.qstats[q.qid]; return st ? 1 / (1 + st.s) : 1; }
+
+/* ============ selección de preguntas ============ */
+function buildDiagnostic() {
+  const items = [];
+  BANK.forEach(m => {
+    const easyish = m.questions.filter(q => q.difficulty <= 2);
+    const hardish = m.questions.filter(q => q.difficulty >= 2);
+    const a = pickWeighted(easyish.length ? easyish : m.questions, freshness, 1);
+    const rest = (hardish.length ? hardish : m.questions).filter(q => !a.includes(q));
+    const b = pickWeighted(rest.length ? rest : m.questions.filter(q => !a.includes(q)), freshness, 1);
+    items.push(...a, ...b);
+  });
+  return shuffle(items);
+}
+function targetDiffWeights(mid) {
+  const m = mastery(mid);
+  if (m == null || m < .45) return { 1: .5, 2: .35, 3: .15 };
+  if (m < .70) return { 1: .25, 2: .5, 3: .25 };
+  return { 1: .1, 2: .4, 3: .5 };
+}
+function buildAdaptive(n) {
+  const all = [];
+  BANK.forEach(m => {
+    const need = 1.15 - (mastery(m.id) ?? 0);
+    const dw = targetDiffWeights(m.id);
+    m.questions.forEach(q => all.push({ q, w: need * (dw[q.difficulty] || .3) * (0.4 + freshness(q)) }));
+  });
+  return pickWeighted(all, x => x.w, n).map(x => x.q);
+}
+function buildModule(mid, n) {
+  const m = BANK.find(x => x.id === mid);
+  return pickWeighted(m.questions, freshness, Math.min(n, m.questions.length));
+}
+function buildQuick(n) { return buildAdaptive(n); }
+
+/* ============ vistas ============ */
+function show(view) {
+  ["view-dash", "view-exam", "view-results"].forEach(v => $(v).classList.add("hidden"));
+  $(view).classList.remove("hidden");
+  window.scrollTo(0, 0);
+}
+
+/* ============ gauge SVG ============ */
+function drawGauge(svgId, frac, size, color) {
+  const svg = $(svgId); const c = size / 2, r = c - 8;
+  const circ = 2 * Math.PI * r;
+  const val = Math.max(0, Math.min(1, frac || 0));
+  svg.innerHTML =
+    `<circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="var(--surface-2)" stroke-width="9"/>` +
+    `<circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="${color}" stroke-width="9"
+      stroke-linecap="round" stroke-dasharray="${(val * circ).toFixed(1)} ${circ.toFixed(1)}"
+      transform="rotate(-90 ${c} ${c})"/>` +
+    `<text x="${c}" y="${c + 4}" text-anchor="middle" font-size="${size * .2}" fill="var(--ink)" font-weight="600">${frac == null ? "—" : Math.round(val * 100)}</text>`;
+}
+
+/* ============ dashboard ============ */
+function renderDash() {
+  const g = globalMastery();
+  const calibrated = S.history.length > 0;
+  const lvl = calibrated ? levelName(g) : "Sin calibrar";
+  $("hdrLevel").textContent = calibrated ? ("NIVEL: " + lvl.toUpperCase()) : "SIN CALIBRAR";
+  $("kLevel").textContent = lvl;
+  $("kLevelPct").textContent = calibrated ? (pct(g) + " de dominio global") : "— · realiza el diagnóstico";
+  drawGauge("gauge", calibrated ? g : 0, 92, "var(--accent)");
+  $("kExams").textContent = S.history.length;
+  const acc = accuracy();
+  $("kAcc").textContent = acc == null ? "—" : pct(acc);
+  $("kStreak").textContent = streakDays();
+
+  /* barras por módulo */
+  const wrap = $("moduleBars"); wrap.innerHTML = "";
+  MODS.forEach(m => {
+    const v = mastery(m.id);
+    const row = document.createElement("button");
+    row.className = "mrow";
+    row.setAttribute("aria-label", `Practicar ${m.name}: ${v == null ? "sin datos" : pct(v)}`);
+    row.innerHTML =
+      `<span class="mname">${esc(m.name)}</span>` +
+      `<span class="track"><span class="fill" style="width:${v == null ? 0 : Math.max(2, v * 100)}%;background:${statusColor(v)}"></span></span>` +
+      `<span class="mval">${v == null ? "—" : pct(v)}<span class="word">${statusWord(v)}</span></span>`;
+    row.addEventListener("click", () => startExam("module", m.id));
+    wrap.appendChild(row);
+  });
+
+  /* repaso pendiente */
+  const wp = wrongPool();
+  $("tagWrong").textContent = wp.length + " PEND";
+  $("btnWrong").disabled = wp.length === 0;
+  $("tagDiag").textContent = Math.min(20, TOTAL_Q) + " PREG";
+  $("bankNote").textContent = `Banco: ${TOTAL_Q} preguntas · ${MODS.length} módulos · generado desde tus fuentes`;
+
+  renderProgress();
+  renderRecs();
+}
+
+function renderProgress() {
+  const box = $("progChart");
+  const H = S.history.slice(-24);
+  if (H.length < 2) {
+    box.innerHTML = `<div class="chart-empty">Completa al menos dos evaluaciones para ver tu evolución.</div>`;
+    return;
+  }
+  const W = box.clientWidth || 560, Hh = 190;
+  const padL = 34, padR = 14, padT = 12, padB = 22;
+  const iw = W - padL - padR, ih = Hh - padT - padB;
+  const x = i => padL + (H.length === 1 ? iw / 2 : i * iw / (H.length - 1));
+  const y = v => padT + ih - v * ih;
+  let grid = "", labels = "";
+  [0, .5, 1].forEach(v => {
+    grid += `<line x1="${padL}" y1="${y(v)}" x2="${W - padR}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/>`;
+    labels += `<text x="${padL - 6}" y="${y(v) + 3.5}" text-anchor="end" font-size="10" fill="var(--muted)">${v * 100}</text>`;
+  });
+  const pts = H.map((h, i) => [x(i), y(h.score / h.total)]);
+  const line = pts.map(p => p.join(",")).join(" ");
+  const area = `M${padL},${y(0)} L` + line.replace(/ /g, " L") + ` L${pts[pts.length - 1][0]},${y(0)} Z`;
+  let dots = "";
+  H.forEach((h, i) => {
+    const last = i === H.length - 1;
+    dots += `<circle cx="${pts[i][0]}" cy="${pts[i][1]}" r="${last ? 5 : 3.5}" fill="${last ? "var(--chart-line)" : "var(--surface)"}"
+      stroke="var(--chart-line)" stroke-width="2" data-i="${i}" style="cursor:default"/>`;
+  });
+  const lastV = H[H.length - 1];
+  const endLbl = `<text x="${pts[pts.length - 1][0]}" y="${pts[pts.length - 1][1] - 10}" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink)">${Math.round(lastV.score / lastV.total * 100)}%</text>`;
+  box.innerHTML = `<svg width="100%" height="${Hh}" viewBox="0 0 ${W} ${Hh}" role="img" aria-label="Evolución de puntuaciones de exámenes">
+    ${grid}${labels}
+    <path d="${area}" fill="var(--chart-fill)"/>
+    <polyline points="${line}" fill="none" stroke="var(--chart-line)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    ${dots}${endLbl}
+  </svg>`;
+  const tip = $("tip");
+  box.querySelectorAll("circle").forEach(cir => {
+    cir.addEventListener("mousemove", ev => {
+      const h = H[+cir.dataset.i];
+      const d = new Date(h.t);
+      tip.innerHTML = `${d.toLocaleDateString("es", { day: "numeric", month: "short" })} · ${esc(h.mode)}<br><b>${h.score}/${h.total}</b> (${Math.round(h.score / h.total * 100)}%)`;
+      tip.style.display = "block";
+      tip.style.left = Math.min(ev.clientX + 12, innerWidth - 200) + "px";
+      tip.style.top = (ev.clientY - 40) + "px";
+    });
+    cir.addEventListener("mouseleave", () => tip.style.display = "none");
+  });
+}
+
+function renderRecs() {
+  const box = $("recs");
+  const ranked = MODS.map(m => ({ m, v: mastery(m.id) }))
+    .sort((a, b) => (a.v ?? -1) - (b.v ?? -1)).slice(0, 3);
+  if (!S.history.length) {
+    box.innerHTML = `<div class="chart-empty">Haz el diagnóstico para recibir un plan de estudio priorizado.</div>`;
+    return;
+  }
+  box.innerHTML = ranked.map(({ m, v }) => {
+    const t = TOPICS[m.id] || [];
+    return `<div class="rec"><span class="dot" style="background:${statusColor(v)}"></span>
+      <div><b>${esc(m.name)}</b> — ${v == null ? "aún sin evaluar" : "dominio " + pct(v)}
+      <div class="subt">Repasa: ${esc(t.slice(0, 3).join(" · "))}</div></div></div>`;
+  }).join("");
+}
+
+/* ============ examen ============ */
+let X = null, timerInt = null;
+
+function startExam(mode, moduleId) {
+  let items, title, tag, immediate = false;
+  if (mode === "diag") { items = buildDiagnostic(); title = "Diagnóstico completo"; tag = "EX-DG"; }
+  else if (mode === "adapt") { items = buildAdaptive(15); title = "Examen adaptativo"; tag = "EX-AD"; }
+  else if (mode === "quick") { items = buildQuick(8); title = "Ronda rápida"; tag = "EX-RR"; immediate = true; }
+  else if (mode === "wrong") { items = shuffle(wrongPool()).slice(0, 15); title = "Repaso de falladas"; tag = "EX-RP"; immediate = true; }
+  else { const m = MODS.find(x => x.id === moduleId); items = buildModule(moduleId, 9); title = "Práctica: " + m.name; tag = "EX-M" + String(moduleId).padStart(2, "0"); immediate = true; }
+  if (!items.length) return;
+
+  X = {
+    mode, moduleId, title, tag, immediate,
+    items: items.map(q => {
+      const order = shuffle([0, 1, 2, 3]);
+      return { q, options: order.map(i => q.options[i]), correct: order.indexOf(q.correct) };
+    }),
+    ans: new Array(items.length).fill(null),
+    revealed: new Array(items.length).fill(false),
+    idx: 0, t0: Date.now(), done: false
+  };
+  $("xTag").textContent = tag;
+  $("xTitle").textContent = title;
+  clearInterval(timerInt);
+  timerInt = setInterval(() => {
+    const s = Math.floor((Date.now() - X.t0) / 1000);
+    $("xTimer").textContent = String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0");
+  }, 1000);
+  $("xTimer").textContent = "00:00";
+  show("view-exam");
+  renderQ();
+}
+
+const DIFF = { 1: ["BÁSICA", "d1"], 2: ["INTERMEDIA", "d2"], 3: ["AVANZADA", "d3"] };
+
+function renderQ() {
+  const it = X.items[X.idx], q = it.q;
+  const modName = (MODS.find(m => m.id === q.module) || {}).name || "";
+  $("xProg").style.width = ((X.idx) / X.items.length * 100) + "%";
+  const [dn, dc] = DIFF[q.difficulty] || DIFF[2];
+  $("qMeta").innerHTML =
+    `<span class="chip">${esc(modName)}</span>` +
+    `<span class="chip ${dc}">${dn}</span>` +
+    `<span class="chip">PREGUNTA ${X.idx + 1}/${X.items.length}</span>`;
+  $("qText").textContent = q.q;
+
+  const revealed = X.revealed[X.idx];
+  const sel = X.ans[X.idx];
+  const opts = $("qOpts"); opts.innerHTML = "";
+  const KEYS = ["A", "B", "C", "D"];
+  it.options.forEach((op, i) => {
+    const b = document.createElement("button");
+    b.className = "opt";
+    if (revealed) {
+      b.disabled = true;
+      if (i === it.correct) b.classList.add("correct");
+      else if (i === sel) b.classList.add("wrong");
+    } else if (i === sel) b.classList.add("sel");
+    b.innerHTML = `<span class="key">${KEYS[i]}</span><span>${esc(op)}</span>`;
+    b.addEventListener("click", () => answer(i));
+    opts.appendChild(b);
+  });
+
+  const ex = $("qExplain");
+  if (revealed && q.explanation) {
+    ex.innerHTML = `<b>${sel === it.correct ? "Correcto." : "Incorrecto."}</b> ${esc(q.explanation)}`;
+    ex.classList.remove("hidden");
+  } else ex.classList.add("hidden");
+
+  $("btnPrev").disabled = X.idx === 0 || X.immediate;
+  $("btnPrev").classList.toggle("hidden", X.immediate);
+  const answered = sel != null;
+  const last = X.idx === X.items.length - 1;
+  $("btnNext").textContent = last ? "Finalizar ✓" : "Siguiente →";
+  $("btnNext").disabled = X.immediate ? !revealed : !answered;
+
+  const nd = $("navDots"); nd.innerHTML = "";
+  if (!X.immediate) {
+    X.items.forEach((_, i) => {
+      const d = document.createElement("button");
+      d.className = "ndot" + (X.ans[i] != null ? " done" : "") + (i === X.idx ? " cur" : "");
+      d.textContent = i + 1;
+      d.setAttribute("aria-label", "Ir a pregunta " + (i + 1));
+      d.addEventListener("click", () => { X.idx = i; renderQ(); });
+      nd.appendChild(d);
+    });
+  }
+}
+
+function answer(i) {
+  if (X.revealed[X.idx]) return;
+  X.ans[X.idx] = i;
+  if (X.immediate) { X.revealed[X.idx] = true; recordOne(X.idx); }
+  renderQ();
+}
+
+function recordOne(idx) {
+  const it = X.items[idx], q = it.q;
+  const ok = X.ans[idx] === it.correct ? 1 : 0;
+  const st = S.qstats[q.qid] || { s: 0, c: 0, w: 0, last: 1 };
+  st.s++; ok ? st.c++ : st.w++; st.last = ok;
+  S.qstats[q.qid] = st;
+  const log = S.mlog[q.module] || [];
+  log.push(ok); if (log.length > 40) log.shift();
+  S.mlog[q.module] = log;
+}
+
+function finishExam(abandoned) {
+  clearInterval(timerInt);
+  if (!X.immediate) X.items.forEach((_, i) => { if (X.ans[i] != null) recordOne(i); });
+  const answeredIdx = X.items.map((_, i) => i).filter(i => X.ans[i] != null);
+  const score = answeredIdx.filter(i => X.ans[i] === X.items[i].correct).length;
+  const total = X.items.length;
+  const secs = Math.round((Date.now() - X.t0) / 1000);
+  if (answeredIdx.length) {
+    S.history.push({ t: Date.now(), mode: X.title, score, total, secs });
+    if (S.history.length > 200) S.history.shift();
+  }
+  save();
+  if (abandoned) { renderDash(); show("view-dash"); return; }
+  renderResults(score, total, secs);
+}
+
+function renderResults(score, total, secs) {
+  const frac = total ? score / total : 0;
+  $("rTitle").textContent = X.title;
+  $("rScore").textContent = Math.round(frac * 100) + "%";
+  $("rDetail").textContent = `${score} de ${total} correctas · ${Math.floor(secs / 60)}m ${secs % 60}s`;
+  drawGauge("rGauge", frac, 110, frac >= .75 ? "var(--st-good)" : frac >= .5 ? "var(--st-warn)" : "var(--st-crit)");
+  const g = globalMastery();
+  let msg;
+  if (frac >= .9) msg = `Excelente. Rendimiento de nivel <b>Máster</b> en esta prueba. Tu dominio global queda en <b>${pct(g)}</b> (${levelName(g)}).`;
+  else if (frac >= .75) msg = `Muy bien. Vas camino de <b>Máster</b>: consolida los fallos de abajo. Dominio global: <b>${pct(g)}</b> (${levelName(g)}).`;
+  else if (frac >= .5) msg = `Base razonable, pero un examen real exige más. Revisa las explicaciones y repite en modo <b>Repaso de falladas</b>. Dominio global: <b>${pct(g)}</b> (${levelName(g)}).`;
+  else msg = `Zona crítica: prioriza los módulos marcados en rojo del tablero y vuelve al diagnóstico en unos días. Dominio global: <b>${pct(g)}</b> (${levelName(g)}).`;
+  $("rMsg").innerHTML = msg;
+
+  const rev = $("review");
+  const order = X.items.map((_, i) => i).sort((a, b) => {
+    const wa = X.ans[a] === X.items[a].correct ? 1 : 0;
+    const wb = X.ans[b] === X.items[b].correct ? 1 : 0;
+    return wa - wb;
+  });
+  const KEYS = ["A", "B", "C", "D"];
+  rev.innerHTML = order.map(i => {
+    const it = X.items[i], q = it.q, sel = X.ans[i];
+    const ok = sel === it.correct;
+    const modName = (MODS.find(m => m.id === q.module) || {}).name || "";
+    return `<div class="rev-item">
+      <p class="rq"><span class="rev-flag ${ok ? "ok" : "bad"}">${ok ? "OK" : "FALLO"}</span>${esc(q.q)}
+        <span class="chip" style="margin-left:6px">${esc(modName)}</span></p>
+      ${sel == null ? `<p class="ra bad">Sin responder</p>`
+        : ok ? `<p class="ra ok">✓ ${KEYS[it.correct]} · ${esc(it.options[it.correct])}</p>`
+        : `<p class="ra bad">✗ Tu respuesta: ${KEYS[sel]} · ${esc(it.options[sel])}</p>
+           <p class="ra ok">✓ Correcta: ${KEYS[it.correct]} · ${esc(it.options[it.correct])}</p>`}
+      ${q.explanation ? `<p class="rx">${esc(q.explanation)}</p>` : ""}
+    </div>`;
+  }).join("");
+  show("view-results");
+}
+
+/* ============ eventos ============ */
+$("btnDiag").addEventListener("click", () => startExam("diag"));
+$("btnAdapt").addEventListener("click", () => startExam("adapt"));
+$("btnQuick").addEventListener("click", () => startExam("quick"));
+$("btnWrong").addEventListener("click", () => startExam("wrong"));
+$("btnPrev").addEventListener("click", () => { if (X.idx > 0) { X.idx--; renderQ(); } });
+$("btnNext").addEventListener("click", () => {
+  if (X.idx < X.items.length - 1) { X.idx++; renderQ(); }
+  else finishExam(false);
+});
+$("btnQuit").addEventListener("click", () => {
+  if (confirm("¿Abandonar el examen? Las preguntas ya respondidas en modo práctica quedan registradas.")) finishExam(true);
+});
+$("btnBack").addEventListener("click", () => { renderDash(); show("view-dash"); });
+$("btnRetry").addEventListener("click", () => startExam(X.mode, X.moduleId));
+$("btnReset").addEventListener("click", () => {
+  if (confirm("Esto borra todo tu historial y niveles. ¿Continuar?")) { S = blank(); save(); renderDash(); }
+});
+$("btnExport").addEventListener("click", () => {
+  const blob = new Blob([JSON.stringify(S)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "mi500_progreso_" + new Date().toISOString().slice(0, 10) + ".json";
+  a.click(); URL.revokeObjectURL(a.href);
+});
+$("btnImport").addEventListener("click", () => $("fileImport").click());
+$("fileImport").addEventListener("change", ev => {
+  const f = ev.target.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      const d = JSON.parse(r.result);
+      if (!d.history || !d.qstats) throw new Error("formato");
+      S = Object.assign(blank(), d); save(); renderDash();
+      alert("Respaldo restaurado.");
+    } catch (e) { alert("El archivo no es un respaldo válido."); }
+  };
+  r.readAsText(f);
+  ev.target.value = "";
+});
+window.addEventListener("resize", () => { if (!$("view-dash").classList.contains("hidden")) renderProgress(); });
+
+renderDash();
+</script>
+
+</body></html>

@@ -1,0 +1,188 @@
+{
+  "id": 9,
+  "name": "Control de Procesos",
+  "questions": [
+    {
+      "q": "¿Cuál es el principal inconveniente de un sistema de control que solo utiliza la acción proporcional (P)?",
+      "options": [
+        "La inestabilidad permanente del lazo.",
+        "La presencia de una desviación permanente u 'offset'.",
+        "La lentitud excesiva ante cambios de carga.",
+        "La imposibilidad de actuar sobre válvulas neumáticas."
+      ],
+      "correct": 1,
+      "explanation": "El control proporcional puro no puede eliminar la desviación permanente (offset) entre la variable y el punto de consigna ante cambios de carga.",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "¿En un esquema de control en cascada, de qué manera interactúan los controladores primario y secundario?",
+      "options": [
+        "Sus salidas se suman en un relé selector de baja.",
+        "Sus salidas se multiplican para ajustar la ganancia total.",
+        "La señal de salida del controlador primario es el punto de consigna del secundario.",
+        "El controlador secundario ajusta la banda proporcional del primario."
+      ],
+      "correct": 2,
+      "explanation": "En el control en cascada, el controlador primario (maestro) manda su señal de salida al punto de consigna del secundario (esclavo).",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "¿Qué acción de control se caracteriza por mover la válvula en una cantidad proporcional a la pendiente de la variable de proceso?",
+      "options": [
+        "Acción Proporcional",
+        "Acción Integral",
+        "Control Todo-Nada",
+        "Acción Derivativa"
+      ],
+      "correct": 3,
+      "explanation": "La acción derivativa es proporcional a la velocidad de cambio (pendiente) de la variable, anticipándose a la desviación.",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "¿Cuál es la distinción fundamental entre el control anticipativo (feedforward) y el control de realimentación (feedback)?",
+      "options": [
+        "El feedforward mide las perturbaciones de entrada para corregir antes de que afecten a la salida.",
+        "El feedback no requiere un sensor de medida en el proceso.",
+        "El feedforward solo funciona en lazos de control de nivel de líquidos.",
+        "El feedback es inherentemente más rápido que el feedforward al no usar modelos matemáticos."
+      ],
+      "correct": 0,
+      "explanation": "A diferencia del feedback, el control feedforward actúa sobre la variable manipulada basándose en medidas de las perturbaciones de entrada.",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "En el contexto de la seguridad funcional IEC 61508, ¿qué implica una arquitectura redundante de tipo 2oo3 (dos de tres)?",
+      "options": [
+        "Que el sistema tiene tres niveles SIL de seguridad consecutivos.",
+        "Que se requieren tres fallos simultáneos para que el proceso se detenga.",
+        "Que existen tres canales de los cuales al menos dos deben funcionar correctamente.",
+        "Que el sistema es un 50% más rápido que uno de canal simple 1oo1."
+      ],
+      "correct": 2,
+      "explanation": "En una arquitectura 2oo3, existen tres canales y se requiere que dos de ellos funcionen bien para realizar las funciones de seguridad.",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "Al emplear el método de sintonización de ganancia límite de Ziegler-Nichols, ¿cómo deben configurarse las acciones integral y derivada antes de iniciar el ensayo?",
+      "options": [
+        "Integral al mínimo y derivada al máximo.",
+        "Integral en su valor más bajo (infinitos min/rep) y derivada en cero.",
+        "Ambas acciones deben ajustarse a la mitad de su rango de calibración.",
+        "Integral en un minuto por repetición y derivada en un minuto de anticipo."
+      ],
+      "correct": 1,
+      "explanation": "Para encontrar la ganancia límite, se deben anular las acciones integral (Ti = infinito) y derivada (Td = 0).",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "Un controlador proporcional tiene ganancia 2 en una escala de 0-100 °C. Si el punto de consigna es 50 °C, ¿en qué intervalo de temperatura la válvula realizará su carrera completa?",
+      "options": [
+        "De 25 °C a 75 °C",
+        "De 0 °C a 50 °C",
+        "De 40 °C a 60 °C",
+        "De 50 °C a 100 °C"
+      ],
+      "correct": 0,
+      "explanation": "Ganancia 2 equivale a BP=50%. Con el punto de consigna al 50%, la banda se extiende un 25% por encima y un 25% por debajo.",
+      "difficulty": 3,
+      "module": 9
+    },
+    {
+      "q": "Utilizando el método de ganancia límite, se obtiene una oscilación mantenida con un periodo Pu = 12 minutos. ¿Qué tiempo de acción integral (Ti) debe ajustarse para un controlador PI?",
+      "options": [
+        "14,4 minutos por repetición",
+        "10,0 minutos por repetición",
+        "6,0 minutos por repetición",
+        "1,5 minutos por repetición"
+      ],
+      "correct": 1,
+      "explanation": "Según las fórmulas de Ziegler-Nichols para un controlador PI, Ti = Pu / 1,2. En este caso, 12 / 1,2 = 10.",
+      "difficulty": 3,
+      "module": 9
+    },
+    {
+      "q": "En un proceso discontinuo (batch), ¿cuál es la causa principal del fenómeno conocido como saturación integral o 'reset windup'?",
+      "options": [
+        "Un fallo en el suministro de aire comprimido a la válvula.",
+        "La existencia de un tiempo muerto excesivo en el transmisor.",
+        "La acumulación de error por el integrador mientras la variable está fuera de la banda proporcional.",
+        "Una ganancia proporcional demasiado baja para la dinámica del reactor."
+      ],
+      "correct": 2,
+      "explanation": "La saturación integral ocurre cuando el controlador sigue integrando el error mientras la salida está saturada (válvula totalmente abierta o cerrada).",
+      "difficulty": 3,
+      "module": 9
+    },
+    {
+      "q": "¿Qué característica define técnicamente al control flotante de velocidad constante?",
+      "options": [
+        "La velocidad de movimiento del elemento final es proporcional a la magnitud del error",
+        "El elemento final se mueve a una velocidad única y fija siempre que existe una desviación",
+        "La salida del controlador varía de forma isoporcentual con respecto al tiempo",
+        "El instrumento adopta solo dos posiciones extremas en función del punto de consigna"
+      ],
+      "correct": 1,
+      "explanation": "El control flotante se caracteriza por mover el elemento final de control a una velocidad única e independiente de la magnitud de la desviación mientras esta se mantenga fuera de la zona neutra [1-3].",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "¿Cuál es el objetivo principal de implementar una estrategia de control selectivo (override control) en un proceso industrial?",
+      "options": [
+        "Compensar dinámicamente los tiempos muertos mediante un modelo interno",
+        "Desacoplar las interacciones mutuas entre variables en sistemas multivariables",
+        "Limitar una variable de proceso en un valor de seguridad para evitar daños al equipo o al producto",
+        "Sincronizar el arranque y parada de diversos motores de forma secuencial"
+      ],
+      "correct": 2,
+      "explanation": "El control selectivo se emplea fundamentalmente para limitar variables de proceso en valores altos o bajos de seguridad, seleccionando la señal adecuada para prevenir daños en el proceso o producto [4-6].",
+      "difficulty": 1,
+      "module": 9
+    },
+    {
+      "q": "En un sistema de control de gama partida (split range), ¿de qué manera se logra habitualmente que dos válvulas actúen sobre diferentes sectores de la señal de salida (por ejemplo, 4-12 mA y 12-20 mA)?",
+      "options": [
+        "Mediante la programación de dos bloques PID independientes en el controlador",
+        "Utilizando posicionadores o convertidores I/P ajustados a los sub-márgenes específicos de la señal",
+        "Instalando un relé de relación con ganancia inversa entre ambas válvulas",
+        "Configurando transmisores con diferentes tiempos de respuesta para cada sector"
+      ],
+      "correct": 1,
+      "explanation": "La partición de la señal se consigue generalmente mediante posicionadores acoplados a las válvulas o convertidores I/P calibrados para responder a una fracción del rango total de control del instrumento [7-9].",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "Al configurar un lazo de control de relación (ratio control), ¿qué factor técnico es determinante para el ajuste del dial del relé de relación?",
+      "options": [
+        "La relación entre los campos de medida (spans) de los transmisores primario y secundario",
+        "El tiempo de retardo dominante del lazo de realimentación principal",
+        "La constante de tiempo del elemento final de control secundario",
+        "La frecuencia crítica obtenida en el ensayo de lazo abierto"
+      ],
+      "correct": 0,
+      "explanation": "El ajuste del relé de relación es función de los campos de medida relativos de los transmisores para asegurar que la proporción física deseada coincida con la relación de las señales [10-12].",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "Durante un ensayo de sintonización por el método de ganancia límite de Ziegler-Nichols, se obtiene una oscilación mantenida con una ganancia crítica Kc = 5 y un período Pu = 16 minutos. ¿Qué valores de ganancia (g) y tiempo de acción derivada (Td) deben configurarse para un controlador PID?",
+      "options": [
+        "g = 2,25; Td = 13,3 min",
+        "g = 2,5; Td = 4 min",
+        "g = 3,0; Td = 2 min",
+        "g = 2,0; Td = 5,3 min"
+      ],
+      "correct": 2,
+      "explanation": "Según las reglas de Z-N para PID: la ganancia g = 0,6 * Kc = 3,0; y el tiempo de acción derivada Td = Pu / 8 = 2 minutos [13-15].",
+      "difficulty": 3,
+      "module": 9
+    }
+  ]
+}

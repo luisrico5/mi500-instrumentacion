@@ -1,0 +1,188 @@
+{
+  "id": 7,
+  "name": "Elementos Finales de Control",
+  "questions": [
+    {
+      "q": "¿Cómo se define el coeficiente de caudal Cv de una válvula de control según los estándares técnicos descritos?",
+      "options": [
+        "El caudal de agua a 20 °C en m3/h que pasa con una pérdida de carga de 1 bar.",
+        "El caudal de agua en galones USA por minuto a 60 °F que pasa con una caída de presión de 1 psi.",
+        "La relación entre el caudal máximo y el mínimo que la válvula puede regular con precisión.",
+        "La presión diferencial máxima que el servomotor puede vencer para cerrar la válvula."
+      ],
+      "correct": 1,
+      "explanation": "El coeficiente Cv se define específicamente como el caudal en gpm de agua a 60 °F con una caída de 1 psi, mientras que el Kv utiliza unidades métricas (m3/h y bar).",
+      "difficulty": 1,
+      "module": 7
+    },
+    {
+      "q": "En una válvula con característica de caudal inherente de 'igual porcentaje' (isoporcentual), ¿cuál es su comportamiento operativo?",
+      "options": [
+        "El caudal es directamente proporcional a la carrera del obturador.",
+        "El caudal aumenta muy poco al principio y mucho al final de la carrera para incrementos iguales.",
+        "Cada incremento porcentual de la carrera produce un incremento porcentual igual en el caudal.",
+        "El obturador tiene forma de disco plano para alcanzar el caudal máximo rápidamente."
+      ],
+      "correct": 2,
+      "explanation": "La característica isoporcentual se define porque cada incremento de carrera genera un aumento proporcional al caudal que circulaba en el punto anterior.",
+      "difficulty": 1,
+      "module": 7
+    },
+    {
+      "q": "¿Qué fenómeno físico se produce cuando la presión del fluido en la vena contraída cae por debajo de la presión de vapor y la presión de salida permanece también por debajo de dicha presión de vapor?",
+      "options": [
+        "Cavitación (implosión de burbujas).",
+        "Vaporización (flashing).",
+        "Recuperación de presión subcrítica.",
+        "Efecto vórtex por alta viscosidad."
+      ],
+      "correct": 1,
+      "explanation": "El flashing ocurre cuando la presión de salida es menor o igual a la de vapor, manteniendo el fluido en fase vapor o mezcla líquido-vapor tras la válvula.",
+      "difficulty": 1,
+      "module": 7
+    },
+    {
+      "q": "Al comparar válvulas de globo, ¿cuál es la ventaja principal de un diseño de simple asiento frente a uno de doble asiento?",
+      "options": [
+        "Permite un cierre mucho más estanco con menores fugas (Clase IV o VI).",
+        "Requiere un actuador más pequeño para la misma presión diferencial.",
+        "Es inherentemente equilibrada respecto a las fuerzas estáticas del fluido.",
+        "Tiene una capacidad de caudal (Cv) superior para el mismo diámetro de cuerpo."
+      ],
+      "correct": 0,
+      "explanation": "Las válvulas de simple asiento ofrecen un cierre más estanco, mientras que las de doble asiento se prefieren para altas presiones porque las fuerzas están equilibradas.",
+      "difficulty": 2,
+      "module": 7
+    },
+    {
+      "q": "¿Cuál es la función técnica fundamental de un posicionador acoplado a un actuador neumático?",
+      "options": [
+        "Amplificar la señal de control de 3 a 15 psi hasta niveles de 100 psi.",
+        "Garantizar que la posición del vástago sea proporcional a la señal de control venciendo rozamientos.",
+        "Invertir mecánicamente la acción del obturador de 'bajar para cerrar' a 'bajar para abrir'.",
+        "Controlar la presión de entrada al cuerpo de la válvula para evitar la cavitación."
+      ],
+      "correct": 1,
+      "explanation": "El posicionador actúa como un controlador de posición que compara la señal de entrada con la posición real del vástago para eliminar errores por fricción.",
+      "difficulty": 2,
+      "module": 7
+    },
+    {
+      "q": "Si la pérdida de carga disponible para la válvula es muy pequeña respecto a la total del sistema (coeficiente r < 0,4), ¿qué característica de caudal inherente se recomienda seleccionar?",
+      "options": [
+        "Lineal.",
+        "Apertura rápida.",
+        "Igual porcentaje (isoporcentual).",
+        "Parabólica profunda."
+      ],
+      "correct": 2,
+      "explanation": "Cuando r es bajo, la característica efectiva se distorsiona; una válvula isoporcentual tenderá a comportarse como una lineal, mejorando el control.",
+      "difficulty": 2,
+      "module": 7
+    },
+    {
+      "q": "Calcule el coeficiente Kv necesario para una válvula que debe manejar 100 m3/h de un producto con densidad relativa 0,81 y una caída de presión de 4 bar.",
+      "options": [
+        "45",
+        "90",
+        "22,5",
+        "18,2"
+      ],
+      "correct": 0,
+      "explanation": "Kv = Q * √(densidad / deltaP). Kv = 100 * √(0,81 / 4) = 100 * √0,2025 = 100 * 0,45 = 45.",
+      "difficulty": 3,
+      "module": 7
+    },
+    {
+      "q": "Se dispone de una válvula de acción directa (baja para cerrar) equipada con un actuador de acción inversa (aire para abrir/resorte para cerrar). ¿Cuál es su posición de seguridad ante fallo de aire?",
+      "options": [
+        "Totalmente abierta (Fails Open).",
+        "Totalmente cerrada (Fails Closed).",
+        "Mantiene la última posición (Lock-up).",
+        "Posición intermedia al 50% de la carrera."
+      ],
+      "correct": 1,
+      "explanation": "El resorte empuja el vástago hacia abajo (acción inversa del actuador) y al ser una válvula de acción directa (bajar es cerrar), la válvula cierra ante el fallo.",
+      "difficulty": 3,
+      "module": 7
+    },
+    {
+      "q": "Durante una prueba de 'firma' (signature) con un posicionador inteligente, se detecta una histéresis y zona muerta superiores a los valores de fábrica. ¿Cuál es el diagnóstico más probable?",
+      "options": [
+        "Rotura interna del muelle del servomotor.",
+        "Fuga de aire en la membrana del actuador.",
+        "Fricción excesiva en la empaquetadura (estopada) o guías.",
+        "Pérdida de calibración del cero en el controlador digital."
+      ],
+      "correct": 2,
+      "explanation": "La histéresis excesiva en la curva de recorrido frente a presión suele ser indicativo de rozamientos mecánicos elevados en la empaquetadura.",
+      "difficulty": 3,
+      "module": 7
+    },
+    {
+      "q": "¿Cuál es la desventaja técnica principal de la válvula Saunders (o de diafragma) con relación a su accionamiento según las fuentes?",
+      "options": [
+        "No permite el uso de materiales de revestimiento como goma",
+        "El servomotor de accionamiento debe ser muy potente",
+        "Es inadecuada para el manejo de fluidos con sólidos en suspensión",
+        "Presenta una alta caída de presión en posición de apertura total"
+      ],
+      "correct": 1,
+      "explanation": "La fuente indica que, aunque la válvula Saunders es ideal para fluidos agresivos, tiene la desventaja de que su servomotor de accionamiento debe ser muy potente,.",
+      "difficulty": 1,
+      "module": 7
+    },
+    {
+      "q": "Según la norma internacional IEC-534-1987, ¿cómo se define específicamente la 'rangeabilidad' o gama de caudales regulables en una válvula de control?",
+      "options": [
+        "Como la relación entre el caudal máximo y el caudal mínimo regulables",
+        "Como la diferencia algebraica entre los valores extremos del campo de medida",
+        "Como el cociente entre el Cv nominal y el error de repetibilidad del vástago",
+        "Como el porcentaje de la señal de control necesario para iniciar la apertura"
+      ],
+      "correct": 0,
+      "explanation": "La rangeabilidad se define técnicamente como la relación entre el caudal máximo y el caudal mínimo que la válvula puede controlar manteniendo su característica,.",
+      "difficulty": 1,
+      "module": 7
+    },
+    {
+      "q": "Al comparar materiales de sellado para el vástago, ¿por qué se prefiere técnicamente el empleo de teflón frente al grafito siempre que la temperatura sea inferior a 220 °C?",
+      "options": [
+        "Porque el grafito tiene un coeficiente de dilatación mucho menor que el acero",
+        "Porque el coeficiente de rozamiento del grafito es de 7 a 10 veces mayor que el del teflón",
+        "Porque el teflón es el único material que garantiza cero emisiones según la Clean Air Act",
+        "Porque el grafito requiere obligatoriamente una válvula de engrase para no corroer el vástago"
+      ],
+      "correct": 1,
+      "explanation": "La fuente recomienda el teflón sobre el grafito debido a que este último tiene un coeficiente de rozamiento significativamente mayor, lo que dificulta el control,.",
+      "difficulty": 2,
+      "module": 7
+    },
+    {
+      "q": "Considerando la resistencia a la erosión en condiciones extremas, ¿cuál es el diseño de válvula que las fuentes sitúan como el más favorable?",
+      "options": [
+        "Válvula de globo de doble asiento con obturador contorneado",
+        "Válvula de jaula equilibrada con obturador de movimiento lineal",
+        "Válvula en ángulo de simple asiento con obturador contorneado",
+        "Válvula de bola segmentada con dirección de flujo para abrir"
+      ],
+      "correct": 2,
+      "explanation": "Las fuentes técnicas listan la válvula en ángulo de simple asiento con obturador contorneado como la más resistente a la erosión en orden decreciente,.",
+      "difficulty": 2,
+      "module": 7
+    },
+    {
+      "q": "Una bomba centrífuga alimenta un proceso donde una válvula de control regula un caudal de 50 m³/h absorbiendo una pérdida de carga de 4 bar. Calcule la potencia (en Kw) que consume la válvula y que debe ser suministrada por la bomba, utilizando la fórmula técnica: Potencia (Kw) = 0,0266 × ΔP(bar) × Q(m³/h).",
+      "options": [
+        "1,33 Kw",
+        "2,66 Kw",
+        "5,32 Kw",
+        "10,64 Kw"
+      ],
+      "correct": 2,
+      "explanation": "Aplicando la fórmula de la fuente: 0,0266 * 4 bar * 50 m³/h = 5,32 Kw. Este cálculo permite evaluar el gasto energético asociado a la pérdida de carga en la válvula,.",
+      "difficulty": 3,
+      "module": 7
+    }
+  ]
+}

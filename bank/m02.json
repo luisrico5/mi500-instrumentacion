@@ -1,0 +1,188 @@
+{
+  "id": 2,
+  "name": "Medición de Presión",
+  "questions": [
+    {
+      "q": "¿Cuál es la equivalencia exacta de 1 bar en el Sistema Internacional de unidades según las normas mencionadas en las fuentes?",
+      "options": [
+        "10.000 Pascal",
+        "100.000 Pascal",
+        "1,02 kg/cm²",
+        "14,7 psi"
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, en la industria se utiliza el bar, donde 1 bar es igual a 10^5 Pa (100.000 Pascal).",
+      "difficulty": 1,
+      "module": 2
+    },
+    {
+      "q": "¿Qué característica geométrica define al tubo Bourdon original utilizado para la medición de presión?",
+      "options": [
+        "Un tubo de sección circular que forma un anillo completo.",
+        "Un tubo de sección elíptica que forma un anillo casi completo.",
+        "Un muelle helicoidal de sección cuadrada.",
+        "Una serie de cápsulas circulares conectadas por soldadura."
+      ],
+      "correct": 1,
+      "explanation": "La fuente define el tubo de Bourdon como un tubo de sección elíptica que forma un anillo casi completo y cerrado por un extremo.",
+      "difficulty": 1,
+      "module": 2
+    },
+    {
+      "q": "¿Cuál es la función principal del medidor McLeod en el ámbito de la instrumentación industrial?",
+      "options": [
+        "Medir presiones diferenciales en procesos químicos agresivos.",
+        "Actuar como aparato primario de calibración para otros instrumentos de vacío.",
+        "Detectar fugas de helio en espectrómetros de masas.",
+        "Compensar la temperatura en termómetros de bulbo y capilar."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, el medidor McLeod se utiliza como aparato primario de calibración de los restantes instrumentos de vacío.",
+      "difficulty": 1,
+      "module": 2
+    },
+    {
+      "q": "En la medición de presión de vapor de agua, ¿por qué es técnica y económicamente preferible el uso de una 'lira' o 'pigtail'?",
+      "options": [
+        "Porque amplifica la señal de presión mediante un sistema de palancas.",
+        "Porque actúa como un sello químico de silicona para evitar la corrosión.",
+        "Porque enfría el vapor y lo condensa, usando el agua como fluido de sello para proteger el instrumento.",
+        "Porque elimina las vibraciones mecánicas de las bombas alternativas."
+      ],
+      "correct": 2,
+      "explanation": "La fuente indica que es más barato utilizar una lira que enfría el vapor y lo condensa, utilizando así el agua condensada como fluido de sello.",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Al comparar elementos elásticos, ¿cuál es la principal ventaja de los elementos en espiral y helicoidales frente al tubo Bourdon simple?",
+      "options": [
+        "Tienen una mayor resistencia a fluidos altamente corrosivos.",
+        "Proporcionan un desplazamiento del extremo libre más grande, siendo ideales para registradores.",
+        "No requieren compensación por cambios en la presión atmosférica.",
+        "Son capaces de medir vacíos de hasta 10^-9 mm Hg."
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, estos elementos proporcionan un desplazamiento grande del extremo libre y, por ello, son ideales para los instrumentos registradores.",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "¿Qué principio físico permite a los sensores piezoeléctricos realizar medidas dinámicas de presión con respuestas de hasta un millón de ciclos por segundo?",
+      "options": [
+        "La variación de la capacidad en un condensador de placas fijas.",
+        "El cambio de resistencia en un puente de Wheatstone de silicio.",
+        "La generación de un potencial eléctrico al deformarse cristales como el cuarzo.",
+        "La emisión de electrones termoiónicos desde un cátodo caliente."
+      ],
+      "correct": 2,
+      "explanation": "La fuente explica que los elementos piezoeléctricos generan un potencial eléctrico al deformarse y son adecuados para medidas dinámicas por su alta respuesta frecuencial.",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Se desea mantener una presión absoluta de 50 mm Hg en una columna de destilación utilizando un vacuómetro relativo. Si la presión atmosférica sube de 760 mm Hg a 775 mm Hg, ¿qué lectura debe mostrar el instrumento para mantener la presión absoluta deseada?",
+      "options": [
+        "710 mm Hg",
+        "725 mm Hg",
+        "810 mm Hg",
+        "825 mm Hg"
+      ],
+      "correct": 1,
+      "explanation": "Basado en el ejemplo de la fuente: Presión relativa = P. atm - P. abs. Con 775 mm Hg atm y 50 mm Hg abs, la lectura debe ser 775 - 50 = 725 mm Hg.",
+      "difficulty": 3,
+      "module": 2
+    },
+    {
+      "q": "Un transmisor de presión relativa marca 4 bar en una planta donde la presión atmosférica es de 1,013 bar. ¿Cuál es el valor aproximado de la presión absoluta en unidades psi (libras por pulgada cuadrada)?",
+      "options": [
+        "58,0 psi",
+        "43,3 psi",
+        "72,7 psi",
+        "14,5 psi"
+      ],
+      "correct": 2,
+      "explanation": "Presión absoluta = 4 bar (rel) + 1,013 bar (atm) = 5,013 bar. Según la tabla, 1 bar ≈ 14,5 psi. Por tanto, 5,013 * 14,5 ≈ 72,69 psi.",
+      "difficulty": 3,
+      "module": 2
+    },
+    {
+      "q": "Si en un sistema de medición con sello de diafragma se produce una microrrotura que provoca el escape del fluido de llenado (glicerina o silicona), ¿cuál es la consecuencia inmediata según las fuentes técnicas?",
+      "options": [
+        "El instrumento aumenta su exactitud debido a la eliminación de la histéresis del fluido.",
+        "El instrumento queda inhabilitado para realizar la medición.",
+        "El error de cero se desplaza positivamente en un 10% del alcance.",
+        "La rangeabilidad del instrumento se duplica automáticamente."
+      ],
+      "correct": 1,
+      "explanation": "La fuente establece explícitamente que una rotura con escape del líquido de sello inhabilita el instrumento.",
+      "difficulty": 3,
+      "module": 2
+    },
+    {
+      "q": "¿Cuál es el valor de la presión atmosférica estándar al nivel del mar expresado en bar según las definiciones de las fuentes técnicas?",
+      "options": [
+        "1,00000 bar",
+        "1,01325 bar",
+        "1,03322 bar",
+        "0,98700 bar"
+      ],
+      "correct": 1,
+      "explanation": "La fuente define la presión atmosférica estándar como 1,01325 bar o 760 mm de mercurio absolutos al nivel del mar.",
+      "difficulty": 1,
+      "module": 2
+    },
+    {
+      "q": "¿En qué principio físico se basan los elementos térmicos de vacío, como el sensor Pirani o el de termopar?",
+      "options": [
+        "En la ionización de moléculas de gas residual mediante electrones",
+        "En la variación de la conductividad eléctrica del filamento de tungsteno",
+        "En la proporcionalidad entre la energía disipada por un filamento y la presión del gas",
+        "En el desplazamiento mecánico de una membrana de Inconel"
+      ],
+      "correct": 2,
+      "explanation": "Los elementos térmicos se fundamentan en que la energía disipada desde una superficie caliente es proporcional a la presión del gas cuando este se encuentra a bajas presiones absolutas.",
+      "difficulty": 1,
+      "module": 2
+    },
+    {
+      "q": "En un transmisor inteligente de presión de tipo capacitivo, ¿cómo se realiza la transmisión de la presión del proceso hacia el diafragma sensible interno?",
+      "options": [
+        "Mediante un sistema de palancas mecánicas de alta precisión",
+        "A través de un fluido de relleno (aceite) contenido entre diafragmas externos y el sensor",
+        "Por contacto directo del fluido de proceso con las placas fijas del condensador",
+        "Mediante un cristal de silicio dopado con boro sin fluido de llenado"
+      ],
+      "correct": 1,
+      "explanation": "El sensor capacitivo utiliza dos diafragmas externos y un fluido de relleno (aceite) que transmite la presión del proceso hasta el diafragma sensible interno del condensador.",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Al seleccionar un sensor de presión basado en galgas extensiométricas, ¿qué limitación técnica principal debe considerarse según los criterios de estabilidad y señal?",
+      "options": [
+        "Su extrema sensibilidad a los campos magnéticos circundantes",
+        "Presentan una señal de salida débil y son muy sensibles a las vibraciones",
+        "Poseen una respuesta frecuencial muy pobre en medidas de presiones dinámicas",
+        "Tienen una histéresis elevada comparada con el tubo Bourdon convencional"
+      ],
+      "correct": 1,
+      "explanation": "Aunque poseen excelente respuesta frecuencial y no son influidas por campos magnéticos, las galgas tienen una señal de salida débil y son muy sensibles a vibraciones.",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Un transmisor electrónico de presión tiene un campo de medida de 0 a 100 bar y una exactitud del ±0,25% de toda la escala. Si se desea cumplir con la regla metrológica de relación 4:1 entre la exactitud del aparato patrón y la del instrumento a calibrar, ¿cuál debe ser la exactitud (en bar) requerida para el patrón?",
+      "options": [
+        "±0,5000 bar",
+        "±0,2500 bar",
+        "±0,0625 bar",
+        "±0,0150 bar"
+      ],
+      "correct": 2,
+      "explanation": "La exactitud del instrumento es ±0,25 bar (0,25% de 100). Siguiendo la regla 4:1 mencionada en la fuente, el patrón debe ser 4 veces más exacto: 0,25 / 4 = 0,0625 bar [5, 6].",
+      "difficulty": 3,
+      "module": 2
+    }
+  ]
+}

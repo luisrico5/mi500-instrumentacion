@@ -1,0 +1,188 @@
+{
+  "id": 6,
+  "name": "Análisis y Otras Variables",
+  "questions": [
+    {
+      "q": "¿Cuál es la definición matemática del pH según la concentración de iones de hidrógeno [H+] expresada en moles por litro?",
+      "options": [
+        "pH = log [H+]",
+        "pH = log (1 / [H+])",
+        "pH = ln [H+]",
+        "pH = 1 / log [H+]"
+      ],
+      "correct": 1,
+      "explanation": "El pH se define como el logaritmo de la inversa de la concentración del ion hidrógeno.",
+      "difficulty": 1,
+      "module": 6
+    },
+    {
+      "q": "¿En qué unidades se expresa habitualmente la turbidez del agua en los sensores de dispersión modernos?",
+      "options": [
+        "Partes por millón (ppm)",
+        "Unidades nefelométricas de turbidez (NTU)",
+        "Grados Saybolt",
+        "MicroSiemens por centímetro"
+      ],
+      "correct": 1,
+      "explanation": "La turbidez se mide en unidades arbitrarias llamadas unidades nefelométricas de turbidez (NTU).",
+      "difficulty": 1,
+      "module": 6
+    },
+    {
+      "q": "En la medición del potencial de oxidación-reducción (Redox), ¿qué material se utiliza comúnmente como electrodo de medida debido a su sensibilidad a los electrones?",
+      "options": [
+        "Cobre pulido",
+        "Aluminio anodizado",
+        "Metal noble (normalmente platino)",
+        "Hierro fundido"
+      ],
+      "correct": 2,
+      "explanation": "El potencial Redox se mide con un metal noble, frecuentemente platino, que actúa como electrodo sensible a los electrones.",
+      "difficulty": 1,
+      "module": 6
+    },
+    {
+      "q": "¿Qué ventaja técnica presenta el sistema luminescente (optode) para medir el oxígeno disuelto frente a los métodos galvánicos tradicionales?",
+      "options": [
+        "Requiere el cambio semanal del electrolito de hidróxido potásico.",
+        "Se basa en el amortiguamiento de la emisión de luz y es independiente de la velocidad de flujo del agua.",
+        "Es el único método que no requiere compensación de temperatura.",
+        "Funciona mediante la generación de una corriente de 0,8 V c.c. constante."
+      ],
+      "correct": 1,
+      "explanation": "El sistema luminescente aprovecha las características de amortiguamiento de la luz en presencia de oxígeno y no depende del flujo como los electrodos de membrana.",
+      "difficulty": 2,
+      "module": 6
+    },
+    {
+      "q": "Al comparar instrumentos para determinar el punto de rocío, ¿cuál de los siguientes sistemas ofrece la mayor exactitud (± 0,2 °C)?",
+      "options": [
+        "Cámara de niebla manual",
+        "Célula de cloruro de litio",
+        "Sistema de condensación en un espejo",
+        "Sensor polimérico capacitivo"
+      ],
+      "correct": 2,
+      "explanation": "El sistema de condensación en un espejo es el método de mayor exactitud para puntos de rocío entre -30 °C y 130 °C.",
+      "difficulty": 2,
+      "module": 6
+    },
+    {
+      "q": "¿Cuál es la principal ventaja de emplear un sensor de conductividad toroidal (inductivo) en procesos químicos agresivos?",
+      "options": [
+        "Puede medir conductividades inferiores a 0,05 microSiemens/cm.",
+        "Al no tener electrodos en contacto con el líquido, elimina problemas de polarización y recubrimiento.",
+        "No requiere alimentación de corriente alterna.",
+        "Su exactitud es diez veces superior a la de los sensores de contacto."
+      ],
+      "correct": 1,
+      "explanation": "Los sensores toroidales carecen de electrodos metálicos en contacto directo, lo que evita la polarización y la contaminación procedente del proceso.",
+      "difficulty": 2,
+      "module": 6
+    },
+    {
+      "q": "Si un electrodo de vidrio de pH se recubre con una capa de sedimentos del proceso, ¿cuál es el error de medición más probable que se observe?",
+      "options": [
+        "El instrumento marcará pH 7 permanentemente debido al equilibrio químico.",
+        "La lectura mostrará valores de pH falsamente bajos debido a la saturación del electrolito.",
+        "El instrumento indicará valores de pH falsamente altos al comportarse como si hubiera menor concentración de H+.",
+        "La impedancia del circuito bajará drásticamente provocando un cortocircuito."
+      ],
+      "correct": 2,
+      "explanation": "El recubrimiento hace que el electrodo detecte menores concentraciones de ion hidrógeno, lo que resulta en lecturas de pH más elevadas de lo real.",
+      "difficulty": 3,
+      "module": 6
+    },
+    {
+      "q": "Se desea medir la densidad de un producto (rango 0,8 a 0,9 g/cm³) usando un transmisor de DP con margen 0-100 mm c.d.a. ¿Qué distancia 'h' entre tomas debe fijarse?",
+      "options": [
+        "0,5 metros",
+        "1,0 metro",
+        "1,5 metros",
+        "2,0 metros"
+      ],
+      "correct": 1,
+      "explanation": "h = margen / (densidad_max - densidad_min). En este caso: 100 mm / (0,9 - 0,8) = 1000 mm, que equivale a 1 metro.",
+      "difficulty": 3,
+      "module": 6
+    },
+    {
+      "q": "Un instrumento de conductividad no compensado mide una solución de sal neutra. Si la lectura es 100 µS/cm a 25 °C y la temperatura sube a 35 °C, ¿cuál será la lectura aproximada?",
+      "options": [
+        "102 µS/cm",
+        "110 µS/cm",
+        "120 µS/cm",
+        "140 µS/cm"
+      ],
+      "correct": 2,
+      "explanation": "La conductividad de sales neutras varía un 2%/°C. Un aumento de 10 °C supone un incremento del 20% (10 * 2%), resultando en 120 µS/cm.",
+      "difficulty": 3,
+      "module": 6
+    },
+    {
+      "q": "¿Cómo se define técnicamente el término 'consistencia' en el contexto de la medición de variables físicas en la industria papelera?",
+      "options": [
+        "Resistencia de un fluido a la deformación bajo un esfuerzo de cortadura",
+        "Porcentaje de peso de material seco fibroso en una combinación de agua y pulpa",
+        "Relación entre la masa de un cuerpo y la del agua a 4 °C",
+        "Grado de transparencia de una muestra de agua debido a partículas extrañas"
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente técnica, la consistencia se define específicamente como el porcentaje de peso de material seco fibroso en cualquier combinación de agua y pulpa,.",
+      "difficulty": 1,
+      "module": 6
+    },
+    {
+      "q": "¿Qué propiedad física del oxígeno permite su medición selectiva mediante analizadores que utilizan un fuerte campo magnético para enfriar filamentos calefactores?",
+      "options": [
+        "Conductividad térmica elevada",
+        "Absorción de radiación infrarroja",
+        "Paramagnetismo",
+        "Ionización de llama"
+      ],
+      "correct": 2,
+      "explanation": "El oxígeno es un gas paramagnético, lo que le permite desplazar a otros gases en un campo magnético y enfriar un elemento calefactor, principio base de estos analizadores,.",
+      "difficulty": 1,
+      "module": 6
+    },
+    {
+      "q": "En comparación con los electrodos de vidrio convencionales, ¿cuál es una de las ventajas críticas del sensor de pH tipo ISFET (Ion Sensitive Field Effect Transistor)?",
+      "options": [
+        "No requiere compensación por variaciones de temperatura",
+        "Es de estado sólido, prácticamente irrompible y proporciona una señal de baja impedancia",
+        "Elimina la necesidad de utilizar un electrodo de referencia",
+        "No requiere calibración con soluciones tampón"
+      ],
+      "correct": 1,
+      "explanation": "El ISFET es un sensor de estado sólido que destaca por su robustez mecánica (irrompible) y por generar una señal de pH de baja impedancia, facilitando su uso en medios sucios,.",
+      "difficulty": 2,
+      "module": 6
+    },
+    {
+      "q": "¿De qué manera el sistema de medición de humedad en sólidos por resonancia de microondas logra que la lectura sea independiente de la densidad del producto?",
+      "options": [
+        "Mediante el uso de una fuente de referencia de rayos gamma adicional",
+        "Asociando el valor de humedad con el ángulo que forma la recta de resonancia en el plano de fase",
+        "Aplicando una presión de contacto constante sobre los electrodos del sensor",
+        "Utilizando un sistema de pesaje integrado por células de carga"
+      ],
+      "correct": 1,
+      "explanation": "La fuente indica que el ángulo formado por las rectas de resonancia es independiente de la densidad, permitiendo calibrar el aparato asociando dicho ángulo con el valor de humedad,.",
+      "difficulty": 2,
+      "module": 6
+    },
+    {
+      "q": "Se desea medir la densidad de un ácido en un rango de 1,10 a 1,30 g/cm³ utilizando un transmisor de presión diferencial con un margen (span) configurado de 0 a 200 mm c.d.a. Según los cálculos de presión hidrostática, ¿cuál debe ser la distancia vertical 'h' entre las tomas y qué valor de elevación de cero (en mm c.d.a.) requiere el instrumento?",
+      "options": [
+        "h = 0,5 m; Elevación = 550 mm c.d.a.",
+        "h = 1,0 m; Elevación = 1.100 mm c.d.a.",
+        "h = 2,0 m; Elevación = 2.200 mm c.d.a.",
+        "h = 1,0 m; Elevación = 200 mm c.d.a."
+      ],
+      "correct": 1,
+      "explanation": "La distancia h se calcula como Span/(Δρ*1000) = 200/(0,2*1000) = 1 metro. La elevación es la presión mínima: h * ρ_min * 1000 = 1 * 1,10 * 1000 = 1.100 mm c.d.a.,.",
+      "difficulty": 3,
+      "module": 6
+    }
+  ]
+}

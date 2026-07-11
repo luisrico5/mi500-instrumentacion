@@ -1,0 +1,870 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MI-500 · Máster Instrumentación</title>
+</head>
+<body>
+<style>
+  :root{
+    --bg:#eef1f0; --surface:#fbfdfc; --surface-2:#f2f5f4;
+    --ink:#111716; --ink-2:#48534f; --muted:#7d8884;
+    --line:#dbe2df; --hairline:rgba(17,23,22,.10);
+    --accent:#0c7d6d; --accent-ink:#ffffff; --accent-soft:rgba(12,125,109,.10);
+    --amber:#996a00; --amber-bright:#eda100;
+    --chart-line:#2a78d6; --chart-fill:rgba(42,120,214,.08);
+    --st-good:#0ca30c; --st-warn:#fab219; --st-serious:#ec835a; --st-crit:#d03b3b;
+    --good-text:#006300; --crit-text:#b02a2a;
+    --shadow:0 1px 2px rgba(17,23,22,.05), 0 4px 16px rgba(17,23,22,.06);
+    --font-body:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
+    --font-display:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+    --font-mono:"Cascadia Code",Consolas,ui-monospace,"Courier New",monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0e1211; --surface:#171c1b; --surface-2:#1e2423;
+      --ink:#f0f4f2; --ink-2:#b6c0bc; --muted:#84908b;
+      --line:#2a3230; --hairline:rgba(240,244,242,.10);
+      --accent:#2fae9b; --accent-ink:#06201c; --accent-soft:rgba(47,174,155,.14);
+      --amber:#eda100; --amber-bright:#eda100;
+      --chart-line:#3987e5; --chart-fill:rgba(57,135,229,.12);
+      --good-text:#3dbb3d; --crit-text:#e06565;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1211; --surface:#171c1b; --surface-2:#1e2423;
+    --ink:#f0f4f2; --ink-2:#b6c0bc; --muted:#84908b;
+    --line:#2a3230; --hairline:rgba(240,244,242,.10);
+    --accent:#2fae9b; --accent-ink:#06201c; --accent-soft:rgba(47,174,155,.14);
+    --amber:#eda100; --amber-bright:#eda100;
+    --chart-line:#3987e5; --chart-fill:rgba(57,135,229,.12);
+    --good-text:#3dbb3d; --crit-text:#e06565;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+  }
+  :root[data-theme="light"]{
+    --bg:#eef1f0; --surface:#fbfdfc; --surface-2:#f2f5f4;
+    --ink:#111716; --ink-2:#48534f; --muted:#7d8884;
+    --line:#dbe2df; --hairline:rgba(17,23,22,.10);
+    --accent:#0c7d6d; --accent-ink:#ffffff; --accent-soft:rgba(12,125,109,.10);
+    --amber:#996a00; --amber-bright:#eda100;
+    --chart-line:#2a78d6; --chart-fill:rgba(42,120,214,.08);
+    --good-text:#006300; --crit-text:#b02a2a;
+    --shadow:0 1px 2px rgba(17,23,22,.05), 0 4px 16px rgba(17,23,22,.06);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--font-body); font-size:15px; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  button{font-family:inherit; font-size:inherit; cursor:pointer}
+  button:focus-visible, a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important; transition:none!important}
+  }
+
+  .wrap{max-width:1060px; margin:0 auto; padding:0 20px 64px}
+
+  /* ---------- header ---------- */
+  header.top{
+    display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    padding:18px 0 14px; border-bottom:1px solid var(--line); margin-bottom:24px;
+  }
+  .tagplate{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:.08em;
+    border:1px solid var(--ink-2); color:var(--ink);
+    padding:4px 9px; border-radius:3px; white-space:nowrap;
+  }
+  header.top h1{
+    font-family:var(--font-display); font-size:19px; font-weight:650;
+    letter-spacing:-.01em; margin:0; text-wrap:balance;
+  }
+  header.top .sub{font-size:12.5px; color:var(--muted); width:100%; margin-top:-6px}
+  .level-chip{
+    margin-left:auto; display:flex; align-items:center; gap:8px;
+    font-family:var(--font-mono); font-size:12px; letter-spacing:.06em;
+    background:var(--accent-soft); color:var(--accent);
+    border:1px solid var(--accent); border-radius:999px; padding:5px 14px;
+  }
+  :root[data-theme="dark"] .level-chip{color:var(--ink)}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .level-chip{color:var(--ink)} }
+
+  /* ---------- generic panels ---------- */
+  .panel{
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:10px; box-shadow:var(--shadow); padding:18px 20px;
+  }
+  .eyebrow{
+    font-family:var(--font-mono); font-size:10.5px; font-weight:600;
+    text-transform:uppercase; letter-spacing:.14em; color:var(--muted);
+    margin:0 0 10px;
+  }
+  .grid{display:grid; gap:16px}
+
+  /* ---------- KPI row ---------- */
+  .kpis{grid-template-columns:1.35fr 1fr 1fr 1fr; margin-bottom:16px}
+  @media (max-width:840px){ .kpis{grid-template-columns:1fr 1fr} }
+  .kpi .val{
+    font-family:var(--font-display); font-size:30px; font-weight:700;
+    letter-spacing:-.02em; line-height:1.1;
+  }
+  .kpi .cap{font-size:12.5px; color:var(--muted); margin-top:2px}
+  .kpi-hero{display:flex; align-items:center; gap:16px}
+  .gauge-txt{min-width:0}
+  .gauge-txt .lvl{
+    font-family:var(--font-display); font-size:24px; font-weight:700; letter-spacing:-.01em;
+  }
+  .gauge-txt .pct{font-family:var(--font-mono); font-size:12px; color:var(--muted); margin-top:2px}
+
+  /* ---------- main two-col ---------- */
+  .cols{grid-template-columns:1.6fr 1fr; margin-bottom:16px}
+  @media (max-width:840px){ .cols{grid-template-columns:1fr} }
+
+  /* module bars */
+  .mrow{
+    display:grid; grid-template-columns:minmax(130px,180px) 1fr 84px;
+    align-items:center; gap:10px; padding:7px 0; border:0; background:none;
+    width:100%; text-align:left; color:var(--ink); border-radius:6px;
+  }
+  .mrow:hover{background:var(--surface-2)}
+  .mrow .mname{font-size:13.5px; line-height:1.25}
+  .mrow .track{
+    height:12px; background:var(--surface-2); border-radius:4px;
+    border:1px solid var(--hairline); position:relative; overflow:hidden;
+  }
+  .mrow .fill{
+    position:absolute; inset:0 auto 0 0; border-radius:3px;
+    min-width:2px; transition:width .35s ease;
+  }
+  .mrow .mval{
+    font-family:var(--font-mono); font-size:12px; text-align:right;
+    color:var(--ink-2); white-space:nowrap; font-variant-numeric:tabular-nums;
+  }
+  .mrow .mval .word{display:block; font-size:10px; color:var(--muted); letter-spacing:.05em}
+
+  /* exam mode buttons */
+  .modes{display:flex; flex-direction:column; gap:10px}
+  .mode-btn{
+    display:block; width:100%; text-align:left;
+    background:var(--surface-2); border:1px solid var(--line); border-radius:8px;
+    padding:12px 14px; color:var(--ink); transition:border-color .15s ease;
+  }
+  .mode-btn:hover{border-color:var(--accent)}
+  .mode-btn .mt{font-weight:650; font-size:14.5px; display:flex; align-items:center; gap:8px}
+  .mode-btn .md{font-size:12.5px; color:var(--ink-2); margin-top:2px}
+  .mode-btn .mono-tag{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:.08em;
+    border:1px solid var(--hairline); border-radius:3px; padding:1px 6px; color:var(--muted);
+  }
+  .mode-btn.primary{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+  .mode-btn.primary .md{color:var(--accent-ink); opacity:.85}
+  .mode-btn.primary .mono-tag{color:var(--accent-ink); border-color:rgba(255,255,255,.35)}
+  .mode-btn:disabled{opacity:.45; cursor:not-allowed}
+  .mode-btn:disabled:hover{border-color:var(--line)}
+
+  /* progress + recs */
+  .bottom{grid-template-columns:1.6fr 1fr}
+  @media (max-width:840px){ .bottom{grid-template-columns:1fr} }
+  .chart-empty{color:var(--muted); font-size:13px; padding:28px 0; text-align:center}
+  .rec{display:flex; gap:10px; padding:9px 0; border-top:1px solid var(--hairline); font-size:13.5px}
+  .rec:first-of-type{border-top:0}
+  .rec .dot{width:8px; height:8px; border-radius:50%; margin-top:6px; flex:none}
+  .rec b{font-weight:650}
+  .rec .subt{color:var(--ink-2); font-size:12.5px; margin-top:1px}
+
+  .footrow{display:flex; gap:14px; align-items:center; margin-top:20px; flex-wrap:wrap}
+  .linkbtn{
+    background:none; border:none; color:var(--muted); font-size:12px;
+    text-decoration:underline; text-underline-offset:3px; padding:2px;
+  }
+  .linkbtn:hover{color:var(--ink-2)}
+  .src-note{font-size:11.5px; color:var(--muted); margin-left:auto}
+
+  /* ---------- exam view ---------- */
+  .exam-top{display:flex; align-items:center; gap:12px; margin-bottom:14px; flex-wrap:wrap}
+  .exam-top .xtitle{font-family:var(--font-display); font-weight:650; font-size:16px}
+  .exam-top .timer{
+    margin-left:auto; font-family:var(--font-mono); font-size:13px; color:var(--ink-2);
+    font-variant-numeric:tabular-nums;
+  }
+  .pbar{height:4px; background:var(--surface-2); border-radius:2px; margin-bottom:20px; overflow:hidden}
+  .pbar>div{height:100%; background:var(--accent); border-radius:2px; transition:width .25s ease}
+
+  .qcard{max-width:760px; margin:0 auto}
+  .qmeta{display:flex; gap:8px; align-items:center; margin-bottom:12px; flex-wrap:wrap}
+  .chip{
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:.07em;
+    border:1px solid var(--line); border-radius:999px; padding:2px 10px; color:var(--ink-2);
+  }
+  .chip.d1{border-color:var(--st-good); color:var(--good-text)}
+  .chip.d2{border-color:var(--amber); color:var(--amber)}
+  .chip.d3{border-color:var(--st-crit); color:var(--crit-text)}
+  .qtext{
+    font-family:var(--font-display); font-size:19px; font-weight:600;
+    line-height:1.4; letter-spacing:-.005em; margin:0 0 18px; text-wrap:balance;
+  }
+  .opts{display:flex; flex-direction:column; gap:9px}
+  .opt{
+    display:flex; gap:12px; align-items:baseline; width:100%; text-align:left;
+    background:var(--surface); border:1px solid var(--line); border-radius:8px;
+    padding:11px 14px; color:var(--ink); line-height:1.45;
+  }
+  .opt:hover{border-color:var(--accent)}
+  .opt .key{
+    font-family:var(--font-mono); font-size:11.5px; color:var(--muted);
+    border:1px solid var(--line); border-radius:4px; padding:1px 7px; flex:none;
+  }
+  .opt.sel{border-color:var(--accent); background:var(--accent-soft)}
+  .opt.correct{border-color:var(--st-good); background:rgba(12,163,12,.09)}
+  .opt.wrong{border-color:var(--st-crit); background:rgba(208,59,59,.09)}
+  .opt.correct .key{border-color:var(--st-good); color:var(--good-text)}
+  .opt.wrong .key{border-color:var(--st-crit); color:var(--crit-text)}
+  .opt:disabled{cursor:default}
+  .opt:disabled:hover{border-color:var(--line)}
+  .opt.correct:disabled:hover{border-color:var(--st-good)}
+  .opt.wrong:disabled:hover{border-color:var(--st-crit)}
+
+  .explain{
+    margin-top:14px; padding:12px 14px; border-left:3px solid var(--accent);
+    background:var(--surface-2); border-radius:0 8px 8px 0; font-size:13.5px; color:var(--ink-2);
+  }
+  .explain b{color:var(--ink)}
+  .exam-nav{display:flex; gap:10px; margin-top:20px; align-items:center}
+  .btn{
+    background:var(--accent); color:var(--accent-ink); border:1px solid var(--accent);
+    border-radius:8px; padding:9px 20px; font-weight:650; font-size:14px;
+  }
+  .btn:hover{filter:brightness(1.06)}
+  .btn.ghost{background:transparent; color:var(--ink-2); border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--ink-2); filter:none}
+  .btn:disabled{opacity:.45; cursor:not-allowed}
+  .exam-nav .spacer{flex:1}
+  .navdots{display:flex; gap:5px; flex-wrap:wrap; margin-top:16px; justify-content:center}
+  .ndot{
+    width:22px; height:22px; border-radius:5px; border:1px solid var(--line);
+    background:var(--surface); font-family:var(--font-mono); font-size:10px;
+    color:var(--muted); padding:0;
+  }
+  .ndot.done{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+  .ndot.cur{outline:2px solid var(--accent); outline-offset:1px}
+
+  /* ---------- results ---------- */
+  .res-head{display:flex; gap:24px; align-items:center; flex-wrap:wrap; margin-bottom:18px}
+  .res-score .big{
+    font-family:var(--font-display); font-size:44px; font-weight:750; letter-spacing:-.02em; line-height:1;
+  }
+  .res-score .lbl{color:var(--muted); font-size:13px; margin-top:4px}
+  .res-msg{font-size:14.5px; color:var(--ink-2); max-width:420px}
+  .res-msg b{color:var(--ink)}
+  .rev-item{border-top:1px solid var(--hairline); padding:14px 0}
+  .rev-item .rq{font-weight:600; margin:0 0 6px; line-height:1.4}
+  .rev-item .ra{font-size:13.5px; margin:2px 0}
+  .rev-item .ok{color:var(--good-text)}
+  .rev-item .bad{color:var(--crit-text)}
+  .rev-item .rx{font-size:13px; color:var(--ink-2); margin-top:6px}
+  .rev-flag{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:.08em;
+    padding:1px 7px; border-radius:3px; margin-right:8px;
+  }
+  .rev-flag.ok{border:1px solid var(--st-good); color:var(--good-text)}
+  .rev-flag.bad{border:1px solid var(--st-crit); color:var(--crit-text)}
+
+  /* tooltip */
+  #tip{
+    position:fixed; pointer-events:none; z-index:50; display:none;
+    background:var(--ink); color:var(--bg); font-size:12px; line-height:1.4;
+    padding:6px 10px; border-radius:6px; max-width:240px;
+    font-family:var(--font-mono);
+  }
+
+  .hidden{display:none!important}
+  svg text{font-family:var(--font-mono)}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="tagplate">MI-500</span>
+    <h1>Máster en Instrumentación Industrial</h1>
+    <span class="level-chip" id="hdrLevel">SIN CALIBRAR</span>
+    <div class="sub">Entrenamiento y evaluación basados en tu cuaderno <em>masterinstrumentacion</em> (Creus 8ª ed. · Ajuste y calibración · instrumentacionycontrol.net · instrumentationtools.com)</div>
+  </header>
+
+  <!-- ============ DASHBOARD ============ -->
+  <section id="view-dash">
+    <div class="grid kpis">
+      <div class="panel kpi kpi-hero">
+        <svg id="gauge" width="92" height="92" viewBox="0 0 92 92" aria-hidden="true"></svg>
+        <div class="gauge-txt">
+          <div class="lvl" id="kLevel">Sin calibrar</div>
+          <div class="pct" id="kLevelPct">— · realiza el diagnóstico</div>
+        </div>
+      </div>
+      <div class="panel kpi"><div class="val" id="kExams">0</div><div class="cap">exámenes realizados</div></div>
+      <div class="panel kpi"><div class="val" id="kAcc">—</div><div class="cap">precisión global</div></div>
+      <div class="panel kpi"><div class="val" id="kStreak">0</div><div class="cap">días de racha</div></div>
+    </div>
+
+    <div class="grid cols">
+      <div class="panel">
+        <p class="eyebrow">Dominio por módulo · pulsa uno para practicarlo</p>
+        <div id="moduleBars"></div>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Iniciar evaluación</p>
+        <div class="modes">
+          <button class="mode-btn primary" id="btnDiag">
+            <span class="mt">Diagnóstico completo <span class="mono-tag" id="tagDiag">20 PREG</span></span>
+            <span class="md">Barrido de todos los módulos para calibrar tu nivel. Corrección al final.</span>
+          </button>
+          <button class="mode-btn" id="btnAdapt">
+            <span class="mt">Examen adaptativo <span class="mono-tag">15 PREG</span></span>
+            <span class="md">Aleatorio, ponderado hacia tus módulos débiles y tu dificultad objetivo.</span>
+          </button>
+          <button class="mode-btn" id="btnQuick">
+            <span class="mt">Ronda rápida <span class="mono-tag">8 PREG</span></span>
+            <span class="md">Práctica corta con corrección inmediata y explicación.</span>
+          </button>
+          <button class="mode-btn" id="btnWrong">
+            <span class="mt">Repaso de falladas <span class="mono-tag" id="tagWrong">0 PEND</span></span>
+            <span class="md">Vuelve sobre las preguntas que has fallado hasta dominarlas.</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid bottom">
+      <div class="panel">
+        <p class="eyebrow">Evolución de puntuaciones</p>
+        <div id="progChart"></div>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Prioridades de estudio</p>
+        <div id="recs"></div>
+      </div>
+    </div>
+
+    <div class="footrow">
+      <button class="linkbtn" id="btnExport">Descargar respaldo</button>
+      <button class="linkbtn" id="btnImport">Restaurar respaldo</button>
+      <input type="file" id="fileImport" accept="application/json" class="hidden">
+      <button class="linkbtn" id="btnReset">Reiniciar progreso</button>
+      <span class="src-note" id="bankNote"></span>
+    </div>
+  </section>
+
+  <!-- ============ EXAM ============ -->
+  <section id="view-exam" class="hidden">
+    <div class="exam-top">
+      <span class="tagplate" id="xTag">EX-01</span>
+      <span class="xtitle" id="xTitle">Examen</span>
+      <span class="timer" id="xTimer">00:00</span>
+    </div>
+    <div class="pbar"><div id="xProg" style="width:0%"></div></div>
+    <div class="panel qcard">
+      <div class="qmeta" id="qMeta"></div>
+      <p class="qtext" id="qText"></p>
+      <div class="opts" id="qOpts"></div>
+      <div class="explain hidden" id="qExplain"></div>
+      <div class="exam-nav">
+        <button class="btn ghost" id="btnPrev">← Anterior</button>
+        <div class="spacer"></div>
+        <button class="btn ghost" id="btnQuit">Abandonar</button>
+        <button class="btn" id="btnNext">Siguiente →</button>
+      </div>
+      <div class="navdots" id="navDots"></div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="view-results" class="hidden">
+    <div class="exam-top">
+      <span class="tagplate">RESULTADO</span>
+      <span class="xtitle" id="rTitle"></span>
+    </div>
+    <div class="panel" style="margin-bottom:16px">
+      <div class="res-head">
+        <svg id="rGauge" width="110" height="110" viewBox="0 0 110 110" aria-hidden="true"></svg>
+        <div class="res-score">
+          <div class="big" id="rScore">0%</div>
+          <div class="lbl" id="rDetail">0 de 0 correctas</div>
+        </div>
+        <div class="res-msg" id="rMsg"></div>
+      </div>
+      <div class="exam-nav" style="margin-top:6px">
+        <button class="btn" id="btnBack">Volver al tablero</button>
+        <button class="btn ghost" id="btnRetry">Repetir modo</button>
+      </div>
+    </div>
+    <div class="panel">
+      <p class="eyebrow">Revisión de preguntas · falladas primero</p>
+      <div id="review"></div>
+    </div>
+  </section>
+</div>
+
+<div id="tip"></div>
+
+<script id="bank-data" type="application/json">[{"id": 1, "name": "Generalidades y Simbología", "questions": [{"q": "¿Cómo se define el 'alcance' (span) de un instrumento de medición según la terminología técnica?", "options": ["El conjunto de valores comprendidos entre los límites superior e inferior de medida.", "La diferencia algebraica entre los valores superior e inferior del campo de medida.", "El cociente entre el valor de medida superior e inferior de un instrumento.", "El grado de conformidad de un valor indicado con un valor estándar aceptado."], "correct": 1, "explanation": "El alcance (span) es específicamente la diferencia algebraica entre los valores extremos del campo de medida (range).", "difficulty": 1, "module": 1}, {"q": "En la identificación de instrumentos bajo la norma ISA-S5.1, ¿qué indica la primera letra del código alfanumérico?", "options": ["La función de salida del instrumento.", "El número de lazo de control.", "La variable medida o inicial del proceso.", "La ubicación física del instrumento en la planta."], "correct": 2, "explanation": "Según la norma ISA-S5.1, la primera letra del código de identificación (tag) representa la variable medida o inicial.", "difficulty": 1, "module": 1}, {"q": "¿Qué nombre recibe el instrumento que capta la variable de proceso y la envía a distancia en forma de señal estandarizada, pero carece de indicación local?", "options": ["Indicador", "Controlador", "Transmisor ciego", "Registrador"], "correct": 2, "explanation": "Los transmisores ciegos captan la variable y envían la señal pero no disponen de una escala o pantalla de indicación local.", "difficulty": 1, "module": 1}, {"q": "Un manómetro con un rango de 0-10 bar muestra lecturas constantes de 7.049, 7.050 y 7.051 bar para una presión real de 5.000 bar. ¿Cómo se califica este instrumento?", "options": ["Alta exactitud y alta precisión.", "Alta exactitud y baja precisión.", "Baja exactitud y alta precisión.", "Baja exactitud y baja precisión."], "correct": 2, "explanation": "Tiene gran precisión (baja dispersión entre lecturas), pero pobre exactitud debido al gran error respecto al valor verdadero.", "difficulty": 2, "module": 1}, {"q": "¿Cuál es la principal distinción entre la Incertidumbre Tipo A y la Incertidumbre Tipo B en metrología industrial?", "options": ["La Tipo A es para errores sistemáticos y la Tipo B para errores aleatorios.", "La Tipo A se basa en análisis estadísticos de series de medidas y la Tipo B en información externa o experiencia.", "La Tipo A depende de la trazabilidad nacional y la Tipo B de la trazabilidad internacional.", "La Tipo A solo aplica a instrumentos analógicos y la Tipo B a digitales."], "correct": 1, "explanation": "La Incertidumbre Tipo A se evalúa mediante distribuciones estadísticas de lecturas, mientras que la Tipo B usa datos de manuales, certificados o experiencia.", "difficulty": 2, "module": 1}, {"q": "Según la clasificación ISA-S5.1, si un instrumento tiene las letras 'TIC', ¿cuál es su función?", "options": ["Transmisor Indicador de Caudal.", "Controlador Indicador de Temperatura.", "Transmisor con Interruptor de Caudal.", "Controlador con Indicación de Corriente."], "correct": 1, "explanation": "La 'T' indica Temperatura (variable medida), la 'I' es Indicador (función de lectura) y la 'C' es Controlador (función de salida).", "difficulty": 2, "module": 1}, {"q": "Un transmisor de temperatura tiene un campo de medida de -20 °C a 180 °C. Calcule su alcance (span) y el porcentaje de elevación de cero que presenta.", "options": ["Alcance: 200 °C; Elevación de cero: 10%.", "Alcance: 160 °C; Elevación de cero: 20%.", "Alcance: 200 °C; Elevación de cero: 20%.", "Alcance: 180 °C; Elevación de cero: 11.1%."], "correct": 0, "explanation": "Alcance = 180 - (-20) = 200 °C. Elevación de cero = (cantidad que el cero supera al límite inferior / alcance) * 100 = (20 / 200) * 100 = 10%.", "difficulty": 3, "module": 1}, {"q": "Se realiza una medición de caudal utilizando cuatro elementos en serie con errores máximos de ±2%, ±0.5%, ±0.5% y ±0.5%. ¿Cuál es el error total probable de la medición?", "options": ["±3.50%", "±2.18%", "±2.06%", "±1.25%"], "correct": 1, "explanation": "El error total es la raíz cuadrada de la suma de los cuadrados de los errores: √(2² + 0.5² + 0.5² + 0.5²) = √4.75 ≈ 2.18%.", "difficulty": 3, "module": 1}, {"q": "En un lazo de control, se observa un fenómeno donde la señal de salida no varía ante cambios pequeños de la variable hasta que estos superan un umbral de ±0.2 °C. Si el alcance es de 200 °C, ¿cuál es la zona muerta del instrumento?", "options": ["±0.05%", "±0.1%", "±0.4%", "±1.0%"], "correct": 1, "explanation": "Zona muerta (%) = (Valor de la zona muerta / Alcance) * 100. En este caso: (0.2 / 200) * 100 = 0.1%.", "difficulty": 3, "module": 1}, {"q": "¿Cómo se define la 'rangeabilidad' (rangeability) o dinámica de medida de un instrumento según la terminología técnica?", "options": ["Diferencia algebraica entre los valores superior e inferior del campo de medida", "Cociente entre el valor de medida superior y el valor de medida inferior", "Grado de aproximación de una medida al valor verdadero del mensurando", "Magnitud de los cambios en escalón de la señal de salida al variar el campo"], "correct": 1, "explanation": "Según la fuente, la rangeabilidad se define específicamente como el cociente entre el valor de medida superior e inferior de un instrumento.", "difficulty": 1, "module": 1}, {"q": "¿Qué término metrológico define la propiedad de un resultado de medición de poder relacionarse con patrones nacionales o internacionales mediante una cadena ininterrumpida de comparaciones con incertidumbres determinadas?", "options": ["Repetibilidad", "Fiabilidad", "Trazabilidad", "Exactitud"], "correct": 2, "explanation": "La trazabilidad es la propiedad que permite relacionar los resultados de un instrumento con patrones de referencia a través de una cadena de comparaciones documentadas.", "difficulty": 1, "module": 1}, {"q": "Bajo la norma ISA-S5.1, si un instrumento se identifica con las letras 'TDI', ¿qué función cumple específicamente la letra 'D' en esta combinación?", "options": ["Indica que el instrumento realiza una función de control derivativo", "Actúa como letra de modificación para representar la variable 'diferencial'", "Señala que el instrumento tiene una salida digital", "Identifica que la variable medida es la densidad"], "correct": 1, "explanation": "La letra 'D' como letra de modificación aplicada a una primera letra (como T para temperatura) convierte la variable original en una nueva variable medida, en este caso temperatura diferencial.", "difficulty": 2, "module": 1}, {"q": "En la simbología de sistemas de control compartido (ISA-S5.3), ¿qué representación gráfica identifica a un instrumento con funciones de visualización y control compartido que es accesible normalmente al operador?", "options": ["Un círculo simple montado en campo", "Un círculo inscrito dentro de un cuadrado", "Un hexágono con una línea horizontal central", "Un cuadrado con un rombo inscrito"], "correct": 1, "explanation": "El símbolo de un círculo dentro de un cuadrado se utiliza para documentar instrumentos con funciones de visualización y control compartido accesibles al operador.", "difficulty": 2, "module": 1}, {"q": "Un transmisor inteligente de caudal configurado con una placa de orificio reporta una mejora en su rangeabilidad a una relación de 10:1 manteniendo su exactitud. Si el caudal máximo de diseño (100% del rango) es de 150 m³/h, ¿cuál es el caudal mínimo que el instrumento puede medir conservando la exactitud del ±1%?", "options": ["50 m³/h", "45 m³/h", "15 m³/h", "1.5 m³/h"], "correct": 2, "explanation": "La fuente indica que los transmisores inteligentes mejoran la rangeabilidad de 3:1 a 10:1 en placas de orificio; por lo tanto, el caudal mínimo es el máximo dividido por 10 (150/10 = 15).", "difficulty": 3, "module": 1}]}, {"id": 2, "name": "Medición de Presión", "questions": [{"q": "¿Cuál es la equivalencia exacta de 1 bar en el Sistema Internacional de unidades según las normas mencionadas en las fuentes?", "options": ["10.000 Pascal", "100.000 Pascal", "1,02 kg/cm²", "14,7 psi"], "correct": 1, "explanation": "Según la fuente, en la industria se utiliza el bar, donde 1 bar es igual a 10^5 Pa (100.000 Pascal).", "difficulty": 1, "module": 2}, {"q": "¿Qué característica geométrica define al tubo Bourdon original utilizado para la medición de presión?", "options": ["Un tubo de sección circular que forma un anillo completo.", "Un tubo de sección elíptica que forma un anillo casi completo.", "Un muelle helicoidal de sección cuadrada.", "Una serie de cápsulas circulares conectadas por soldadura."], "correct": 1, "explanation": "La fuente define el tubo de Bourdon como un tubo de sección elíptica que forma un anillo casi completo y cerrado por un extremo.", "difficulty": 1, "module": 2}, {"q": "¿Cuál es la función principal del medidor McLeod en el ámbito de la instrumentación industrial?", "options": ["Medir presiones diferenciales en procesos químicos agresivos.", "Actuar como aparato primario de calibración para otros instrumentos de vacío.", "Detectar fugas de helio en espectrómetros de masas.", "Compensar la temperatura en termómetros de bulbo y capilar."], "correct": 1, "explanation": "De acuerdo con la fuente, el medidor McLeod se utiliza como aparato primario de calibración de los restantes instrumentos de vacío.", "difficulty": 1, "module": 2}, {"q": "En la medición de presión de vapor de agua, ¿por qué es técnica y económicamente preferible el uso de una 'lira' o 'pigtail'?", "options": ["Porque amplifica la señal de presión mediante un sistema de palancas.", "Porque actúa como un sello químico de silicona para evitar la corrosión.", "Porque enfría el vapor y lo condensa, usando el agua como fluido de sello para proteger el instrumento.", "Porque elimina las vibraciones mecánicas de las bombas alternativas."], "correct": 2, "explanation": "La fuente indica que es más barato utilizar una lira que enfría el vapor y lo condensa, utilizando así el agua condensada como fluido de sello.", "difficulty": 2, "module": 2}, {"q": "Al comparar elementos elásticos, ¿cuál es la principal ventaja de los elementos en espiral y helicoidales frente al tubo Bourdon simple?", "options": ["Tienen una mayor resistencia a fluidos altamente corrosivos.", "Proporcionan un desplazamiento del extremo libre más grande, siendo ideales para registradores.", "No requieren compensación por cambios en la presión atmosférica.", "Son capaces de medir vacíos de hasta 10^-9 mm Hg."], "correct": 1, "explanation": "Según la fuente, estos elementos proporcionan un desplazamiento grande del extremo libre y, por ello, son ideales para los instrumentos registradores.", "difficulty": 2, "module": 2}, {"q": "¿Qué principio físico permite a los sensores piezoeléctricos realizar medidas dinámicas de presión con respuestas de hasta un millón de ciclos por segundo?", "options": ["La variación de la capacidad en un condensador de placas fijas.", "El cambio de resistencia en un puente de Wheatstone de silicio.", "La generación de un potencial eléctrico al deformarse cristales como el cuarzo.", "La emisión de electrones termoiónicos desde un cátodo caliente."], "correct": 2, "explanation": "La fuente explica que los elementos piezoeléctricos generan un potencial eléctrico al deformarse y son adecuados para medidas dinámicas por su alta respuesta frecuencial.", "difficulty": 2, "module": 2}, {"q": "Se desea mantener una presión absoluta de 50 mm Hg en una columna de destilación utilizando un vacuómetro relativo. Si la presión atmosférica sube de 760 mm Hg a 775 mm Hg, ¿qué lectura debe mostrar el instrumento para mantener la presión absoluta deseada?", "options": ["710 mm Hg", "725 mm Hg", "810 mm Hg", "825 mm Hg"], "correct": 1, "explanation": "Basado en el ejemplo de la fuente: Presión relativa = P. atm - P. abs. Con 775 mm Hg atm y 50 mm Hg abs, la lectura debe ser 775 - 50 = 725 mm Hg.", "difficulty": 3, "module": 2}, {"q": "Un transmisor de presión relativa marca 4 bar en una planta donde la presión atmosférica es de 1,013 bar. ¿Cuál es el valor aproximado de la presión absoluta en unidades psi (libras por pulgada cuadrada)?", "options": ["58,0 psi", "43,3 psi", "72,7 psi", "14,5 psi"], "correct": 2, "explanation": "Presión absoluta = 4 bar (rel) + 1,013 bar (atm) = 5,013 bar. Según la tabla, 1 bar ≈ 14,5 psi. Por tanto, 5,013 * 14,5 ≈ 72,69 psi.", "difficulty": 3, "module": 2}, {"q": "Si en un sistema de medición con sello de diafragma se produce una microrrotura que provoca el escape del fluido de llenado (glicerina o silicona), ¿cuál es la consecuencia inmediata según las fuentes técnicas?", "options": ["El instrumento aumenta su exactitud debido a la eliminación de la histéresis del fluido.", "El instrumento queda inhabilitado para realizar la medición.", "El error de cero se desplaza positivamente en un 10% del alcance.", "La rangeabilidad del instrumento se duplica automáticamente."], "correct": 1, "explanation": "La fuente establece explícitamente que una rotura con escape del líquido de sello inhabilita el instrumento.", "difficulty": 3, "module": 2}, {"q": "¿Cuál es el valor de la presión atmosférica estándar al nivel del mar expresado en bar según las definiciones de las fuentes técnicas?", "options": ["1,00000 bar", "1,01325 bar", "1,03322 bar", "0,98700 bar"], "correct": 1, "explanation": "La fuente define la presión atmosférica estándar como 1,01325 bar o 760 mm de mercurio absolutos al nivel del mar.", "difficulty": 1, "module": 2}, {"q": "¿En qué principio físico se basan los elementos térmicos de vacío, como el sensor Pirani o el de termopar?", "options": ["En la ionización de moléculas de gas residual mediante electrones", "En la variación de la conductividad eléctrica del filamento de tungsteno", "En la proporcionalidad entre la energía disipada por un filamento y la presión del gas", "En el desplazamiento mecánico de una membrana de Inconel"], "correct": 2, "explanation": "Los elementos térmicos se fundamentan en que la energía disipada desde una superficie caliente es proporcional a la presión del gas cuando este se encuentra a bajas presiones absolutas.", "difficulty": 1, "module": 2}, {"q": "En un transmisor inteligente de presión de tipo capacitivo, ¿cómo se realiza la transmisión de la presión del proceso hacia el diafragma sensible interno?", "options": ["Mediante un sistema de palancas mecánicas de alta precisión", "A través de un fluido de relleno (aceite) contenido entre diafragmas externos y el sensor", "Por contacto directo del fluido de proceso con las placas fijas del condensador", "Mediante un cristal de silicio dopado con boro sin fluido de llenado"], "correct": 1, "explanation": "El sensor capacitivo utiliza dos diafragmas externos y un fluido de relleno (aceite) que transmite la presión del proceso hasta el diafragma sensible interno del condensador.", "difficulty": 2, "module": 2}, {"q": "Al seleccionar un sensor de presión basado en galgas extensiométricas, ¿qué limitación técnica principal debe considerarse según los criterios de estabilidad y señal?", "options": ["Su extrema sensibilidad a los campos magnéticos circundantes", "Presentan una señal de salida débil y son muy sensibles a las vibraciones", "Poseen una respuesta frecuencial muy pobre en medidas de presiones dinámicas", "Tienen una histéresis elevada comparada con el tubo Bourdon convencional"], "correct": 1, "explanation": "Aunque poseen excelente respuesta frecuencial y no son influidas por campos magnéticos, las galgas tienen una señal de salida débil y son muy sensibles a vibraciones.", "difficulty": 2, "module": 2}, {"q": "Un transmisor electrónico de presión tiene un campo de medida de 0 a 100 bar y una exactitud del ±0,25% de toda la escala. Si se desea cumplir con la regla metrológica de relación 4:1 entre la exactitud del aparato patrón y la del instrumento a calibrar, ¿cuál debe ser la exactitud (en bar) requerida para el patrón?", "options": ["±0,5000 bar", "±0,2500 bar", "±0,0625 bar", "±0,0150 bar"], "correct": 2, "explanation": "La exactitud del instrumento es ±0,25 bar (0,25% de 100). Siguiendo la regla 4:1 mencionada en la fuente, el patrón debe ser 4 veces más exacto: 0,25 / 4 = 0,0625 bar [5, 6].", "difficulty": 3, "module": 2}]}, {"id": 3, "name": "Medición de Caudal", "questions": [{"q": "¿Qué ley física rige el funcionamiento de los caudalímetros magnéticos industriales?", "options": ["Ley de Ohm", "Ley de inducción electromagnética de Faraday", "Teorema de Bernoulli", "Ley de Charles"], "correct": 1, "explanation": "La ley de Faraday establece que la tensión inducida en un conductor que se mueve perpendicularmente a un campo magnético es proporcional a su velocidad.", "difficulty": 1, "module": 3}, {"q": "En los medidores de caudal por presión diferencial, ¿cuál es la relación matemática fundamental entre el caudal (Q) y la presión diferencial (h)?", "options": ["El caudal es proporcional al cuadrado de la presión diferencial.", "El caudal es inversamente proporcional a la presión diferencial.", "El caudal es proporcional a la raíz cuadrada de la presión diferencial.", "No existe una relación matemática directa sin compensación de temperatura."], "correct": 2, "explanation": "Basado en el teorema de Bernoulli, la velocidad y el caudal en elementos deprimógenos varían en función de la raíz cuadrada de la diferencia de presiones.", "difficulty": 1, "module": 3}, {"q": "¿Cuál es el principio de funcionamiento de un caudalímetro de vórtex?", "options": ["La medición de la fuerza de impacto sobre una placa.", "El efecto Von Karman, donde la frecuencia de los torbellinos es proporcional a la velocidad.", "La diferencia de temperaturas entre dos sondas de resistencia.", "El desplazamiento de un pistón oscilante dentro de una cámara cilíndrica."], "correct": 1, "explanation": "Los medidores vórtex generan vórtices desfasados 180° cuya frecuencia de aparición es directamente proporcional al caudal.", "difficulty": 1, "module": 3}, {"q": "Al comparar elementos primarios de presión diferencial, ¿cuál es el orden correcto de pérdida de carga permanente, de mayor a menor pérdida?", "options": ["Tubo Venturi > Tobera > Placa orificio", "Placa orificio > Tubo Venturi > Tobera", "Placa orificio > Tobera > Tubo Venturi", "Tobera > Placa orificio > Tubo Venturi"], "correct": 2, "explanation": "Según las fuentes, la placa orificio es la que mayor pérdida de carga provoca, seguida de la tobera, mientras que el tubo Venturi es el más eficiente en recuperación de presión.", "difficulty": 2, "module": 3}, {"q": "¿Qué característica diferencia principalmente al caudalímetro ultrasónico Doppler del de tiempo de tránsito?", "options": ["El Doppler solo funciona en tuberías de pequeño diámetro.", "El Doppler requiere que el fluido contenga partículas o burbujas para reflejar la señal.", "El de tiempo de tránsito es el único capaz de medir caudales bidireccionales.", "El Doppler no requiere contacto con el fluido, mientras que el de tiempo de tránsito sí."], "correct": 1, "explanation": "El método Doppler se basa en el corrimiento de frecuencia reflejada en discontinuidades del fluido, mientras que el de tiempo de tránsito requiere fluidos limpios.", "difficulty": 2, "module": 3}, {"q": "¿Cuál es la principal ventaja de un medidor de Coriolis frente a un sistema de medición volumétrica compensado?", "options": ["Es significativamente más económico de instalar y mantener.", "Mide directamente la masa y es independiente de variaciones en densidad, presión y viscosidad.", "No requiere alimentación eléctrica para generar la señal de salida.", "Permite medir caudales de gases a velocidades mucho mayores que el sonido."], "correct": 1, "explanation": "El medidor de Coriolis aprovecha la inercia de la masa en movimiento, proporcionando una medida directa independiente de las propiedades físicas cambiantes del fluido.", "difficulty": 2, "module": 3}, {"q": "Un transmisor inteligente de presión diferencial mejora la rangeabilidad de una placa orificio típica. Según los textos técnicos, ¿cuál es el incremento estándar conseguido?", "options": ["Pasa de una relación 10:1 a 50:1.", "Pasa de una relación 3:1 a 10:1.", "Pasa de una relación 20:1 a 100:1.", "La rangeabilidad no cambia, solo mejora la exactitud del ±2% al ±0.1%."], "correct": 1, "explanation": "Los transmisores inteligentes permiten ampliar la dinámica de medida de la placa orificio de 3:1 a 10:1 manteniendo la exactitud.", "difficulty": 3, "module": 3}, {"q": "Si un lazo de control de caudal con placa orificio está operando al 100% de su capacidad con una presión diferencial de 100 pulgadas de agua, ¿cuál será la presión diferencial detectada si el caudal real cae al 50%?", "options": ["50 pulgadas de agua", "70.7 pulgadas de agua", "25 pulgadas de agua", "10 pulgadas de agua"], "correct": 2, "explanation": "Debido a la relación cuadrática (Q ∝ √h), si el caudal se reduce a la mitad (0.5), la presión diferencial debe reducirse al cuadrado de esa proporción (0.5² = 0.25). 100 * 0.25 = 25.", "difficulty": 3, "module": 3}, {"q": "En el contexto de un medidor térmico Thomas para gases, ¿cuál es la relación que permite determinar el caudal masa (m)?", "options": ["Es proporcional a la frecuencia del remolino dividido por el calor específico.", "Es proporcional al calor transferido dividido por el producto del calor específico y la diferencia de temperaturas.", "Es inversamente proporcional a la constante dieléctrica del gas seco.", "Depende exclusivamente de la viscosidad cinemática y el número de Reynolds."], "correct": 1, "explanation": "La ecuación es Q = m * Ce * (t2 - t1). Por lo tanto, la masa m es proporcional al calor (Q) e inversamente proporcional al calor específico (Ce) y al gradiente térmico (Δt).", "difficulty": 3, "module": 3}, {"q": "En los medidores de caudal de desplazamiento positivo, ¿de qué factor depende principalmente la exactitud de la medición según los textos técnicos?", "options": ["De la velocidad de propagación del sonido en el fluido", "De la calidad de la mecanización de las partes y del tamaño del instrumento", "Únicamente de la presión estática y la temperatura del proceso", "De la frecuencia de los vórtices generados por el cuerpo de impacto"], "correct": 1, "explanation": "La exactitud de estos medidores depende de los huelgos entre las partes móviles y fijas, y aumenta proporcionalmente con la calidad de su mecanización y el tamaño del equipo,.", "difficulty": 1, "module": 3}, {"q": "¿Cuál es el requisito mínimo de conductividad eléctrica que debe poseer un fluido para que un medidor magnético de caudal industrial pueda realizar una lectura válida?", "options": ["0,1 μS/cm", "1,0 μS/cm", "3,0 μS/cm", "10,0 μS/cm"], "correct": 2, "explanation": "Las fuentes señalan que para que el instrumento pueda medir se requiere que el fluido tenga una conductividad eléctrica mayor de 3 μS/cm,.", "difficulty": 1, "module": 3}, {"q": "De acuerdo con las normas de instalación para medidores de vórtex, ¿qué longitud mínima de tramo recto se recomienda aguas arriba para asegurar la formación correcta de los perfiles de velocidad?", "options": ["5 diámetros de tubería", "10 diámetros de tubería", "15 diámetros de tubería", "40 diámetros de tubería"], "correct": 2, "explanation": "Para asegurar una formación correcta de vórtices y una medición precisa, los instrumentos de vórtex requieren típicamente una instalación en tubería recta con un mínimo de 15 diámetros aguas arriba,.", "difficulty": 2, "module": 3}, {"q": "En la medición de caudal con placa de orificio, ¿qué configuración de tomas de presión sitúa la toma anterior y posterior a 2 ½ Ø y 8 Ø de la tubería, respectivamente, para aumentar el intervalo de medida?", "options": ["Tomas en la brida (flange taps)", "Tomas radiales (radius taps)", "Tomas en la cámara anular (corner taps)", "Tomas en la tubería (pipe taps)"], "correct": 3, "explanation": "Las tomas en la tubería (pipe taps) se ubican a estas distancias específicas y se utilizan cuando se busca aumentar el intervalo de medida en un punto menos sensible,.", "difficulty": 2, "module": 3}, {"q": "Un medidor de placa de orificio fue calculado para una densidad de diseño (ρc) de 1000 kg/m³. Si durante la operación real el fluido presenta una densidad (ρr) de 810 kg/m³, ¿cuál es el factor de corrección numérico aproximado que debe aplicarse al caudal leído (Qc) para obtener el caudal real (Qr)?", "options": ["0,810", "0,900", "1,111", "1,234"], "correct": 2, "explanation": "Según la fórmula de corrección de densidad, el caudal real se obtiene multiplicando el leído por la raíz cuadrada del cociente ρc/ρr; así √(1000/810) ≈ 1,111, pero la fórmula de caudal volumétrico real en función del leído es Qr = Qc * √(ρc/ρr), resultando en √(1000/810) = 1,111 (corrección de peso: √(ρr/ρc)). En volumen, el factor es √(1000/810) ≈ 1,11.,.", "difficulty": 3, "module": 3}]}, {"id": 4, "name": "Medición de Nivel", "questions": [{"q": "¿En qué principio físico se basa el sistema ultrasónico de medición de nivel para determinar la distancia al líquido?", "options": ["La variación de la constante dieléctrica del medio.", "El desplazamiento de frecuencia por efecto Doppler.", "La emisión de un impulso sónico y la medición del tiempo de retorno del eco.", "La atenuación de la intensidad de onda al atravesar la espuma."], "correct": 2, "explanation": "El sistema ultrasónico emite un impulso que se refleja en la superficie y mide el tiempo de tránsito, permitiendo calcular el nivel basándose en la velocidad del sonido.", "difficulty": 1, "module": 4}, {"q": "¿Cuál de los siguientes instrumentos es un detector de nivel de sólidos de punto fijo (on-off) comúnmente utilizado en materiales granulares?", "options": ["Sondeo electromecánico", "Detector de paletas rotativas", "Medidor de báscula o células de carga", "Transmisor de radar de onda guiada"], "correct": 1, "explanation": "Las paletas rotativas son detectores de punto fijo que se detienen cuando el sólido alcanza su nivel, activando un microrruptor.", "difficulty": 1, "module": 4}, {"q": "En un medidor de nivel de tipo burbujeo, ¿qué representa la presión del aire detectada en la tubería de inmersión?", "options": ["La presión de vapor acumulada sobre el líquido.", "La presión atmosférica local del lugar de medida.", "La presión hidrostática ejercida por la columna de líquido.", "La pérdida de carga debida a la viscosidad del fluido."], "correct": 2, "explanation": "La presión requerida para que el aire burbujee a través del líquido es equivalente a la presión hidrostática de la columna de fluido sobre el extremo del tubo.", "difficulty": 1, "module": 4}, {"q": "¿Cuál es la principal ventaja técnica del radar FMCW (Onda continua modulada en frecuencia) frente a los ultrasonidos en tanques de proceso complejos?", "options": ["Es inmune a las vibraciones mecánicas de las palas del agitador.", "La señal de radar es transparente a la espuma y no es afectada por cambios de temperatura.", "No requiere alimentación eléctrica al ser un sistema pasivo.", "El radar FMCW puede medir niveles de sólidos con una exactitud de ±50 mm."], "correct": 1, "explanation": "A diferencia de los ultrasonidos, el radar no es afectado por la temperatura y la espuma suele ser transparente para las microondas, evitando errores por falsos ecos.", "difficulty": 2, "module": 4}, {"q": "Al medir el nivel de un líquido con una constante dieléctrica muy baja (K < 1,7), ¿cuál es la tecnología recomendada para evitar la degradación de la señal?", "options": ["Radar de haz libre en banda X.", "Radar de onda guiada (GWR) con tecnología TDR.", "Medidor capacitivo de radiofrecuencia (RF).", "Transmisor ultrasónico de alta frecuencia (200 kHz)."], "correct": 1, "explanation": "El radar de onda guiada (GWR) enfoca la energía a través de una varilla o cable, lo que permite medir con éxito fluidos de baja constante dieléctrica.", "difficulty": 2, "module": 4}, {"q": "En la medición de nivel por presión diferencial en tanques cerrados con vapores condensables, ¿cuándo se utiliza la configuración de 'elevación de cero'?", "options": ["Cuando el transmisor se instala en una cota superior a la toma de baja presión.", "Cuando la línea de compensación (wet leg) está llena de condensado y ejerce una presión superior a la de alta presión en nivel mínimo.", "Siempre que el fluido sea viscoso y requiera un sello de diafragma extendido.", "Para compensar el error de angularidad en transmisores neumáticos de equilibrio de fuerzas."], "correct": 1, "explanation": "La elevación de cero se aplica cuando la presión en la toma de baja (debido a la columna de condensado en la 'wet leg') es mayor que en la de alta cuando el tanque está vacío.", "difficulty": 2, "module": 4}, {"q": "Un transmisor ultrasónico no compensado mide el nivel en un tanque donde el aire ambiente pasa de 0 °C a 70 °C. Según los datos técnicos, ¿qué error aproximado se introducirá?", "options": ["Un error del 1,2% en la medida del nivel.", "Un error despreciable inferior al ±0,1%.", "Un error aproximado del 12% en la medida.", "Un error del 50% debido a la absorción de la onda por el calor."], "correct": 2, "explanation": "La velocidad del sonido varía con la temperatura; un cambio de 0 a 70 °C provoca un error típico del 12% si el instrumento no dispone de sensor de compensación.", "difficulty": 3, "module": 4}, {"q": "Calcule la presión que detectará un transmisor manométrico situado a una altura 'h' de 5 metros por debajo del nivel de un líquido con densidad 0,8 g/cm³ (Use g=9,8 m/s²).", "options": ["0,400 bar", "0,392 bar", "4,900 bar", "0,500 bar"], "correct": 1, "explanation": "Presión = 0,098 * h * densidad (en g/cm³). Por lo tanto: 0,098 * 5 * 0,8 = 0,392 bar.", "difficulty": 3, "module": 4}, {"q": "En un lazo de control de interfase entre agua (ρ=1,0) y queroseno (ρ=0,8) en tanque cerrado, ¿qué lectura de señal entregará un transmisor de DP de 4-20 mA cuando el tanque esté totalmente lleno de queroseno?", "options": ["0 mA (falla de instrumento)", "4 mA", "12,8 mA", "20 mA"], "correct": 1, "explanation": "En mediciones de interfase, el 0% del rango (4 mA) se calibra típicamente para el tanque lleno del fluido más ligero (queroseno).", "difficulty": 3, "module": 4}, {"q": "¿A qué fenómeno físico se debe la formación de la onda de torsión que permite determinar la posición del flotador en un transmisor de nivel magnetoestrictivo?", "options": ["Al efecto Doppler generado por el movimiento del flotador en el líquido", "A la interacción entre un campo magnético tubular (creado por un impulso de corriente) y los imanes del flotador", "A la variación de la reluctancia magnética al paso del fluido por una bobina captadora", "A la reflexión de una onda electromagnética en la superficie de separación de fases"], "correct": 1, "explanation": "Según la fuente técnica, el impulso de corriente crea un campo magnético que interacciona con los imanes del flotador, dando lugar a una fuerza de torsión o vibración ultrasónica que viaja por el tubo guía,.", "difficulty": 1, "module": 4}, {"q": "En la terminología de medidores de nivel por capacitancia de radiofrecuencia (RF), ¿cómo se define técnicamente el concepto de 'admitancia'?", "options": ["Es la medida de la conductividad de un circuito de corriente alterna y representa la inversa de la impedancia", "Es la diferencia algebraica entre las constantes dieléctricas del líquido y del vapor", "Es la fuerza de empuje hacia arriba que ejerce el líquido sobre un electrodo sumergido", "Es la capacidad máxima de almacenamiento de carga eléctrica en condiciones de vacío"], "correct": 0, "explanation": "La admitancia se define en la fuente como la medida de la conductividad de un circuito de c.a., siendo el término inverso a la impedancia,.", "difficulty": 1, "module": 4}, {"q": "En un sensor de nivel capacitivo destinado a medir líquidos sucios o pegajosos, ¿con qué fin técnico se emplea el 'blindaje de excitación' o tecnología de escudo perforado?", "options": ["Para permitir que el instrumento funcione con corrientes de salida de 10-50 mA", "Para proteger el electrodo de impactos mecánicos causados por el agitador del tanque", "Para eliminar señales erróneas causadas por el recubrimiento conductor que se adhiere a la sonda", "Para compensar automáticamente los cambios en la presión estática del tanque"], "correct": 2, "explanation": "El blindaje de excitación evita que la corriente fluya a través del recubrimiento conductor hacia las paredes del tanque, permitiendo que el electrodo ignore dicho efecto en la lectura,.", "difficulty": 2, "module": 4}, {"q": "Al utilizar un medidor de nivel de radiación (rayos gamma) de forma continua, ¿qué característica debe incorporar la electrónica para mantener la exactitud a lo largo del tiempo?", "options": ["Un extractor de raíz cuadrada intermedio para linealizar la señal de rayos gamma", "Compensación automática de la deriva causada por el decaimiento radiactivo de la fuente (vida media)", "Un circuito oscilador de alta frecuencia para evitar fenómenos electrolíticos en el detector", "Un sistema de purga de aire constante para evitar el recubrimiento del contador Geiger"], "correct": 1, "explanation": "Debido a que la fuente radiactiva pierde actividad exponencialmente según su vida media, la electrónica debe compensar automáticamente esta deriva por decaimiento para conservar la exactitud,.", "difficulty": 2, "module": 4}, {"q": "Se desea configurar un transmisor de presión diferencial para medir la interfase en un tanque cerrado entre agua (ρ1 = 1,0 g/cm³) y aceite (ρ2 = 0,85 g/cm³). El campo de medida (h) es de 4 metros y existe una distancia ha = 1 metro por debajo del nivel mínimo. La tubería húmeda (wet leg) está llena de aceite (ρ'2 = 0,85 g/cm³). Calcule el alcance (span) en bar que debe configurarse en el instrumento (Utilice el factor de conversión g = 0,098 bar por cada metro de altura y unidad de densidad).", "options": ["0,0392 bar", "0,0735 bar", "0,1470 bar", "0,1960 bar"], "correct": 1, "explanation": "El alcance se calcula como (h + ha) * (ρ1 - ρ2) * 0,098. Aplicando los datos: (4 m + 1 m) * (1,0 - 0,85) * 0,098 = 5 * 0,15 * 0,098 = 0,0735 bar,.", "difficulty": 3, "module": 4}]}, {"id": 5, "name": "Medición de Temperatura", "questions": [{"q": "¿Qué tipo de montaje de termorresistencia (RTD) es el más preciso al eliminar totalmente el error por la resistencia de los hilos de conexión mediante el uso de una fuente de corriente constante?", "options": ["Montaje de 2 hilos", "Montaje de 3 hilos", "Montaje de 4 hilos", "Montaje en puente de Wheatstone simple"], "correct": 2, "explanation": "En el montaje de cuatro hilos, la misma corriente circula por el detector independientemente de la resistencia de los hilos, obteniéndose la máxima exactitud.", "difficulty": 1, "module": 5}, {"q": "¿Cuál es el termopar que posee la fuerza electromotriz (f.e.m.) más alta por variación de temperatura, alcanzando una sensibilidad de 68 microvoltios por grado centígrado?", "options": ["Termopar tipo K", "Termopar tipo J", "Termopar tipo T", "Termopar tipo E"], "correct": 3, "explanation": "El termopar tipo E (Níquel-Cromo/Constantán) posee la f.e.m. más alta por variación de temperatura de todos los termopares comunes.", "difficulty": 1, "module": 5}, {"q": "¿En qué ley física se fundamentan los pirómetros de radiación, la cual establece que la intensidad de energía radiante emitida es proporcional a la cuarta potencia de la temperatura absoluta?", "options": ["Ley de Stefan-Boltzmann", "Efecto Seebeck", "Ley de Callendar - Van Dussen", "Efecto Peltier"], "correct": 0, "explanation": "La ley de Stefan-Boltzmann establece que W = K * T^4, donde la intensidad aumenta con la cuarta potencia de la temperatura absoluta.", "difficulty": 1, "module": 5}, {"q": "Al comparar las clases de termómetros de bulbo y capilar, ¿qué característica distingue a la Clase II (vapor) de la Clase III (gas)?", "options": ["La Clase II tiene una escala uniforme mientras que la Clase III es logarítmica.", "La Clase II tiene una escala no uniforme con mayor sensibilidad en la parte alta, mientras que la Clase III tiene escala lineal.", "La Clase II requiere obligatoriamente compensación de temperatura ambiente en el capilar y la Clase III no.", "La Clase II se utiliza exclusivamente para temperaturas criogénicas inferiores a -200 °C."], "correct": 1, "explanation": "Los termómetros de vapor (Clase II) tienen escalas no uniformes con mayor sensibilidad al final, mientras que los de gas (Clase III) presentan escalas lineales.", "difficulty": 2, "module": 5}, {"q": "Según la 'Ley de los metales intermedios' aplicada a termopares, ¿cuál es la consecuencia de insertar un tercer conductor en el circuito?", "options": ["La f.e.m. total se altera proporcionalmente a la longitud del nuevo conductor.", "La f.e.m. total es independiente del conductor intermedio si las uniones adicionales están a la misma temperatura.", "Se produce una inversión del efecto Seebeck que anula la señal de medida.", "Es estrictamente necesario que el tercer metal sea platino para no introducir errores."], "correct": 1, "explanation": "Esta ley indica que la f.e.m. total es independiente de los conductores intermedios si la temperatura en sus puntos de conexión es uniforme.", "difficulty": 2, "module": 5}, {"q": "¿Cuál es la característica principal de un termistor tipo NTC en comparación con una termorresistencia Pt100 convencional?", "options": ["Posee un coeficiente de temperatura positivo y una escala altamente lineal.", "Es un semiconductor con un coeficiente de temperatura negativo de valor elevado y respuesta muy rápida.", "Su rango de trabajo estándar es superior a los 1500 °C.", "Requiere obligatoriamente un cable de compensación de cobre-níquel."], "correct": 1, "explanation": "Los termistores NTC son semiconductores con variaciones de resistencia extremadamente grandes para cambios pequeños de temperatura, aunque son no lineales.", "difficulty": 2, "module": 5}, {"q": "Se dispone de un montaje de Pt100 a 2 hilos donde cada hilo tiene 1 ohm de resistencia. Si la temperatura real es de 20 °C (107,793 ohms), ¿cuál será el error de lectura aproximado introducido por los cables?", "options": ["0,55 °C", "2,50 °C", "5,43 °C", "8,20 °C"], "correct": 2, "explanation": "Según el ejemplo de las fuentes, una resistencia adicional de 2 ohms (1 por hilo) desplaza la medida de 20 °C a 25,43 °C, generando un error de 5,43 °C.", "difficulty": 3, "module": 5}, {"q": "Un transmisor de temperatura para termopar Tipo J está calibrado de 0 a 700 °C. Si la temperatura ambiente en el instrumento es de 20 °C (1,019 mV), ¿qué f.e.m. debe inyectar un calibrador para verificar el punto de 700 °C (39,132 mV)?", "options": ["40,151 mV", "39,132 mV", "38,113 mV", "35,210 mV"], "correct": 2, "explanation": "Se debe restar la f.e.m. de la unión fría a la del proceso (39,132 - 1,019 = 38,113 mV) porque el instrumento ya compensa internamente la temperatura ambiente.", "difficulty": 3, "module": 5}, {"q": "En el contexto de la pirometría de radiación, si se utiliza un instrumento ajustado para 'cuerpo negro' (emisividad = 1) sobre un metal pulido con emisividad de 0,1, ¿cuál será el efecto en la medida?", "options": ["La temperatura leída será idéntica a la real debido a la compensación automática del detector.", "La temperatura de brillo detectada será significativamente inferior a la verdadera temperatura del cuerpo.", "El detector fotoeléctrico se saturará inmediatamente dañando el sensor de silicio.", "La f.e.m. generada será proporcional a la raíz cuadrada de la emisividad según la ley de Seebeck."], "correct": 1, "explanation": "Si la superficie no es perfectamente negra, el pirómetro capta menos energía radiante de la real, por lo que la temperatura indicada es menor que la verdadera.", "difficulty": 3, "module": 5}, {"q": "¿Cómo se define la 'constante de tiempo' de un instrumento de temperatura según las fuentes técnicas?", "options": ["El tiempo necesario para que el sensor alcance el 50% de la variación total de temperatura", "El tiempo requerido para que el instrumento alcance el 63,2% de la variación total de la temperatura", "El tiempo que tarda el instrumento en llegar al 100% del valor final del mensurando", "El intervalo entre el cambio en la variable y el inicio de la respuesta del sensor"], "correct": 1, "explanation": "La constante de tiempo es el parámetro que indica la velocidad de respuesta, definida como el tiempo necesario para alcanzar el 63,2% del cambio total ante una variación brusca,.", "difficulty": 1, "module": 5}, {"q": "¿Cuál es una ventaja principal de los sensores de temperatura de silicio (IC) frente a los sensores industriales clásicos?", "options": ["Capacidad para medir temperaturas extremas superiores a los 1.000 °C", "Inmunidad total a la necesidad de fuente de alimentación externa", "Posibilidad de integrar procesamiento de señal, compensación de unión fría y linealización en el propio chip", "Poseen una relación resistencia-temperatura mucho más lineal que el platino"], "correct": 2, "explanation": "Los sensores de temperatura de silicio son circuitos integrados que pueden contener funciones de procesamiento, compensación y linealización dentro del mismo componente,.", "difficulty": 1, "module": 5}, {"q": "Al comparar materiales para termorresistencias, ¿cuál es la ventaja técnica del níquel frente al platino en el rango de -100 °C a 200 °C?", "options": ["Posee una mayor linealidad en todo el intervalo de medida", "Presenta una mayor sensibilidad (variación de ohmios por grado) y un coste más reducido", "Es más estable a largo plazo, con una deriva de solo 0,01% en 5 años", "Puede utilizarse en aplicaciones criogénicas hasta los -260 °C"], "correct": 1, "explanation": "El níquel presenta una sensibilidad significativamente mayor que el platino y es más económico, aunque tiene una falta de linealidad y un margen de temperatura más reducido,.", "difficulty": 2, "module": 5}, {"q": "En la selección de lentes para pirómetros de radiación, ¿qué material es el recomendado para operar en el intervalo de temperaturas de 450 °C a 1.250 °C?", "options": ["Lentes de pírex", "Lentes de fluoruro de calcio", "Lentes de sílice fundida", "Lentes de cristal de germanio"], "correct": 2, "explanation": "Según la fuente, las lentes de sílice fundida son las adecuadas para el intervalo de 450 a 1.250 °C, mientras que las de pírex se usan para temperaturas superiores,.", "difficulty": 2, "module": 5}, {"q": "Un termómetro bimetálico tiene una lámina de 100 mm de longitud y 0,5 mm de espesor, con un coeficiente de expansión térmica (a) de 0,000015. Calcule el ángulo de torsión (en grados) que experimentará la lámina ante un incremento de temperatura de 40 °C.", "options": ["21,6°", "43,2°", "86,4°", "10,8°"], "correct": 1, "explanation": "Utilizando la fórmula Ángulo = (360 * a * l * Δt) / s descrita en la fuente: (360 * 0,000015 * 100 * 40) / 0,5 = 21,6 / 0,5 = 43,2 grados,.", "difficulty": 3, "module": 5}]}, {"id": 6, "name": "Análisis y Otras Variables", "questions": [{"q": "¿Cuál es la definición matemática del pH según la concentración de iones de hidrógeno [H+] expresada en moles por litro?", "options": ["pH = log [H+]", "pH = log (1 / [H+])", "pH = ln [H+]", "pH = 1 / log [H+]"], "correct": 1, "explanation": "El pH se define como el logaritmo de la inversa de la concentración del ion hidrógeno.", "difficulty": 1, "module": 6}, {"q": "¿En qué unidades se expresa habitualmente la turbidez del agua en los sensores de dispersión modernos?", "options": ["Partes por millón (ppm)", "Unidades nefelométricas de turbidez (NTU)", "Grados Saybolt", "MicroSiemens por centímetro"], "correct": 1, "explanation": "La turbidez se mide en unidades arbitrarias llamadas unidades nefelométricas de turbidez (NTU).", "difficulty": 1, "module": 6}, {"q": "En la medición del potencial de oxidación-reducción (Redox), ¿qué material se utiliza comúnmente como electrodo de medida debido a su sensibilidad a los electrones?", "options": ["Cobre pulido", "Aluminio anodizado", "Metal noble (normalmente platino)", "Hierro fundido"], "correct": 2, "explanation": "El potencial Redox se mide con un metal noble, frecuentemente platino, que actúa como electrodo sensible a los electrones.", "difficulty": 1, "module": 6}, {"q": "¿Qué ventaja técnica presenta el sistema luminescente (optode) para medir el oxígeno disuelto frente a los métodos galvánicos tradicionales?", "options": ["Requiere el cambio semanal del electrolito de hidróxido potásico.", "Se basa en el amortiguamiento de la emisión de luz y es independiente de la velocidad de flujo del agua.", "Es el único método que no requiere compensación de temperatura.", "Funciona mediante la generación de una corriente de 0,8 V c.c. constante."], "correct": 1, "explanation": "El sistema luminescente aprovecha las características de amortiguamiento de la luz en presencia de oxígeno y no depende del flujo como los electrodos de membrana.", "difficulty": 2, "module": 6}, {"q": "Al comparar instrumentos para determinar el punto de rocío, ¿cuál de los siguientes sistemas ofrece la mayor exactitud (± 0,2 °C)?", "options": ["Cámara de niebla manual", "Célula de cloruro de litio", "Sistema de condensación en un espejo", "Sensor polimérico capacitivo"], "correct": 2, "explanation": "El sistema de condensación en un espejo es el método de mayor exactitud para puntos de rocío entre -30 °C y 130 °C.", "difficulty": 2, "module": 6}, {"q": "¿Cuál es la principal ventaja de emplear un sensor de conductividad toroidal (inductivo) en procesos químicos agresivos?", "options": ["Puede medir conductividades inferiores a 0,05 microSiemens/cm.", "Al no tener electrodos en contacto con el líquido, elimina problemas de polarización y recubrimiento.", "No requiere alimentación de corriente alterna.", "Su exactitud es diez veces superior a la de los sensores de contacto."], "correct": 1, "explanation": "Los sensores toroidales carecen de electrodos metálicos en contacto directo, lo que evita la polarización y la contaminación procedente del proceso.", "difficulty": 2, "module": 6}, {"q": "Si un electrodo de vidrio de pH se recubre con una capa de sedimentos del proceso, ¿cuál es el error de medición más probable que se observe?", "options": ["El instrumento marcará pH 7 permanentemente debido al equilibrio químico.", "La lectura mostrará valores de pH falsamente bajos debido a la saturación del electrolito.", "El instrumento indicará valores de pH falsamente altos al comportarse como si hubiera menor concentración de H+.", "La impedancia del circuito bajará drásticamente provocando un cortocircuito."], "correct": 2, "explanation": "El recubrimiento hace que el electrodo detecte menores concentraciones de ion hidrógeno, lo que resulta en lecturas de pH más elevadas de lo real.", "difficulty": 3, "module": 6}, {"q": "Se desea medir la densidad de un producto (rango 0,8 a 0,9 g/cm³) usando un transmisor de DP con margen 0-100 mm c.d.a. ¿Qué distancia 'h' entre tomas debe fijarse?", "options": ["0,5 metros", "1,0 metro", "1,5 metros", "2,0 metros"], "correct": 1, "explanation": "h = margen / (densidad_max - densidad_min). En este caso: 100 mm / (0,9 - 0,8) = 1000 mm, que equivale a 1 metro.", "difficulty": 3, "module": 6}, {"q": "Un instrumento de conductividad no compensado mide una solución de sal neutra. Si la lectura es 100 µS/cm a 25 °C y la temperatura sube a 35 °C, ¿cuál será la lectura aproximada?", "options": ["102 µS/cm", "110 µS/cm", "120 µS/cm", "140 µS/cm"], "correct": 2, "explanation": "La conductividad de sales neutras varía un 2%/°C. Un aumento de 10 °C supone un incremento del 20% (10 * 2%), resultando en 120 µS/cm.", "difficulty": 3, "module": 6}, {"q": "¿Cómo se define técnicamente el término 'consistencia' en el contexto de la medición de variables físicas en la industria papelera?", "options": ["Resistencia de un fluido a la deformación bajo un esfuerzo de cortadura", "Porcentaje de peso de material seco fibroso en una combinación de agua y pulpa", "Relación entre la masa de un cuerpo y la del agua a 4 °C", "Grado de transparencia de una muestra de agua debido a partículas extrañas"], "correct": 1, "explanation": "Según la fuente técnica, la consistencia se define específicamente como el porcentaje de peso de material seco fibroso en cualquier combinación de agua y pulpa,.", "difficulty": 1, "module": 6}, {"q": "¿Qué propiedad física del oxígeno permite su medición selectiva mediante analizadores que utilizan un fuerte campo magnético para enfriar filamentos calefactores?", "options": ["Conductividad térmica elevada", "Absorción de radiación infrarroja", "Paramagnetismo", "Ionización de llama"], "correct": 2, "explanation": "El oxígeno es un gas paramagnético, lo que le permite desplazar a otros gases en un campo magnético y enfriar un elemento calefactor, principio base de estos analizadores,.", "difficulty": 1, "module": 6}, {"q": "En comparación con los electrodos de vidrio convencionales, ¿cuál es una de las ventajas críticas del sensor de pH tipo ISFET (Ion Sensitive Field Effect Transistor)?", "options": ["No requiere compensación por variaciones de temperatura", "Es de estado sólido, prácticamente irrompible y proporciona una señal de baja impedancia", "Elimina la necesidad de utilizar un electrodo de referencia", "No requiere calibración con soluciones tampón"], "correct": 1, "explanation": "El ISFET es un sensor de estado sólido que destaca por su robustez mecánica (irrompible) y por generar una señal de pH de baja impedancia, facilitando su uso en medios sucios,.", "difficulty": 2, "module": 6}, {"q": "¿De qué manera el sistema de medición de humedad en sólidos por resonancia de microondas logra que la lectura sea independiente de la densidad del producto?", "options": ["Mediante el uso de una fuente de referencia de rayos gamma adicional", "Asociando el valor de humedad con el ángulo que forma la recta de resonancia en el plano de fase", "Aplicando una presión de contacto constante sobre los electrodos del sensor", "Utilizando un sistema de pesaje integrado por células de carga"], "correct": 1, "explanation": "La fuente indica que el ángulo formado por las rectas de resonancia es independiente de la densidad, permitiendo calibrar el aparato asociando dicho ángulo con el valor de humedad,.", "difficulty": 2, "module": 6}, {"q": "Se desea medir la densidad de un ácido en un rango de 1,10 a 1,30 g/cm³ utilizando un transmisor de presión diferencial con un margen (span) configurado de 0 a 200 mm c.d.a. Según los cálculos de presión hidrostática, ¿cuál debe ser la distancia vertical 'h' entre las tomas y qué valor de elevación de cero (en mm c.d.a.) requiere el instrumento?", "options": ["h = 0,5 m; Elevación = 550 mm c.d.a.", "h = 1,0 m; Elevación = 1.100 mm c.d.a.", "h = 2,0 m; Elevación = 2.200 mm c.d.a.", "h = 1,0 m; Elevación = 200 mm c.d.a."], "correct": 1, "explanation": "La distancia h se calcula como Span/(Δρ*1000) = 200/(0,2*1000) = 1 metro. La elevación es la presión mínima: h * ρ_min * 1000 = 1 * 1,10 * 1000 = 1.100 mm c.d.a.,.", "difficulty": 3, "module": 6}]}, {"id": 7, "name": "Elementos Finales de Control", "questions": [{"q": "¿Cómo se define el coeficiente de caudal Cv de una válvula de control según los estándares técnicos descritos?", "options": ["El caudal de agua a 20 °C en m3/h que pasa con una pérdida de carga de 1 bar.", "El caudal de agua en galones USA por minuto a 60 °F que pasa con una caída de presión de 1 psi.", "La relación entre el caudal máximo y el mínimo que la válvula puede regular con precisión.", "La presión diferencial máxima que el servomotor puede vencer para cerrar la válvula."], "correct": 1, "explanation": "El coeficiente Cv se define específicamente como el caudal en gpm de agua a 60 °F con una caída de 1 psi, mientras que el Kv utiliza unidades métricas (m3/h y bar).", "difficulty": 1, "module": 7}, {"q": "En una válvula con característica de caudal inherente de 'igual porcentaje' (isoporcentual), ¿cuál es su comportamiento operativo?", "options": ["El caudal es directamente proporcional a la carrera del obturador.", "El caudal aumenta muy poco al principio y mucho al final de la carrera para incrementos iguales.", "Cada incremento porcentual de la carrera produce un incremento porcentual igual en el caudal.", "El obturador tiene forma de disco plano para alcanzar el caudal máximo rápidamente."], "correct": 2, "explanation": "La característica isoporcentual se define porque cada incremento de carrera genera un aumento proporcional al caudal que circulaba en el punto anterior.", "difficulty": 1, "module": 7}, {"q": "¿Qué fenómeno físico se produce cuando la presión del fluido en la vena contraída cae por debajo de la presión de vapor y la presión de salida permanece también por debajo de dicha presión de vapor?", "options": ["Cavitación (implosión de burbujas).", "Vaporización (flashing).", "Recuperación de presión subcrítica.", "Efecto vórtex por alta viscosidad."], "correct": 1, "explanation": "El flashing ocurre cuando la presión de salida es menor o igual a la de vapor, manteniendo el fluido en fase vapor o mezcla líquido-vapor tras la válvula.", "difficulty": 1, "module": 7}, {"q": "Al comparar válvulas de globo, ¿cuál es la ventaja principal de un diseño de simple asiento frente a uno de doble asiento?", "options": ["Permite un cierre mucho más estanco con menores fugas (Clase IV o VI).", "Requiere un actuador más pequeño para la misma presión diferencial.", "Es inherentemente equilibrada respecto a las fuerzas estáticas del fluido.", "Tiene una capacidad de caudal (Cv) superior para el mismo diámetro de cuerpo."], "correct": 0, "explanation": "Las válvulas de simple asiento ofrecen un cierre más estanco, mientras que las de doble asiento se prefieren para altas presiones porque las fuerzas están equilibradas.", "difficulty": 2, "module": 7}, {"q": "¿Cuál es la función técnica fundamental de un posicionador acoplado a un actuador neumático?", "options": ["Amplificar la señal de control de 3 a 15 psi hasta niveles de 100 psi.", "Garantizar que la posición del vástago sea proporcional a la señal de control venciendo rozamientos.", "Invertir mecánicamente la acción del obturador de 'bajar para cerrar' a 'bajar para abrir'.", "Controlar la presión de entrada al cuerpo de la válvula para evitar la cavitación."], "correct": 1, "explanation": "El posicionador actúa como un controlador de posición que compara la señal de entrada con la posición real del vástago para eliminar errores por fricción.", "difficulty": 2, "module": 7}, {"q": "Si la pérdida de carga disponible para la válvula es muy pequeña respecto a la total del sistema (coeficiente r < 0,4), ¿qué característica de caudal inherente se recomienda seleccionar?", "options": ["Lineal.", "Apertura rápida.", "Igual porcentaje (isoporcentual).", "Parabólica profunda."], "correct": 2, "explanation": "Cuando r es bajo, la característica efectiva se distorsiona; una válvula isoporcentual tenderá a comportarse como una lineal, mejorando el control.", "difficulty": 2, "module": 7}, {"q": "Calcule el coeficiente Kv necesario para una válvula que debe manejar 100 m3/h de un producto con densidad relativa 0,81 y una caída de presión de 4 bar.", "options": ["45", "90", "22,5", "18,2"], "correct": 0, "explanation": "Kv = Q * √(densidad / deltaP). Kv = 100 * √(0,81 / 4) = 100 * √0,2025 = 100 * 0,45 = 45.", "difficulty": 3, "module": 7}, {"q": "Se dispone de una válvula de acción directa (baja para cerrar) equipada con un actuador de acción inversa (aire para abrir/resorte para cerrar). ¿Cuál es su posición de seguridad ante fallo de aire?", "options": ["Totalmente abierta (Fails Open).", "Totalmente cerrada (Fails Closed).", "Mantiene la última posición (Lock-up).", "Posición intermedia al 50% de la carrera."], "correct": 1, "explanation": "El resorte empuja el vástago hacia abajo (acción inversa del actuador) y al ser una válvula de acción directa (bajar es cerrar), la válvula cierra ante el fallo.", "difficulty": 3, "module": 7}, {"q": "Durante una prueba de 'firma' (signature) con un posicionador inteligente, se detecta una histéresis y zona muerta superiores a los valores de fábrica. ¿Cuál es el diagnóstico más probable?", "options": ["Rotura interna del muelle del servomotor.", "Fuga de aire en la membrana del actuador.", "Fricción excesiva en la empaquetadura (estopada) o guías.", "Pérdida de calibración del cero en el controlador digital."], "correct": 2, "explanation": "La histéresis excesiva en la curva de recorrido frente a presión suele ser indicativo de rozamientos mecánicos elevados en la empaquetadura.", "difficulty": 3, "module": 7}, {"q": "¿Cuál es la desventaja técnica principal de la válvula Saunders (o de diafragma) con relación a su accionamiento según las fuentes?", "options": ["No permite el uso de materiales de revestimiento como goma", "El servomotor de accionamiento debe ser muy potente", "Es inadecuada para el manejo de fluidos con sólidos en suspensión", "Presenta una alta caída de presión en posición de apertura total"], "correct": 1, "explanation": "La fuente indica que, aunque la válvula Saunders es ideal para fluidos agresivos, tiene la desventaja de que su servomotor de accionamiento debe ser muy potente,.", "difficulty": 1, "module": 7}, {"q": "Según la norma internacional IEC-534-1987, ¿cómo se define específicamente la 'rangeabilidad' o gama de caudales regulables en una válvula de control?", "options": ["Como la relación entre el caudal máximo y el caudal mínimo regulables", "Como la diferencia algebraica entre los valores extremos del campo de medida", "Como el cociente entre el Cv nominal y el error de repetibilidad del vástago", "Como el porcentaje de la señal de control necesario para iniciar la apertura"], "correct": 0, "explanation": "La rangeabilidad se define técnicamente como la relación entre el caudal máximo y el caudal mínimo que la válvula puede controlar manteniendo su característica,.", "difficulty": 1, "module": 7}, {"q": "Al comparar materiales de sellado para el vástago, ¿por qué se prefiere técnicamente el empleo de teflón frente al grafito siempre que la temperatura sea inferior a 220 °C?", "options": ["Porque el grafito tiene un coeficiente de dilatación mucho menor que el acero", "Porque el coeficiente de rozamiento del grafito es de 7 a 10 veces mayor que el del teflón", "Porque el teflón es el único material que garantiza cero emisiones según la Clean Air Act", "Porque el grafito requiere obligatoriamente una válvula de engrase para no corroer el vástago"], "correct": 1, "explanation": "La fuente recomienda el teflón sobre el grafito debido a que este último tiene un coeficiente de rozamiento significativamente mayor, lo que dificulta el control,.", "difficulty": 2, "module": 7}, {"q": "Considerando la resistencia a la erosión en condiciones extremas, ¿cuál es el diseño de válvula que las fuentes sitúan como el más favorable?", "options": ["Válvula de globo de doble asiento con obturador contorneado", "Válvula de jaula equilibrada con obturador de movimiento lineal", "Válvula en ángulo de simple asiento con obturador contorneado", "Válvula de bola segmentada con dirección de flujo para abrir"], "correct": 2, "explanation": "Las fuentes técnicas listan la válvula en ángulo de simple asiento con obturador contorneado como la más resistente a la erosión en orden decreciente,.", "difficulty": 2, "module": 7}, {"q": "Una bomba centrífuga alimenta un proceso donde una válvula de control regula un caudal de 50 m³/h absorbiendo una pérdida de carga de 4 bar. Calcule la potencia (en Kw) que consume la válvula y que debe ser suministrada por la bomba, utilizando la fórmula técnica: Potencia (Kw) = 0,0266 × ΔP(bar) × Q(m³/h).", "options": ["1,33 Kw", "2,66 Kw", "5,32 Kw", "10,64 Kw"], "correct": 2, "explanation": "Aplicando la fórmula de la fuente: 0,0266 * 4 bar * 50 m³/h = 5,32 Kw. Este cálculo permite evaluar el gasto energético asociado a la pérdida de carga en la válvula,.", "difficulty": 3, "module": 7}]}, {"id": 8, "name": "Calibración y Ajuste", "questions": [{"q": "¿Qué tipo de error se caracteriza por un desplazamiento constante de todas las lecturas de un instrumento sin que varíe la inclinación de su curva de respuesta?", "options": ["Error de cero", "Error de multiplicación", "Error de angularidad", "Error de histéresis"], "correct": 0, "explanation": "El error de cero desplaza todas las señales de salida en un mismo valor constante con relación a la recta ideal de calibración.", "difficulty": 1, "module": 8}, {"q": "¿Cómo se define la 'trazabilidad' de una medición según los estándares metrológicos descritos?", "options": ["La capacidad de un instrumento para mantener su calibración durante un año.", "El grado de aproximación de una lectura al valor verdadero del mensurando.", "La propiedad de relacionar un resultado con patrones nacionales o internacionales mediante una cadena ininterrumpida de comparaciones.", "El registro gráfico de los valores históricos de calibración de un transmisor inteligente."], "correct": 2, "explanation": "La trazabilidad asegura que los resultados se relacionen con estándares internacionales a través de una cadena continua de comparaciones con incertidumbres determinadas.", "difficulty": 1, "module": 8}, {"q": "¿Cuál es el principio de funcionamiento de un comprobador de manómetros de peso muerto (dead weight tester)?", "options": ["La deflexión de un tubo Bourdon de precisión calibrado en fábrica.", "El equilibrio de una presión hidráulica mediante un pistón de sección conocida que soporta pesas calibradas.", "La generación de una señal de 4-20 mA proporcional a la deformación de una galga.", "La comparación visual entre un manómetro de proceso y un manómetro patrón digital."], "correct": 1, "explanation": "Es un patrón primario que genera presión aplicando masas conocidas sobre un pistón de sección calibrada que flota en un fluido hidráulico.", "difficulty": 1, "module": 8}, {"q": "Para corregir un error de multiplicación (span) en un instrumento mecánico, ¿qué ajuste debe realizar el técnico?", "options": ["Cambiar la posición de la aguja indicadora en el eje de lectura.", "Alinear las palancas de transmisión para que queden a escuadra al 50% de la escala.", "Girar el tornillo de cero hasta que el índice marque el punto de base.", "Actuar sobre el tornillo de multiplicación que modifica la relación de amplitud de los movimientos de salida."], "correct": 3, "explanation": "El error de multiplicación se corrige ajustando el brazo de palanca o tornillo de span, que cambia la pendiente de la curva de respuesta del instrumento.", "difficulty": 2, "module": 8}, {"q": "En la calibración de sondas de temperatura, ¿cuál es la ventaja técnica de los baños de líquido agitados frente a los calibradores de bloque metálico?", "options": ["Los líquidos eliminan la formación de gradientes de temperatura y puntos fríos o calientes.", "Permiten alcanzar temperaturas de hasta 1200 °C de forma más rápida.", "Son dispositivos portátiles que no requieren alimentación eléctrica externa.", "Utilizan sales sólidas que no necesitan ser sustituidas durante la vida útil del equipo."], "correct": 0, "explanation": "El fluido agitado garantiza una distribución uniforme de la temperatura, mejorando la transferencia térmica hacia las sondas que se comprueban.", "difficulty": 2, "module": 8}, {"q": "Al realizar la calibración de un transmisor inteligente mediante protocolo HART, ¿qué procedimiento diferencia el ajuste del sensor del ajuste de salida?", "options": ["El ajuste del sensor es mecánico y el de salida es puramente digital.", "El ajuste del sensor iguala la variable de proceso (PV) a la entrada real, mientras que el de salida ajusta la generación de los 4 y 20 mA.", "Solo es posible ajustar la salida analógica si el transmisor se desconecta del lazo de control.", "El ajuste de salida se realiza mediante tornillos de span y el del sensor mediante un PC con RS-232."], "correct": 1, "explanation": "El ajuste digital del sensor asegura que el transmisor lea correctamente la variable física, mientras que el ajuste de salida (trim) calibra el convertidor D/A de la señal analógica.", "difficulty": 2, "module": 8}, {"q": "Según la regla técnica de calibración, si se desea calibrar un manómetro de proceso que tiene una exactitud de ±1%, ¿cuál debe ser la exactitud mínima del manómetro patrón para garantizar un ensayo fiable?", "options": ["±1,00%", "±0,50%", "±0,25%", "±0,01%"], "correct": 2, "explanation": "Los aparatos patrón deben tener una exactitud al menos 4 veces superior a la de los instrumentos que se van a calibrar (relación 4:1).", "difficulty": 3, "module": 8}, {"q": "Un instrumento mecánico de transmisión por palancas presenta lecturas correctas al 0% y al 100% del rango, pero muestra un error máximo al 50%. ¿Cómo debe proceder el instrumentista para eliminar este error de angularidad?", "options": ["Debe reajustar únicamente el tornillo de cero hasta compensar la desviación central.", "Debe extraer la aguja y fijarla en una posición desplazada 5 grados hacia la derecha.", "Debe sustituir el instrumento inmediatamente por ser un defecto de fabricación no reparable.", "Debe ajustar el tornillo de angularidad moviendo el índice en la dirección del error unas cinco veces para aplanar la curva."], "correct": 3, "explanation": "El error de angularidad en sistemas de palancas se corrige aumentando deliberadamente el error en su dirección para linealizar la transmisión mecánica.", "difficulty": 3, "module": 8}, {"q": "Bajo la normativa ISO 9001, ¿qué requisito específico debe cumplir el suministrador respecto a la 'confirmación metrológica' de sus equipos de medida?", "options": ["Garantizar que todos los instrumentos sean digitales para eliminar errores de paralaje.", "Realizar un conjunto de operaciones para asegurar que el equipo cumple con los requisitos para su uso previsto.", "Subcontratar todas las calibraciones a laboratorios internacionales de nivel primario.", "Asegurar que el error de cero de todos los instrumentos sea exactamente nulo en condiciones ambiente."], "correct": 1, "explanation": "La confirmación metrológica implica identificar, calibrar y ajustar los equipos para garantizar que son aptos para la calidad del producto final según la norma ISO 9001.", "difficulty": 3, "module": 8}, {"q": "¿Cuál es la distinción técnica fundamental entre la 'exactitud' y la 'tolerancia' en el contexto de la calibración industrial?", "options": ["La exactitud es el error absoluto y la tolerancia es el error relativo de la medida", "La exactitud es una cualidad dada por el fabricante, mientras que la tolerancia es la desviación permitida por el proceso o equipo de calibración", "Son términos sinónimos que se expresan siempre en porcentaje de la longitud de la escala", "La exactitud mide la deriva térmica y la tolerancia mide el error de repetibilidad"], "correct": 1, "explanation": "La exactitud define los límites de los errores cometidos según el fabricante, mientras que la tolerancia es el margen de desviación permitido por los requerimientos del proceso o la capacidad del equipo de calibración [1, 2].", "difficulty": 1, "module": 8}, {"q": "Según la terminología metrológica de las fuentes, ¿qué nombre recibe la magnitud particular que es objeto de una medición?", "options": ["Patrón de referencia", "Variable ideal", "Mensurando", "Valor absoluto convencional"], "correct": 2, "explanation": "El mensurando se define técnicamente como la magnitud particular objeto de una medición, cuya especificación requiere conocer las variables que pueden afectar su valor [3, 4].", "difficulty": 1, "module": 8}, {"q": "¿Qué ventaja técnica ofrece el hecho de que los transmisores inteligentes modernos almacenen los datos de caracterización directamente en el sensor primario?", "options": ["Elimina por completo la necesidad de realizar ajustes de cero y span", "Permite que el módulo electrónico sea actualizado o sustituido en campo sin necesidad de efectuar una recalibración", "Garantiza que el instrumento sea inmune a las vibraciones y a la corrosión química", "Posibilita la medición de caudales sin necesidad de compensación por presión"], "correct": 1, "explanation": "Al guardar los datos de caracterización en el sensor, se permite la actualización del módulo electrónico en campo manteniendo la integridad de la calibración original.", "difficulty": 2, "module": 8}, {"q": "En la calibración de instrumentos analógicos, ¿en qué situación específica se produce el denominado 'error de interpolación'?", "options": ["Cuando la línea de observación al índice no es perpendicular a la escala del instrumento", "Cuando el índice no coincide exactamente con la graduación de la escala y el observador redondea la lectura", "Cuando existe un desplazamiento constante en todas las lecturas de la señal de salida", "Cuando el mecanismo de transmisión por palancas no está perfectamente a escuadra"], "correct": 1, "explanation": "El error de interpolación es una desviación del observador que ocurre cuando la aguja se encuentra entre dos marcas de la escala y se realiza un redondeo por exceso o defecto [6, 7].", "difficulty": 2, "module": 8}, {"q": "Un transmisor electrónico de presión tiene un campo de medida de 0 a 100 bar y una señal de salida de 4 a 20 mA c.c. Si el técnico de proceso establece una tolerancia de calibración de ±0,5 bar para cumplir con la norma ISO 9000, ¿cuál es el valor de la tolerancia de salida correspondiente en miliamperios?", "options": ["±0,04 mA", "±0,08 mA", "±0,12 mA", "±0,16 mA"], "correct": 1, "explanation": "La tolerancia de salida se calcula como (Tolerancia en unidades / Alcance) * Margen de señal; en este caso: (0,5 bar / 100 bar) * 16 mA = 0,005 * 16 = 0,08 mA [1, 8].", "difficulty": 3, "module": 8}]}, {"id": 9, "name": "Control de Procesos", "questions": [{"q": "¿Cuál es el principal inconveniente de un sistema de control que solo utiliza la acción proporcional (P)?", "options": ["La inestabilidad permanente del lazo.", "La presencia de una desviación permanente u 'offset'.", "La lentitud excesiva ante cambios de carga.", "La imposibilidad de actuar sobre válvulas neumáticas."], "correct": 1, "explanation": "El control proporcional puro no puede eliminar la desviación permanente (offset) entre la variable y el punto de consigna ante cambios de carga.", "difficulty": 1, "module": 9}, {"q": "¿En un esquema de control en cascada, de qué manera interactúan los controladores primario y secundario?", "options": ["Sus salidas se suman en un relé selector de baja.", "Sus salidas se multiplican para ajustar la ganancia total.", "La señal de salida del controlador primario es el punto de consigna del secundario.", "El controlador secundario ajusta la banda proporcional del primario."], "correct": 2, "explanation": "En el control en cascada, el controlador primario (maestro) manda su señal de salida al punto de consigna del secundario (esclavo).", "difficulty": 1, "module": 9}, {"q": "¿Qué acción de control se caracteriza por mover la válvula en una cantidad proporcional a la pendiente de la variable de proceso?", "options": ["Acción Proporcional", "Acción Integral", "Control Todo-Nada", "Acción Derivativa"], "correct": 3, "explanation": "La acción derivativa es proporcional a la velocidad de cambio (pendiente) de la variable, anticipándose a la desviación.", "difficulty": 1, "module": 9}, {"q": "¿Cuál es la distinción fundamental entre el control anticipativo (feedforward) y el control de realimentación (feedback)?", "options": ["El feedforward mide las perturbaciones de entrada para corregir antes de que afecten a la salida.", "El feedback no requiere un sensor de medida en el proceso.", "El feedforward solo funciona en lazos de control de nivel de líquidos.", "El feedback es inherentemente más rápido que el feedforward al no usar modelos matemáticos."], "correct": 0, "explanation": "A diferencia del feedback, el control feedforward actúa sobre la variable manipulada basándose en medidas de las perturbaciones de entrada.", "difficulty": 2, "module": 9}, {"q": "En el contexto de la seguridad funcional IEC 61508, ¿qué implica una arquitectura redundante de tipo 2oo3 (dos de tres)?", "options": ["Que el sistema tiene tres niveles SIL de seguridad consecutivos.", "Que se requieren tres fallos simultáneos para que el proceso se detenga.", "Que existen tres canales de los cuales al menos dos deben funcionar correctamente.", "Que el sistema es un 50% más rápido que uno de canal simple 1oo1."], "correct": 2, "explanation": "En una arquitectura 2oo3, existen tres canales y se requiere que dos de ellos funcionen bien para realizar las funciones de seguridad.", "difficulty": 2, "module": 9}, {"q": "Al emplear el método de sintonización de ganancia límite de Ziegler-Nichols, ¿cómo deben configurarse las acciones integral y derivada antes de iniciar el ensayo?", "options": ["Integral al mínimo y derivada al máximo.", "Integral en su valor más bajo (infinitos min/rep) y derivada en cero.", "Ambas acciones deben ajustarse a la mitad de su rango de calibración.", "Integral en un minuto por repetición y derivada en un minuto de anticipo."], "correct": 1, "explanation": "Para encontrar la ganancia límite, se deben anular las acciones integral (Ti = infinito) y derivada (Td = 0).", "difficulty": 2, "module": 9}, {"q": "Un controlador proporcional tiene ganancia 2 en una escala de 0-100 °C. Si el punto de consigna es 50 °C, ¿en qué intervalo de temperatura la válvula realizará su carrera completa?", "options": ["De 25 °C a 75 °C", "De 0 °C a 50 °C", "De 40 °C a 60 °C", "De 50 °C a 100 °C"], "correct": 0, "explanation": "Ganancia 2 equivale a BP=50%. Con el punto de consigna al 50%, la banda se extiende un 25% por encima y un 25% por debajo.", "difficulty": 3, "module": 9}, {"q": "Utilizando el método de ganancia límite, se obtiene una oscilación mantenida con un periodo Pu = 12 minutos. ¿Qué tiempo de acción integral (Ti) debe ajustarse para un controlador PI?", "options": ["14,4 minutos por repetición", "10,0 minutos por repetición", "6,0 minutos por repetición", "1,5 minutos por repetición"], "correct": 1, "explanation": "Según las fórmulas de Ziegler-Nichols para un controlador PI, Ti = Pu / 1,2. En este caso, 12 / 1,2 = 10.", "difficulty": 3, "module": 9}, {"q": "En un proceso discontinuo (batch), ¿cuál es la causa principal del fenómeno conocido como saturación integral o 'reset windup'?", "options": ["Un fallo en el suministro de aire comprimido a la válvula.", "La existencia de un tiempo muerto excesivo en el transmisor.", "La acumulación de error por el integrador mientras la variable está fuera de la banda proporcional.", "Una ganancia proporcional demasiado baja para la dinámica del reactor."], "correct": 2, "explanation": "La saturación integral ocurre cuando el controlador sigue integrando el error mientras la salida está saturada (válvula totalmente abierta o cerrada).", "difficulty": 3, "module": 9}, {"q": "¿Qué característica define técnicamente al control flotante de velocidad constante?", "options": ["La velocidad de movimiento del elemento final es proporcional a la magnitud del error", "El elemento final se mueve a una velocidad única y fija siempre que existe una desviación", "La salida del controlador varía de forma isoporcentual con respecto al tiempo", "El instrumento adopta solo dos posiciones extremas en función del punto de consigna"], "correct": 1, "explanation": "El control flotante se caracteriza por mover el elemento final de control a una velocidad única e independiente de la magnitud de la desviación mientras esta se mantenga fuera de la zona neutra [1-3].", "difficulty": 1, "module": 9}, {"q": "¿Cuál es el objetivo principal de implementar una estrategia de control selectivo (override control) en un proceso industrial?", "options": ["Compensar dinámicamente los tiempos muertos mediante un modelo interno", "Desacoplar las interacciones mutuas entre variables en sistemas multivariables", "Limitar una variable de proceso en un valor de seguridad para evitar daños al equipo o al producto", "Sincronizar el arranque y parada de diversos motores de forma secuencial"], "correct": 2, "explanation": "El control selectivo se emplea fundamentalmente para limitar variables de proceso en valores altos o bajos de seguridad, seleccionando la señal adecuada para prevenir daños en el proceso o producto [4-6].", "difficulty": 1, "module": 9}, {"q": "En un sistema de control de gama partida (split range), ¿de qué manera se logra habitualmente que dos válvulas actúen sobre diferentes sectores de la señal de salida (por ejemplo, 4-12 mA y 12-20 mA)?", "options": ["Mediante la programación de dos bloques PID independientes en el controlador", "Utilizando posicionadores o convertidores I/P ajustados a los sub-márgenes específicos de la señal", "Instalando un relé de relación con ganancia inversa entre ambas válvulas", "Configurando transmisores con diferentes tiempos de respuesta para cada sector"], "correct": 1, "explanation": "La partición de la señal se consigue generalmente mediante posicionadores acoplados a las válvulas o convertidores I/P calibrados para responder a una fracción del rango total de control del instrumento [7-9].", "difficulty": 2, "module": 9}, {"q": "Al configurar un lazo de control de relación (ratio control), ¿qué factor técnico es determinante para el ajuste del dial del relé de relación?", "options": ["La relación entre los campos de medida (spans) de los transmisores primario y secundario", "El tiempo de retardo dominante del lazo de realimentación principal", "La constante de tiempo del elemento final de control secundario", "La frecuencia crítica obtenida en el ensayo de lazo abierto"], "correct": 0, "explanation": "El ajuste del relé de relación es función de los campos de medida relativos de los transmisores para asegurar que la proporción física deseada coincida con la relación de las señales [10-12].", "difficulty": 2, "module": 9}, {"q": "Durante un ensayo de sintonización por el método de ganancia límite de Ziegler-Nichols, se obtiene una oscilación mantenida con una ganancia crítica Kc = 5 y un período Pu = 16 minutos. ¿Qué valores de ganancia (g) y tiempo de acción derivada (Td) deben configurarse para un controlador PID?", "options": ["g = 2,25; Td = 13,3 min", "g = 2,5; Td = 4 min", "g = 3,0; Td = 2 min", "g = 2,0; Td = 5,3 min"], "correct": 2, "explanation": "Según las reglas de Z-N para PID: la ganancia g = 0,6 * Kc = 3,0; y el tiempo de acción derivada Td = Pu / 8 = 2 minutos [13-15].", "difficulty": 3, "module": 9}]}, {"id": 10, "name": "Comunicaciones e Integración", "questions": [{"q": "¿Cuál es la ventaja técnica de utilizar un 'cero vivo' (4 mA) en lugar de un 'cero muerto' (0 mA) en las señales electrónicas analógicas?", "options": ["Permite aumentar la rangeabilidad del instrumento en un 25%.", "Diferencia una lectura de valor cero de una posible rotura del lazo o fallo de alimentación.", "Elimina la necesidad de utilizar cables apantallados contra interferencias electromagnéticas.", "Reduce el consumo de energía de los transmisores de dos hilos en un 50%."], "correct": 1, "explanation": "El 'cero vivo' (4 mA) permite distinguir si el instrumento está midiendo el valor mínimo del rango o si existe una falla, como un cable cortado, en cuyo caso la corriente caería a 0 mA.", "difficulty": 1, "module": 10}, {"q": "¿Qué norma ISA especifica la creación de diagramas que presentan en una sola hoja toda la información de instalación, conexión y mantenimiento de un lazo de control?", "options": ["ISA-S5.1", "ISA-S5.3", "ISA-S5.4", "ISA-S5.5"], "correct": 2, "explanation": "La norma ISA-S5.4 describe los diagramas de lazo de control, los cuales facilitan el mantenimiento y la puesta en marcha al integrar toda la información técnica en un solo documento.", "difficulty": 1, "module": 10}, {"q": "En el protocolo de comunicaciones HART, ¿qué frecuencias se utilizan para representar los estados lógicos 1 y 0 mediante la técnica FSK?", "options": ["1200 Hz para el '1' y 2200 Hz para el '0'.", "60 Hz para el '1' y 50 Hz para el '0'.", "31,25 kHz para el '1' y 100 kHz para el '0'.", "1200 Hz para el '0' y 2200 Hz para el '1'."], "correct": 0, "explanation": "El protocolo HART utiliza el estándar Bell 202 FSK, codificando el '1' con una frecuencia de 1200 Hz y el '0' con 2200 Hz sobre la señal de 4-20 mA.", "difficulty": 1, "module": 10}, {"q": "Al comparar las arquitecturas de control, ¿cuál es la diferencia principal entre un sistema SCADA y un sistema DCS (Control Distribuido)?", "options": ["El DCS solo permite control digital y el SCADA solo control analógico.", "El SCADA se asocia a procesos distribuidos en grandes áreas con comunicaciones de baja velocidad, mientras que el DCS usa redes locales de alta velocidad.", "El DCS es un sistema abierto de cualquier fabricante y el SCADA es siempre un protocolo propietario.", "No existe diferencia técnica, son dos nombres para el mismo tipo de arquitectura jerarquizada."], "correct": 1, "explanation": "Según las fuentes, SCADA suele transmitir por circuitos de baja velocidad (radio/teléfono) en áreas geográficas extensas, mientras que el DCS utiliza buses locales de alta velocidad en la propia planta.", "difficulty": 2, "module": 10}, {"q": "¿Qué información específica se gestiona dentro del 'Bloque de Transductor' (TB) en un instrumento con tecnología Foundation Fieldbus?", "options": ["Las estrategias de control PID y los algoritmos de relación.", "El nombre del fabricante, modelo y número de serie del equipo físico.", "Los parámetros del sensor, su estado y las fechas de calibración.", "La dirección IP del dispositivo para su integración en redes Ethernet HSE."], "correct": 2, "explanation": "El Bloque de Transductor (Transducer Block) se encarga de la interfaz directa con el sensor, conteniendo datos sobre su tipo, estado y calibración.", "difficulty": 2, "module": 10}, {"q": "¿Cuál es la velocidad de transmisión estandarizada para la tarjeta H1 de Foundation Fieldbus utilizada habitualmente en instrumentos de campo?", "options": ["9600 baudios", "31,25 kbits/s", "1,0 Mbits/s", "100 Mbits/s"], "correct": 1, "explanation": "La tecnología H1 de FF opera a una velocidad de 31,25 kbits/s y permite que la alimentación y la comunicación circulen por el mismo par de hilos torsionados.", "difficulty": 2, "module": 10}, {"q": "Se dispone de un transmisor de presión de 0 a 100 bar con salida de 4-20 mA. Si el receptor detecta una señal de 13,6 mA, ¿cuál es el valor de la presión en el proceso?", "options": ["48 bar", "55 bar", "60 bar", "68 bar"], "correct": 2, "explanation": "Porcentaje = (13,6 - 4) / 16 = 0,6 (60%). El 60% de 100 bar es 60 bar.", "difficulty": 3, "module": 10}, {"q": "¿Qué función desempeña el 'Programador Activo de Enlace' (Link Active Scheduler - LAS) en un bus de datos Foundation Fieldbus?", "options": ["Convierte las señales digitales de 31,25 Kbps a protocolos TCP/IP para Ethernet.", "Gestiona de forma centralizada la alimentación eléctrica de todos los nodos del bus.", "Envía mensajes específicos a cada instrumento para autorizar su transmisión y evitar colisiones de datos.", "Almacena las copias de seguridad de la configuración de todos los controladores lógicos (PLC)."], "correct": 2, "explanation": "El LAS es el componente que coordina el tráfico en el bus, autorizando qué instrumento puede transmitir en cada momento para mantener el orden de los mensajes.", "difficulty": 3, "module": 10}, {"q": "En las redes inalámbricas industriales bajo el estándar ISA100.11a, ¿cómo se logra la inmunidad a interferencias en entornos hostiles?", "options": ["Aumentando la potencia de emisión hasta los 500 mW por sensor.", "Utilizando el sistema FHSS que modula los datos saltando de frecuencia en frecuencia en una banda ancha.", "Restringiendo la comunicación a una línea de visión directa de máximo 10 metros.", "Empleando una modulación de amplitud (AM) para filtrar los ruidos parásitos del motor."], "correct": 1, "explanation": "La técnica FHSS (Frequency Hopping Spread Spectrum) permite que la señal sea robusta frente a interferencias al cambiar constantemente de frecuencia dentro de la banda de 902-928 MHz.", "difficulty": 3, "module": 10}, {"q": "¿Qué término define técnicamente el transporte secuencial de señales eléctricas que representan información codificada de acuerdo con un protocolo de comunicaciones?", "options": ["Protocolo híbrido", "Baudio", "Bus", "Interfaz serie"], "correct": 2, "explanation": "Según la fuente, el término bus indica el transporte secuencial de señales eléctricas que representan información codificada de acuerdo con un protocolo,.", "difficulty": 1, "module": 10}, {"q": "En la transmisión de señales digitales bajo el estándar de comunicación serie RS-232, ¿cómo se traducen eléctricamente los estados lógicos?", "options": ["Los 'unos' son tensión positiva y los 'ceros' son tensión negativa", "Los 'unos' son tensión negativa y los 'ceros' son tensión positiva", "Ambos estados se representan por impulsos de corriente de 4-20 mA", "Se utiliza modulación por salto de frecuencia (FHSS)"], "correct": 1, "explanation": "La fuente indica que en RS-232 los datos se transmiten en lógica negativa: los 'unos' son una tensión continua negativa y los 'ceros' una tensión continua positiva,.", "difficulty": 1, "module": 10}, {"q": "¿En qué técnica de codificación se basa la señal transmitida por el nivel físico de Foundation Fieldbus H1 (31,25 kbit/s)?", "options": ["Técnica Manchester combinada con un pulso de reloj", "Modulación por cambio de frecuencia (FSK) tipo Bell 202", "Modulación de impulsos codificados (BRAIN)", "Modulación en corriente de 4 y 20 mA (DE)"], "correct": 0, "explanation": "De acuerdo con los textos técnicos, la señal transmitida por el nivel físico de Foundation Fieldbus está codificada con la técnica Manchester,.", "difficulty": 2, "module": 10}, {"q": "¿Cuál es la ventaja técnica de la arquitectura de PLC de seguridad '1oo2D' frente a la configuración '1oo2' estándar?", "options": ["Reduce la probabilidad de fallo a la demanda al duplicar los canales", "Es tolerante a fallos respecto a la disponibilidad al no requerir el paro del proceso ante un único fallo detectado", "Elimina la necesidad de validación de señales por parte del microcontrolador", "Permite el uso de protocolos propietarios en lugar de estándares abiertos"], "correct": 1, "explanation": "Mientras que el sistema 1oo2 no es tolerante a fallos de disponibilidad, en el 1oo2D un único fallo detectado no conlleva la parada del proceso al aislar el canal afectado,.", "difficulty": 2, "module": 10}, {"q": "Se dispone de un segmento de Foundation Fieldbus H1 con una longitud de 1 km y una resistencia de cable de 44 ohms. Si la fuente de alimentación entrega 24 V c.c. (con 2 V de caída interna) y los instrumentos requieren un mínimo de 10 V en bornes, ¿cuántos aparatos con un consumo individual de 20 mA pueden conectarse en topología de estrella?", "options": ["8 aparatos", "10 aparatos", "13 aparatos", "32 aparatos"], "correct": 2, "explanation": "La caída de tensión disponible es 12 V (22 V - 10 V). La corriente total permitida es 12V/44 ohms = 272 mA. Dividiendo por el consumo individual: 272/20 = 13,6, lo que equivale a 13 aparatos,.", "difficulty": 3, "module": 10}]}]</script>
+<script id="topics-data" type="application/json">{"1":["Exactitud, precisión, histéresis y repetibilidad","Campo de medida, alcance (span) y rangeabilidad","Incertidumbre y trazabilidad de patrones","Norma ISA-S5.1 y código de letras","Clases de instrumentos: ciegos, indicadores, transmisores"],"2":["Clases de presión: absoluta, relativa, diferencial y vacío","Tubo Bourdon, espiral, diafragma y fuelle","Sensores capacitivos, extensométricos y piezoeléctricos","Medidores de vacío Pirani y McLeod","Sellos de diafragma, liras y amortiguadores"],"3":["Placa orificio, tobera, Venturi y Pitot","Rotámetros y medidores de turbina","Caudalímetros magnéticos y ultrasónicos","Vórtex y efecto Von Karman","Caudal másico: térmico y Coriolis"],"4":["Nivel de cristal y flotador","Medidor manométrico, burbujeo y presión diferencial","Supresión y elevación de cero","Capacitivos, conductivos y ultrasónicos","Radar FMCW y radar de onda guiada"],"5":["Termómetros bimetálicos y de bulbo (clases I-IV)","RTD Pt100 y montajes a 2, 3 y 4 hilos","Termopares: efecto Seebeck y tipos J, K, T, E, R, S, B, N","Compensación de la unión fría","Pirómetros de radiación e infrarrojos"],"6":["Medición de densidad y peso específico","Humedad relativa y punto de rocío","Conductividad electrolítica","Medición de pH y redox","Viscosidad, consistencia y turbidez"],"7":["Cuerpos de válvula: globo, bola, mariposa","Característica lineal, isoporcentual y apertura rápida","Actuadores neumáticos y posicionadores","Coeficiente de caudal Cv/Kv","Cavitación y flashing"],"8":["Errores de cero, multiplicación y angularidad","Comprobador de pesas (peso muerto)","Baños y bloques secos de temperatura","Calibradores multifunción y HART","Trazabilidad e ISO 9001"],"9":["Lazo abierto vs. cerrado","Acciones P, I y D: banda proporcional, min/rep","Sintonización Ziegler-Nichols","Cascada, ratio, feedforward y selectivo","Seguridad funcional SIL, IEC 61508/61511"],"10":["Señal 4-20 mA y live zero","Señal neumática 3-15 psi","HART, Foundation Fieldbus y Profibus","DCS, PLC y SCADA","Diagramas P&ID y de lazo"]}</script>
+<script>
+"use strict";
+/* ============ datos ============ */
+const BANK = JSON.parse(document.getElementById("bank-data").textContent);
+const TOPICS = JSON.parse(document.getElementById("topics-data").textContent);
+const QINDEX = {};
+let TOTAL_Q = 0;
+BANK.forEach(m => m.questions.forEach((q, i) => {
+  q.qid = m.id * 100 + i; q.module = m.id;
+  QINDEX[q.qid] = q; TOTAL_Q++;
+}));
+const MODS = BANK.map(m => ({ id: m.id, name: m.name }));
+
+/* ============ estado persistente ============ */
+const KEY = "mi500_state_v1";
+const blank = () => ({ history: [], qstats: {}, mlog: {} });
+let S = blank();
+try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+
+/* ============ métricas ============ */
+function mastery(mid) {
+  const log = S.mlog[mid];
+  if (!log || !log.length) return null;
+  let num = 0, den = 0;
+  log.forEach((v, i) => { const w = i + 1; num += v * w; den += w; });
+  return num / den;
+}
+function globalMastery() {
+  if (!MODS.length) return 0;
+  let sum = 0; MODS.forEach(m => { sum += (mastery(m.id) ?? 0); });
+  return sum / MODS.length;
+}
+const LEVELS = [
+  [0, "Aprendiz"], [.40, "Técnico"], [.60, "Especialista"], [.75, "Ingeniero"], [.90, "Máster"]
+];
+function levelName(g) {
+  let name = LEVELS[0][1];
+  LEVELS.forEach(([th, n]) => { if (g >= th) name = n; });
+  return name;
+}
+function statusColor(v) {
+  if (v == null) return "var(--muted)";
+  if (v < .40) return "var(--st-crit)";
+  if (v < .60) return "var(--st-serious)";
+  if (v < .80) return "var(--st-warn)";
+  return "var(--st-good)";
+}
+function statusWord(v) {
+  if (v == null) return "sin datos";
+  if (v < .40) return "crítico";
+  if (v < .60) return "flojo";
+  if (v < .80) return "en progreso";
+  return "dominado";
+}
+function accuracy() {
+  let c = 0, s = 0;
+  Object.values(S.qstats).forEach(st => { c += st.c; s += st.s; });
+  return s ? c / s : null;
+}
+function streakDays() {
+  if (!S.history.length) return 0;
+  const days = new Set(S.history.map(h => new Date(h.t).toDateString()));
+  let n = 0; const d = new Date();
+  if (!days.has(d.toDateString())) d.setDate(d.getDate() - 1);
+  while (days.has(d.toDateString())) { n++; d.setDate(d.getDate() - 1); }
+  return n;
+}
+function wrongPool() {
+  return Object.entries(S.qstats)
+    .filter(([qid, st]) => st.last === 0 && QINDEX[qid])
+    .map(([qid]) => QINDEX[qid]);
+}
+
+/* ============ utilidades ============ */
+const $ = id => document.getElementById(id);
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]]; } return a; };
+const pct = v => Math.round(v * 100) + "%";
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+function pickWeighted(items, wfn, n) {
+  const pool = items.slice(); const out = [];
+  while (pool.length && out.length < n) {
+    const ws = pool.map(wfn); const tot = ws.reduce((a, b) => a + b, 0);
+    let r = Math.random() * tot, idx = 0;
+    for (; idx < pool.length; idx++) { r -= ws[idx]; if (r <= 0) break; }
+    if (idx >= pool.length) idx = pool.length - 1;
+    out.push(pool.splice(idx, 1)[0]);
+  }
+  return out;
+}
+function freshness(q) { const st = S.qstats[q.qid]; return st ? 1 / (1 + st.s) : 1; }
+
+/* ============ selección de preguntas ============ */
+function buildDiagnostic() {
+  const items = [];
+  BANK.forEach(m => {
+    const easyish = m.questions.filter(q => q.difficulty <= 2);
+    const hardish = m.questions.filter(q => q.difficulty >= 2);
+    const a = pickWeighted(easyish.length ? easyish : m.questions, freshness, 1);
+    const rest = (hardish.length ? hardish : m.questions).filter(q => !a.includes(q));
+    const b = pickWeighted(rest.length ? rest : m.questions.filter(q => !a.includes(q)), freshness, 1);
+    items.push(...a, ...b);
+  });
+  return shuffle(items);
+}
+function targetDiffWeights(mid) {
+  const m = mastery(mid);
+  if (m == null || m < .45) return { 1: .5, 2: .35, 3: .15 };
+  if (m < .70) return { 1: .25, 2: .5, 3: .25 };
+  return { 1: .1, 2: .4, 3: .5 };
+}
+function buildAdaptive(n) {
+  const all = [];
+  BANK.forEach(m => {
+    const need = 1.15 - (mastery(m.id) ?? 0);
+    const dw = targetDiffWeights(m.id);
+    m.questions.forEach(q => all.push({ q, w: need * (dw[q.difficulty] || .3) * (0.4 + freshness(q)) }));
+  });
+  return pickWeighted(all, x => x.w, n).map(x => x.q);
+}
+function buildModule(mid, n) {
+  const m = BANK.find(x => x.id === mid);
+  return pickWeighted(m.questions, freshness, Math.min(n, m.questions.length));
+}
+function buildQuick(n) { return buildAdaptive(n); }
+
+/* ============ vistas ============ */
+function show(view) {
+  ["view-dash", "view-exam", "view-results"].forEach(v => $(v).classList.add("hidden"));
+  $(view).classList.remove("hidden");
+  window.scrollTo(0, 0);
+}
+
+/* ============ gauge SVG ============ */
+function drawGauge(svgId, frac, size, color) {
+  const svg = $(svgId); const c = size / 2, r = c - 8;
+  const circ = 2 * Math.PI * r;
+  const val = Math.max(0, Math.min(1, frac || 0));
+  svg.innerHTML =
+    `<circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="var(--surface-2)" stroke-width="9"/>` +
+    `<circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="${color}" stroke-width="9"
+      stroke-linecap="round" stroke-dasharray="${(val * circ).toFixed(1)} ${circ.toFixed(1)}"
+      transform="rotate(-90 ${c} ${c})"/>` +
+    `<text x="${c}" y="${c + 4}" text-anchor="middle" font-size="${size * .2}" fill="var(--ink)" font-weight="600">${frac == null ? "—" : Math.round(val * 100)}</text>`;
+}
+
+/* ============ dashboard ============ */
+function renderDash() {
+  const g = globalMastery();
+  const calibrated = S.history.length > 0;
+  const lvl = calibrated ? levelName(g) : "Sin calibrar";
+  $("hdrLevel").textContent = calibrated ? ("NIVEL: " + lvl.toUpperCase()) : "SIN CALIBRAR";
+  $("kLevel").textContent = lvl;
+  $("kLevelPct").textContent = calibrated ? (pct(g) + " de dominio global") : "— · realiza el diagnóstico";
+  drawGauge("gauge", calibrated ? g : 0, 92, "var(--accent)");
+  $("kExams").textContent = S.history.length;
+  const acc = accuracy();
+  $("kAcc").textContent = acc == null ? "—" : pct(acc);
+  $("kStreak").textContent = streakDays();
+
+  /* barras por módulo */
+  const wrap = $("moduleBars"); wrap.innerHTML = "";
+  MODS.forEach(m => {
+    const v = mastery(m.id);
+    const row = document.createElement("button");
+    row.className = "mrow";
+    row.setAttribute("aria-label", `Practicar ${m.name}: ${v == null ? "sin datos" : pct(v)}`);
+    row.innerHTML =
+      `<span class="mname">${esc(m.name)}</span>` +
+      `<span class="track"><span class="fill" style="width:${v == null ? 0 : Math.max(2, v * 100)}%;background:${statusColor(v)}"></span></span>` +
+      `<span class="mval">${v == null ? "—" : pct(v)}<span class="word">${statusWord(v)}</span></span>`;
+    row.addEventListener("click", () => startExam("module", m.id));
+    wrap.appendChild(row);
+  });
+
+  /* repaso pendiente */
+  const wp = wrongPool();
+  $("tagWrong").textContent = wp.length + " PEND";
+  $("btnWrong").disabled = wp.length === 0;
+  $("tagDiag").textContent = Math.min(20, TOTAL_Q) + " PREG";
+  $("bankNote").textContent = `Banco: ${TOTAL_Q} preguntas · ${MODS.length} módulos · generado desde tus fuentes`;
+
+  renderProgress();
+  renderRecs();
+}
+
+function renderProgress() {
+  const box = $("progChart");
+  const H = S.history.slice(-24);
+  if (H.length < 2) {
+    box.innerHTML = `<div class="chart-empty">Completa al menos dos evaluaciones para ver tu evolución.</div>`;
+    return;
+  }
+  const W = box.clientWidth || 560, Hh = 190;
+  const padL = 34, padR = 14, padT = 12, padB = 22;
+  const iw = W - padL - padR, ih = Hh - padT - padB;
+  const x = i => padL + (H.length === 1 ? iw / 2 : i * iw / (H.length - 1));
+  const y = v => padT + ih - v * ih;
+  let grid = "", labels = "";
+  [0, .5, 1].forEach(v => {
+    grid += `<line x1="${padL}" y1="${y(v)}" x2="${W - padR}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/>`;
+    labels += `<text x="${padL - 6}" y="${y(v) + 3.5}" text-anchor="end" font-size="10" fill="var(--muted)">${v * 100}</text>`;
+  });
+  const pts = H.map((h, i) => [x(i), y(h.score / h.total)]);
+  const line = pts.map(p => p.join(",")).join(" ");
+  const area = `M${padL},${y(0)} L` + line.replace(/ /g, " L") + ` L${pts[pts.length - 1][0]},${y(0)} Z`;
+  let dots = "";
+  H.forEach((h, i) => {
+    const last = i === H.length - 1;
+    dots += `<circle cx="${pts[i][0]}" cy="${pts[i][1]}" r="${last ? 5 : 3.5}" fill="${last ? "var(--chart-line)" : "var(--surface)"}"
+      stroke="var(--chart-line)" stroke-width="2" data-i="${i}" style="cursor:default"/>`;
+  });
+  const lastV = H[H.length - 1];
+  const endLbl = `<text x="${pts[pts.length - 1][0]}" y="${pts[pts.length - 1][1] - 10}" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink)">${Math.round(lastV.score / lastV.total * 100)}%</text>`;
+  box.innerHTML = `<svg width="100%" height="${Hh}" viewBox="0 0 ${W} ${Hh}" role="img" aria-label="Evolución de puntuaciones de exámenes">
+    ${grid}${labels}
+    <path d="${area}" fill="var(--chart-fill)"/>
+    <polyline points="${line}" fill="none" stroke="var(--chart-line)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    ${dots}${endLbl}
+  </svg>`;
+  const tip = $("tip");
+  box.querySelectorAll("circle").forEach(cir => {
+    cir.addEventListener("mousemove", ev => {
+      const h = H[+cir.dataset.i];
+      const d = new Date(h.t);
+      tip.innerHTML = `${d.toLocaleDateString("es", { day: "numeric", month: "short" })} · ${esc(h.mode)}<br><b>${h.score}/${h.total}</b> (${Math.round(h.score / h.total * 100)}%)`;
+      tip.style.display = "block";
+      tip.style.left = Math.min(ev.clientX + 12, innerWidth - 200) + "px";
+      tip.style.top = (ev.clientY - 40) + "px";
+    });
+    cir.addEventListener("mouseleave", () => tip.style.display = "none");
+  });
+}
+
+function renderRecs() {
+  const box = $("recs");
+  const ranked = MODS.map(m => ({ m, v: mastery(m.id) }))
+    .sort((a, b) => (a.v ?? -1) - (b.v ?? -1)).slice(0, 3);
+  if (!S.history.length) {
+    box.innerHTML = `<div class="chart-empty">Haz el diagnóstico para recibir un plan de estudio priorizado.</div>`;
+    return;
+  }
+  box.innerHTML = ranked.map(({ m, v }) => {
+    const t = TOPICS[m.id] || [];
+    return `<div class="rec"><span class="dot" style="background:${statusColor(v)}"></span>
+      <div><b>${esc(m.name)}</b> — ${v == null ? "aún sin evaluar" : "dominio " + pct(v)}
+      <div class="subt">Repasa: ${esc(t.slice(0, 3).join(" · "))}</div></div></div>`;
+  }).join("");
+}
+
+/* ============ examen ============ */
+let X = null, timerInt = null;
+
+function startExam(mode, moduleId) {
+  let items, title, tag, immediate = false;
+  if (mode === "diag") { items = buildDiagnostic(); title = "Diagnóstico completo"; tag = "EX-DG"; }
+  else if (mode === "adapt") { items = buildAdaptive(15); title = "Examen adaptativo"; tag = "EX-AD"; }
+  else if (mode === "quick") { items = buildQuick(8); title = "Ronda rápida"; tag = "EX-RR"; immediate = true; }
+  else if (mode === "wrong") { items = shuffle(wrongPool()).slice(0, 15); title = "Repaso de falladas"; tag = "EX-RP"; immediate = true; }
+  else { const m = MODS.find(x => x.id === moduleId); items = buildModule(moduleId, 9); title = "Práctica: " + m.name; tag = "EX-M" + String(moduleId).padStart(2, "0"); immediate = true; }
+  if (!items.length) return;
+
+  X = {
+    mode, moduleId, title, tag, immediate,
+    items: items.map(q => {
+      const order = shuffle([0, 1, 2, 3]);
+      return { q, options: order.map(i => q.options[i]), correct: order.indexOf(q.correct) };
+    }),
+    ans: new Array(items.length).fill(null),
+    revealed: new Array(items.length).fill(false),
+    idx: 0, t0: Date.now(), done: false
+  };
+  $("xTag").textContent = tag;
+  $("xTitle").textContent = title;
+  clearInterval(timerInt);
+  timerInt = setInterval(() => {
+    const s = Math.floor((Date.now() - X.t0) / 1000);
+    $("xTimer").textContent = String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0");
+  }, 1000);
+  $("xTimer").textContent = "00:00";
+  show("view-exam");
+  renderQ();
+}
+
+const DIFF = { 1: ["BÁSICA", "d1"], 2: ["INTERMEDIA", "d2"], 3: ["AVANZADA", "d3"] };
+
+function renderQ() {
+  const it = X.items[X.idx], q = it.q;
+  const modName = (MODS.find(m => m.id === q.module) || {}).name || "";
+  $("xProg").style.width = ((X.idx) / X.items.length * 100) + "%";
+  const [dn, dc] = DIFF[q.difficulty] || DIFF[2];
+  $("qMeta").innerHTML =
+    `<span class="chip">${esc(modName)}</span>` +
+    `<span class="chip ${dc}">${dn}</span>` +
+    `<span class="chip">PREGUNTA ${X.idx + 1}/${X.items.length}</span>`;
+  $("qText").textContent = q.q;
+
+  const revealed = X.revealed[X.idx];
+  const sel = X.ans[X.idx];
+  const opts = $("qOpts"); opts.innerHTML = "";
+  const KEYS = ["A", "B", "C", "D"];
+  it.options.forEach((op, i) => {
+    const b = document.createElement("button");
+    b.className = "opt";
+    if (revealed) {
+      b.disabled = true;
+      if (i === it.correct) b.classList.add("correct");
+      else if (i === sel) b.classList.add("wrong");
+    } else if (i === sel) b.classList.add("sel");
+    b.innerHTML = `<span class="key">${KEYS[i]}</span><span>${esc(op)}</span>`;
+    b.addEventListener("click", () => answer(i));
+    opts.appendChild(b);
+  });
+
+  const ex = $("qExplain");
+  if (revealed && q.explanation) {
+    ex.innerHTML = `<b>${sel === it.correct ? "Correcto." : "Incorrecto."}</b> ${esc(q.explanation)}`;
+    ex.classList.remove("hidden");
+  } else ex.classList.add("hidden");
+
+  $("btnPrev").disabled = X.idx === 0 || X.immediate;
+  $("btnPrev").classList.toggle("hidden", X.immediate);
+  const answered = sel != null;
+  const last = X.idx === X.items.length - 1;
+  $("btnNext").textContent = last ? "Finalizar ✓" : "Siguiente →";
+  $("btnNext").disabled = X.immediate ? !revealed : !answered;
+
+  const nd = $("navDots"); nd.innerHTML = "";
+  if (!X.immediate) {
+    X.items.forEach((_, i) => {
+      const d = document.createElement("button");
+      d.className = "ndot" + (X.ans[i] != null ? " done" : "") + (i === X.idx ? " cur" : "");
+      d.textContent = i + 1;
+      d.setAttribute("aria-label", "Ir a pregunta " + (i + 1));
+      d.addEventListener("click", () => { X.idx = i; renderQ(); });
+      nd.appendChild(d);
+    });
+  }
+}
+
+function answer(i) {
+  if (X.revealed[X.idx]) return;
+  X.ans[X.idx] = i;
+  if (X.immediate) { X.revealed[X.idx] = true; recordOne(X.idx); }
+  renderQ();
+}
+
+function recordOne(idx) {
+  const it = X.items[idx], q = it.q;
+  const ok = X.ans[idx] === it.correct ? 1 : 0;
+  const st = S.qstats[q.qid] || { s: 0, c: 0, w: 0, last: 1 };
+  st.s++; ok ? st.c++ : st.w++; st.last = ok;
+  S.qstats[q.qid] = st;
+  const log = S.mlog[q.module] || [];
+  log.push(ok); if (log.length > 40) log.shift();
+  S.mlog[q.module] = log;
+}
+
+function finishExam(abandoned) {
+  clearInterval(timerInt);
+  if (!X.immediate) X.items.forEach((_, i) => { if (X.ans[i] != null) recordOne(i); });
+  const answeredIdx = X.items.map((_, i) => i).filter(i => X.ans[i] != null);
+  const score = answeredIdx.filter(i => X.ans[i] === X.items[i].correct).length;
+  const total = X.items.length;
+  const secs = Math.round((Date.now() - X.t0) / 1000);
+  if (answeredIdx.length) {
+    S.history.push({ t: Date.now(), mode: X.title, score, total, secs });
+    if (S.history.length > 200) S.history.shift();
+  }
+  save();
+  if (abandoned) { renderDash(); show("view-dash"); return; }
+  renderResults(score, total, secs);
+}
+
+function renderResults(score, total, secs) {
+  const frac = total ? score / total : 0;
+  $("rTitle").textContent = X.title;
+  $("rScore").textContent = Math.round(frac * 100) + "%";
+  $("rDetail").textContent = `${score} de ${total} correctas · ${Math.floor(secs / 60)}m ${secs % 60}s`;
+  drawGauge("rGauge", frac, 110, frac >= .75 ? "var(--st-good)" : frac >= .5 ? "var(--st-warn)" : "var(--st-crit)");
+  const g = globalMastery();
+  let msg;
+  if (frac >= .9) msg = `Excelente. Rendimiento de nivel <b>Máster</b> en esta prueba. Tu dominio global queda en <b>${pct(g)}</b> (${levelName(g)}).`;
+  else if (frac >= .75) msg = `Muy bien. Vas camino de <b>Máster</b>: consolida los fallos de abajo. Dominio global: <b>${pct(g)}</b> (${levelName(g)}).`;
+  else if (frac >= .5) msg = `Base razonable, pero un examen real exige más. Revisa las explicaciones y repite en modo <b>Repaso de falladas</b>. Dominio global: <b>${pct(g)}</b> (${levelName(g)}).`;
+  else msg = `Zona crítica: prioriza los módulos marcados en rojo del tablero y vuelve al diagnóstico en unos días. Dominio global: <b>${pct(g)}</b> (${levelName(g)}).`;
+  $("rMsg").innerHTML = msg;
+
+  const rev = $("review");
+  const order = X.items.map((_, i) => i).sort((a, b) => {
+    const wa = X.ans[a] === X.items[a].correct ? 1 : 0;
+    const wb = X.ans[b] === X.items[b].correct ? 1 : 0;
+    return wa - wb;
+  });
+  const KEYS = ["A", "B", "C", "D"];
+  rev.innerHTML = order.map(i => {
+    const it = X.items[i], q = it.q, sel = X.ans[i];
+    const ok = sel === it.correct;
+    const modName = (MODS.find(m => m.id === q.module) || {}).name || "";
+    return `<div class="rev-item">
+      <p class="rq"><span class="rev-flag ${ok ? "ok" : "bad"}">${ok ? "OK" : "FALLO"}</span>${esc(q.q)}
+        <span class="chip" style="margin-left:6px">${esc(modName)}</span></p>
+      ${sel == null ? `<p class="ra bad">Sin responder</p>`
+        : ok ? `<p class="ra ok">✓ ${KEYS[it.correct]} · ${esc(it.options[it.correct])}</p>`
+        : `<p class="ra bad">✗ Tu respuesta: ${KEYS[sel]} · ${esc(it.options[sel])}</p>
+           <p class="ra ok">✓ Correcta: ${KEYS[it.correct]} · ${esc(it.options[it.correct])}</p>`}
+      ${q.explanation ? `<p class="rx">${esc(q.explanation)}</p>` : ""}
+    </div>`;
+  }).join("");
+  show("view-results");
+}
+
+/* ============ eventos ============ */
+$("btnDiag").addEventListener("click", () => startExam("diag"));
+$("btnAdapt").addEventListener("click", () => startExam("adapt"));
+$("btnQuick").addEventListener("click", () => startExam("quick"));
+$("btnWrong").addEventListener("click", () => startExam("wrong"));
+$("btnPrev").addEventListener("click", () => { if (X.idx > 0) { X.idx--; renderQ(); } });
+$("btnNext").addEventListener("click", () => {
+  if (X.idx < X.items.length - 1) { X.idx++; renderQ(); }
+  else finishExam(false);
+});
+$("btnQuit").addEventListener("click", () => {
+  if (confirm("¿Abandonar el examen? Las preguntas ya respondidas en modo práctica quedan registradas.")) finishExam(true);
+});
+$("btnBack").addEventListener("click", () => { renderDash(); show("view-dash"); });
+$("btnRetry").addEventListener("click", () => startExam(X.mode, X.moduleId));
+$("btnReset").addEventListener("click", () => {
+  if (confirm("Esto borra todo tu historial y niveles. ¿Continuar?")) { S = blank(); save(); renderDash(); }
+});
+$("btnExport").addEventListener("click", () => {
+  const blob = new Blob([JSON.stringify(S)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "mi500_progreso_" + new Date().toISOString().slice(0, 10) + ".json";
+  a.click(); URL.revokeObjectURL(a.href);
+});
+$("btnImport").addEventListener("click", () => $("fileImport").click());
+$("fileImport").addEventListener("change", ev => {
+  const f = ev.target.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      const d = JSON.parse(r.result);
+      if (!d.history || !d.qstats) throw new Error("formato");
+      S = Object.assign(blank(), d); save(); renderDash();
+      alert("Respaldo restaurado.");
+    } catch (e) { alert("El archivo no es un respaldo válido."); }
+  };
+  r.readAsText(f);
+  ev.target.value = "";
+});
+window.addEventListener("resize", () => { if (!$("view-dash").classList.contains("hidden")) renderProgress(); });
+
+renderDash();
+</script>
+
+</body></html>

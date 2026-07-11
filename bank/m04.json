@@ -1,0 +1,188 @@
+{
+  "id": 4,
+  "name": "Medición de Nivel",
+  "questions": [
+    {
+      "q": "¿En qué principio físico se basa el sistema ultrasónico de medición de nivel para determinar la distancia al líquido?",
+      "options": [
+        "La variación de la constante dieléctrica del medio.",
+        "El desplazamiento de frecuencia por efecto Doppler.",
+        "La emisión de un impulso sónico y la medición del tiempo de retorno del eco.",
+        "La atenuación de la intensidad de onda al atravesar la espuma."
+      ],
+      "correct": 2,
+      "explanation": "El sistema ultrasónico emite un impulso que se refleja en la superficie y mide el tiempo de tránsito, permitiendo calcular el nivel basándose en la velocidad del sonido.",
+      "difficulty": 1,
+      "module": 4
+    },
+    {
+      "q": "¿Cuál de los siguientes instrumentos es un detector de nivel de sólidos de punto fijo (on-off) comúnmente utilizado en materiales granulares?",
+      "options": [
+        "Sondeo electromecánico",
+        "Detector de paletas rotativas",
+        "Medidor de báscula o células de carga",
+        "Transmisor de radar de onda guiada"
+      ],
+      "correct": 1,
+      "explanation": "Las paletas rotativas son detectores de punto fijo que se detienen cuando el sólido alcanza su nivel, activando un microrruptor.",
+      "difficulty": 1,
+      "module": 4
+    },
+    {
+      "q": "En un medidor de nivel de tipo burbujeo, ¿qué representa la presión del aire detectada en la tubería de inmersión?",
+      "options": [
+        "La presión de vapor acumulada sobre el líquido.",
+        "La presión atmosférica local del lugar de medida.",
+        "La presión hidrostática ejercida por la columna de líquido.",
+        "La pérdida de carga debida a la viscosidad del fluido."
+      ],
+      "correct": 2,
+      "explanation": "La presión requerida para que el aire burbujee a través del líquido es equivalente a la presión hidrostática de la columna de fluido sobre el extremo del tubo.",
+      "difficulty": 1,
+      "module": 4
+    },
+    {
+      "q": "¿Cuál es la principal ventaja técnica del radar FMCW (Onda continua modulada en frecuencia) frente a los ultrasonidos en tanques de proceso complejos?",
+      "options": [
+        "Es inmune a las vibraciones mecánicas de las palas del agitador.",
+        "La señal de radar es transparente a la espuma y no es afectada por cambios de temperatura.",
+        "No requiere alimentación eléctrica al ser un sistema pasivo.",
+        "El radar FMCW puede medir niveles de sólidos con una exactitud de ±50 mm."
+      ],
+      "correct": 1,
+      "explanation": "A diferencia de los ultrasonidos, el radar no es afectado por la temperatura y la espuma suele ser transparente para las microondas, evitando errores por falsos ecos.",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "Al medir el nivel de un líquido con una constante dieléctrica muy baja (K < 1,7), ¿cuál es la tecnología recomendada para evitar la degradación de la señal?",
+      "options": [
+        "Radar de haz libre en banda X.",
+        "Radar de onda guiada (GWR) con tecnología TDR.",
+        "Medidor capacitivo de radiofrecuencia (RF).",
+        "Transmisor ultrasónico de alta frecuencia (200 kHz)."
+      ],
+      "correct": 1,
+      "explanation": "El radar de onda guiada (GWR) enfoca la energía a través de una varilla o cable, lo que permite medir con éxito fluidos de baja constante dieléctrica.",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "En la medición de nivel por presión diferencial en tanques cerrados con vapores condensables, ¿cuándo se utiliza la configuración de 'elevación de cero'?",
+      "options": [
+        "Cuando el transmisor se instala en una cota superior a la toma de baja presión.",
+        "Cuando la línea de compensación (wet leg) está llena de condensado y ejerce una presión superior a la de alta presión en nivel mínimo.",
+        "Siempre que el fluido sea viscoso y requiera un sello de diafragma extendido.",
+        "Para compensar el error de angularidad en transmisores neumáticos de equilibrio de fuerzas."
+      ],
+      "correct": 1,
+      "explanation": "La elevación de cero se aplica cuando la presión en la toma de baja (debido a la columna de condensado en la 'wet leg') es mayor que en la de alta cuando el tanque está vacío.",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "Un transmisor ultrasónico no compensado mide el nivel en un tanque donde el aire ambiente pasa de 0 °C a 70 °C. Según los datos técnicos, ¿qué error aproximado se introducirá?",
+      "options": [
+        "Un error del 1,2% en la medida del nivel.",
+        "Un error despreciable inferior al ±0,1%.",
+        "Un error aproximado del 12% en la medida.",
+        "Un error del 50% debido a la absorción de la onda por el calor."
+      ],
+      "correct": 2,
+      "explanation": "La velocidad del sonido varía con la temperatura; un cambio de 0 a 70 °C provoca un error típico del 12% si el instrumento no dispone de sensor de compensación.",
+      "difficulty": 3,
+      "module": 4
+    },
+    {
+      "q": "Calcule la presión que detectará un transmisor manométrico situado a una altura 'h' de 5 metros por debajo del nivel de un líquido con densidad 0,8 g/cm³ (Use g=9,8 m/s²).",
+      "options": [
+        "0,400 bar",
+        "0,392 bar",
+        "4,900 bar",
+        "0,500 bar"
+      ],
+      "correct": 1,
+      "explanation": "Presión = 0,098 * h * densidad (en g/cm³). Por lo tanto: 0,098 * 5 * 0,8 = 0,392 bar.",
+      "difficulty": 3,
+      "module": 4
+    },
+    {
+      "q": "En un lazo de control de interfase entre agua (ρ=1,0) y queroseno (ρ=0,8) en tanque cerrado, ¿qué lectura de señal entregará un transmisor de DP de 4-20 mA cuando el tanque esté totalmente lleno de queroseno?",
+      "options": [
+        "0 mA (falla de instrumento)",
+        "4 mA",
+        "12,8 mA",
+        "20 mA"
+      ],
+      "correct": 1,
+      "explanation": "En mediciones de interfase, el 0% del rango (4 mA) se calibra típicamente para el tanque lleno del fluido más ligero (queroseno).",
+      "difficulty": 3,
+      "module": 4
+    },
+    {
+      "q": "¿A qué fenómeno físico se debe la formación de la onda de torsión que permite determinar la posición del flotador en un transmisor de nivel magnetoestrictivo?",
+      "options": [
+        "Al efecto Doppler generado por el movimiento del flotador en el líquido",
+        "A la interacción entre un campo magnético tubular (creado por un impulso de corriente) y los imanes del flotador",
+        "A la variación de la reluctancia magnética al paso del fluido por una bobina captadora",
+        "A la reflexión de una onda electromagnética en la superficie de separación de fases"
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente técnica, el impulso de corriente crea un campo magnético que interacciona con los imanes del flotador, dando lugar a una fuerza de torsión o vibración ultrasónica que viaja por el tubo guía,.",
+      "difficulty": 1,
+      "module": 4
+    },
+    {
+      "q": "En la terminología de medidores de nivel por capacitancia de radiofrecuencia (RF), ¿cómo se define técnicamente el concepto de 'admitancia'?",
+      "options": [
+        "Es la medida de la conductividad de un circuito de corriente alterna y representa la inversa de la impedancia",
+        "Es la diferencia algebraica entre las constantes dieléctricas del líquido y del vapor",
+        "Es la fuerza de empuje hacia arriba que ejerce el líquido sobre un electrodo sumergido",
+        "Es la capacidad máxima de almacenamiento de carga eléctrica en condiciones de vacío"
+      ],
+      "correct": 0,
+      "explanation": "La admitancia se define en la fuente como la medida de la conductividad de un circuito de c.a., siendo el término inverso a la impedancia,.",
+      "difficulty": 1,
+      "module": 4
+    },
+    {
+      "q": "En un sensor de nivel capacitivo destinado a medir líquidos sucios o pegajosos, ¿con qué fin técnico se emplea el 'blindaje de excitación' o tecnología de escudo perforado?",
+      "options": [
+        "Para permitir que el instrumento funcione con corrientes de salida de 10-50 mA",
+        "Para proteger el electrodo de impactos mecánicos causados por el agitador del tanque",
+        "Para eliminar señales erróneas causadas por el recubrimiento conductor que se adhiere a la sonda",
+        "Para compensar automáticamente los cambios en la presión estática del tanque"
+      ],
+      "correct": 2,
+      "explanation": "El blindaje de excitación evita que la corriente fluya a través del recubrimiento conductor hacia las paredes del tanque, permitiendo que el electrodo ignore dicho efecto en la lectura,.",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "Al utilizar un medidor de nivel de radiación (rayos gamma) de forma continua, ¿qué característica debe incorporar la electrónica para mantener la exactitud a lo largo del tiempo?",
+      "options": [
+        "Un extractor de raíz cuadrada intermedio para linealizar la señal de rayos gamma",
+        "Compensación automática de la deriva causada por el decaimiento radiactivo de la fuente (vida media)",
+        "Un circuito oscilador de alta frecuencia para evitar fenómenos electrolíticos en el detector",
+        "Un sistema de purga de aire constante para evitar el recubrimiento del contador Geiger"
+      ],
+      "correct": 1,
+      "explanation": "Debido a que la fuente radiactiva pierde actividad exponencialmente según su vida media, la electrónica debe compensar automáticamente esta deriva por decaimiento para conservar la exactitud,.",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "Se desea configurar un transmisor de presión diferencial para medir la interfase en un tanque cerrado entre agua (ρ1 = 1,0 g/cm³) y aceite (ρ2 = 0,85 g/cm³). El campo de medida (h) es de 4 metros y existe una distancia ha = 1 metro por debajo del nivel mínimo. La tubería húmeda (wet leg) está llena de aceite (ρ'2 = 0,85 g/cm³). Calcule el alcance (span) en bar que debe configurarse en el instrumento (Utilice el factor de conversión g = 0,098 bar por cada metro de altura y unidad de densidad).",
+      "options": [
+        "0,0392 bar",
+        "0,0735 bar",
+        "0,1470 bar",
+        "0,1960 bar"
+      ],
+      "correct": 1,
+      "explanation": "El alcance se calcula como (h + ha) * (ρ1 - ρ2) * 0,098. Aplicando los datos: (4 m + 1 m) * (1,0 - 0,85) * 0,098 = 5 * 0,15 * 0,098 = 0,0735 bar,.",
+      "difficulty": 3,
+      "module": 4
+    }
+  ]
+}

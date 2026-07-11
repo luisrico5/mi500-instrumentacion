@@ -1,0 +1,188 @@
+{
+  "id": 10,
+  "name": "Comunicaciones e Integración",
+  "questions": [
+    {
+      "q": "¿Cuál es la ventaja técnica de utilizar un 'cero vivo' (4 mA) en lugar de un 'cero muerto' (0 mA) en las señales electrónicas analógicas?",
+      "options": [
+        "Permite aumentar la rangeabilidad del instrumento en un 25%.",
+        "Diferencia una lectura de valor cero de una posible rotura del lazo o fallo de alimentación.",
+        "Elimina la necesidad de utilizar cables apantallados contra interferencias electromagnéticas.",
+        "Reduce el consumo de energía de los transmisores de dos hilos en un 50%."
+      ],
+      "correct": 1,
+      "explanation": "El 'cero vivo' (4 mA) permite distinguir si el instrumento está midiendo el valor mínimo del rango o si existe una falla, como un cable cortado, en cuyo caso la corriente caería a 0 mA.",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "¿Qué norma ISA especifica la creación de diagramas que presentan en una sola hoja toda la información de instalación, conexión y mantenimiento de un lazo de control?",
+      "options": [
+        "ISA-S5.1",
+        "ISA-S5.3",
+        "ISA-S5.4",
+        "ISA-S5.5"
+      ],
+      "correct": 2,
+      "explanation": "La norma ISA-S5.4 describe los diagramas de lazo de control, los cuales facilitan el mantenimiento y la puesta en marcha al integrar toda la información técnica en un solo documento.",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "En el protocolo de comunicaciones HART, ¿qué frecuencias se utilizan para representar los estados lógicos 1 y 0 mediante la técnica FSK?",
+      "options": [
+        "1200 Hz para el '1' y 2200 Hz para el '0'.",
+        "60 Hz para el '1' y 50 Hz para el '0'.",
+        "31,25 kHz para el '1' y 100 kHz para el '0'.",
+        "1200 Hz para el '0' y 2200 Hz para el '1'."
+      ],
+      "correct": 0,
+      "explanation": "El protocolo HART utiliza el estándar Bell 202 FSK, codificando el '1' con una frecuencia de 1200 Hz y el '0' con 2200 Hz sobre la señal de 4-20 mA.",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "Al comparar las arquitecturas de control, ¿cuál es la diferencia principal entre un sistema SCADA y un sistema DCS (Control Distribuido)?",
+      "options": [
+        "El DCS solo permite control digital y el SCADA solo control analógico.",
+        "El SCADA se asocia a procesos distribuidos en grandes áreas con comunicaciones de baja velocidad, mientras que el DCS usa redes locales de alta velocidad.",
+        "El DCS es un sistema abierto de cualquier fabricante y el SCADA es siempre un protocolo propietario.",
+        "No existe diferencia técnica, son dos nombres para el mismo tipo de arquitectura jerarquizada."
+      ],
+      "correct": 1,
+      "explanation": "Según las fuentes, SCADA suele transmitir por circuitos de baja velocidad (radio/teléfono) en áreas geográficas extensas, mientras que el DCS utiliza buses locales de alta velocidad en la propia planta.",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿Qué información específica se gestiona dentro del 'Bloque de Transductor' (TB) en un instrumento con tecnología Foundation Fieldbus?",
+      "options": [
+        "Las estrategias de control PID y los algoritmos de relación.",
+        "El nombre del fabricante, modelo y número de serie del equipo físico.",
+        "Los parámetros del sensor, su estado y las fechas de calibración.",
+        "La dirección IP del dispositivo para su integración en redes Ethernet HSE."
+      ],
+      "correct": 2,
+      "explanation": "El Bloque de Transductor (Transducer Block) se encarga de la interfaz directa con el sensor, conteniendo datos sobre su tipo, estado y calibración.",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿Cuál es la velocidad de transmisión estandarizada para la tarjeta H1 de Foundation Fieldbus utilizada habitualmente en instrumentos de campo?",
+      "options": [
+        "9600 baudios",
+        "31,25 kbits/s",
+        "1,0 Mbits/s",
+        "100 Mbits/s"
+      ],
+      "correct": 1,
+      "explanation": "La tecnología H1 de FF opera a una velocidad de 31,25 kbits/s y permite que la alimentación y la comunicación circulen por el mismo par de hilos torsionados.",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "Se dispone de un transmisor de presión de 0 a 100 bar con salida de 4-20 mA. Si el receptor detecta una señal de 13,6 mA, ¿cuál es el valor de la presión en el proceso?",
+      "options": [
+        "48 bar",
+        "55 bar",
+        "60 bar",
+        "68 bar"
+      ],
+      "correct": 2,
+      "explanation": "Porcentaje = (13,6 - 4) / 16 = 0,6 (60%). El 60% de 100 bar es 60 bar.",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "¿Qué función desempeña el 'Programador Activo de Enlace' (Link Active Scheduler - LAS) en un bus de datos Foundation Fieldbus?",
+      "options": [
+        "Convierte las señales digitales de 31,25 Kbps a protocolos TCP/IP para Ethernet.",
+        "Gestiona de forma centralizada la alimentación eléctrica de todos los nodos del bus.",
+        "Envía mensajes específicos a cada instrumento para autorizar su transmisión y evitar colisiones de datos.",
+        "Almacena las copias de seguridad de la configuración de todos los controladores lógicos (PLC)."
+      ],
+      "correct": 2,
+      "explanation": "El LAS es el componente que coordina el tráfico en el bus, autorizando qué instrumento puede transmitir en cada momento para mantener el orden de los mensajes.",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "En las redes inalámbricas industriales bajo el estándar ISA100.11a, ¿cómo se logra la inmunidad a interferencias en entornos hostiles?",
+      "options": [
+        "Aumentando la potencia de emisión hasta los 500 mW por sensor.",
+        "Utilizando el sistema FHSS que modula los datos saltando de frecuencia en frecuencia en una banda ancha.",
+        "Restringiendo la comunicación a una línea de visión directa de máximo 10 metros.",
+        "Empleando una modulación de amplitud (AM) para filtrar los ruidos parásitos del motor."
+      ],
+      "correct": 1,
+      "explanation": "La técnica FHSS (Frequency Hopping Spread Spectrum) permite que la señal sea robusta frente a interferencias al cambiar constantemente de frecuencia dentro de la banda de 902-928 MHz.",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "¿Qué término define técnicamente el transporte secuencial de señales eléctricas que representan información codificada de acuerdo con un protocolo de comunicaciones?",
+      "options": [
+        "Protocolo híbrido",
+        "Baudio",
+        "Bus",
+        "Interfaz serie"
+      ],
+      "correct": 2,
+      "explanation": "Según la fuente, el término bus indica el transporte secuencial de señales eléctricas que representan información codificada de acuerdo con un protocolo,.",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "En la transmisión de señales digitales bajo el estándar de comunicación serie RS-232, ¿cómo se traducen eléctricamente los estados lógicos?",
+      "options": [
+        "Los 'unos' son tensión positiva y los 'ceros' son tensión negativa",
+        "Los 'unos' son tensión negativa y los 'ceros' son tensión positiva",
+        "Ambos estados se representan por impulsos de corriente de 4-20 mA",
+        "Se utiliza modulación por salto de frecuencia (FHSS)"
+      ],
+      "correct": 1,
+      "explanation": "La fuente indica que en RS-232 los datos se transmiten en lógica negativa: los 'unos' son una tensión continua negativa y los 'ceros' una tensión continua positiva,.",
+      "difficulty": 1,
+      "module": 10
+    },
+    {
+      "q": "¿En qué técnica de codificación se basa la señal transmitida por el nivel físico de Foundation Fieldbus H1 (31,25 kbit/s)?",
+      "options": [
+        "Técnica Manchester combinada con un pulso de reloj",
+        "Modulación por cambio de frecuencia (FSK) tipo Bell 202",
+        "Modulación de impulsos codificados (BRAIN)",
+        "Modulación en corriente de 4 y 20 mA (DE)"
+      ],
+      "correct": 0,
+      "explanation": "De acuerdo con los textos técnicos, la señal transmitida por el nivel físico de Foundation Fieldbus está codificada con la técnica Manchester,.",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿Cuál es la ventaja técnica de la arquitectura de PLC de seguridad '1oo2D' frente a la configuración '1oo2' estándar?",
+      "options": [
+        "Reduce la probabilidad de fallo a la demanda al duplicar los canales",
+        "Es tolerante a fallos respecto a la disponibilidad al no requerir el paro del proceso ante un único fallo detectado",
+        "Elimina la necesidad de validación de señales por parte del microcontrolador",
+        "Permite el uso de protocolos propietarios en lugar de estándares abiertos"
+      ],
+      "correct": 1,
+      "explanation": "Mientras que el sistema 1oo2 no es tolerante a fallos de disponibilidad, en el 1oo2D un único fallo detectado no conlleva la parada del proceso al aislar el canal afectado,.",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "Se dispone de un segmento de Foundation Fieldbus H1 con una longitud de 1 km y una resistencia de cable de 44 ohms. Si la fuente de alimentación entrega 24 V c.c. (con 2 V de caída interna) y los instrumentos requieren un mínimo de 10 V en bornes, ¿cuántos aparatos con un consumo individual de 20 mA pueden conectarse en topología de estrella?",
+      "options": [
+        "8 aparatos",
+        "10 aparatos",
+        "13 aparatos",
+        "32 aparatos"
+      ],
+      "correct": 2,
+      "explanation": "La caída de tensión disponible es 12 V (22 V - 10 V). La corriente total permitida es 12V/44 ohms = 272 mA. Dividiendo por el consumo individual: 272/20 = 13,6, lo que equivale a 13 aparatos,.",
+      "difficulty": 3,
+      "module": 10
+    }
+  ]
+}

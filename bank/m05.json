@@ -1,0 +1,188 @@
+{
+  "id": 5,
+  "name": "Medición de Temperatura",
+  "questions": [
+    {
+      "q": "¿Qué tipo de montaje de termorresistencia (RTD) es el más preciso al eliminar totalmente el error por la resistencia de los hilos de conexión mediante el uso de una fuente de corriente constante?",
+      "options": [
+        "Montaje de 2 hilos",
+        "Montaje de 3 hilos",
+        "Montaje de 4 hilos",
+        "Montaje en puente de Wheatstone simple"
+      ],
+      "correct": 2,
+      "explanation": "En el montaje de cuatro hilos, la misma corriente circula por el detector independientemente de la resistencia de los hilos, obteniéndose la máxima exactitud.",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿Cuál es el termopar que posee la fuerza electromotriz (f.e.m.) más alta por variación de temperatura, alcanzando una sensibilidad de 68 microvoltios por grado centígrado?",
+      "options": [
+        "Termopar tipo K",
+        "Termopar tipo J",
+        "Termopar tipo T",
+        "Termopar tipo E"
+      ],
+      "correct": 3,
+      "explanation": "El termopar tipo E (Níquel-Cromo/Constantán) posee la f.e.m. más alta por variación de temperatura de todos los termopares comunes.",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿En qué ley física se fundamentan los pirómetros de radiación, la cual establece que la intensidad de energía radiante emitida es proporcional a la cuarta potencia de la temperatura absoluta?",
+      "options": [
+        "Ley de Stefan-Boltzmann",
+        "Efecto Seebeck",
+        "Ley de Callendar - Van Dussen",
+        "Efecto Peltier"
+      ],
+      "correct": 0,
+      "explanation": "La ley de Stefan-Boltzmann establece que W = K * T^4, donde la intensidad aumenta con la cuarta potencia de la temperatura absoluta.",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "Al comparar las clases de termómetros de bulbo y capilar, ¿qué característica distingue a la Clase II (vapor) de la Clase III (gas)?",
+      "options": [
+        "La Clase II tiene una escala uniforme mientras que la Clase III es logarítmica.",
+        "La Clase II tiene una escala no uniforme con mayor sensibilidad en la parte alta, mientras que la Clase III tiene escala lineal.",
+        "La Clase II requiere obligatoriamente compensación de temperatura ambiente en el capilar y la Clase III no.",
+        "La Clase II se utiliza exclusivamente para temperaturas criogénicas inferiores a -200 °C."
+      ],
+      "correct": 1,
+      "explanation": "Los termómetros de vapor (Clase II) tienen escalas no uniformes con mayor sensibilidad al final, mientras que los de gas (Clase III) presentan escalas lineales.",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "Según la 'Ley de los metales intermedios' aplicada a termopares, ¿cuál es la consecuencia de insertar un tercer conductor en el circuito?",
+      "options": [
+        "La f.e.m. total se altera proporcionalmente a la longitud del nuevo conductor.",
+        "La f.e.m. total es independiente del conductor intermedio si las uniones adicionales están a la misma temperatura.",
+        "Se produce una inversión del efecto Seebeck que anula la señal de medida.",
+        "Es estrictamente necesario que el tercer metal sea platino para no introducir errores."
+      ],
+      "correct": 1,
+      "explanation": "Esta ley indica que la f.e.m. total es independiente de los conductores intermedios si la temperatura en sus puntos de conexión es uniforme.",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "¿Cuál es la característica principal de un termistor tipo NTC en comparación con una termorresistencia Pt100 convencional?",
+      "options": [
+        "Posee un coeficiente de temperatura positivo y una escala altamente lineal.",
+        "Es un semiconductor con un coeficiente de temperatura negativo de valor elevado y respuesta muy rápida.",
+        "Su rango de trabajo estándar es superior a los 1500 °C.",
+        "Requiere obligatoriamente un cable de compensación de cobre-níquel."
+      ],
+      "correct": 1,
+      "explanation": "Los termistores NTC son semiconductores con variaciones de resistencia extremadamente grandes para cambios pequeños de temperatura, aunque son no lineales.",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "Se dispone de un montaje de Pt100 a 2 hilos donde cada hilo tiene 1 ohm de resistencia. Si la temperatura real es de 20 °C (107,793 ohms), ¿cuál será el error de lectura aproximado introducido por los cables?",
+      "options": [
+        "0,55 °C",
+        "2,50 °C",
+        "5,43 °C",
+        "8,20 °C"
+      ],
+      "correct": 2,
+      "explanation": "Según el ejemplo de las fuentes, una resistencia adicional de 2 ohms (1 por hilo) desplaza la medida de 20 °C a 25,43 °C, generando un error de 5,43 °C.",
+      "difficulty": 3,
+      "module": 5
+    },
+    {
+      "q": "Un transmisor de temperatura para termopar Tipo J está calibrado de 0 a 700 °C. Si la temperatura ambiente en el instrumento es de 20 °C (1,019 mV), ¿qué f.e.m. debe inyectar un calibrador para verificar el punto de 700 °C (39,132 mV)?",
+      "options": [
+        "40,151 mV",
+        "39,132 mV",
+        "38,113 mV",
+        "35,210 mV"
+      ],
+      "correct": 2,
+      "explanation": "Se debe restar la f.e.m. de la unión fría a la del proceso (39,132 - 1,019 = 38,113 mV) porque el instrumento ya compensa internamente la temperatura ambiente.",
+      "difficulty": 3,
+      "module": 5
+    },
+    {
+      "q": "En el contexto de la pirometría de radiación, si se utiliza un instrumento ajustado para 'cuerpo negro' (emisividad = 1) sobre un metal pulido con emisividad de 0,1, ¿cuál será el efecto en la medida?",
+      "options": [
+        "La temperatura leída será idéntica a la real debido a la compensación automática del detector.",
+        "La temperatura de brillo detectada será significativamente inferior a la verdadera temperatura del cuerpo.",
+        "El detector fotoeléctrico se saturará inmediatamente dañando el sensor de silicio.",
+        "La f.e.m. generada será proporcional a la raíz cuadrada de la emisividad según la ley de Seebeck."
+      ],
+      "correct": 1,
+      "explanation": "Si la superficie no es perfectamente negra, el pirómetro capta menos energía radiante de la real, por lo que la temperatura indicada es menor que la verdadera.",
+      "difficulty": 3,
+      "module": 5
+    },
+    {
+      "q": "¿Cómo se define la 'constante de tiempo' de un instrumento de temperatura según las fuentes técnicas?",
+      "options": [
+        "El tiempo necesario para que el sensor alcance el 50% de la variación total de temperatura",
+        "El tiempo requerido para que el instrumento alcance el 63,2% de la variación total de la temperatura",
+        "El tiempo que tarda el instrumento en llegar al 100% del valor final del mensurando",
+        "El intervalo entre el cambio en la variable y el inicio de la respuesta del sensor"
+      ],
+      "correct": 1,
+      "explanation": "La constante de tiempo es el parámetro que indica la velocidad de respuesta, definida como el tiempo necesario para alcanzar el 63,2% del cambio total ante una variación brusca,.",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "¿Cuál es una ventaja principal de los sensores de temperatura de silicio (IC) frente a los sensores industriales clásicos?",
+      "options": [
+        "Capacidad para medir temperaturas extremas superiores a los 1.000 °C",
+        "Inmunidad total a la necesidad de fuente de alimentación externa",
+        "Posibilidad de integrar procesamiento de señal, compensación de unión fría y linealización en el propio chip",
+        "Poseen una relación resistencia-temperatura mucho más lineal que el platino"
+      ],
+      "correct": 2,
+      "explanation": "Los sensores de temperatura de silicio son circuitos integrados que pueden contener funciones de procesamiento, compensación y linealización dentro del mismo componente,.",
+      "difficulty": 1,
+      "module": 5
+    },
+    {
+      "q": "Al comparar materiales para termorresistencias, ¿cuál es la ventaja técnica del níquel frente al platino en el rango de -100 °C a 200 °C?",
+      "options": [
+        "Posee una mayor linealidad en todo el intervalo de medida",
+        "Presenta una mayor sensibilidad (variación de ohmios por grado) y un coste más reducido",
+        "Es más estable a largo plazo, con una deriva de solo 0,01% en 5 años",
+        "Puede utilizarse en aplicaciones criogénicas hasta los -260 °C"
+      ],
+      "correct": 1,
+      "explanation": "El níquel presenta una sensibilidad significativamente mayor que el platino y es más económico, aunque tiene una falta de linealidad y un margen de temperatura más reducido,.",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "En la selección de lentes para pirómetros de radiación, ¿qué material es el recomendado para operar en el intervalo de temperaturas de 450 °C a 1.250 °C?",
+      "options": [
+        "Lentes de pírex",
+        "Lentes de fluoruro de calcio",
+        "Lentes de sílice fundida",
+        "Lentes de cristal de germanio"
+      ],
+      "correct": 2,
+      "explanation": "Según la fuente, las lentes de sílice fundida son las adecuadas para el intervalo de 450 a 1.250 °C, mientras que las de pírex se usan para temperaturas superiores,.",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "Un termómetro bimetálico tiene una lámina de 100 mm de longitud y 0,5 mm de espesor, con un coeficiente de expansión térmica (a) de 0,000015. Calcule el ángulo de torsión (en grados) que experimentará la lámina ante un incremento de temperatura de 40 °C.",
+      "options": [
+        "21,6°",
+        "43,2°",
+        "86,4°",
+        "10,8°"
+      ],
+      "correct": 1,
+      "explanation": "Utilizando la fórmula Ángulo = (360 * a * l * Δt) / s descrita en la fuente: (360 * 0,000015 * 100 * 40) / 0,5 = 21,6 / 0,5 = 43,2 grados,.",
+      "difficulty": 3,
+      "module": 5
+    }
+  ]
+}
