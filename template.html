@@ -352,6 +352,8 @@
       <button class="linkbtn" id="btnImport">Restaurar respaldo</button>
       <input type="file" id="fileImport" accept="application/json" class="hidden">
       <button class="linkbtn" id="btnReset">Reiniciar progreso</button>
+      <button class="linkbtn" id="btnGhSetup">Sincronización GitHub</button>
+      <span class="src-note" id="ghNote"></span>
       <span class="src-note" id="bankNote"></span>
     </div>
   </section>
@@ -425,10 +427,71 @@ const MODS = BANK.map(m => ({ id: m.id, name: m.name }));
 
 /* ============ estado persistente ============ */
 const KEY = "mi500_state_v1";
-const blank = () => ({ history: [], qstats: {}, mlog: {} });
+const blank = () => ({ history: [], qstats: {}, mlog: {}, updated_at: 0 });
 let S = blank();
 try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch (e) {}
-const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+const save = () => { S.updated_at = Date.now(); try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+
+/* ============ sincronización GitHub ============ */
+const GH_KEY = "mi500_gh_cfg";
+let ghSha = null;
+function ghCfg() { try { return JSON.parse(localStorage.getItem(GH_KEY) || "null"); } catch (e) { return null; } }
+function ghSaveCfg(cfg) { localStorage.setItem(GH_KEY, JSON.stringify(cfg)); }
+function ghHeaders(cfg) {
+  return {
+    "Authorization": "Bearer " + cfg.token,
+    "Accept": "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+    "Content-Type": "application/json"
+  };
+}
+function b64EncodeUtf8(str) { return btoa(unescape(encodeURIComponent(str))); }
+function b64DecodeUtf8(b64) { return decodeURIComponent(escape(atob(b64.replace(/\s/g, "")))); }
+function ghNote(msg) { const el = $("ghNote"); if (el) el.textContent = msg; }
+function ghUrl(cfg) { return `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${encodeURIComponent(cfg.path)}`; }
+
+async function ghPull() {
+  const cfg = ghCfg();
+  if (!cfg || !cfg.token) return;
+  try {
+    ghNote("comprobando GitHub…");
+    const res = await fetch(ghUrl(cfg), { headers: ghHeaders(cfg) });
+    if (res.status === 404) { ghNote("GitHub: sin progreso remoto aún"); return; }
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    ghSha = data.sha;
+    const remote = JSON.parse(b64DecodeUtf8(data.content));
+    if (remote && (remote.updated_at || 0) > (S.updated_at || 0)) {
+      S = Object.assign(blank(), remote);
+      save();
+      ghNote("progreso actualizado desde GitHub");
+    } else {
+      ghNote("GitHub: al día");
+    }
+  } catch (e) { ghNote("error al comprobar GitHub: " + e.message); }
+}
+
+async function ghPush(silent) {
+  const cfg = ghCfg();
+  if (!cfg || !cfg.token) return;
+  try {
+    ghNote("sincronizando con GitHub…");
+    if (ghSha == null) {
+      const head = await fetch(ghUrl(cfg), { headers: ghHeaders(cfg) });
+      if (head.ok) { const d = await head.json(); ghSha = d.sha; }
+    }
+    const body = { message: "Actualiza progreso MI-500 · " + new Date().toISOString(), content: b64EncodeUtf8(JSON.stringify(S)) };
+    if (ghSha) body.sha = ghSha;
+    const res = await fetch(ghUrl(cfg), { method: "PUT", headers: ghHeaders(cfg), body: JSON.stringify(body) });
+    if (!res.ok) { const t = await res.text(); throw new Error("HTTP " + res.status + " " + t.slice(0, 160)); }
+    const d = await res.json();
+    ghSha = d.content.sha;
+    ghNote("sincronizado " + new Date().toLocaleTimeString());
+  } catch (e) {
+    ghNote("error al sincronizar: " + e.message);
+    if (!silent) alert("No se pudo sincronizar con GitHub: " + e.message);
+  }
+}
 
 /* ============ métricas ============ */
 function mastery(mid) {
@@ -780,6 +843,7 @@ function finishExam(abandoned) {
     if (S.history.length > 200) S.history.shift();
   }
   save();
+  ghPush(true);
   if (abandoned) { renderDash(); show("view-dash"); return; }
   renderResults(score, total, secs);
 }
@@ -838,7 +902,27 @@ $("btnQuit").addEventListener("click", () => {
 $("btnBack").addEventListener("click", () => { renderDash(); show("view-dash"); });
 $("btnRetry").addEventListener("click", () => startExam(X.mode, X.moduleId));
 $("btnReset").addEventListener("click", () => {
-  if (confirm("Esto borra todo tu historial y niveles. ¿Continuar?")) { S = blank(); save(); renderDash(); }
+  if (confirm("Esto borra todo tu historial y niveles. ¿Continuar?")) { S = blank(); save(); ghPush(true); renderDash(); }
+});
+$("btnGhSetup").addEventListener("click", async () => {
+  const cur = ghCfg() || { owner: "luisrico5", repo: "mi500-instrumentacion", path: "progreso.json", token: "" };
+  const owner = prompt("Usuario/organización de GitHub:", cur.owner);
+  if (owner == null) return;
+  const repo = prompt("Nombre del repositorio:", cur.repo);
+  if (repo == null) return;
+  const path = prompt("Ruta del archivo de progreso dentro del repo:", cur.path || "progreso.json");
+  if (path == null) return;
+  const token = prompt(
+    "Token de acceso personal de GitHub (fine-grained, con permiso Contents: Read and write sobre este repo).\n" +
+    "Se guarda solo en el almacenamiento local de este navegador, nunca sale de tu dispositivo salvo hacia GitHub.\n" +
+    "Déjalo en blanco para desactivar la sincronización en este dispositivo.",
+    cur.token || ""
+  );
+  if (token == null) return;
+  ghSaveCfg({ owner, repo, path, token });
+  ghSha = null;
+  if (token) { await ghPush(false); alert("Configuración guardada. Progreso sincronizado con GitHub."); }
+  else { ghNote(""); alert("Sincronización con GitHub desactivada en este dispositivo."); }
 });
 $("btnExport").addEventListener("click", () => {
   const blob = new Blob([JSON.stringify(S)], { type: "application/json" });
@@ -865,6 +949,7 @@ $("fileImport").addEventListener("change", ev => {
 window.addEventListener("resize", () => { if (!$("view-dash").classList.contains("hidden")) renderProgress(); });
 
 renderDash();
+ghPull().then(() => { if (!$("view-dash").classList.contains("hidden")) renderDash(); });
 </script>
 
 </body></html>

@@ -11,7 +11,7 @@
         "Montaje en puente de Wheatstone simple"
       ],
       "correct": 2,
-      "explanation": "En el montaje de cuatro hilos, la misma corriente circula por el detector independientemente de la resistencia de los hilos, obteniéndose la máxima exactitud.",
+      "explanation": "El montaje de 4 hilos es el más exacto porque utiliza una fuente de corriente constante que asegura que la misma intensidad circule por el sensor, independientemente de la resistencia de los hilos de conexión. Una confusión típica es optar por el montaje de 3 hilos (opción B), el cual compensa la resistencia de la línea solo si los hilos son idénticos, pero no elimina el error de forma tan absoluta como el sistema de 4 hilos [2, 3]. Al ser las resistencias del puente elevadas, la corriente por sus brazos es despreciable y el voltímetro indica fielmente la resistencia de la sonda, y por tanto, la temperatura.",
       "difficulty": 1,
       "module": 5
     },
@@ -24,7 +24,7 @@
         "Termopar tipo E"
       ],
       "correct": 3,
-      "explanation": "El termopar tipo E (Níquel-Cromo/Constantán) posee la f.e.m. más alta por variación de temperatura de todos los termopares comunes.",
+      "explanation": "El termopar tipo E (Cromel-Constantan) posee la fuerza electromotriz más alta por variación de temperatura entre los modelos industriales, permitiendo una sensibilidad técnica de 68 µV/°C. Es frecuente confundirlo con el tipo K (opción A), que aunque es el más utilizado en la industria por su robustez, tiene una sensibilidad menor en comparación con el tipo E. Esta alta f.e.m. lo hace ideal para aplicaciones que requieren detectar cambios térmicos muy sutiles dentro de su rango de operación de -200 °C a 900 °C.",
       "difficulty": 1,
       "module": 5
     },
@@ -37,7 +37,7 @@
         "Efecto Peltier"
       ],
       "correct": 0,
-      "explanation": "La ley de Stefan-Boltzmann establece que W = K * T^4, donde la intensidad aumenta con la cuarta potencia de la temperatura absoluta.",
+      "explanation": "Los pirómetros de radiación se fundamentan en la Ley de Stefan-Boltzmann, la cual establece matemáticamente que la intensidad de energía radiante (W) emitida por un cuerpo es proporcional a la cuarta potencia de su temperatura absoluta (W = K * T⁴) [5, 6]. Una confusión habitual es asociar estos equipos con el Efecto Seebeck (opción B), pero dicho fenómeno físico describe la generación de tensión en la unión de metales distintos (termopares) y no la captación de energía electromagnética a distancia [7, 8]. Esta ley es el pilar que permite a los pirómetros inferir la temperatura del proceso sin necesidad de contacto físico.",
       "difficulty": 1,
       "module": 5
     },
@@ -50,7 +50,7 @@
         "La Clase II se utiliza exclusivamente para temperaturas criogénicas inferiores a -200 °C."
       ],
       "correct": 1,
-      "explanation": "Los termómetros de vapor (Clase II) tienen escalas no uniformes con mayor sensibilidad al final, mientras que los de gas (Clase III) presentan escalas lineales.",
+      "explanation": "Los termómetros de Clase II (vapor) operan bajo el principio de presión de vapor, lo que genera una escala no uniforme con divisiones más anchas y mayor sensibilidad en la parte superior del rango. Por el contrario, los de Clase III (gas) se basan en la ley de los gases perfectos, donde el aumento de presión es proporcional a la temperatura, resultando en una escala lineal o uniforme. Es un error conceptual común creer que la Clase II requiere compensación de temperatura ambiente (opción C), cuando técnicamente la presión del sistema es independiente de lo que ocurra en el capilar si el bulbo contiene la interfase líquido-vapor.",
       "difficulty": 2,
       "module": 5
     },
@@ -63,7 +63,7 @@
         "Es estrictamente necesario que el tercer metal sea platino para no introducir errores."
       ],
       "correct": 1,
-      "explanation": "Esta ley indica que la f.e.m. total es independiente de los conductores intermedios si la temperatura en sus puntos de conexión es uniforme.",
+      "explanation": "La 'Ley de los metales intermedios' indica que la suma de las fuerzas electromotrices en un circuito con diversos conductores es totalmente independiente de los metales intermedios, siempre que las uniones adicionales estén a la misma temperatura. Esto permite integrar instrumentos de medida con terminales de materiales distintos (como cobre) en el lazo del termopar sin introducir errores significativos [11, 12]. Una confusión típica es la opción D, suponiendo que se requiere un metal noble como el platino para no alterar la señal, cuando el criterio técnico real reside en la uniformidad térmica de las uniones.",
       "difficulty": 2,
       "module": 5
     },
@@ -76,7 +76,7 @@
         "Requiere obligatoriamente un cable de compensación de cobre-níquel."
       ],
       "correct": 1,
-      "explanation": "Los termistores NTC son semiconductores con variaciones de resistencia extremadamente grandes para cambios pequeños de temperatura, aunque son no lineales.",
+      "explanation": "Los termistores NTC se definen técnicamente como semiconductores con un coeficiente de temperatura negativo de valor elevado, lo que les otorga una sensibilidad mucho mayor y una respuesta más rápida que las RTD de platino. Es un error común confundirlos con la opción A, ya que las termorresistencias Pt100 poseen un coeficiente positivo y una relación resistencia-temperatura mucho más lineal que la de los termistores. Según las fuentes, su pequeño tamaño y baja capacidad térmica son los factores físicos que permiten alcanzar tiempos de respuesta de entre 0,5 y 10 segundos.",
       "difficulty": 2,
       "module": 5
     },
@@ -89,7 +89,7 @@
         "8,20 °C"
       ],
       "correct": 2,
-      "explanation": "Según el ejemplo de las fuentes, una resistencia adicional de 2 ohms (1 por hilo) desplaza la medida de 20 °C a 25,43 °C, generando un error de 5,43 °C.",
+      "explanation": "En un montaje a 2 hilos, la resistencia de los cables se suma directamente a la del sensor, provocando un error positivo sistemático en la lectura final. El desarrollo numérico suma los 2 ohms de los hilos a los 107,793 ohms de la sonda (total 109,793 ohms) y, al despejar la temperatura en la fórmula Rt = R0(1 + αt) con α=0,00385, se obtiene una lectura de 25,43 °C, lo que arroja un error de 5,43 °C. Una confusión típica es la opción B, que representaría el error en un montaje de 3 hilos con conductores descompensados, ignorando que en 2 hilos no existe mecanismo de anulación para la resistencia de línea.",
       "difficulty": 3,
       "module": 5
     },
@@ -102,7 +102,7 @@
         "35,210 mV"
       ],
       "correct": 2,
-      "explanation": "Se debe restar la f.e.m. de la unión fría a la del proceso (39,132 - 1,019 = 38,113 mV) porque el instrumento ya compensa internamente la temperatura ambiente.",
+      "explanation": "Para verificar un instrumento que posee compensación interna de unión fría, el calibrador debe inyectar únicamente la diferencia algebraica entre la f.e.m. del punto deseado y la f.e.m. que genera el propio instrumento por su temperatura ambiente. El cálculo paso a paso resta los 1,019 mV (correspondientes a 20 °C según tablas) de los 39,132 mV (punto de 700 °C), resultando en una inyección necesaria de 38,113 mV para que el equipo indique el valor correcto. Seleccionar la opción B es un error conceptual frecuente, ya que inyectar el valor total de la tabla sin considerar la compensación de la caja causaría un desplazamiento en la lectura igual a la temperatura del lugar de prueba.",
       "difficulty": 3,
       "module": 5
     },
@@ -115,7 +115,7 @@
         "La f.e.m. generada será proporcional a la raíz cuadrada de la emisividad según la ley de Seebeck."
       ],
       "correct": 1,
-      "explanation": "Si la superficie no es perfectamente negra, el pirómetro capta menos energía radiante de la real, por lo que la temperatura indicada es menor que la verdadera.",
+      "explanation": "Los pirómetros se calibran para 'cuerpo negro' (emisividad = 1), por lo que al medir superficies con emisividades bajas, como un metal pulido (ε = 0,1), el sensor capta mucha menos energía radiante de la que corresponde a su temperatura real. El criterio técnico establece que la 'temperatura de brillo' detectada será significativamente inferior a la verdadera, siendo obligatorio ajustar manualmente el factor de emisividad en el receptor para obtener una medida fiable. Una confusión habitual es la opción A, suponiendo que el detector compensa automáticamente la naturaleza del material, cuando físicamente solo puede medir la radiación neta que impacta en su termopila o fotocélula.",
       "difficulty": 3,
       "module": 5
     },
@@ -128,7 +128,7 @@
         "El intervalo entre el cambio en la variable y el inicio de la respuesta del sensor"
       ],
       "correct": 1,
-      "explanation": "La constante de tiempo es el parámetro que indica la velocidad de respuesta, definida como el tiempo necesario para alcanzar el 63,2% del cambio total ante una variación brusca,.",
+      "explanation": "La constante de tiempo se define técnicamente como el tiempo necesario para que el sensor alcance el 63,2% de la variación total de temperatura tras experimentar un cambio súbito o en escalón. Este valor permite evaluar la velocidad de respuesta dinámica, la cual depende del intercambio térmico entre el fluido y la masa del elemento (vaina y sensor). Es un error conceptual típico elegir la opción A (50%) por analogía con la vida media estadística, u optar por la C, ignorando que, según las leyes de transferencia de calor de primer orden, el instrumento solo alcanza el 100% del valor final de forma asintótica a través del tiempo.",
       "difficulty": 1,
       "module": 5
     },
@@ -141,7 +141,7 @@
         "Poseen una relación resistencia-temperatura mucho más lineal que el platino"
       ],
       "correct": 2,
-      "explanation": "Los sensores de temperatura de silicio son circuitos integrados que pueden contener funciones de procesamiento, compensación y linealización dentro del mismo componente,.",
+      "explanation": "Los sensores de temperatura de silicio son circuitos integrados (IC) que permiten integrar en el mismo chip funciones avanzadas como el procesamiento de señales, la linealización y la compensación de la unión fría. Esta capacidad de miniaturización y multifuncionalidad los hace ideales para proteger componentes electrónicos y sistemas compactos de visualización. Es una confusión frecuente (opción A) considerarlos aptos para temperaturas extremas de horno, pero técnicamente su rango operativo real está limitado a un intervalo de entre -55 °C y 150 °C.",
       "difficulty": 1,
       "module": 5
     },
@@ -154,7 +154,7 @@
         "Puede utilizarse en aplicaciones criogénicas hasta los -260 °C"
       ],
       "correct": 1,
-      "explanation": "El níquel presenta una sensibilidad significativamente mayor que el platino y es más económico, aunque tiene una falta de linealidad y un margen de temperatura más reducido,.",
+      "explanation": "El níquel presenta una clara ventaja técnica frente al platino por poseer una mayor sensibilidad, con una variación de 0,62 ohmios por grado centígrado frente a los 0,39 del platino, además de tener un coste de mercado mucho más bajo. Estas propiedades lo hacen muy eficiente para aplicaciones industriales dentro de su rango de trabajo de -100 °C a 200 °C. Un error conceptual típico es atribuirle una mejor linealidad (opción A), cuando las tablas comparativas señalan explícitamente que su falta de linealidad y las variaciones en su coeficiente son sus principales desventajas [3, 4].",
       "difficulty": 2,
       "module": 5
     },
@@ -167,7 +167,7 @@
         "Lentes de cristal de germanio"
       ],
       "correct": 2,
-      "explanation": "Según la fuente, las lentes de sílice fundida son las adecuadas para el intervalo de 450 a 1.250 °C, mientras que las de pírex se usan para temperaturas superiores,.",
+      "explanation": "Para operar en el intervalo térmico de 450 °C a 1.250 °C, las fuentes prescriben el uso de lentes de sílice fundida para asegurar que la máxima energía radiante llegue a la termopila del pirómetro. La selección del material de la lente es fundamental, ya que debe ser transparente a la longitud de onda dominante en esa gama de temperaturas. Es habitual confundirlas con las lentes de pírex (opción A), pero estas se reservan técnicamente para temperaturas superiores, situadas en el campo de los 850 °C a los 1.750 °C.",
       "difficulty": 2,
       "module": 5
     },
@@ -180,7 +180,7 @@
         "10,8°"
       ],
       "correct": 1,
-      "explanation": "Utilizando la fórmula Ángulo = (360 * a * l * Δt) / s descrita en la fuente: (360 * 0,000015 * 100 * 40) / 0,5 = 21,6 / 0,5 = 43,2 grados,.",
+      "explanation": "El ángulo de torsión de una lámina bimetálica se calcula mediante la fórmula A = (360 * a * l * Δt) / s, donde la deflexión es proporcional al coeficiente de expansión y la longitud. El desarrollo numérico paso a paso es: (360 * 0,000015 * 100 mm * 40 °C) / 0,5 mm, lo que resulta en 21,6 / 0,5 = 43,2°. Un error común de cálculo es la opción A (21,6°), que se produce al olvidar dividir el producto por el espesor (s) de la lámina, ignorando que a menor espesor, mayor es la torsión mecánica resultante.",
       "difficulty": 3,
       "module": 5
     }

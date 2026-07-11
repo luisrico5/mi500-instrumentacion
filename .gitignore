@@ -1,2 +1,7 @@
-bank/_*
+bank/_prompt_*
+bank/_resp_*
+bank/_xprompt_*
+bank/_xresp_*
+bank/_bxprompt_*
+bank/_bxresp_*
 .claude/

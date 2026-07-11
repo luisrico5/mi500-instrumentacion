@@ -11,7 +11,7 @@
         "Ley de Charles"
       ],
       "correct": 1,
-      "explanation": "La ley de Faraday establece que la tensión inducida en un conductor que se mueve perpendicularmente a un campo magnético es proporcional a su velocidad.",
+      "explanation": "La ley de inducción electromagnética de Faraday establece que la tensión inducida en un conductor que se mueve perpendicularmente a través de un campo magnético es proporcional a su velocidad [1, 2]. En el caso industrial, el fluido conductor actúa como el conductor móvil y los electrodos captan esta señal proporcional al caudal. Es un error conceptual común confundirla con la Ley de Ohm (Opción A), que rige la relación estática entre corriente y resistencia, pero no explica la generación de potencial por movimiento en un campo magnético.",
       "difficulty": 1,
       "module": 3
     },
@@ -24,7 +24,7 @@
         "No existe una relación matemática directa sin compensación de temperatura."
       ],
       "correct": 2,
-      "explanation": "Basado en el teorema de Bernoulli, la velocidad y el caudal en elementos deprimógenos varían en función de la raíz cuadrada de la diferencia de presiones.",
+      "explanation": "En los elementos deprimógenos, la relación fundamental derivada del teorema de Bernoulli establece que el caudal volumétrico es proporcional a la raíz cuadrada de la presión diferencial generada (Q = K * √h). Una confusión típica es la opción A, ya que físicamente es la presión diferencial la que aumenta con el cuadrado del caudal, pero el instrumento receptor debe extraer la raíz para linealizar la medida [6, 7]. Por ello, los transmisores inteligentes suelen incorporar algoritmos de extracción de raíz cuadrada para entregar una señal lineal al sistema de control.",
       "difficulty": 1,
       "module": 3
     },
@@ -37,7 +37,7 @@
         "El desplazamiento de un pistón oscilante dentro de una cámara cilíndrica."
       ],
       "correct": 1,
-      "explanation": "Los medidores vórtex generan vórtices desfasados 180° cuya frecuencia de aparición es directamente proporcional al caudal.",
+      "explanation": "El medidor de vórtex se basa en el efecto Von Karman, donde un cuerpo no aerodinámico interpuesto en la tubería genera torbellinos cuya frecuencia de desprendimiento es directamente proporcional a la velocidad del fluido [9, 10]. Según la expresión del número de Strouhal, esta frecuencia es constante para un amplio rango de números de Reynolds, permitiendo medir el caudal volumétrico con alta precisión [11, 12]. Se suele confundir con el medidor de placa de impacto (Opción A), el cual mide realmente la fuerza dinámica o energía cinética contra un disco y no la frecuencia de oscilaciones del fluido [13, 14].",
       "difficulty": 1,
       "module": 3
     },
@@ -50,7 +50,7 @@
         "Tobera > Placa orificio > Tubo Venturi"
       ],
       "correct": 2,
-      "explanation": "Según las fuentes, la placa orificio es la que mayor pérdida de carga provoca, seguida de la tobera, mientras que el tubo Venturi es el más eficiente en recuperación de presión.",
+      "explanation": "El orden de pérdida de carga permanente, de mayor a menor, es placa orificio, tobera y tubo Venturi, debido al grado de recuperación de presión que permite el perfil geométrico de cada elemento [7, 15]. Mientras que el orificio provoca una contracción brusca con pérdidas de hasta el 85%, el tubo Venturi está diseñado con conos de entrada y salida suaves que minimizan la turbulencia, reduciendo la pérdida al 10-20% de la presión diferencial [7, 16]. Un error frecuente es pensar que el Venturi pierde más presión por ser un equipo de mayor tamaño (Opción A), ignorando que su diseño aerodinámico es el que optimiza la eficiencia energética.",
       "difficulty": 2,
       "module": 3
     },
@@ -63,7 +63,7 @@
         "El Doppler no requiere contacto con el fluido, mientras que el de tiempo de tránsito sí."
       ],
       "correct": 1,
-      "explanation": "El método Doppler se basa en el corrimiento de frecuencia reflejada en discontinuidades del fluido, mientras que el de tiempo de tránsito requiere fluidos limpios.",
+      "explanation": "La principal diferencia técnica es que el caudalímetro Doppler requiere obligatoriamente que el fluido contenga partículas en suspensión o burbujas de gas para reflejar las ondas ultrasónicas y medir el corrimiento de frecuencia [17, 18]. Por el contrario, el medidor de tiempo de tránsito se utiliza preferentemente en fluidos limpios, midiendo la diferencia de tiempo entre pulsos que viajan a favor y en contra de la corriente [19, 20]. Es un error común la opción D, ya que ambos sistemas pueden diseñarse para montaje exterior mediante abrazaderas (clamp-on), por lo que el método de contacto no es el factor que los distingue físicamente [20, 21].",
       "difficulty": 2,
       "module": 3
     },
@@ -76,7 +76,7 @@
         "Permite medir caudales de gases a velocidades mucho mayores que el sonido."
       ],
       "correct": 1,
-      "explanation": "El medidor de Coriolis aprovecha la inercia de la masa en movimiento, proporcionando una medida directa independiente de las propiedades físicas cambiantes del fluido.",
+      "explanation": "El medidor de Coriolis se basa en el teorema homónimo para determinar el caudal masa de forma directa mediante la fuerza de inercia generada en un tubo en vibración, lo que lo hace intrínsecamente independiente de las variaciones en la densidad, presión y viscosidad del fluido [1, 2]. Esta es su principal ventaja técnica frente a los sistemas volumétricos compensados que dependen de sensores externos para inferir la masa a través de cálculos secundarios. Una confusión frecuente es considerarlo una opción económica de instalar (Opción A), cuando en realidad las fuentes lo sitúan como un instrumento de coste elevado debido a su complejidad y requisitos de diseño [4, 5].",
       "difficulty": 2,
       "module": 3
     },
@@ -89,7 +89,7 @@
         "La rangeabilidad no cambia, solo mejora la exactitud del ±2% al ±0.1%."
       ],
       "correct": 1,
-      "explanation": "Los transmisores inteligentes permiten ampliar la dinámica de medida de la placa orificio de 3:1 a 10:1 manteniendo la exactitud.",
+      "explanation": "De acuerdo con los textos técnicos, el uso de transmisores inteligentes aplicados a elementos deprimógenos permite mejorar la rangeabilidad o dinámica de medida desde una relación clásica de 3:1 en placas de orificio convencionales hasta una relación de 10:1 manteniendo la exactitud del ±1% [6, 7]. Esta mejora es posible gracias a la capacidad de procesamiento digital y compensación de no linealidades que aporta el microprocesador del instrumento. Es común confundir este incremento estándar con el de una placa de orificio variable, la cual puede alcanzar una gama de 50:1 (Opción A) mediante un sistema servomotor que posiciona mecánicamente la placa.",
       "difficulty": 3,
       "module": 3
     },
@@ -102,7 +102,7 @@
         "10 pulgadas de agua"
       ],
       "correct": 2,
-      "explanation": "Debido a la relación cuadrática (Q ∝ √h), si el caudal se reduce a la mitad (0.5), la presión diferencial debe reducirse al cuadrado de esa proporción (0.5² = 0.25). 100 * 0.25 = 25.",
+      "explanation": "El funcionamiento de una placa orificio se rige por la relación matemática Q = K √(h), donde el caudal es proporcional a la raíz cuadrada de la presión diferencial [10, 11]. Para el desarrollo numérico: si el caudal original Q_1 es 1 y la presión h_1 es 100, al caer el caudal al 50% (Q_2 = 0,5), la nueva presión h_2 se despeja como (Q_2 / Q_1)^2 \times h_1, resultando en (0,5)^2 \times 100 = 0,25 \times 100 = 25 pulgadas de agua. Un error conceptual típico es elegir la opción A (50), asumiendo una relación lineal inexistente, la cual solo se presenta en la señal de salida si el instrumento receptor incorpora un extractor de raíz cuadrada [11, 12].",
       "difficulty": 3,
       "module": 3
     },
@@ -115,7 +115,7 @@
         "Depende exclusivamente de la viscosidad cinemática y el número de Reynolds."
       ],
       "correct": 1,
-      "explanation": "La ecuación es Q = m * Ce * (t2 - t1). Por lo tanto, la masa m es proporcional al calor (Q) e inversamente proporcional al calor específico (Ce) y al gradiente térmico (Δt).",
+      "explanation": "El medidor térmico Thomas fundamenta su medida en la elevación de temperatura del fluido, donde el caudal masa (m) se determina mediante la ecuación Q = m · c_e · (t_2 - t_1), lo que despejado resulta en m = Q / [c_e · (t_2 - t_1)]. Por tanto, la masa es proporcional al calor transferido dividido por el producto del calor específico y la diferencia de temperaturas detectada por las sondas de resistencia. Una confusión usual es asociar esta medida con la frecuencia de remolinos (Opción A), principio físico que corresponde exclusivamente a los medidores de tipo vórtex basados en el efecto Von Karman [15, 16].",
       "difficulty": 3,
       "module": 3
     },
@@ -128,7 +128,7 @@
         "De la frecuencia de los vórtices generados por el cuerpo de impacto"
       ],
       "correct": 1,
-      "explanation": "La exactitud de estos medidores depende de los huelgos entre las partes móviles y fijas, y aumenta proporcionalmente con la calidad de su mecanización y el tamaño del equipo,.",
+      "explanation": "En los medidores de desplazamiento positivo, la exactitud depende críticamente de los huelgos o espacios libres entre las piezas móviles y fijas, los cuales se reducen mediante una alta calidad de mecanización y aumentando el tamaño del instrumento para minimizar las fugas internas. Al contar o integrar volúmenes separados de líquido en cámaras estancas, cualquier imperfección mecánica permite el paso de fluido no contabilizado, afectando la fidelidad de la totalización. Es un error común confundir este principio mecánico con el de los medidores de vórtex (Opción D), que dependen de la frecuencia de torbellinos generados por un cuerpo de impacto y no de la precisión del sellado volumétrico [15, 16].",
       "difficulty": 1,
       "module": 3
     },
@@ -141,7 +141,7 @@
         "10,0 μS/cm"
       ],
       "correct": 2,
-      "explanation": "Las fuentes señalan que para que el instrumento pueda medir se requiere que el fluido tenga una conductividad eléctrica mayor de 3 μS/cm,.",
+      "explanation": "El requisito de conductividad eléctrica para medidores magnéticos industriales se fundamenta en la ley de inducción de Faraday, la cual exige que el fluido actúe como un conductor móvil. Según las fuentes de Creus, se establece un mínimo técnico de 3,0 μS/cm para que el instrumento capte una señal de tensión fiable y estable. Es un error conceptual común confundir este valor con los 0,3 μS/cm mencionados en aplicaciones especiales, ya que estos últimos requieren obligatoriamente de preamplificadores o acondicionadores de señal adicionales para discriminar el ruido eléctrico.",
       "difficulty": 1,
       "module": 3
     },
@@ -154,7 +154,7 @@
         "40 diámetros de tubería"
       ],
       "correct": 2,
-      "explanation": "Para asegurar una formación correcta de vórtices y una medición precisa, los instrumentos de vórtex requieren típicamente una instalación en tubería recta con un mínimo de 15 diámetros aguas arriba,.",
+      "explanation": "Para asegurar una medición precisa basada en el efecto Von Karman, los medidores de vórtex requieren un perfil de velocidades del flujo totalmente desarrollado y libre de turbulencias. Los textos técnicos prescriben específicamente una longitud mínima de 15 diámetros de tubería recta aguas arriba y 5 diámetros aguas abajo para garantizar la formación estable de los torbellinos. Una confusión habitual es aplicar la norma de 10 diámetros (opción B), que es válida para enderezadores de venas o algunas configuraciones de placas de orificio, pero insuficiente para la sensibilidad dinámica de un sensor de vórtex.",
       "difficulty": 2,
       "module": 3
     },
@@ -167,7 +167,7 @@
         "Tomas en la tubería (pipe taps)"
       ],
       "correct": 3,
-      "explanation": "Las tomas en la tubería (pipe taps) se ubican a estas distancias específicas y se utilizan cuando se busca aumentar el intervalo de medida en un punto menos sensible,.",
+      "explanation": "La configuración de tomas en la tubería (pipe taps) se caracteriza por ubicar la toma anterior a 2 ½ diámetros y la posterior a 8 diámetros de la tubería respecto al elemento deprimógeno. De acuerdo con la fuente, este montaje se utiliza específicamente cuando se desea aumentar el intervalo de medida (rangeabilidad) al situar las tomas en puntos de recuperación de presión menos sensibles. Es frecuente confundirlas con las tomas en la brida (flange taps), las cuales se instalan a una pulgada de distancia de la placa por comodidad mecánica, pero no ofrecen el mismo efecto en la amplitud del campo de medida.",
       "difficulty": 2,
       "module": 3
     },
@@ -180,7 +180,7 @@
         "1,234"
       ],
       "correct": 2,
-      "explanation": "Según la fórmula de corrección de densidad, el caudal real se obtiene multiplicando el leído por la raíz cuadrada del cociente ρc/ρr; así √(1000/810) ≈ 1,111, pero la fórmula de caudal volumétrico real en función del leído es Qr = Qc * √(ρc/ρr), resultando en √(1000/810) = 1,111 (corrección de peso: √(ρr/ρc)). En volumen, el factor es √(1000/810) ≈ 1,11.,.",
+      "explanation": "La corrección del caudal en una placa de orificio debido a variaciones de densidad se rige por la fórmula Qr = Qc * √(ρc / ρr), derivada de la relación de raíz cuadrada entre la presión diferencial y el caudal. El desarrollo numérico consiste en dividir la densidad de diseño entre la real (1000 / 810 = 1,2345) y extraer la raíz cuadrada de dicho cociente (√1,2345 ≈ 1,111). Un error típico es aplicar un factor lineal de 0,900 (opción B) al omitir la raíz cuadrada, ignorando que físicamente la presión diferencial generada por la placa es proporcional al cuadrado de la velocidad del fluido.",
       "difficulty": 3,
       "module": 3
     }

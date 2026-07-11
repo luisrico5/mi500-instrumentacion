@@ -11,7 +11,7 @@
         "El grado de conformidad de un valor indicado con un valor estándar aceptado."
       ],
       "correct": 1,
-      "explanation": "El alcance (span) es específicamente la diferencia algebraica entre los valores extremos del campo de medida (range).",
+      "explanation": "El alcance (span) se define técnicamente como la diferencia algebraica entre los valores superior e inferior del campo de medida del instrumento [1, 2]. Es fundamental no confundirlo con la opción A, que corresponde a la definición de 'campo de medida' (range), el cual representa el espectro completo de valores y no solo su magnitud numérica [3, 4]. Mientras que el campo se expresa citando los dos valores extremos (ej. 0 a 10 bar), el alcance es el resultado escalar de la resta de ambos (10 bar).",
       "difficulty": 1,
       "module": 1
     },
@@ -24,7 +24,7 @@
         "La ubicación física del instrumento en la planta."
       ],
       "correct": 2,
-      "explanation": "Según la norma ISA-S5.1, la primera letra del código de identificación (tag) representa la variable medida o inicial.",
+      "explanation": "Bajo la norma ISA-S5.1, la primera letra de un código de identificación siempre indica la variable medida o inicial del proceso, como la 'P' para presión o 'T' para temperatura [5, 6]. Una confusión común es la opción A, ya que la función de salida o lectura del instrumento se describe mediante las letras sucesivas y no por la inicial. Por ejemplo, en el código 'TIC', la 'T' identifica la variable temperatura mientras que las letras siguientes indican las funciones de indicación y control.",
       "difficulty": 1,
       "module": 1
     },
@@ -37,7 +37,7 @@
         "Registrador"
       ],
       "correct": 2,
-      "explanation": "Los transmisores ciegos captan la variable y envían la señal pero no disponen de una escala o pantalla de indicación local.",
+      "explanation": "Un transmisor ciego es aquel instrumento que capta la variable de proceso y envía la señal a distancia de forma estandarizada sin disponer de una indicación visible local [8, 9]. Se diferencia radicalmente de un indicador (opción A), cuya función principal es precisamente permitir la lectura del valor mediante una escala o pantalla local. Este tipo de transmisores es muy habitual en instalaciones de campo donde el monitoreo se centraliza exclusivamente en la sala de control o paneles alejados del proceso.",
       "difficulty": 1,
       "module": 1
     },
@@ -50,7 +50,7 @@
         "Baja exactitud y baja precisión."
       ],
       "correct": 2,
-      "explanation": "Tiene gran precisión (baja dispersión entre lecturas), pero pobre exactitud debido al gran error respecto al valor verdadero.",
+      "explanation": "Este instrumento presenta baja exactitud porque sus lecturas promedio de 7,050 bar están muy alejadas del valor real de 5,000 bar, incurriendo en un error sistemático considerable. Sin embargo, califica con alta precisión debido a que la dispersión máxima entre sus lecturas (7,051 - 7,049) es de solo 0,002 bar, evidenciando una excelente repetibilidad. Es una confusión frecuente (opción A) asumir que exactitud y precisión son sinónimos, pero un equipo puede ser sumamente preciso y estar totalmente descalibrado.",
       "difficulty": 2,
       "module": 1
     },
@@ -63,7 +63,7 @@
         "La Tipo A solo aplica a instrumentos analógicos y la Tipo B a digitales."
       ],
       "correct": 1,
-      "explanation": "La Incertidumbre Tipo A se evalúa mediante distribuciones estadísticas de lecturas, mientras que la Tipo B usa datos de manuales, certificados o experiencia.",
+      "explanation": "La incertidumbre Tipo A se evalúa obligatoriamente mediante el análisis estadístico de una serie de observaciones independientes y repetidas bajo las mismas condiciones de medida [14, 15]. Por el contrario, la Tipo B se determina basándose en información externa disponible, como certificados de calibración previos, especificaciones del fabricante o la experiencia del operador [16, 17]. Una confusión habitual es asignar estas categorías según el tipo de error (aleatorio o sistemático), cuando la distinción normativa real reside exclusivamente en la metodología empleada para su cálculo.",
       "difficulty": 2,
       "module": 1
     },
@@ -76,7 +76,7 @@
         "Controlador con Indicación de Corriente."
       ],
       "correct": 1,
-      "explanation": "La 'T' indica Temperatura (variable medida), la 'I' es Indicador (función de lectura) y la 'C' es Controlador (función de salida).",
+      "explanation": "Según la norma ISA-S5.1, la primera letra 'T' identifica la variable medida (Temperatura) y las letras sucesivas 'I' y 'C' indican las funciones de indicación y control respectivamente [1, 2]. Es un error común confundir la 'T' inicial con la función de transmisión, pero esta última siempre se representa como una letra sucesiva (ej. TT para Transmisor de Temperatura) [1, 3]. Por tanto, 'TIC' describe específicamente a un Controlador Indicador de Temperatura.",
       "difficulty": 2,
       "module": 1
     },
@@ -89,7 +89,7 @@
         "Alcance: 180 °C; Elevación de cero: 11.1%."
       ],
       "correct": 0,
-      "explanation": "Alcance = 180 - (-20) = 200 °C. Elevación de cero = (cantidad que el cero supera al límite inferior / alcance) * 100 = (20 / 200) * 100 = 10%.",
+      "explanation": "El alcance (span) es la diferencia algebraica entre los límites: 180 - (-20) = 200 °C [4, 5]. La elevación de cero es la cantidad en que el cero supera al límite inferior, es decir, 20 °C (0 - (-20) = 20), por lo que el porcentaje respecto al alcance es (20 / 200) * 100 = 10% [6, 7]. Una confusión típica es calcular este porcentaje sobre el valor superior de la escala (180 °C), lo que ignora la definición técnica ligada estrictamente al span.",
       "difficulty": 3,
       "module": 1
     },
@@ -102,7 +102,7 @@
         "±1.25%"
       ],
       "correct": 1,
-      "explanation": "El error total es la raíz cuadrada de la suma de los cuadrados de los errores: √(2² + 0.5² + 0.5² + 0.5²) = √4.75 ≈ 2.18%.",
+      "explanation": "El error total probable de una medición con varios instrumentos en serie se calcula como la raíz cuadrada de la suma de los cuadrados de los errores individuales [8, 9]. El desarrollo numérico es √(2² + 0.5² + 0.5² + 0.5²) = √4.75 = 2.18% [10, 11]. Es un error conceptual típico sumar los porcentajes de error directamente (obteniendo 3.5%), ya que estadísticamente es improbable que todos los instrumentos alcancen su error máximo simultáneamente.",
       "difficulty": 3,
       "module": 1
     },
@@ -115,7 +115,7 @@
         "±1.0%"
       ],
       "correct": 1,
-      "explanation": "Zona muerta (%) = (Valor de la zona muerta / Alcance) * 100. En este caso: (0.2 / 200) * 100 = 0.1%.",
+      "explanation": "La zona muerta se define como el campo de valores que no produce variación en la salida del instrumento y se expresa habitualmente como porcentaje del alcance [12, 13]. En este caso, el cálculo es (0.2 °C / 200 °C) * 100 = 0.1%, por lo que la zona muerta es de ±0.1%. Una confusión habitual es asimilar este término a la sensibilidad, la cual representa en realidad una razón entre incrementos de salida y entrada tras alcanzar el reposo [14, 15].",
       "difficulty": 3,
       "module": 1
     },
@@ -128,7 +128,7 @@
         "Magnitud de los cambios en escalón de la señal de salida al variar el campo"
       ],
       "correct": 1,
-      "explanation": "Según la fuente, la rangeabilidad se define específicamente como el cociente entre el valor de medida superior e inferior de un instrumento.",
+      "explanation": "La rangeabilidad o dinámica de medida es técnicamente el cociente entre el valor de medida superior e inferior de un instrumento [16, 17]. Por ejemplo, un transmisor inteligente de caudal puede mejorar esta relación de 3:1 a 10:1 manteniendo su exactitud [18, 19]. Es frecuente confundir este término con el alcance (opción A), pero el alcance se obtiene mediante una resta algebraica y no mediante una relación de división entre los límites [4, 17].",
       "difficulty": 1,
       "module": 1
     },
@@ -141,7 +141,7 @@
         "Exactitud"
       ],
       "correct": 2,
-      "explanation": "La trazabilidad es la propiedad que permite relacionar los resultados de un instrumento con patrones de referencia a través de una cadena de comparaciones documentadas.",
+      "explanation": "La trazabilidad es la propiedad metrológica que permite vincular el resultado de una medición con patrones de referencia nacionales o internacionales a través de una cadena ininterrumpida y documentada de comparaciones con incertidumbres conocidas. Un error común es confundirla con la exactitud (opción D), la cual se refiere meramente a qué tan cerca está una lectura del valor verdadero sin implicar necesariamente esta jerarquía de calibración. De acuerdo con las fuentes, garantizar esta cadena es el atributo indispensable para la confiabilidad universal de cualquier resultado de medida.",
       "difficulty": 1,
       "module": 1
     },
@@ -154,7 +154,7 @@
         "Identifica que la variable medida es la densidad"
       ],
       "correct": 1,
-      "explanation": "La letra 'D' como letra de modificación aplicada a una primera letra (como T para temperatura) convierte la variable original en una nueva variable medida, en este caso temperatura diferencial.",
+      "explanation": "Según la norma ISA-S5.1, la letra 'D' actuando inmediatamente después de la primera letra funciona como una letra de modificación que redefine la variable medida, transformando en este caso 'Temperatura' en 'Temperatura Diferencial'. Una confusión técnica frecuente es asociar esta 'D' con la función de control derivativo (opción A); sin embargo, las funciones de salida se describen en las letras sucesivas finales y no modifican la naturaleza de la variable inicial. Esta nomenclatura permite al instrumentista identificar que el equipo 'TDI' mide y muestra la diferencia térmica entre dos puntos del proceso.",
       "difficulty": 2,
       "module": 1
     },
@@ -167,7 +167,7 @@
         "Un cuadrado con un rombo inscrito"
       ],
       "correct": 1,
-      "explanation": "El símbolo de un círculo dentro de un cuadrado se utiliza para documentar instrumentos con funciones de visualización y control compartido accesibles al operador.",
+      "explanation": "En la simbología de sistemas digitales y de control compartido definida por la norma ISA-S5.3, un círculo inscrito dentro de un cuadrado representa funciones de visualización y control que son accesibles normalmente al operador desde su consola. Es habitual confundirlo con el círculo simple sin recuadro (opción A), símbolo que identifica instrumentos físicos montados localmente en campo sin integración en redes compartidas. El uso del cuadrado exterior es el criterio técnico que permite discernir si la interfaz del instrumento reside en el software de una estación de operación o en un dispositivo físico tradicional.",
       "difficulty": 2,
       "module": 1
     },
@@ -180,7 +180,7 @@
         "1.5 m³/h"
       ],
       "correct": 2,
-      "explanation": "La fuente indica que los transmisores inteligentes mejoran la rangeabilidad de 3:1 a 10:1 en placas de orificio; por lo tanto, el caudal mínimo es el máximo dividido por 10 (150/10 = 15).",
+      "explanation": "La rangeabilidad o dinámica de medida se define técnicamente como el cociente entre el valor de medida superior y el inferior que el instrumento puede manejar conservando su exactitud. El desarrollo numérico para este caso consiste en dividir el caudal máximo por la relación de rangeabilidad: 150 m³/h / 10 = 15 m³/h. Un error conceptual típico es confundir el alcance o span con esta relación, pero las fuentes técnicas subrayan que los transmisores inteligentes aplicados a elementos deprimógenos han mejorado este límite operativo de una proporción clásica de 3:1 a una de 10:1.",
       "difficulty": 3,
       "module": 1
     }

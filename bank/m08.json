@@ -11,7 +11,7 @@
         "Error de histéresis"
       ],
       "correct": 0,
-      "explanation": "El error de cero desplaza todas las señales de salida en un mismo valor constante con relación a la recta ideal de calibración.",
+      "explanation": "El error de cero se define técnicamente como un desplazamiento constante de todas las lecturas de salida con relación a la recta ideal, lo que cambia el punto de base sin alterar la inclinación o la ganancia de la respuesta. Es un error común confundirlo con el error de multiplicación (opción B), el cual implica que las lecturas aumentan o disminuyen progresivamente respecto a la recta ideal, representando físicamente un cambio en la pendiente del instrumento. Este desajuste se corrige típicamente mediante un tornillo de cero que modifica la posición final del índice o de la señal de salida para que coincida con el valor mínimo del campo de medida [5, 6].",
       "difficulty": 1,
       "module": 8
     },
@@ -24,7 +24,7 @@
         "El registro gráfico de los valores históricos de calibración de un transmisor inteligente."
       ],
       "correct": 2,
-      "explanation": "La trazabilidad asegura que los resultados se relacionen con estándares internacionales a través de una cadena continua de comparaciones con incertidumbres determinadas.",
+      "explanation": "La trazabilidad es la propiedad metrológica que permite vincular un resultado de medición con patrones de referencia nacionales o internacionales mediante una cadena ininterrumpida y documentada de comparaciones con incertidumbres determinadas [7, 8]. Existe una confusión habitual con la exactitud (opción B), la cual se refiere únicamente al grado de aproximación de una lectura al valor verdadero sin implicar la jerarquía metrológica necesaria para garantizar la validez universal de la medida [9, 10]. Según las fuentes, cada eslabón de esta cadena debe estar debidamente registrado en informes de calibración para cumplir con las normas de calidad industrial.",
       "difficulty": 1,
       "module": 8
     },
@@ -37,7 +37,7 @@
         "La comparación visual entre un manómetro de proceso y un manómetro patrón digital."
       ],
       "correct": 1,
-      "explanation": "Es un patrón primario que genera presión aplicando masas conocidas sobre un pistón de sección calibrada que flota en un fluido hidráulico.",
+      "explanation": "El comprobador de manómetros de peso muerto actúa como un patrón primario que genera presión mediante el equilibrio de fuerzas hidrostáticas sobre un pistón de sección transversal conocida que soporta pesas calibradas [11, 12]. Una confusión técnica típica es considerarlo un método de comparación visual (opción D), ignorando que su precisión no depende de otro manómetro, sino de la flotación libre del conjunto pistón-pesas que garantiza una presión exacta basada en principios físicos fundamentales. Este dispositivo es esencial en los talleres de instrumentación para obtener incertidumbres muy bajas en la calibración de instrumentos de presión tipo Bourdon [11, 13].",
       "difficulty": 1,
       "module": 8
     },
@@ -50,7 +50,7 @@
         "Actuar sobre el tornillo de multiplicación que modifica la relación de amplitud de los movimientos de salida."
       ],
       "correct": 3,
-      "explanation": "El error de multiplicación se corrige ajustando el brazo de palanca o tornillo de span, que cambia la pendiente de la curva de respuesta del instrumento.",
+      "explanation": "Para corregir el error de multiplicación, el técnico debe actuar sobre el tornillo de 'span', el cual modifica directamente la relación de amplitud de los movimientos de salida para que el índice señale correctamente el valor máximo de la escala [14, 15]. Es un error conceptual común intentar solucionarlo mediante el ajuste de cero (opción C), ya que esto desplazaría toda la escala de forma constante sin corregir la desviación progresiva que caracteriza a la ganancia incorrecta [3, 6]. El procedimiento estándar exige iterar el ajuste de cero en el punto mínimo y el de multiplicación en el punto máximo hasta que ambos valores cumplan con la exactitud requerida [16, 17].",
       "difficulty": 2,
       "module": 8
     },
@@ -63,7 +63,7 @@
         "Utilizan sales sólidas que no necesitan ser sustituidas durante la vida útil del equipo."
       ],
       "correct": 0,
-      "explanation": "El fluido agitado garantiza una distribución uniforme de la temperatura, mejorando la transferencia térmica hacia las sondas que se comprueban.",
+      "explanation": "La ventaja técnica de los baños de líquido agitados es su capacidad para eliminar la formación de gradientes de temperatura y puntos fríos o calientes, logrando estabilidades térmicas de hasta 0,001 ºC [18, 19]. Una confusión frecuente es atribuirles mayor velocidad o rango térmico (opción B), cuando en realidad son los bloques metálicos secos los que permiten alcanzar temperaturas extremas más rápidamente, a costa de una mayor incertidumbre por la falta de homogeneidad en el bloque. La agitación constante asegura que tanto la sonda patrón como el sensor en prueba estén sometidos a un medio térmicamente uniforme, garantizando la fiabilidad de la calibración.",
       "difficulty": 2,
       "module": 8
     },
@@ -76,7 +76,7 @@
         "El ajuste de salida se realiza mediante tornillos de span y el del sensor mediante un PC con RS-232."
       ],
       "correct": 1,
-      "explanation": "El ajuste digital del sensor asegura que el transmisor lea correctamente la variable física, mientras que el ajuste de salida (trim) calibra el convertidor D/A de la señal analógica.",
+      "explanation": "El ajuste digital del sensor consiste en aplicar una variable de entrada física real para que el microprocesador la iguale al valor de la variable de proceso (PV) detectada, asegurando la fidelidad de la etapa de captación. Por otro lado, el ajuste de salida se encarga de que la generación electrónica de la corriente de 4 y 20 mA sea exacta al medirse con un miliamperímetro patrón externo de alta precisión. Una confusión habitual es la opción A, suponiendo que estos ajustes son mecánicos, cuando en realidad se realizan digitalmente mediante comunicadores HART para eliminar la necesidad de puentes o tornillos físicos.",
       "difficulty": 2,
       "module": 8
     },
@@ -89,7 +89,7 @@
         "±0,01%"
       ],
       "correct": 2,
-      "explanation": "Los aparatos patrón deben tener una exactitud al menos 4 veces superior a la de los instrumentos que se van a calibrar (relación 4:1).",
+      "explanation": "Según las fuentes técnicas, se debe cumplir con la regla metrológica de relación 4:1, donde el aparato patrón debe ser al menos cuatro veces más exacto que el instrumento bajo prueba para garantizar un ensayo fiable [3, 4]. El desarrollo numérico es el siguiente: 1% de exactitud del manómetro de proceso dividido por 4 resulta en ±0,25% de exactitud requerida para el patrón para cumplir con la jerarquía de calibración. Es común el error conceptual de seleccionar la opción B (±0,50%), lo cual representaría una relación de solo 2:1, insuficiente para discriminar correctamente los errores del instrumento de proceso según los estándares industriales descritos.",
       "difficulty": 3,
       "module": 8
     },
@@ -102,7 +102,7 @@
         "Debe ajustar el tornillo de angularidad moviendo el índice en la dirección del error unas cinco veces para aplanar la curva."
       ],
       "correct": 3,
-      "explanation": "El error de angularidad en sistemas de palancas se corrige aumentando deliberadamente el error en su dirección para linealizar la transmisión mecánica.",
+      "explanation": "El error de angularidad se identifica cuando el instrumento es exacto en los extremos (0% y 100%) pero presenta su desviación máxima en el punto medio del alcance, afectando a la linealidad de la transmisión por palancas [5, 6]. El procedimiento técnico exacto para corregirlo consiste en actuar sobre el tornillo de angularidad, moviendo intencionadamente el índice en la dirección del error unas cinco veces para lograr 'aplanar' la curva de respuesta hasta que sea lineal [6, 7]. Una confusión típica es la opción A, pretendiendo corregirlo únicamente con el tornillo de cero, lo cual desplazaría toda la escala de forma constante pero mantendría el error de forma en la zona central [8, 9].",
       "difficulty": 3,
       "module": 8
     },
@@ -115,7 +115,7 @@
         "Asegurar que el error de cero de todos los instrumentos sea exactamente nulo en condiciones ambiente."
       ],
       "correct": 1,
-      "explanation": "La confirmación metrológica implica identificar, calibrar y ajustar los equipos para garantizar que son aptos para la calidad del producto final según la norma ISO 9001.",
+      "explanation": "De acuerdo con la normativa ISO 9001, la confirmación metrológica se define formalmente como el conjunto de operaciones necesarias para garantizar que un equipo de medición cumple con los requisitos específicos exigidos para su uso previsto en el proceso. Este criterio técnico obliga al suministrador a documentar manuales, procedimientos y estados de conformidad para todas las variables críticas que afecten la calidad del producto final [10, 11]. Un error conceptual frecuente es la opción C, asumiendo que la norma exige obligatoriamente subcontratar laboratorios externos, cuando la confirmación metrológica es una responsabilidad de gestión interna para validar la idoneidad de los activos de medida propios.",
       "difficulty": 3,
       "module": 8
     },
@@ -128,7 +128,7 @@
         "La exactitud mide la deriva térmica y la tolerancia mide el error de repetibilidad"
       ],
       "correct": 1,
-      "explanation": "La exactitud define los límites de los errores cometidos según el fabricante, mientras que la tolerancia es el margen de desviación permitido por los requerimientos del proceso o la capacidad del equipo de calibración [1, 2].",
+      "explanation": "Técnicamente, la exactitud es una cualidad intrínseca del instrumento proporcionada por el fabricante que define los límites de error típicos, mientras que la tolerancia es la desviación máxima permitida por los requisitos específicos del proceso o la capacidad del banco de calibración [12, 13]. Las fuentes señalan que la tolerancia suele ser un valor mayor que la exactitud para compensar diferencias de apreciación humana, envejecimiento o efectos ambientales adversos [14, 15]. Una confusión común representada en la opción A es pensar que estos términos se distinguen meramente por ser errores absolutos o relativos, cuando en realidad ambos pueden expresarse indistintamente en unidades de medida o en porcentaje del alcance.",
       "difficulty": 1,
       "module": 8
     },
@@ -141,7 +141,7 @@
         "Valor absoluto convencional"
       ],
       "correct": 2,
-      "explanation": "El mensurando se define técnicamente como la magnitud particular objeto de una medición, cuya especificación requiere conocer las variables que pueden afectar su valor [3, 4].",
+      "explanation": "La opción C es correcta porque las fuentes definen técnicamente al mensurando como la magnitud particular sujeta a medición, cuya especificación completa requiere indicar variables influyentes como presión o temperatura para no alterar su valor real [1, 2]. Una confusión común es la opción A, el patrón de referencia, el cual representa la medida materializada de una magnitud para comparar y calibrar otros equipos, pero no es la variable que se desea cuantificar en el proceso. Esta distinción es fundamental en metrología para identificar correctamente la variable física captada por el sensor frente a la referencia ideal utilizada en el banco de pruebas.",
       "difficulty": 1,
       "module": 8
     },
@@ -154,7 +154,7 @@
         "Posibilita la medición de caudales sin necesidad de compensación por presión"
       ],
       "correct": 1,
-      "explanation": "Al guardar los datos de caracterización en el sensor, se permite la actualización del módulo electrónico en campo manteniendo la integridad de la calibración original.",
+      "explanation": "La respuesta correcta es la B, ya que los transmisores inteligentes almacenan digitalmente en su memoria interna (EPROM/EEPROM) los datos de caracterización de fábrica, permitiendo que el módulo electrónico sea intercambiable en campo sin perder la precisión original del sensor. Una confusión frecuente es la opción A, pues aunque estos equipos reducen drásticamente la necesidad de recalibración periódica en taller, todavía permiten y requieren ajustes de configuración y mantenimiento del cero/alcance mediante comunicadores de campo [7, 8]. Esta arquitectura de diseño facilita el mantenimiento correctivo al evitar el desmontaje completo del instrumento ante fallos en la etapa de procesamiento de señal o comunicaciones [9, 10].",
       "difficulty": 2,
       "module": 8
     },
@@ -167,7 +167,7 @@
         "Cuando el mecanismo de transmisión por palancas no está perfectamente a escuadra"
       ],
       "correct": 1,
-      "explanation": "El error de interpolación es una desviación del observador que ocurre cuando la aguja se encuentra entre dos marcas de la escala y se realiza un redondeo por exceso o defecto [6, 7].",
+      "explanation": "El error de interpolación se define técnicamente como la desviación que ocurre cuando el índice del instrumento no coincide exactamente con una marca de la escala y el observador debe estimar la fracción de la división, redondeando por exceso o defecto [11, 12]. Se suele confundir con la opción A, el error de paralaje, pero este último se debe exclusivamente a una posición incorrecta del observador que impide una visión perpendicular entre el índice y la escala. Es una nota de estudio clave que ambos errores son fallos humanos propios de la lectura de instrumentos analógicos y desaparecen por completo en los equipos con visualización digital [12, 13].",
       "difficulty": 2,
       "module": 8
     },
@@ -180,7 +180,7 @@
         "±0,16 mA"
       ],
       "correct": 1,
-      "explanation": "La tolerancia de salida se calcula como (Tolerancia en unidades / Alcance) * Margen de señal; en este caso: (0,5 bar / 100 bar) * 16 mA = 0,005 * 16 = 0,08 mA [1, 8].",
+      "explanation": "Para determinar la tolerancia de salida en miliamperios, se utiliza el criterio de proporcionalidad entre la desviación permitida en unidades físicas y el alcance eléctrico (span) de la señal. El desarrollo numérico consiste en dividir la tolerancia entre el alcance del sensor (0,5 bar / 100 bar = 0,005) y multiplicar el resultado por el span de la señal de salida (0,005 * 16 mA), lo que arroja exactamente ±0,08 mA. Una confusión común es utilizar el valor máximo de la escala de salida (20 mA) en lugar del span real de 16 mA, lo que llevaría a un error de cálculo en la correspondencia lineal exigida por las normas de calidad ISO 9000.",
       "difficulty": 3,
       "module": 8
     }

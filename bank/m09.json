@@ -11,7 +11,7 @@
         "La imposibilidad de actuar sobre válvulas neumáticas."
       ],
       "correct": 1,
-      "explanation": "El control proporcional puro no puede eliminar la desviación permanente (offset) entre la variable y el punto de consigna ante cambios de carga.",
+      "explanation": "La respuesta B es correcta porque las fuentes definen técnicamente el 'offset' como la desviación permanente que se estabiliza entre el punto de consigna y la variable controlada cuando solo se utiliza acción proporcional. Este fenómeno ocurre porque la válvula de control regresa a una posición fija para cada valor de la variable, resultando incapaz de compensar cambios de carga sin mantener un error residual. Una confusión habitual es la opción A, pero la inestabilidad no es el inconveniente intrínseco de la acción P, sino una consecuencia de configurar una ganancia excesivamente alta o una banda proporcional demasiado estrecha.",
       "difficulty": 1,
       "module": 9
     },
@@ -24,7 +24,7 @@
         "El controlador secundario ajusta la banda proporcional del primario."
       ],
       "correct": 2,
-      "explanation": "En el control en cascada, el controlador primario (maestro) manda su señal de salida al punto de consigna del secundario (esclavo).",
+      "explanation": "La opción C es correcta ya que, en un esquema de control en cascada, el controlador primario o maestro determina el punto de consigna que debe seguir el controlador secundario o esclavo. Esta interacción jerárquica permite que el lazo interno corrija perturbaciones locales de forma rápida antes de que afecten significativamente a la variable principal del proceso. Se suele confundir con el control selectivo u 'override' (opción A), pero en este último las salidas de los controladores compiten a través de un selector para decidir cuál actúa sobre el elemento final, en lugar de conectarse en serie.",
       "difficulty": 1,
       "module": 9
     },
@@ -37,7 +37,7 @@
         "Acción Derivativa"
       ],
       "correct": 3,
-      "explanation": "La acción derivativa es proporcional a la velocidad de cambio (pendiente) de la variable, anticipándose a la desviación.",
+      "explanation": "La acción derivativa (opción D) es la correcta porque, según los textos técnicos, su respuesta es proporcional a la pendiente o velocidad de cambio de la variable de proceso, proporcionando un efecto de anticipación. Matemáticamente, el controlador calcula la derivada de la desviación para mover la válvula durante el 'tiempo de anticipo', lo que compensa retardos y reduce el rebasamiento en el arranque. Un error conceptual típico es seleccionar la acción integral (opción B), la cual no reacciona a la pendiente, sino a la suma o integración de las áreas de error a lo largo del tiempo para eliminar el offset.",
       "difficulty": 1,
       "module": 9
     },
@@ -50,7 +50,7 @@
         "El feedback es inherentemente más rápido que el feedforward al no usar modelos matemáticos."
       ],
       "correct": 0,
-      "explanation": "A diferencia del feedback, el control feedforward actúa sobre la variable manipulada basándose en medidas de las perturbaciones de entrada.",
+      "explanation": "La respuesta A es correcta porque la distinción fundamental reside en que el control anticipativo (feedforward) mide las variables de entrada o perturbaciones para actuar preventivamente, mientras que el de realimentación (feedback) espera a que exista un error en la salida. El feedforward utiliza un modelo matemático del proceso para calcular la corrección necesaria en lazo abierto, logrando mayor velocidad de respuesta ante cambios dinámicos. Una confusión frecuente es la opción D, ignorando que el feedback es inherentemente más lento que el feedforward al ser puramente reactivo a la desviación ya producida.",
       "difficulty": 2,
       "module": 9
     },
@@ -63,7 +63,7 @@
         "Que el sistema es un 50% más rápido que uno de canal simple 1oo1."
       ],
       "correct": 2,
-      "explanation": "En una arquitectura 2oo3, existen tres canales y se requiere que dos de ellos funcionen bien para realizar las funciones de seguridad.",
+      "explanation": "De acuerdo con la norma IEC 61508, una arquitectura redundante 2oo3 implica que el sistema consta de tres canales de seguridad independientes, de los cuales al menos dos deben estar operativos para realizar la función de mando. Este diseño, conocido como TMR (Triple Modular Redundant), ofrece una alta disponibilidad y seguridad al ser tolerante a un fallo simple en cualquiera de sus canales. Es un error conceptual la opción B, ya que en una lógica 'dos de tres', el sistema perdería su capacidad de votación y funcionalidad segura con el fallo de solo dos de sus componentes, no requiriendo tres fallos simultáneos para detenerse.",
       "difficulty": 2,
       "module": 9
     },
@@ -76,7 +76,7 @@
         "Integral en un minuto por repetición y derivada en un minuto de anticipo."
       ],
       "correct": 1,
-      "explanation": "Para encontrar la ganancia límite, se deben anular las acciones integral (Ti = infinito) y derivada (Td = 0).",
+      "explanation": "La opción B es correcta porque el método de ganancia límite de Ziegler-Nichols requiere que el proceso se lleve a un estado de oscilación mantenida actuando únicamente con la ganancia proporcional. Para lograrlo, las acciones integral y derivada deben anularse, lo que técnicamente significa ajustar el tiempo integral a su valor más bajo (infinito en minutos/repetición para que no integre) y el tiempo derivativo en cero. Una confusión común es la opción A, pero poner la derivada al máximo introduciría un adelanto de fase excesivo que impediría encontrar la frecuencia de oscilación natural requerida por el ensayo.",
       "difficulty": 2,
       "module": 9
     },
@@ -89,7 +89,7 @@
         "De 50 °C a 100 °C"
       ],
       "correct": 0,
-      "explanation": "Ganancia 2 equivale a BP=50%. Con el punto de consigna al 50%, la banda se extiende un 25% por encima y un 25% por debajo.",
+      "explanation": "La respuesta A se obtiene mediante el concepto de Banda Proporcional, que es el porcentaje del campo de medida necesario para que la válvula realice una carrera completa y es numéricamente la inversa de la ganancia. Con una ganancia de 2, la banda es del 50% (100 / 2 = 50%), lo que sobre un campo de 100 °C equivale a un intervalo de actuación de 50 °C. El desarrollo numérico consiste en centrar esta banda en el punto de consigna: 50 °C ± (50 °C / 2), resultando en un rango de 25 °C a 75 °C. Seleccionar la opción C (40 a 60) es un error típico al confundir la banda con el valor de la ganancia o no aplicar correctamente la relación inversa entre ambas.",
       "difficulty": 3,
       "module": 9
     },
@@ -102,7 +102,7 @@
         "1,5 minutos por repetición"
       ],
       "correct": 1,
-      "explanation": "Según las fórmulas de Ziegler-Nichols para un controlador PI, Ti = Pu / 1,2. En este caso, 12 / 1,2 = 10.",
+      "explanation": "De acuerdo con las reglas de sintonización de Ziegler-Nichols, en un controlador PI el tiempo de acción integral (Ti) debe ajustarse como el periodo de oscilación crítica dividido por un factor constante de 1,2. El desarrollo numérico para este caso es: Ti = Pu / 1,2 = 12 minutos / 1,2 = 10,0 minutos por repetición, lo que valida técnicamente la opción B. Una confusión habitual es aplicar el divisor de 2 (opción C), pero dicha relación (Pu / 2) corresponde específicamente al cálculo para un controlador PID completo y no para el PI.",
       "difficulty": 3,
       "module": 9
     },
@@ -115,7 +115,7 @@
         "Una ganancia proporcional demasiado baja para la dinámica del reactor."
       ],
       "correct": 2,
-      "explanation": "La saturación integral ocurre cuando el controlador sigue integrando el error mientras la salida está saturada (válvula totalmente abierta o cerrada).",
+      "explanation": "La opción C es correcta porque la saturación integral o 'reset windup' ocurre físicamente cuando el controlador permanece integrando una desviación mientras la variable está fuera de la banda proporcional, acumulando un exceso de acción correctora. Al estar el actuador saturado al 100%, el integrador continúa sumando áreas de error, lo que provocará que la variable rebase ampliamente el punto de consigna antes de que la acción integral pueda iniciar la resta del error acumulado. No debe confundirse con fallos mecánicos o de aire (opción A), ya que es un fenómeno puramente algorítmico característico de procesos discontinuos (batch) que no disponen de sistemas de desaturación.",
       "difficulty": 3,
       "module": 9
     },
@@ -128,7 +128,7 @@
         "El instrumento adopta solo dos posiciones extremas en función del punto de consigna"
       ],
       "correct": 1,
-      "explanation": "El control flotante se caracteriza por mover el elemento final de control a una velocidad única e independiente de la magnitud de la desviación mientras esta se mantenga fuera de la zona neutra [1-3].",
+      "explanation": "El control flotante de velocidad constante se define técnicamente como aquel que mueve el elemento final a una velocidad única y fija siempre que la variable rebasa una zona neutra, independientemente de la magnitud de la desviación. Su comportamiento implica que la válvula permanece inmóvil dentro de la zona neutra y se desplaza de forma continua hasta alcanzar sus extremos si la variable no retorna al intervalo deseado. Una confusión frecuente es la opción D, la cual corresponde al control todo-nada simple donde el elemento final solo tiene dos posiciones fijas y no una velocidad de desplazamiento regulada.",
       "difficulty": 1,
       "module": 9
     },
@@ -141,7 +141,7 @@
         "Sincronizar el arranque y parada de diversos motores de forma secuencial"
       ],
       "correct": 2,
-      "explanation": "El control selectivo se emplea fundamentalmente para limitar variables de proceso en valores altos o bajos de seguridad, seleccionando la señal adecuada para prevenir daños en el proceso o producto [4-6].",
+      "explanation": "El control selectivo u override se implementa fundamentalmente para limitar una variable de proceso dentro de un rango de seguridad predefinido, evitando daños materiales al equipo o degradación del producto final [1, 2]. Funciona mediante un selector, normalmente de alta o de baja, que decide qué controlador toma el mando sobre el elemento final basándose en la proximidad a los límites críticos [3, 4]. Es común confundirlo con el control multivariable (Opción B), pero este último busca desacoplar interacciones mutuas entre variables en sistemas complejos y no solo proteger el proceso mediante el uso de límites de seguridad [5, 6].",
       "difficulty": 1,
       "module": 9
     },
@@ -154,7 +154,7 @@
         "Configurando transmisores con diferentes tiempos de respuesta para cada sector"
       ],
       "correct": 1,
-      "explanation": "La partición de la señal se consigue generalmente mediante posicionadores acoplados a las válvulas o convertidores I/P calibrados para responder a una fracción del rango total de control del instrumento [7-9].",
+      "explanation": "En el control de gama partida (split range), se logra que dos o más válvulas operen en sectores distintos de la señal de control ajustando individualmente el cero y el alcance (span) de sus posicionadores o convertidores I/P [7, 8]. Esta técnica permite que un solo controlador gestione secuencialmente diferentes agentes de control, como vapor para calentar y agua para enfriar, actuando cada uno en su sub-margen correspondiente [1, 9]. Una confusión típica es la opción A, pues aunque los sistemas digitales permiten lógica de bloques, la implementación física estándar y robusta reside en la calibración de los dispositivos de campo para responder a rangos específicos [7, 10].",
       "difficulty": 2,
       "module": 9
     },
@@ -167,7 +167,7 @@
         "La frecuencia crítica obtenida en el ensayo de lazo abierto"
       ],
       "correct": 0,
-      "explanation": "El ajuste del relé de relación es función de los campos de medida relativos de los transmisores para asegurar que la proporción física deseada coincida con la relación de las señales [10-12].",
+      "explanation": "El ajuste del dial en un relé de relación es determinado técnicamente por la relación entre los campos de medida (spans) de los transmisores primario y secundario, asegurando que la proporción física deseada se mantenga fiel en las señales del lazo. La fuente establece que el dial debe configurarse considerando la capacidad de medida de ambos instrumentos para normalizar la ganancia del sistema de mezcla [11, 12]. Seleccionar la opción B representa un error conceptual, ya que el tiempo de retardo dominante es una variable de análisis dinámico para la sintonización PID y no interviene en el cálculo estático de la relación de caudales [13, 14].",
       "difficulty": 2,
       "module": 9
     },
@@ -180,7 +180,7 @@
         "g = 2,0; Td = 5,3 min"
       ],
       "correct": 2,
-      "explanation": "Según las reglas de Z-N para PID: la ganancia g = 0,6 * Kc = 3,0; y el tiempo de acción derivada Td = Pu / 8 = 2 minutos [13-15].",
+      "explanation": "Para un controlador PID bajo el método de ganancia límite de Ziegler-Nichols, las fórmulas de sintonización exigen que la ganancia se ajuste a g = 0,6 * Kc y el tiempo derivativo a Td = Pu / 8 [15, 16]. El desarrollo numérico es el siguiente: Ganancia (g) = 0,6 * 5 = 3,0; Tiempo derivativo (Td) = 16 minutos / 8 = 2 minutos, lo que confirma la opción C como correcta [15, 17]. Un error frecuente es emplear el factor 0,5 * Kc (Opción B), el cual representaría un ajuste insuficiente diseñado exclusivamente para controladores de tipo Proporcional puro y no para un sistema PID [16, 18].",
       "difficulty": 3,
       "module": 9
     }

@@ -11,7 +11,7 @@
         "14,7 psi"
       ],
       "correct": 1,
-      "explanation": "Según la fuente, en la industria se utiliza el bar, donde 1 bar es igual a 10^5 Pa (100.000 Pascal).",
+      "explanation": "Según la fuente técnica, en el Sistema Internacional (S.I.) la presión está normalizada en pascal (N/m²), estableciéndose la equivalencia exacta de 1 bar como 10^5 Pa, es decir, 100.000 pascales. Una confusión habitual es seleccionar la opción C (1,02 kg/cm²), la cual, aunque es una equivalencia numérica válida y muy usada en la industria, no forma parte de las unidades base o derivadas del SI. El cálculo se basa en la definición directa del bar como un múltiplo decimal estandarizado del pascal.",
       "difficulty": 1,
       "module": 2
     },
@@ -24,7 +24,7 @@
         "Una serie de cápsulas circulares conectadas por soldadura."
       ],
       "correct": 1,
-      "explanation": "La fuente define el tubo de Bourdon como un tubo de sección elíptica que forma un anillo casi completo y cerrado por un extremo.",
+      "explanation": "El tubo Bourdon original se define geométricamente como un tubo de sección elíptica que está curvado formando un anillo casi completo. Al aplicar presión en su interior, la sección elíptica tiende a volverse circular, provocando que el tubo se enderece y genere un desplazamiento mecánico en su extremo libre que se transmite a la aguja indicadora. Una confusión típica es la opción A (sección circular), pero un tubo de sección perfectamente circular no experimentaría el cambio de forma necesario para generar movimiento mecánico bajo presión interna.",
       "difficulty": 1,
       "module": 2
     },
@@ -37,7 +37,7 @@
         "Compensar la temperatura en termómetros de bulbo y capilar."
       ],
       "correct": 1,
-      "explanation": "De acuerdo con la fuente, el medidor McLeod se utiliza como aparato primario de calibración de los restantes instrumentos de vacío.",
+      "explanation": "El medidor McLeod se fundamenta en la compresión de una muestra de gas de volumen conocido para medir presiones muy bajas aplicando la ley de Boyle-Mariotte. En el ámbito industrial, su función técnica principal es actuar como aparato primario de calibración para otros instrumentos de vacío en un intervalo de 1 a 10⁻⁴ mm Hg. Es común confundir su aplicación con medidas de proceso continuas (opción A), pero debido a que requiere manipulación manual con mercurio y es incompatible con vapores, su uso es estrictamente metrológico.",
       "difficulty": 1,
       "module": 2
     },
@@ -50,7 +50,7 @@
         "Porque elimina las vibraciones mecánicas de las bombas alternativas."
       ],
       "correct": 2,
-      "explanation": "La fuente indica que es más barato utilizar una lira que enfría el vapor y lo condensa, utilizando así el agua condensada como fluido de sello.",
+      "explanation": "La utilización de una lira o pigtail es una solución técnica que permite enfriar el vapor de agua y condensarlo antes de que entre en contacto con el sensor. El condensado resultante queda atrapado en la espira del tubo, funcionando como un sello de agua que protege el elemento elástico de las altas temperaturas que podrían dañarlo o descalibrarlo. Una confusión común es la opción B, pero a diferencia de los sellos químicos que usan fluidos externos como silicona, la lira emplea el propio vapor condensado como barrera de protección.",
       "difficulty": 2,
       "module": 2
     },
@@ -63,7 +63,7 @@
         "Son capaces de medir vacíos de hasta 10^-9 mm Hg."
       ],
       "correct": 1,
-      "explanation": "Según la fuente, estos elementos proporcionan un desplazamiento grande del extremo libre y, por ello, son ideales para los instrumentos registradores.",
+      "explanation": "Los elementos en espiral y helicoidales consisten esencialmente en un tubo Bourdon arrollado sobre sí mismo, lo que multiplica la longitud del elemento y permite un desplazamiento del extremo libre mucho mayor que el modelo simple [2, 3]. Esta ventaja técnica los hace ideales para mover directamente las plumillas de los registradores sin necesidad de sistemas de amplificación mecánicos complejos. Una confusión frecuente es la opción C, pero estos elementos miden presión relativa y, al igual que el Bourdon simple, se ven afectados por las variaciones atmosféricas.",
       "difficulty": 2,
       "module": 2
     },
@@ -76,7 +76,7 @@
         "La emisión de electrones termoiónicos desde un cátodo caliente."
       ],
       "correct": 2,
-      "explanation": "La fuente explica que los elementos piezoeléctricos generan un potencial eléctrico al deformarse y son adecuados para medidas dinámicas por su alta respuesta frecuencial.",
+      "explanation": "La respuesta correcta es la C porque las fuentes definen a los elementos piezoeléctricos como materiales cristalinos, como el cuarzo, que generan un potencial eléctrico al deformarse físicamente por la acción de una presión. Gracias a su construcción robusta y señal lineal, son los únicos sensores capaces de alcanzar respuestas frecuenciales de hasta un millón de ciclos por segundo, lo que los hace ideales para medidas dinámicas [1, 2]. Una confusión típica es la opción B, la cual describe a los sensores piezorresistivos que, aunque también usan cristales de silicio, funcionan variando su resistencia eléctrica en un puente de Wheatstone y no generando un potencial propio.",
       "difficulty": 2,
       "module": 2
     },
@@ -89,7 +89,7 @@
         "825 mm Hg"
       ],
       "correct": 1,
-      "explanation": "Basado en el ejemplo de la fuente: Presión relativa = P. atm - P. abs. Con 775 mm Hg atm y 50 mm Hg abs, la lectura debe ser 775 - 50 = 725 mm Hg.",
+      "explanation": "La opción B es correcta basándose en la relación fundamental de que la presión absoluta es igual a la presión atmosférica menos la lectura del vacío (P_abs = P_atm - P_vac). El cálculo paso a paso inicia con la condición original para hallar el punto de consigna: 760 mm Hg - 50 mm Hg = 710 mm Hg; al subir la presión atmosférica a 775 mm Hg, el instrumento debe indicar 775 mm Hg - 50 mm Hg = 725 mm Hg para mantener la presión absoluta deseada. Seleccionar la opción A (710 mm Hg) es un error común que ignora que los vacuómetros relativos se ven afectados por las variaciones de la presión atmosférica local, desplazando la medida real del proceso [3, 4].",
       "difficulty": 3,
       "module": 2
     },
@@ -102,7 +102,7 @@
         "14,5 psi"
       ],
       "correct": 2,
-      "explanation": "Presión absoluta = 4 bar (rel) + 1,013 bar (atm) = 5,013 bar. Según la tabla, 1 bar ≈ 14,5 psi. Por tanto, 5,013 * 14,5 ≈ 72,69 psi.",
+      "explanation": "La respuesta C se obtiene sumando la presión relativa marcada por el transmisor y la presión atmosférica del lugar para obtener la presión absoluta: 4 bar + 1,013 bar = 5,013 bar absolutos. Al realizar la conversión a unidades inglesas utilizando el factor de 1 bar ≈ 14,50377 psi indicado en las tablas de equivalencias de las fuentes, el desarrollo numérico es 5,013 * 14,50377 = 72,707 psi [5, 6]. Un error frecuente es convertir directamente la presión relativa (4 bar) a psi, obteniendo aproximadamente 58 psi (opción A), lo cual omite el peso de la atmósfera necesario para definir una medida absoluta.",
       "difficulty": 3,
       "module": 2
     },
@@ -115,7 +115,7 @@
         "La rangeabilidad del instrumento se duplica automáticamente."
       ],
       "correct": 1,
-      "explanation": "La fuente establece explícitamente que una rotura con escape del líquido de sello inhabilita el instrumento.",
+      "explanation": "La opción B es la correcta porque los sellos de diafragma dependen estrictamente de un líquido incompresible de llenado para transmitir la presión del proceso hacia el sensor interno; las fuentes técnicas establecen explícitamente que una rotura con escape de dicho fluido inhabilita totalmente el instrumento. Es una confusión común pensar que el equipo simplemente perdería exactitud o presentaría un error de cero (opción C), pero sin el fluido de sello desaparece el vínculo hidráulico necesario para la medición. Estos sistemas se emplean por economía para proteger elementos elásticos contra fluidos altamente viscosos o temperaturas extremas que dañarían el sensor directo.",
       "difficulty": 3,
       "module": 2
     },
@@ -128,7 +128,7 @@
         "0,98700 bar"
       ],
       "correct": 1,
-      "explanation": "La fuente define la presión atmosférica estándar como 1,01325 bar o 760 mm de mercurio absolutos al nivel del mar.",
+      "explanation": "La opción B es correcta ya que las fuentes definen la presión ejercida por la atmósfera estándar exactamente como 1,01325 bar, valor que equivale a 760 mm de mercurio absolutos al nivel del mar [4, 6]. Una confusión técnica habitual es seleccionar la opción C (1,03322), la cual representa el valor de la atmósfera estándar pero expresado en kilogramos por centímetro cuadrado (kg/cm²), no en bar. El conocimiento de esta equivalencia exacta es fundamental en instrumentación para realizar cálculos de compensación y ajustes de calibración precisos en transmisores de presión absoluta y relativa.",
       "difficulty": 1,
       "module": 2
     },
@@ -141,7 +141,7 @@
         "En el desplazamiento mecánico de una membrana de Inconel"
       ],
       "correct": 2,
-      "explanation": "Los elementos térmicos se fundamentan en que la energía disipada desde una superficie caliente es proporcional a la presión del gas cuando este se encuentra a bajas presiones absolutas.",
+      "explanation": "La opción C es correcta porque las fuentes definen que los elementos térmicos de vacío, como el sensor Pirani, operan bajo el principio de proporcionalidad entre la energía térmica disipada por un filamento y la presión del gas ambiente en condiciones de vacío. Una confusión técnica frecuente es la opción A, que corresponde a los medidores de ionización (como el de cátodo caliente), los cuales se reservan para vacíos mucho más elevados mediante el bombardeo de electrones. Es fundamental entender que en estos sensores la transferencia de calor del filamento al medio es la que permite inferir la densidad molecular del gas residual.",
       "difficulty": 1,
       "module": 2
     },
@@ -154,7 +154,7 @@
         "Mediante un cristal de silicio dopado con boro sin fluido de llenado"
       ],
       "correct": 1,
-      "explanation": "El sensor capacitivo utiliza dos diafragmas externos y un fluido de relleno (aceite) que transmite la presión del proceso hasta el diafragma sensible interno del condensador.",
+      "explanation": "La respuesta correcta es la B, ya que en los transmisores inteligentes modernos la presión del proceso no actúa directamente sobre las placas, sino que se transmite mediante un fluido de relleno incompresible (generalmente aceite de silicona) contenido entre diafragmas aisladores externos y el diafragma sensor interno. Seleccionar la opción C es un error conceptual grave, pues el contacto directo del fluido de proceso con el sensor eléctrico provocaría corrosión o cortocircuitos inmediatos. Este acoplamiento hidráulico permite proteger la electrónica sensible mientras se mantiene una transmisión de presión fiel y lineal.",
       "difficulty": 2,
       "module": 2
     },
@@ -167,7 +167,7 @@
         "Tienen una histéresis elevada comparada con el tubo Bourdon convencional"
       ],
       "correct": 1,
-      "explanation": "Aunque poseen excelente respuesta frecuencial y no son influidas por campos magnéticos, las galgas tienen una señal de salida débil y son muy sensibles a vibraciones.",
+      "explanation": "De acuerdo con la tabla comparativa de las fuentes, los sensores de galgas extensiométricas presentan la limitación técnica de poseer una señal de salida muy débil (nivel de milivoltios) y una alta sensibilidad a las vibraciones, lo que requiere un acondicionamiento de señal robusto. No debe confundirse esta desventaja con una pobre respuesta frecuencial (opción C), ya que, por el contrario, su construcción ligera les permite medir variaciones dinámicas con rapidez. La nota de estudio clave aquí es que, aunque son precisos, su fragilidad mecánica ante ruidos de planta exige instalaciones con filtrado o amortiguamiento.",
       "difficulty": 2,
       "module": 2
     },
@@ -180,7 +180,7 @@
         "±0,0150 bar"
       ],
       "correct": 2,
-      "explanation": "La exactitud del instrumento es ±0,25 bar (0,25% de 100). Siguiendo la regla 4:1 mencionada en la fuente, el patrón debe ser 4 veces más exacto: 0,25 / 4 = 0,0625 bar [5, 6].",
+      "explanation": "Para cumplir con la regla metrológica 4:1, el desarrollo numérico inicia calculando la exactitud del instrumento en bar: 100 bar * (0,25 / 100) = ±0,25 bar. Posteriormente, se divide este valor entre la relación de jerarquía requerida: 0,25 bar / 4 = ±0,0625 bar, confirmando la opción C. Una confusión típica es la opción B, la cual representa la exactitud del propio transmisor; utilizar un patrón con la misma exactitud que el equipo a calibrar invalidaría la trazabilidad de la prueba según los estándares industriales descritos.",
       "difficulty": 3,
       "module": 2
     }

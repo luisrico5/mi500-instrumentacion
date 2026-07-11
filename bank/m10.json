@@ -11,7 +11,7 @@
         "Reduce el consumo de energía de los transmisores de dos hilos en un 50%."
       ],
       "correct": 1,
-      "explanation": "El 'cero vivo' (4 mA) permite distinguir si el instrumento está midiendo el valor mínimo del rango o si existe una falla, como un cable cortado, en cuyo caso la corriente caería a 0 mA.",
+      "explanation": "El uso de un 'cero vivo' a 4 mA permite que el instrumento electrónico diferencie técnicamente un valor de medida en su límite inferior de una condición de fallo, como la rotura de los hilos de conexión o la pérdida de alimentación. De acuerdo con las fuentes, si la señal fuera de 0 mA (cero muerto), el sistema no podría determinar si la lectura nula se debe al proceso o a una avería eléctrica. Una confusión típica es la opción D, pero en realidad el estándar de 4-20 mA se adoptó principalmente para permitir que los transmisores de dos hilos se alimenten directamente de la propia corriente del lazo, y no para reducir el consumo a la mitad.",
       "difficulty": 1,
       "module": 10
     },
@@ -24,7 +24,7 @@
         "ISA-S5.5"
       ],
       "correct": 2,
-      "explanation": "La norma ISA-S5.4 describe los diagramas de lazo de control, los cuales facilitan el mantenimiento y la puesta en marcha al integrar toda la información técnica en un solo documento.",
+      "explanation": "La norma ANSI/ISA-S5.4-1991 especifica los diagramas de lazos de control que presentan en una sola hoja toda la información necesaria para la instalación, comprobación y mantenimiento de los instrumentos. Este documento es vital para la integridad del sistema, ya que detalla las conexiones físicas punto a punto que no aparecen en un P&ID general. Es un error conceptual común elegir la norma ISA-S5.1 (Opción A), la cual se limita a los símbolos de identificación y funciones generales, pero no regula el formato de los planos de conexionado y montaje detallados que define la S5.4.",
       "difficulty": 1,
       "module": 10
     },
@@ -37,7 +37,7 @@
         "1200 Hz para el '0' y 2200 Hz para el '1'."
       ],
       "correct": 0,
-      "explanation": "El protocolo HART utiliza el estándar Bell 202 FSK, codificando el '1' con una frecuencia de 1200 Hz y el '0' con 2200 Hz sobre la señal de 4-20 mA.",
+      "explanation": "El protocolo HART emplea la técnica de modulación por desplazamiento de frecuencia (FSK) superponiendo una señal digital a la analógica, donde técnicamente se asignan 1.200 Hz para el estado lógico '1' y 2.200 Hz para el '0'. Según la fuente Creus, como el valor promedio de estas ondas senoidales es cero, no se introduce ninguna interferencia de corriente continua en la señal de 4-20 mA que representa la variable de proceso. Una confusión muy frecuente es invertir estos valores (Opción D), olvidando que el estándar Bell 202, en el que se basa HART, define la frecuencia más baja para la marca (1) y la más alta para el espacio (0).",
       "difficulty": 1,
       "module": 10
     },
@@ -50,7 +50,7 @@
         "No existe diferencia técnica, son dos nombres para el mismo tipo de arquitectura jerarquizada."
       ],
       "correct": 1,
-      "explanation": "Según las fuentes, SCADA suele transmitir por circuitos de baja velocidad (radio/teléfono) en áreas geográficas extensas, mientras que el DCS utiliza buses locales de alta velocidad en la propia planta.",
+      "explanation": "La distinción técnica fundamental reside en que el sistema SCADA se asocia a procesos distribuidos geográficamente en grandes áreas que utilizan circuitos de comunicación de baja velocidad y menor fiabilidad (radio, satélite o telefonía), mientras que un DCS opera mediante redes locales (LAN) de alta velocidad dentro de una planta. Mientras el DCS está jerarquizado para distribuir el riesgo de control entre varios microprocesadores locales, el SCADA se centra en la supervisión y adquisición de datos de unidades remotas situadas a kilómetros. Es un error común la opción D, pues aunque sus funciones de interfaz son similares, sus arquitecturas de comunicación y tiempos de respuesta son físicamente distintos.",
       "difficulty": 2,
       "module": 10
     },
@@ -63,7 +63,7 @@
         "La dirección IP del dispositivo para su integración en redes Ethernet HSE."
       ],
       "correct": 2,
-      "explanation": "El Bloque de Transductor (Transducer Block) se encarga de la interfaz directa con el sensor, conteniendo datos sobre su tipo, estado y calibración.",
+      "explanation": "Dentro de la tecnología Foundation Fieldbus, el Bloque de Transductor (TB) gestiona específicamente la información relativa al hardware del sensor, incluyendo su estado, tipo de sensor y las fechas de su última calibración. Este bloque actúa como interfaz entre el sensor físico y los bloques de función, permitiendo que la electrónica procese la señal primaria antes de pasarla al control. Una confusión habitual es asociar esta gestión con los algoritmos PID (Opción A), pero estos residen exclusivamente en los Bloques de Función (FB), los cuales se encargan de las estrategias de control y no de los parámetros físicos del sensor.",
       "difficulty": 2,
       "module": 10
     },
@@ -76,7 +76,7 @@
         "100 Mbits/s"
       ],
       "correct": 1,
-      "explanation": "La tecnología H1 de FF opera a una velocidad de 31,25 kbits/s y permite que la alimentación y la comunicación circulen por el mismo par de hilos torsionados.",
+      "explanation": "La tarjeta H1 de Foundation Fieldbus está estandarizada por la norma IEC 61158 para operar a una velocidad de 31,25 kbits/s, lo que permite la transmisión de datos y alimentación por el mismo par de hilos [1, 2]. Es un error común confundirla con la tarjeta H2 (opción C), la cual se reserva para comunicaciones de alta velocidad entre PLC y DCS operando técnicamente a 1,0 o 2,5 Mbits/s [3, 4]. Esta velocidad de 31,25 kbits/s es suficiente para el control continuo en campo y ofrece una mayor inmunidad al ruido eléctrico que las señales analógicas convencionales [3, 5].",
       "difficulty": 2,
       "module": 10
     },
@@ -89,7 +89,7 @@
         "68 bar"
       ],
       "correct": 2,
-      "explanation": "Porcentaje = (13,6 - 4) / 16 = 0,6 (60%). El 60% de 100 bar es 60 bar.",
+      "explanation": "El valor de la presión se determina mediante la relación lineal de la señal de 4-20 mA, donde el 0% de la variable corresponde a 4 mA y el 100% a 20 mA [6, 7]. El desarrollo numérico consiste en restar el cero vivo (13,6 mA - 4 mA = 9,6 mA), dividir por el span eléctrico (9,6 / 16 mA = 0,6) y multiplicar por el alcance del proceso (0,6 * 100 bar = 60 bar) [8, 9]. Una confusión habitual es omitir la resta del inicio de rango (opción D), lo cual daría un valor erróneo de 68 bar al ignorar que la señal de 4 mA representa físicamente el punto cero bar [7, 8].",
       "difficulty": 3,
       "module": 10
     },
@@ -102,7 +102,7 @@
         "Almacena las copias de seguridad de la configuración de todos los controladores lógicos (PLC)."
       ],
       "correct": 2,
-      "explanation": "El LAS es el componente que coordina el tráfico en el bus, autorizando qué instrumento puede transmitir en cada momento para mantener el orden de los mensajes.",
+      "explanation": "El Programador Activo de Enlace (LAS) actúa como el administrador maestro en una red Foundation Fieldbus, enviando mensajes de autorización a cada dispositivo para organizar el tráfico y evitar colisiones de datos [10, 11]. Según las fuentes, esta función garantiza que solo un instrumento transmita a la vez en el bus, permitiendo un control determinístico y eficiente del proceso. Se suele confundir con un dispositivo de enlace o 'linking device' (opción A), cuya tarea real es interconectar los segmentos H1 con redes Ethernet HSE de alta velocidad [10, 12].",
       "difficulty": 3,
       "module": 10
     },
@@ -115,7 +115,7 @@
         "Empleando una modulación de amplitud (AM) para filtrar los ruidos parásitos del motor."
       ],
       "correct": 1,
-      "explanation": "La técnica FHSS (Frequency Hopping Spread Spectrum) permite que la señal sea robusta frente a interferencias al cambiar constantemente de frecuencia dentro de la banda de 902-928 MHz.",
+      "explanation": "El estándar inalámbrico ISA100.11a logra su robustez frente a interferencias mediante la tecnología FHSS (Espectro Ensanchado por Salto de Frecuencia), que hace saltar la señal entre diferentes frecuencias en una banda ancha [13, 14]. Este mecanismo asegura la coexistencia de señales y reduce la interceptación no autorizada en entornos industriales hostiles [15, 16]. Una confusión técnica común es la opción D, pues el uso de modulación de amplitud sería ineficaz al ser extremadamente sensible a los ruidos electromagnéticos generados por maquinaria industrial.",
       "difficulty": 3,
       "module": 10
     },
@@ -128,7 +128,7 @@
         "Interfaz serie"
       ],
       "correct": 2,
-      "explanation": "Según la fuente, el término bus indica el transporte secuencial de señales eléctricas que representan información codificada de acuerdo con un protocolo,.",
+      "explanation": "El término 'bus' define técnicamente el transporte secuencial de señales eléctricas que representan información digital codificada bajo un protocolo de comunicaciones específico [17, 18]. De acuerdo con las fuentes, esta arquitectura permite integrar múltiples instrumentos inteligentes en un solo cable, mejorando la exactitud de los datos hasta diez veces frente a la señal analógica [17, 18]. Es frecuente confundirlo con una interfaz serie (opción D), pero mientras la interfaz define la conexión física puntual, el bus representa el sistema compartido de comunicación multipunto [5, 19].",
       "difficulty": 1,
       "module": 10
     },
@@ -141,7 +141,7 @@
         "Se utiliza modulación por salto de frecuencia (FHSS)"
       ],
       "correct": 1,
-      "explanation": "La fuente indica que en RS-232 los datos se transmiten en lógica negativa: los 'unos' son una tensión continua negativa y los 'ceros' una tensión continua positiva,.",
+      "explanation": "El estándar de comunicación serie RS-232 emplea una lógica negativa para traducir eléctricamente los estados binarios. Según las fuentes técnicas, los 'unos' lógicos se representan con una tensión continua negativa y los 'ceros' con una tensión continua positiva, típicamente en niveles de ±12 V c.c. [1, 2]. Una confusión habitual es optar por la opción A, la cual corresponde a la lógica positiva convencional donde el nivel alto es el estado '1', pero que en este protocolo específico de datos representaría el estado opuesto.",
       "difficulty": 1,
       "module": 10
     },
@@ -154,7 +154,7 @@
         "Modulación en corriente de 4 y 20 mA (DE)"
       ],
       "correct": 0,
-      "explanation": "De acuerdo con los textos técnicos, la señal transmitida por el nivel físico de Foundation Fieldbus está codificada con la técnica Manchester,.",
+      "explanation": "La señal del nivel físico en Foundation Fieldbus H1 (31,25 kbit/s) se basa técnicamente en la técnica de codificación Manchester combinada con un pulso de reloj para asegurar una transferencia de datos segura y sincronizada. Este método permite que la información digital se envíe mediante cambios de fase, facilitando que el receptor recupere el reloj de la propia señal. Es un error conceptual típico asociarlo con la modulación FSK (opción B), ya que dicho principio de desplazamiento de frecuencia es característico del protocolo HART y no del estándar Fieldbus H1.",
       "difficulty": 2,
       "module": 10
     },
@@ -167,7 +167,7 @@
         "Permite el uso de protocolos propietarios en lugar de estándares abiertos"
       ],
       "correct": 1,
-      "explanation": "Mientras que el sistema 1oo2 no es tolerante a fallos de disponibilidad, en el 1oo2D un único fallo detectado no conlleva la parada del proceso al aislar el canal afectado,.",
+      "explanation": "La arquitectura 1oo2D se distingue de la 1oo2 estándar por integrar un diagnóstico automático de fallos que mejora significativamente la disponibilidad del sistema. Mientras que una configuración 1oo2 detiene el proceso ante cualquier fallo detectado, en la 1oo2D un único fallo permite aislar el canal afectado para que el canal sano continúe con la operación normal [5, 6]. La confusión con la opción A radica en que duplicar canales siempre mejora la probabilidad de éxito a la demanda, pero solo la arquitectura con diagnóstico (D) ofrece tolerancia a fallos respecto a la continuidad del proceso.",
       "difficulty": 2,
       "module": 10
     },
@@ -180,7 +180,7 @@
         "32 aparatos"
       ],
       "correct": 2,
-      "explanation": "La caída de tensión disponible es 12 V (22 V - 10 V). La corriente total permitida es 12V/44 ohms = 272 mA. Dividiendo por el consumo individual: 272/20 = 13,6, lo que equivale a 13 aparatos,.",
+      "explanation": "Para determinar la capacidad del segmento, se resta la tensión mínima en bornes (10 V) de la tensión útil de la fuente (24 V - 2 V = 22 V), obteniendo una caída máxima admisible de 12 V. Aplicando la ley de Ohm con la resistencia del cable de 44 ohms, la corriente total disponible es de 12 V / 44 ohms = 272,7 mA. Al dividir este valor por el consumo de cada instrumento (20 mA), el desarrollo numérico arroja 13,6, lo que valida la conexión de máximo 13 aparatos (Opción C). El error de la opción D proviene de confundir el límite físico de direccionamiento con el límite eléctrico real impuesto por la caída de tensión.",
       "difficulty": 3,
       "module": 10
     }
