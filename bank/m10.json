@@ -39,7 +39,8 @@
       "correct": 0,
       "explanation": "El protocolo HART emplea la técnica de modulación por desplazamiento de frecuencia (FSK) superponiendo una señal digital a la analógica, donde técnicamente se asignan 1.200 Hz para el estado lógico '1' y 2.200 Hz para el '0'. Según la fuente Creus, como el valor promedio de estas ondas senoidales es cero, no se introduce ninguna interferencia de corriente continua en la señal de 4-20 mA que representa la variable de proceso. Una confusión muy frecuente es invertir estos valores (Opción D), olvidando que el estándar Bell 202, en el que se basa HART, define la frecuencia más baja para la marca (1) y la más alta para el espacio (0).",
       "difficulty": 1,
-      "module": 10
+      "module": 10,
+      "source": "\"What is HART Protocol?\" — Instrumentation Tools (https://instrumentationtools.com/what-is-hart-protocol/)"
     },
     {
       "q": "Al comparar las arquitecturas de control, ¿cuál es la diferencia principal entre un sistema SCADA y un sistema DCS (Control Distribuido)?",
@@ -52,7 +53,8 @@
       "correct": 1,
       "explanation": "La distinción técnica fundamental reside en que el sistema SCADA se asocia a procesos distribuidos geográficamente en grandes áreas que utilizan circuitos de comunicación de baja velocidad y menor fiabilidad (radio, satélite o telefonía), mientras que un DCS opera mediante redes locales (LAN) de alta velocidad dentro de una planta. Mientras el DCS está jerarquizado para distribuir el riesgo de control entre varios microprocesadores locales, el SCADA se centra en la supervisión y adquisición de datos de unidades remotas situadas a kilómetros. Es un error común la opción D, pues aunque sus funciones de interfaz son similares, sus arquitecturas de comunicación y tiempos de respuesta son físicamente distintos.",
       "difficulty": 2,
-      "module": 10
+      "module": 10,
+      "source": "\"Learn about PLC, DCS, RTU, SCADA, and PAC\" — Instrumentation Tools (https://instrumentationtools.com/plc-dcs-rtu-scada-pac/)"
     },
     {
       "q": "¿Qué información específica se gestiona dentro del 'Bloque de Transductor' (TB) en un instrumento con tecnología Foundation Fieldbus?",
@@ -78,7 +80,8 @@
       "correct": 1,
       "explanation": "La tarjeta H1 de Foundation Fieldbus está estandarizada por la norma IEC 61158 para operar a una velocidad de 31,25 kbits/s, lo que permite la transmisión de datos y alimentación por el mismo par de hilos. Es un error común confundirla con la tarjeta H2 (opción C), la cual se reserva para comunicaciones de alta velocidad entre PLC y DCS operando técnicamente a 1,0 o 2,5 Mbits/s. Esta velocidad de 31,25 kbits/s es suficiente para el control continuo en campo y ofrece una mayor inmunidad al ruido eléctrico que las señales analógicas convencionales.",
       "difficulty": 2,
-      "module": 10
+      "module": 10,
+      "source": "\"Foundation Fieldbus Training Course\" — Instrumentation Tools (https://instrumentationtools.com/foundation-fieldbus-training-course/)"
     },
     {
       "q": "Se dispone de un transmisor de presión de 0 a 100 bar con salida de 4-20 mA. Si el receptor detecta una señal de 13,6 mA, ¿cuál es el valor de la presión en el proceso?",
@@ -104,7 +107,8 @@
       "correct": 2,
       "explanation": "El Programador Activo de Enlace (LAS) actúa como el administrador maestro en una red Foundation Fieldbus, enviando mensajes de autorización a cada dispositivo para organizar el tráfico y evitar colisiones de datos. Según las fuentes, esta función garantiza que solo un instrumento transmita a la vez en el bus, permitiendo un control determinístico y eficiente del proceso. Se suele confundir con un dispositivo de enlace o 'linking device' (opción A), cuya tarea real es interconectar los segmentos H1 con redes Ethernet HSE de alta velocidad.",
       "difficulty": 3,
-      "module": 10
+      "module": 10,
+      "source": "\"Foundation Fieldbus Training Course\" — Instrumentation Tools (https://instrumentationtools.com/foundation-fieldbus-training-course/)"
     },
     {
       "q": "En las redes inalámbricas industriales bajo el estándar ISA100.11a, ¿cómo se logra la inmunidad a interferencias en entornos hostiles?",
@@ -517,6 +521,174 @@
       "correct": 0,
       "explanation": "El desarrollo, según la fuente, calcula primero la atenuación total admisible en decibelios: Atenuación = 20·log(amplitud transmitida/amplitud recibida) = 20·log(1/0,15) = 16,48 dB. Dividiendo esta atenuación total entre la atenuación del cable (3 dB/Km), se obtiene la distancia máxima = 16,48/3 = 5,5 Km. La opción D confunde el valor intermedio de la atenuación total en dB (16,48) con la distancia final en kilómetros, y la opción B (8,7 Km) corresponde en realidad a la distancia máxima calculada por el criterio distinto de caída de tensión de alimentación del segmento, no por el de atenuación de la señal transmitida.",
       "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 2, pág. 79",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "¿Cuál es el mecanismo técnico que permite a PROFINET IRT (Isochronous Real Time) alcanzar velocidades superiores y latencias menores a 250 microsegundos en comparación con Ethernet IP?",
+      "options": [
+        "El uso exclusivo de protocolos TCP para garantizar que no haya pérdida de paquetes en la red.",
+        "El bypass de las capas superiores del modelo OSI, como la capa de transporte, operando directamente en la capa 2 de hardware mediante PTP.",
+        "La implementación de una arquitectura maestro-esclavo que optimiza el tiempo de sondeo (polling) de los dispositivos.",
+        "La reducción del tamaño total de los paquetes de datos a un máximo de 7 bytes para minimizar el tráfico."
+      ],
+      "correct": 1,
+      "explanation": "La fuente indica que PROFINET IRT es el más rápido de los protocolos mencionados porque envía datos directamente a través de la capa 2 del modelo OSI. Al utilizar el protocolo de tiempo de precisión (PTP) para sincronizar relojes y saltarse la sobrecarga (overhead) de las capas de transporte como TCP o UDP, logra latencias de menos de 250 microsegundos. Ethernet IP, en cambio, utiliza encabezados TCP o UDP, lo que lo hace ligeramente más lento.",
+      "source": "\"Difference Between Ethernet IP and Profinet\" — Instrumentation Tools (https://instrumentationtools.com/difference-between-ethernet-ip-and-profinet/)",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "En el proceso de configuración e integración de dispositivos de terceros en un software de control, ¿qué tipo de archivos son requeridos específicamente por los protocolos PROFINET y Ethernet IP según la fuente?",
+      "options": [
+        "PROFINET requiere archivos GSDML y Ethernet IP requiere archivos ESD.",
+        "PROFINET requiere archivos EDS y Ethernet IP requiere archivos GSD.",
+        "Ambos protocolos utilizan archivos XML universales debido a que comparten el mismo hardware Ethernet.",
+        "Ethernet IP utiliza archivos de descripción de objetos CIP, mientras que PROFINET utiliza tablas de registros Modbus."
+      ],
+      "correct": 0,
+      "explanation": "De acuerdo con la fuente, para que el software soporte un dispositivo en una red PROFINET, se requieren archivos GSDML. Por otro lado, para aplicaciones que utilizan el protocolo Ethernet IP, se requieren archivos ESD para dar soporte a la aplicación y al dispositivo. Confundir estos formatos es un error común en la etapa de ingeniería.",
+      "source": "\"Difference Between Ethernet IP and Profinet\" — Instrumentation Tools (https://instrumentationtools.com/difference-between-ethernet-ip-and-profinet/)",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿Qué ventaja operativa fundamental ofrece la arquitectura 'productor-consumidor' de Ethernet IP y PROFINET frente a la arquitectura 'maestro-esclavo' de Modbus TCP/IP?",
+      "options": [
+        "Permite que varios maestros consulten al mismo esclavo simultáneamente mediante un sistema de turnos (token passing).",
+        "Garantiza que el bus de comunicación se detenga inmediatamente si el consumidor (maestro) desaparece para evitar colisiones.",
+        "El productor (esclavo) puede seguir enviando datos de forma periódica o por eventos independientemente de si el consumidor está presente en la red.",
+        "Elimina la necesidad de utilizar direcciones IP, permitiendo una comunicación basada únicamente en nombres de dispositivos."
+      ],
+      "correct": 2,
+      "explanation": "La fuente explica que, a diferencia de Modbus TCP/IP, donde maestro y esclavo deben estar presentes para que la comunicación sea saludable, Ethernet IP y PROFINET permiten que el productor (esclavo) envíe datos sin depender de la presencia inmediata del consumidor (maestro). Si el maestro aparece de repente, comienza a recibir los datos (plug and play), y si el esclavo falta, el maestro arroja un error pero no bloquea el flujo de datos de otros dispositivos en el sistema.",
+      "source": "\"Difference Between Ethernet IP and Profinet\" — Instrumentation Tools (https://instrumentationtools.com/difference-between-ethernet-ip-and-profinet/)",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿Qué código de función Modbus se debe emplear para leer registros que permiten tanto la lectura como la escritura (holding registers), y cuál es el límite máximo de dispositivos esclavos direccionables en una red según la fuente?",
+      "options": [
+        "Código 04; hasta 255 esclavos.",
+        "Código 03; hasta 247 esclavos.",
+        "Código 06; hasta 127 esclavos.",
+        "Código 01; hasta 250 esclavos."
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, el código de función 03 se utiliza para 'Read Holding Registers', los cuales se describen como registros que permiten tanto la lectura como la escritura (read/write registers). Asimismo, se especifica explícitamente que los dispositivos esclavos están limitados a un máximo de 247, cada uno con su propia dirección ID única.",
+      "source": "\"How to Use Modbus Poll and Modbus Slave Software?\" — Instrumentation Tools (https://instrumentationtools.com/modbus-poll-and-modbus-slave-software/)",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "En la estructura de una trama de datos Modbus RTU, ¿cuál es la función técnica del campo CRC (Cyclic Redundancy Check) y de cuántos bytes dispone para cumplir su propósito?",
+      "options": [
+        "Identificar el puerto COM virtual; dispone de 1 byte.",
+        "Sincronizar la velocidad de transmisión (baud rate); dispone de 4 bytes.",
+        "Detección de errores en la trama de datos; dispone de 2 bytes.",
+        "Cifrar la información del registro para seguridad; dispone de 8 bits."
+      ],
+      "correct": 2,
+      "explanation": "La fuente indica que el CRC (Cyclic Redundancy Check) consiste en 2 bytes que se utilizan específicamente para la detección de errores dentro de las tramas o paquetes de datos enviados. Los otros campos mencionados en la fuente son la dirección del esclavo, el código de función y los datos propiamente dichos.",
+      "source": "\"How to Use Modbus Poll and Modbus Slave Software?\" — Instrumentation Tools (https://instrumentationtools.com/modbus-poll-and-modbus-slave-software/)",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "Al realizar una simulación de comunicaciones industriales mediante software, ¿cuál es la función específica de herramientas como VSPE (Virtual Serial Ports Emulator) en relación con Modbus Poll y Modbus Slave?",
+      "options": [
+        "Convertir señales Modbus RTU a protocolos de capa 2 como PROFINET.",
+        "Crear puertos COM virtuales para permitir la comunicación entre el simulador Maestro (Modbus Poll) y el simulador Esclavo (Modbus Slave) sin hardware físico.",
+        "Monitorear el tráfico de red para detectar colisiones en el protocolo RS-485.",
+        "Suministrar una base de datos GSDML para la integración de PLCs de terceros."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, VSPE es un software diseñado para crear puertos COM virtuales (como el ejemplo de COM10) sin necesidad de puertos de hardware físicos. Esto permite que el software Modbus Poll (simulador Maestro) pueda enviar comandos y leer datos del software Modbus Slave (simulador Esclavo) dentro de un mismo entorno de PC para pruebas y diagnóstico.",
+      "source": "\"How to Use Modbus Poll and Modbus Slave Software?\" — Instrumentation Tools (https://instrumentationtools.com/modbus-poll-and-modbus-slave-software/)",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "En una red DeviceNet, ¿cuál es el valor óhmico correcto de las resistencias de terminación y cuál es su función técnica primordial dentro de la topología trunk-line/drop-line según la fuente?",
+      "options": [
+        "120 Ω; limitar el consumo de corriente de los dispositivos esclavos.",
+        "121 Ω; prevenir las reflexiones de señal en ambos extremos de la línea principal.",
+        "60 Ω; balancear la impedancia entre CAN-H y CAN-L para reducir ruidos.",
+        "240 Ω; estabilizar el voltaje de alimentación de 24VDC en trayectos largos."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, la red DeviceNet requiere resistencias de terminación de 121 Ω instaladas en ambos extremos de la línea troncal (trunk line). Su propósito técnico específico es evitar las reflexiones de señal que podrían interferir con la integridad de los datos. Los otros valores o funciones mencionadas no figuran en las especificaciones del texto.",
+      "source": "\"Things You Need to Know About DeviceNet\" — Instrumentation Tools (https://instrumentationtools.com/about-devicenet/)",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "Al realizar el presupuesto de potencia para un segmento DeviceNet, ¿cuáles son los límites máximos de corriente permitidos para las líneas troncales (trunk) y de derivación (drop), respectivamente, y qué requisito se debe cumplir para integrar múltiples fuentes de poder?",
+      "options": [
+        "5A en trunk y 1A en drop; deben compartir el mismo nodo de tierra físico.",
+        "10A en trunk y 5A en drop; se requiere un controlador de carga inteligente.",
+        "8A en trunk y 3A en drop; se deben utilizar circuitos de aislamiento por diodos.",
+        "3A en trunk y 8A en drop; solo se permite una fuente por cada 100 metros."
+      ],
+      "correct": 2,
+      "explanation": "La fuente establece límites de corriente estrictos: un máximo de 8 Amperios para el trunk line y 3 Amperios para el drop line. Además, especifica que si se utilizan múltiples fuentes de alimentación en la misma red, estas deben contar con circuitos de aislamiento por diodo para prevenir cortocircuitos.",
+      "source": "\"Things You Need to Know About DeviceNet\" — Instrumentation Tools (https://instrumentationtools.com/about-devicenet/)",
+      "difficulty": 3,
+      "module": 10
+    },
+    {
+      "q": "Un sistema DeviceNet está configurado para operar a una tasa de baudios de 500 kbps. Según las restricciones de distancia y velocidad de la fuente, ¿cuál es la longitud máxima permitida para el cable principal (trunk) y para una línea de caída (drop) individual?",
+      "options": [
+        "500 metros de cable principal y 156 metros de línea de caída.",
+        "100 metros de cable principal y 6 metros de línea de caída.",
+        "250 metros de cable principal y 20 metros de línea de caída.",
+        "100 metros de cable principal y 156 metros de línea de caída."
+      ],
+      "correct": 1,
+      "explanation": "Según la tabla de referencia de la fuente, a una velocidad de 500 kbps, la longitud máxima del trunk line es de 100 metros. Asimismo, el texto indica que la longitud máxima de una drop line individual es de 6 metros (20 ft). El valor de 156 metros corresponde a la longitud total acumulada de todas las drop líneas, no a una individual.",
+      "source": "\"Things You Need to Know About DeviceNet\" — Instrumentation Tools (https://instrumentationtools.com/about-devicenet/)",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿Cuál es la función técnica primordial del Link Active Scheduler (LAS) dentro de un segmento Foundation Fieldbus H1?",
+      "options": [
+        "Asignar dinámicamente direcciones IP a los dispositivos para su integración en redes HSE.",
+        "Controlar el cronometraje de la comunicación y gestionar el intercambio programado de datos entre dispositivos.",
+        "Suministrar la potencia eléctrica necesaria a través del cable de par trenzado para alimentar los bloques de función.",
+        "Actuar como un firewall digital para proteger el segmento contra intrusiones externas desde la red de la planta."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, el Link Active Scheduler (LAS) controla los tiempos de comunicación y gestiona el intercambio de datos programados (scheduled data exchange) dentro del segmento. Las otras funciones, como la asignación de IPs (propias de HSE/Ethernet) o el suministro de potencia (realizado por acondicionadores de energía), no corresponden a las responsabilidades del LAS.",
+      "source": "\"Foundation Fieldbus Training Course - Advanced Instrumentation\" — Instrumentation Tools (https://instrumentationtools.com/foundation-fieldbus-training-course/)",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "Respecto a la instalación física de un segmento Foundation Fieldbus, ¿cuál es la especificación técnica correcta sobre el uso de terminadores?",
+      "options": [
+        "Se debe instalar un terminador por cada instrumento inteligente para evitar el ruido de modo común.",
+        "Se requiere un único terminador en el gabinete del DCS para cerrar el lazo de corriente.",
+        "Cada segmento requiere exactamente dos terminadores para evitar reflexiones de señal y asegurar estabilidad.",
+        "Los terminadores solo son necesarios en segmentos que superan los 1900 metros de longitud."
+      ],
+      "correct": 2,
+      "explanation": "La fuente establece explícitamente que cada segmento de Foundation Fieldbus requiere exactamente dos terminadores para una comunicación estable. Su propósito es prevenir las reflexiones de señal que pueden causar problemas graves en la red. No depende de la cantidad de instrumentos ni es una función exclusiva de segmentos que alcancen el límite de distancia de 1900 metros.",
+      "source": "\"Foundation Fieldbus Training Course - Advanced Instrumentation\" — Instrumentation Tools (https://instrumentationtools.com/foundation-fieldbus-training-course/)",
+      "difficulty": 2,
+      "module": 10
+    },
+    {
+      "q": "¿Qué implica técnicamente la capacidad de 'Control Distribuido' en la tecnología Foundation Fieldbus comparada con los sistemas convencionales de 4-20 mA?",
+      "options": [
+        "La capacidad del DCS de distribuir señales de diagnóstico a múltiples servidores de activos de forma paralela.",
+        "La ejecución de estrategias de control directamente dentro de los dispositivos de campo mediante el uso de bloques de función.",
+        "El uso de una topología de cableado en estrella que distribuye la señal de alimentación a través de múltiples cajas de unión.",
+        "La posibilidad de configurar remotamente el rango y el tag de los instrumentos desde cualquier terminal de la red."
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, el control distribuido significa que las estrategias de control pueden ejecutarse directamente dentro de los dispositivos de campo utilizando bloques de función (como AI, AO, PID, entre otros), en lugar de depender totalmente del controlador central del DCS. Esto permite una respuesta de control más rápida y mejora la fiabilidad general del sistema al reducir la carga de comunicación.",
+      "source": "\"Foundation Fieldbus Training Course - Advanced Instrumentation\" — Instrumentation Tools (https://instrumentationtools.com/foundation-fieldbus-training-course/)",
       "difficulty": 3,
       "module": 10
     }

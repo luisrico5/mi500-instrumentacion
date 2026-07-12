@@ -474,10 +474,18 @@ function speak(text, btn) {
 
 function sourceHtml(source) {
   if (!source) return "";
+  const m = source.match(/https?:\/\/\S+/);
   let url = null;
-  if (/instrumentacionycontrol\.net/i.test(source)) url = "https://instrumentacionycontrol.net/";
-  else if (/instrumentationtools\.com/i.test(source)) url = "https://instrumentationtools.com/";
-  const inner = url ? `<a href="${url}" target="_blank" rel="noopener">${esc(source)}</a>` : esc(source);
+  let display = source;
+  if (m) {
+    url = m[0].replace(/[)\.,;]+$/, "");
+    display = source.slice(0, m.index).replace(/[\s(]+$/, "").trim();
+  } else if (/instrumentacionycontrol\.net/i.test(source)) {
+    url = "https://instrumentacionycontrol.net/";
+  } else if (/instrumentationtools\.com/i.test(source)) {
+    url = "https://instrumentationtools.com/";
+  }
+  const inner = url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(display)}</a>` : esc(display);
   return `<span class="src-line">Fuente: ${inner}</span>`;
 }
 

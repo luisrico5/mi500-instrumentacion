@@ -561,6 +561,146 @@
       "difficulty": 2,
       "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 7, pág. 376",
       "module": 6
+    },
+    {
+      "q": "¿Cuál es el principio fundamental que determina el orden en que los compuestos de una muestra alcanzan el detector en un sistema de cromatografía de gases (GC) según la fuente?",
+      "options": [
+        "La densidad molecular del gas portador utilizado como fase móvil.",
+        "El orden ascendente de los puntos de ebullición de los compuestos presentes en la mezcla.",
+        "La afinidad magnética de las moléculas con el puerto de inyección.",
+        "La presión parcial ejercida por la fase estacionaria sobre los compuestos gaseosos."
+      ],
+      "correct": 1,
+      "explanation": "La fuente explica que los compuestos con el punto de ebullición más bajo corren más rápido hacia el detector. Los componentes alcanzan el detector en grupos en orden ascendente según su punto de ebullición (de menor a mayor), siendo los compuestos con el punto de ebullición más alto los últimos en llegar.",
+      "source": "\"What is Gas Chromatography?\" — Instrumentation Tools (https://instrumentationtools.com/what-is-gas-chromatography/)",
+      "difficulty": 2,
+      "module": 6
+    },
+    {
+      "q": "En la configuración de la fase estacionaria dentro de un cromatógrafo de gases, ¿qué condición térmica es crítica para asegurar que el medio cumpla su función de absorción selectiva?",
+      "options": [
+        "Mantener la temperatura por encima del punto de ebullición más alto para asegurar la ionización.",
+        "Operar en condiciones criogénicas para estabilizar los compuestos orgánicos.",
+        "Mantener la temperatura siempre por debajo del punto de ebullición alto de la propia fase estacionaria.",
+        "Igualar la temperatura del gas portador antes de que este entre en la cámara de vaporización."
+      ],
+      "correct": 2,
+      "explanation": "De acuerdo con la fuente, la fase estacionaria consiste en un medio líquido cuya temperatura se mantiene siempre por debajo del punto de ebullición alto para ayudarle a retener su estado original. Esto ocurre dentro de un horno de columna que mantiene una temperatura constante para una operación isotérmica.",
+      "source": "\"What is Gas Chromatography?\" — Instrumentation Tools (https://instrumentationtools.com/what-is-gas-chromatography/)",
+      "difficulty": 3,
+      "module": 6
+    },
+    {
+      "q": "Al seleccionar un gas portador para la fase móvil en un análisis de cromatografía, ¿cuál es el requisito químico indispensable para evitar resultados anormales?",
+      "options": [
+        "Que el gas sea altamente reactivo para catalizar la separación de moléculas.",
+        "Que el gas sea inerte, como el nitrógeno o el helio, para no reaccionar con las moléculas de la muestra.",
+        "Que el gas tenga una temperatura inferior al punto de congelación de la muestra.",
+        "Que el gas contenga contaminantes específicos que actúen como trazadores."
+      ],
+      "correct": 1,
+      "explanation": "La fuente indica que el gas utilizado debe ser inerte (usualmente nitrógeno, argón, hidrógeno o helio) para que no reaccione con las moléculas de la muestra. Una reacción química entre el gas portador y la muestra desalinearía la mezcla y produciría resultados anormales. Además, el gas debe ser puro y libre de contaminantes.",
+      "source": "\"What is Gas Chromatography?\" — Instrumentation Tools (https://instrumentationtools.com/what-is-gas-chromatography/)",
+      "difficulty": 1,
+      "module": 6
+    },
+    {
+      "q": "Durante el proceso de inyección, ¿qué ocurre mecánicamente en la cámara de vaporización para permitir el transporte de la muestra hacia las columnas?",
+      "options": [
+        "La muestra se enfría rápidamente para convertirla en un sólido poroso.",
+        "La cámara se mantiene al vacío absoluto para succionar la muestra del puerto.",
+        "La cámara se mantiene por encima del punto de ebullición más bajo, vaporizando la muestra mediante calor.",
+        "Se aplica una descarga eléctrica de alta frecuencia para romper las cadenas moleculares."
+      ],
+      "correct": 2,
+      "explanation": "Según la fuente, la muestra (entregada en microlitros) y el gas portador se combinan en una cámara de vaporización mantenida por encima del punto de ebullición más bajo. El calor extremo del gas precalentado y de la propia cámara vaporiza automáticamente el producto, facilitando su transporte hacia la fase estacionaria.",
+      "source": "\"What is Gas Chromatography?\" — Instrumentation Tools (https://instrumentationtools.com/what-is-gas-chromatography/)",
+      "difficulty": 2,
+      "module": 6
+    },
+    {
+      "q": "¿Cómo se define técnicamente la constante de celda (k) en un analizador de conductividad y cuál es su relación geométrica con los electrodos del sensor?",
+      "options": [
+        "Es directamente proporcional al área superficial de las placas e inversamente proporcional a la distancia entre ellas.",
+        "Es directamente proporcional a la distancia entre los electrodos e inversamente proporcional al área superficial de los mismos.",
+        "Es el producto de la conductividad específica del medio por la corriente alterna aplicada.",
+        "Es la relación entre el voltaje AC suministrado por el transmisor y la resistencia iónica del agua."
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, la constante de celda (k) es un término directamente proporcional a la distancia de los electrodos del sensor de conductividad e inversamente proporcional a su área superficial. Esto significa que cualquier cambio físico en la separación o el tamaño de las placas altera el valor de la constante. Las opciones que sugieren proporcionalidades inversas respecto a la distancia o relaciones con voltajes no definen la constante de celda desde el punto de vista constructivo del sensor.",
+      "source": "\"What is Cell Constant in Conductivity Analyzer? and its Importance\" — Instrumentation Tools (https://instrumentationtools.com/cell-constant-in-conductivity-analyzer/)",
+      "difficulty": 2,
+      "module": 6
+    },
+    {
+      "q": "En una planta de tratamiento de agua, se requiere medir la calidad de agua ultra-pura con una conductividad de entre 0.01 µS/cm y 0.1 µS/cm. Según la regla empírica mencionada en la fuente, ¿qué constante de celda es la más adecuada para esta aplicación y por qué?",
+      "options": [
+        "Constante de celda 100, para permitir un mayor flujo de corriente iónica.",
+        "Constante de celda 1.0, por ser el estándar universal para agua dulce.",
+        "Constante de celda 0.1, para equilibrar el área superficial con la distancia.",
+        "Constante de celda 0.01, porque en soluciones de muy baja conductividad la distancia entre las placas debe ser mínima para obtener lecturas precisas."
+      ],
+      "correct": 3,
+      "explanation": "La fuente establece explícitamente que para servicios de agua ultra-pura y pura (0.01 a 0.1 µS/cm), se prefieren sensores con una constante de celda de 0.01. La justificación técnica es que en soluciones con muy baja conductividad, el camino que deben recorrer los iones entre las placas debe ser muy corto (distancia reducida) para garantizar la precisión; dado que la constante es proporcional a la distancia, el valor de k disminuye. Las constantes elevadas (10 o 100) se reservan para aguas con alta carga iónica como agua de río o de mar.",
+      "source": "\"What is Cell Constant in Conductivity Analyzer? and its Importance\" — Instrumentation Tools (https://instrumentationtools.com/cell-constant-in-conductivity-analyzer/)",
+      "difficulty": 3,
+      "module": 6
+    },
+    {
+      "q": "¿Qué tipo de excitación eléctrica suministra habitualmente el transmisor al sensor de conductividad y cuál es el mecanismo que permite la circulación de corriente en el medio según la fuente?",
+      "options": [
+        "Voltaje DC; la corriente fluye por la ionización térmica del agua.",
+        "Voltaje AC; la corriente fluye debido a la presencia de iones en la solución que actúan como conductores entre las placas.",
+        "Voltaje pulsante de alta frecuencia; la corriente fluye por efecto capacitivo entre el sensor y el tanque.",
+        "Corriente constante de 4-20 mA; la corriente fluye mediante la electrólisis controlada de los electrodos."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con el texto, el transmisor de conductividad proporciona un voltaje AC (corriente alterna) al sensor. Una vez que el sensor se sumerge en la muestra, la corriente comienza a circular entre las placas gracias a los iones presentes en la solución, los cuales facilitan el transporte de carga. La fuente no contempla el uso de voltaje DC, señales pulsantes ni el uso de la señal de 4-20 mA como fuente de alimentación o excitación para el sensor en campo.",
+      "source": "\"What is Cell Constant in Conductivity Analyzer? and its Importance\" — Instrumentation Tools (https://instrumentationtools.com/cell-constant-in-conductivity-analyzer/)",
+      "difficulty": 2,
+      "module": 6
+    },
+    {
+      "q": "En el contexto del análisis de frecuencia de vibraciones, ¿cuál es la función técnica primordial de aplicar una 'ventana de Hanning' a la señal capturada?",
+      "options": [
+        "Amplificar las componentes de baja energía para mejorar la resolución del sensor.",
+        "Reducir la fuga espectral (spectral leakage) mediante el suavizado de la señal de tiempo.",
+        "Filtrar el ruido de alta frecuencia antes del procesamiento digital.",
+        "Convertir la señal directamente del dominio de la frecuencia al dominio del tiempo."
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, la ventana de Hanning se utiliza específicamente para reducir la fuga espectral al suavizar la señal antes de su procesamiento. La fuga espectral se caracteriza técnicamente por un ensanchamiento de los picos de frecuencia en el espectro analizado. No tiene como función principal la amplificación selectiva ni el filtrado de ruido, y la conversión inversa de dominios es tarea de la Transformada de Fourier Inversa, no de una ventana de suavizado.",
+      "source": "\"Top 100 Vibration Analysis Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/vibration-analysis-questions-and-answers/)",
+      "difficulty": 2,
+      "module": 6
+    },
+    {
+      "q": "Al realizar un diagnóstico de maquinaria rotativa, ¿qué característica específica en los datos de vibración radial permite identificar de manera consistente un problema de desequilibrio (imbalance)?",
+      "options": [
+        "La presencia de vibraciones de alta frecuencia con bandas laterales de modulación.",
+        "Un aumento significativo de la amplitud de vibración a la frecuencia de rotación de la máquina (1X).",
+        "La detección de impactos de baja frecuencia distribuidos aleatoriamente.",
+        "Una fase inestable que fluctúa independientemente de la velocidad de giro."
+      ],
+      "correct": 1,
+      "explanation": "La fuente establece que un indicador común de desequilibrio es la vibración radial a una frecuencia igual a la velocidad de rotación de la maquinaria. El desequilibrio causa una vibración consistente a dicha velocidad de operación, también denominada 1X. Por el contrario, las bandas laterales suelen ser subproductos de la modulación de frecuencias primarias, mientras que los impactos de baja frecuencia se asocian habitualmente a holguras mecánicas excesivas en el sistema.",
+      "source": "\"Top 100 Vibration Analysis Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/vibration-analysis-questions-and-answers/)",
+      "difficulty": 2,
+      "module": 6
+    },
+    {
+      "q": "¿Qué parámetro técnico se define como la relación entre la amplitud pico y el valor RMS de una señal de vibración, y cuál es su utilidad en el monitoreo de condición?",
+      "options": [
+        "Factor de cresta (Crest Factor); permite evaluar el carácter impulsivo de la señal.",
+        "Potencia Espectral de Densidad (PSD); identifica componentes de frecuencia según su potencia.",
+        "Valor Pico a Pico; mide la diferencia entre el desplazamiento máximo y mínimo.",
+        "Índice de Criticalidad; prioriza el mantenimiento según la importancia de la máquina."
+      ],
+      "correct": 0,
+      "explanation": "De acuerdo con la fuente, el factor de cresta se define como la relación entre la amplitud pico y el valor RMS de la señal. Este valor es fundamental para detectar la severidad de picos o impactos inusuales en la señal de vibración. Por otro lado, la PSD se usa para identificar componentes de frecuencia respecto a la potencia, el valor pico a pico mide la diferencia de desplazamiento total en un ciclo y el índice de criticalidad es una métrica empleada para la priorización estratégica del mantenimiento industrial.",
+      "source": "\"Top 100 Vibration Analysis Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/vibration-analysis-questions-and-answers/)",
+      "difficulty": 2,
+      "module": 6
     }
   ]
 }

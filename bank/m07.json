@@ -617,6 +617,90 @@
       "difficulty": 3,
       "module": 7,
       "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 8, pág. 468"
+    },
+    {
+      "q": "¿Cuál es la distinción técnica principal entre una válvula servodirigida (servo valve) y una válvula de control proporcional respecto al cumplimiento del setpoint?",
+      "options": [
+        "La válvula proporcional utiliza señales de 4-20 mA mientras que la servo usa solo señales digitales.",
+        "La servoválvula ajusta internamente su posición mediante retroalimentación hasta alcanzar el setpoint, mientras que la proporcional se mantiene en la posición dictada por el comando aunque haya una desviación.",
+        "Solo las válvulas proporcionales pueden detenerse en posiciones intermedias entre totalmente abierta y cerrada.",
+        "La válvula servo requiere una señal de 0-10V y la proporcional una de 4-20mA."
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, una válvula proporcional se mueve según la escala de la entrada analógica pero permanecerá en una posición desviada si el comando no es exacto (por ejemplo, abrir 30.5% ante un comando de 30%). En cambio, la servoválvula utiliza retroalimentación interna para auto-ajustarse continuamente hasta que la posición real coincida con el setpoint deseado.",
+      "source": "\"What is a Servo Valve? - Principle and Advantages\" — Instrumentation Tools (https://instrumentationtools.com/what-is-a-servo-valve/)",
+      "difficulty": 2,
+      "module": 7
+    },
+    {
+      "q": "En el mecanismo interno de una servoválvula, ¿qué tipo de transductor se utiliza habitualmente para convertir el desplazamiento físico del carrete (spool) en una señal eléctrica de retroalimentación?",
+      "options": [
+        "Un sensor de efecto Hall",
+        "Un transductor de presión piezoeléctrico",
+        "Un transformador diferencial de variación lineal (LVDT)",
+        "Un sensor de proximidad inductivo"
+      ],
+      "correct": 2,
+      "explanation": "La fuente especifica que el mecanismo de retroalimentación interna utilizado es un LVDT (linear variable differential transformer). Este es un transductor de distancia que rastrea continuamente el movimiento de la varilla del carrete para informar la posición exacta al controlador interno de la válvula.",
+      "source": "\"What is a Servo Valve? - Principle and Advantages\" — Instrumentation Tools (https://instrumentationtools.com/what-is-a-servo-valve/)",
+      "difficulty": 2,
+      "module": 7
+    },
+    {
+      "q": "De acuerdo con los principios de control de lazo cerrado aplicados a las servoválvulas, ¿cómo se comporta la velocidad de actuación de la válvula en relación con el error del sistema?",
+      "options": [
+        "La velocidad es constante durante todo el recorrido para asegurar la linealidad.",
+        "La velocidad es baja cuando el error es grande para evitar daños mecánicos y aumenta al acercarse al setpoint.",
+        "La velocidad es alta cuando la diferencia entre la posición deseada y la real es grande, y disminuye a medida que el error se vuelve mínimo.",
+        "La velocidad depende únicamente de si la válvula es de simple o doble efecto."
+      ],
+      "correct": 2,
+      "explanation": "La fuente compara el funcionamiento de la servoválvula con un controlador PID, indicando que la velocidad de la válvula es alta cuando el error (la diferencia entre el setpoint y el valor actual) es grande, y se reduce a medida que el instrumento alcanza la posición deseada.",
+      "source": "\"What is a Servo Valve? - Principle and Advantages\" — Instrumentation Tools (https://instrumentationtools.com/what-is-a-servo-valve/)",
+      "difficulty": 3,
+      "module": 7
+    },
+    {
+      "q": "¿Cuál es la principal diferencia técnica en cuanto a la tolerancia de fugas y el diseño de seguridad entre una válvula de control (CV) y una válvula de corte (shut-off o XV) según los estándares industriales descritos?",
+      "options": [
+        "Ambas deben garantizar un sello hermético (Zero Leakage) para evitar pérdidas de energía en el proceso.",
+        "La válvula CV admite ciertos factores de tolerancia para fugas, mientras que la XV no permite ni siquiera una fuga mínima debido a su uso en aplicaciones críticas.",
+        "Las válvulas XV tienen mayor tolerancia a fugas por ser de operación instantánea, a diferencia de las CV que son modulantes.",
+        "El diseño de fuga depende únicamente del tipo de actuador (neumático o eléctrico) y no de la clase de la válvula."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, las válvulas de control (CV) tienen factores de tolerancia para fugas, lo que significa que pueden aceptar cierto paso de fluido. En cambio, las válvulas de corte (shut-off) se utilizan en aplicaciones críticas y no se permite que tengan ni siquiera una fuga mínima en su diseño, garantizando un aislamiento total.",
+      "source": "\"Difference Between the Control Valve and Shut-off Valve\" — Instrumentation Tools (https://instrumentationtools.com/difference-between-the-control-valve-and-shut-off-valve/)",
+      "difficulty": 2,
+      "module": 7
+    },
+    {
+      "q": "En el diseño de una estrategia de automatización industrial, ¿por qué una válvula de corte (XV) se considera de naturaleza 'estática' y en qué tipo de lazo de control se implementa predominantemente?",
+      "options": [
+        "Por su incapacidad física de moverse ante señales analógicas; se usa en lazos cerrados para mantener la presión.",
+        "Porque solo opera en dos estados discretos (0% o 100%) sin capacidad de modulación; se utiliza específicamente en control de lazo abierto (open loop control).",
+        "Debido a que requiere menos entrenamiento para su operación mecánica; se usa exclusivamente en control PID manual.",
+        "Porque mantiene una posición variable fija durante largos periodos; se integra habitualmente en lazos de control híbridos."
+      ],
+      "correct": 1,
+      "explanation": "La fuente define a la válvula de corte como 'estática' porque no permite un control preciso del flujo, actuando solo para permitir o restringir el paso de forma binaria (0% o 100%). Además, especifica que, por su naturaleza digital, se utiliza más específicamente en control de lazo abierto, mientras que las válvulas de control (analógicas) son dinámicas y se usan en lazos cerrados para el control PID.",
+      "source": "\"Difference Between the Control Valve and Shut-off Valve\" — Instrumentation Tools (https://instrumentationtools.com/difference-between-the-control-valve-and-shut-off-valve/)",
+      "difficulty": 3,
+      "module": 7
+    },
+    {
+      "q": "De acuerdo a las clasificaciones mecánicas y funcionales presentadas en la fuente, ¿qué combinación de tipos de válvulas representa correctamente a los ejemplos de válvulas de control y válvulas de corte respectivamente?",
+      "options": [
+        "Válvulas de compuerta y de bola para control; válvulas de globo y mariposa para corte.",
+        "Válvulas de globo, mariposa y de tapón (plug) para control; válvulas de compuerta y de bola para corte.",
+        "Válvulas de seguridad y de alivio para control; válvulas analógicas de pistón para corte.",
+        "Todas las válvulas mecánicas mencionadas pueden intercambiar sus funciones (CV o XV) sin afectar la confiabilidad del sistema."
+      ],
+      "correct": 1,
+      "explanation": "La fuente identifica explícitamente como ejemplos populares de válvulas de control a las válvulas de globo, mariposa y de tapón (plug). Por otro lado, señala que las válvulas de compuerta (gate) y de bola (ball) son los ejemplos más comunes de válvulas de corte (shut-off).",
+      "source": "\"Difference Between the Control Valve and Shut-off Valve\" — Instrumentation Tools (https://instrumentationtools.com/difference-between-the-control-valve-and-shut-off-valve/)",
+      "difficulty": 1,
+      "module": 7
     }
   ]
 }

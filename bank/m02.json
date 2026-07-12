@@ -421,6 +421,286 @@
       "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 3, pág. 91",
       "difficulty": 3,
       "module": 2
+    },
+    {
+      "q": "Si un manómetro en un sistema de proceso indica una presión manométrica de -20 kPa y la presión atmosférica local es de 101.3 kPa, ¿cuál es la presión absoluta real del sistema?",
+      "options": [
+        "121.3 kPa",
+        "81.3 kPa",
+        "20 kPa",
+        "101.3 kPa"
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con los cálculos técnicos presentados en la fuente, la presión absoluta se obtiene mediante la suma de la presión atmosférica y la presión manométrica (Pabs = Patm + Pman). En este escenario, 101.3 kPa + (-20 kPa) resulta en 81.3 kPa. Una lectura negativa en el manómetro indica que el sistema opera bajo condiciones de vacío parcial respecto a la atmósfera de referencia.",
+      "source": "\"Types of Pressure - Instrument Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/types-of-pressure/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "En la instrumentación de fluidos en movimiento, ¿qué tipo de presión representa la suma total de la energía cinética, la energía potencial y la presión estática del fluido?",
+      "options": [
+        "Presión estática",
+        "Presión absoluta",
+        "Presión total",
+        "Presión hidrostática"
+      ],
+      "correct": 2,
+      "explanation": "La fuente define la presión total como la presión completa ejercida por un fluido, la cual incluye sus energías cinética y potencial. Este tipo de presión es el parámetro esencial para calcular la fuerza ejercida por un fluido en movimiento, a diferencia de la presión estática que se refiere al fluido en reposo.",
+      "source": "\"Types of Pressure - Instrument Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/types-of-pressure/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Al aplicar el teorema de Bernoulli para la medición de flujo mediante una placa de orificio, ¿qué condiciones específicas se presentan en el punto denominado 'vena contracta'?",
+      "options": [
+        "Mínima velocidad del fluido y máxima presión estática.",
+        "Máxima velocidad del fluido y mínima densidad del medio.",
+        "Mínima velocidad del fluido y mínima presión del sistema.",
+        "Máxima velocidad del fluido y mínima presión del fluido."
+      ],
+      "correct": 3,
+      "explanation": "Según la fuente, la 'vena contracta' es un punto crítico en la aplicación del teorema de Bernoulli a placas de orificio, ya que representa el lugar exacto donde el fluido alcanza su velocidad máxima y su presión mínima. Esta caída de presión es la que permite relacionar la velocidad con el flujo volumétrico.",
+      "source": "\"Types of Pressure - Instrument Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/types-of-pressure/)",
+      "difficulty": 3,
+      "module": 2
+    },
+    {
+      "q": "¿Cuál es la presión hidrostática calculada en la base de un tanque de almacenamiento que contiene agua a una profundidad de 10 metros?",
+      "options": [
+        "9,800 Pa",
+        "98 Pa",
+        "98,000 Pa",
+        "100,000 Pa"
+      ],
+      "correct": 2,
+      "explanation": "La fuente proporciona el método de cálculo para la presión hidrostática basado en la fórmula P = densidad * g * profundidad. Utilizando los valores de referencia (1000 kg/m³ para densidad, 9.8 m/s² para la gravedad y 10 m de profundidad), el resultado es 98,000 Pa. Este valor es vital para determinar el estrés en las paredes de recipientes y presas.",
+      "source": "\"Types of Pressure - Instrument Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/types-of-pressure/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "¿Cuál es la selección técnica correcta de la geometría del tubo Bourdon según el rango de presión operativa requerida en el proceso?",
+      "options": [
+        "Diseño de Tipo C para alta presión y Helicoidal para baja presión.",
+        "Diseño Helicoidal para alta presión y Tipo C para baja presión.",
+        "Diseño en Espiral para alta presión y Diafragma para baja presión.",
+        "Diseño Lineal para alta presión y Helicoidal para baja presión."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, el tubo Bourdon de tipo helicoidal es el que se utiliza para realizar mediciones de alta presión. Por el contrario, el tubo de Tipo C se define como el más adecuado para aplicaciones de baja presión. Las otras combinaciones no corresponden a las especificaciones técnicas mencionadas en el texto.",
+      "source": "\"Components of Bourdon Tube - Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/components-of-bourdon-tube/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "En la arquitectura interna de un manómetro, ¿qué componentes cumplen las funciones específicas de transmitir el movimiento a la aguja y asegurar que el sensor recupere su posición original?",
+      "options": [
+        "Engranaje de piñón y eje giratorio; Resorte en espiral (spiral spring).",
+        "Mecanismo de palanca y eslabón; Dispositivo de amortiguación.",
+        "Tubo Bourdon y eslabón; Snubber.",
+        "Bisel y dial; Protector de sobre-rango."
+      ],
+      "correct": 0,
+      "explanation": "La fuente indica que tanto el engranaje de piñón como el eje giratorio (rotating spindle) tienen la función de transmitir el movimiento de la aguja. Asimismo, el resorte en espiral es el componente encargado de asegurar que el tubo Bourdon regrese a su posición o forma original una vez que la presión disminuye o se libera.",
+      "source": "\"Components of Bourdon Tube - Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/components-of-bourdon-tube/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Para un manómetro de precisión destinado a un entorno industrial exigente, ¿qué materiales se especifican para el elemento sensible y el sistema de engranajes, y qué accesorio se integra para mitigar el desgaste?",
+      "options": [
+        "Aluminio para el tubo y acero para los engranajes; Bisel protector.",
+        "Acero inoxidable para el tubo y latón para los engranajes; Dispositivo de amortiguación (damping device).",
+        "Cobre para el tubo y plástico de alto impacto para los engranajes; Snubber.",
+        "Bronce para el tubo y aluminio para los engranajes; Válvula de alivio."
+      ],
+      "correct": 1,
+      "explanation": "La fuente señala que el acero inoxidable es el material común para la fabricación de tubos Bourdon en medición general de presión. En el caso de instrumentos de precisión, se especifica el uso de latón para los engranajes. Para reducir el desgaste mecánico de los componentes internos, se utiliza un dispositivo de amortiguación.",
+      "source": "\"Components of Bourdon Tube - Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/components-of-bourdon-tube/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Dentro de la gestión de riesgos en instrumentación de presión, ¿cómo se diferencia la función técnica de un 'Snubber' frente a la de un 'Overrange protector'?",
+      "options": [
+        "El snubber protege el dial de la corrosión y el protector de sobre-rango protege el eslabón.",
+        "El snubber previene daños por picos repentinos de presión (spikes) y el protector de sobre-rango protege contra condiciones de sobrepresión.",
+        "El snubber estabiliza el movimiento de la aguja y el protector de sobre-rango calibra el punto cero.",
+        "Ambos componentes son sinónimos y cumplen la función de convertir presión en movimiento mecánico."
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, el snubber es el componente diseñado específicamente para ayudar a prevenir daños causados por picos de presión repentinos. En cambio, el protector de sobre-rango (overrange protector) se define como la pieza crucial para proteger el instrumento ante una condición de sobrepresión general.",
+      "source": "\"Components of Bourdon Tube - Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/components-of-bourdon-tube/)",
+      "difficulty": 3,
+      "module": 2
+    },
+    {
+      "q": "En un manómetro de columna de líquido, ¿cómo influye la gravedad específica (densidad) del fluido de llenado en la precisión de la medición técnica según la fuente?",
+      "options": [
+        "Una gravedad específica alta mejora la precisión al estabilizar la columna contra vibraciones externas.",
+        "Los líquidos de baja gravedad específica proporcionan mayor precisión porque un cambio leve de presión genera un movimiento del líquido más perceptible.",
+        "La gravedad específica no afecta la precisión, ya que el principio de balance hidrostático es independiente de la masa del fluido.",
+        "Solo los líquidos con alta gravedad específica pueden medir con precisión presiones de gases en sistemas de vacío."
+      ],
+      "correct": 1,
+      "explanation": "La fuente indica que los líquidos de baja gravedad se mueven más rápidamente ante cambios de presión, lo que permite detectar variaciones mínimas con mayor exactitud. Por el contrario, un líquido de alta gravedad se desplaza lentamente, lo que dificulta la resolución de cambios leves de presión.",
+      "source": "\"Types of Manometers\" — Instrumentation Tools (https://instrumentationtools.com/types-of-manometers/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "¿Cuál es la distinción técnica que otorga al manómetro de tubo inclinado una mayor precisión sobre el manómetro de tipo pozo (well-type) según la fuente?",
+      "options": [
+        "La utilización de un fluido de llenado con una viscosidad cinemática superior.",
+        "Un aumento en el diámetro del pozo de reserva para minimizar el error de desplazamiento.",
+        "La inclinación del tubo de medición en 10 grados respecto a la vertical.",
+        "La eliminación total de la influencia de la temperatura sobre el fluido manométrico."
+      ],
+      "correct": 2,
+      "explanation": "De acuerdo con la fuente, el manómetro de tubo inclinado presenta su tubo de aire con una inclinación de 10 grados. Esta modificación constructiva permite que la precisión sea superior a la de un manómetro de tipo pozo estándar.",
+      "source": "\"Types of Manometers\" — Instrumentation Tools (https://instrumentationtools.com/types-of-manometers/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Al evaluar la idoneidad de un sensor de presión de tipo fuelle (Bellows) para una aplicación crítica, ¿qué compromiso técnico se debe considerar según la tabla comparativa proporcionada?",
+      "options": [
+        "Posee una respuesta extremadamente rápida pero una durabilidad calificada como 'Baja'.",
+        "Es ideal para altas presiones pero requiere una instalación calificada como 'Difícil'.",
+        "Es sensible a bajas presiones, pero presenta un mantenimiento 'Alto' y aspectos de seguridad 'Limitados'.",
+        "Tiene un costo 'Muy Alto' y una sensibilidad térmica calificada como 'Baja'."
+      ],
+      "correct": 2,
+      "explanation": "La fuente describe a los fuelles como sensibles a bajas presiones, pero su tabla comparativa especifica que su mantenimiento es 'Alto', su seguridad es 'Limitada' y son susceptibles al desgaste mecánico. Además, su respuesta se clasifica como 'Lenta'.",
+      "source": "\"Types of Manometers\" — Instrumentation Tools (https://instrumentationtools.com/types-of-manometers/)",
+      "difficulty": 3,
+      "module": 2
+    },
+    {
+      "q": "Durante el diagnóstico de un sistema de fluidos industrial, se observa un cambio errático en la presión operativa tras un uso prolongado. Según la fuente, ¿cuál es una causa técnica probable relacionada con el medio?",
+      "options": [
+        "Uso de un fluido de llenado con una gravedad específica demasiado baja.",
+        "Presencia de contaminantes en el fluido que provocan obstrucciones en las líneas o dispositivos.",
+        "Ajuste incorrecto del punto cero en el manómetro tipo U antes de la medición.",
+        "Falla de potencia eléctrica en el regulador de presión del conjunto mecánico."
+      ],
+      "correct": 1,
+      "explanation": "La fuente señala que un fluido contaminado puede causar obstrucciones (clogging) en las tuberías o quedar atrapado en los dispositivos, lo cual genera cambios de presión tras un periodo de uso prolongado. Mientras que las fugas causan caídas de presión, la contaminación es la causa específica citada para variaciones tras uso extendido.",
+      "source": "\"Types of Manometers\" — Instrumentation Tools (https://instrumentationtools.com/types-of-manometers/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "En el contexto de la instalación de sellos de diafragma, ¿cuál es la justificación técnica primordial para preferir un montaje remoto mediante capilares sobre un montaje directo?",
+      "options": [
+        "Aumentar la sensibilidad del sensor ante cambios sutiles de presión en el proceso.",
+        "Reducir los costos de fabricación al simplificar el ensamblaje de componentes.",
+        "Proteger el instrumento de medición frente a condiciones extremas como alta vibración, temperaturas elevadas o fluidos altamente corrosivos.",
+        "Garantizar un tiempo de respuesta (lag time) mínimo en procesos dinámicos."
+      ],
+      "correct": 2,
+      "explanation": "Según la fuente, el montaje remoto se emplea cuando las condiciones del proceso son extremas (altas temperaturas, fluidos corrosivos o altos niveles de vibración). El uso de un tubo capilar actúa como una barrera que aleja y protege al instrumento del ambiente hostil del proceso. Por el contrario, el montaje directo se prefiere para mejorar la sensibilidad y reducir el tiempo de retardo en condiciones menos extremas.",
+      "source": "\"What are the Mounting Techniques of Diaphragm Seals?\" — Instrumentation Tools (https://instrumentationtools.com/mounting-techniques-of-diaphragm-seals/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "De acuerdo con los principios de diseño de líneas de impulso, ¿cómo debe configurarse la pendiente de la tubería en aplicaciones de gas o vapor y cuál es su finalidad técnica?",
+      "options": [
+        "Pendiente descendente hacia el instrumento para asegurar que el gas llegue con mayor presión.",
+        "Pendiente ascendente desde la conexión de proceso hacia el transmisor para permitir que el condensado drene de regreso al proceso.",
+        "Configuración estrictamente horizontal para evitar errores por columna hidrostática.",
+        "Pendiente descendente hacia el instrumento para permitir el venteo de gases atrapados hacia la atmósfera."
+      ],
+      "correct": 1,
+      "explanation": "La fuente especifica que para aplicaciones de gas o vapor, las líneas de impulso deben tener una pendiente ascendente desde el proceso hacia el transmisor. Esto permite que cualquier condensado que se forme dentro de la línea pueda drenar por gravedad hacia la tubería de proceso, evitando acumulaciones que causarían lecturas erróneas.",
+      "source": "\"What are the Mounting Techniques of Diaphragm Seals?\" — Instrumentation Tools (https://instrumentationtools.com/mounting-techniques-of-diaphragm-seals/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "¿Qué factor se define en la fuente como el más crítico para garantizar el rendimiento óptimo de un sistema de sello de diafragma, independientemente del tipo de fluido de llenado seleccionado?",
+      "options": [
+        "La utilización de glicerina como fluido estándar debido a su alta viscosidad.",
+        "La selección de acero inoxidable grado 316 para todos los componentes internos.",
+        "La integridad del sistema lleno, asegurando la ausencia total de paquetes de aire (burbujas).",
+        "El uso de capilares de longitud superior a 10 metros para estabilizar la señal térmica."
+      ],
+      "correct": 2,
+      "explanation": "La fuente establece explícitamente que el factor más importante respecto al desempeño de un sello de diafragma es la integridad del sistema lleno. Indica que, sin importar el tamaño del sello o el fluido elegido, el sistema no debe contener paquetes de aire, ya que esto comprometería la precisión de la transmisión de presión.",
+      "source": "\"What are the Mounting Techniques of Diaphragm Seals?\" — Instrumentation Tools (https://instrumentationtools.com/mounting-techniques-of-diaphragm-seals/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Al diseñar un lazo de medición para vapor, ¿cuál es la práctica recomendada de montaje del transmisor respecto a las líneas de impulso y por qué?",
+      "options": [
+        "Montaje por encima de las líneas de proceso para evitar la entrada de vapor directo al sensor.",
+        "Montaje al mismo nivel del proceso para minimizar el error de cero por densidad del fluido.",
+        "Montaje por debajo de las líneas de proceso para permitir la formación y acumulación de un sello de condensado.",
+        "Uso exclusivo de montaje directo sin líneas de impulso para evitar la corrosión bimetálica."
+      ],
+      "correct": 2,
+      "explanation": "De acuerdo con las notas técnicas de la fuente (específicamente la sección de comentarios), en aplicaciones de vapor el transmisor debe montarse siempre por debajo de las líneas. Esto facilita la acumulación de condensado en las líneas de impulso, lo que protege al instrumento de la temperatura directa del vapor.",
+      "source": "\"What are the Mounting Techniques of Diaphragm Seals?\" — Instrumentation Tools (https://instrumentationtools.com/mounting-techniques-of-diaphragm-seals/)",
+      "difficulty": 3,
+      "module": 2
+    },
+    {
+      "q": "¿Cuál es la recomendación técnica fundamental respecto a la dirección de la pendiente de las líneas de impulso para aplicaciones de gas o vapor, y qué problema busca prevenir?",
+      "options": [
+        "Pendiente hacia el instrumento para asegurar que el gas llegue puro al sensor.",
+        "Pendiente hacia el proceso para permitir que el condensado drene de regreso y no afecte la lectura.",
+        "Instalación totalmente horizontal para evitar efectos de gravedad en el fluido.",
+        "Pendiente hacia abajo desde el transmisor para recolectar impurezas en un drenaje local."
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, en aplicaciones de gases o vapor, las líneas deben tener una pendiente hacia el proceso. Esto permite que cualquier condensación que se forme dentro de las líneas drene fácilmente de regreso a la tubería principal, evitando la acumulación de líquido que podría causar lecturas erróneas.",
+      "source": "\"Why are Impulse Lines often Installed in a Sloping Manner?\" — Instrumentation Tools (https://instrumentationtools.com/impulse-lines-installed-in-sloping-angle/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "En cuanto al posicionamiento físico de las conexiones de las líneas de impulso, ¿cuál es la configuración requerida para mediciones de flujo y cuál es la justificación técnica según la fuente?",
+      "options": [
+        "Deben conectarse a diferentes niveles verticales para compensar la presión atmosférica.",
+        "Deben estar lo más lejos posible una de la otra para evitar interferencia de señales.",
+        "Deben conectarse al mismo nivel horizontal para evitar errores de medición debidos al cabezal del fluido en las líneas.",
+        "Deben cruzarse diagonalmente para mejorar la sensibilidad del transmisor de presión diferencial."
+      ],
+      "correct": 2,
+      "explanation": "La fuente en el apartado de 'Positioning' establece que para mediciones de flujo, las líneas de impulso deben conectarse al mismo nivel horizontal. El objetivo es eliminar errores de medición causados por la diferencia de altura (head) del fluido dentro de las propias líneas.",
+      "source": "\"Why are Impulse Lines often Installed in a Sloping Manner?\" — Instrumentation Tools (https://instrumentationtools.com/impulse-lines-installed-in-sloping-angle/)",
+      "difficulty": 2,
+      "module": 2
+    },
+    {
+      "q": "Según el análisis de problemas y soluciones de la fuente, ¿qué medida se recomienda para mitigar los errores de medición causados por retardos de tiempo (time delays) en procesos dinámicos?",
+      "options": [
+        "Aumentar el diámetro de las tuberías de impulso para reducir la resistencia al flujo.",
+        "Utilizar líneas de impulso más largas para actuar como amortiguador natural.",
+        "Mantener las líneas de impulso lo más cortas posible y utilizar un fluido de mayor presión en ellas.",
+        "Instalar válvulas de purga automáticas en los puntos más altos de la instalación."
+      ],
+      "correct": 2,
+      "explanation": "La fuente indica que el tiempo que tarda un cambio de presión en propagarse por las líneas puede causar errores. Para solucionarlo, recomienda mantener las líneas lo más cortas posible y menciona que usar un fluido de mayor presión en las líneas puede ayudar a reducir el tiempo de propagación.",
+      "source": "\"Why are Impulse Lines often Installed in a Sloping Manner?\" — Instrumentation Tools (https://instrumentationtools.com/impulse-lines-installed-in-sloping-angle/)",
+      "difficulty": 3,
+      "module": 2
+    },
+    {
+      "q": "¿Cuál es la función específica de las válvulas de ecualización (equalizing valves) en la configuración de un transmisor según la fuente?",
+      "options": [
+        "Liberar aire atrapado en las líneas de impulso de líquidos.",
+        "Equilibrar la presión entre los lados de alta y baja presión del transmisor durante la calibración o el ajuste a cero.",
+        "Aislar completamente el instrumento del proceso para tareas de mantenimiento mayor.",
+        "Regular el flujo de purga para evitar que los sedimentos bloqueen el sensor."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la sección 'Equalizing and Venting', las válvulas de ecualización se utilizan para balancear la presión entre el lado de alta y baja presión del transmisor, lo cual es necesario durante los procedimientos de calibración o para realizar el ajuste de cero (zeroing).",
+      "source": "\"Why are Impulse Lines often Installed in a Sloping Manner?\" — Instrumentation Tools (https://instrumentationtools.com/impulse-lines-installed-in-sloping-angle/)",
+      "difficulty": 1,
+      "module": 2
     }
   ]
 }

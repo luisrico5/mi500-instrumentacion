@@ -505,6 +505,202 @@
       "difficulty": 3,
       "module": 4,
       "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 5, pág. 212"
+    },
+    {
+      "q": "¿Cómo utiliza un indicador de nivel bicolor para calderas el principio óptico del Índice de Refracción (RI) para diferenciar el agua del vapor?",
+      "options": [
+        "El agua absorbe la luz roja y refleja la verde, mientras que el vapor hace lo contrario.",
+        "Cuando el medidor tiene vapor, los rayos verdes se desvían y solo los rojos llegan al observador; con agua, los rojos se pierden y llega el verde.",
+        "El vapor polariza la luz en sentido horario (rojo) y el agua en sentido antihorario (verde).",
+        "El cristal trapezoidal actúa como un prisma que separa la luz blanca en rojo para alta presión y verde para baja presión."
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, este dispositivo explota el RI que es diferente para el agua y el vapor. En presencia de vapor, los rayos verdes se desvían y no llegan al observador, permitiendo que solo la luz roja alcance el frente. Cuando hay agua, los rayos rojos se desvían hacia el interior y los rayos verdes son los que alcanzan el vidrio frontal.",
+      "source": "\"What are Mechanical Level Indicators? - Classification & Principle\" — Instrumentation Tools (https://instrumentationtools.com/mechanical-level-indicators/)",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "En la medición de nivel mediante el método magnetostrictivo, ¿cuáles son los efectos físicos fundamentales que permiten determinar la posición del flotador con una precisión de hasta 0.1 mm?",
+      "options": [
+        "Efectos Doppler y fotoeléctrico en una guía de onda de cobre.",
+        "Efectos Seebeck y Peltier mediante un termopar integrado al flotador.",
+        "Efectos Wiedemann y Villari actuando sobre una guía de onda ferromagnética.",
+        "Efectos Hall y Faraday utilizando un sensor de corriente de torbellino."
+      ],
+      "correct": 2,
+      "explanation": "La fuente indica que el método magnetostrictivo utiliza los efectos Wiedemann y Villari para determinar la posición de un flotador magnético circular sobre una guía de onda ferromagnética. Esta técnica es altamente precisa, alcanzando errores de apenas 0.1 mm.",
+      "source": "\"What are Mechanical Level Indicators? - Classification & Principle\" — Instrumentation Tools (https://instrumentationtools.com/mechanical-level-indicators/)",
+      "difficulty": 3,
+      "module": 4
+    },
+    {
+      "q": "En un medidor de nivel de tipo desplazador con tubo de torsión (torque tube), ¿cuál es el comportamiento del sistema cuando el nivel del líquido aumenta?",
+      "options": [
+        "El peso aparente del desplazador aumenta, lo que reduce la torsión en el tubo de 90° a 0°.",
+        "La flotabilidad aumenta, reduciendo el peso aparente del desplazador y aplicando torsión al tubo, lo que genera un desplazamiento angular de 5° a 6°.",
+        "El desplazador se mueve lateralmente activando un interruptor de proximidad inductivo.",
+        "El tubo de torsión se expande longitudinalmente debido a la presión hidrostática, activando un fuelle bimetálico."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, al subir el nivel, aumenta la flotabilidad (buoyancy) reduciendo el peso aparente del desplazador. Este cambio aplica torsión al tubo y a la varilla interna, resultando en un desplazamiento angular de aproximadamente 5° a 6°, el cual se relaciona linealmente con el nivel del líquido.",
+      "source": "\"What are Mechanical Level Indicators? - Classification & Principle\" — Instrumentation Tools (https://instrumentationtools.com/mechanical-level-indicators/)",
+      "difficulty": 3,
+      "module": 4
+    },
+    {
+      "q": "Para indicadores de nivel de tipo diafragma con suministro continuo de aire, ¿qué sucede mecánicamente cuando el nivel del líquido en el tanque aumenta?",
+      "options": [
+        "La presión estática empuja el diafragma hacia arriba, reduciendo el tamaño de un orificio de purga y aumentando la presión de aire interna.",
+        "El diafragma se contrae por el frío del líquido, permitiendo un mayor flujo de aire hacia el venteo.",
+        "El aumento de nivel activa una bomba de aire externa que infla el diafragma hasta alcanzar el equilibrio.",
+        "El diafragma se rompe intencionadamente para permitir que el aire burbujee a través del líquido."
+      ],
+      "correct": 0,
+      "explanation": "La fuente describe que a medida que el nivel sube, el aumento de la presión presiona el diafragma hacia arriba, lo que hace que el orificio de purga (bleed orifice) se vuelva más pequeño. Esto restringe el escape de aire y causa un aumento en la presión interna, la cual es medida por un indicador de presión calibrado en unidades de nivel.",
+      "source": "\"What are Mechanical Level Indicators? - Classification & Principle\" — Instrumentation Tools (https://instrumentationtools.com/mechanical-level-indicators/)",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "Al utilizar medidores de nivel por presión diferencial (DP) que emplean fuelles (bellows) mecánicos, ¿cómo se mitiga el error introducido por las variaciones térmicas del fluido de proceso?",
+      "options": [
+        "Instalando un sistema de refrigeración por agua alrededor del gabinete del instrumento.",
+        "Mediante el uso de una fuente de alimentación de voltaje variable que compensa la densidad.",
+        "Utilizando un compensador de temperatura bimetálico unido a los fuelles para compensar el diferencial de presión adicional.",
+        "Aumentando el diámetro de los capilares para reducir la expansión térmica del líquido de llenado."
+      ],
+      "correct": 2,
+      "explanation": "La fuente menciona que dado que el diferencial de presión (DP) se vuelve sensible a la temperatura del líquido, se instala un compensador de temperatura bimetálico acoplado a los fuelles. Este componente compensa el cambio en la presión diferencial que es producido exclusivamente por las variaciones de temperatura.",
+      "source": "\"What are Mechanical Level Indicators? - Classification & Principle\" — Instrumentation Tools (https://instrumentationtools.com/mechanical-level-indicators/)",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "¿Bajo qué principio físico fundamental opera un interruptor de nivel de tipo desplazador (displacer) y cuál es la condición crítica para su correcto funcionamiento según la fuente?",
+      "options": [
+        "Variación de la capacitancia entre electrodos; el fluido debe ser dieléctrico.",
+        "Principio de cambio de peso por fuerza de flotación; el peso del desplazador debe ser mayor que el peso del medio en condiciones normales.",
+        "Resonancia de frecuencia; el desplazador debe ser más ligero que el fluido para vibrar adecuadamente.",
+        "Detección de resistencia eléctrica; el medio debe poseer una alta conductividad para cerrar el circuito."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, un interruptor de desplazador utiliza un elemento pesado suspendido por un resorte. Al sumergirse en el medio, la fuerza de flotación reduce su peso aparente, liberando la presión del resorte para cambiar la salida eléctrica. Es indispensable que el peso del desplazador sea superior al del medio para que el sistema detecte el cambio al ser sumergido. Las otras opciones describen principios de interruptores capacitivos, de vibración o conductivos.",
+      "source": "\"What is a Level Switch? - Types of Level Switches\" — Instrumentation Tools (https://instrumentationtools.com/what-is-a-level-switch-types-of-level-switches/)",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "En un interruptor de nivel de diafragma, ¿cuál es la fuerza actuante que genera la señal y qué ocurre mecánicamente cuando el nivel del medio aumenta?",
+      "options": [
+        "La conductividad térmica; el diafragma se expande por el calor del fluido.",
+        "La presión del medio; el diafragma se mueve hacia arriba, provocando una disminución de la presión en la cara inferior.",
+        "El magnetismo; un imán interno atrae el diafragma hacia el fondo del tanque.",
+        "La reflexión lumínica; el diafragma actúa como un espejo para un haz de luz infrarroja."
+      ],
+      "correct": 1,
+      "explanation": "La fuente especifica que la presión es la fuerza actuante en este tipo de interruptor. Al subir el nivel, la presión del medio empuja el diafragma hacia arriba, lo que causa una reducción en la presión de la cara inferior ('below-face pressure'), activando la salida eléctrica. Las opciones que mencionan conductividad térmica, magnetismo o reflexión no corresponden al diseño mecánico descrito para este instrumento.",
+      "source": "\"What is a Level Switch? - Types of Level Switches\" — Instrumentation Tools (https://instrumentationtools.com/what-is-a-level-switch-types-of-level-switches/)",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "¿Cómo distingue técnicamente un interruptor de nivel óptico la presencia o ausencia de medio dentro de su estructura de prisma en forma de cono?",
+      "options": [
+        "Midiendo el tiempo de vuelo (Time of Flight) desde el emisor hasta la superficie del líquido.",
+        "Calculando la velocidad de las ondas ultrasónicas a través del material del prisma.",
+        "Basándose en la reflexión: la luz se refleja de vuelta al receptor en ausencia de medio y deja de reflejarse cuando el medio está presente.",
+        "Detectando el cambio en la resistencia óhmica del cristal del prisma al mojarse."
+      ],
+      "correct": 2,
+      "explanation": "Según la fuente, la luz se transmite y recibe dentro de un prisma cónico. Si no hay medio, la luz se refleja internamente hacia el receptor. Si el medio está presente, la luz no se refleja de vuelta, lo que permite al instrumento detectar el nivel. El tiempo de vuelo es propio de radares/láseres, y la resistencia eléctrica es del tipo conductivo.",
+      "source": "\"What is a Level Switch? - Types of Level Switches\" — Instrumentation Tools (https://instrumentationtools.com/what-is-a-level-switch-types-of-level-switches/)",
+      "difficulty": 1,
+      "module": 4
+    },
+    {
+      "q": "¿Qué fenómeno físico utiliza un interruptor de nivel inductivo para detectar el medio y de qué manera afecta este fenómeno al funcionamiento interno del instrumento?",
+      "options": [
+        "Efecto de capacitancia; altera la distancia entre las placas de un condensador interno.",
+        "Efecto Doppler; cambia la frecuencia de la señal reflejada por el movimiento del fluido.",
+        "Corrientes de Foucault (eddy currents); disminuyen la amplitud de oscilación del circuito resonante del interruptor.",
+        "Efecto piezoeléctrico; genera un voltaje al recibir el impacto mecánico del fluido."
+      ],
+      "correct": 2,
+      "explanation": "La fuente indica que el interruptor inductivo emplea un circuito resonante oscilador que genera campos electromagnéticos. Al detectar el medio, se producen corrientes de Foucault que reducen la amplitud de la oscilación, lo que se traduce en un cambio de la salida eléctrica. Las otras opciones describen principios físicos ajenos a la tecnología inductiva descrita.",
+      "source": "\"What is a Level Switch? - Types of Level Switches\" — Instrumentation Tools (https://instrumentationtools.com/what-is-a-level-switch-types-of-level-switches/)",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "Un transmisor de nivel de presión diferencial (DP) de pierna seca (dry leg) muestra un valor de 70% tras un mantenimiento preventivo, mientras que el indicador visual marca 93%. Basándose en el análisis de causa raíz de la fuente, ¿cuál es la explicación técnica más probable?",
+      "options": [
+        "El transmisor sufrió un daño permanente en el diafragma durante la limpieza.",
+        "Las válvulas de aislamiento del manifold están parcialmente obstruidas.",
+        "Ingreso accidental de agua en el lado de baja presión (LP) durante el procedimiento de verificación de cero, creando una contrapresión.",
+        "Una fuga en la tubería de impulso del lado de alta presión (HP) que reduce la señal recibida."
+      ],
+      "correct": 2,
+      "explanation": "La fuente detalla un caso donde, tras el mantenimiento, se encontró agua en la pierna de baja presión (LP) debido a un error en el procedimiento de verificación de cero (abrir la ecualización con las de aislamiento cerradas). Esta agua en el lado LP ejerce una presión adicional que contrarresta la del lado HP, haciendo que el diferencial de presión sea menor y, por ende, que el instrumento indique un nivel inferior al real. El análisis descartó fallas en el transmisor, obstrucciones o fugas externas.",
+      "source": "\"What is a Level Switch? - Types of Level Switches\" — Instrumentation Tools (https://instrumentationtools.com/what-is-a-level-switch-types-of-level-switches/)",
+      "difficulty": 3,
+      "module": 4
+    },
+    {
+      "q": "De acuerdo con el principio de funcionamiento de un transmisor de nivel sumergible, si la presión total en la cara del sensor se define como P = ρ.g.H + Po, ¿cuál es el mecanismo técnico que permite al instrumento medir únicamente la columna de líquido (ρ.g.H)?",
+      "options": [
+        "Un sensor barométrico integrado en la electrónica del cabezal que resta el valor de Po mediante software.",
+        "Un cable con ventilación especial que conecta la presión atmosférica Po a la cavidad de presión negativa del sensor.",
+        "El uso de una placa de orificio interna que estabiliza la presión antes del elemento sensible.",
+        "Un algoritmo de compensación de densidad que ignora las variaciones de la presión superficial."
+      ],
+      "correct": 1,
+      "explanation": "La fuente indica que para compensar la presión atmosférica (Po) sobre la superficie del líquido, se utiliza un cable con ventilación especial. Este aire se introduce en la cavidad de presión negativa del sensor para contrarrestar la Po que actúa en el lado positivo (cara del sensor), resultando en una medición neta de ρ.g.H. Las otras opciones no corresponden al diseño mecánico descrito para estos transmisores sumergibles.",
+      "source": "\"What is a Submersible Pressure Transmitter? Principle, Advantages\" — Instrumentation Tools (https://instrumentationtools.com/submersible-pressure-transmitter/)",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "¿Qué tecnología de detección específica utiliza el elemento sensible de un transmisor de presión sumergible para convertir la presión estática en una señal eléctrica?",
+      "options": [
+        "Efecto Seebeck mediante termopares de alta sensibilidad.",
+        "Efecto piezo-resistivo de elementos de silicio difuso.",
+        "Efecto de capacitancia variable mediante placas cerámicas.",
+        "Efecto de inducción electromagnética por desplazamiento de núcleo."
+      ],
+      "correct": 1,
+      "explanation": "La fuente establece explícitamente que estos transmisores utilizan el efecto piezo-resistivo de elementos sensibles de silicio difuso para la conversión de la presión estática en una señal eléctrica. El efecto Seebeck es para temperatura, y aunque existen sensores capacitivos, la fuente especifica el uso de tecnología piezo-resistiva en este caso.",
+      "source": "\"What is a Submersible Pressure Transmitter? Principle, Advantages\" — Instrumentation Tools (https://instrumentationtools.com/submersible-pressure-transmitter/)",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "¿En qué condiciones operativas es preferible la selección de un transmisor de nivel sumergible con protección de jaula (cage protected) frente a un modelo estándar?",
+      "options": [
+        "En procesos de destilación química donde se requieren materiales exóticos.",
+        "En mediciones de alta precisión para laboratorios de metrología.",
+        "En tanques de lodos (slurry), aguas residuales o donde exista turbulencia y presencia de fango.",
+        "Únicamente en aplicaciones de agua limpia a profundidades superiores a 100 metros."
+      ],
+      "correct": 2,
+      "explanation": "Según la fuente, la versión con protección de jaula es ideal para tanques de lodos, alcantarillado y mediciones en aguas residuales. Este diseño es el más adecuado donde puede haber presencia de fango (sludge) o turbulencia que podría dañar o interferir con un sensor desprotegido. Las otras opciones no son los casos de uso específicos mencionados para este accesorio de protección.",
+      "source": "\"What is a Submersible Pressure Transmitter? Principle, Advantages\" — Instrumentation Tools (https://instrumentationtools.com/submersible-pressure-transmitter/)",
+      "difficulty": 2,
+      "module": 4
+    },
+    {
+      "q": "Tras la compensación de temperatura y la corrección de linealidad, ¿cuál es el estándar de señal de salida que el transmisor sumergible envía a la instrumentación aguas arriba?",
+      "options": [
+        "Protocolo Modbus RTU sobre RS-485.",
+        "Señal de voltaje de 0-10 VDC.",
+        "Señal de corriente estándar de 4-20 mA.",
+        "Señal digital Foundation Fieldbus."
+      ],
+      "correct": 2,
+      "explanation": "La fuente describe que la señal de nivel de agua se envía al exterior a través de una señal de corriente estándar de 4-20 mA después de haber pasado por los procesos de compensación de temperatura y corrección de linealidad. Aunque existen otros protocolos en la industria, la fuente destaca específicamente el uso de 4-20 mA.",
+      "source": "\"What is a Submersible Pressure Transmitter? Principle, Advantages\" — Instrumentation Tools (https://instrumentationtools.com/submersible-pressure-transmitter/)",
+      "difficulty": 1,
+      "module": 4
     }
   ]
 }

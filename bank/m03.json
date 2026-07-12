@@ -617,6 +617,90 @@
       "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 4, pág. 183",
       "difficulty": 3,
       "module": 3
+    },
+    {
+      "q": "¿Cuál es la función técnica primordial de los rectificadores de flujo (flow straighteners) en una instalación de placa de orificio y qué condición operativa buscan corregir según la fuente?",
+      "options": [
+        "Incrementar la caída de presión para mejorar la sensibilidad del transmisor.",
+        "Asegurar un perfil de flujo uniforme, mitigando los errores de medición causados por perfiles de flujo distorsionados.",
+        "Reducir la velocidad del fluido antes de que alcance la vena contracta.",
+        "Filtrar impurezas y partículas sólidas para evitar el desgaste del borde de la placa."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, los perfiles de flujo distorsionados pueden provocar errores significativos en la exactitud de la medición. La función específica de los rectificadores de flujo es garantizar un perfil de flujo uniforme antes de que el fluido interactúe con el elemento primario.",
+      "source": "\"Orifice Plate Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/orifice-plate/)",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "En aplicaciones industriales que involucran fluidos con sólidos en suspensión o un alto contenido de partículas (slurries), ¿por qué se desaconseja el uso de placas de orificio concéntricas y qué alternativa de diseño se especifica?",
+      "options": [
+        "Debido a su alto costo de fabricación; se recomienda el uso de medidores magnéticos.",
+        "Porque requieren una calibración constante en sitio; se recomiendan placas de borde de cuadrante.",
+        "Porque son propensas a la acumulación de sedimentos y obstrucciones; se recomiendan placas de orificio excéntricas o segmentales.",
+        "Porque generan una pérdida de presión permanente excesiva; se recomienda el uso de tubos Venturi."
+      ],
+      "correct": 2,
+      "explanation": "La fuente indica que las placas concéntricas no son aptas para fluidos sucios o con partículas ya que tienden a obstruirse (prone to clogging). Para estas aplicaciones, se diseñaron específicamente las placas de orificio excéntricas y segmentales, capaces de manejar fluidos con alto contenido particulado sin comprometer la medición.",
+      "source": "\"Orifice Plate Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/orifice-plate/)",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "Dentro de los cálculos de ingeniería para el dimensionamiento de elementos primarios de caudal, ¿cómo se define técnicamente la relación beta (β) y cuál es su importancia fundamental?",
+      "options": [
+        "Es la relación entre la densidad del fluido a condiciones de proceso y la densidad estándar.",
+        "Es la relación entre el diámetro del orificio de la placa y el diámetro interno de la tubería donde se instala.",
+        "Es el coeficiente de descarga que relaciona el caudal teórico con el caudal real.",
+        "Es la relación de presiones entre la toma de aguas arriba y la ubicación de la vena contracta."
+      ],
+      "correct": 1,
+      "explanation": "La fuente define explícitamente la relación beta (β) como el ratio entre el diámetro del orificio (orifice diameter) y el diámetro de la tubería (pipe diameter). Este parámetro es esencial en las ecuaciones derivadas del principio de Bernoulli para determinar el caudal basado en la presión diferencial generada.",
+      "source": "\"Orifice Plate Questions and Answers\" — Instrumentation Tools (https://instrumentationtools.com/orifice-plate/)",
+      "difficulty": 3,
+      "module": 3
+    },
+    {
+      "q": "¿Por qué el principio de Bernoulli pierde precisión técnica cuando se aplica a mediciones de flujo que operan a altas velocidades?",
+      "options": [
+        "Debido a que la densidad del fluido disminuye drásticamente.",
+        "Porque las variaciones de presión se vuelven despreciables.",
+        "Debido a que los efectos de la compresibilidad del fluido se vuelven significativos.",
+        "Porque la temperatura se convierte en el único factor determinante de la energía."
+      ],
+      "correct": 2,
+      "explanation": "La fuente indica explícitamente que el principio de Bernoulli es menos preciso a altas velocidades porque los efectos de la compresibilidad se vuelven significativos, rompiendo la suposición de fluido incompresible. Las otras opciones no son citadas como causas de esta pérdida de precisión en escenarios de alta velocidad.",
+      "source": "\"Top Questions on Bernoulli's Principle in Flow Meters\" — Instrumentation Tools (https://instrumentationtools.com/bernoullis-principle-in-flow-meters/)",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "En el diseño de una placa de orificio basada en el teorema de Bernoulli, ¿qué fenómeno físico ocurre específicamente en la 'vena contracta'?",
+      "options": [
+        "Es el punto de mínima velocidad del fluido y máxima presión estática.",
+        "Es el punto donde la densidad del fluido alcanza su valor mínimo y la velocidad es máxima.",
+        "Es el punto de máxima velocidad del fluido y mínima presión.",
+        "Es el punto donde la temperatura del fluido es máxima y la presión es mínima."
+      ],
+      "correct": 2,
+      "explanation": "Según la fuente, la vena contracta es el punto de máxima velocidad del fluido y mínima presión. Este es el punto crítico donde la conversión de energía de presión a energía cinética es máxima, permitiendo el cálculo de flujo por diferencia de presión. Las opciones que mencionan presión máxima o cambios en densidad/temperatura no se alinean con la definición técnica de la fuente.",
+      "source": "\"Top Questions on Bernoulli's Principle in Flow Meters\" — Instrumentation Tools (https://instrumentationtools.com/bernoullis-principle-in-flow-meters/)",
+      "difficulty": 2,
+      "module": 3
+    },
+    {
+      "q": "Al analizar el rendimiento de un medidor de flujo de placa de orificio, ¿cuál es el impacto técnico directo del número de Reynolds según los principios de Bernoulli?",
+      "options": [
+        "Estabiliza la temperatura del fluido para evitar la formación de burbujas.",
+        "Afecta directamente el coeficiente de flujo (flow coefficient) del instrumento.",
+        "No tiene impacto en el rendimiento, ya que Bernoulli solo considera flujos ideales.",
+        "Solo es relevante cuando el flujo es estrictamente laminar y viscoso."
+      ],
+      "correct": 1,
+      "explanation": "La fuente establece que el impacto del número de Reynolds en el rendimiento de un medidor de orificio es que afecta el coeficiente de flujo. Este coeficiente es vital para ajustar la relación teórica de Bernoulli a las condiciones reales de flujo. Las demás opciones descartan erróneamente su importancia o le asignan funciones (como estabilización de temperatura) que no están en la fuente.",
+      "source": "\"Top Questions on Bernoulli's Principle in Flow Meters\" — Instrumentation Tools (https://instrumentationtools.com/bernoullis-principle-in-flow-meters/)",
+      "difficulty": 3,
+      "module": 3
     }
   ]
 }

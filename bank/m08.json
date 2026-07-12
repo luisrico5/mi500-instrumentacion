@@ -617,6 +617,90 @@
       "difficulty": 3,
       "source": "Instrumentos industriales: su ajuste y calibración, cap. 3, pág. 124",
       "module": 8
+    },
+    {
+      "q": "¿Cuál es la diferencia fundamental entre el método de 'Simulación' y el de 'Generación Física de Calor' en el contexto de los calibradores de temperatura según la fuente?",
+      "options": [
+        "La simulación se utiliza para calentar físicamente el sensor, mientras que la generación de calor usa señales de milivoltios.",
+        "La simulación utiliza circuitos electrónicos para producir señales de voltaje o resistencia que representan sensores, mientras que la generación física utiliza dispositivos como hornos o cámaras para producir calor real.",
+        "La generación física es un método exclusivo para calibrar termistores, mientras que la simulación es para termopares tipo K.",
+        "No existe diferencia; ambos términos describen el proceso de enfriamiento de un bloque seco."
+      ],
+      "correct": 1,
+      "explanation": "La fuente define la simulación como el uso de circuitos electrónicos internos para producir diferentes niveles de voltaje (mV para termopares) o resistencia (para RTD/Termistores) con el fin de verificar transmisores o pantallas. Por otro lado, la generación física de calor implica el uso de dispositivos como hornos de bloque seco, calibradores por infrarrojos o baños para calentar o enfriar físicamente los sensores bajo prueba.",
+      "source": "\"What is a Dry Block? - Parts of the Temperature Calibrator\" — Instrumentation Tools (https://instrumentationtools.com/what-is-a-dry-block/)",
+      "difficulty": 2,
+      "module": 8
+    },
+    {
+      "q": "Para alcanzar la máxima exactitud y la menor incertidumbre en un proceso de calibración con bloque seco, ¿qué configuración de sensores se recomienda seguir?",
+      "options": [
+        "Utilizar únicamente el sensor de referencia interno del bloque seco para minimizar la carga térmica.",
+        "Emplear una sonda de referencia externa de alta precisión, como un termómetro de resistencia de platino (PRT), insertada en el bloque junto con el sensor bajo prueba (DUT).",
+        "Sustituir el inserto de Inconel por uno de aluminio para mejorar la conductividad térmica del sensor interno.",
+        "Configurar el controlador PID a su ganancia máxima para compensar la falta de sensores externos."
+      ],
+      "correct": 1,
+      "explanation": "La fuente indica que los sensores integrados pueden tener una exactitud menor. Para obtener una mayor precisión y menor incertidumbre, se requiere insertar sensores de alta exactitud denominados sondas de referencia externas, como los termómetros de resistencia de platino (PRT) o dispositivos de temperatura de resistencia (RTD), directamente en la fuente de calor junto con el equipo bajo prueba (DUT).",
+      "source": "\"What is a Dry Block? - Parts of the Temperature Calibrator\" — Instrumentation Tools (https://instrumentationtools.com/what-is-a-dry-block/)",
+      "difficulty": 3,
+      "module": 8
+    },
+    {
+      "q": "De acuerdo con las limitaciones técnicas descritas en la fuente, ¿en qué escenarios se considera que el uso de un bloque seco es menos eficaz que un baño de calibración líquido?",
+      "options": [
+        "Cuando se requiere portabilidad extrema y facilidad de uso en el campo.",
+        "Al calibrar sensores con vástagos (stems) cortos, formas irregulares o cuando se requiere una estabilidad térmica superior.",
+        "Cuando se desea evitar la contaminación de los sensores de temperatura durante el proceso.",
+        "En aplicaciones donde se deben alcanzar temperaturas de hasta 1200 °C con material Inconel."
+      ],
+      "correct": 1,
+      "explanation": "La fuente enumera específicamente como desventajas del bloque seco que ofrece una menor estabilidad comparado con un baño líquido y que resulta difícil calibrar sensores que tienen vástagos cortos o formas extrañas. Las otras opciones mencionan ventajas del bloque seco (portabilidad, no contaminación) o especificaciones estándar del equipo que no representan una desventaja funcional frente al baño líquido.",
+      "source": "\"What is a Dry Block? - Parts of the Temperature Calibrator\" — Instrumentation Tools (https://instrumentationtools.com/what-is-a-dry-block/)",
+      "difficulty": 2,
+      "module": 8
+    },
+    {
+      "q": "¿Cuál es la ventaja técnica específica de los 'Metrology Wells' en comparación con los pozos secos (dry wells) convencionales para aplicaciones de alta precisión?",
+      "options": [
+        "Mayor velocidad de calentamiento por inducción magnética",
+        "Uso de calentadores controlados por zona para mejorar las especificaciones axiales y radiales",
+        "Capacidad de simular señales eléctricas de 4-20 mA sin necesidad de un sensor físico",
+        "Eliminación total del error de deriva mediante el uso exclusivo de sensores internos"
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, los 'Metrology Wells' pertenecen a la familia de los bloques secos pero están diseñados para mediciones de alta exactitud. Su ventaja principal es que utilizan calentadores controlados por zona (zone-controlled heaters) para ofrecer especificaciones axiales y radiales superiores a las de un pozo seco estándar. Las otras opciones son incorrectas porque la simulación es una categoría distinta de calibradores y la fuente menciona que los sensores internos son habitualmente menos precisos que las referencias externas.",
+      "source": "\"Different Types of Temperature Calibrators\" — Instrumentation Tools (https://instrumentationtools.com/types-of-temperature-calibrators/)",
+      "difficulty": 2,
+      "module": 8
+    },
+    {
+      "q": "Al comparar los calibradores de bloque seco (Dry Block) con los baños de temperatura (Temperature Baths), ¿qué factor técnico representa una desventaja crítica para el bloque seco en aplicaciones con sensores especializados?",
+      "options": [
+        "La necesidad de utilizar fluidos inflamables para alcanzar temperaturas superiores a 500 °C",
+        "La lentitud para pasar de un punto de temperatura a otro en comparación con los baños",
+        "La dificultad para medir sensores con formas irregulares o vástagos cortos debido al requerimiento de un ajuste preciso (snug fit)",
+        "La dependencia directa de la altitud para mantener la estabilidad del punto de consigna"
+      ],
+      "correct": 2,
+      "explanation": "La fuente señala explícitamente que una de las principales desventajas del bloque seco es la dificultad o imposibilidad de calibrar sensores con formas extrañas (odd-shaped) o vástagos cortos (short stems). Esto se debe a que el bloque metálico requiere que el sensor encaje perfectamente (snug fit) en los insertos para una transferencia térmica adecuada, mientras que los baños de fluido agitado permiten sumergir casi cualquier geometría con alta estabilidad.",
+      "source": "\"Different Types of Temperature Calibrators\" — Instrumentation Tools (https://instrumentationtools.com/types-of-temperature-calibrators/)",
+      "difficulty": 2,
+      "module": 8
+    },
+    {
+      "q": "¿Qué aplicación específica de metrología describe la fuente para los puntos fijos (Fixed-Points) de temperatura y qué valor térmico exacto proporcionan para este propósito?",
+      "options": [
+        "Calibración de termopares industriales a la temperatura de ebullición del agua (100 °C)",
+        "Calibración de Termómetros de Resistencia de Platino Estándar (SPRT) mediante el punto triple del agua a 0.01 °C",
+        "Verificación radio-métrica de pirómetros infrarrojos utilizando cavidades de cuerpo negro",
+        "Compensación automática de lazo en transmisores de 4-20 mA mediante electrónica de proceso de grado de laboratorio"
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, los puntos fijos son dispositivos especiales requeridos para calibrar Termómetros de Resistencia de Platino Estándar (SPRT). El ejemplo más destacado es el punto triple del agua, que proporciona una temperatura de referencia extremadamente estable de aproximadamente 0.01 °C. La fuente también aclara que el punto de ebullición del agua es difícil de usar por ser sensible a la altitud, y que la calibración radio-métrica es propia de los instrumentos de infrarrojos.",
+      "source": "\"Different Types of Temperature Calibrators\" — Instrumentation Tools (https://instrumentationtools.com/types-of-temperature-calibrators/)",
+      "difficulty": 3,
+      "module": 8
     }
   ]
 }

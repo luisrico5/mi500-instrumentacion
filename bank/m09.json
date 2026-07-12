@@ -645,6 +645,62 @@
       "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 9, pág. 563",
       "difficulty": 3,
       "module": 9
+    },
+    {
+      "q": "De acuerdo con la metodología práctica descrita para la sintonización exitosa, ¿cuáles son los tres métodos de cálculo recomendados para enfrentar la mayoría de los lazos de control industrial?",
+      "options": [
+        "Ziegler-Nichols, Lambda y Cohen-Coon",
+        "Fuzzy Logic, MPC y Redes Neuronales",
+        "Bode, Nyquist y Root Locus",
+        "Método de cuarto de amplitud, Luyben y Tyreus-Luyben"
+      ],
+      "correct": 0,
+      "explanation": "La fuente recomienda explícitamente el uso de tres métodos de sintonización: Ziegler-Nichols, Lambda y Cohen-Coon. Menciona que con estos tres y sus variaciones es posible enfrentar adecuadamente casi cualquier lazo de control. Los métodos avanzados como Fuzzy o MPC se sugieren solo como alternativa si los métodos basados en PID no cumplen el objetivo.",
+      "source": "\"Como Realmente Sintonizar lazos de Control?\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/como-realmente-sintonizar-lazos-de-control/)",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "Durante la fase de entendimiento del proceso (Paso 2), ¿cuál es la relación técnica establecida entre el tiempo muerto y la efectividad del controlador PID?",
+      "options": [
+        "A mayor tiempo muerto, el controlador PID se vuelve más estable y fácil de sintonizar.",
+        "El tiempo muerto no afecta al PID, solo influye en procesos de respuesta inversa.",
+        "Mientras un proceso presente un mayor tiempo muerto, aumenta la dificultad para controlarlo mediante estrategias PID.",
+        "El tiempo muerto solo es relevante en procesos integrativos, siendo despreciable en procesos autorregulados."
+      ],
+      "correct": 2,
+      "explanation": "La fuente indica que uno de los puntos más relevantes del proceso es el tiempo muerto. Específicamente señala que, considerando el uso habitual de controladores PID, el control se vuelve más difícil a medida que el tiempo muerto del proceso es mayor.",
+      "source": "\"Como Realmente Sintonizar lazos de Control?\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/como-realmente-sintonizar-lazos-de-control/)",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "En el contexto de un sistema de reacción industrial donde se busca mantener la pureza del producto, se observa que la presión de operación se mantiene constante por diseño, mientras que un cambio repentino en la calidad de la materia prima afecta la salida. Según la fuente, ¿cómo se clasifican técnicamente la presión de operación y el cambio en la materia prima?",
+      "options": [
+        "La presión es una variable controlada y la materia prima es una variable manipulada.",
+        "La presión es un parámetro y la materia prima es una perturbación.",
+        "La presión es una variable intermedia y la materia prima es un parámetro.",
+        "Ambas se consideran perturbaciones externas al sistema de control."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, los parámetros son variables que toman un valor fijo durante el proceso, como la presión de operación en un reactor. Por otro lado, una perturbación es una señal que afecta adversamente la salida del sistema y no puede ser cambiada a voluntad, como un cambio repentino en las condiciones de entrada.",
+      "source": "\"Control Automático, tipos de variables?\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/control-automatico-tipos-de-variables/)",
+      "difficulty": 2,
+      "module": 9
+    },
+    {
+      "q": "¿Cuál es la diferencia fundamental entre una variable manipulada y una variable intermedia en un proceso de intercambio de calor según las definiciones técnicas proporcionadas?",
+      "options": [
+        "La variable manipulada es la salida del sistema, mientras que la intermedia es la entrada que se mide.",
+        "La variable manipulada se modifica para afectar la variable controlada, mientras que la intermedia se relaciona con el proceso solo de forma indirecta.",
+        "La variable intermedia se puede cambiar a voluntad por el operador, mientras que la manipulada es una perturbación interna.",
+        "No existe diferencia técnica, ambos términos se refieren a condiciones que el controlador no puede modificar."
+      ],
+      "correct": 1,
+      "explanation": "La fuente define la variable manipulada como la cantidad modificada por el controlador para afectar la variable controlada (ej. caudal de vapor). En contraste, las variables intermedias son aquellas relacionadas con el curso del proceso solo indirectamente, como la temperatura del vapor en el tanque de calentamiento.",
+      "source": "\"Control Automático, tipos de variables?\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/control-automatico-tipos-de-variables/)",
+      "difficulty": 3,
+      "module": 9
     }
   ]
 }

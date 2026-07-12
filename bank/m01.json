@@ -533,6 +533,174 @@
       "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 1, pág. 30",
       "difficulty": 3,
       "module": 1
+    },
+    {
+      "q": "En el lazo de flujo F-100 descrito en el diagrama, ¿qué tipo de señales se utilizan para la comunicación entre el transmisor y el controlador, y qué componente es necesario para la interfaz con la válvula de control FV-100?",
+      "options": [
+        "Señales neumáticas representadas por líneas continuas; requiere un posicionador inteligente.",
+        "Señales eléctricas representadas por líneas entrecortadas; requiere un conversor I/P (FY-100).",
+        "Señales digitales de bus de campo; requiere un acoplador de segmento.",
+        "Señales hidráulicas; requiere una unidad de potencia auxiliar."
+      ],
+      "correct": 1,
+      "explanation": "Según el texto, las señales se transmiten eléctricamente entre el transmisor, el controlador y el actuador, lo cual se deduce por el uso de líneas entrecortadas (espaciadas). Además, se especifica que la señal electrónica de salida del controlador se convierte en una señal neumática mediante un conversor I/P etiquetado como FY-100 para operar la válvula FV-100.",
+      "source": "\"Interpretando un Diagrama P&ID o DTI, desde Cero (entrega 1 de 2)\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/interpretando-un-diagrama-pid-o-dti-desde-cero/)",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Al interpretar la nomenclatura de los instrumentos en el lazo de flujo F-100, ¿qué función técnica específica representa la letra 'C' en el tag FRC-100?",
+      "options": [
+        "Indica que el controlador es de tipo Cascada.",
+        "Indica que el instrumento cuenta con compensación de temperatura.",
+        "Indica que los datos de flujo de este lazo se registrarán o historizarán.",
+        "Indica que la válvula asociada es de Cierre hermético."
+      ],
+      "correct": 2,
+      "explanation": "La fuente indica explícitamente en el punto que en el instrumento FRC-100, la 'C' corresponde a que se registrarán u historizarán los datos de flujo de este lazo de control.",
+      "source": "\"Interpretando un Diagrama P&ID o DTI, desde Cero (entrega 1 de 2)\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/interpretando-un-diagrama-pid-o-dti-desde-cero/)",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Respecto a la seguridad del proceso y la filosofía de falla, ¿cuál es el comportamiento de las válvulas de control FV-100 y PV-100 ante una pérdida del suministro de aire?",
+      "options": [
+        "Ambas válvulas fallarán en posición cerrada (Fail Closed) para aislar el tanque.",
+        "Ambas válvulas fallarán en posición abierta (Fail Open), indicado gráficamente por una flecha hacia arriba.",
+        "La válvula FV-100 fallará abierta y la PV-100 fallará cerrada.",
+        "Ambas válvulas permanecerán en su última posición (Fail Last)."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con los fragmentos y, tanto la válvula de control de flujo (FV-100) como la de presión (PV-100) están diseñadas para quedar en posición abierta en caso de fallo. El texto menciona que esto se visualiza en el diagrama mediante una flecha hacia arriba en el actuador.",
+      "source": "\"Interpretando un Diagrama P&ID o DTI, desde Cero (entrega 1 de 2)\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/interpretando-un-diagrama-pid-o-dti-desde-cero/)",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Sobre el equipo principal 01-D-001, ¿qué especificaciones mecánicas y de acceso se detallan en el P&ID para este recipiente?",
+      "options": [
+        "Clasificación ANSI 300 de acero inoxidable y un acceso de instrumentación de 10 pulgadas.",
+        "Clasificación ANSI 150 de acero al carbono (TRIM 150 CS) y un acceso 'Man Way' (MW) de 20 pulgadas.",
+        "Diseño para 500 PSIG y 170 °F con una potencia de 10 HP.",
+        "Clasificación TRIM 150 CS con tecnología Vortex integrada para la separación de mezclas."
+      ],
+      "correct": 1,
+      "explanation": "El documento señala en los puntos y que el equipo 01-D-001 (drum) tiene una clasificación ANSI 150 de acero al carbono (TRIM 150 CS). Además, cuenta con un acceso de 20 pulgadas de diámetro denominado 'MW' (man way) destinado a fines de mantenimiento para el ingreso de personal.",
+      "source": "\"Interpretando un Diagrama P&ID o DTI, desde Cero (entrega 1 de 2)\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/interpretando-un-diagrama-pid-o-dti-desde-cero/)",
+      "difficulty": 3,
+      "module": 1
+    },
+    {
+      "q": "¿Cuál es la función técnica de la letra 'C' en el tag FRC-100 según la descripción del lazo de flujo en la fuente?",
+      "options": [
+        "Indica que el controlador posee compensación automática de densidad.",
+        "Señala que el instrumento está ubicado en una consola centralizada.",
+        "Corresponde a que los datos de flujo serán registrados u historizados.",
+        "Representa una función de cómputo para el cálculo de flujo másico."
+      ],
+      "correct": 2,
+      "explanation": "La fuente indica explícitamente que en el instrumento FRC-100, la 'C' corresponde a que se registrarán u historizarán los datos de flujo de este lazo de control.",
+      "source": "\"Interpretando un Diagrama P&ID o DTI, desde Cero (entrega 2 de 2)\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/interpretando-un-diagrama-pid-o-dti-desde-cero-entrega-2-de-2/)",
+      "difficulty": 1,
+      "module": 1
+    },
+    {
+      "q": "En el lazo de presión P-100, ¿qué medio de transmisión se utiliza entre el transmisor PIT-100 y el controlador, y qué características tiene la válvula PV-100?",
+      "options": [
+        "Señal eléctrica de 4-20 mA; válvula de globo fail-close.",
+        "Señal neumática; válvula tipo mariposa de 6 pulgadas fail-open.",
+        "Señal digital Fieldbus; válvula de bola de 10 pulgadas fail-last.",
+        "Señal inalámbrica ISA100; válvula de compuerta con actuador manual."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con la fuente, el PIT-100 mide la presión y transmite la señal por líneas neumáticas hacia el controlador PIC-100 (controlador neumático en campo). La válvula PV-100 es una tipo mariposa de 6 pulgadas cuya posición de fallo es quedar abierta.",
+      "source": "\"Interpretando un Diagrama P&ID o DTI, desde Cero (entrega 2 de 2)\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/interpretando-un-diagrama-pid-o-dti-desde-cero-entrega-2-de-2/)",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Al interpretar el interlock de proceso (identificado con un rombo y una 'I') asociado a la alarma de nivel bajo LAL-300, ¿qué acción automática se ejecuta en el sistema?",
+      "options": [
+        "Apertura de emergencia de la válvula de drenaje de 1 pulgada.",
+        "Activación de la alarma audible en la sala de control.",
+        "Detención de la bomba asociada al recipiente o tanque.",
+        "Cambio del modo de control de automático a manual en el LIC-100."
+      ],
+      "correct": 2,
+      "explanation": "La fuente explica que la señal de alarma baja está asociada a un interlock de proceso (rombo con una 'I'). En este contexto, se indica que si el nivel es muy bajo, se detendrá la bomba vinculada a dicho tanque.",
+      "source": "\"Interpretando un Diagrama P&ID o DTI, desde Cero (entrega 2 de 2)\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/interpretando-un-diagrama-pid-o-dti-desde-cero-entrega-2-de-2/)",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Dentro del lazo de control de nivel, ¿cuál es el propósito del equipo LY-100 y qué detalle gráfico confirma la posición de falla de la válvula LV-100?",
+      "options": [
+        "Es un relé de aislamiento; se confirma por el símbolo del rombo.",
+        "Es un posicionador neumático; se confirma por la línea continua en el actuador.",
+        "Es un conversor I/P; se confirma por la representación de una flecha hacia abajo (fail-closed).",
+        "Es un transmisor indicador; se confirma por el tag LI-100 ubicado en campo."
+      ],
+      "correct": 2,
+      "explanation": "La fuente menciona que la válvula LV-100 recibe su señal de control a través de un conversor I/P identificado como LY-100. Además, especifica que esta válvula tiene una posición de fallo en cerrar, lo cual se representa visualmente con una flecha hacia abajo.",
+      "source": "\"Interpretando un Diagrama P&ID o DTI, desde Cero (entrega 2 de 2)\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/interpretando-un-diagrama-pid-o-dti-desde-cero-entrega-2-de-2/)",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "¿Cuál es el factor determinante desde una perspectiva teórica que establece la distancia máxima que puede recorrer una señal de 4-20 mA?",
+      "options": [
+        "La impedancia del cable, que debe ser siempre inferior a 15 ohmios por kilómetro.",
+        "El mantenimiento de niveles de voltaje adecuados y óptimos para alimentar al instrumento o transmisor.",
+        "La utilización de un calibre de cable superior a 14 AWG para evitar interferencias electromagnéticas.",
+        "La capacidad del PLC o DCS para procesar señales con retardos superiores a 1 segundo."
+      ],
+      "correct": 1,
+      "explanation": "Según la fuente, a nivel teórico, lo que determina la distancia máxima es que los niveles de voltaje se mantengan adecuados en todo el circuito para alimentar correctamente al instrumento. Aunque la resistencia del cable influye, el objetivo fundamental es asegurar el voltaje de operación necesario.",
+      "source": "\"¿Cuanta Distancia soporta la Transmision en 4-20mA? Mitos y verdades\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/cuanta-distancia-soporta-la-transmision-en-4-20ma-mitos-y-verdades/)",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Al realizar el cálculo de caída de tensión en un lazo de control, ¿cómo se compara la resistencia de una tarjeta de entrada analógica (AI) con la resistencia típica del cableado según la fuente?",
+      "options": [
+        "La resistencia de la tarjeta (250-500 Ω) es mucho más considerable que la del cable (15-30 Ω por km).",
+        "La resistencia del cable es el factor dominante, superando habitualmente los 500 Ω por cada 500 metros.",
+        "Ambas resistencias son despreciables si se utiliza una fuente de alimentación de 24 VDC perfecta.",
+        "La tarjeta de entrada analógica no presenta resistencia interna, actuando como un cortocircuito ideal."
+      ],
+      "correct": 0,
+      "explanation": "La fuente indica que la resistencia inherente en las tarjetas analógicas (que puede ser de 250 a 500 ohmios) es significativamente mayor que la resistencia propia del cable (aproximadamente 15 a 30 ohmios por kilómetro). Por lo tanto, la caída de voltaje más importante ocurre en la tarjeta y no en el cableado en distancias cortas o medias.",
+      "source": "\"¿Cuanta Distancia soporta la Transmision en 4-20mA? Mitos y verdades\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/cuanta-distancia-soporta-la-transmision-en-4-20ma-mitos-y-verdades/)",
+      "difficulty": 3,
+      "module": 1
+    },
+    {
+      "q": "Si un instrumento industrial requiere un voltaje mínimo de alimentación de 12V, ¿qué recomendación práctica ofrece la fuente para garantizar la disponibilidad del lazo ante perturbaciones?",
+      "options": [
+        "Ajustar la fuente de alimentación exactamente a 12V para evitar el sobrecalentamiento del sensor.",
+        "Asegurar que lleguen al menos 14V al instrumento al finalizar todo el recorrido del cableado.",
+        "Utilizar un lazo de corriente activo de 25mA para compensar la caída de potencial.",
+        "Instalar un sistema de monitoreo intermitente que tolere caídas de voltaje por debajo de 10V."
+      ],
+      "correct": 1,
+      "explanation": "La fuente recomienda que, por seguridad y disponibilidad, se asegure un voltaje superior al mínimo requerido. Si el instrumento necesita 12V, se aconseja garantizar la llegada de al menos 14V para que el lazo siga funcionando correctamente incluso si hay perturbaciones o resistencias adicionales que provoquen caídas de tensión extra.",
+      "source": "\"¿Cuanta Distancia soporta la Transmision en 4-20mA? Mitos y verdades\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/cuanta-distancia-soporta-la-transmision-en-4-20ma-mitos-y-verdades/)",
+      "difficulty": 2,
+      "module": 1
+    },
+    {
+      "q": "Desde el punto de vista de la práctica industrial y la optimización de recursos, ¿cuál es la recomendación general de distancia máxima para señales 4-20 mA y qué alternativa se sugiere para distancias mayores?",
+      "options": [
+        "Máximo 1000 metros; se sugiere aumentar el voltaje de la fuente a 48V.",
+        "Máximo 500 metros; se sugiere el uso de fibra óptica monomodo con un gateway o PLC.",
+        "Máximo 100 metros; se sugiere cambiar a una transmisión de voltaje 0-10V.",
+        "No hay límite práctico; se sugiere simplemente usar cables de calibre 12 AWG."
+      ],
+      "correct": 1,
+      "explanation": "La fuente señala que la recomendación práctica más usual es no sobrepasar los 500 metros en transmisiones de 4-20 mA. Para distancias considerables donde los desafíos económicos y de interferencia aumentan, sugiere como solución robusta la fibra óptica acoplada a un gateway o pequeño PLC para convertir la señal a Ethernet.",
+      "source": "\"¿Cuanta Distancia soporta la Transmision en 4-20mA? Mitos y verdades\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/cuanta-distancia-soporta-la-transmision-en-4-20ma-mitos-y-verdades/)",
+      "difficulty": 1,
+      "module": 1
     }
   ]
 }

@@ -589,6 +589,118 @@
       "source": "Creus, Instrumentación Industrial, 8ª ed., cap. 6, pág. 242",
       "difficulty": 3,
       "module": 5
+    },
+    {
+      "q": "Al seleccionar un controlador de temperatura para un proceso con un setpoint máximo de 75 °C, ¿cuál es la recomendación técnica de rango según la fuente y por qué?",
+      "options": [
+        "Un rango de 0 a 80 °C para maximizar la resolución del sensor.",
+        "Un rango de hasta 150 °C para asegurar un margen operativo adecuado y mayor vida útil.",
+        "Cualquier rango que incluya el setpoint, ya que el algoritmo PID compensa automáticamente el error.",
+        "Un rango limitado para evitar sobrecalentamientos accidentales en el panel de control."
+      ],
+      "correct": 1,
+      "explanation": "La fuente indica explícitamente que siempre se debe elegir un controlador con un rango de temperatura nominal superior al setpoint máximo requerido. Específicamente menciona que si el setpoint máximo es de 75°, se recomienda elegir uno con un rango configurable de hasta 150° para garantizar la fiabilidad del equipo bajo condiciones industriales.",
+      "source": "\"What is a Temperature Controller? - How to Choose?\" — Instrumentation Tools (https://instrumentationtools.com/temperature-controller/)",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "¿Bajo qué criterio técnico fundamental se debe elegir entre un controlador PID y uno de tipo ON/OFF para una aplicación industrial específica según la fuente?",
+      "options": [
+        "Dependiendo de la precisión del sensor de entrada utilizado (RTD vs Termopar).",
+        "Basándose en el tipo de salida de control disponible: salida analógica para PID y salida digital para ON/OFF.",
+        "Según el protocolo de comunicación externa requerido para compartir datos con un PLC.",
+        "Únicamente basándose en el costo del hardware, ya que ambos algoritmos operan bajo el mismo principio de lazo cerrado."
+      ],
+      "correct": 1,
+      "explanation": "La fuente establece que la elección del tipo de control depende directamente de la señal de salida del sistema: si se dispone de una salida analógica (control continuo), se debe optar por un controlador PID; si la salida es digital (todo o nada), se debe seleccionar un controlador ON/OFF.",
+      "source": "\"What is a Temperature Controller? - How to Choose?\" — Instrumentation Tools (https://instrumentationtools.com/temperature-controller/)",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "Durante el procedimiento de calibración de un interruptor de temperatura (temperature switch), ¿qué valor de resistencia eléctrica en los contactos cerrados determina técnicamente la necesidad de reemplazar el instrumento?",
+      "options": [
+        "Cualquier valor de resistencia superior a 0.5 ohmios.",
+        "Un valor de resistencia infinita, indicando un circuito abierto permanente.",
+        "Una resistencia medida en el contacto cerrado superior a 1 ohmio.",
+        "Una resistencia inferior a 0.1 ohmios medida con un multímetro calibrado."
+      ],
+      "correct": 2,
+      "explanation": "De acuerdo con el procedimiento detallado en la fuente, tras verificar el cambio de estado del contacto en el baño de temperatura, se debe medir la resistencia en estado cerrado. Si dicha resistencia supera el límite crítico de 1 ohmio, se recomienda el reemplazo del interruptor para asegurar la integridad de la señal de disparo del proceso.",
+      "source": "\"What is a Temperature Controller? - How to Choose?\" — Instrumentation Tools (https://instrumentationtools.com/temperature-controller/)",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "Al comparar las especificaciones de linealidad y precisión entre un sensor RTD y un Termopar para control de procesos, ¿cuál es la conclusión técnica correcta basada en la fuente?",
+      "options": [
+        "El RTD es lineal y de alta precisión, mientras que el Termopar es no lineal y de precisión moderada.",
+        "Ambos sensores poseen una respuesta lineal, pero el Termopar tiene un rango de medición mucho más limitado.",
+        "El Termopar es lineal y de alta precisión, superando al RTD en estabilidad ante el autocalentamiento.",
+        "El RTD es no lineal debido a su principio de funcionamiento resistivo, a diferencia de la linealidad del Termopar."
+      ],
+      "correct": 0,
+      "explanation": "La tabla comparativa de la fuente clasifica al RTD como un sensor con linealidad 'Lineal' y precisión 'Alta'. En contraste, define al Termopar como 'No lineal' con una precisión 'Moderada'. Las otras opciones contradicen los datos técnicos proporcionados en la comparativa de sensores industriales del texto.",
+      "source": "\"What is a Temperature Controller? - How to Choose?\" — Instrumentation Tools (https://instrumentationtools.com/temperature-controller/)",
+      "difficulty": 3,
+      "module": 5
+    },
+    {
+      "q": "¿Cuál es la principal ventaja técnica de un sensor RTD frente a una termocupla en aplicaciones industriales que requieren intervalos prolongados entre periodos de calibración?",
+      "options": [
+        "Capacidad de medir temperaturas superiores a los 1200 °C.",
+        "Tiempo de respuesta 10 veces más rápido ante cambios bruscos.",
+        "Alta estabilidad en el tiempo, lo que asegura que el error no se incremente significativamente.",
+        "Bajo costo de adquisición, siendo hasta tres veces más económica."
+      ],
+      "correct": 2,
+      "explanation": "Según la fuente, las RTD ofrecen una muy buena estabilidad en el tiempo, lo que asegura que el error dejado tras una calibración no se amplíe considerablemente. En contraste, las termocuplas tienen una estabilidad de moderada a pobre, requiriendo ajustes más frecuentes. Las otras opciones son incorrectas porque el rango alto y la velocidad son ventajas de las termocuplas, y las RTD son más costosas.",
+      "source": "\"RTD o Termocuplas? Cual es Mejor? Como elegir?\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/rtd-o-termocuplas-cual-es-mejor-como-elegir/)",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "En el diseño de un lazo de control para un proceso térmico que opera consistentemente a 1100 °C, ¿qué tipo de sensor es el adecuado y cuál es la limitación técnica de su alternativa según la fuente?",
+      "options": [
+        "Termocupla tipo K; las RTD no son adecuadas para temperaturas mayores a 800-850 °C.",
+        "RTD (PT100); las termocuplas pierden linealidad por debajo de los 1000 °C.",
+        "Termocupla; las RTD solo pueden medir con una exactitud de 1 grado Celsius.",
+        "RTD de platino; las termocuplas tienen un tiempo de reacción demasiado lento (1-2 segundos)."
+      ],
+      "correct": 0,
+      "explanation": "La fuente indica que para rangos de temperatura amplios (más de 850 °C), las candidatas definitivas son las termocuplas, específicamente la tipo K. Asimismo, señala como desventaja de las RTD que no son adecuadas para temperaturas superiores a 800 o 850 grados Celsius.",
+      "source": "\"RTD o Termocuplas? Cual es Mejor? Como elegir?\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/rtd-o-termocuplas-cual-es-mejor-como-elegir/)",
+      "difficulty": 2,
+      "module": 5
+    },
+    {
+      "q": "Si un proceso dinámico requiere que el sistema de control reaccione con la menor latencia posible ante variaciones térmicas, ¿cómo se comparan los tiempos de respuesta de ambos sensores?",
+      "options": [
+        "Las RTD responden en microsegundos, siendo superiores a las termocuplas.",
+        "Las termocuplas son entre 5 a 10 veces más rápidas que las RTD.",
+        "Ambos instrumentos tienen un tiempo de respuesta promedio de 1 a 2 segundos.",
+        "La RTD es más rápida debido a su excelente linealidad en todo el rango."
+      ],
+      "correct": 1,
+      "explanation": "De acuerdo con el texto, mientras que las RTD tienen un tiempo de respuesta promedio de 1 a 2 segundos, las termocuplas pueden ser entre 5 a 10 veces más rápidas. Por tanto, para obtener una respuesta lo más veloz posible para el control del proceso, la termocupla es la opción preferida.",
+      "source": "\"RTD o Termocuplas? Cual es Mejor? Como elegir?\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/rtd-o-termocuplas-cual-es-mejor-como-elegir/)",
+      "difficulty": 3,
+      "module": 5
+    },
+    {
+      "q": "Al comparar la exactitud y la linealidad de los sensores PT100 frente a los termopares, ¿qué características técnicas describe la fuente para justificar la selección de una RTD en procesos críticos?",
+      "options": [
+        "Exactitud de 1 grado y linealidad pobre en la mitad del rango.",
+        "Exactitud de 0.1 grados y una salida no lineal compensada por software.",
+        "Exactitud de 0.1 grados y una excelente linealidad en el rango de medición.",
+        "Exactitud de 5 grados y estabilidad moderada ante cambios de voltaje."
+      ],
+      "correct": 2,
+      "explanation": "La fuente destaca que las RTD ofrecen una exactitud de 0.1 grados (frente a 1 grado de las termocuplas) y una excelente linealidad, especialmente en las PT100. Las termocuplas, por el contrario, no poseen una linealidad perfecta, especialmente de la mitad del rango en adelante.",
+      "source": "\"RTD o Termocuplas? Cual es Mejor? Como elegir?\" — Instrumentación y Automatización Industrial (https://instrumentacionycontrol.net/rtd-o-termocuplas-cual-es-mejor-como-elegir/)",
+      "difficulty": 2,
+      "module": 5
     }
   ]
 }
