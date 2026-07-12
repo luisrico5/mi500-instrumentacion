@@ -337,6 +337,10 @@
             <span class="mt">Ronda rápida <span class="mono-tag">8 PREG</span></span>
             <span class="md">Práctica corta con corrección inmediata y explicación.</span>
           </button>
+          <button class="mode-btn" id="btnMicro">
+            <span class="mt">Micro-ronda <span class="mono-tag">5 PREG</span></span>
+            <span class="md">Un repaso relámpago para huecos libres, corrección inmediata.</span>
+          </button>
           <button class="mode-btn" id="btnWrong">
             <span class="mt">Repaso de falladas <span class="mono-tag" id="tagWrong">0 PEND</span></span>
             <span class="md">Vuelve sobre las preguntas que has fallado hasta dominarlas.</span>
@@ -788,6 +792,7 @@ function startExam(mode, moduleId) {
   if (mode === "diag") { items = buildDiagnostic(); title = "Diagnóstico completo"; tag = "EX-DG"; }
   else if (mode === "adapt") { items = buildAdaptive(15); title = "Examen adaptativo"; tag = "EX-AD"; }
   else if (mode === "quick") { items = buildQuick(8); title = "Ronda rápida"; tag = "EX-RR"; immediate = true; }
+  else if (mode === "micro") { items = buildQuick(5); title = "Micro-ronda"; tag = "EX-MR"; immediate = true; }
   else if (mode === "wrong") { items = shuffle(wrongPool()).slice(0, 15); title = "Repaso de falladas"; tag = "EX-RP"; immediate = true; }
   else { const m = MODS.find(x => x.id === moduleId); items = buildModule(moduleId, 9); title = "Práctica: " + m.name; tag = "EX-M" + String(moduleId).padStart(2, "0"); immediate = true; }
   if (!items.length) return;
@@ -962,6 +967,7 @@ function renderResults(score, total, secs) {
 $("btnDiag").addEventListener("click", () => startExam("diag"));
 $("btnAdapt").addEventListener("click", () => startExam("adapt"));
 $("btnQuick").addEventListener("click", () => startExam("quick"));
+$("btnMicro").addEventListener("click", () => startExam("micro"));
 $("btnWrong").addEventListener("click", () => startExam("wrong"));
 $("btnPrev").addEventListener("click", () => { if (X.idx > 0) { X.idx--; renderQ(); } });
 $("btnNext").addEventListener("click", () => {
