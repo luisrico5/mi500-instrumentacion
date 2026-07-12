@@ -275,6 +275,35 @@
   }
   .speak-btn:hover{border-color:var(--accent); color:var(--ink)}
   .speak-btn.playing{border-color:var(--accent); color:var(--accent)}
+
+  details.voice-settings{margin-top:10px}
+  details.voice-settings summary{
+    cursor:pointer; font-size:12.5px; color:var(--ink-2); list-style:none;
+    display:inline-flex; align-items:center; gap:6px; user-select:none;
+  }
+  details.voice-settings summary::-webkit-details-marker{display:none}
+  details.voice-settings summary::before{content:"▸"; font-size:10px; color:var(--muted)}
+  details.voice-settings[open] summary::before{content:"▾"}
+  details.voice-settings summary:hover{color:var(--ink)}
+  .voice-body{
+    margin-top:10px; padding:14px 16px; background:var(--surface);
+    border:1px solid var(--line); border-radius:10px; max-width:560px;
+  }
+  .voice-opt{display:flex; align-items:flex-start; gap:8px; font-size:13px; margin-bottom:8px; cursor:pointer}
+  .voice-opt input{margin-top:3px}
+  .voice-opt .vt{font-weight:600; color:var(--ink); display:block}
+  .voice-opt .vd{display:block; font-size:12px; color:var(--muted); font-weight:400; margin-top:1px}
+  .voice-sub{margin:6px 0 14px 24px; display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+  .voice-sub select{
+    font-family:inherit; font-size:12.5px; color:var(--ink); background:var(--bg);
+    border:1px solid var(--line); border-radius:6px; padding:5px 8px; max-width:100%;
+  }
+  .voice-sub button{
+    font-family:inherit; font-size:12px; color:var(--ink-2); background:none;
+    border:1px solid var(--line); border-radius:999px; padding:4px 12px; cursor:pointer;
+  }
+  .voice-sub button:hover{border-color:var(--accent); color:var(--ink)}
+  .voice-status{font-size:11.5px; color:var(--muted); margin:-6px 0 10px 24px}
   .rev-flag{
     font-family:var(--font-mono); font-size:10px; letter-spacing:.08em;
     padding:1px 7px; border-radius:3px; margin-right:8px;
@@ -300,6 +329,40 @@
     <h1>Máster en Instrumentación Industrial</h1>
     <span class="level-chip" id="hdrLevel">SIN CALIBRAR</span>
     <div class="sub">Entrenamiento y evaluación basados en tu cuaderno <em>masterinstrumentacion</em> (Creus 8ª ed. · Ajuste y calibración · instrumentacionycontrol.net · instrumentationtools.com)</div>
+    <details class="voice-settings">
+      <summary>🎙️ Voz de lectura</summary>
+      <div class="voice-body">
+        <label class="voice-opt">
+          <input type="radio" name="voiceEngine" value="browser" id="voiceEngBrowser">
+          <span class="vt">Voz del navegador
+            <span class="vd">Instantánea, usa las voces ya instaladas en tu navegador o sistema.</span>
+          </span>
+        </label>
+        <div class="voice-sub" id="voiceBrowserRow">
+          <select id="selVoiceBrowser"><option value="">Cargando voces…</option></select>
+        </div>
+        <label class="voice-opt">
+          <input type="radio" name="voiceEngine" value="neural" id="voiceEngNeural">
+          <span class="vt">Voz neuronal en español (más natural)
+            <span class="vd">Se descarga una vez (20-60&nbsp;MB, gratis) y queda guardada en el navegador para siempre.</span>
+          </span>
+        </label>
+        <div class="voice-sub" id="voiceNeuralRow">
+          <select id="selVoiceNeural"><option value="">Abre este panel para cargar la lista</option></select>
+          <button type="button" id="btnDownloadVoice">Descargar</button>
+          <button type="button" id="btnTestVoice">🔊 Probar</button>
+        </div>
+        <div class="voice-status" id="voiceStatus"></div>
+        <label class="voice-opt" style="margin-top:2px">
+          <span class="vt">Velocidad de lectura <span class="mono-tag" id="rateVal">0.97x</span>
+            <span class="vd">Se aplica a ambas voces, del navegador y neuronal.</span>
+          </span>
+        </label>
+        <div class="voice-sub" style="margin-top:0">
+          <input type="range" id="rngRate" min="0.7" max="1.3" step="0.01" value="0.97" style="flex:1; min-width:160px">
+        </div>
+      </div>
+    </details>
   </header>
 
   <!-- ============ DASHBOARD ============ -->
@@ -447,7 +510,11 @@ const save = () => { S.updated_at = Date.now(); try { localStorage.setItem(KEY, 
 
 /* ============ audio: lectura de explicaciones ============ */
 let VOICES = [];
-function loadVoices() { VOICES = ("speechSynthesis" in window) ? speechSynthesis.getVoices() : []; }
+let voiceUIReady = false;
+function loadVoices() {
+  VOICES = ("speechSynthesis" in window) ? speechSynthesis.getVoices() : [];
+  if (voiceUIReady) populateBrowserVoices();
+}
 loadVoices();
 if ("speechSynthesis" in window) speechSynthesis.onvoiceschanged = loadVoices;
 
@@ -458,21 +525,67 @@ function bestSpanishVoice() {
   return es.slice().sort((a, b) => score(b) - score(a))[0];
 }
 
+const VKEY = "mi500_voice_v1";
+let VPREF = { engine: "browser", browserURI: "", neuralVoiceId: "", rate: 0.97 };
+try { const raw = localStorage.getItem(VKEY); if (raw) VPREF = Object.assign(VPREF, JSON.parse(raw)); } catch (e) {}
+const saveVPref = () => { try { localStorage.setItem(VKEY, JSON.stringify(VPREF)); } catch (e) {} };
+
+let vitsModPromise = null;
+function loadVits() {
+  if (!vitsModPromise) vitsModPromise = import("https://cdn.jsdelivr.net/npm/@diffusionstudio/vits-web/+esm");
+  return vitsModPromise;
+}
+
 let speakingBtn = null;
-function speak(text, btn) {
-  if (!("speechSynthesis" in window)) { alert("Este navegador no soporta lectura en voz alta."); return; }
-  const wasThis = speakingBtn === btn && speechSynthesis.speaking;
-  speechSynthesis.cancel();
-  if (speakingBtn) speakingBtn.classList.remove("playing");
-  if (wasThis) { speakingBtn = null; return; }
-  const u = new SpeechSynthesisUtterance(text);
-  const v = bestSpanishVoice();
-  if (v) u.voice = v;
-  u.lang = v ? v.lang : "es-ES";
-  u.rate = 0.97;
-  u.onend = () => { btn.classList.remove("playing"); if (speakingBtn === btn) speakingBtn = null; };
+let neuralAudio = null;
+function stopSpeak() {
+  if (neuralAudio) { try { neuralAudio.pause(); } catch (e) {} neuralAudio = null; }
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (speakingBtn) {
+    speakingBtn.classList.remove("playing");
+    if (speakingBtn.dataset.label) speakingBtn.textContent = speakingBtn.dataset.label;
+  }
+  speakingBtn = null;
+}
+
+async function speak(text, btn) {
+  if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+  const label = btn.dataset.label;
+  const wasThis = speakingBtn === btn;
+  stopSpeak();
+  if (wasThis) return;
   speakingBtn = btn;
   btn.classList.add("playing");
+
+  if (VPREF.engine === "neural" && VPREF.neuralVoiceId) {
+    btn.textContent = "⏳ Generando…";
+    try {
+      const mod = await loadVits();
+      const wav = await mod.predict({ text, voiceId: VPREF.neuralVoiceId }, p => {
+        if (speakingBtn === btn && p && p.total) btn.textContent = `⏳ Descargando voz ${Math.round(p.loaded * 100 / p.total)}%`;
+      });
+      if (speakingBtn !== btn) return;
+      btn.textContent = label;
+      const audio = new Audio(URL.createObjectURL(wav));
+      audio.playbackRate = VPREF.rate;
+      neuralAudio = audio;
+      audio.onended = () => { btn.classList.remove("playing"); if (speakingBtn === btn) speakingBtn = null; };
+      audio.play();
+    } catch (e) {
+      btn.classList.remove("playing"); btn.textContent = label;
+      if (speakingBtn === btn) speakingBtn = null;
+      alert("No se pudo generar la voz neuronal (revisa la conexión, o descárgala primero en '🎙️ Voz de lectura'). Puedes cambiar a 'Voz del navegador'.");
+    }
+    return;
+  }
+
+  if (!("speechSynthesis" in window)) { btn.classList.remove("playing"); btn.textContent = label; speakingBtn = null; alert("Este navegador no soporta lectura en voz alta."); return; }
+  const u = new SpeechSynthesisUtterance(text);
+  const chosen = VOICES.find(v => v.voiceURI === VPREF.browserURI) || bestSpanishVoice();
+  if (chosen) u.voice = chosen;
+  u.lang = chosen ? chosen.lang : "es-ES";
+  u.rate = VPREF.rate;
+  u.onend = () => { btn.classList.remove("playing"); if (speakingBtn === btn) speakingBtn = null; };
   speechSynthesis.speak(u);
 }
 
@@ -854,9 +967,9 @@ function renderQ() {
     const wrong = sel != null && sel !== it.correct;
     ex.innerHTML = `<b>${wrong ? "Incorrecto." : "Correcto."}</b> ${esc(q.explanation)}` +
       sourceHtml(q.source) +
-      (wrong ? `<button type="button" class="speak-btn" id="btnSpeakQ">🔊 Escuchar explicación</button>` : "");
+      `<button type="button" class="speak-btn" id="btnSpeakQ">🔊 Escuchar explicación</button>`;
     ex.classList.remove("hidden");
-    if (wrong) {
+    {
       const sb = document.getElementById("btnSpeakQ");
       sb.addEventListener("click", () => speak(q.explanation + (q.source ? ". Fuente: " + q.source : ""), sb));
     }
@@ -941,7 +1054,6 @@ function renderResults(score, total, secs) {
   rev.innerHTML = order.map(i => {
     const it = X.items[i], q = it.q, sel = X.ans[i];
     const ok = sel === it.correct;
-    const wrong = sel != null && !ok;
     const modName = (MODS.find(m => m.id === q.module) || {}).name || "";
     return `<div class="rev-item">
       <p class="rq"><span class="rev-flag ${ok ? "ok" : "bad"}">${ok ? "OK" : "FALLO"}</span>${esc(q.q)}
@@ -950,7 +1062,7 @@ function renderResults(score, total, secs) {
         : ok ? `<p class="ra ok">✓ ${KEYS[it.correct]} · ${esc(it.options[it.correct])}</p>`
         : `<p class="ra bad">✗ Tu respuesta: ${KEYS[sel]} · ${esc(it.options[sel])}</p>
            <p class="ra ok">✓ Correcta: ${KEYS[it.correct]} · ${esc(it.options[it.correct])}</p>`}
-      ${q.explanation ? `<p class="rx">${esc(q.explanation)}${sourceHtml(q.source)}${wrong ? `<button type="button" class="speak-btn" data-ridx="${i}">🔊 Escuchar explicación</button>` : ""}</p>` : ""}
+      ${q.explanation ? `<p class="rx">${esc(q.explanation)}${sourceHtml(q.source)}<button type="button" class="speak-btn" data-ridx="${i}">🔊 Escuchar explicación</button></p>` : ""}
     </div>`;
   }).join("");
   rev.querySelectorAll(".speak-btn").forEach(btn => {
@@ -962,6 +1074,82 @@ function renderResults(score, total, secs) {
   });
   show("view-results");
 }
+
+/* ============ panel de voz ============ */
+function populateBrowserVoices() {
+  const sel = $("selVoiceBrowser"); if (!sel) return;
+  const list = VOICES.slice().sort((a, b) => (/^es/i.test(b.lang) ? 1 : 0) - (/^es/i.test(a.lang) ? 1 : 0) || a.name.localeCompare(b.name));
+  if (!list.length) { sel.innerHTML = `<option value="">Sin voces detectadas</option>`; return; }
+  sel.innerHTML = list.map(v => `<option value="${esc(v.voiceURI)}">${esc(v.name)} (${esc(v.lang)})</option>`).join("");
+  if (VPREF.browserURI && list.some(v => v.voiceURI === VPREF.browserURI)) sel.value = VPREF.browserURI;
+  else { const best = bestSpanishVoice(); if (best) sel.value = best.voiceURI; }
+}
+
+let neuralListLoaded = false;
+async function populateNeuralVoices() {
+  const sel = $("selVoiceNeural"); if (!sel) return;
+  sel.innerHTML = `<option value="">Cargando voces…</option>`;
+  try {
+    const mod = await loadVits();
+    const [allVoices, stored] = await Promise.all([mod.voices(), mod.stored()]);
+    const es = allVoices.filter(v => /^es_/i.test(v.key)).sort((a, b) => a.key.localeCompare(b.key));
+    const qn = { x_low: "muy básica", low: "básica", medium: "media", high: "alta" };
+    sel.innerHTML = es.map(v => {
+      const region = v.key.split("-")[0].replace("es_", "");
+      const dl = stored.includes(v.key) ? " ✓" : "";
+      return `<option value="${esc(v.key)}">${esc(v.name)} · ${esc(region)} · calidad ${esc(qn[v.quality] || v.quality)}${dl}</option>`;
+    }).join("");
+    if (VPREF.neuralVoiceId && es.some(v => v.key === VPREF.neuralVoiceId)) sel.value = VPREF.neuralVoiceId;
+    else if (es.length) { sel.value = es[0].key; VPREF.neuralVoiceId = es[0].key; saveVPref(); }
+  } catch (e) {
+    sel.innerHTML = `<option value="">No disponible (revisa tu conexión)</option>`;
+  }
+}
+
+function setVoiceEngineUI() {
+  $("voiceEngBrowser").checked = VPREF.engine === "browser";
+  $("voiceEngNeural").checked = VPREF.engine === "neural";
+  $("voiceBrowserRow").style.opacity = VPREF.engine === "browser" ? "1" : ".45";
+  $("voiceNeuralRow").style.opacity = VPREF.engine === "neural" ? "1" : ".45";
+}
+$("rngRate").value = VPREF.rate;
+$("rateVal").textContent = VPREF.rate.toFixed(2) + "x";
+setVoiceEngineUI();
+voiceUIReady = true;
+populateBrowserVoices();
+
+document.querySelector("details.voice-settings").addEventListener("toggle", function () {
+  if (this.open && !neuralListLoaded) { neuralListLoaded = true; populateNeuralVoices(); }
+});
+$("voiceEngBrowser").addEventListener("change", () => { VPREF.engine = "browser"; saveVPref(); setVoiceEngineUI(); });
+$("voiceEngNeural").addEventListener("change", () => { VPREF.engine = "neural"; saveVPref(); setVoiceEngineUI(); });
+$("selVoiceBrowser").addEventListener("change", e => { VPREF.browserURI = e.target.value; saveVPref(); });
+$("selVoiceNeural").addEventListener("change", e => { VPREF.neuralVoiceId = e.target.value; saveVPref(); });
+$("rngRate").addEventListener("input", e => {
+  VPREF.rate = parseFloat(e.target.value);
+  $("rateVal").textContent = VPREF.rate.toFixed(2) + "x";
+  saveVPref();
+});
+$("btnDownloadVoice").addEventListener("click", async () => {
+  const id = $("selVoiceNeural").value; if (!id) return;
+  const btn = $("btnDownloadVoice"), status = $("voiceStatus");
+  btn.disabled = true;
+  try {
+    const mod = await loadVits();
+    await mod.download(id, p => { if (p && p.total) status.textContent = `Descargando voz… ${Math.round(p.loaded * 100 / p.total)}%`; });
+    status.textContent = "Voz descargada. Ya se usará al pulsar 'Escuchar explicación'.";
+    populateNeuralVoices();
+  } catch (e) {
+    status.textContent = "No se pudo descargar (revisa tu conexión).";
+  } finally {
+    btn.disabled = false;
+  }
+});
+$("btnTestVoice").addEventListener("click", () => {
+  const id = $("selVoiceNeural").value;
+  if (id) { VPREF.neuralVoiceId = id; saveVPref(); }
+  speak("Así sonará la lectura de las explicaciones con esta voz.", $("btnTestVoice"));
+});
 
 /* ============ eventos ============ */
 $("btnDiag").addEventListener("click", () => startExam("diag"));
