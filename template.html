@@ -340,6 +340,7 @@
         </label>
         <div class="voice-sub" id="voiceBrowserRow">
           <select id="selVoiceBrowser"><option value="">Cargando voces…</option></select>
+          <button type="button" id="btnTestBrowserVoice">🔊 Probar</button>
         </div>
         <label class="voice-opt">
           <input type="radio" name="voiceEngine" value="neural" id="voiceEngNeural">
@@ -584,6 +585,24 @@ async function speak(text, btn) {
   const chosen = VOICES.find(v => v.voiceURI === VPREF.browserURI) || bestSpanishVoice();
   if (chosen) u.voice = chosen;
   u.lang = chosen ? chosen.lang : "es-ES";
+  u.rate = VPREF.rate;
+  u.onend = () => { btn.classList.remove("playing"); if (speakingBtn === btn) speakingBtn = null; };
+  speechSynthesis.speak(u);
+}
+
+function speakWithVoice(text, voiceURI, btn) {
+  if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+  const label = btn.dataset.label;
+  const wasThis = speakingBtn === btn;
+  stopSpeak();
+  if (wasThis) return;
+  if (!("speechSynthesis" in window)) { alert("Este navegador no soporta lectura en voz alta."); return; }
+  speakingBtn = btn;
+  btn.classList.add("playing");
+  const u = new SpeechSynthesisUtterance(text);
+  const v = VOICES.find(x => x.voiceURI === voiceURI);
+  if (v) u.voice = v;
+  u.lang = v ? v.lang : "es-ES";
   u.rate = VPREF.rate;
   u.onend = () => { btn.classList.remove("playing"); if (speakingBtn === btn) speakingBtn = null; };
   speechSynthesis.speak(u);
@@ -1124,6 +1143,11 @@ document.querySelector("details.voice-settings").addEventListener("toggle", func
 $("voiceEngBrowser").addEventListener("change", () => { VPREF.engine = "browser"; saveVPref(); setVoiceEngineUI(); });
 $("voiceEngNeural").addEventListener("change", () => { VPREF.engine = "neural"; saveVPref(); setVoiceEngineUI(); });
 $("selVoiceBrowser").addEventListener("change", e => { VPREF.browserURI = e.target.value; saveVPref(); });
+$("btnTestBrowserVoice").addEventListener("click", () => {
+  const uri = $("selVoiceBrowser").value;
+  VPREF.browserURI = uri; saveVPref();
+  speakWithVoice("Así sonará la lectura de las explicaciones con esta voz.", uri, $("btnTestBrowserVoice"));
+});
 $("selVoiceNeural").addEventListener("change", e => { VPREF.neuralVoiceId = e.target.value; saveVPref(); });
 $("rngRate").addEventListener("input", e => {
   VPREF.rate = parseFloat(e.target.value);
