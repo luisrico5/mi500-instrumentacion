@@ -873,6 +873,27 @@ function buildModule(mid, n) {
 }
 function buildQuick(n) { return buildAdaptive(n); }
 
+/* preguntas aptas para el modo juego: cortas, de lectura rápida, sin cálculos */
+function isGameFriendly(q) {
+  if (q.difficulty >= 3) return false;
+  if (q.q.length > 170) return false;
+  if (/calcul|cuánto|cuántos|cuántas|hallar el valor|resultado numérico|resuelva|determine el valor|fórmula de/i.test(q.q)) return false;
+  const optsLen = q.options.reduce((s, o) => s + o.length, 0);
+  if (optsLen > 260) return false;
+  return true;
+}
+function buildGame(n) {
+  const pool = [];
+  BANK.forEach(m => m.questions.forEach(q => { if (isGameFriendly(q)) pool.push(q); }));
+  if (!pool.length) return buildQuick(n);
+  return pickWeighted(pool, freshness, Math.min(n, pool.length));
+}
+/* tiempo de respuesta según la longitud real del enunciado y las opciones */
+function questionTimeMs(q) {
+  const totalLen = q.q.length + q.options.reduce((s, o) => s + o.length, 0);
+  return Math.max(9000, Math.min(20000, 8000 + totalLen * 35));
+}
+
 /* ============ vistas ============ */
 function show(view) {
   ["view-dash", "view-exam", "view-results"].forEach(v => $(v).classList.add("hidden"));
@@ -1007,7 +1028,7 @@ function startExam(mode, moduleId) {
   else if (mode === "quick") { items = buildQuick(8); title = "Ronda rápida"; tag = "EX-RR"; immediate = true; }
   else if (mode === "micro") { items = buildQuick(5); title = "Micro-ronda"; tag = "EX-MR"; immediate = true; }
   else if (mode === "wrong") { items = shuffle(wrongPool()).slice(0, 15); title = "Repaso de falladas"; tag = "EX-RP"; immediate = true; }
-  else if (mode === "game") { items = buildQuick(10); title = "Modo juego 🎮"; tag = "EX-GM"; immediate = true; }
+  else if (mode === "game") { items = buildGame(10); title = "Modo juego 🎮"; tag = "EX-GM"; immediate = true; }
   else { const m = MODS.find(x => x.id === moduleId); items = buildModule(moduleId, 9); title = "Práctica: " + m.name; tag = "EX-M" + String(moduleId).padStart(2, "0"); immediate = true; }
   if (!items.length) return;
 
@@ -1015,7 +1036,7 @@ function startExam(mode, moduleId) {
     mode, moduleId, title, tag, immediate,
     items: items.map(q => {
       const order = shuffle([0, 1, 2, 3]);
-      return { q, options: order.map(i => q.options[i]), correct: order.indexOf(q.correct) };
+      return { q, options: order.map(i => q.options[i]), correct: order.indexOf(q.correct), timeMs: questionTimeMs(q) };
     }),
     ans: new Array(items.length).fill(null),
     revealed: new Array(items.length).fill(false),
@@ -1110,7 +1131,6 @@ function renderQ() {
 }
 
 /* ============ modo juego: lógica de partida ============ */
-const GAME_TIME_MS = 15000;
 function updateGameHUD() {
   let h = "";
   for (let i = 0; i < 3; i++) h += `<span class="${i < X.lives ? "" : "lost"}">♥</span>`;
@@ -1139,12 +1159,13 @@ function gamePop(text) {
 function startGameTimer() {
   clearInterval(X.gTimerInt);
   const bar = $("gameTimerFill");
+  const total = X.items[X.idx].timeMs || 15000;
   const t0 = Date.now();
   let lastSec = null;
   bar.style.width = "100%"; bar.style.background = "var(--st-good)";
   X.gTimerInt = setInterval(() => {
-    const left = Math.max(0, GAME_TIME_MS - (Date.now() - t0));
-    const frac = left / GAME_TIME_MS;
+    const left = Math.max(0, total - (Date.now() - t0));
+    const frac = left / total;
     bar.style.width = (frac * 100) + "%";
     bar.style.background = frac > .5 ? "var(--st-good)" : frac > .2 ? "var(--st-warn)" : "var(--st-crit)";
     const sec = Math.ceil(left / 1000);
