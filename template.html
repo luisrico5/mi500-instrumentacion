@@ -311,6 +311,46 @@
   .rev-flag.ok{border:1px solid var(--st-good); color:var(--good-text)}
   .rev-flag.bad{border:1px solid var(--st-crit); color:var(--crit-text)}
 
+  /* ---------- modo juego ---------- */
+  .game-hud{display:flex; align-items:center; gap:16px; margin:-4px 0 14px; flex-wrap:wrap; font-size:13.5px}
+  .game-hearts{font-size:18px; letter-spacing:4px; color:var(--st-crit)}
+  .game-hearts span.lost{opacity:.25; filter:grayscale(1)}
+  .game-score{font-family:var(--font-mono); font-weight:700}
+  .game-combo{
+    font-family:var(--font-mono); font-size:11.5px; color:var(--accent);
+    border:1px solid var(--accent); border-radius:999px; padding:2px 10px;
+  }
+  .game-combo.pulse{animation:comboPulse .4s ease}
+  .game-best{font-size:12px; color:var(--muted); margin-left:auto}
+  .game-timerbar{height:6px; background:var(--surface-2); border-radius:3px; margin-bottom:16px; overflow:hidden}
+  .game-timerbar>div{height:100%; border-radius:3px; background:var(--st-good); width:100%}
+  .qcard.game-card{position:relative; overflow:hidden}
+  .qcard.flash-correct{animation:flashGreen .5s ease}
+  .qcard.flash-wrong{animation:shakeCard .45s ease}
+  .game-pop{
+    position:absolute; top:10px; right:16px; font-family:var(--font-display);
+    font-size:22px; font-weight:800; color:var(--st-good); opacity:0; pointer-events:none;
+  }
+  .game-pop.show{animation:popFloat .9s ease forwards}
+  @keyframes flashGreen{
+    0%{box-shadow:0 0 0 0 rgba(12,163,12,.45)}
+    50%{box-shadow:0 0 0 10px rgba(12,163,12,.12)}
+    100%{box-shadow:0 0 0 0 rgba(12,163,12,0)}
+  }
+  @keyframes shakeCard{
+    10%,90%{transform:translateX(-1px)}
+    20%,80%{transform:translateX(3px)}
+    30%,50%,70%{transform:translateX(-6px)}
+    40%,60%{transform:translateX(6px)}
+  }
+  @keyframes comboPulse{0%{transform:scale(1)}50%{transform:scale(1.3)}100%{transform:scale(1)}}
+  @keyframes popFloat{
+    0%{opacity:0; transform:translateY(6px) scale(.9)}
+    15%{opacity:1; transform:translateY(0) scale(1.08)}
+    80%{opacity:1; transform:translateY(-20px) scale(1)}
+    100%{opacity:0; transform:translateY(-30px) scale(1)}
+  }
+
   /* tooltip */
   #tip{
     position:fixed; pointer-events:none; z-index:50; display:none;
@@ -409,6 +449,10 @@
             <span class="mt">Repaso de falladas <span class="mono-tag" id="tagWrong">0 PEND</span></span>
             <span class="md">Vuelve sobre las preguntas que has fallado hasta dominarlas.</span>
           </button>
+          <button class="mode-btn" id="btnGame">
+            <span class="mt">🎮 Modo juego <span class="mono-tag">10 PREG</span></span>
+            <span class="md">Vidas, contrarreloj y racha de combo · mismas preguntas del banco, en formato arcade.</span>
+          </button>
         </div>
       </div>
     </div>
@@ -442,8 +486,16 @@
       <span class="xtitle" id="xTitle">Examen</span>
       <span class="timer" id="xTimer">00:00</span>
     </div>
+    <div class="game-hud hidden" id="gameHud">
+      <div class="game-hearts" id="gameHearts"></div>
+      <div class="game-score">🏆 <b id="gameScore">0</b> pts</div>
+      <div class="game-combo" id="gameCombo">Racha x1</div>
+      <div class="game-best">Mejor marca: <b id="gameBest">0</b></div>
+    </div>
+    <div class="game-timerbar hidden" id="gameTimerBar"><div id="gameTimerFill"></div></div>
     <div class="pbar"><div id="xProg" style="width:0%"></div></div>
     <div class="panel qcard">
+      <div class="game-pop" id="gamePop"></div>
       <div class="qmeta" id="qMeta"></div>
       <p class="qtext" id="qText"></p>
       <div class="opts" id="qOpts"></div>
@@ -607,6 +659,35 @@ function speakWithVoice(text, voiceURI, btn) {
   u.onend = () => { btn.classList.remove("playing"); if (speakingBtn === btn) speakingBtn = null; };
   speechSynthesis.speak(u);
 }
+
+/* ============ modo juego: sonido sintetizado (sin archivos, gratis) ============ */
+const GBKEY = "mi500_game_best";
+let GAME_BEST = parseInt(localStorage.getItem(GBKEY) || "0", 10) || 0;
+let actx = null;
+function actxGet() {
+  if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+  if (actx.state === "suspended") actx.resume();
+  return actx;
+}
+function beep(freq, dur, type, vol, delay) {
+  try {
+    const ctx = actxGet();
+    const t0 = ctx.currentTime + (delay || 0);
+    const osc = ctx.createOscillator(), gain = ctx.createGain();
+    osc.type = type || "sine";
+    osc.frequency.setValueAtTime(freq, t0);
+    gain.gain.setValueAtTime(0.0001, t0);
+    gain.gain.linearRampToValueAtTime(vol || 0.18, t0 + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.start(t0); osc.stop(t0 + dur + 0.02);
+  } catch (e) {}
+}
+function sndCorrect() { beep(880, 0.12, "sine", 0.18); beep(1320, 0.16, "sine", 0.15, 0.09); }
+function sndWrong() { beep(220, 0.28, "sawtooth", 0.15); }
+function sndTick() { beep(660, 0.05, "square", 0.05); }
+function sndVictory() { beep(523, 0.14, "sine", 0.16, 0); beep(659, 0.14, "sine", 0.16, 0.13); beep(784, 0.22, "sine", 0.18, 0.26); }
+function sndDefeat() { beep(300, 0.22, "sine", 0.15, 0); beep(220, 0.32, "sine", 0.15, 0.18); }
 
 function sourceHtml(source) {
   if (!source) return "";
@@ -926,6 +1007,7 @@ function startExam(mode, moduleId) {
   else if (mode === "quick") { items = buildQuick(8); title = "Ronda rápida"; tag = "EX-RR"; immediate = true; }
   else if (mode === "micro") { items = buildQuick(5); title = "Micro-ronda"; tag = "EX-MR"; immediate = true; }
   else if (mode === "wrong") { items = shuffle(wrongPool()).slice(0, 15); title = "Repaso de falladas"; tag = "EX-RP"; immediate = true; }
+  else if (mode === "game") { items = buildQuick(10); title = "Modo juego 🎮"; tag = "EX-GM"; immediate = true; }
   else { const m = MODS.find(x => x.id === moduleId); items = buildModule(moduleId, 9); title = "Práctica: " + m.name; tag = "EX-M" + String(moduleId).padStart(2, "0"); immediate = true; }
   if (!items.length) return;
 
@@ -937,8 +1019,10 @@ function startExam(mode, moduleId) {
     }),
     ans: new Array(items.length).fill(null),
     revealed: new Array(items.length).fill(false),
-    idx: 0, t0: Date.now(), done: false
+    idx: 0, t0: Date.now(), done: false,
+    lives: 3, combo: 0, gscore: 0, gTimerInt: null, gameAdvanceTimeout: null
   };
+  if (mode === "game") actxGet();
   $("xTag").textContent = tag;
   $("xTitle").textContent = title;
   clearInterval(timerInt);
@@ -957,6 +1041,10 @@ function renderQ() {
   const it = X.items[X.idx], q = it.q;
   const modName = (MODS.find(m => m.id === q.module) || {}).name || "";
   $("xProg").style.width = ((X.idx) / X.items.length * 100) + "%";
+  const isGame = X.mode === "game";
+  $("gameHud").classList.toggle("hidden", !isGame);
+  $("gameTimerBar").classList.toggle("hidden", !isGame);
+  document.querySelector("#view-exam .qcard").classList.toggle("game-card", isGame);
   const [dn, dc] = DIFF[q.difficulty] || DIFF[2];
   $("qMeta").innerHTML =
     `<span class="chip">${esc(modName)}</span>` +
@@ -995,11 +1083,12 @@ function renderQ() {
   } else ex.classList.add("hidden");
 
   $("btnPrev").disabled = X.idx === 0 || X.immediate;
-  $("btnPrev").classList.toggle("hidden", X.immediate);
+  $("btnPrev").classList.toggle("hidden", X.immediate || isGame);
   const answered = sel != null;
   const last = X.idx === X.items.length - 1;
   $("btnNext").textContent = last ? "Finalizar ✓" : "Siguiente →";
   $("btnNext").disabled = X.immediate ? !revealed : !answered;
+  $("btnNext").classList.toggle("hidden", isGame);
 
   const nd = $("navDots"); nd.innerHTML = "";
   if (!X.immediate) {
@@ -1012,12 +1101,99 @@ function renderQ() {
       nd.appendChild(d);
     });
   }
+
+  if (isGame) {
+    updateGameHUD();
+    clearInterval(X.gTimerInt);
+    if (!revealed) startGameTimer(); else $("gameTimerFill").style.width = "0%";
+  }
+}
+
+/* ============ modo juego: lógica de partida ============ */
+const GAME_TIME_MS = 15000;
+function updateGameHUD() {
+  let h = "";
+  for (let i = 0; i < 3; i++) h += `<span class="${i < X.lives ? "" : "lost"}">♥</span>`;
+  $("gameHearts").innerHTML = h;
+  $("gameScore").textContent = X.gscore;
+  const mult = Math.min(4, 1 + Math.floor(X.combo / 3));
+  $("gameCombo").textContent = "Racha x" + mult + (X.combo > 0 ? " (" + X.combo + ")" : "");
+  if (X.gscore > GAME_BEST) { GAME_BEST = X.gscore; try { localStorage.setItem(GBKEY, String(GAME_BEST)); } catch (e) {} }
+  $("gameBest").textContent = GAME_BEST;
+}
+function pulseCombo() {
+  const el = $("gameCombo");
+  el.classList.remove("pulse"); void el.offsetWidth; el.classList.add("pulse");
+}
+function flashCard(correct) {
+  const card = document.querySelector("#view-exam .qcard");
+  card.classList.remove("flash-correct", "flash-wrong");
+  void card.offsetWidth;
+  card.classList.add(correct ? "flash-correct" : "flash-wrong");
+}
+function gamePop(text) {
+  const pop = $("gamePop"); if (!pop) return;
+  pop.textContent = text;
+  pop.classList.remove("show"); void pop.offsetWidth; pop.classList.add("show");
+}
+function startGameTimer() {
+  clearInterval(X.gTimerInt);
+  const bar = $("gameTimerFill");
+  const t0 = Date.now();
+  let lastSec = null;
+  bar.style.width = "100%"; bar.style.background = "var(--st-good)";
+  X.gTimerInt = setInterval(() => {
+    const left = Math.max(0, GAME_TIME_MS - (Date.now() - t0));
+    const frac = left / GAME_TIME_MS;
+    bar.style.width = (frac * 100) + "%";
+    bar.style.background = frac > .5 ? "var(--st-good)" : frac > .2 ? "var(--st-warn)" : "var(--st-crit)";
+    const sec = Math.ceil(left / 1000);
+    if (sec <= 3 && sec !== lastSec && sec > 0) { sndTick(); lastSec = sec; }
+    if (left <= 0) { clearInterval(X.gTimerInt); gameTimeout(); }
+  }, 100);
+}
+function gameTimeout() {
+  if (X.revealed[X.idx]) return;
+  X.revealed[X.idx] = true;
+  recordOne(X.idx);
+  gameHandleAnswer(null);
+  renderQ();
+}
+function gameHandleAnswer(selIdx) {
+  clearInterval(X.gTimerInt);
+  const it = X.items[X.idx];
+  const correct = selIdx != null && selIdx === it.correct;
+  if (correct) {
+    X.combo++;
+    const mult = Math.min(4, 1 + Math.floor(X.combo / 3));
+    const gained = 100 * mult;
+    X.gscore += gained;
+    sndCorrect();
+    gamePop("+" + gained);
+    flashCard(true);
+  } else {
+    X.combo = 0;
+    X.lives--;
+    sndWrong();
+    flashCard(false);
+  }
+  pulseCombo();
+  const isLast = X.idx === X.items.length - 1;
+  const dead = X.lives <= 0;
+  if (dead) sndDefeat();
+  else if (isLast) sndVictory();
+  clearTimeout(X.gameAdvanceTimeout);
+  X.gameAdvanceTimeout = setTimeout(() => {
+    if (dead || isLast) finishExam(false);
+    else { X.idx++; renderQ(); }
+  }, dead ? 1300 : 950);
 }
 
 function answer(i) {
   if (X.revealed[X.idx]) return;
   X.ans[X.idx] = i;
   if (X.immediate) { X.revealed[X.idx] = true; recordOne(X.idx); }
+  if (X.mode === "game") gameHandleAnswer(i);
   renderQ();
 }
 
@@ -1034,6 +1210,8 @@ function recordOne(idx) {
 
 function finishExam(abandoned) {
   clearInterval(timerInt);
+  clearInterval(X.gTimerInt);
+  clearTimeout(X.gameAdvanceTimeout);
   if (!X.immediate) X.items.forEach((_, i) => { if (X.ans[i] != null) recordOne(i); });
   const answeredIdx = X.items.map((_, i) => i).filter(i => X.ans[i] != null);
   const score = answeredIdx.filter(i => X.ans[i] === X.items[i].correct).length;
@@ -1061,6 +1239,11 @@ function renderResults(score, total, secs) {
   else if (frac >= .75) msg = `Muy bien. Vas camino de <b>Máster</b>: consolida los fallos de abajo. Dominio global: <b>${pct(g)}</b> (${levelName(g)}).`;
   else if (frac >= .5) msg = `Base razonable, pero un examen real exige más. Revisa las explicaciones y repite en modo <b>Repaso de falladas</b>. Dominio global: <b>${pct(g)}</b> (${levelName(g)}).`;
   else msg = `Zona crítica: prioriza los módulos marcados en rojo del tablero y vuelve al diagnóstico en unos días. Dominio global: <b>${pct(g)}</b> (${levelName(g)}).`;
+  if (X.mode === "game") {
+    msg = `<div style="margin-bottom:8px;font-family:var(--font-mono);font-size:13px">🏆 Puntuación arcade: <b>${X.gscore}</b> pts` +
+      (X.lives <= 0 ? " · sin vidas restantes" : "") +
+      ` · mejor marca: <b>${GAME_BEST}</b> pts</div>` + msg;
+  }
   $("rMsg").innerHTML = msg;
 
   const rev = $("review");
@@ -1181,6 +1364,7 @@ $("btnAdapt").addEventListener("click", () => startExam("adapt"));
 $("btnQuick").addEventListener("click", () => startExam("quick"));
 $("btnMicro").addEventListener("click", () => startExam("micro"));
 $("btnWrong").addEventListener("click", () => startExam("wrong"));
+$("btnGame").addEventListener("click", () => startExam("game"));
 $("btnPrev").addEventListener("click", () => { if (X.idx > 0) { X.idx--; renderQ(); } });
 $("btnNext").addEventListener("click", () => {
   if (X.idx < X.items.length - 1) { X.idx++; renderQ(); }
